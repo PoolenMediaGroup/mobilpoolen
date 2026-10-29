@@ -1,303 +1,279 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Clock, Headset, KeyRound, Search } from "lucide-react";
+import { ArrowRight, Clock, Repeat, Search, Tag } from "lucide-react";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteNav } from "@/components/site-nav";
 import { CtaBand } from "@/components/cta-band";
 import { absoluteUrl, breadcrumbJsonLd, jsonLdScript, pageHead } from "@/lib/seo";
 import { bild } from "@/lib/bildbank";
 import { storMatt } from "@/lib/bildbank-matt";
+import { OPERATORER } from "@/lib/mobil/data";
+import {
+  MARKNAD,
+  NEDSLACKNING,
+  OPENSIGNAL,
+  SKI_PRIVAT,
+  TACKNING,
+  decimal,
+} from "@/lib/mobil/fakta";
 
-const TITLE = "Ordlista för hemlarm";
+const TITLE = "Ordlista för mobilabonnemang";
 const DESC =
-  "Alla ord du möter i en larmoffert, förklarade på svenska. Från bindningstid och skalskydd till SSF 130 och ägandeform.";
-const UPPDATERAD = "september 2026";
+  "Bindningstid, nummerportering, MVNO, fair use, eSIM och VoLTE. Orden du möter när du jämför mobilabonnemang, förklarade på vanlig svenska.";
+const UPPDATERAD = "29 oktober 2026";
 const HEROBILD = bild("kvinna-soffa-mobil");
 
 type Term = { term: string; definition: string; href?: string };
 
+const aktiva = OPERATORER.filter((o) => o.aktiv);
+const medEsim = aktiva.filter((o) => o.esim === true).length;
+const medWifiSamtal = aktiva.filter((o) => o.wifiSamtal === true).length;
+const nedladdning = OPENSIGNAL.find((r) => r.kategori === "Nedladdningshastighet");
+const skiBransch = SKI_PRIVAT.find((r) => r.namn === "Branschen");
+const skiHogst = SKI_PRIVAT[0];
+
 /* Orden står i bokstavsordning i listan, sorteringen sköts i koden. */
 const TERMS: Term[] = [
   {
-    term: "Abonnemang",
-    definition:
-      "Den löpande tjänsten du betalar för varje månad: larmcentral, app och support. Utan abonnemang skickar larmet bara en notis till dig själv.",
-    href: "/guider/hemlarm-utan-abonnemang",
+    term: "2G och 3G",
+    definition: `Äldre generationers mobilnät. Tele2, Telenor och Tre stängde sina 2G- och 3G-nät ${NEDSLACKNING.n4mOchTre}. Telia behåller 2G till ${NEDSLACKNING.teliaTvaG}. En telefon som bara klarar 2G eller 3G kan inte ringa i de nät som stängts.`,
+    href: "/guider/2g-3g-nedslackning",
   },
   {
-    term: "Anläggarintyg",
-    definition:
-      "Intyg från en certifierad anläggarfirma på att larmet är installerat enligt normen. Kan krävas av försäkringsbolaget, särskilt för företag.",
+    term: "4G",
+    definition: `Fjärde generationens mobilnät, även kallat LTE. Det bär fortfarande de flesta samtalen: 2025 gick omkring ${MARKNAD.volteAndel} procent av samtalsminuterna över 4G, enligt PTS.`,
   },
-  { term: "Batteribackup", definition: "Reservbatteri som håller larmet igång vid strömavbrott." },
+  {
+    term: "5G",
+    definition: `Femte generationens mobilnät, med mer kapacitet och lägre latens än 4G. Både telefonen och abonnemanget måste ha stöd för 5G. Enligt PTS använde ${MARKNAD.femgAndel} procent av mobilabonnemangen 5G-nätet under 2025.`,
+    href: "/5g-abonnemang",
+  },
+  {
+    term: "ARN",
+    definition:
+      "Allmänna reklamationsnämnden, den statliga myndighet som prövar tvister mellan konsumenter och företag, till exempel när du och operatören inte kommer överens. Nämndens beslut är rekommendationer.",
+    href: "/guider/klaga-pa-operatoren",
+  },
+  {
+    term: "Avtalssammanfattning",
+    definition:
+      "En kort och lättläst sammanfattning av avtalet som operatören avgiftsfritt ska ge dig innan du tecknar. Avtalet gäller först när du har fått sammanfattningen och bekräftat att du vill ingå det (12 kap. 1 § lagen om elektronisk kommunikation).",
+  },
   {
     term: "Bindningstid",
     definition:
-      "Den period du har lovat att betala för avtalet. Två år är vanligt och den räknas från installationen, inte från när du skrev på.",
-    href: "/guider/bindningstid-och-uppsagning",
+      "Den tid du har lovat att behålla abonnemanget. För konsumenter får den vara högst 24 månader (12 kap. 8 § lagen om elektronisk kommunikation). Samma tak gäller mikroföretag, småföretag och ideella organisationer om de inte uttryckligen avstått. Byter du i förtid ska återstående bindningstid normalt betalas.",
+    href: "/guider/bindningstid-uppsagningstid",
   },
   {
-    term: "Centralenhet",
-    definition: "Larmets hjärna. Tar emot signaler från detektorerna och skickar vidare larmet.",
-  },
-  {
-    term: "Certifierad anläggarfirma",
+    term: "Datakort",
     definition:
-      "Företag som är godkänt att installera inbrottslarm enligt Stöldskyddsföreningens regler. Krävs för att du ska få ett anläggarintyg.",
+      "Ett extra SIM-kort, ibland kallat extra-SIM, som surfar på samma abonnemang, till exempel i en surfplatta eller en klocka. Om det kostar något och hur surfen delas skiljer sig mellan operatörerna.",
   },
   {
-    term: "Detektor",
+    term: "Delad surf",
     definition:
-      "Samlingsnamn för givarna som känner av något: rörelse, rök, vatten, glaskross eller att en dörr öppnas.",
+      "Surf som flera SIM-kort eller användare delar på, till exempel i en familj eller på ett företag. Hela gruppen drar från samma surfpott.",
+    href: "/guider/delad-surf-foretag",
   },
   {
-    term: "Dubbel kommunikation",
+    term: "Dubbel surf",
     definition:
-      "Larmet kan skicka signaler både via bredband och mobilnät, så det fungerar även om det ena slås ut.",
+      "Ett erbjudande där du får dubbelt så mycket surf som abonnemanget normalt har. Kontrollera om det gäller hela avtalstiden eller bara en kampanjperiod.",
+    href: "/guider/sparad-surf-dubbel-surf",
   },
   {
-    term: "Egendomsskydd",
+    term: "eSIM",
+    definition: `Ett SIM-kort som är inbyggt i telefonen och laddas ner i stället för att sättas i. Telefonen måste ha stöd för eSIM. ${medEsim} av de ${aktiva.length} operatörer vi följer anger på sina egna sidor att de erbjuder eSIM.`,
+    href: "/esim",
+  },
+  {
+    term: "EU-surf",
     definition:
-      "Den del av hemförsäkringen som ersätter stulna och skadade saker. Ett larm kan ge rabatt eller lägre självrisk, men villkoren skiljer sig mellan bolagen.",
-    href: "/guider/hemlarm-och-forsakring",
+      "Surfen du kan använda i EU och EES enligt reglerna om Roam like at home. Har du obegränsad eller mycket stor surf hemma får operatören sätta ett tak, se fair use. Hur mycket EU-surf som ingår står vid varje abonnemang i jämförelsen.",
+    href: "/guider/surfa-i-eu",
   },
   {
-    term: "Extern siren",
+    term: "Fair use",
     definition:
-      "Siren monterad på fasaden. Hörs av grannarna och gör att den som tagit sig in vet att larmet gått.",
+      "Regeln som låter operatören begränsa EU-surfen för stora eller obegränsade abonnemang. Gränsen ska vara minst 2 × (månadspriset exklusive moms ÷ grossisttaket per GB). Grossisttaket var 1,30 euro per GB 2025 och blir 1,00 euro per GB från 2027.",
+    href: "/guider/surfa-i-eu",
   },
   {
-    term: "Falsklarm",
+    term: "FWA",
     definition:
-      "Ett larm som löser ut utan att något hänt, till exempel av ett husdjur eller en gardin i draget.",
+      "Fixed Wireless Access, mobilt bredband till en fast adress. En router tar emot internet via mobilnätet i stället för via fiber eller kabel. Enligt PTS fanns omkring 420 000 FWA-abonnemang 2025, och de använde i snitt 374 GB i månaden.",
   },
   {
-    term: "Friköpt larm",
-    definition: "Ett larm där du äger utrustningen och bara betalar för uppkopplingen.",
+    term: "GB",
+    definition: `Gigabyte, måttet på datamängd. Surfen i ett abonnemang anges i GB per månad. Abonnemang med samtal och data använde i snitt ${MARKNAD.surfPerManad} GB i månaden 2025, enligt PTS.`,
+    href: "/verktyg/hur-mycket-surf-behover-jag",
   },
   {
-    term: "Gateway",
+    term: "Kampanjpris",
     definition:
-      "Enheten som kopplar larmet till internet och mobilnätet. Ibland är den en del av centralenheten, ibland en egen dosa.",
+      "Ett rabatterat månadspris som gäller några månader. Sedan går abonnemanget över till ordinarie pris. Räkna därför på hela året, inte på första månaden.",
+    href: "/guider/kampanjpris-efter-kampanjen",
   },
   {
-    term: "Glaskrossdetektor",
-    definition: "Detektor som reagerar på ljudet av krossat glas i stället för på rörelse.",
-  },
-  {
-    term: "Husdjursanpassad detektor",
+    term: "Kontantkort",
     definition:
-      "Rörelsedetektor som ignorerar djur under en viss vikt, oftast runt 25 kilo. Vikten och hur högt djuret kan hoppa avgör.",
-    href: "/guider/hemlarm-och-husdjur",
+      "Ett förbetalt SIM-kort utan faktura och oftast utan bindningstid. Du fyller på när du vill. Sedan 1 augusti 2022 måste alla kontantkort registreras med kontrollerad identitet innan de används.",
+    href: "/kontantkort",
   },
   {
-    term: "Hyrlarm",
+    term: "Latens",
     definition:
-      "Ett larm där larmbolaget äger utrustningen och du betalar en månadsavgift så länge avtalet löper. Utrustningen lämnas tillbaka när du säger upp.",
+      "Fördröjningen i nätet, alltså hur lång tid det tar för data att gå fram och tillbaka. Mäts i millisekunder (ms). Låg latens märks mest i samtal, videomöten och spel.",
   },
   {
-    term: "Inbrottslarm",
+    term: "Mbit/s",
+    definition: `Megabit per sekund, måttet på hastighet. Åtta megabit motsvarar en megabyte. ${nedladdning ? `I Opensignals mätning från december 2025 hade ${nedladdning.vinnare} högst genomsnittlig nedladdningshastighet, ${nedladdning.varde}.` : ""}`,
+  },
+  {
+    term: "Mobilt bredband",
     definition:
-      "Larm som ska upptäcka att någon tar sig in i bostaden. Ofta samma system som även har rök- och vattendetektorer.",
+      "Internet via mobilnätet med ett datasim i en router, en dongel eller en surfplatta, i stället för fast bredband. Abonnemangen har ofta bara surf, utan samtal och sms.",
   },
   {
-    term: "Installationsavgift",
+    term: "MVNO",
     definition:
-      "Engångsavgift för att en tekniker monterar larmet. Ingår ibland i startpaketet, ibland inte. Fråga innan du skriver på.",
+      "Mobile Virtual Network Operator, en virtuell operatör. Den äger inget eget nät utan hyr kapacitet hos någon av de fyra operatörer som äger mobilnät i Sverige: Telia, Tele2, Telenor och Tre.",
+    href: "/guider/virtuella-operatorer",
   },
   {
-    term: "Jour",
+    term: "Net4Mobility",
     definition:
-      "Larmcentralens bemanning dygnet runt, året om. Ett larm utan jour går bara till din egen mobil.",
+      "Nätbolaget som Tele2 och Telenor äger tillsammans. Det bygger deras gemensamma nät för 4G och 5G och använder 700 MHz för täckning över stora ytor och 3 500 MHz för kapacitet i tätorter.",
+    href: "/nat",
   },
   {
-    term: "Jämförpris",
+    term: "Nummerportering",
     definition:
-      "Priset som gör avtal jämförbara. Vi använder första året: startkostnad plus tolv månadsavgifter.",
+      "Att flytta ditt nummer till en ny operatör. Avbrottet får vara högst en arbetsdag, och rätten gäller minst en månad efter att avtalet upphört. Den gamla operatören tar inte betalt för att lämna ifrån sig numret. Bindningstid hindrar inte en portering, men återstående tid ska betalas (PTSFS 2022:4).",
+    href: "/guider/byta-operator-behalla-nummer",
   },
   {
-    term: "Kameradetektor",
+    term: "Obegränsad surf",
     definition:
-      "Rörelsedetektor med kamera som tar bilder när den löser ut, så att larmcentralen kan se om något faktiskt händer.",
-    href: "/guider/hemlarm-med-kamera",
+      "Abonnemang utan fast surfgräns i Sverige. Inom EU kan operatören ha en gräns enligt fair use, och villkoren kan innehålla andra begränsningar. Läs dem innan du väljer.",
+    href: "/obegransad-surf",
   },
   {
-    term: "Kontaktperson",
+    term: "Operatörslås",
     definition:
-      "Den larmcentralen ringer när de inte får tag på dig. Oftast en granne eller släkting som kan ta sig till bostaden.",
+      "En spärr som gör att telefonen bara fungerar med en viss operatörs SIM-kort. När bindningstiden för ett abonnemang med subventionerad telefon har gått ut ska operatören på begäran ta bort låset kostnadsfritt (12 kap. 15 § lagen om elektronisk kommunikation).",
   },
   {
-    term: "Larm utan abonnemang",
+    term: "Ordinarie pris",
     definition:
-      "Ett larm som bara skickar notiser till din mobil, utan larmcentral. Billigare i drift, men hela ansvaret att agera ligger på dig.",
-    href: "/guider/hemlarm-utan-abonnemang",
+      "Månadspriset som gäller när kampanjen är slut. Det är oftast det pris du betalar längst, och därför det som avgör vad abonnemanget kostar över tid.",
+    href: "/guider/kampanjpris-efter-kampanjen",
   },
   {
-    term: "Larmbricka",
-    definition: "Bricka eller tagg som slår av och på larmet när du håller den mot manöverpanelen.",
-  },
-  {
-    term: "Larmcentral",
+    term: "PTS",
     definition:
-      "Bemannad central som tar emot larmet, bedömer det och agerar. Skickar väktare eller larmar räddningstjänsten.",
-    href: "/guider/larmcentral-och-certifiering",
+      "Post- och telestyrelsen, myndigheten som har tillsyn över telemarknaden. PTS skriver föreskrifter (PTSFS), till exempel om nummerportering, och tar fram statistik och kartläggningar av mobiltäckningen.",
   },
   {
-    term: "Larmklass",
+    term: "PUK-kod",
     definition:
-      "Klassning av inbrottslarm enligt normen SSF 130, från 1 till 4. Ställs ofta som krav av försäkringsbolag för företag.",
-    href: "/guider/larmklasser",
+      "Koden som låser upp SIM-kortet om du har skrivit fel PIN-kod för många gånger. Du hittar den på SIM-kortets hållare eller hos operatören. Skriver du fel PUK-kod för många gånger behöver du ett nytt SIM-kort.",
   },
   {
-    term: "Magnetkontakt",
-    definition: "Sensor på dörr eller fönster som löser ut när den öppnas.",
-  },
-  { term: "Manöverpanel", definition: "Panelen där du slår av och på larmet." },
-  {
-    term: "Nattkoppling",
+    term: "Roam like at home",
     definition:
-      "Du larmar bara delar av bostaden, till exempel entréplanet, medan du sover på övervåningen.",
+      "EU-regeln som gör att du kan ringa, sms:a och surfa i andra EU-länder utan extra kostnad, som hemma. Den gäller i EU samt Island, Liechtenstein och Norge, och är förlängd till 2032.",
+    href: "/guider/surfa-i-eu",
   },
   {
-    term: "Nödknapp",
+    term: "Roaming",
     definition:
-      "Knapp du bär med dig eller har på väggen som larmar larmcentralen direkt. Kallas även överfallslarm.",
+      "Att använda mobilen i ett annat lands mobilnät. Inom EU och EES gäller Roam like at home. Utanför kan det kosta extra, och priset bestämmer din operatör.",
+    href: "/guider/surfa-utanfor-eu",
   },
   {
-    term: "Områdesskydd",
+    term: "SIM-kort",
     definition:
-      "Skydd utanför väggarna, till exempel detektorer eller kameror på tomten, som larmar innan någon nått huset.",
+      "Kortet som kopplar telefonen till ditt abonnemang och ditt nummer. Finns som fysiskt kort i olika storlekar och som eSIM.",
+    href: "/esim",
   },
   {
-    term: "Operatör",
-    definition:
-      "Personen på larmcentralen som tar emot larmet, bedömer det och bestämmer vad som ska hända.",
+    term: "SKI",
+    definition: `Svenskt Kvalitetsindex, som mäter kundnöjdhet. I SKI Mobil 2025 var branschsnittet för privatkunder ${skiBransch ? decimal(skiBransch.varde) : ""}, och ${skiHogst.namn} hade högst nöjdhet med ${decimal(skiHogst.varde)}.`,
   },
   {
-    term: "PIR-detektor",
+    term: "Snittpris första året",
     definition:
-      "Passiv infraröd detektor. Den vanligaste rörelsedetektorn, reagerar på kroppsvärme som rör sig.",
+      "Måttet vi sorterar jämförelsen efter: kampanjpriset för de månader det gäller, ordinarie pris resten av året och eventuell startavgift, delat med tolv. Det gör kampanjer och fasta priser jämförbara.",
+    href: "/sa-jamfor-vi",
   },
   {
-    term: "Prisjustering",
+    term: "Sparad surf",
     definition:
-      "Larmbolagets rätt att höja månadsavgiften under avtalstiden. Står i villkoren och är en vanlig orsak till att priset stiger efter första året.",
-    href: "/guider/pruta-pa-hemlarm",
+      "Surf du inte har använt under en månad följer med till nästa. Hur länge den sparade surfen gäller skiljer sig mellan operatörerna.",
+    href: "/guider/sparad-surf-dubbel-surf",
   },
   {
-    term: "QR-kod",
+    term: "Startavgift",
     definition:
-      "Koden du skannar med appen för att koppla ihop en ny detektor eller panel med larmet.",
+      "En engångsavgift när du tecknar abonnemanget. En del operatörer tar bort den om du beställer på nätet. Vi räknar in den i snittpriset första året.",
   },
   {
-    term: "Rökdetektor",
+    term: "Strypt hastighet",
     definition:
-      "Detektor som känner av rök. Kopplad till hemlarmet larmar den även larmcentralen, inte bara dig i rummet.",
-    href: "/guider/brandvarnare-och-brandlarm",
-  },
-  { term: "Rörelsedetektor", definition: "Detektor som reagerar på rörelse och värme i ett rum." },
-  {
-    term: "Sabotagelarm",
-    definition:
-      "Larmar om någon försöker öppna, flytta eller störa ut en detektor, även när larmet är frånkopplat.",
+      "När surfen för månaden är slut sänks hastigheten kraftigt i stället för att du betalar extra. Den gäller tills nästa månad börjar eller tills du köper mer surf.",
+    href: "/guider/nar-surfen-tar-slut",
   },
   {
-    term: "Skalskydd",
+    term: "Surfpott",
     definition:
-      "Skydd som larmar redan när någon försöker ta sig in, via dörrar och fönster, innan personen är inne.",
+      "Surfmängden som ingår i abonnemanget varje månad. Med delad surf är det en gemensam pott som flera SIM-kort drar från.",
   },
   {
-    term: "SSF 130",
+    term: "Telekområdgivarna",
     definition:
-      "Stöldskyddsföreningens norm för hur ett inbrottslarm ska projekteras och installeras. Ligger till grund för larmklasserna.",
+      "Kostnadsfri vägledning för konsumenter med frågor om telefoni, bredband och tv. Hit kan du vända dig om du har problem med din operatör. Telekområdgivarna avgör inte tvister, det gör ARN.",
+    href: "/guider/klaga-pa-operatoren",
   },
-  { term: "SSF 136", definition: "Svensk norm för certifierade larmcentraler." },
-  { term: "Tillkoppling", definition: "Att slå på larmet. Att slå av det heter frånkoppling." },
   {
-    term: "Trygghetslarm",
-    definition:
-      "Larm för att kalla på hjälp vid sjukdom eller fall, oftast via kommunen. Det är något annat än ett inbrottslarm.",
+    term: "Täckning",
+    definition: `Hur väl mobilnätet når fram där du är. Enligt PTS fanns grundläggande täckning utomhus på ${TACKNING.ptsYta} procent av Sveriges yta i november 2025. Inomhus kan täckningen vara sämre.`,
+    href: "/guider/basta-tackning-sverige",
   },
   {
     term: "Uppsägningstid",
     definition:
-      "Hur länge avtalet fortsätter efter att du sagt upp det. Tre månader är vanligt och läggs ovanpå bindningstiden.",
-    href: "/guider/bindningstid-och-uppsagning",
+      "Hur länge avtalet fortsätter efter att du sagt upp det. För konsumenter högst en månad (12 kap. 13 § lagen om elektronisk kommunikation). Har du bindningstid behöver du inte säga upp tidigare än en månad före bindningstidens slut.",
+    href: "/guider/bindningstid-uppsagningstid",
   },
   {
-    term: "Utomhusdetektor",
+    term: "Villkorsändring",
     definition:
-      "Detektor byggd för att sitta ute och tåla väder, djur och växtlighet utan att lösa ut i onödan.",
+      "När operatören höjer priset eller ändrar villkoren. Du ska få besked minst en månad innan, och om ändringen inte enbart är till din fördel kan du säga upp avtalet utan extra kostnad inom tre månader från beskedet (12 kap. 12 § lagen om elektronisk kommunikation).",
+    href: "/guider/prishojning-mobilabonnemang",
   },
   {
-    term: "Vattenlarm",
-    definition: "Sensor som larmar vid vattenläckage, ofta placerad under diskmaskinen.",
-  },
-  {
-    term: "Verifiering",
+    term: "VoLTE",
     definition:
-      "Larmcentralens kontroll av om ett larm är riktigt, via kamera eller ljud. Avgör om väktare skickas.",
-  },
-  { term: "Väktarutryckning", definition: "En väktare åker till bostaden när larmet gått." },
-  {
-    term: "Wifi-larm",
-    definition:
-      "Larm som kopplas upp via ditt wifi. Saknar det mobilnät som reserv står du utan larm om nätet går ner.",
+      "Voice over LTE, samtal över 4G-nätet. Sedan 2G och 3G stängts behöver telefonen VoLTE för att ringa i Tele2s, Telenors och Tres nät. Telefoner som inte kan ringa nödsamtal över VoLTE blockerades där från 2 februari 2026 efter ett föreläggande från PTS.",
+    href: "/guider/2g-3g-nedslackning",
   },
   {
-    term: "Xenonblixt",
-    definition:
-      "Blixtljuset vid sirenen som blinkar när larmet går, så att det syns utifrån var larmet kommer ifrån.",
-  },
-  {
-    term: "Ytskydd",
-    definition:
-      "Skydd inne i bostaden, med rörelsedetektorer som täcker rum och ytor. Motsatsen till skalskydd, som larmar redan i dörren.",
-  },
-  {
-    term: "Zon",
-    definition:
-      "En avgränsad del av larmet, till exempel ett rum eller ett plan, som kan larmas på eller av för sig.",
-  },
-  {
-    term: "Z-Wave",
-    definition:
-      "Trådlöst protokoll som en del larm och smarta hem-produkter pratar med varandra genom.",
+    term: "Wifi-samtal",
+    definition: `Samtal som går via wifi i stället för mobilnätet, till exempel där täckningen inomhus är dålig. Både telefonen och operatören måste ha stöd för det. ${medWifiSamtal} av de ${aktiva.length} operatörer vi följer anger att de har wifi-samtal.`,
+    href: "/guider/wifi-samtal-och-dalig-tackning",
   },
   {
     term: "Ångerrätt",
     definition:
-      "Rätten att ångra ett köp inom 14 dagar vid till exempel dörrförsäljning. Ångern ska vara skriftlig.",
-    href: "/guider/dorrforsaljning-och-angerratt",
-  },
-  {
-    term: "Årsavgift",
-    definition:
-      "Avgift som betalas en gång om året i stället för varje månad. Räkna om den till månadskostnad när du jämför.",
-  },
-  {
-    term: "Återställning",
-    definition:
-      "Att kvittera och nollställa larmet efter att det gått, så att systemet är skarpt igen.",
-  },
-  {
-    term: "Ägandeform",
-    definition:
-      "Om du äger, hyr eller avbetalar utrustningen. Avgör vad larmet kostar över tid och vad som händer när du säger upp avtalet.",
-  },
-  {
-    term: "Överfallslarm",
-    definition: "Knapp som larmar larmcentralen direkt om du hotas i hemmet.",
-  },
-  {
-    term: "Övervakningskamera",
-    definition:
-      "Kamera som spelar in eller strömmar bild. Det finns regler för vad du får filma, särskilt om grannar eller gata syns.",
-    href: "/guider/kameraovervakning-hemma-regler",
+      "Tecknar du på nätet eller per telefon har du 14 dagars ångerrätt enligt distansavtalslagen, räknat från att avtalet ingås. Ringer en säljare upp dig gäller avtalet bara om du skriftligen accepterar erbjudandet efter samtalet.",
+    href: "/guider/angerratt-mobilabonnemang",
   },
 ];
 
 const LETTERS = [
+  "0–9",
   "A",
   "B",
   "C",
@@ -330,7 +306,7 @@ const LETTERS = [
 ];
 
 /* Å, Ä och Ö måste få egna ankare. Slås de ihop med A och O krockar länkarna. */
-const LETTER_IDS: Record<string, string> = { Å: "aa", Ä: "ae", Ö: "oe" };
+const LETTER_IDS: Record<string, string> = { "0–9": "siffror", Å: "aa", Ä: "ae", Ö: "oe" };
 const letterId = (letter: string) => LETTER_IDS[letter] ?? letter.toLocaleLowerCase("sv-SE");
 
 const termId = (term: string) =>
@@ -342,26 +318,27 @@ const termId = (term: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 
-const forstaBokstaven = (term: string) => term[0]?.toLocaleUpperCase("sv-SE") ?? "";
+const forstaBokstaven = (term: string) =>
+  /^[0-9]/.test(term) ? "0–9" : (term[0]?.toLocaleUpperCase("sv-SE") ?? "");
 
 const SORTERADE = [...TERMS].sort((a, b) => a.term.localeCompare(b.term, "sv"));
 
-/* Tre ord som styr vad avtalet faktiskt kostar. Lyfts fram högst upp. */
+/* Tre ord som styr vad abonnemanget faktiskt kostar. Lyfts fram högst upp. */
 const NYCKELORD = [
   {
     term: "Bindningstid",
     Icon: Clock,
-    text: "Avgör hur länge du sitter fast om priset höjs eller du flyttar.",
+    text: "Hur länge du sitter fast om priset höjs eller ett bättre erbjudande dyker upp.",
   },
   {
-    term: "Ägandeform",
-    Icon: KeyRound,
-    text: "Äger, hyr eller avbetalar du larmet? Det styr kostnaden över tid.",
+    term: "Ordinarie pris",
+    Icon: Tag,
+    text: "Priset efter kampanjen. Det du betalar längst och det som avgör kostnaden.",
   },
   {
-    term: "Larmcentral",
-    Icon: Headset,
-    text: "Ingår den eller inte? Utan den går larmet bara till din egen mobil.",
+    term: "Nummerportering",
+    Icon: Repeat,
+    text: "Du behåller numret när du byter, och avbrottet får vara högst en arbetsdag.",
   },
 ];
 
@@ -441,8 +418,9 @@ function Page() {
           <div className="relative mx-auto max-w-[1140px] px-6 py-16 lg:py-24">
             <h1 className="max-w-[18ch] font-bold text-white">{TITLE}</h1>
             <p className="mt-5 max-w-[56ch] text-[18px] leading-relaxed text-dark-muted">
-              Alla ord du möter i en larmoffert, förklarade på svenska. Slå upp det säljaren sa
-              innan du skriver på.
+              Orden du möter när du jämför mobilabonnemang, från bindningstid och kampanjpris till
+              MVNO, fair use och VoLTE. Varje ord är förklarat på vanlig svenska, och där det finns
+              en lagregel eller en siffra står källan med.
             </p>
             <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[13.5px] text-white/75">
               <span>{SORTERADE.length} ord</span>
@@ -458,15 +436,15 @@ function Page() {
           <div className="mx-auto max-w-[1140px] px-6">
             <div className="max-w-[68ch] space-y-5 text-[17.5px] leading-[1.7]">
               <p>
-                Larmbranschen har ett eget språk, och det används mest när något ska säljas. En
-                offert kan säga att paketet har skalskydd med verifiering och dubbel kommunikation
-                utan att du blir klokare på vad du får.
+                Operatörerna har ett eget språk. Ett erbjudande kan lova dubbel surf, fri
+                startavgift och 5G utan att det framgår vad du betalar när kampanjen är slut eller
+                hur länge du är bunden.
               </p>
               <p>
-                Orden avgör också vad du betalar. Skillnaden mellan att äga och hyra larmet är
-                tusenlappar över några år, och skillnaden mellan larm med och utan larmcentral är
-                vem som faktiskt åker hem till dig när det smäller. Här är varje ord förklarat på
-                ren svenska, i den betydelse larmbolagen själva använder.
+                Orden avgör också vad du betalar. Skillnaden mellan kampanjpris och ordinarie pris
+                kan vara stor över ett år, och bindningstiden avgör om du kan byta när ett bättre
+                erbjudande kommer. Lagreglerna om bindningstid, uppsägning och nummerportering
+                gäller alla operatörer, och de står här med paragraf.
               </p>
             </div>
 
@@ -510,7 +488,7 @@ function Page() {
                   type="search"
                   value={fraga}
                   onChange={(e) => setFraga(e.target.value)}
-                  placeholder="Sök ord, till exempel bindningstid"
+                  placeholder="Sök ord, till exempel eSIM"
                   className="h-11 w-full rounded-lg border border-input-border bg-background pl-9 pr-3 text-[15px] outline-none focus-visible:border-primary"
                 />
               </label>
@@ -583,7 +561,7 @@ function Page() {
                           </p>
                           {item.href ? (
                             <Link
-                              to={item.href}
+                              to={item.href as never}
                               className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-[14px] font-semibold text-primary hover:underline"
                             >
                               Läs mer
@@ -601,8 +579,9 @@ function Page() {
 
         <CtaBand
           rubrik="Nu vet du vad orden betyder. Se vad de kostar."
-          ingress="Mobilpoolen öppnar snart. Lämna din e-post så hör vi av oss när du kan begära offert."
-          knapptext="Jämför larm gratis →"
+          ingress="Jämför alla abonnemang på en gång, sorterat efter vad du betalar på ett år."
+          knapptext="Jämför mobilabonnemang →"
+          hash="alla"
           bildnyckel="vanner-middag-utomhus"
         />
       </main>

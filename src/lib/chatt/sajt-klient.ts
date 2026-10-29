@@ -17,11 +17,11 @@ export const CHATT_SAJT = {
   // Hårt bindestreck (U+2011) så att "AI-assistent" aldrig bryts över två rader.
   bubbla: "Frågor? Fråga vår AI\u2011assistent",
   valkomst:
-    "Hej! Jag svarar på frågor om hemlarm, larmbolagens priser och villkor och vad som passar ditt boende. Vad undrar du över?",
+    "Hej! Jag svarar på frågor om mobilabonnemang, operatörernas priser och villkor och vad som passar dig. Vad undrar du över?",
   snabbval: [
-    "Vilket larm passar en villa?",
-    "Vad kostar ett hemlarm?",
-    "Verisure eller Sector Alarm?",
+    "Vilket abonnemang är billigast?",
+    "Hur mycket surf behöver jag?",
+    "Hallon eller Comviq?",
     "Hur fungerar Mobilpoolen?",
   ],
   integritet: "/integritetspolicy#ai-chatt",
@@ -31,8 +31,8 @@ export const CHATT_SAJT = {
 /** Knappar chatten kan visa. Utan href är det ett formulär i chatten (chatt-formular.tsx). */
 export const CHATT_ATGARDER = {
   vantelista: { etikett: "Få besked när vi öppnar" },
-  larmbolag: { etikett: "Se larmbolagen", href: "/larmbolag" },
-  jamfor: { etikett: "Jämför larmbolag", href: "/jamfor" },
+  larmbolag: { etikett: "Se operatörerna", href: "/operatorer" },
+  jamfor: { etikett: "Jämför operatörer", href: "/jamfor" },
   kalkylator: { etikett: "Räkna på kostnaden", href: "/verktyg/hemlarm-kalkylator" },
   kontakt: { etikett: "Kontakta oss", href: "/kontakt" },
 } as const satisfies Record<string, { etikett: string; href?: string }>;

@@ -1,57 +1,41 @@
-import { useEffect, useRef, useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
+import { Mail } from "lucide-react";
 import { pageHead } from "@/lib/seo";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
-import { ChevronDown, Mail } from "lucide-react";
 
-/**
- * Kontaktformulärets mottagare: edge function i Elpoolens Supabase-projekt, där
- * Resend-nyckeln finns. Källkoden ligger i supabase/functions/mobilpoolen-kontakt.
- * verify_jwt är av, så ingen nyckel behövs.
- */
-const KONTAKT_URL = "https://rilpjkuozcglwnxwfxgl.supabase.co/functions/v1/mobilpoolen-kontakt";
+const EPOST = "info@mobilpoolen.se";
 
-const AMNEN = ["Allmän fråga", "Larmbolag eller samarbete"] as const;
+/** Färdiga mejl, så att det som behövs för att rätta ett pris kommer med direkt. */
+const ARENDEN: { rubrik: string; text: string; amne: string; brodtext?: string }[] = [
+  {
+    rubrik: "Allmänna frågor",
+    text: "Frågor om tjänsten, jämförelsen eller guiderna.",
+    amne: "Fråga till Mobilpoolen",
+  },
+  {
+    rubrik: "Rapportera fel pris",
+    text: "Har en operatör ändrat pris eller villkor? Skriv vilket abonnemang det gäller och länka gärna till operatörens sida.",
+    amne: "Fel pris på Mobilpoolen",
+    brodtext:
+      "Operatör och abonnemang:\nVad som står på Mobilpoolen:\nVad som står hos operatören (länk):\n",
+  },
+  {
+    rubrik: "Operatörer och samarbeten",
+    text: "Är du operatör och vill rätta en uppgift eller prata samarbete?",
+    amne: "Operatör eller samarbete",
+  },
+  {
+    rubrik: "Dina personuppgifter",
+    text: "Frågor om hur vi behandlar personuppgifter eller om dina rättigheter.",
+    amne: "Personuppgifter",
+  },
+];
 
-const NAMN_MAX = 100;
-const EPOST_MAX = 200;
-const MEDDELANDE_MAX = 5000;
-const EPOST_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-type Falt = "name" | "email" | "message";
-type FaltFel = Partial<Record<Falt, string>>;
-
-const FALTFEL: Record<string, [Falt, string]> = {
-  invalid_name: ["name", "Fyll i ditt namn."],
-  invalid_email: ["email", "Fyll i en giltig e-postadress, till exempel namn@exempel.se."],
-  invalid_message: ["message", "Skriv ett meddelande på minst två tecken."],
-};
-
-const FELMEDDELANDEN: Record<string, string> = {
-  rate_limited: "Du har skickat flera meddelanden på kort tid. Vänta en stund och försök igen.",
-  invalid_subject: "Välj vad ärendet gäller och försök igen.",
-  send_failed:
-    "Meddelandet kunde inte skickas just nu. Försök igen om en stund eller mejla oss direkt på info@mobilpoolen.se.",
-};
-
-const STANDARDFEL =
-  "Något gick fel. Försök igen eller mejla oss direkt på info@mobilpoolen.se. Ditt meddelande finns kvar.";
-
-function validera(form: { name: string; email: string; message: string }): FaltFel {
-  const fel: FaltFel = {};
-  const namn = form.name.trim();
-  if (!namn) fel.name = "Fyll i ditt namn.";
-  else if (namn.length > NAMN_MAX) fel.name = `Namnet får vara högst ${NAMN_MAX} tecken.`;
-  const epost = form.email.trim();
-  if (!epost) fel.email = "Fyll i din e-postadress.";
-  else if (!EPOST_RE.test(epost) || epost.length > EPOST_MAX)
-    fel.email = "Fyll i en giltig e-postadress, till exempel namn@exempel.se.";
-  const meddelande = form.message.trim();
-  if (meddelande.length < 2) fel.message = "Skriv ett meddelande på minst två tecken.";
-  else if (meddelande.length > MEDDELANDE_MAX)
-    fel.message = `Meddelandet får vara högst ${MEDDELANDE_MAX} tecken.`;
-  return fel;
+function mailto(amne: string, brodtext?: string) {
+  const delar = [`subject=${encodeURIComponent(amne)}`];
+  if (brodtext) delar.push(`body=${encodeURIComponent(brodtext)}`);
+  return `mailto:${EPOST}?${delar.join("&")}`;
 }
 
 export const Route = createFileRoute("/kontakt")({
@@ -59,109 +43,13 @@ export const Route = createFileRoute("/kontakt")({
     pageHead({
       title: "Kontakta oss | Mobilpoolen",
       description:
-        "Frågor om Mobilpoolens jämförelsetjänst, dina uppgifter eller samarbeten? Mejla oss så svarar vi så fort vi kan.",
+        "Mejla Mobilpoolen på info@mobilpoolen.se om du har frågor om tjänsten, vill rapportera ett fel pris eller är operatör och vill rätta en uppgift.",
       canonical: "https://mobilpoolen.se/kontakt",
     }),
   component: KontaktPage,
 });
 
 function KontaktPage() {
-  const [form, setForm] = useState({
-    subject: "Allmän fråga",
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [website, setWebsite] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [felText, setFelText] = useState(STANDARDFEL);
-  const [faltFel, setFaltFel] = useState<FaltFel>({});
-  const skickar = useRef(false);
-  const formRef = useRef<HTMLFormElement>(null);
-  const felRuta = useRef<HTMLParagraphElement>(null);
-  const tackRubrik = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    if (status === "success") tackRubrik.current?.focus();
-    if (status === "error") felRuta.current?.focus();
-  }, [status]);
-
-  const andra = (falt: "subject" | Falt, value: string) => {
-    setForm((f) => ({ ...f, [falt]: value }));
-    if (falt !== "subject") setFaltFel((fel) => ({ ...fel, [falt]: undefined }));
-  };
-
-  const fokuseraForstaFel = () =>
-    window.requestAnimationFrame(() =>
-      formRef.current?.querySelector<HTMLElement>('[aria-invalid="true"]')?.focus(),
-    );
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (status === "sending" || skickar.current) return;
-    const fel = validera(form);
-    setFaltFel(fel);
-    if (Object.keys(fel).length > 0) {
-      setStatus("idle");
-      fokuseraForstaFel();
-      return;
-    }
-    skickar.current = true;
-    setStatus("sending");
-    try {
-      const res = await fetch(KONTAKT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          subject: form.subject,
-          name: form.name.trim(),
-          email: form.email.trim(),
-          message: form.message.trim(),
-          website,
-        }),
-      });
-      const data = (await res.json().catch(() => null)) as {
-        ok?: boolean;
-        error?: string;
-      } | null;
-      if (data?.ok === true) {
-        setStatus("success");
-        return;
-      }
-      const kod = data?.error ?? (res.status === 429 ? "rate_limited" : "");
-      const falt = FALTFEL[kod];
-      if (falt) {
-        setFaltFel({ [falt[0]]: falt[1] });
-        setStatus("idle");
-        fokuseraForstaFel();
-        return;
-      }
-      setFelText(FELMEDDELANDEN[kod] ?? STANDARDFEL);
-      setStatus("error");
-    } catch {
-      setFelText(STANDARDFEL);
-      setStatus("error");
-    } finally {
-      skickar.current = false;
-    }
-  };
-
-  const resetForm = () => {
-    setForm({
-      subject: "Allmän fråga",
-      name: "",
-      email: "",
-      message: "",
-    });
-    setWebsite("");
-    setFaltFel({});
-    setStatus("idle");
-  };
-
-  // Samma fält som hero-, offert- och väntelisteformulären (input-lg): 56 px
-  // höga och med en kant som har 3,4:1 mot vitt. Den gamla grå kanten hade 1,5:1.
-  const fieldClass = "input-lg text-foreground placeholder:text-muted-foreground";
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
@@ -188,227 +76,71 @@ function KontaktPage() {
               Kontakta oss
             </h1>
             <p className="mt-3 max-w-2xl text-[17px] leading-relaxed text-white/82">
-              Frågor om tjänsten, dina uppgifter eller samarbeten? Mejla oss så svarar vi så fort vi
-              kan.
-            </p>
-            <p className="mt-2 max-w-2xl text-[17px] leading-relaxed text-white/82">
-              Vi som grundade Mobilpoolen svarar personligen, oftast inom 24 timmar.
+              Mejla oss på{" "}
+              <a href={`mailto:${EPOST}`} className="underline underline-offset-2 hover:text-white">
+                {EPOST}
+              </a>
+              . Vi har ingen telefon och inget formulär, men vi läser varje mejl och svarar så fort
+              vi kan.
             </p>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pb-24">
-          <div className="max-w-[560px]">
+          <div className="max-w-[680px]">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="card-soft p-3 flex flex-col justify-center items-center min-h-[90px]">
-                <h2 className="text-sm font-semibold text-foreground text-center leading-tight">
-                  Allmänna frågor &amp; support
-                </h2>
-                <a
-                  href="mailto:info@mobilpoolen.se"
-                  className="inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline"
-                >
-                  info@mobilpoolen.se
-                </a>
-              </div>
-              <div className="card-soft p-3 flex flex-col justify-center items-center min-h-[90px]">
-                <h2 className="text-sm font-semibold text-foreground text-center leading-tight">
-                  Larmbolag &amp; samarbeten
-                </h2>
-                <a
-                  href="mailto:samarbeten@mobilpoolen.se"
-                  className="inline-flex min-h-11 items-center text-sm font-medium text-primary hover:underline"
-                >
-                  samarbeten@mobilpoolen.se
-                </a>
-              </div>
-            </div>
-
-            <div className="card-soft mt-12 p-8">
-              {status === "success" ? (
-                <div className="text-center py-6">
-                  <h2
-                    ref={tackRubrik}
-                    tabIndex={-1}
-                    className="text-lg font-bold text-foreground outline-none"
-                  >
-                    Tack för ditt meddelande!
-                  </h2>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Vi svarar oftast inom 24 timmar.
+              {ARENDEN.map((a) => (
+                <div key={a.rubrik} className="card-soft flex flex-col p-5">
+                  <h2 className="text-[16px] font-semibold text-foreground">{a.rubrik}</h2>
+                  <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-foreground/80">
+                    {a.text}
                   </p>
-                  <button
-                    type="button"
-                    onClick={resetForm}
-                    className="mt-6 inline-flex items-center justify-center rounded-xl border border-primary/30 px-5 h-11 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                  <a
+                    href={mailto(a.amne, a.brodtext)}
+                    className="mt-3 inline-flex min-h-11 items-center gap-2 text-[15px] font-semibold text-primary hover:underline"
                   >
-                    Skicka ett till
-                  </button>
+                    <Mail className="h-4 w-4" aria-hidden />
+                    Mejla oss
+                  </a>
                 </div>
-              ) : (
-                <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
-                  <div className="absolute left-[-9999px]" aria-hidden="true">
-                    <label htmlFor="contact-website" className="sr-only">
-                      Fyll inte i detta fält
-                    </label>
-                    <input
-                      id="contact-website"
-                      type="text"
-                      name="website"
-                      value={website}
-                      onChange={(e) => setWebsite(e.target.value)}
-                      tabIndex={-1}
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-subject"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
-                    >
-                      Vad gäller det?
-                    </label>
-                    <div className="relative">
-                      <select
-                        id="contact-subject"
-                        value={form.subject}
-                        onChange={(e) => andra("subject", e.target.value)}
-                        className={`${fieldClass} pr-10 appearance-none`}
-                      >
-                        {AMNEN.map((amne) => (
-                          <option key={amne}>{amne}</option>
-                        ))}
-                      </select>
-                      <ChevronDown
-                        aria-hidden
-                        className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-name"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
-                    >
-                      Namn
-                    </label>
-                    <input
-                      id="contact-name"
-                      type="text"
-                      value={form.name}
-                      onChange={(e) => andra("name", e.target.value)}
-                      aria-required
-                      aria-invalid={faltFel.name ? true : undefined}
-                      aria-describedby={faltFel.name ? "contact-name-error" : undefined}
-                      placeholder="Ditt namn"
-                      autoComplete="name"
-                      maxLength={NAMN_MAX}
-                      className={fieldClass}
-                    />
-                    {faltFel.name && (
-                      <p
-                        id="contact-name-error"
-                        role="alert"
-                        className="mt-1 text-sm text-destructive"
-                      >
-                        {faltFel.name}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-email"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
-                    >
-                      E-postadress
-                    </label>
-                    <input
-                      id="contact-email"
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => andra("email", e.target.value)}
-                      aria-required
-                      aria-invalid={faltFel.email ? true : undefined}
-                      aria-describedby={faltFel.email ? "contact-email-error" : undefined}
-                      placeholder="namn@exempel.se"
-                      autoComplete="email"
-                      inputMode="email"
-                      maxLength={EPOST_MAX}
-                      className={fieldClass}
-                    />
-                    {faltFel.email && (
-                      <p
-                        id="contact-email-error"
-                        role="alert"
-                        className="mt-1 text-sm text-destructive"
-                      >
-                        {faltFel.email}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="contact-message"
-                      className="block text-sm font-semibold text-foreground mb-1.5"
-                    >
-                      Meddelande
-                    </label>
-                    <textarea
-                      id="contact-message"
-                      value={form.message}
-                      onChange={(e) => andra("message", e.target.value)}
-                      aria-required
-                      aria-invalid={faltFel.message ? true : undefined}
-                      aria-describedby={faltFel.message ? "contact-message-error" : undefined}
-                      placeholder="Vad kan vi hjälpa dig med?"
-                      rows={4}
-                      maxLength={MEDDELANDE_MAX}
-                      className={`${fieldClass} py-3 resize-vertical`}
-                    />
-                    {faltFel.message && (
-                      <p
-                        id="contact-message-error"
-                        role="alert"
-                        className="mt-1 text-sm text-destructive"
-                      >
-                        {faltFel.message}
-                      </p>
-                    )}
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={status === "sending"}
-                    aria-busy={status === "sending"}
-                    className="w-full h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-cta text-cta-foreground font-semibold hover:bg-cta-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
-                  >
-                    <Mail className="w-4 h-4" aria-hidden />
-                    {status === "sending" ? "Skickar…" : "Skicka meddelande"}
-                  </button>
-                  <p className="text-[13px] leading-relaxed text-foreground/65">
-                    Vi använder dina uppgifter bara för att svara på ditt meddelande. Läs mer i vår{" "}
-                    <Link
-                      to="/integritetspolicy"
-                      className="text-primary underline underline-offset-2"
-                    >
-                      integritetspolicy
-                    </Link>
-                    .
-                  </p>
-                  {status === "error" && (
-                    <p
-                      ref={felRuta}
-                      tabIndex={-1}
-                      className="text-sm text-destructive outline-none"
-                      role="alert"
-                    >
-                      {felText}
-                    </p>
-                  )}
-                </form>
-              )}
+              ))}
             </div>
 
-            <div className="mt-16 text-sm text-muted-foreground">
+            <div className="mt-12 space-y-4 text-[16px] leading-relaxed text-foreground/90">
+              <h2 className="text-xl font-bold text-foreground">
+                Hittat ett pris som inte stämmer?
+              </h2>
+              <p>
+                Operatörerna ändrar priser och kampanjer ofta. Varje abonnemang i jämförelsen har en
+                länk till operatörens sida och ett datum för när vi senast kontrollerade det. Ser du
+                att något har ändrats vill vi gärna veta det. Skriv vilket abonnemang det gäller,
+                vad som står hos oss och vad som står hos operatören, så rättar vi efter att ha
+                kontrollerat det mot operatörens egen sida.{" "}
+                <Link to="/sa-jamfor-vi" className="text-primary underline underline-offset-2">
+                  Så jämför vi
+                </Link>
+                .
+              </p>
+              <p>
+                Gäller frågan ditt eget abonnemang, din faktura eller en uppsägning? Då behöver du
+                kontakta operatören direkt, eftersom vi inte har tillgång till ditt avtal. Hur du
+                säger upp hos varje operatör står på{" "}
+                <Link to="/saga-upp" className="text-primary underline underline-offset-2">
+                  säga upp mobilabonnemang
+                </Link>
+                .
+              </p>
+              <p>
+                Skriv inga känsliga uppgifter, som personnummer, i mejlet. Hur vi hanterar det du
+                skickar står i vår{" "}
+                <Link to="/integritetspolicy" className="text-primary underline underline-offset-2">
+                  integritetspolicy
+                </Link>
+                .
+              </p>
+            </div>
+
+            <div className="mt-16 text-sm text-foreground/65">
               <p>
                 Mobilpoolen drivs av PMG Poolen Media Group AB.{" "}
                 <Link to="/om-oss" className="underline underline-offset-2 hover:text-foreground">
@@ -417,6 +149,12 @@ function KontaktPage() {
               </p>
               <p>Org.nr: 559602-5287 · Säte: Stockholm</p>
               <p>Postadress: Valfrid Palmgrens gata 12, 113 69 Stockholm</p>
+              <p>
+                E-post:{" "}
+                <a href={`mailto:${EPOST}`} className="underline underline-offset-2">
+                  {EPOST}
+                </a>
+              </p>
             </div>
           </div>
         </section>

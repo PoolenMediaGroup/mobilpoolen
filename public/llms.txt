@@ -1,233 +1,158 @@
 # Mobilpoolen
 
-> Mobilpoolen (mobilpoolen.se) är en svensk jämförelsetjänst för hemlarm och larm till företag, BRF och föreningar. Den jämför larmbolagens publicerade priser och villkor, med källa och kontrolldatum. Mobilpoolen säljer inga larm och visar inget slutpris, eftersom priset sätts per bostad. Offertförmedling öppnar senare: då ska en förfrågan gå till två till tre larmbolag. I dag skickas inga förfrågningar vidare, och besökare kan ställa sig på en väntelista. Tjänsten är gratis för besökaren. När offerterna öppnar kommer Mobilpoolen att få ersättning från larmbolagen, och kallar sig därför inte oberoende.
+> Mobilpoolen (mobilpoolen.se) är en svensk jämförelsetjänst för mobilabonnemang, för privatpersoner och företag. Den jämför operatörernas publicerade priser och villkor med källa och kontrolldatum, och sorterar efter snittpris per månad under första året, med kampanjens längd och startavgift inräknade. Besökaren beställer direkt hos operatören. Mobilpoolen säljer inga abonnemang, har inga avtal med operatörer och får i dag ingen ersättning.
 
 Fakta om tjänsten:
-- Drivs av PMG Poolen Media Group AB, org.nr 559602-5287, Valfrid Palmgrens gata 12, 113 69 Stockholm. Syskonsajt till Elpoolen (elpoolen.se).
+- Drivs av PMG Poolen Media Group AB, org.nr 559602-5287, Valfrid Palmgrens gata 12, 113 69 Stockholm. Syskonsajter: Elpoolen (elpoolen.se) och Larmpoolen (larmpoolen.se).
 - Ansvarig för innehållet och skribent: Leon Hallström, grundare (https://mobilpoolen.se/skribent/leon-hallstrom).
-- Priser och villkor om larmbolag hämtas från bolagens egna webbplatser och visas med källa och kontrolldatum. Inbrottsstatistiken kommer från Brås statistik över anmälda brott och anges med källa och datum på varje sida.
-- Så fungerar tjänsten: https://mobilpoolen.se/sa-fungerar-mobilpoolen. Så tjänar vi pengar: https://mobilpoolen.se/sa-tjanar-vi-pengar. Så jämför vi: https://mobilpoolen.se/sa-jamfor-vi.
+- Priser och villkor hämtas från operatörernas egna webbplatser och prislistor och visas med källa och kontrolldatum. Operatörer vars priser inte har kunnat kontrolleras har en operatörssida men står inte i prisjämförelsen. Inga egna betyg. Kundnöjdhet kommer från Svenskt Kvalitetsindex (SKI Mobil 2025), nät och täckning från PTS och Opensignal.
+- Så jämför vi: https://mobilpoolen.se/sa-jamfor-vi. Så tjänar vi pengar: https://mobilpoolen.se/sa-tjanar-vi-pengar. Kontakt: info@mobilpoolen.se.
 
 ## Sidor
 
-- [Startsida](https://mobilpoolen.se/): Jämför hemlarm från Sveriges största larmbolag, se publicerade priser och villkor med källa. Väntelista för offerter.
-- [Villalarm](https://mobilpoolen.se/villalarm): Villapaketen jämförda på innehåll och kostnad första året och på tre och fem år, vad en villa behöver plan för plan och Brås statistik över villainbrott.
-- [Lägenhetslarm](https://mobilpoolen.se/lagenhetslarm): Larm för lägenhet, vad som behövs och vad som gäller i flerbostadshus.
-- [Radhuslarm](https://mobilpoolen.se/radhuslarm): Larm för radhus, parhus och kedjehus, med fokus på altandörr och delad vägg.
-- [Fritidshuslarm](https://mobilpoolen.se/fritidshuslarm): Larm för fritidshus som ofta står tomt, med fokus på inbrott, brand och vatten.
-- [Larm för företag](https://mobilpoolen.se/foretag): Företagslarm: publicerade priser (SecuritasPro, Avarn Security, Svenska Alarm), larmklass 1 till 4 i praktiken, när ett företagslarm utan abonnemang räcker och när försäkringen kräver certifierad installation och larmcentral, skyddsklasser för butik, lager, kontor och restaurang, kameraregler och en ordning steg för steg.
-- [Larm för BRF](https://mobilpoolen.se/brf): Larm och kamerabevakning för trapphus, förråd och garage. Vem som beslutar (styrelse eller stämma enligt bostadsrättslagen och HSB:s normalstadgar), vad fastighetsförsäkringen kräver enligt Brandkontoret, Dina och Svedea, vad som styr priset och en ordning steg för steg.
-- [Larm för föreningar](https://mobilpoolen.se/foreningar): Larm för klubblokal, förråd och container. Att RF:s grundförsäkring hos Folksam inte gäller föreningens egendom, skyddsklass 1 enligt Svedea, Tennisförbundets och Bygdegårdsförsäkringens krav, bidrag till larm, nyckelhantering med ideella krafter och en ordning steg för steg.
-- [Bästa hemlarm 2026: vilket hemlarm är bäst?](https://mobilpoolen.se/basta-hemlarm): Bästa hemlarm för villa, lägenhet, fritidshus, utan abonnemang, billigast första året, utan bindningstid och ägd utrustning, räknat ur bolagens publicerade priser med tydliga kriterier och kontrolldatum. Inga egna betyg, och vad PC för Allas test visar.
-- [Jämför larmbolag](https://mobilpoolen.se/jamfor): Alla jämförelser där två larmbolag ställs mot varandra på pris och villkor, grupperade per bolag, hur jämförelserna görs och varför bolag som inte publicerar hela priset saknar jämförelse.
-- [Sector Alarm eller Verisure](https://mobilpoolen.se/jamfor/verisure-vs-sector-alarm): Bindningstid mot ingen bindningstid, publicerat pris, uppsägningstid och hur larmcentralen hanterar brandlarm.
-- [Verisure vs Securitas Home](https://mobilpoolen.se/jamfor/verisure-vs-securitas): Hyrt och installerat larm mot köpt larm du installerar själv, pris, bindningstid och brandrutin.
-- [Sector Alarm vs Securitas Home](https://mobilpoolen.se/jamfor/sector-alarm-vs-securitas): Lånat larm utan bindningstid mot köpt larm, pris, väktare och brandrutin.
-- [Verisure vs Avarn Security](https://mobilpoolen.se/jamfor/verisure-vs-avarn): Hyrt larm med bindningstid mot SAFE Home med gratis installation, pris och vad som inte publiceras.
-- [Securitas Home vs Avarn Security](https://mobilpoolen.se/jamfor/securitas-vs-avarn): Köpt larm med egen installation mot installerat larm, pris och villkor.
-- [Verisure vs Larmgiganten](https://mobilpoolen.se/jamfor/verisure-vs-larmgiganten): Hyra eller äga, pris, bindningstid och väktarutryckning.
-- [Sector Alarm vs Avarn Security](https://mobilpoolen.se/jamfor/sector-alarm-vs-avarn): Pris, bindningstid, installation och hur bolagen hänger ihop ägarmässigt.
-- [Svenska Alarm vs Verisure](https://mobilpoolen.se/jamfor/svenska-alarm-vs-verisure): Köpt larm på delbetalning mot hyrt larm, bindningstid och väktare.
-- [Svenska Alarm vs Sector Alarm](https://mobilpoolen.se/jamfor/svenska-alarm-vs-sector-alarm): Köpt mot lånat larm, uppsägningstid och byte mellan bolagen.
-- [Garda Alarm vs Verisure](https://mobilpoolen.se/jamfor/garda-alarm-vs-verisure): Köpt mot hyrt larm, larmcentral och serviceavtal.
-- [Safeland vs Verisure](https://mobilpoolen.se/jamfor/safeland-vs-verisure): Avtal utan bindningstid mot larm med larmcentral som alltid ingår.
-- [Alf vs Verisure](https://mobilpoolen.se/jamfor/alf-vs-verisure): Länsförsäkringars hemlarm med larmcentral som tillval mot installerat larm med larmcentral.
-- [Gardio vs Verisure](https://mobilpoolen.se/jamfor/gardio-vs-verisure): Kameralarm där du själv kallar väktare mot bemannad larmcentral, pris och bindningstid.
-- [Eufy vs Verisure](https://mobilpoolen.se/jamfor/eufy-vs-verisure): Köpt larm utan månadsavgift mot larm med larmcentral och väktare.
-- [Ring Alarm vs Verisure](https://mobilpoolen.se/jamfor/ring-alarm-vs-verisure): Köpt larm med Ring-abonnemang mot larm med larmcentral.
-- [SikkertHjem vs Eufy](https://mobilpoolen.se/jamfor/sikkerthjem-vs-eufy): Två hemlarm utan abonnemang, med sms, 4G och larmcentral som skillnad.
-- [Eufy vs Ring Alarm](https://mobilpoolen.se/jamfor/eufy-vs-ring-alarm): Två hemlarm för egen installation, pris, innehåll och abonnemang.
-- [Yale vs Eufy](https://mobilpoolen.se/jamfor/yale-vs-eufy): Två hemlarm utan månadsavgift, pris, innehåll, simkort som tillval, Yale Doorman, kameror och larmcentral.
-- [Larmbolag i Sverige](https://mobilpoolen.se/larmbolag): Tabell över alla larmbolag vi följer, i bokstavsordning utan rangordning: larmcentral (ingår, tillval eller gör det själv), installation, om priset publiceras, bindningstid, ägandeform och kontrolldatum per bolag. Skillnaden mellan bolagstyperna och vanliga frågor. Varje bolag har en egen sida under /larmbolag/ med paket, priser och villkor enligt bolagets egen webbplats.
-- [Inbrottsstatistik](https://mobilpoolen.se/inbrottsstatistik): Statistik över bostadsinbrott i Sverige: villa mot lägenhet 2025 och första halvåret 2026, och anmälda bostadsinbrott år för år 2010–2025 med fritidshus, källare och vind ur Brås statistikdatabas.
-- [Bostadsinbrott per kommun](https://mobilpoolen.se/inbrottsstatistik/kommuner): Anmälda bostadsinbrott 2025 och 2024 för de 179 kommuner som hade minst tio, i bokstavsordning, med länk till varje kommuns sida. Tabellen går att söka i och sortera.
-- [Inbrott i polisregion Bergslagen](https://mobilpoolen.se/inbrottsstatistik/polisregion/bergslagen): Anmälda bostadsinbrott 2025 och 2024 i Dalarnas, Värmlands och Örebro län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Mitt](https://mobilpoolen.se/inbrottsstatistik/polisregion/mitt): Anmälda bostadsinbrott 2025 och 2024 i Gävleborgs, Uppsala och Västmanlands län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Nord](https://mobilpoolen.se/inbrottsstatistik/polisregion/nord): Anmälda bostadsinbrott 2025 och 2024 i Jämtlands, Norrbottens, Västerbottens och Västernorrlands län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Stockholm](https://mobilpoolen.se/inbrottsstatistik/polisregion/stockholm): Anmälda bostadsinbrott 2025 och 2024 i Stockholms och Gotlands län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Syd](https://mobilpoolen.se/inbrottsstatistik/polisregion/syd): Anmälda bostadsinbrott 2025 och 2024 i Blekinge, Kalmar, Kronobergs och Skåne län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Väst](https://mobilpoolen.se/inbrottsstatistik/polisregion/vast): Anmälda bostadsinbrott 2025 och 2024 i Hallands och Västra Götalands län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Inbrott i polisregion Öst](https://mobilpoolen.se/inbrottsstatistik/polisregion/ost): Anmälda bostadsinbrott 2025 och 2024 i Jönköpings, Södermanlands och Östergötlands län, villa mot lägenhet, fullbordat mot försök, och år för år 2015 till 2025. Källa: Brås statistikdatabas, uttag hämtade 5 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025).
-- [Ordlista](https://mobilpoolen.se/ordlista): Förklaringar av vanliga larmbegrepp.
-- [Så jämför vi](https://mobilpoolen.se/sa-jamfor-vi): Hur prisuppgifterna samlas in, kontrolleras och jämförs.
-- [Så tjänar vi pengar](https://mobilpoolen.se/sa-tjanar-vi-pengar): Hur Mobilpoolen ska finansieras (ersättning från larmbolag när offerterna öppnar, ingen ersättning i dag), vad ersättningen påverkar och inte påverkar, och varför tjänsten inte kallar sig oberoende.
-- [Så fungerar Mobilpoolen](https://mobilpoolen.se/sa-fungerar-mobilpoolen): Vad som fungerar i dag (prisjämförelse, guider, väntelista) och hur offerterna kommer att fungera när de öppnar.
-- [Frågor och svar](https://mobilpoolen.se/faq): Allmänna frågor om tjänsten, att välja larm och att jämföra bolag. Frågor om en viss bostad, ett bolag eller ett avtal besvaras på den sidan, och /faq länkar dit.
-- [Leon Hallström, skribent](https://mobilpoolen.se/skribent/leon-hallstrom): Vem som skriver sidorna, bakgrund och hur uppgifterna tas fram.
-- [Om oss](https://mobilpoolen.se/om-oss): Vem som står bakom Mobilpoolen (grundaren Leon Hallström, PMG Poolen Media Group AB, org.nr 559602-5287), hur vi arbetar med källor och hur tjänsten finansieras.
-- [Kontakt](https://mobilpoolen.se/kontakt): Kontaktuppgifter och frågor.
+- [Startsida](https://mobilpoolen.se/): Jämför mobilabonnemang från svenska operatörer, sorterade efter snittpris första året, med filter för surf, bindningstid och nät.
+- [Billigaste mobilabonnemang](https://mobilpoolen.se/billigaste-mobilabonnemang): De billigaste abonnemangen per surfmängd, räknat på snittpris första året.
+- [Bästa mobilabonnemang](https://mobilpoolen.se/basta-mobilabonnemang): Bästa mobilabonnemanget för olika behov, med tydliga kriterier och utan egna betyg.
+- [Obegränsad surf](https://mobilpoolen.se/obegransad-surf): Abonnemang med obegränsad surf jämförda på pris, EU-surf och villkor.
+- [Utan bindningstid](https://mobilpoolen.se/utan-bindningstid): Mobilabonnemang utan bindningstid och vad lagen säger om bindning och uppsägning.
+- [Familjeabonnemang](https://mobilpoolen.se/familjeabonnemang): Abonnemang för familjer, extra användare och delad surf.
+- [Mobilabonnemang för barn](https://mobilpoolen.se/barn): Abonnemang för barn, spärrar och pris.
+- [Mobilabonnemang för ungdom](https://mobilpoolen.se/ungdom): Ungdomsabonnemang och åldersrabatter.
+- [Mobilabonnemang för pensionärer](https://mobilpoolen.se/pensionar): Abonnemang och rabatter för seniorer.
+- [Kontantkort](https://mobilpoolen.se/kontantkort): Kontantkort jämförda, registreringskravet och när kontantkort lönar sig.
+- [eSIM](https://mobilpoolen.se/esim): Vilka operatörer som har eSIM och hur det fungerar.
+- [5G-abonnemang](https://mobilpoolen.se/5g-abonnemang): Abonnemang med 5G, täckning och vad som krävs av telefonen.
+- [Mobilabonnemang för företag](https://mobilpoolen.se/foretag): Företagsabonnemang jämförda, moms, delad surf och växel.
+- [Billigaste företagsabonnemang](https://mobilpoolen.se/foretag/billigaste-foretagsabonnemang): De billigaste företagsabonnemangen per surfmängd.
+- [Mobilabonnemang för enskild firma](https://mobilpoolen.se/foretag/enskild-firma): Abonnemang i enskild firma, avdrag och privat eller företag.
+- [Operatörer](https://mobilpoolen.se/operatorer): Alla operatörer vi följer, vilket nät de kör i och om priserna är kontrollerade.
+- [Mobilnät och täckning](https://mobilpoolen.se/nat): Sveriges fyra mobilnät (Telia, Tele2, Telenor, Tre), vilka operatörer som kör i vilket nät, täckning enligt PTS och mätningar från Opensignal.
+- [Jämför operatörer](https://mobilpoolen.se/jamfor): Alla jämförelser där två operatörer ställs mot varandra.
+- [Säga upp mobilabonnemang](https://mobilpoolen.se/saga-upp): Så säger du upp hos varje operatör, uppsägningstid och nummerportering.
+- [Verktyg](https://mobilpoolen.se/verktyg): Alla kalkylatorer. De räknar i webbläsaren och sparar inget.
+- [Hur mycket surf behöver jag?](https://mobilpoolen.se/verktyg/hur-mycket-surf-behover-jag): Räkna ut ditt surfbehov utifrån hur du använder mobilen.
+- [Betalar jag för mycket?](https://mobilpoolen.se/verktyg/betalar-jag-for-mycket): Jämför ditt nuvarande abonnemang med de billigaste för samma surf.
+- [Kampanjkalkylator](https://mobilpoolen.se/verktyg/kampanjkalkylator): Vad ett kampanjpris kostar på ett och två år.
+- [Företagskalkylator](https://mobilpoolen.se/verktyg/foretagskalkylator): Kostnad för flera företagsabonnemang, med och utan moms.
+- [Prisindex](https://mobilpoolen.se/prisindex): Prisnivån på mobilabonnemang räknad ur de priser vi har kontrollerat.
+- [Frågor och svar](https://mobilpoolen.se/faq): Allmänna frågor om tjänsten och om att välja mobilabonnemang.
+- [Ordlista](https://mobilpoolen.se/ordlista): Begrepp för mobilabonnemang förklarade: bindningstid, nummerportering, MVNO, fair use, eSIM, VoLTE med flera.
+- [Om oss](https://mobilpoolen.se/om-oss): Vem som står bakom Mobilpoolen (grundaren Leon Hallström, PMG Poolen Media Group AB, org.nr 559602-5287) och hur vi jämför.
+- [Så fungerar Mobilpoolen](https://mobilpoolen.se/sa-fungerar-mobilpoolen): Hur tjänsten fungerar: jämför här, beställ direkt hos operatören.
+- [Så jämför vi](https://mobilpoolen.se/sa-jamfor-vi): Varifrån priserna kommer, hur snittpriset första året räknas och vad jämförelsen inte omfattar.
+- [Så tjänar vi pengar](https://mobilpoolen.se/sa-tjanar-vi-pengar): Ingen ersättning i dag. Framtida modell: ersättning från operatörer när någon beställer via oss, märkt vid knappen och med rel="sponsored". Ordningen styrs aldrig av ersättning.
+- [Leon Hallström, skribent](https://mobilpoolen.se/skribent/leon-hallstrom): Grundare och ansvarig för innehållet, och hans guider.
+- [Kontakt](https://mobilpoolen.se/kontakt): Kontakt via e-post (info@mobilpoolen.se), rapportera fel pris, postadress.
 - [Integritetspolicy](https://mobilpoolen.se/integritetspolicy), [Användarvillkor](https://mobilpoolen.se/anvandarvillkor), [Cookiepolicy](https://mobilpoolen.se/cookiepolicy)
 
-## Verktyg
+## Mobilnät
 
-- [Hemlarm kalkylator](https://mobilpoolen.se/verktyg/hemlarm-kalkylator): Räkna ut vad ett hemlarm kostar första året för din bostad, på fyra frågor, med priser från larmbolagens egna webbplatser.
+- [Telias nät](https://mobilpoolen.se/nat/telia): Operatörerna som kör i Telias nät (Telia, Fello) och de billigaste abonnemangen i nätet.
+- [Tele2s nät](https://mobilpoolen.se/nat/tele2): Operatörerna som kör i Tele2s nät (Tele2, Comviq, Tellus Mobil, Lingon Mobil) och de billigaste abonnemangen i nätet.
+- [Telenors nät](https://mobilpoolen.se/nat/telenor): Operatörerna som kör i Telenors nät (Telenor, Vimla, My Beat, Fibio) och de billigaste abonnemangen i nätet.
+- [Tres nät](https://mobilpoolen.se/nat/tre): Operatörerna som kör i Tres nät (Tre, Hallon, Chilimobil, katshing) och de billigaste abonnemangen i nätet.
+
+## Operatörer
+
+Varje operatörssida bygger på uppgifter från operatörens egen webbplats, med källa och kontrolldatum. Saknas kontrollerade priser står det på sidan.
+
+- [Telia](https://mobilpoolen.se/operatorer/telia): Äger eget nät, kör i Telias nät. Sidan har abonnemang och priser.
+- [Tele2](https://mobilpoolen.se/operatorer/tele2): Äger eget nät, kör i Tele2s nät. Sidan har abonnemang och priser.
+- [Telenor](https://mobilpoolen.se/operatorer/telenor): Äger eget nät, kör i Telenors nät. Sidan har fakta om nät och villkor (priserna är inte kontrollerade och står inte i jämförelsen).
+- [Tre](https://mobilpoolen.se/operatorer/tre): Äger eget nät, kör i Tres nät. Sidan har abonnemang och priser.
+- [Comviq](https://mobilpoolen.se/operatorer/comviq): Varumärke inom Tele2, kör i Tele2s nät. Sidan har abonnemang och priser.
+- [Vimla](https://mobilpoolen.se/operatorer/vimla): Varumärke inom Telenor, kör i Telenors nät. Sidan har fakta om nät och villkor (priserna är inte kontrollerade och står inte i jämförelsen).
+- [Hallon](https://mobilpoolen.se/operatorer/hallon): Varumärke inom Hi3G Access AB (Tre), kör i Tres nät. Sidan har abonnemang och priser.
+- [Fello](https://mobilpoolen.se/operatorer/fello): Varumärke inom Telia Sverige AB, kör i Telias nät. Sidan har fakta om nät och villkor (priserna är inte kontrollerade och står inte i jämförelsen).
+- [Chilimobil](https://mobilpoolen.se/operatorer/chilimobil): Virtuell operatör, kör i Tres nät. Sidan har abonnemang och priser.
+- [Lyca Mobile](https://mobilpoolen.se/operatorer/lycamobile): Virtuell operatör, uppges köra i Telenors nät. Sidan har abonnemang och priser.
+- [My Beat](https://mobilpoolen.se/operatorer/mybeat): Virtuell operatör, kör i Telenors nät. Sidan har abonnemang och priser.
+- [Tellus Mobil](https://mobilpoolen.se/operatorer/tellus): Virtuell operatör, kör i Tele2s nät. Sidan har abonnemang och priser.
+- [Fibio](https://mobilpoolen.se/operatorer/fibio): Virtuell operatör, kör i Telenors nät. Sidan har abonnemang och priser.
+- [katshing](https://mobilpoolen.se/operatorer/katshing): Virtuell operatör, kör i Tres nät. Sidan har abonnemang och priser.
+- [Lingon Mobil](https://mobilpoolen.se/operatorer/lingon): Virtuell operatör, kör i Tele2s nät. Sidan har fakta om nät och villkor (priserna är inte kontrollerade och står inte i jämförelsen).
+- [Telavox](https://mobilpoolen.se/operatorer/telavox): Virtuell operatör, nätet anges inte av operatören. Sidan har fakta om nät och villkor (priserna är inte kontrollerade och står inte i jämförelsen).
+- [Halebop](https://mobilpoolen.se/operatorer/halebop): Telia meddelade i juni 2026 att Halebop avvecklas och att kunderna flyttas till Telia. Finns inte i prisjämförelsen.
+
+## Säga upp per operatör
+
+- [Säga upp Telia](https://mobilpoolen.se/saga-upp/telia): Uppsägningstid och hur du säger upp hos Telia.
+- [Säga upp Tele2](https://mobilpoolen.se/saga-upp/tele2): Uppsägningstid och hur du säger upp hos Tele2.
+- [Säga upp Telenor](https://mobilpoolen.se/saga-upp/telenor): Uppsägningstid och hur du säger upp hos Telenor.
+- [Säga upp Tre](https://mobilpoolen.se/saga-upp/tre): Uppsägningstid och hur du säger upp hos Tre.
+- [Säga upp Comviq](https://mobilpoolen.se/saga-upp/comviq): Uppsägningstid och hur du säger upp hos Comviq.
+- [Säga upp Vimla](https://mobilpoolen.se/saga-upp/vimla): Uppsägningstid och hur du säger upp hos Vimla.
+- [Säga upp Hallon](https://mobilpoolen.se/saga-upp/hallon): Uppsägningstid och hur du säger upp hos Hallon.
+- [Säga upp Fello](https://mobilpoolen.se/saga-upp/fello): Uppsägningstid och hur du säger upp hos Fello.
+- [Säga upp Chilimobil](https://mobilpoolen.se/saga-upp/chilimobil): Uppsägningstid och hur du säger upp hos Chilimobil.
+- [Säga upp Lyca Mobile](https://mobilpoolen.se/saga-upp/lycamobile): Uppsägningstid och hur du säger upp hos Lyca Mobile.
+- [Säga upp My Beat](https://mobilpoolen.se/saga-upp/mybeat): Uppsägningstid och hur du säger upp hos My Beat.
+- [Säga upp Tellus Mobil](https://mobilpoolen.se/saga-upp/tellus): Uppsägningstid och hur du säger upp hos Tellus Mobil.
+- [Säga upp Fibio](https://mobilpoolen.se/saga-upp/fibio): Uppsägningstid och hur du säger upp hos Fibio.
+- [Säga upp katshing](https://mobilpoolen.se/saga-upp/katshing): Uppsägningstid och hur du säger upp hos katshing.
+- [Säga upp Lingon Mobil](https://mobilpoolen.se/saga-upp/lingon): Uppsägningstid och hur du säger upp hos Lingon Mobil.
+- [Säga upp Telavox](https://mobilpoolen.se/saga-upp/telavox): Uppsägningstid och hur du säger upp hos Telavox.
+
+## Jämförelser
+
+- [Hallon vs Comviq](https://mobilpoolen.se/jamfor/hallon-vs-comviq): Hallon och Comviq jämförda på pris, surf, bindningstid och nät.
+- [Telia vs Tele2](https://mobilpoolen.se/jamfor/telia-vs-tele2): Telia och Tele2 jämförda på pris, surf, bindningstid och nät.
+- [Telia vs Telenor](https://mobilpoolen.se/jamfor/telia-vs-telenor): Telia och Telenor jämförda på pris, surf, bindningstid och nät.
+- [Vimla vs Hallon](https://mobilpoolen.se/jamfor/vimla-vs-hallon): Vimla och Hallon jämförda på pris, surf, bindningstid och nät.
+- [Tele2 vs Telenor](https://mobilpoolen.se/jamfor/tele2-vs-telenor): Tele2 och Telenor jämförda på pris, surf, bindningstid och nät.
+- [Tre vs Telia](https://mobilpoolen.se/jamfor/tre-vs-telia): Tre och Telia jämförda på pris, surf, bindningstid och nät.
+- [Comviq vs Tele2](https://mobilpoolen.se/jamfor/comviq-vs-tele2): Comviq och Tele2 jämförda på pris, surf, bindningstid och nät.
+- [Hallon vs Tre](https://mobilpoolen.se/jamfor/hallon-vs-tre): Hallon och Tre jämförda på pris, surf, bindningstid och nät.
+- [Fello vs Telia](https://mobilpoolen.se/jamfor/fello-vs-telia): Fello och Telia jämförda på pris, surf, bindningstid och nät.
+- [Vimla vs Telenor](https://mobilpoolen.se/jamfor/vimla-vs-telenor): Vimla och Telenor jämförda på pris, surf, bindningstid och nät.
+- [Vimla vs Comviq](https://mobilpoolen.se/jamfor/vimla-vs-comviq): Vimla och Comviq jämförda på pris, surf, bindningstid och nät.
+- [Chilimobil vs Hallon](https://mobilpoolen.se/jamfor/chilimobil-vs-hallon): Chilimobil och Hallon jämförda på pris, surf, bindningstid och nät.
+- [Fello vs Vimla](https://mobilpoolen.se/jamfor/fello-vs-vimla): Fello och Vimla jämförda på pris, surf, bindningstid och nät.
+- [Tellus Mobil vs Comviq](https://mobilpoolen.se/jamfor/tellus-vs-comviq): Tellus Mobil och Comviq jämförda på pris, surf, bindningstid och nät.
+- [Tre vs Tele2](https://mobilpoolen.se/jamfor/tre-vs-tele2): Tre och Tele2 jämförda på pris, surf, bindningstid och nät.
+- [katshing vs Hallon](https://mobilpoolen.se/jamfor/katshing-vs-hallon): katshing och Hallon jämförda på pris, surf, bindningstid och nät.
 
 ## Guider
 
-- [Alla guider](https://mobilpoolen.se/guider): Samlingssida för guiderna om pris, avtal, kameror, brand och regler.
-- [Vad kostar ett hemlarm? Priser och larmpaket 2026](https://mobilpoolen.se/guider/vad-kostar-ett-hemlarm): Prislista per larmbolag med kontrolldatum, totalkostnad på ett, tre och fem år, vad larmpaketen innehåller, hyra eller köpa och vad som publiceras om företagslarm och larmklass 3.
-- [Hemlarm utan abonnemang 2026: pris och jämförelse](https://mobilpoolen.se/guider/hemlarm-utan-abonnemang): Alla larm utan månadsavgift vi följer (bland andra Eufy, SikkertHjem, Yale, Ajax via Cubsec och Designlarm, Larmgiganten och Ring) med pris, vad som ingår, valfritt abonnemang och kontrolldatum. Utan månadsavgift mot utan bindningstid, kamera, hemlarm utan wifi (4G med eget SIM-kort), villa, företag och vad du förlorar utan larmcentral.
-- [Hemlarm i butik 2026: Kjell, Clas Ohlson, Bauhaus](https://mobilpoolen.se/guider/kopa-hemlarm-i-butik): Vilka hemlarm Clas Ohlson, Kjell & Company, Bauhaus, Elgiganten, NetOnNet, IKEA, Jula och Biltema säljer, med pris för startpaketen (990 till 3 990 kronor), kontrollerat 26 oktober 2026. Eufy, Yale, Ring, SikkertHjem, TP-Link Tapo och Denver, vilka som kan kopplas till larmcentral, försäkringsrabatt och öppet köp per butik.
-- [Hemlarm utan bindningstid: vilka bolag har det?](https://mobilpoolen.se/guider/hemlarm-utan-bindningstid): Bindningstid och uppsägningstid per larmbolag enligt bolagens egna webbplatser, med källa och kontrolldatum.
-- [Vad ingår i ett hemlarm? Delarna förklarade](https://mobilpoolen.se/guider/vad-ingar-i-ett-hemlarm): Centralenhet, detektorer, magnetkontakter, siren och kamera: vad delarna gör, vad ett startpaket innehåller och vad som kostar extra.
-- [Hyra eller köpa hemlarm: vad passar dig?](https://mobilpoolen.se/guider/hyra-eller-kopa-hemlarm): Så skiljer sig bindningstid, service och uppsägning, och vad som händer med utrustningen när du flyttar eller byter bolag.
-- [Förebygga inbrott: så skyddar du hemmet](https://mobilpoolen.se/guider/forebygga-inbrott): Dörrar och fönster först, sedan belysning, grannar och larm. Konkreta råd, de billigaste först, och en skyddschecklista att bocka av.
-- [Grannsamverkan: så startar ni i området](https://mobilpoolen.se/guider/grannsamverkan): Så kommer ni igång i villaområdet eller föreningen, och vad ni gör först.
-- [Verisure uppsägning: 3 månader, så gör du](https://mobilpoolen.se/guider/saga-upp-verisure): Telefonnummer och kanaler för uppsägning, kodordet, fullmakt, uppsägningstid och bindningstid, en text att skicka, friköpspriser och återlämning av utrustningen, flytt, omteckning vid separation, uppsägning vid prishöjning och ångerrätt.
-- [Sector Alarm uppsägning: 3 månader, så gör du](https://mobilpoolen.se/guider/saga-upp-sector-alarm): Tre kalendermånaders uppsägningstid, uppsägning per telefon (även om du börjar i mejl eller chatt), utrustning som lånas och mall för bekräftelsen.
-- [Säga upp Securitas Home: så gör du](https://mobilpoolen.se/guider/saga-upp-securitas-home): 24 månaders bindningstid från leveransdagen, en månads uppsägning därefter och vad villkoren inte säger.
-- [Svenska Alarm uppsägning: 3 månader, så gör du](https://mobilpoolen.se/guider/saga-upp-svenska-alarm): Tre månaders uppsägningstid, ingen bindningstid, egen utrustning och hur uppsägningen verifieras, även via mejl.
-- [Säga upp Garda Alarm: så gör du](https://mobilpoolen.se/guider/saga-upp-garda-alarm): Uppsägning via kundtjänst, serviceavtalet och vilka villkor Garda inte publicerar.
-- [Säga upp Gardio: så gör du](https://mobilpoolen.se/guider/saga-upp-gardio): 24 månaders bindningstid, normalt tre månaders uppsägningstid, vad det kostar i förtid, retur av hyrd utrustning och rätten att säga upp vid villkorsändring.
-- [Säga upp Larmgiganten: så gör du](https://mobilpoolen.se/guider/saga-upp-larmgiganten): Tre kalendermånaders uppsägningstid från nästa månadsskifte, uppsägning under bindningstid, 2 990 kronor för installationen inom 12 månader, SIM-kortet, köplarm och hyrlarm och rätten att säga upp vid prisändring.
-- [Verisure har höjt priset: vad du kan göra](https://mobilpoolen.se/guider/verisure-prishojning): Läsa avtalet, räkna på ett byte och säga upp.
-- [Sector Alarm prishöjning: det här gäller dig](https://mobilpoolen.se/guider/sector-alarm-prishojning): Vad Sector Alarms avtalsvillkor säger om prisändringar, rätten att säga upp och att du betalar det gamla priset under uppsägningstiden.
-- [Billigaste hemlarmet 2026: priserna rangordnade](https://mobilpoolen.se/guider/billigaste-hemlarmet): Larmbolagens publicerade paket rangordnade efter pris första året och på fem år, med och utan larmcentral, ur samma data som prisjämförelsen.
-- [Pruta på hemlarm: så får du ner priset](https://mobilpoolen.se/guider/pruta-pa-hemlarm): Vad som går att förhandla, vad som sällan gör det, och hur du förbereder dig.
-- [Rotavdrag för hemlarm: gäller det larm?](https://mobilpoolen.se/guider/rotavdrag-hemlarm): Skatteverket ger varken rot- eller rutavdrag för att installera larm eller övervakningskameror. Vad som ger rot i stället (lås, dörrar och fönster i småhus, inte ytterdörr i bostadsrätt), avdrag i enskild firma och andra sätt att sänka kostnaden.
-- [Hemlarm via försäkringen: LF, Folksam, If och Trygg-Hansa](https://mobilpoolen.se/guider/hemlarm-via-forsakringsbolaget): Vad försäkringsbolagen erbjuder kring larm, kontrollerat 26 oktober 2026. Länsförsäkringar säljer Alf i tolv länsbolag (LF Stockholm ger i stället 5 procent för vattenvakten Vanja), Trygg-Hansa ger rabatt på Verisures utökade hemlarm, Folksam ger 5 procent larmrabatt men säljer inget larm, If har inget larmerbjudande.
-- [Bindningstid och uppsägning av hemlarm](https://mobilpoolen.se/guider/bindningstid-och-uppsagning): Bindningstid och uppsägningstid i larmavtal, vad Konsumentverket och Marknadsdomstolen säger är tillåtet, automatisk förlängning och när du kan ta dig ur avtalet.
-- [Byta larm: så byter du larmbolag i 6 steg](https://mobilpoolen.se/guider/byta-larmbolag): Ordningen när du byter hemlarm, från att läsa avtalet till att säga upp, vad bytet kostar och länkar till uppsägningssidan per bolag.
-- [Larmbolagens avtalsvillkor granskade 2026](https://mobilpoolen.se/guider/larmbolagens-avtalsvillkor): Vi läste de allmänna villkoren hos nio larmbolag och jämför uppsägning, prishöjning, utrustning vid avslut, ansvarstak, avgift för onödig utryckning, automatisk förlängning och ångerrätt, med punkt och version.
-- [Larmföretag knackar dörr? Ångerrätt på hemlarm](https://mobilpoolen.se/guider/dorrforsaljning-och-angerratt): 14 dagars ångerrätt på hemlarm vid dörrförsäljning enligt Konsumentverket, tecknen på bluff när ett larmföretag knackar på, när fristen börjar enligt ARN, vad du betalar om larmet är installerat och en ångertext att kopiera.
-- [Hemlarm och hemförsäkring: blir det billigare?](https://mobilpoolen.se/guider/hemlarm-och-forsakring): Larmrabatt och lägre självrisk hos Folksam och Länsförsäkringar, och kraven på larmcentral.
-- [Hemlarm via försäkringsbolaget: LF, Folksam, If](https://mobilpoolen.se/guider/hemlarm-via-forsakringsbolaget): Att köpa larmet genom försäkringsbolaget. Alla 23 länsförsäkringsbolag (eget larm i fyra, Alf i tolv, inget i sju) med pris och rabatt, Trygg-Hansas samarbete med Verisure, Folksam, If och Dina Försäkringar, vem som äger larmet och vad som händer när du byter försäkringsbolag.
-- [Hemlarm med kamera: så fungerar det](https://mobilpoolen.se/guider/hemlarm-med-kamera): Kameradetektor, inomhuskamera och utomhuskamera, och vad larmcentralen får se.
-- [Kameraövervakning hemma: regler för privatperson](https://mobilpoolen.se/guider/kameraovervakning-hemma-regler): Kamerabevakningslagen och GDPR:s privatundantag enligt IMY: tomt, gata och grannens tomt, ljud, skyltning, dörrklocka, hyresrätt och bostadsrätt, lagringstid, att dela film och när grannens kamera filmar dig.
-- [Larmcentral: så fungerar den och vad är SSF 136?](https://mobilpoolen.se/guider/larmcentral-och-certifiering): Vad som händer från larm till åtgärd, verifiering, kontaktpersoner och certifiering enligt SSF 136 och EN 50518.
-- [Brandvarnare: regler, hyresrätt och larmcentral](https://mobilpoolen.se/guider/brandvarnare-och-brandlarm): Regler för brandvarnare och ansvaret i hyresrätt enligt MCF, krav i nybyggda bostäder enligt BBR (60 kvadratmeter per varnare, varje plan, sovrum och trappa), antal och placering, ihopkopplade brandvarnare, brandlarm för döva och svårväckta, skillnaden mot ett uppkopplat brandlarm, hur Verisure, Sector Alarm och Securitas Home agerar vid brandlarm, att installera och välja brandlarm och vad hemförsäkringen kräver.
-- [Brandvarnaren piper eller tjuter utan anledning](https://mobilpoolen.se/guider/brandvarnare-piper): Vad pip och rött blink betyder enligt tillverkarnas bruksanvisningar (lågt batteri, uttjänt varnare, larmminne), varför den piper trots nytt batteri eller mitt i natten, brandlarm som går igång utan rök av vattenånga, fukt eller damm, grannens brandvarnare och ansvaret för batteribyte i hyresrätt.
-- [Hemlarm och husdjur: undvik falsklarm](https://mobilpoolen.se/guider/hemlarm-och-husdjur): Viktgränser för husdjursanpassade detektorer enligt tillverkarna, placering och skalskydd.
-- [Larmklass 1 till 4: vad betyder det?](https://mobilpoolen.se/guider/larmklasser): Vad larmklass 1 till 4 kräver enligt SSF 130, vem som bestämmer klassen, försäkringsbolagens krav utöver klassen (FTR 130:4, Länsförsäkringar, If, Moderna), skyddsklass, revisionskontroll och vad som händer med ersättningen om larmet inte uppfyller kraven.
-- [Kamerabevakning i BRF: regler och IMY:s krav](https://mobilpoolen.se/guider/kamerabevakning-brf): Intresseavvägning, var IMY har tillåtit kameror i flerbostadshus (med diarienummer), skyltning, lagring och boendes egna kameror.
-- [Väktarutryckning: vad ingår och vad kostar det?](https://mobilpoolen.se/guider/vaktarutryckning): Så går en utryckning till, vad som ingår hos Verisure, Sector Alarm, Securitas Home och Svenska Alarm, och vad som kostar extra.
-- [Smarta lås och hemlarm: så fungerar det ihop](https://mobilpoolen.se/guider/smarta-las-och-hemlarm): Lås som larmbolagen säljer eller stöder, låsklass enligt SSF, batteri och vad du ska fråga försäkringsbolaget.
-- [Flytta med hemlarm: ta med eller ta över larmet](https://mobilpoolen.se/guider/flytta-med-hemlarm): Ta med, lämna över eller säga upp larmet hos Verisure, Sector Alarm, Securitas Home, Svenska Alarm och Garda Alarm, hur du tar över ett hemlarm när du flyttar in och vad ett friköpt larm innebär, med checklista för flytten.
-- [Övervakningskamera utomhus för villa och tomt](https://mobilpoolen.se/guider/overvakningskamera-utomhus): Kamerabevakning av villan: ström, wifi, mörkerseende, kyla och placering, utomhuskamerorna hos larmbolagen och var gränsen går mot grannens tomt.
-- [Övervakningskamera inomhus: när ska den filma?](https://mobilpoolen.se/guider/overvakningskamera-inomhus): Inspelningslägen, familjens integritet, husdjur, barnvakt och städhjälp, och vad larmcentralen får se.
-- [Övervakningskamera med 4G till fritidshuset](https://mobilpoolen.se/guider/overvakningskamera-4g-fritidshus): Kamera utan bredband via SIM-kort eller 4G-router, täckning, datamängd, ström och kyla i ett ouppvärmt hus.
-- [När sker inbrott? Tid på dygnet, dag och månad](https://mobilpoolen.se/guider/nar-sker-inbrott): Brås siffror för när bostadsinbrott sker, per del av dygnet, veckodag, månad och högtid, med källa.
-- [Hur tänker inbrottstjuvar? Så väljer de bostad](https://mobilpoolen.se/guider/hur-tanker-inbrottstjuvar): Hur tjuven väljer bostad, tar sig in och vad som avskräcker, enligt Brås genomgång av förundersökningar och Polisens intervjustudie med dömda inbrottstjuvar.
-- [Falsklarm på hemlarmet: vad kostar det?](https://mobilpoolen.se/guider/falsklarm): Avgifter för onödiga utryckningar enligt Securitas Homes, Sector Alarms och Verisures villkor, vanliga orsaker och vad lagen om larmanläggningar säger.
-- [Hemlarm på semester: checklista innan du reser](https://mobilpoolen.se/guider/hemlarm-semester): Larmet, kontaktpersonerna, grannen och hemförsäkringens krav vid längre bortavaro enligt If och Trygg-Hansa.
-- [Trådlöst hemlarm: räckvidd, batteri och störning](https://mobilpoolen.se/guider/tradlost-hemlarm): Trådlöst mot trådbundet, frekvenser, batteritid, räckvidd, reservbatteri, kryptering och störningsdetektering enligt larmbolag och tillverkare, och larmklass R.
-- [Installera hemlarm själv: vad får du göra?](https://mobilpoolen.se/guider/installera-hemlarm-sjalv): Vad Elsäkerhetsverkets regler tillåter, Polisens tillstånd för larminstallatörer, vilka bolag som låter dig installera själv och när försäkringen kräver behörig installatör.
-- [Störsändare och hemlarm: kan larmet störas ut?](https://mobilpoolen.se/guider/storsandare-och-jamming): Förbudet mot störsändare enligt PTS, hur störningsdetektering fungerar enligt EN 50131-5-3 och vad Verisure, Sector Alarm och Securitas Home skriver.
-- [Vattenlarm: skydd mot vattenläckage hemma](https://mobilpoolen.se/guider/vattenlackage-och-sensorer): Vattenlarm och vattenfelsbrytare hos larmbolagen, försäkringsrabatter och krav, placering och statistik ur Vattenskaderapporten 2025.
-- [Kolmonoxidvarnare: var den ska sitta och när](https://mobilpoolen.se/guider/kolmonoxidvarnare): Vilka hem som behöver kolmonoxidvarnare, placering enligt tillverkarnas bruksanvisningar, larmgränser enligt EN 50291, fristående varnare mot detektor i hemlarmet, vad du gör vid larm och symtom enligt Giftinformationscentralen.
-- [Larm vid strömavbrott: batteritid, wifi och 4G](https://mobilpoolen.se/guider/larm-vid-stromavbrott): Hur länge hemlarmets reservbatteri räcker hos Verisure, Ajax, Securitas Home och Sector Alarm, varför ett larm som bara går via wifi tystnar, besked vid strömavbrott, mobilnätet vid avbrott, Ei:s avbrottsstatistik 2024, sms-larm till stugan och avbrottsersättning.
-- [Båtlarm och spårsändare: vad kräver försäkringen?](https://mobilpoolen.se/guider/batlarm): Stöldskyddskraven i Ifs och Svedeas båtförsäkringsvillkor, lägre självrisk med spårsändare, vilka båtlarm som finns och när båtmotorer stjäls enligt Polisen.
-- [Larm i garage och förråd: skydd och försäkring](https://mobilpoolen.se/guider/larm-garage-forrad): Vad Ifs och Länsförsäkringars hemförsäkring ersätter ur garage och förråd, detektorer för garage hos Sector Alarm och Securitas Home, priser, kyla och räckvidd.
-- [Ajax hemlarm: pris, larmcentral och var du köper](https://mobilpoolen.se/guider/ajax-hemlarm): Vad Ajax-larm kostar hos Cubsec Alarm och Designlarm, Ajax utan abonnemang eller med larmcentral som eget avtal, första årets kostnad, Verisure mot Ajax och Yale Doorman i Ajax via modulen LockBridge.
-- [Larm i husbil och husvagn: försäkringens krav](https://mobilpoolen.se/guider/larm-husbil-husvagn): Låskraven i Ifs, Länsförsäkringars och Svedeas villkor, självrisk med spårsändare, vilka husbilslarm som finns och Larmtjänsts siffror över efterlysta fordon.
-- [Larmskylt och larmdekal: avskräcker de tjuven?](https://mobilpoolen.se/guider/larmskylt-och-larmdekal): Vad studierna från UNC Charlotte och Tseloni m.fl. visar, skylt utan larm, Verisures, Sector Alarms och Securitas Homes villkor för dekaler och försäkringens krav.
-- [Vad händer när larmet går? Steg för steg](https://mobilpoolen.se/guider/vad-hander-nar-larmet-gar): Kedjan från detektor till larmcentral, verifiering, samtal, väktare och polis, vad Sector Alarm och Verisure själva skriver, rutinerna vid brandlarm och vad du gör när ditt larm går.
-- [Efter inbrottet: det här gör du först](https://mobilpoolen.se/guider/efter-inbrottet): Ring 112 och rör inget enligt Polisen, dokumentation, försäkringsanmälan, spärr av kort och id-handlingar, låsbyte, vad polisen gör och Brås siffror för hur ofta inbrott klaras upp.
-- [Vad räknas som inbrott? Straff och försäkring](https://mobilpoolen.se/guider/vad-ar-inbrott): Inbrottsstöld, hemfridsbrott och olaga intrång enligt brottsbalken med straffskalor, inbrott utan stöld, försäkringsvillkorets definition av inbrott, vad som gäller utan brytmärken och vid olåst dörr.
-- [Uppklaringsprocent för inbrott: Brås siffror](https://mobilpoolen.se/guider/uppklaringsprocent-inbrott): Hur många bostadsinbrott som personuppklaras enligt Brås statistik över handlagda brott 2016–2025, villa mot lägenhet, jämfört med andra brott, mörkertal och anmälan enligt NTU, och varför andelen är så låg.
-- [Inbrott i Sverige jämfört med andra länder](https://mobilpoolen.se/guider/inbrott-sverige-europa): Anmälda bostadsinbrott per 100 000 invånare i Europa 2017 och 2024 enligt Eurostat (crim_off_cat), vad Sverige räknar in (källare, vind och fritidshus), Norden jämfört med Danmarks och Norges egen statistik, Brås förbehåll om internationella jämförelser och offerundersökningen 1999.
-- [Oro för inbrott 2026: 17 procent oroar sig ofta](https://mobilpoolen.se/guider/oro-for-inbrott): Andelen som oroar sig för bostadsinbrott enligt Brås NTU 2007 till 2026, skillnader mellan kön, ålder, familjetyp och boendeform, oron mot andelen hushåll som faktiskt utsattes och de anmälda inbrotten, otrygghet i bostadsområdet och vad medierna rapporterat.
-- [Behöver jag hemlarm? Så avgör du](https://mobilpoolen.se/guider/behover-jag-hemlarm): Risken per 1 000 bostäder i villa och lägenhet ur Brå och SCB, vad larmet kostar mot försäkringsrabatten, alternativen och när hemlarm inte lönar sig.
-- [Skalskydd: dörrar, fönster, lås och larm](https://mobilpoolen.se/guider/skalskydd): Dörrar, låsenheter enligt SSF 3522, fönsterlås och glas, vad Ifs och Gjensidiges hemförsäkringsvillkor kräver och hur magnetkontakter, vibrations- och glaskrossdetektorer ger skalskydd i larmet.
-- [Säkerhetsdörr: inbrottsklass, BRF och brandkrav](https://mobilpoolen.se/guider/sakerhetsdorr): RC-klasserna i SS-EN 1627, brandklass mot trapphuset enligt Boverket, ansvaret för dörren enligt HSB:s normalstadgar, hyresrätt och pris med källa.
-- [2G- och 3G-nedstängningen: påverkas ditt larm?](https://mobilpoolen.se/guider/2g-3g-nedstangning-hemlarm): Vilka operatörer som stängt 2G och 3G enligt PTS, Telias 2G till slutet av 2027, hur du kollar hemlarm, trygghetslarm och stuglarm, frågor till larmbolaget och dina rättigheter.
-- [DNA-märkning: vad det är och vad det kostar](https://mobilpoolen.se/guider/dna-markning): Hur märkningen med syntetiskt DNA fungerar, Stöldskyddsföreningens och SmartDNA:s priser, registreringen, normen SSF 1098 och vad försöken i Stockholm och Staffanstorp visar.
-- [Larm för äldre hemma: trygghetslarm eller hemlarm](https://mobilpoolen.se/guider/hemlarm-for-aldre): Kommunens trygghetslarm med armband mot hemlarm, Socialstyrelsens uppgift om trygghetslarm som vanligaste första insats, hemlarm och hemtjänst, avgifter i Lund och Sölvesborg, ansökan och förenklat beslut, enkel manövrering, dörrförsäljning och checklista för anhöriga.
-- [Hus som står tomt: försäkring och tillsyn](https://mobilpoolen.se/guider/skydda-tomt-hus): Ifs och Trygg-Hansas villkor om tillsyn, vatten, frysning och ändrade förhållanden när huset står tomt vid renovering, dödsbo eller försäljning, och larm som varnar.
-- [Hemlarm på avbetalning: vad du ska veta](https://mobilpoolen.se/guider/hemlarm-pa-avbetalning): Vilka larmbolag som säljer utrustningen på avbetalning, konsumentkreditlagens regler om SEKKI, effektiv ränta, ångerrätt, förtidsbetalning och återtagande, samt den nya konsumentkreditlagen från 20 november 2026.
-- [Hemlarm-app: vad appen gör hos larmbolagen](https://mobilpoolen.se/guider/hemlarm-app): Vad apparna från Verisure, Sector Alarm, Securitas Home, Svenska Alarm och Ajax gör enligt App Store och bolagens hjälpsidor, hur du delar appen med familjen och vad du ska kontrollera.
-- [Bedrägerier med hemlarm: så känner du igen dem](https://mobilpoolen.se/guider/bedragerier-hemlarm): Säljare i larmbolagets namn, fullmakter, Swish-bedrägerier, telefon- och AI-röstbedrägerier enligt polisen, Konsumentverket och Sector Alarm, och vad du gör om du blivit lurad.
-- [Larm eller kamera: vad skyddar bäst?](https://mobilpoolen.se/guider/larm-eller-kamera): Beslutsstöd mellan larm med larmcentral och övervakningskamera: metaanalysen av Piza m.fl. 2019, Brås och MSB:s genomgångar, tjuvarnas egna svar, Brås uppklaringssiffror, Folksams larmrabatt, kostnad och när du ska kombinera.
-- [Dörrklocka med kamera: regler och kostnad](https://mobilpoolen.se/guider/dorrklocka-med-kamera): Videodörrklocka från Ring, eufy, Google Nest och Aqara: IMY:s villkor för dörrkamera i trapphus, privatundantaget i villa, batteri eller kabel, wifi, abonnemangspriser från tillverkarnas svenska sidor och koppling till larmet.
-- [Rörelsedetektor till larm: så fungerar den](https://mobilpoolen.se/guider/rorelsedetektor): Hur en PIR-detektor fungerar, detektor med mikrovågsradar, placering och var den inte ska sitta, husdjurslägen, utomhusdetektorer, detektor med kamera, falsklarm och batteritid enligt Ajax och Svenska Alarm.
-- [Koppla eget larm till larmcentral: så gör du](https://mobilpoolen.se/guider/ansluta-larmcentral-sjalv): Om ett eget larm som Ajax kan kopplas till en bemannad larmcentral, vilka tjänster och priser återförsäljarna publicerar, vem som får koppla in larmet och vad försäkringsbolagen kräver för rabatt.
-- [Smart hemlarm: automation, Matter och säkerhet](https://mobilpoolen.se/guider/smart-hemlarm): Vad ett smart hemlarm är, automation hos Securitas Home och Sector Alarm, vad Matter, Thread, Zigbee och Z-Wave betyder för larmet, och PTS och EU:s säkerhetskrav för uppkopplade produkter.
-- [Hemlarm med HomeKit, Home Assistant och Google Home](https://mobilpoolen.se/guider/hemlarm-homekit-home-assistant): Vilka plattformar tio larm stöder (Verisure, Sector Alarm, Securitas Home, Yale, Eufy, Ring Alarm, Ajax, SikkertHjem, TP-Link Tapo och IKEA DIRIGERA) enligt tillverkarnas egna sidor, kontrollerat 26 oktober 2026: Apple HomeKit, Google Home, Alexa, Matter, Zigbee, Z-Wave och Home Assistant, med skillnaden mellan inbyggd integration och community-integration. Certifierat larm med larmcentral mot eget larm i Home Assistant, försäkringskrav, och brandvarnare med Matter och IKEA DIRIGERA.
-- [Hemlarm och GDPR: bilder och personuppgifter](https://mobilpoolen.se/guider/hemlarm-och-gdpr): Vem som ansvarar för uppgifterna i larmet, hur länge Verisure, Sector Alarm och Securitas Home sparar bilder, IMY:s tillsyn av Verisure och hur du begär ut dina uppgifter.
-- [Dimgenerator mot inbrott: så fungerar det](https://mobilpoolen.se/guider/dimgenerator): Hur dimgeneratorer och rökgeneratorer fungerar, manuell eller automatisk aktivering, Verisure ZeroVision och UR Fog för Ajax med priser, hälsa, brandvarnare, standarden SS-EN 50131-8 och hem jämfört med butik.
-- [Larm i nybygge: planera innan väggarna stängs](https://mobilpoolen.se/guider/hemlarm-nybygge): När i husbygget du ska tänka på larmet, byggstölder enligt Byggföretagen och Brå, råd från If, polisen och SBUF, försäkring under byggtiden, trådlöst eller trådbundet och förberedelser för el och nätverk.
-- [Vanliga misstag med hemlarm: tio att undvika](https://mobilpoolen.se/guider/vanliga-misstag-hemlarm): Dörrförsäljning, totalkostnad, bindningstid, jämförelse, försäkringskrav, larmet av, koder, placering, batterier och falsklarm, med källor från Konsumentverket, försäkringsbolag och larmbolagens villkor.
-- [Hemlarm statistik 2026: siffror om larm i Sverige](https://mobilpoolen.se/guider/hemlarm-statistik): Larmbolagens publicerade priser räknade ur vår databas (antal bolag, andel som publicerar hela priset, spann och median för första året, bindningstid, ägande, larmcentral), undersökningar om hur många som har hemlarm, Brås bostadsinbrott 2025, Verisures och Sector Alarms kundantal och händelser i branschen, med källa och datum.
-- [Bostadsbränder statistik 2025: antal och orsaker](https://mobilpoolen.se/guider/bostadsbrander-statistik): Bränder och brandtillbud i bostad 2016–2025 enligt MCF:s statistikdatabas, omkomna per år, ålder och kön, villa mot lägenhet och fritidshus, värmekällor och orsaker, tid på dygnet och månad, andel hushåll med fungerande brandvarnare och hur larmbolagen agerar vid brandlarm.
-- [Vattenskador statistik: antal, kostnad, orsaker](https://mobilpoolen.se/guider/vattenskador-statistik): Antal ersatta vattenskador och utbetalningar 2022–2025 enligt Svensk Försäkring, skadetyper 2020–2025, rum, vitvaror som diskmaskin och kyl, orsaker i ledningssystem, frysskador i fritidshus och andel skador utan vattenfelsutrustning, ur Vattenskaderapporten 2025.
-- [Hemlarm test 2026: vad tidningarnas tester visar](https://mobilpoolen.se/guider/hemlarm-test): Sammanställning av andras tester av hemlarm: PC för Alla (december 2025 och äldre), M3, Råd & Rön, Which? och Stiftung Warentest, plus klagomål hos Konsumentverket. Vem testade, när, vad och slutsatsen, med källa och datum. Mobilpoolen testar inte själva och ger inga egna betyg.
-- [Sensor Alarm och Alert Alarm: vad gör du nu?](https://mobilpoolen.se/guider/sensor-alarm-och-alert-alarm): Vem som äger Alert Alarm (Verisure), Sensor Alarms konkurs 15 oktober 2024 och försäljningen av kundstocken till Tryggsam, Alert Alarms nedläggning och dataintrånget 2025 med åtal och dom, vad tidigare kunder gör med avtal, utrustning och läckta personuppgifter, och vad du gör om ditt larmbolag går i konkurs.
-- [Passersystem i BRF: taggar, loggar och beslut](https://mobilpoolen.se/guider/passersystem-brf): Hur passersystem och porttelefon fungerar i en bostadsrättsförening, tagg, kod eller app, Hem & Hyras granskning av kopierbara taggar, loggarna enligt IMY:s GDPR-vägledning för föreningar och IMY:s beslut om Granit Bostad, styrelse eller stämma enligt bostadsrättslagen, kostnad och koppling till larm och fastighetsförsäkring.
-- [Inbrott i källarförråd: ersättning och skydd](https://mobilpoolen.se/guider/forradsinbrott-brf): Brås siffror för inbrott i källare och på vind 2015–2025, vad Ifs hemförsäkring ersätter ur förråd och cykelrum, vad föreningens fastighetsförsäkring täcker enligt Brandkontoret och Länsförsäkringar, anmälan och polisens råd till föreningar och boende.
-- [Inbrott i företag: Brås statistik 2016 till 2025](https://mobilpoolen.se/guider/inbrott-foretag-statistik): Anmälda inbrott i industri, verkstad, byggplats, lager, kontor, butik och restaurang år för år enligt Brå, butiksstöld och rån, byggstölder enligt Byggföretagen, Brås företagsundersökning (andel utsatta per bransch och storlek, anmälan, säkerhetsåtgärder) och Svensk Handels Trygghetsbarometer.
-- [Kamerabevakning på arbetsplatsen: regler 2026](https://mobilpoolen.se/guider/kamerabevakning-arbetsplats): Vad en arbetsgivare får filma enligt GDPR, kamerabevakningslagen och IMY, var kameror får sitta i butik och lager, MBL-förhandling, skyltar, lagringstid, tystnadsplikt och att tillståndsplikten upphörde 31 mars 2025.
-- [Containerlarm: larm för byggcontainer och bod](https://mobilpoolen.se/guider/containerlarm): Fyra sorters larm för container, bod och maskiner (batterilarm med sms, larmväska, installerat larm med larmcentral, kamera), Byggföretagens råd om container, låsbom och hänglås i klass 4/grade 5, Svedeas krav på larm enligt SSF 130, SSF 1051, 2G- och 3G-nedstängningen, byggstölder 2020–2025 enligt Byggföretagen och Brå, maskiner och diesel.
-
-## Larmbolag
-
-Varje bolagssida bygger på uppgifter från bolagets egen webbplats. Saknas ett pris står det att det saknas.
-
-- [Alf, Länsförsäkringars hemlarm](https://mobilpoolen.se/larmbolag/alf): Länsförsäkringars hemlarm för kunder i tolv länsbolag. Paket, larmcentral som tillval (uppringning, EN 50518, väktare), rabatt på boendeförsäkringen i Kronoberg och Skaraborg, uppsägning och vilka län som erbjuder det, enligt alf.se, med källa och datum.
-- [Avarn Security, tidigare Nokas](https://mobilpoolen.se/larmbolag/avarn-security): Pris för hemlarmet SAFE Home, startkostnad, bindningstid och utrustning, bolagets larmcentral i Stockholm och namnbytet från Nokas, enligt Avarn Securitys egen webbplats, med källa och datum.
-- [Cubsec hemlarm (Cubsec Alarm)](https://mobilpoolen.se/larmbolag/cubsec-alarm): Ajax-larm du köper och äger, med larmcentral och fria larmryck som tillval per månad. Paketpriser, tillval, installation och bolagets egen larmcentral enligt Cubsec Alarms egen webbplats, med källa och datum.
-- [Designlarm](https://mobilpoolen.se/larmbolag/designlarm): Startkostnad, månadsavgift, bindningstid och utrustning enligt Designlarms egen webbplats, med källa och datum.
-- [Eufy hemlarm](https://mobilpoolen.se/larmbolag/eufy): Hemlarm utan månadsavgift och utan larmcentral som du installerar själv. Pris på eufy Security 5-delat hemlarmkit hos Anker, Bauhaus och Kjell & Company, Which?:s test, kameror i samma app, Ankers besked om kamerornas kryptering 2023 och batteritider, med källa och datum.
-- [Garda Alarm hemlarm](https://mobilpoolen.se/larmbolag/garda-alarm): Larmbolaget Garda Alarm i Halmstad och hemlarmet Garda Home med kameror, som du köper och äger. Hur larmet fungerar, Lövestad Larmcentral, serviceavtal och villkor enligt Garda Alarms egen webbplats, med källa och datum.
-- [Gardio hemlarm](https://mobilpoolen.se/larmbolag/gardio): Kamerabaserat hemlarm där du själv avgör åtgärd och kallar på väktare. Månadsavgift, bindningstid, hur kamerorna och brandlarmet fungerar och vad som ingår enligt Gardios egen webbplats, med källa och datum.
-- [Hemla](https://mobilpoolen.se/larmbolag/hemla): Startkostnad, månadsavgift, bindningstid och utrustning enligt Hemlas egen webbplats, med källa och datum.
-- [Larmgiganten](https://mobilpoolen.se/larmbolag/larmgiganten): Startkostnad, månadsavgift, bindningstid och utrustning enligt Larmgigantens egen webbplats, med källa och datum.
-- [Larmify](https://mobilpoolen.se/larmbolag/larmify): Startkostnad, månadsavgift, bindningstid och utrustning enligt Larmifys egen webbplats, med källa och datum.
-- [Protexus](https://mobilpoolen.se/larmbolag/protexus): Larm du köper och äger, med certifierad larmcentral som tillval från 99 kr/mån, enligt Protexus egen webbplats, med källa och datum.
-- [Ring Alarm](https://mobilpoolen.se/larmbolag/ring-alarm): Hemlarm du köper och installerar själv, där abonnemang krävs för att larma av och på i appen. Pris på Alarm Pack S, vad som fungerar utan abonnemang, M3:s och Which?:s tester, kameror och larmcentral, med källa och datum.
-- [Safeland](https://mobilpoolen.se/larmbolag/safeland): Startkostnad, månadsavgift, bindningstid och utrustning enligt Safelands egen webbplats, med källa och datum.
-- [Säkra Larm](https://mobilpoolen.se/larmbolag/sakra-larm): Startkostnad, månadsavgift, bindningstid och utrustning enligt Säkra Larms egen webbplats, med källa och datum.
-- [Sector Alarm hemlarm och villalarm](https://mobilpoolen.se/larmbolag/sector-alarm): Vad startpaketet för villa innehåller, vad som ingår i tjänsten, bindningstid, uppsägning och ägande enligt Sector Alarms egen webbplats, med källa och datum.
-- [Securitas Home, Securitas hemlarm och villalarm](https://mobilpoolen.se/larmbolag/securitashome): Securitas hemlarm som du köper och installerar själv. Startpaket Villa och vad det innehåller, abonnemangen LILLA och STORA, bindningstid, väktare och brandrutin enligt bolagets egen webbplats, med källa och datum.
-- [SikkertHjem](https://mobilpoolen.se/larmbolag/sikkerthjem): Danska larm utan abonnemang som du installerar själv, utan egen larmcentral. Pris på S6evo och S7pro, sms, 4G, extern larmcentral och ångerrätt enligt SikkertHjems egen webbplats, med källa och datum.
-- [Svenska Alarm](https://mobilpoolen.se/larmbolag/svenska-alarm): Startkostnad, månadsavgift, bindningstid och utrustning enligt Svenska Alarms egen webbplats, med källa och datum.
-- [Svenska Trygghetslösningar hemlarm](https://mobilpoolen.se/larmbolag/svenska-trygghetslosningar): Hemlarm från Crow och Visonic med trygghetsavtal. Vad avtalet innehåller, larmcentralen, bolaget i Malmö och vad du ska fråga om priset enligt Svenska Trygghetslösningars egen webbplats, med källa och datum.
-- [Yale hemlarm (Yale Smart Alarm)](https://mobilpoolen.se/larmbolag/yale): Hemlarm du köper och installerar själv, utan larmcentral och med frivilliga abonnemang för simkort och automatiska samtal. Pris hos Yale, Bauhaus och Kjell & Company, Ljud & Bilds test, kameror och abonnemang, Yale Doorman och var du köper det, med källa och datum.
-- [Verisure villalarm och hemlarm](https://mobilpoolen.se/larmbolag/verisure): Startkostnad, månadsavgift och bindningstid, villapaketen Smart Voice Alarm och High Security Alarm och vad de innehåller enligt Verisures egen webbplats, med källa och datum.
-
-## Inbrottsstatistik per kommun
-
-En sida per kommun med minst tio anmälda bostadsinbrott 2025: antal 2025 och 2024, villa och radhus mot lägenhet, och per 100 000 invånare som komplement. Sidorna nedan har dessutom antalet år för år 2015 till 2025, villa och radhus mot lägenhet, och länk till Polisens sida om grannsamverkan i regionen. Källa: Brottsförebyggande rådets statistikdatabas över anmälda brott, uttag hämtade 1 oktober 2026 (2024 och 2025) och 24 oktober 2026 (2015 till 2025). Fritidshus, källare och vind samt annan typ av bostad ingår inte. Kommunsiffrorna utgår från brottsplats och summerar inte till rikets siffror.
-
-- [Inbrott i Arvika](https://mobilpoolen.se/inbrottsstatistik/arvika)
-- [Inbrott i Botkyrka](https://mobilpoolen.se/inbrottsstatistik/botkyrka)
-- [Inbrott i Danderyd](https://mobilpoolen.se/inbrottsstatistik/danderyd)
-- [Inbrott i Eskilstuna](https://mobilpoolen.se/inbrottsstatistik/eskilstuna)
-- [Inbrott i Gävle](https://mobilpoolen.se/inbrottsstatistik/gavle)
-- [Inbrott i Göteborg](https://mobilpoolen.se/inbrottsstatistik/goteborg)
-- [Inbrott i Halmstad](https://mobilpoolen.se/inbrottsstatistik/halmstad)
-- [Inbrott i Haninge](https://mobilpoolen.se/inbrottsstatistik/haninge)
-- [Inbrott i Helsingborg](https://mobilpoolen.se/inbrottsstatistik/helsingborg)
-- [Inbrott i Huddinge](https://mobilpoolen.se/inbrottsstatistik/huddinge)
-- [Inbrott i Hässleholm](https://mobilpoolen.se/inbrottsstatistik/hassleholm)
-- [Inbrott i Järfälla](https://mobilpoolen.se/inbrottsstatistik/jarfalla)
-- [Inbrott i Jönköping](https://mobilpoolen.se/inbrottsstatistik/jonkoping)
-- [Inbrott i Kalmar](https://mobilpoolen.se/inbrottsstatistik/kalmar)
-- [Inbrott i Karlstad](https://mobilpoolen.se/inbrottsstatistik/karlstad)
-- [Inbrott i Kristianstad](https://mobilpoolen.se/inbrottsstatistik/kristianstad)
-- [Inbrott i Lidingö](https://mobilpoolen.se/inbrottsstatistik/lidingo)
-- [Inbrott i Linköping](https://mobilpoolen.se/inbrottsstatistik/linkoping)
-- [Inbrott i Lund](https://mobilpoolen.se/inbrottsstatistik/lund)
-- [Inbrott i Malmö](https://mobilpoolen.se/inbrottsstatistik/malmo)
-- [Inbrott i Mölndal](https://mobilpoolen.se/inbrottsstatistik/molndal)
-- [Inbrott i Nacka](https://mobilpoolen.se/inbrottsstatistik/nacka)
-- [Inbrott i Norrköping](https://mobilpoolen.se/inbrottsstatistik/norrkoping)
-- [Inbrott i Norrtälje](https://mobilpoolen.se/inbrottsstatistik/norrtalje)
-- [Inbrott i Sollentuna](https://mobilpoolen.se/inbrottsstatistik/sollentuna)
-- [Inbrott i Solna](https://mobilpoolen.se/inbrottsstatistik/solna)
-- [Inbrott i Stockholm](https://mobilpoolen.se/inbrottsstatistik/stockholm)
-- [Inbrott i Sundbyberg](https://mobilpoolen.se/inbrottsstatistik/sundbyberg)
-- [Inbrott i Södertälje](https://mobilpoolen.se/inbrottsstatistik/sodertalje)
-- [Inbrott i Tanum](https://mobilpoolen.se/inbrottsstatistik/tanum)
-- [Inbrott i Trollhättan](https://mobilpoolen.se/inbrottsstatistik/trollhattan)
-- [Inbrott i Täby](https://mobilpoolen.se/inbrottsstatistik/taby)
-- [Inbrott i Upplands Väsby](https://mobilpoolen.se/inbrottsstatistik/upplands-vasby)
-- [Inbrott i Uppsala](https://mobilpoolen.se/inbrottsstatistik/uppsala)
-- [Inbrott i Värmdö](https://mobilpoolen.se/inbrottsstatistik/varmdo)
-- [Inbrott i Västerås](https://mobilpoolen.se/inbrottsstatistik/vasteras)
-- [Inbrott i Växjö](https://mobilpoolen.se/inbrottsstatistik/vaxjo)
-- [Inbrott i Ängelholm](https://mobilpoolen.se/inbrottsstatistik/angelholm)
-- [Inbrott i Örebro](https://mobilpoolen.se/inbrottsstatistik/orebro)
+- [Alla guider](https://mobilpoolen.se/guider): Samlingssida för guiderna om pris och avtal, surf och nät, byte och uppsägning, utland, familj, säkerhet och företag.
+- [Kampanjpris på mobilabonnemang: vad betalar du sedan?](https://mobilpoolen.se/guider/kampanjpris-efter-kampanjen): Så räknar du ut vad ett kampanjpris kostar på ett och två år, varför ordinarie pris avgör och hur du undviker att betala fullt pris efter kampanjen.
+- [Bindningstid och uppsägningstid på mobilabonnemang](https://mobilpoolen.se/guider/bindningstid-uppsagningstid): Vad lagen säger om bindningstid och uppsägningstid, vad det kostar att bryta ett avtal i förtid och när bindningstid kan löna sig.
+- [Sänk mobilräkningen: 10 sätt att betala mindre](https://mobilpoolen.se/guider/sank-mobilrakningen): Tio konkreta sätt att sänka kostnaden för mobilen, från rätt surfmängd och byte av operatör till familjerabatt och att stänga av tjänster du inte använder.
+- [Prishöjning på mobilabonnemanget: dina rättigheter](https://mobilpoolen.se/guider/prishojning-mobilabonnemang): Operatören får höja priset, men måste säga till en månad innan. Så fungerar rätten att säga upp avtalet när villkoren ändras, även med bindningstid.
+- [Ångerrätt på mobilabonnemang och telefonförsäljning](https://mobilpoolen.se/guider/angerratt-mobilabonnemang): 14 dagars ångerrätt vid köp på nätet och i telefon, varför ett telefonsamtal inte räcker för att ingå avtal och så ångrar du ett abonnemang.
+- [Köpa mobil med eller utan abonnemang: räkna på totalen](https://mobilpoolen.se/guider/mobil-med-eller-utan-abonnemang): Så jämför du en telefon på delbetalning med abonnemang mot att köpa mobilen själv och ta ett billigt abonnemang. Med räkneexempel över 24 månader.
+- [Kontantkort eller abonnemang: vad är billigast för dig?](https://mobilpoolen.se/guider/kontantkort-eller-abonnemang): Skillnaden mellan kontantkort och abonnemang i pris, registrering, surf och flexibilitet, och för vem kontantkort fortfarande är det bästa valet.
+- [Förhandla med operatören: så får du ett bättre pris](https://mobilpoolen.se/guider/forhandla-med-operatoren): Så förbereder du samtalet, vad du kan be om och när det är bättre att byta direkt i stället för att pruta på det abonnemang du har.
+- [Hur mycket surf drar Netflix, Spotify och sociala medier?](https://mobilpoolen.se/guider/hur-mycket-surf-drar-appar): Dataåtgång per timme för film, musik och vanliga appar enligt tjänsterna själva, och hur du räknar fram hur mycket surf du behöver i månaden.
+- [Räcker 5 GB surf i månaden?](https://mobilpoolen.se/guider/racker-5-gb-surf): Vem 5 GB räcker för, vad det motsvarar i timmar video och musik, och när det lönar sig att ta mer surf i stället för att fylla på.
+- [Vilket mobilnät har bäst täckning i Sverige?](https://mobilpoolen.se/guider/basta-tackning-sverige): Vad mätningarna från PTS, Opensignal och andra faktiskt säger om Telias, Tele2s, Telenors och Tres nät, och hur du tar reda på täckningen där du bor.
+- [Vilket nät använder din operatör? Hallon, Vimla, Comviq med flera](https://mobilpoolen.se/guider/vilket-nat-anvander-operatoren): Lista över vilket av de fyra mobilnäten varje operatör kör i, och varför samma nät ger samma täckning till lägre pris.
+- [Virtuella operatörer: sämre eller bara billigare?](https://mobilpoolen.se/guider/virtuella-operatorer): Vad en virtuell operatör (MVNO) är, vad som skiljer dem från nätägarna och när ett billigare varumärke ger exakt samma nät.
+- [Behöver du 5G? Vad det ger och vad som krävs](https://mobilpoolen.se/guider/behover-jag-5g): Vad 5G ger i praktiken, vilka abonnemang och telefoner som har det och hur stor del av Sverige som täcks i dag.
+- [Vad är eSIM? Så fungerar det och vilka operatörer har det](https://mobilpoolen.se/guider/vad-ar-esim): Hur eSIM fungerar, vilka telefoner som stöder det, hur du aktiverar och flyttar det och vilka operatörer som erbjuder eSIM.
+- [Sparad surf och dubbel surf: vad betyder det?](https://mobilpoolen.se/guider/sparad-surf-dubbel-surf): Hur sparad surf (rollover) och kampanjer med dubbel surf fungerar, vilka operatörer som har det och när det faktiskt sparar pengar.
+- [När surfen tar slut: strypt hastighet och påfyllning](https://mobilpoolen.se/guider/nar-surfen-tar-slut): Vad som händer när månadens surf är slut, vad strypt hastighet räcker till och om det är billigare att fylla på eller byta abonnemang.
+- [Dålig täckning inomhus? Wifi-samtal och andra lösningar](https://mobilpoolen.se/guider/wifi-samtal-och-dalig-tackning): Så felsöker du dålig täckning hemma: wifi-samtal, byte av nät, inställningar i telefonen och när en förstärkare är tillåten.
+- [2G och 3G släcks ner: fungerar din telefon fortfarande?](https://mobilpoolen.se/guider/2g-3g-nedslackning): Tele2, Telenor och Tre har stängt 2G och 3G och Telia stänger 2G 2027. Så kontrollerar du om telefonen klarar 4G och VoLTE.
+- [Byta operatör och behålla numret: steg för steg](https://mobilpoolen.se/guider/byta-operator-behalla-nummer): Så byter du mobiloperatör utan att tappa numret. Den nya operatören sköter flytten, avbrottet får vara högst en arbetsdag och flytten är gratis från den gamla.
+- [Byta operatör med bindningstid kvar: vad kostar det?](https://mobilpoolen.se/guider/byta-operator-med-bindningstid): Bindningstid hindrar inte en nummerflytt, men den återstående tiden ska betalas. Så räknar du ut om det lönar sig att byta direkt eller vänta.
+- [Halebop läggs ned: vad gäller och vart ska du byta?](https://mobilpoolen.se/guider/halebop-laggs-ned): Telia avvecklar Halebop och flyttar kunderna. Vad det innebär för pris, nummer och villkor, och vilka alternativ som finns i samma nät.
+- [Surfa i EU: så mycket ingår och vad det kostar](https://mobilpoolen.se/guider/surfa-i-eu): Roam like at home gäller till 2032. Så räknas EU-surfen ut på obegränsade abonnemang, vilka länder som ingår och vad som händer när den tar slut.
+- [Surfa utanför EU: USA, Thailand, Turkiet och Storbritannien](https://mobilpoolen.se/guider/surfa-utanfor-eu): Varför roaming utanför EU kan bli dyrt, hur du undviker en chockräkning och när ett rese-eSIM eller lokalt SIM-kort är billigare.
+- [Ringa till utlandet billigt från Sverige](https://mobilpoolen.se/guider/ringa-utomlands-billigt): Pristaket för samtal till andra EU-länder, vad samtal till resten av världen kostar och när appar eller operatörer med utlandsfokus är billigast.
+- [Barnets första mobilabonnemang: ålder, spärrar och pris](https://mobilpoolen.se/guider/forsta-mobilabonnemang-barn): Vad du ska tänka på när barnet får sin första mobil: kontantkort eller abonnemang, kostnadstak, spärrar för köp och surf, och vem som står på avtalet.
+- [Spärra köp och betalsamtal på barnens mobil](https://mobilpoolen.se/guider/sparra-kop-barn-mobil): Så spärrar du betalsms, köp via mobilräkningen och betalnummer hos operatören, och vilka inställningar i telefonen som skyddar mot dyra överraskningar.
+- [Bluffsamtal, bluff-sms och SIM-kapning: så skyddar du dig](https://mobilpoolen.se/guider/bedrageri-sim-swap-och-bluffsamtal): Hur bedragare använder mobilen, vad operatörerna blockerar enligt PTS regler och vad du gör om du misstänker att numret har kapats.
+- [Klaga på operatören: så går du tillväga](https://mobilpoolen.se/guider/klaga-pa-operatoren): Från reklamation hos operatören till Telekområdgivarna och Allmänna reklamationsnämnden. Med mall och tidsgränser.
+- [Mobilmarknaden i siffror 2026: abonnemang, surf och marknadsandelar](https://mobilpoolen.se/guider/mobilmarknaden-i-siffror): Statistik om den svenska mobilmarknaden från PTS: antal abonnemang, marknadsandelar per operatör, surf per månad och hur många som använder 5G.
+- [Privat- eller företagsabonnemang: skillnaderna](https://mobilpoolen.se/guider/privat-eller-foretagsabonnemang): Vad som skiljer ett företagsabonnemang från ett privat: moms, avtalsvillkor, konsumentskydd, fakturering och vad som passar enskild firma.
+- [Moms på mobilabonnemang: ex eller inkl. moms?](https://mobilpoolen.se/guider/moms-mobilabonnemang): När företaget får dra av momsen på mobilabonnemanget, hur privat användning påverkar avdraget och hur du jämför priser exkl. och inkl. moms.
+- [Jobbmobil och förmånsskatt: vad säger Skatteverket?](https://mobilpoolen.se/guider/jobbmobil-formansskatt): När en mobil med abonnemang är ett skattefritt arbetsredskap och när privata samtal och tjänster blir en skattepliktig förmån.
+- [Mobilabonnemang i enskild firma: avdrag och uttag](https://mobilpoolen.se/guider/avdrag-mobilabonnemang-enskild-firma): Så gör du avdrag för mobilabonnemanget i enskild firma, vad som gäller när du även ringer privat och hur ett AB skiljer sig.
+- [Växel eller bara mobil? Mobilväxel för småföretag](https://mobilpoolen.se/guider/vaxel-eller-mobil): När ett småföretag klarar sig med vanliga mobilabonnemang och när en mobil växel lönar sig. Med funktioner och priser från operatörerna.
+- [Delad surf för företag: så fungerar poolad surf](https://mobilpoolen.se/guider/delad-surf-foretag): Hur delad (poolad) surf fungerar i företagsabonnemang, vilka operatörer som erbjuder det och när det blir billigare än separata surfpaket.
+- [Flytta numret från privat till företag: överlåtelse](https://mobilpoolen.se/guider/overlata-abonnemang-till-foretag): Så överlåter du ett mobilabonnemang mellan privatperson och företag, vad som händer med bindningstiden och hur du behåller numret.
 
 ## Om tjänsten
 
-Mobilpoolen drivs av PMG Poolen Media Group AB. I dag jämför tjänsten larmbolagens publicerade priser och villkor. Offertförmedling till två till tre utvalda larmbolag öppnar senare, och då kommer Mobilpoolen att få ersättning från de larmbolag som kunder förmedlas till. I dag får Mobilpoolen ingen ersättning från något larmbolag.
+Mobilpoolen drivs av PMG Poolen Media Group AB. Tjänsten jämför operatörernas publicerade priser och villkor, och besökaren beställer direkt hos operatören. Mobilpoolen har inga avtal med operatörer och får i dag ingen ersättning. Om det ändras märks länkarna vid knappen och med rel="sponsored", och ersättning påverkar aldrig ordningen i jämförelsen.
