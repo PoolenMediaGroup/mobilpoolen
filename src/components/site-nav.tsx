@@ -24,6 +24,7 @@ const NAV: NavPost[] = [
           { href: "/esim", label: "eSIM" },
           { href: "/kampanjer", label: "Kampanjer just nu" },
           { href: "/mobilt-bredband", label: "Mobilt bredband" },
+          { href: "/mobil-med-abonnemang", label: "Mobil med abonnemang" },
         ],
       },
     ],

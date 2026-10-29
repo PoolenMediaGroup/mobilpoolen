@@ -267,6 +267,11 @@ function Page() {
         som stöder eSIM kan du aktivera abonnemanget utan att vänta på ett SIM-kort, se{" "}
         <A href="/esim">eSIM</A>.
       </P>
+      <P>
+        Vill du se vad en viss mobil kostar hos varje operatör, jämfört med tillverkarens eget pris?
+        Se <A href="/mobil-med-abonnemang">mobil med abonnemang</A>, där vi har räknat ut
+        totalkostnaden för iPhone, Samsung och Pixel.
+      </P>
 
       <H2 id="fragor">Vanliga frågor</H2>
       <FaqAccordion items={FAQ} />

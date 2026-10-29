@@ -215,3 +215,40 @@ out=['// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kon
 p=os.path.join(ROT,'src/lib/mobil/bredband-data.ts'); open(p,'w').write(''.join(out))
 subprocess.run(['npx','prettier','--write',p],cwd=ROT,stdout=subprocess.DEVNULL)
 print('bredband',len(bredband))
+
+# ---------------- Mobil med abonnemang ----------------
+# Underlag: research/mobil-med-abonnemang.json (operatörernas, Apples, Samsungs och Googles egna sidor).
+tm=json.load(open(os.path.join(ROT,'research/mobil-med-abonnemang.json')))
+def tel_slug(namn):
+    s=namn.lower().replace('apple ','').replace('samsung ','').replace('google ','')
+    s=re.sub(r'\s+\d+\s*gb$','',s)
+    s=re.sub(r'[^a-z0-9]+','-',s).strip('-')
+    return s
+tillv={k['telefon']:k for k in tm['kontantpriser']}
+modeller=[]
+for e in tm['erbjudanden']:
+    if not any(m['namn']==e['telefon'] for m in modeller):
+        k=tillv.get(e['telefon'],{})
+        modeller.append(dict(slug=tel_slug(e['telefon']),namn=e['telefon'],
+            marke=e['telefon'].split(' ')[0],tillverkarpris=k.get('pris'),
+            tillverkarkalla=k.get('kalla') if k.get('pris') else None,
+            tillverkarnotis=ren_notis(k.get('notis'))))
+telefoner=[]
+for e in tm['erbjudanden']:
+    ab=e.get('abonnemangKravs') or {}
+    telefoner.append(dict(operator=e['operator'],modell=tel_slug(e['telefon']),telefon=e['telefon'],
+        perManad=e.get('telefonPerManad'),manader=e.get('manader'),telefonTotalt=e.get('telefonTotalt'),
+        kontantpris=e.get('kontantpris'),kontantprisAvser=ren_notis(e.get('kontantprisAvser')),
+        abonnemang=ab.get('namn'),abonnemangGb=ab.get('gb'),abonnemangPris=ab.get('prisPerManad'),
+        abonnemangOrdinarie=ab.get('ordinariePris'),abonnemangNot=ren_notis(ab.get('not')),
+        valfrittAbonnemang=bool(e.get('billigareAbonnemang')),bindning=e.get('bindning'),
+        minstaTotal=e.get('totalt') or e.get('totaltMinstaRaknat'),operatorAngerTotal=e.get('totalt') is not None,
+        inbyte=ren_notis(e.get('restvarde')),kalla=e['kalla'],notis=ren_notis(e.get('notis'))))
+out=['// GENERERAD av scripts/bygg_data.py ur research/mobil-med-abonnemang.json, kontrollerad '+tm['kontrollerad']+'.\n\nimport type { Telefonerbjudande, Telefonmodell } from "./typer";\n\n',
+     'export const TELEFON_KONTROLLERAD = "'+tm['kontrollerad']+'";\n\n',
+     'export const TELEFONMODELLER: Telefonmodell[] = '+json.dumps(modeller,ensure_ascii=False,indent=2)+';\n\n',
+     'export const TELEFONERBJUDANDEN: Telefonerbjudande[] = '+json.dumps(telefoner,ensure_ascii=False,indent=2)+';\n\n',
+     'export const TELEFON_FAKTA: { pastaende: string; kalla: string }[] = '+json.dumps([f for f in tm['fakta'] if '[KONTROLLERA]' not in f['pastaende']],ensure_ascii=False,indent=2)+';\n']
+p=os.path.join(ROT,'src/lib/mobil/telefon-data.ts'); open(p,'w').write(''.join(out))
+subprocess.run(['npx','prettier','--write',p],cwd=ROT,stdout=subprocess.DEVNULL)
+print('telefoner',len(telefoner),'modeller',[m['slug'] for m in modeller])

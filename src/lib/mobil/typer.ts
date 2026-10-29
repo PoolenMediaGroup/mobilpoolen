@@ -140,3 +140,38 @@ export type Bredband = {
   kalla: string;
   notis: string | null;
 };
+
+/** En telefonmodell, med tillverkarens eget pris när den säljer modellen. */
+export type Telefonmodell = {
+  slug: string;
+  namn: string;
+  marke: string;
+  tillverkarpris: number | null;
+  tillverkarkalla: string | null;
+  tillverkarnotis: string | null;
+};
+
+/** Mobil med abonnemang hos en operatör. Okänd uppgift = null. */
+export type Telefonerbjudande = {
+  operator: string;
+  modell: string;
+  telefon: string;
+  perManad: number | null;
+  manader: number | null;
+  telefonTotalt: number | null;
+  kontantpris: number | null;
+  kontantprisAvser: string | null;
+  abonnemang: string | null;
+  abonnemangGb: number | null;
+  abonnemangPris: number | null;
+  abonnemangOrdinarie: number | null;
+  abonnemangNot: string | null;
+  valfrittAbonnemang: boolean;
+  bindning: number | null;
+  /** Mobilen plus exempelabonnemanget under bindningstiden, med engångsavgifter. */
+  minstaTotal: number | null;
+  operatorAngerTotal: boolean;
+  inbyte: string | null;
+  kalla: string;
+  notis: string | null;
+};
