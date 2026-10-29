@@ -14,10 +14,15 @@ Fakta om tjänsten:
 - [Billigaste mobilabonnemang](https://mobilpoolen.se/billigaste-mobilabonnemang): De billigaste abonnemangen per surfmängd, räknat på snittpris första året.
 - [Bästa mobilabonnemang](https://mobilpoolen.se/basta-mobilabonnemang): Bästa mobilabonnemanget för olika behov, med tydliga kriterier och utan egna betyg.
 - [Obegränsad surf](https://mobilpoolen.se/obegransad-surf): Abonnemang med obegränsad surf jämförda på pris, EU-surf och villkor.
+- [Mobilabonnemang 10 GB](https://mobilpoolen.se/surf/10-gb): Billigaste abonnemangen med 10 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
+- [Mobilabonnemang 20 GB](https://mobilpoolen.se/surf/20-gb): Billigaste abonnemangen med 20 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
+- [Mobilabonnemang 50 GB](https://mobilpoolen.se/surf/50-gb): Billigaste abonnemangen med 50 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
+- [Mobilabonnemang 100 GB](https://mobilpoolen.se/surf/100-gb): Billigaste abonnemangen med 100 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
+- [Kampanjer](https://mobilpoolen.se/kampanjer): Alla kampanjer på mobilabonnemang just nu, sorterade på vad du betalar första året, med pris efter kampanjen.
 - [Utan bindningstid](https://mobilpoolen.se/utan-bindningstid): Mobilabonnemang utan bindningstid och vad lagen säger om bindning och uppsägning.
 - [Familjeabonnemang](https://mobilpoolen.se/familjeabonnemang): Abonnemang för familjer, extra användare och delad surf.
 - [Mobilabonnemang för barn](https://mobilpoolen.se/barn): Abonnemang för barn, spärrar och pris.
-- [Mobilabonnemang för ungdom](https://mobilpoolen.se/ungdom): Ungdomsabonnemang och åldersrabatter.
+- [Studentabonnemang](https://mobilpoolen.se/studentabonnemang): Abonnemang med studentpris och Telias rabatt för dig under 28 år.
 - [Mobilabonnemang för pensionärer](https://mobilpoolen.se/pensionar): Abonnemang och rabatter för seniorer.
 - [Kontantkort](https://mobilpoolen.se/kontantkort): Kontantkort jämförda, registreringskravet och när kontantkort lönar sig.
 - [eSIM](https://mobilpoolen.se/esim): Vilka operatörer som har eSIM och hur det fungerar.

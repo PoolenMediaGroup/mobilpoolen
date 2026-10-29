@@ -174,7 +174,7 @@ function Sida() {
           text: "Första abonnemanget, spärrar och vem som står på avtalet.",
         },
         {
-          href: "/ungdom",
+          href: "/studentabonnemang",
           label: "Ungdom och student",
           text: "Rabatter för unga och studenter.",
         },

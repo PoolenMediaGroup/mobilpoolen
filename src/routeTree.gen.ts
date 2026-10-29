@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UtanBindningstidRouteImport } from './routes/utan-bindningstid'
 import { Route as UngdomRouteImport } from './routes/ungdom'
+import { Route as StudentabonnemangRouteImport } from './routes/studentabonnemang'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SaTjanarViPengarRouteImport } from './routes/sa-tjanar-vi-pengar'
 import { Route as SaJamforViRouteImport } from './routes/sa-jamfor-vi'
@@ -22,6 +23,7 @@ import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as ObegransadSurfRouteImport } from './routes/obegransad-surf'
 import { Route as KontantkortRouteImport } from './routes/kontantkort'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as KampanjerRouteImport } from './routes/kampanjer'
 import { Route as IntegritetspolicyRouteImport } from './routes/integritetspolicy'
 import { Route as ForetagRouteImport } from './routes/foretag'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -44,6 +46,7 @@ import { Route as VerktygKampanjkalkylatorRouteImport } from './routes/verktyg.k
 import { Route as VerktygHurMycketSurfBehoverJagRouteImport } from './routes/verktyg.hur-mycket-surf-behover-jag'
 import { Route as VerktygForetagskalkylatorRouteImport } from './routes/verktyg.foretagskalkylator'
 import { Route as VerktygBetalarJagForMycketRouteImport } from './routes/verktyg.betalar-jag-for-mycket'
+import { Route as SurfGbRouteImport } from './routes/surf.$gb'
 import { Route as SkribentLeonHallstromRouteImport } from './routes/skribent.leon-hallstrom'
 import { Route as SagaUppSlugRouteImport } from './routes/saga-upp.$slug'
 import { Route as OperatorerSlugRouteImport } from './routes/operatorer.$slug'
@@ -100,6 +103,11 @@ const UngdomRoute = UngdomRouteImport.update({
   path: '/ungdom',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudentabonnemangRoute = StudentabonnemangRouteImport.update({
+  id: '/studentabonnemang',
+  path: '/studentabonnemang',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -153,6 +161,11 @@ const KontantkortRoute = KontantkortRouteImport.update({
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KampanjerRoute = KampanjerRouteImport.update({
+  id: '/kampanjer',
+  path: '/kampanjer',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IntegritetspolicyRoute = IntegritetspolicyRouteImport.update({
@@ -270,6 +283,11 @@ const VerktygBetalarJagForMycketRoute =
     path: '/verktyg/betalar-jag-for-mycket',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SurfGbRoute = SurfGbRouteImport.update({
+  id: '/surf/$gb',
+  path: '/surf/$gb',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SkribentLeonHallstromRoute = SkribentLeonHallstromRouteImport.update({
   id: '/skribent/leon-hallstrom',
   path: '/skribent/leon-hallstrom',
@@ -536,6 +554,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
@@ -547,6 +566,7 @@ export interface FileRoutesByFullPath {
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/studentabonnemang': typeof StudentabonnemangRoute
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
@@ -594,6 +614,7 @@ export interface FileRoutesByFullPath {
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/surf/$gb': typeof SurfGbRoute
   '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
   '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
   '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
@@ -618,6 +639,7 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
@@ -629,6 +651,7 @@ export interface FileRoutesByTo {
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/studentabonnemang': typeof StudentabonnemangRoute
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
@@ -676,6 +699,7 @@ export interface FileRoutesByTo {
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/surf/$gb': typeof SurfGbRoute
   '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
   '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
   '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
@@ -701,6 +725,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
+  '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
@@ -712,6 +737,7 @@ export interface FileRoutesById {
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/studentabonnemang': typeof StudentabonnemangRoute
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
@@ -759,6 +785,7 @@ export interface FileRoutesById {
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/surf/$gb': typeof SurfGbRoute
   '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
   '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
   '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
@@ -785,6 +812,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
+    | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
     | '/obegransad-surf'
@@ -796,6 +824,7 @@ export interface FileRouteTypes {
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/studentabonnemang'
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
@@ -843,6 +872,7 @@ export interface FileRouteTypes {
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/surf/$gb'
     | '/verktyg/betalar-jag-for-mycket'
     | '/verktyg/foretagskalkylator'
     | '/verktyg/hur-mycket-surf-behover-jag'
@@ -867,6 +897,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
+    | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
     | '/obegransad-surf'
@@ -878,6 +909,7 @@ export interface FileRouteTypes {
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/studentabonnemang'
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
@@ -925,6 +957,7 @@ export interface FileRouteTypes {
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/surf/$gb'
     | '/verktyg/betalar-jag-for-mycket'
     | '/verktyg/foretagskalkylator'
     | '/verktyg/hur-mycket-surf-behover-jag'
@@ -949,6 +982,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
+    | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
     | '/obegransad-surf'
@@ -960,6 +994,7 @@ export interface FileRouteTypes {
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/studentabonnemang'
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
@@ -1007,6 +1042,7 @@ export interface FileRouteTypes {
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/surf/$gb'
     | '/verktyg/betalar-jag-for-mycket'
     | '/verktyg/foretagskalkylator'
     | '/verktyg/hur-mycket-surf-behover-jag'
@@ -1032,6 +1068,7 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   ForetagRoute: typeof ForetagRoute
   IntegritetspolicyRoute: typeof IntegritetspolicyRoute
+  KampanjerRoute: typeof KampanjerRoute
   KontaktRoute: typeof KontaktRoute
   KontantkortRoute: typeof KontantkortRoute
   ObegransadSurfRoute: typeof ObegransadSurfRoute
@@ -1043,6 +1080,7 @@ export interface RootRouteChildren {
   SaJamforViRoute: typeof SaJamforViRoute
   SaTjanarViPengarRoute: typeof SaTjanarViPengarRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  StudentabonnemangRoute: typeof StudentabonnemangRoute
   UngdomRoute: typeof UngdomRoute
   UtanBindningstidRoute: typeof UtanBindningstidRoute
   ApiChattRoute: typeof ApiChattRoute
@@ -1090,6 +1128,7 @@ export interface RootRouteChildren {
   OperatorerSlugRoute: typeof OperatorerSlugRoute
   SagaUppSlugRoute: typeof SagaUppSlugRoute
   SkribentLeonHallstromRoute: typeof SkribentLeonHallstromRoute
+  SurfGbRoute: typeof SurfGbRoute
   VerktygBetalarJagForMycketRoute: typeof VerktygBetalarJagForMycketRoute
   VerktygForetagskalkylatorRoute: typeof VerktygForetagskalkylatorRoute
   VerktygHurMycketSurfBehoverJagRoute: typeof VerktygHurMycketSurfBehoverJagRoute
@@ -1116,6 +1155,13 @@ declare module '@tanstack/react-router' {
       path: '/ungdom'
       fullPath: '/ungdom'
       preLoaderRoute: typeof UngdomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studentabonnemang': {
+      id: '/studentabonnemang'
+      path: '/studentabonnemang'
+      fullPath: '/studentabonnemang'
+      preLoaderRoute: typeof StudentabonnemangRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -1193,6 +1239,13 @@ declare module '@tanstack/react-router' {
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kampanjer': {
+      id: '/kampanjer'
+      path: '/kampanjer'
+      fullPath: '/kampanjer'
+      preLoaderRoute: typeof KampanjerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/integritetspolicy': {
@@ -1347,6 +1400,13 @@ declare module '@tanstack/react-router' {
       path: '/verktyg/betalar-jag-for-mycket'
       fullPath: '/verktyg/betalar-jag-for-mycket'
       preLoaderRoute: typeof VerktygBetalarJagForMycketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/surf/$gb': {
+      id: '/surf/$gb'
+      path: '/surf/$gb'
+      fullPath: '/surf/$gb'
+      preLoaderRoute: typeof SurfGbRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/skribent/leon-hallstrom': {
@@ -1680,6 +1740,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   ForetagRoute: ForetagRoute,
   IntegritetspolicyRoute: IntegritetspolicyRoute,
+  KampanjerRoute: KampanjerRoute,
   KontaktRoute: KontaktRoute,
   KontantkortRoute: KontantkortRoute,
   ObegransadSurfRoute: ObegransadSurfRoute,
@@ -1691,6 +1752,7 @@ const rootRouteChildren: RootRouteChildren = {
   SaJamforViRoute: SaJamforViRoute,
   SaTjanarViPengarRoute: SaTjanarViPengarRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  StudentabonnemangRoute: StudentabonnemangRoute,
   UngdomRoute: UngdomRoute,
   UtanBindningstidRoute: UtanBindningstidRoute,
   ApiChattRoute: ApiChattRoute,
@@ -1746,6 +1808,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperatorerSlugRoute: OperatorerSlugRoute,
   SagaUppSlugRoute: SagaUppSlugRoute,
   SkribentLeonHallstromRoute: SkribentLeonHallstromRoute,
+  SurfGbRoute: SurfGbRoute,
   VerktygBetalarJagForMycketRoute: VerktygBetalarJagForMycketRoute,
   VerktygForetagskalkylatorRoute: VerktygForetagskalkylatorRoute,
   VerktygHurMycketSurfBehoverJagRoute: VerktygHurMycketSurfBehoverJagRoute,

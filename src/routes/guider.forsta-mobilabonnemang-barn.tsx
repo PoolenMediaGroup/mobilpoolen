@@ -191,7 +191,7 @@ function Page() {
               .join(" och ")} även på sin sida för barn under 18. `
           : ""}
         Jämför fler på <A href="/barn">mobilabonnemang för barn</A> och{" "}
-        <A href="/ungdom">för ungdomar</A>. Har familjen flera abonnemang, se{" "}
+        <A href="/studentabonnemang">för studenter och unga</A>. Har familjen flera abonnemang, se{" "}
         <A href="/familjeabonnemang">familjeabonnemang</A>.
       </P>
 

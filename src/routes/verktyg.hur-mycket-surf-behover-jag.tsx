@@ -413,6 +413,11 @@ function Sida() {
       faq={FAQ}
       lankar={[
         {
+          href: "/surf/20-gb",
+          label: "Abonnemang med 20 GB",
+          text: "Billigast på den vanligaste surfnivån.",
+        },
+        {
           href: "/obegransad-surf",
           label: "Obegränsad surf",
           text: "När det lönar sig och vad det kostar.",

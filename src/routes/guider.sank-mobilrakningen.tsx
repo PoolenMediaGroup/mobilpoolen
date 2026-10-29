@@ -206,13 +206,13 @@ function Page() {
           Hallon ger studenter och unga {gbText(hStud.gb)} för samma pris som {gbText(h5.gb)} kostar
           för alla, {kr(hStud.pris)} i månaden. Flera operatörer har också egna priser för dig över
           55 eller 65. Se <A href="/pensionar">abonnemang för pensionärer</A> och{" "}
-          <A href="/ungdom">abonnemang för unga</A>.
+          <A href="/studentabonnemang">studentabonnemang</A>.
         </P>
       ) : (
         <P>
           Flera operatörer har egna priser för studenter, unga och dig över 55 eller 65. Se{" "}
           <A href="/pensionar">abonnemang för pensionärer</A> och{" "}
-          <A href="/ungdom">abonnemang för unga</A>.
+          <A href="/studentabonnemang">studentabonnemang</A>.
         </P>
       )}
 
