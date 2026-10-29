@@ -32,7 +32,7 @@ const COLS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Familjeabonnemang", to: "/familjeabonnemang" },
       { label: "Barn", to: "/barn" },
-      { label: "Unga och studenter", to: "/ungdom" },
+      { label: "Unga och studenter", to: "/studentabonnemang" },
       { label: "Pensionärer", to: "/pensionar" },
       { label: "5G-abonnemang", to: "/5g-abonnemang" },
       { label: "eSIM", to: "/esim" },

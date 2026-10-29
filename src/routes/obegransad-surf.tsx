@@ -117,6 +117,11 @@ function Sida() {
       faq={FAQ}
       lankar={[
         {
+          href: "/surf/100-gb",
+          label: "100 GB surf",
+          text: "Billigaste abonnemangen med 100 GB, om obegränsat är mer än du behöver.",
+        },
+        {
           href: "/billigaste-mobilabonnemang",
           label: "Billigaste mobilabonnemang",
           text: "Billigast per surfmängd, om du inte behöver obegränsat.",

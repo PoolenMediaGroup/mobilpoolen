@@ -33,7 +33,7 @@ const NAV: NavPost[] = [
         lankar: [
           { href: "/familjeabonnemang", label: "Familj" },
           { href: "/barn", label: "Barn" },
-          { href: "/ungdom", label: "Unga och studenter" },
+          { href: "/studentabonnemang", label: "Unga och studenter" },
           { href: "/pensionar", label: "Pensionärer" },
         ],
       },

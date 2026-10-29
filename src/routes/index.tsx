@@ -13,6 +13,8 @@ import {
   Search,
   Users,
   Wallet,
+  Tag,
+  GraduationCap,
 } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -23,6 +25,7 @@ import { SectionHeader, SectionShell } from "@/components/section-layout";
 import { Jamforelse, type Forval } from "@/components/mobil/jamforelse";
 import { SparKalkyl, type KalkylResultat } from "@/components/mobil/spar-kalkyl";
 import { BilligastTabell, billigastPerNiva } from "@/components/mobil/billigast-tabell";
+import { SURF_NIVAER } from "@/lib/mobil/surf";
 import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { pageHead, faqJsonLd, jsonLdScript, SITE_URL } from "@/lib/seo";
 import { fragorUrRegistret } from "@/lib/faq";
@@ -107,6 +110,32 @@ function Startsida() {
               sub="Det billigaste abonnemanget som ger minst så här mycket surf, räknat som snittpris per månad under första året."
             />
             <BilligastTabell />
+            <nav aria-label="Jämför per surfmängd" className="mt-6">
+              <p className="text-[14.5px] font-semibold text-foreground">
+                Jämför alla abonnemang med
+              </p>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {SURF_NIVAER.map((n) => (
+                  <li key={n.slug}>
+                    <Link
+                      to={"/surf/$gb" as never}
+                      params={{ gb: n.slug } as never}
+                      className="inline-flex min-h-11 items-center rounded-full border border-border bg-surface px-4 text-[14.5px] font-semibold text-foreground hover:border-primary/50 hover:text-primary"
+                    >
+                      {n.gb} GB
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link
+                    to="/obegransad-surf"
+                    className="inline-flex min-h-11 items-center rounded-full border border-border bg-surface px-4 text-[14.5px] font-semibold text-foreground hover:border-primary/50 hover:text-primary"
+                  >
+                    Obegränsad
+                  </Link>
+                </li>
+              </ul>
+            </nav>
             <Link
               to="/billigaste-mobilabonnemang"
               className="mt-6 inline-flex min-h-11 items-center gap-1.5 font-semibold text-primary hover:underline"
@@ -301,7 +330,9 @@ const GENVAGAR = [
   },
   { to: "/utan-bindningstid", ikon: CalendarX2, t: "Utan bindningstid", d: "Byt när du vill" },
   { to: "/familjeabonnemang", ikon: Users, t: "Familj", d: "Flera kort och delad surf" },
+  { to: "/kampanjer", ikon: Tag, t: "Kampanjer", d: "Alla erbjudanden, räknat på hela året" },
   { to: "/barn", ikon: Baby, t: "Barn och unga", d: "Spärrar, kostnadstak och pris" },
+  { to: "/studentabonnemang", ikon: GraduationCap, t: "Studenter", d: "Studentpris och mer surf" },
   { to: "/pensionar", ikon: Check, t: "Pensionärer", d: "Enkelt, tryggt och billigt" },
   { to: "/kontantkort", ikon: Receipt, t: "Kontantkort", d: "Ingen faktura, inget avtal" },
   { to: "/foretag", ikon: Briefcase, t: "Företag", d: "Priser exkl. moms, per användare" },
@@ -314,7 +345,7 @@ function Genvagar() {
         title="Vad är viktigast för dig?"
         sub="Välj det som styr ditt val, så visar vi abonnemangen som passar och förklarar vad du ska tänka på."
       />
-      <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+      <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
         {GENVAGAR.map(({ to, ikon: Ikon, t, d }) => (
           <li key={to}>
             <Link

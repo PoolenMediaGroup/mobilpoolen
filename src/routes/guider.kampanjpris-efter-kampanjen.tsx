@@ -1,18 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  A,
-  Callout,
-  FaqAccordion,
-  GuidePage,
-  GuideTable,
-  H2,
-  P,
-  UL,
-} from "@/components/guide-page";
+import { A, Callout, FaqAccordion, GuidePage, H2, P, UL } from "@/components/guide-page";
 import { getGuide } from "@/lib/guides";
 import { articleJsonLd, faqJsonLd, guideBreadcrumb, pageHead } from "@/lib/seo";
-import { PRIVATA, operator, SENAST_KONTROLLERAD } from "@/lib/mobil/data";
-import { datumText, gbText, kr, snittForstaAret, totalKostnad } from "@/lib/mobil/berakna";
+import { SENAST_KONTROLLERAD } from "@/lib/mobil/data";
+import { datumText, kr } from "@/lib/mobil/berakna";
+import { KAMPANJER, OPPNA_KAMPANJER, opNamn } from "@/lib/mobil/kampanjer";
 
 const SLUG = "kampanjpris-efter-kampanjen";
 const guide = (() => {
@@ -74,10 +66,7 @@ export const Route = createFileRoute("/guider/kampanjpris-efter-kampanjen")({
 });
 
 function Page() {
-  // Abonnemang med kampanj just nu, billigast snittpris först.
-  const kampanjer = PRIVATA.filter((a) => a.kampanjpris != null && a.kampanjManader)
-    .sort((a, b) => snittForstaAret(a) - snittForstaAret(b))
-    .slice(0, 10);
+  const topp = OPPNA_KAMPANJER[0];
 
   return (
     <GuidePage
@@ -134,24 +123,15 @@ function Page() {
 
       <H2 id="just-nu">Kampanjerna just nu</H2>
       <P>
-        Här är de abonnemang med kampanjpris som har lägst snittpris första året. Siffrorna räknas
-        fram ur operatörernas egna uppgifter.
+        Just nu har vi {KAMPANJER.length} kampanjer i jämförelsen. Den med lägst snittpris första
+        året är{" "}
+        {topp ? `${opNamn(topp.a)} ${topp.a.namn}, ${kr(topp.snitt)} i månaden` : "inte känd"}. Alla
+        kampanjer, med pris efter kampanjen och bindningstid, finns på sidan{" "}
+        <A href="/kampanjer">kampanjer på mobilabonnemang</A>.
       </P>
-      <GuideTable
-        brytForsta
-        head={["Abonnemang", "Kampanj", "Sedan", "Snitt år 1", "Totalt 24 mån"]}
-        rows={kampanjer.map((a) => [
-          `${operator(a.operator)?.namn ?? a.operator} ${a.namn} (${gbText(a.gb)})`,
-          `${kr(a.kampanjpris ?? 0)} i ${a.kampanjManader} mån`,
-          `${kr(a.pris)}/mån`,
-          `${kr(snittForstaAret(a))}/mån`,
-          kr(totalKostnad(a, 24)),
-        ])}
-      />
       <p className={KALLRAD}>
         Källa: operatörernas webbplatser och prislistor, kontrollerade{" "}
-        {datumText(SENAST_KONTROLLERAD)}. Kampanjer ändras ofta, kontrollera hos operatören innan du
-        beställer.
+        {datumText(SENAST_KONTROLLERAD)}.
       </p>
 
       <H2 id="efter">När kampanjen tar slut</H2>

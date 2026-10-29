@@ -117,12 +117,17 @@ function Page() {
   const tele2Obeg = hitta("tele2-mobil-obegransad");
   const tellusObeg = hitta("tellus-tellus-mobil-obegransat");
 
-  const teliaPlus = hitta("telia-obegransad-plus");
-  const teliaNetflix = hitta("telia-obegransad-plus-netflix");
+  const teliaPlus = hitta("telia-telia-mobil-obegransad-plus");
+  const teliaNetflix = hitta("telia-telia-obegransad-plus-netflix-24-man-bindning");
 
   // Vanliga abonnemang hos de stora operatörerna, jämförda med det billigaste
   // abonnemanget utan bindning med minst lika mycket surf.
-  const jamforelser = ["telia-mobil-10-gb", "telia-mobil-20-gb", "tre-25-gb", "telia-obegransad"]
+  const jamforelser = [
+    "telia-telia-mobil-10-gb",
+    "telia-telia-mobil-20-gb",
+    "tre-25-gb",
+    "telia-telia-mobil-obegransad",
+  ]
     .map((id) => hitta(id))
     .filter((a): a is Abonnemang => !!a)
     .map((a) => ({ a, alt: billigasteFria(a.gb) }))
@@ -206,13 +211,13 @@ function Page() {
           Hallon ger studenter och unga {gbText(hStud.gb)} för samma pris som {gbText(h5.gb)} kostar
           för alla, {kr(hStud.pris)} i månaden. Flera operatörer har också egna priser för dig över
           55 eller 65. Se <A href="/pensionar">abonnemang för pensionärer</A> och{" "}
-          <A href="/ungdom">abonnemang för unga</A>.
+          <A href="/studentabonnemang">studentabonnemang</A>.
         </P>
       ) : (
         <P>
           Flera operatörer har egna priser för studenter, unga och dig över 55 eller 65. Se{" "}
           <A href="/pensionar">abonnemang för pensionärer</A> och{" "}
-          <A href="/ungdom">abonnemang för unga</A>.
+          <A href="/studentabonnemang">studentabonnemang</A>.
         </P>
       )}
 

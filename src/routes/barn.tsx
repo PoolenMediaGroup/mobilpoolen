@@ -153,7 +153,7 @@ function Sida() {
           text: "Betala i förväg och slippa överraskningar.",
         },
         {
-          href: "/ungdom",
+          href: "/studentabonnemang",
           label: "Ungdom och student",
           text: "Rabatterade abonnemang när barnet blir äldre.",
         },

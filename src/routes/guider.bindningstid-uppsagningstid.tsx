@@ -94,8 +94,8 @@ function Page() {
   const medBindning = aktiva.filter((a) => (a.bindning ?? 0) > 0).length;
 
   // Exempel 1: samma Comviq-abonnemang med och utan bindningstid, över 12 månader.
-  const comviqFri = hitta("comviq-comviq-5-gb");
-  const comviqBunden = hitta("comviq-comviq-5-gb-kampanj");
+  const comviqFri = hitta("comviq-comviq-mobilabonnemang-5-gb");
+  const comviqBunden = hitta("comviq-comviq-mobilabonnemang-5-gb-12-man-bindning-dubbel-surf");
 
   // Exempel 2: Tele2s 24-månaderskampanj mot billigaste abonnemang utan bindning
   // med minst lika mycket surf, räknat över 24 månader.
@@ -231,7 +231,16 @@ function Page() {
         lönar sig när rabatten är större än det du hade sparat på att kunna byta fritt. Två exempel
         ur operatörernas egna priser:
       </P>
-      {comviqFri && comviqBunden ? (
+      {comviqFri &&
+      comviqBunden &&
+      totalKostnad(comviqFri, 12) <= totalKostnad(comviqBunden, 12) ? (
+        <Callout>
+          Hos Comviq kostar {gbText(comviqFri.gb)} lika mycket med och utan bindningstid:{" "}
+          {kr(totalKostnad(comviqFri, 12))} på ett år. Varianten med {comviqBunden.bindning}{" "}
+          månaders bindningstid ger dubbel surf i stället för ett lägre pris. Behöver du inte mer
+          surf är bindningen alltså bara en nackdel.
+        </Callout>
+      ) : comviqFri && comviqBunden ? (
         <Callout>
           {namn(comviqFri)} utan bindningstid kostar {kr(totalKostnad(comviqFri, 12))} på ett år.
           Samma abonnemang med kampanj kostar {kr(comviqBunden.kampanjpris ?? comviqBunden.pris)} i{" "}

@@ -214,7 +214,8 @@ function Sida() {
         Snittpriset är summan av alla månadsavgifter under tolv månader plus startavgiften, delat
         med tolv. Ett abonnemang som kostar lite i tre månader och mycket sedan får alltså ett
         snittpris som speglar hela året. Abonnemang med ålders- eller studentkrav räknas inte in
-        här. De har egna sidor för <Link to={"/ungdom" as never}>unga och studenter</Link> och för{" "}
+        här. De har egna sidor för{" "}
+        <Link to={"/studentabonnemang" as never}>unga och studenter</Link> och för{" "}
         <Link to={"/pensionar" as never}>pensionärer</Link>.
       </p>
 
@@ -297,6 +298,14 @@ function Sida() {
         är just nu {kr(snittForstaAret(OBEGR) - snittForstaAret(B20))} i månaden. I{" "}
         <Link to={"/verktyg/hur-mycket-surf-behover-jag" as never}>surfräknaren</Link> kan du räkna
         fram ditt eget behov.
+      </p>
+      <p>
+        Vet du redan hur mycket du behöver? Se billigaste abonnemangen med{" "}
+        <Link to={"/surf/10-gb" as never}>10 GB</Link>,{" "}
+        <Link to={"/surf/20-gb" as never}>20 GB</Link>,{" "}
+        <Link to={"/surf/50-gb" as never}>50 GB</Link> och{" "}
+        <Link to={"/surf/100-gb" as never}>100 GB</Link>, eller alla{" "}
+        <Link to={"/kampanjer" as never}>kampanjer just nu</Link>.
       </p>
 
       <h2>Spelar det någon roll vilket nät det billigaste abonnemanget har?</h2>
