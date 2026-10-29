@@ -371,7 +371,7 @@ export const GUIDES: GuideMeta[] = [
     slug: "klaga-pa-operatoren",
     title: "Klaga på operatören: så går du tillväga",
     excerpt:
-      "Från reklamation hos operatören till Telekområdgivarna och Allmänna reklamationsnämnden. Med mall och tidsgränser.",
+      "Från reklamation hos operatören till Telekområdgivarna och Allmänna reklamationsnämnden. Med en mall för reklamationen.",
     category: "Säkerhet och rättigheter",
     readingTime: "6 min",
     published: LANSERING,
