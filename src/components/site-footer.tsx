@@ -86,6 +86,27 @@ const COLS: { title: string; links: FooterLink[] }[] = [
   },
 ];
 
+const SYSKON = [
+  {
+    href: "https://elpoolen.se/",
+    namn: "Elpoolen",
+    text: "Jämför elavtal på",
+    aria: "Jämför elavtal för hem och företag på Elpoolen",
+    logo: "/img/elpoolen-logo-white.webp",
+    bredd: 400,
+    hojd: 95,
+  },
+  {
+    href: "https://larmpoolen.se/",
+    namn: "Larmpoolen",
+    text: "Jämför hemlarm på",
+    aria: "Jämför hemlarm och larmbolag på Larmpoolen",
+    logo: "/img/larmpoolen-logo-white.svg",
+    bredd: 936,
+    hojd: 158,
+  },
+] as const;
+
 const LEGAL_LINKS: FooterLink[] = [
   { label: "Användarvillkor", to: "/anvandarvillkor" },
   { label: "Integritetspolicy", to: "/integritetspolicy" },
@@ -158,30 +179,35 @@ export function SiteFooter() {
           ))}
         </div>
 
-        {/* Syskonsajten inom PMG Poolen Media Group, byggd som Elpoolens knapp
-            till sina syskonsajter: samma flik, ingen rel, eftersom
-            båda sajterna drivs av samma bolag. Texten i vit 80 procent ger
-            10,9:1 mot marinblått, pilen i --dark-accent 12,0:1. */}
-        <a
-          href="https://elpoolen.se/"
-          aria-label="Jämför elavtal för hem och företag på Elpoolen"
-          className="group mt-12 inline-flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1 text-base text-white/80 transition-colors hover:text-white"
-        >
-          <span>Jämför elavtal för hem och företag på</span>
-          <img
-            src="/img/elpoolen-logo-white.webp"
-            alt="Elpoolen"
-            width={400}
-            height={95}
-            loading="lazy"
-            decoding="async"
-            className="h-[26px] w-auto"
-          />
-          <ArrowRight
-            className="h-4 w-4 text-dark-accent transition-transform group-hover:translate-x-0.5"
-            aria-hidden
-          />
-        </a>
+        {/* Syskonsajterna inom PMG Poolen Media Group, byggda som Elpoolens knapp
+            till sina syskonsajter: samma flik, ingen rel, eftersom alla sajterna
+            drivs av samma bolag. Texten i vit 80 procent ger 10,9:1 mot
+            marinblått, pilen i --dark-accent 12,0:1. */}
+        <div className="mt-12 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-10">
+          {SYSKON.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              aria-label={s.aria}
+              className="group inline-flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1 text-base text-white/80 transition-colors hover:text-white"
+            >
+              <span>{s.text}</span>
+              <img
+                src={s.logo}
+                alt={s.namn}
+                width={s.bredd}
+                height={s.hojd}
+                loading="lazy"
+                decoding="async"
+                className="h-[26px] w-auto"
+              />
+              <ArrowRight
+                className="h-4 w-4 text-dark-accent transition-transform group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </a>
+          ))}
+        </div>
 
         <div className="mt-6 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row sm:items-center">
           <span>
