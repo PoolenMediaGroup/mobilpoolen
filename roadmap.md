@@ -1,0 +1,24 @@
+- [x] Make all homepage and organisation heroes static
+- [x] Replace hero forms with compact starter cards
+- [x] Add private and organisation continuation routes with noindex
+- [x] Preserve validation, submission, consent, and confirmation behavior
+- [x] Verify desktop/mobile layouts, static heroes, all steps, and four submissions
+- [x] Keep the full private quote flow inside the homepage hero
+- [x] Redirect /offert to the homepage hero with the draft preserved
+- [x] Verify fixed hero positions, mobile flow, and one saved test request
+- [x] Add the white navbar-height strip below organisation heroes
+- [x] Keep all organisation quote steps inside their landing-page heroes
+- [x] Add matching source and guidance links to organisation hero copy
+- [x] Redirect organisation quote URLs back to their landing-page heroes
+- [x] Verify all organisation flows, dimensions, mobile layout, and three submissions
+- [x] Mirror organisation hero copy positions against the homepage
+- [x] Match organisation starter card dimensions and fields to the private starter card
+- [x] Move organisation object selection into the continuation flow
+- [x] Verify desktop and mobile measurements and submit one BRF test request
+- [x] Restore content-sized heroes so the following section peeks into the viewport
+- [x] Verify the logo strip begins inside the viewport at 1440 × 900
+- [x] Replace the company text list with an official logo strip
+- [x] Verify visible logos at desktop and mobile sizes
+- [x] Keep every private and organisation quote step inside its hero card
+- [x] Replace the quote success modal with an in-card confirmation
+- [x] Verify private and BRF screenshots and submit all four customer types

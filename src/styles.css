@@ -1,0 +1,901 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+/* Typsnitt: bara latin-delmängden (täcker å, ä, ö, é, €, tankstreck och
+   citattecken) och bara vikterna som används. Fontsource sätter
+   font-display: swap. Plus Jakarta Sans laddas inte: ordmärket är en SVG
+   med konturer, så typsnittet behövs inte i webbläsaren. */
+@import "@fontsource/inter/latin-400.css";
+@import "@fontsource/inter/latin-500.css";
+@import "@fontsource/inter/latin-600.css";
+@import "@fontsource/inter/latin-700.css";
+@import "@fontsource/sora/latin-600.css";
+@import "@fontsource/sora/latin-700.css";
+@import "@fontsource/sora/latin-800.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Mobilpoolen design system
+   Palette: near-white neutral surfaces, deep indigo as the only saturated
+   colour, and a deep navy for dark sections and the footer. */
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-surface: var(--surface);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  /* Radier som på Elpoolen: 14 px bas och fasta steg, inte multiplar. */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  /* Rörelse: samma mjuka ease-out och tempo för alla transition-klasser */
+  --default-transition-duration: 300ms;
+  --default-transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-footer: var(--footer);
+  --color-savings: var(--savings);
+  --color-highlight: var(--highlight);
+  --color-dark-section: var(--dark-section);
+  --color-dark-accent: var(--dark-accent);
+  --color-dark-muted: var(--dark-muted);
+  --color-cta-soft: var(--cta-soft);
+  --color-live: var(--live);
+  --color-input-border: var(--input-border);
+  --color-hyra: var(--hyra);
+  --color-hyra-soft: var(--hyra-soft);
+  --color-hyra-border: var(--hyra-border);
+  --color-aga: var(--aga);
+  --color-aga-soft: var(--aga-soft);
+  --color-aga-border: var(--aga-border);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-foreground: var(--cta-foreground);
+  --color-brand-red: var(--brand-red);
+  --color-scrim: var(--scrim);
+  --color-skugga: var(--skugga);
+
+  /* Skuggor som tidigare stod som rgba direkt i komponenterna. Samma värden,
+     men i bläcktonen (--foreground) eller den djupa skuggtonen, så att de
+     följer paletten. Ger klasserna shadow-kort, hover:shadow-kort-hover osv. */
+  --shadow-kort:
+    0 1px 2px color-mix(in srgb, var(--foreground) 4%, transparent),
+    0 10px 28px -14px color-mix(in srgb, var(--foreground) 16%, transparent);
+  --shadow-kort-hover: 0 24px 48px -18px color-mix(in srgb, var(--foreground) 30%, transparent);
+  --shadow-kort-litet:
+    0 1px 2px color-mix(in srgb, var(--foreground) 4%, transparent),
+    0 8px 20px -12px color-mix(in srgb, var(--foreground) 16%, transparent);
+  --shadow-tabell:
+    0 1px 2px color-mix(in srgb, var(--foreground) 4%, transparent),
+    0 16px 40px -20px color-mix(in srgb, var(--foreground) 28%, transparent);
+  --shadow-nav: 0 2px 12px color-mix(in srgb, var(--foreground) 10%, transparent);
+  --shadow-meny: 0 18px 40px -16px color-mix(in srgb, var(--foreground) 28%, transparent);
+  --shadow-portratt: 0 18px 48px -12px color-mix(in srgb, var(--foreground) 18%, transparent);
+  /* Sökfältet i de mörka heroytorna (/guider, /faq) */
+  --shadow-sokfalt:
+    0 18px 48px -12px color-mix(in srgb, var(--skugga) 35%, transparent),
+    0 4px 12px color-mix(in srgb, var(--skugga) 12%, transparent);
+  /* Logotypcirkeln och bilden på mörka ytor */
+  --shadow-mork: 0 18px 40px -12px color-mix(in srgb, var(--skugga) 55%, transparent);
+  --shadow-mork-bild: 0 24px 60px -20px color-mix(in srgb, var(--skugga) 45%, transparent);
+  --shadow-logo-hover: 0 14px 32px color-mix(in srgb, var(--dark-section) 16%, transparent);
+}
+
+:root {
+  /* Rörelse som på Elpoolen: en kurva och två tempon för hela sajten.
+     Hover lyfter kort 2 px och knappar 1 px, aldrig mer. */
+  --elp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --elp-dur: 300ms;
+  --elp-dur-slow: 450ms;
+
+  /* Ytor som på Elpoolen: en lätt tonad sidbakgrund med vita kort och
+     sektioner ovanpå. Tonen är kall marin (varumärkets mörka färg), inte
+     Elpoolens petrol. Kontrast mot bakgrunden: text 16,0:1, dämpad text 6,7:1,
+     indigo 7,2:1. */
+  --background: #f5f5fb;
+  --foreground: #13142e;
+  --card: #ffffff;
+  --card-foreground: #13142e;
+  --popover: #ffffff;
+  --popover-foreground: #13142e;
+  /* Djup indigo – tjänstens enda mättade färg, reserverad för åtgärder */
+  --primary: #3b28cc;
+  --primary-foreground: #ffffff;
+  --secondary: #ecebf6;
+  --secondary-foreground: #13142e;
+  --muted: #ecebf6;
+  /* 7,2:1 på vitt, 6,7:1 på bakgrunden, 6,2:1 på muted */
+  --muted-foreground: #4b4e6b;
+  --accent: #ecebf6;
+  --accent-foreground: #13142e;
+  /* Bärnsten för fel och varningar – rött är knappfärg och får inte betyda "fel" */
+  --destructive: #b45309;
+  --destructive-foreground: #ffffff;
+  --surface: #ffffff;
+  --border: #dddbee;
+  --footer-foreground: #ffffff;
+  --input: #f5f5fb;
+  --ring: #3b28cc;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.875rem; /* 14px, samma som Elpoolen */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #13142e;
+  --sidebar-primary: #3b28cc;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ecebf6;
+  --sidebar-accent-foreground: #13142e;
+  --sidebar-border: #dddbee;
+  --sidebar-ring: #3b28cc;
+  /* Besparingssiffror och positiva värden */
+  --savings: #15803d;
+  --highlight: #ebe8fc;
+  /* Loggans indigo – varumärkesfärg */
+  --brand-red: #3b28cc;
+  /* Mörka sektioner och footer: marinblå (varumärket: marinblått för mörka
+     sektioner, indigo där Elpoolen har petrol). Vit text ger 16,5:1. */
+  --footer: #16133a;
+  --dark-section: #16133a;
+  /* Accent på marinblått: 12,0:1 mot #16133a */
+  --dark-accent: #d9d3ff;
+  /* Brödtext på mörka och röda ytor. Samma rosa ton som tidigare stod
+     hårdkodad i startsidan och prisjämförelsen; den ligger nu här så att
+     beslut 8 (rosa eller neutral accent på mörka ytor) blir en rad. */
+  --dark-muted: #dcd8f5;
+  /* Pillret ovanför heroformuläret */
+  --cta-soft: #fff8ef;
+  /* Fältens ram: 3,4:1 mot vitt och 3,1:1 mot fältets tonade yta, så att
+     fältet går att se (WCAG 1.4.11 kräver 3:1). Vanliga --border är 1,4:1. */
+  --input-border: #82849e;
+  /* Prick för "kontrolleras dagligen" */
+  --live: #7ee2a8;
+  /* Korten Hyra och Äga på startsidan, som Elpoolens kontraktsfärger.
+     Vit text på --hyra 11,0:1, på --aga 6,9:1. */
+  --hyra: #2a1d8f;
+  --hyra-soft: #efedfd;
+  --hyra-border: #cfc8f7;
+  --aga: #74542d;
+  --aga-soft: #f5ebdd;
+  --aga-border: #d6b57f;
+  /* Knapp: primär åtgärd, orange som på Elpoolen. Texten är marinblå (samma
+     ton som --dark-section): vit på orangen ger bara 2,70:1, marinblått ger
+     6,11:1 mot #e8842c och 5,16:1 mot hover #d97617. Orange text på ljus
+     botten klarar inte 4,5:1, använd text-primary där. */
+  --cta: #e8842c;
+  --cta-hover: #d97617;
+  --cta-foreground: #16133a;
+  /* Övertoning över fotografier, en mörkare marin än --dark-section. CtaBand
+     och statistikheron är kontrastkontrollerade mot just den här tonen, så
+     den får inte bytas mot --dark-section utan ny kontroll. */
+  --scrim: #0d0b26;
+  /* Djup skuggton för sökfält och kort som ligger på mörka ytor */
+  --skugga: #07061a;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  /* Synlig tangentbordsfokus överallt. Ringen tar textens färg, som redan
+     har kontrast mot sin bakgrund: mörk på ljusa ytor, vit på den röda
+     heron, de marinblå sektionerna och sidfoten. Komponenter med egen
+     focus-visible:ring-* (som menyn) skriver över den här. */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  /* Typografi som på Elpoolen: 17 px Inter med radhöjd 1,65 och Inters
+     tydligare siffror och bokstäver (cv02–cv11, ss01). overflow-x: clip i
+     stället för hidden, eftersom hidden slår ut position: sticky. */
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.65;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  /* Radlängd i löptext, runt 680 px vid 17 px. */
+  p {
+    max-width: 68ch;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.022em;
+    line-height: 1.12;
+    font-weight: 700;
+    text-wrap: balance;
+  }
+  /* Rubrikskalan från Elpoolen: 34/28/20 px på mobil, 54/36/22 px från 640 px.
+     h1 har ett golv via clamp så att långa ord inte spränger 320 px-skärmar. */
+  h1 {
+    font-size: clamp(28px, 8.7vw, 34px);
+    letter-spacing: -0.028em;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+    letter-spacing: -0.018em;
+  }
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 54px;
+      line-height: 1.05;
+    }
+    h2 {
+      font-size: 36px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+  }
+  /* Ankarmål landar under den fasta navbaren (48 px mobil, 72 px dator). */
+  section,
+  [id] {
+    scroll-margin-top: 64px;
+  }
+  @media (min-width: 768px) {
+    section,
+    [id] {
+      scroll-margin-top: 88px;
+    }
+  }
+  /* Element som får tangentbordsfokus hamnar aldrig under navbaren. */
+  :where(a, button, input, select, textarea, summary, [tabindex]) {
+    scroll-margin-top: 64px;
+  }
+  @media (min-width: 768px) {
+    :where(a, button, input, select, textarea, summary, [tabindex]) {
+      scroll-margin-top: 88px;
+    }
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 18%, transparent);
+    color: var(--color-foreground);
+  }
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+  @media (max-width: 767px) {
+    img,
+    svg,
+    video,
+    canvas,
+    table,
+    pre {
+      max-width: 100%;
+    }
+  }
+  /* Prevent iOS zoom-on-focus (requires font-size >= 16px on inputs) */
+  @media (max-width: 767px) {
+    input,
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* ============ Design system utilities ============ */
+
+/* Entrance animation */
+@utility fade-up {
+  animation: fadeUp 500ms ease both;
+}
+
+/* Huvudknapp som på Elpoolen: Sora 600, minst 56 px hög, radie 14 px.
+   Texten är marinblå (6,11:1 mot orange, 5,16:1 vid hover), inte vit som
+   på Elpoolen, där vitt ger 2,70:1. min-height i stället för height, så att
+   en knapptext som bryter rad på 320 px växer i stället för att kapas. */
+@utility btn-cta {
+  font-family: var(--font-display);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 56px;
+  padding: 0 28px;
+  border-radius: 14px;
+  background-color: var(--color-cta);
+  color: var(--color-cta-foreground);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  box-shadow: 0 6px 18px rgba(232, 132, 44, 0.4);
+  transition:
+    background-color var(--elp-dur) var(--elp-ease),
+    transform var(--elp-dur) var(--elp-ease),
+    box-shadow var(--elp-dur) var(--elp-ease);
+  &:hover {
+    background-color: var(--color-cta-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(232, 132, 44, 0.45);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(232, 132, 44, 0.35);
+  }
+  /* Tvåfärgad ring, som ring-2 + ring-offset-2 i menyn: vit innerkant
+     syns mot mörka och röda bakgrunder, marinblå ytterkant mot ljusa. */
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px #ffffff,
+      0 0 0 4px var(--color-cta-foreground);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* Sekundärknapp som på Elpoolen: Sora, vit yta, 1,5 px ram i primärfärgen,
+   minst 52 px. indigo på vitt: 8,0:1. */
+@utility btn-secondary-outline {
+  font-family: var(--font-display);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 14px;
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  transition:
+    background-color var(--elp-dur) var(--elp-ease),
+    transform var(--elp-dur) var(--elp-ease);
+  &:hover {
+    background-color: color-mix(in oklab, var(--color-primary) 6%, white);
+    transform: translateY(-1px);
+  }
+}
+
+/* Mjukt kort som på Elpoolen: 16 px radie, skugga i bläckton, ramen tonas
+   mot primärfärgen vid hover och kortet lyfter 2 px. */
+@utility card-soft {
+  background-color: var(--color-surface);
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, transparent);
+  border-radius: 16px;
+  box-shadow:
+    0 1px 2px rgba(14, 27, 44, 0.04),
+    0 10px 28px -14px rgba(14, 27, 44, 0.14);
+  transition:
+    box-shadow var(--elp-dur-slow) var(--elp-ease),
+    transform var(--elp-dur-slow) var(--elp-ease),
+    border-color var(--elp-dur) var(--elp-ease),
+    background-color var(--elp-dur) var(--elp-ease);
+}
+
+.card-soft:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--color-primary) 18%, var(--color-border));
+  box-shadow:
+    0 2px 4px rgba(14, 27, 44, 0.05),
+    0 18px 40px -16px rgba(14, 27, 44, 0.22);
+}
+
+/* Ljust kort med färgad topplist (Elpoolens card-vivid). Används för guidens
+   sidokort. Heter annorlunda här eftersom card-vivid hos Mobilpoolen redan är
+   det mörka glödkortet på startsidan. */
+@utility card-stripe {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  border: 1px solid color-mix(in oklab, var(--color-border) 82%, transparent);
+  border-radius: 20px;
+  box-shadow:
+    0 2px 4px rgba(14, 27, 44, 0.05),
+    0 16px 38px -14px rgba(14, 27, 44, 0.22);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background-color: var(--color-cta);
+  }
+}
+
+/* Heroformulären ska vara helt stilla; endast kontrollernas färger får ändras. */
+.hero-static-card,
+.hero-static-card:hover {
+  transform: none;
+  transition: none;
+}
+
+.hero-static-button,
+.hero-static-button:hover,
+.hero-static-button:active {
+  transform: none;
+}
+
+/* Heroformulärets kort som på Elpoolen: vitt, 20 px radie och en djup skugga
+   som lyfter det från den röda heron. */
+@utility card-hero {
+  background-color: #ffffff;
+  border: 1px solid rgba(14, 27, 44, 0.06);
+  border-radius: 20px;
+  box-shadow:
+    0 18px 48px -12px rgba(11, 31, 58, 0.35),
+    0 4px 12px rgba(11, 31, 58, 0.12);
+}
+
+/* Fält som på Elpoolen: minst 56 px, radie 14 px, tonad yta som blir vit
+   vid fokus. Används i hero-, offert- och väntelisteformulären. */
+@utility input-lg {
+  width: 100%;
+  min-height: 56px;
+  padding-inline: 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-input-border);
+  background-color: var(--color-input);
+  font-size: 17px;
+  color: var(--color-foreground);
+  transition:
+    border-color var(--elp-dur) var(--elp-ease),
+    box-shadow var(--elp-dur) var(--elp-ease),
+    background-color var(--elp-dur) var(--elp-ease);
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    background-color: var(--color-surface);
+    border-color: var(--color-ring);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-ring) 20%, transparent);
+  }
+}
+
+/* Scroll-in: använder `translate` så hover-transform inte krockar */
+.elp-reveal {
+  opacity: 0;
+  translate: 0 16px;
+  transition:
+    opacity 460ms ease,
+    translate 460ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, translate;
+}
+
+.elp-reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elp-reveal {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* Stagger helpers: parent sets --reveal-stagger-step, items set --reveal-delay */
+@utility reveal-stagger {
+  --reveal-stagger-step: 90ms;
+}
+@utility reveal-item {
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes check-draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Dark card on the navy section background */
+@utility card-dark {
+  background-color: rgba(255, 240, 238, 0.09);
+  border: 1px solid rgba(255, 210, 199, 0.28);
+  border-radius: 16px;
+  color: #ffffff;
+  transition:
+    border-color var(--elp-dur) var(--elp-ease),
+    transform var(--elp-dur-slow) var(--elp-ease);
+}
+
+.card-dark:hover {
+  border-color: rgba(255, 210, 199, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Elevated dark card (hero variant) */
+@utility card-dark-elevated {
+  background-color: rgba(255, 240, 238, 0.1);
+  border: 1px solid rgba(255, 210, 199, 0.38);
+  border-radius: 18px;
+  color: #ffffff;
+  box-shadow: 0 24px 48px -16px rgba(4, 12, 24, 0.45);
+  transition: border-color var(--elp-dur) var(--elp-ease);
+}
+
+/* Tonad sektionsyta som bryter rytmen mellan vita sektioner, som Elpoolens
+   surface-petrol-soft. Samma ton som sidans bakgrund. */
+@utility surface-soft {
+  background-color: var(--color-background);
+}
+
+/* Vivid gradient card: navy base with a single accent glow */
+@utility card-vivid {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-dark-section);
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-dark-section) 88%, black) 0%,
+    color-mix(in srgb, var(--color-dark-section) 72%, black) 100%
+  );
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 8%, transparent);
+  color: #ffffff;
+  box-shadow:
+    0 1px 2px rgba(14, 27, 44, 0.1),
+    0 28px 56px -20px rgba(14, 27, 44, 0.45);
+  transition:
+    box-shadow 300ms ease,
+    transform 300ms ease;
+}
+
+.card-vivid::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--color-brand-red) 55%, transparent) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.card-vivid.accent-cta::before {
+  background: radial-gradient(
+    circle at center,
+    color-mix(in srgb, var(--color-cta) 55%, transparent) 0%,
+    transparent 65%
+  );
+}
+
+.card-vivid:hover {
+  box-shadow:
+    0 1px 2px rgba(14, 27, 44, 0.12),
+    0 36px 64px -22px rgba(14, 27, 44, 0.55);
+  transform: translateY(-2px);
+}
+
+/* Circular icon badge on vivid cards */
+@utility icon-badge-vivid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--color-brand-red) 34%, transparent);
+  color: var(--color-dark-accent);
+}
+
+@utility icon-badge-vivid-cta {
+  background-color: color-mix(in srgb, var(--color-cta) 26%, transparent);
+  color: color-mix(in srgb, var(--color-cta) 70%, white);
+}
+
+/* Savings / upside figures in strong green */
+@utility stat-accent {
+  color: var(--color-savings);
+  font-weight: 800;
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Eyebrow label above section headings */
+@utility elp-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-cta);
+}
+
+/* Ikoncirkel som på Elpoolen, 44 px. Ikonen är indigo: orange på ljus
+   orange ger bara 2,4:1, under kravet 3:1 för grafik som bär betydelse.
+   indigo på 12 procent indigo ger 6,3:1. */
+@utility icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background-color: color-mix(in oklab, var(--color-primary) 12%, white);
+  color: var(--color-primary);
+}
+
+/* Varianten står kvar som namn i koden men ser likadan ut, av samma skäl. */
+@utility icon-badge-cta {
+  background-color: color-mix(in oklab, var(--color-primary) 12%, white);
+  color: var(--color-primary);
+}
+
+/* Wordmark: use the specified mobile width on narrow screens. */
+@media (max-width: 767px) {
+  .brand-logo-responsive {
+    width: var(--brand-logo-mobile-width) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-soft,
+  .card-dark {
+    transition: none;
+  }
+  .card-soft:hover,
+  .card-dark:hover {
+    transform: none;
+  }
+}
+
+/* Brödsmulor, som på Elpoolen men med full färg: Elpoolens opacitet 0,6 ger
+   2,7:1, här står texten i muted-foreground (6,7:1 mot bakgrunden). */
+nav[aria-label="Brödsmulor"] {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Skip-länkens mål får tabindex="-1" först när länken används. */
+main[tabindex="-1"]:focus,
+h1[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Tabeller som är bredare än sin ruta: en skugga vid kanten visar att de går
+   att rulla i sidled och försvinner när man rullat ända fram (Lea Verous
+   teknik med background-attachment local). Täckningen har omslagets färg. */
+.overflow-x-auto:has(> table),
+.overflow-auto:has(> table) {
+  --tbl-bg: var(--background);
+  background:
+    linear-gradient(to right, var(--tbl-bg) 30%, transparent) left center / 32px 100% no-repeat
+      local,
+    linear-gradient(to left, var(--tbl-bg) 30%, transparent) right center / 32px 100% no-repeat
+      local,
+    radial-gradient(farthest-side at 0 50%, rgb(14 27 44 / 0.22), transparent) left center / 12px
+      100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgb(14 27 44 / 0.22), transparent) right center /
+      12px 100% no-repeat scroll,
+    var(--tbl-bg);
+}
+.bg-surface.overflow-x-auto:has(> table),
+.card-soft.overflow-x-auto:has(> table),
+.card-hero .overflow-auto:has(> table),
+.card-soft .overflow-x-auto:has(> table),
+.bg-surface .overflow-x-auto:has(> table) {
+  --tbl-bg: var(--surface);
+}
+
+/* AI-chatten (src/components/chatt). Knappen flyttas upp när en annan flytande rad ligger längst ner. */
+body:has([data-chatt-lyft]) .chatt-knapp {
+  bottom: 5.5rem;
+}
+body:has([data-chatt-lyft]) .chatt-bubbla {
+  bottom: 6.1rem;
+}
+@keyframes chatt-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.chatt-prickar span {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: currentColor;
+  opacity: 0.35;
+  animation: chatt-prick 1.2s infinite ease-in-out;
+}
+.chatt-prickar span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.chatt-prickar span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+@keyframes chatt-prick {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  40% {
+    opacity: 0.8;
+    transform: translateY(-3px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chatt-prickar span {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+.chatt-panel[hidden] {
+  display: none;
+}
+
+/* Brödtext på pelarsidorna och i operatörssidornas fördjupning. Samma rytm
+   som guiderna: 18 px, 1,75 i radhöjd, rubriker med luft ovanför. */
+.prosa {
+  font-size: 18px;
+  line-height: 1.75;
+  color: color-mix(in srgb, var(--foreground) 92%, transparent);
+}
+.prosa > * + * {
+  margin-top: 1.1em;
+}
+.prosa h2 {
+  margin-top: 2.2em;
+  font-size: 26px;
+  color: var(--foreground);
+}
+.prosa h2:first-child {
+  margin-top: 0;
+}
+.prosa h3 {
+  margin-top: 1.8em;
+  font-size: 20px;
+  color: var(--foreground);
+}
+@media (min-width: 640px) {
+  .prosa h2 {
+    font-size: 30px;
+  }
+}
+.prosa ul,
+.prosa ol {
+  padding-left: 1.3em;
+}
+.prosa ul {
+  list-style: disc;
+}
+.prosa ol {
+  list-style: decimal;
+}
+.prosa li + li {
+  margin-top: 0.4em;
+}
+.prosa a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prosa a:hover {
+  text-decoration-thickness: 2px;
+}
+.prosa strong {
+  color: var(--foreground);
+}
+.prosa .kalla {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--foreground) 62%, transparent);
+}

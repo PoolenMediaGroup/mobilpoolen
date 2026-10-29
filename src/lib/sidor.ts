@@ -1,0 +1,46 @@
+/**
+ * Alla fasta sidor som ska stå i sitemap.xml. Dynamiska sidor (operatörer,
+ * nät, jämförelser, uppsägning och guider) läggs till ur sina register.
+ * `lastmod` ändras när innehållet ändras på riktigt, inte vid varje bygge.
+ */
+export const LANSERING_ISO = "2026-10-29";
+
+export const FASTA_SIDOR: { path: string; lastmod: string }[] = [
+  "/",
+  "/billigaste-mobilabonnemang",
+  "/basta-mobilabonnemang",
+  "/obegransad-surf",
+  "/utan-bindningstid",
+  "/familjeabonnemang",
+  "/barn",
+  "/ungdom",
+  "/pensionar",
+  "/kontantkort",
+  "/esim",
+  "/5g-abonnemang",
+  "/foretag",
+  "/foretag/billigaste-foretagsabonnemang",
+  "/foretag/enskild-firma",
+  "/operatorer",
+  "/nat",
+  "/jamfor",
+  "/saga-upp",
+  "/verktyg",
+  "/verktyg/hur-mycket-surf-behover-jag",
+  "/verktyg/betalar-jag-for-mycket",
+  "/verktyg/kampanjkalkylator",
+  "/verktyg/foretagskalkylator",
+  "/prisindex",
+  "/guider",
+  "/faq",
+  "/ordlista",
+  "/om-oss",
+  "/sa-fungerar-mobilpoolen",
+  "/sa-jamfor-vi",
+  "/sa-tjanar-vi-pengar",
+  "/kontakt",
+  "/skribent/leon-hallstrom",
+  "/integritetspolicy",
+  "/anvandarvillkor",
+  "/cookiepolicy",
+].map((path) => ({ path, lastmod: LANSERING_ISO }));
