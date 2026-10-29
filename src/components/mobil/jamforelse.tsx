@@ -432,7 +432,10 @@ export function AbonnemangKort({
                 <li>Student eller ung</li>
               )}
               {momsText(a.moms) && <li>Pris {momsText(a.moms)}</li>}
-              {a.hastighet && a.gb == null && /mbit/i.test(a.hastighet) && <li>{a.hastighet}</li>}
+              {a.hastighet &&
+                a.gb == null &&
+                /\d\s*Mbit\/s/i.test(a.hastighet) &&
+                !/ingen/i.test(a.hastighet) && <li>{a.hastighet}</li>}
               {natNamn && <li>{natNamn}</li>}
             </ul>
           </div>
