@@ -15,6 +15,7 @@ export const FASTA_SIDOR: { path: string; lastmod: string }[] = [
   "/barn",
   "/studentabonnemang",
   "/kampanjer",
+  "/mobilt-bredband",
   "/pensionar",
   "/kontantkort",
   "/esim",

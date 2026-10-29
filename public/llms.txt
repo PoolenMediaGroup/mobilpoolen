@@ -19,6 +19,7 @@ Fakta om tjänsten:
 - [Mobilabonnemang 50 GB](https://mobilpoolen.se/surf/50-gb): Billigaste abonnemangen med 50 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
 - [Mobilabonnemang 100 GB](https://mobilpoolen.se/surf/100-gb): Billigaste abonnemangen med 100 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
 - [Kampanjer](https://mobilpoolen.se/kampanjer): Alla kampanjer på mobilabonnemang just nu, sorterade på vad du betalar första året, med pris efter kampanjen.
+- [Mobilt bredband](https://mobilpoolen.se/mobilt-bredband): Mobilt bredband med router eller surf-SIM jämfört på snittpris första året, routerns pris, bindningstid och fritidshus.
 - [Utan bindningstid](https://mobilpoolen.se/utan-bindningstid): Mobilabonnemang utan bindningstid och vad lagen säger om bindning och uppsägning.
 - [Familjeabonnemang](https://mobilpoolen.se/familjeabonnemang): Abonnemang för familjer, extra användare och delad surf.
 - [Mobilabonnemang för barn](https://mobilpoolen.se/barn): Abonnemang för barn, spärrar och pris.

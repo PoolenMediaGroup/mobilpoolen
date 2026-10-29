@@ -25,6 +25,8 @@ const COLS: { title: string; links: FooterLink[] }[] = [
       { label: "Obegränsad surf", to: "/obegransad-surf" },
       { label: "Utan bindningstid", to: "/utan-bindningstid" },
       { label: "Kontantkort", to: "/kontantkort" },
+      { label: "Kampanjer just nu", to: "/kampanjer" },
+      { label: "Mobilt bredband", to: "/mobilt-bredband" },
     ],
   },
   {
@@ -32,7 +34,7 @@ const COLS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Familjeabonnemang", to: "/familjeabonnemang" },
       { label: "Barn", to: "/barn" },
-      { label: "Unga och studenter", to: "/studentabonnemang" },
+      { label: "Studentabonnemang", to: "/studentabonnemang" },
       { label: "Pensionärer", to: "/pensionar" },
       { label: "5G-abonnemang", to: "/5g-abonnemang" },
       { label: "eSIM", to: "/esim" },

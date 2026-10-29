@@ -181,3 +181,37 @@ print('ops',len(opl),'plans',len(alla))
 # Formatera som resten av repot
 import subprocess
 subprocess.run(['npx','prettier','--write',os.path.join(ROT,'src/lib/mobil/operatorer-data.ts')],cwd=ROT,stdout=subprocess.DEVNULL)
+
+# ---------------- Mobilt bredband ----------------
+# Underlag: research/mobilt-bredband.json (operatörernas egna sidor och prislistor).
+# Meningar som är markerade [KONTROLLERA] visas inte för besökaren.
+def ren_notis(t):
+    if not t: return None
+    delar=re.split(r'(?<=[.!?])\s+',t.strip())
+    # Interna anteckningar om var uppgiften hittades visas inte heller.
+    intern=('[KONTROLLERA]','API','orderdata','beställningen','leder om','PDF')
+    kvar=[d for d in delar if not any(x in d for x in intern)]
+    s=' '.join(kvar).strip()
+    return s or None
+
+bb=json.load(open(os.path.join(ROT,'research/mobilt-bredband.json')))
+STUGA={'Mobilt bredband för sommarstugan','Stugbredband / Bredband Start','Mobilt bredband Flexibelt'}
+bredband=[]
+for e in bb['erbjudanden']:
+    if e.get('pris') is None and e['namn'] not in STUGA: continue
+    if e['operator']=='tre' and e['namn']=='3Bredband Flex': continue
+    kat='extra' if e.get('krav') else ('stuga' if e['namn'] in STUGA else 'jamfor')
+    bredband.append(dict(id=plan_id(e['operator']+'-bb',e['namn']),operator=e['operator'],namn=e['namn'],typ=e['typ'],kategori=kat,
+        gb=e.get('gb'),hastighet=e.get('hastighet'),pris=e.get('pris'),kampanjpris=e.get('kampanjpris'),kampanjManader=e.get('kampanjManader'),
+        bindning=e.get('bindning'),uppsagning=e.get('uppsagning'),startavgift=e.get('startavgift'),router=e.get('routerkostnad'),
+        femg=bool(e.get('femg')),kalla=e['kalla'],notis=ren_notis(e.get('notis'))))
+for b in bredband:
+    for k in ['gb','bindning','uppsagning','kampanjManader']:
+        if b.get(k) is not None and float(b[k]).is_integer(): b[k]=int(b[k])
+out=['// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad '+bb['kontrollerad']+'.\n\nimport type { Bredband } from "./typer";\n\n',
+     'export const BREDBAND_KONTROLLERAD = "'+bb['kontrollerad']+'";\n\n',
+     'export const BREDBAND_DATA: Bredband[] = '+json.dumps(bredband,ensure_ascii=False,indent=2)+';\n\n',
+     'export const BREDBAND_FAKTA: { pastaende: string; kalla: string }[] = '+json.dumps(bb['fakta'],ensure_ascii=False,indent=2)+';\n']
+p=os.path.join(ROT,'src/lib/mobil/bredband-data.ts'); open(p,'w').write(''.join(out))
+subprocess.run(['npx','prettier','--write',p],cwd=ROT,stdout=subprocess.DEVNULL)
+print('bredband',len(bredband))

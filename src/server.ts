@@ -81,9 +81,25 @@ function utanAvslutandeSnedstreck(request: Request): Response | null {
   return new Response(null, { status: 301, headers: { Location: url.toString() } });
 }
 
+/**
+ * En enda adress för sökmotorerna: www och workerns egen workers.dev-adress
+ * flyttas permanent till https://mobilpoolen.se med samma sökväg.
+ * Förhandsversioner (andra workers.dev-namn) påverkas inte.
+ */
+const SIDOVARDAR = new Set(["www.mobilpoolen.se", "mobilpoolen.leon-393.workers.dev"]);
+
+function tillHuvuddoman(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (!SIDOVARDAR.has(url.hostname)) return null;
+  url.protocol = "https:";
+  url.hostname = "mobilpoolen.se";
+  url.port = "";
+  return new Response(null, { status: 301, headers: { Location: url.toString() } });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
-    const omdirigering = utanAvslutandeSnedstreck(request);
+    const omdirigering = tillHuvuddoman(request) ?? utanAvslutandeSnedstreck(request);
     if (omdirigering) return withSecurityHeaders(omdirigering);
     try {
       const handler = await getServerEntry();

@@ -116,3 +116,27 @@ export type MobilNat = {
   agare: string;
   beskrivning: string;
 };
+
+/** Mobilt bredband: router för hemmet eller surf-SIM för surfplatta och dator. */
+export type Bredband = {
+  id: string;
+  operator: string;
+  namn: string;
+  typ: "router" | "surfsim";
+  /** jamfor = i jämförelsen, stuga = betala per period, extra = kräver mobilabonnemang */
+  kategori: "jamfor" | "stuga" | "extra";
+  /** `null` = obegränsad surf (eller ej angiven för stuga). */
+  gb: number | null;
+  hastighet: string | null;
+  pris: number | null;
+  kampanjpris: number | null;
+  kampanjManader: number | null;
+  bindning: number | null;
+  uppsagning: number | null;
+  startavgift: number | null;
+  /** Routerns pris som operatören anger det, i fritext. */
+  router: string | null;
+  femg: boolean;
+  kalla: string;
+  notis: string | null;
+};
