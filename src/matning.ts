@@ -1,10 +1,10 @@
 // Serverbaserad besöks- och robotlogg. Samma modell som Elpoolen.
 //
 // Besök från människor räknas per dag, kanal (Google, ChatGPT, direkt och så
-// vidare), källa, landningssida och enhet i Supabase-tabellen besok_dag via
-// funktionen logga_besok(). Sök- och AI-robotars sidhämtningar räknas per dag,
-// robot och sida i ai_bot_hits via logga_ai_bot(), som själv avgör vilka
-// user agents som räknas.
+// vidare), källa, landningssida och enhet i Supabase-tabellen mobilpoolen_besok_dag
+// via funktionen mobilpoolen_logga_besok(). Sök- och AI-robotars sidhämtningar
+// räknas per dag, robot och sida i mobilpoolen_ai_bot_hits via
+// mobilpoolen_logga_ai_bot(), som själv avgör vilka user agents som räknas.
 //
 // Körs på servern när sidan skickas. Inga cookies, ingen lagring i webbläsaren
 // och inget skript där. Varken IP-adress, user agent eller hela adressen sparas,
@@ -121,7 +121,7 @@ export function skaLoggas(request: Request, response: Response): boolean {
 async function loggaBesok(besok: Besok): Promise<void> {
   if (!mobilpoolenSupabase) return;
   try {
-    const { error } = await mobilpoolenSupabase.rpc("logga_besok", {
+    const { error } = await mobilpoolenSupabase.rpc("mobilpoolen_logga_besok", {
       p_kanal: besok.kanal.slice(0, 40),
       p_kalla: besok.kalla.slice(0, 60),
       p_sida: besok.sida.slice(0, 120),
@@ -138,7 +138,7 @@ async function loggaRobot(request: Request): Promise<void> {
   try {
     const ua = request.headers.get("user-agent");
     if (!ua) return;
-    const { error } = await mobilpoolenSupabase.rpc("logga_ai_bot", {
+    const { error } = await mobilpoolenSupabase.rpc("mobilpoolen_logga_ai_bot", {
       p_ua: ua.slice(0, 512),
       p_path: new URL(request.url).pathname.slice(0, 512),
     });
