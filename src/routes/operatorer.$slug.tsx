@@ -100,9 +100,9 @@ function OperatorSida() {
                 { name: o.namn, path: `/operatorer/${o.slug}` },
               ]}
             />
-            <div className="mt-3 flex items-center gap-4">
+            <div className="mt-3 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-4">
               <OperatorMonogram namn={o.namn} size={56} className="bg-white/95" />
-              <h1 className="font-bold text-white">
+              <h1 className="min-w-0 font-bold text-white [overflow-wrap:anywhere]">
                 {o.aktiv ? `${o.namn} mobilabonnemang` : `${o.namn} läggs ned`}
               </h1>
             </div>
