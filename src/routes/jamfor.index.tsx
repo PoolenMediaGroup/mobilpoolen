@@ -52,8 +52,8 @@ function Sida() {
                   </span>
                   <span className="mt-2 text-[14px] text-foreground/70">
                     {a.nat === b.nat
-                      ? `Samma nät: ${MOBILNAT[a.nat].namn.toLowerCase()}`
-                      : `${MOBILNAT[a.nat].kortText} mot ${MOBILNAT[b.nat].kortText.toLowerCase()}`}
+                      ? `Samma nät: ${MOBILNAT[a.nat].namn}`
+                      : `${MOBILNAT[a.nat].kortText} mot ${MOBILNAT[b.nat].kortText}`}
                   </span>
                 </Link>
               </li>

@@ -70,7 +70,7 @@ function withSecurityHeaders(response: Response): Response {
   });
 }
 
-// Adresser med avslutande snedstreck (/villalarm/) skickas permanent till
+// Adresser med avslutande snedstreck (/operatorer/) skickas permanent till
 // adressen utan, så att Google räknar dem som samma sida. Routern gör annars
 // en tillfällig 307.
 function utanAvslutandeSnedstreck(request: Request): Response | null {

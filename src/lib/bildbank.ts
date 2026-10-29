@@ -63,7 +63,7 @@ type Post = {
   kategori: Kategori;
   /** Vad bilden passar till. Används när man letar bild till en ny sida. */
   taggar: string[];
-  /** Sant för bilder som inte bör användas som huvudbild på en larmsida. */
+  /** Sant för bilder som inte bör användas som huvudbild på en sida. */
   sparsam?: boolean;
   /** Fotografens namn hos källan. Ifyllt för bilder som lagts in från Pixabay. */
   fotograf?: string;

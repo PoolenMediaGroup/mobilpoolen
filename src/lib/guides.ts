@@ -251,7 +251,7 @@ export const GUIDES: GuideMeta[] = [
     slug: "2g-3g-nedslackning",
     title: "2G och 3G släcks ner: fungerar din telefon fortfarande?",
     excerpt:
-      "Tele2, Telenor och Tre har stängt 2G och 3G och Telia stänger 2G 2027. Så kontrollerar du om telefonen och larmet klarar 4G och VoLTE.",
+      "Tele2, Telenor och Tre har stängt 2G och 3G och Telia stänger 2G 2027. Så kontrollerar du om telefonen klarar 4G och VoLTE.",
     category: "Surf och nät",
     readingTime: "6 min",
     published: LANSERING,

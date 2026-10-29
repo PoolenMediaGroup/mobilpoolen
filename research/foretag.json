@@ -1,0 +1,177 @@
+{
+  "meta": {
+    "kontrollerad": "2026-10-29",
+    "notering": "Hämtat via WebFetch/WebSearch 2026-10-29. Flera operatörssidor (telia.se/foretag/mobilt, telenor.se/foretag/handla/abonnemang/[produkt], tre.se/treforetag/handla/foretagsabonnemang, comviq.se/foretag, telavox.se/priser, telness.se) var inte nåbara eller renderade bara metadata. Sökbudgeten tog slut innan Telenor, Comviq, Vimla, Fello, Bredband2, Soluno och Weblink kunde verifieras fullt ut. Fält med null + [KONTROLLERA] måste verifieras manuellt."
+  },
+  "operatorer": [
+    {
+      "slug": "telia-foretag",
+      "namn": "Telia Företag",
+      "nat": "Telia",
+      "om": "Största operatören. Företagsabonnemang i fyra nivåer. Obegränsad Max har telefonväxeln Telia Smart Connect, ett extra datasim och 75 kr rabatt på en Microsoft 365-licens på köpet. Mobilt ramavtal för större företag.",
+      "prisinfo": "[KONTROLLERA] Sidan anger inte exkl./inkl. moms. Troligen exkl. moms (företagssida), men det är inte bekräftat.",
+      "abonnemang": [
+        {"namn": "Obegränsad Max", "gb": null, "obegransad": true, "pris": 499, "bindning": null, "euGb": 150, "ovrigt": "Kampanjpris, ordinarie 699 kr/mån. Upp till 1 500 Mbit/s. Smart Connect-växel ingår. 1 extra datasim ingår. 150 GB i 23 länder utanför Europa, 1 000 min/sms i 43 länder. 75 kr rabatt på en M365-licens. Bindningstid [KONTROLLERA]: test.se anger 24 mån för kampanjpriset.", "kalla": "https://www.telia.se/foretag/foretagsabonnemang"},
+        {"namn": "Obegränsad Premium", "gb": null, "obegransad": true, "pris": 399, "bindning": null, "euGb": 150, "ovrigt": "Kampanjpris, ordinarie 599 kr/mån. Upp till 1 500 Mbit/s. 1 extra datasim ingår. Ingen växel. Roaming utanför Europa som Max. Bindning [KONTROLLERA].", "kalla": "https://www.telia.se/foretag/foretagsabonnemang"},
+        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 349, "bindning": null, "euGb": 100, "ovrigt": "Kampanjpris, ordinarie 499 kr/mån. Upp till 300 Mbit/s. Inget extra sim, ingen växel. Bindning [KONTROLLERA].", "kalla": "https://www.telia.se/foretag/foretagsabonnemang"},
+        {"namn": "10 GB", "gb": 10, "obegransad": false, "pris": 349, "bindning": null, "euGb": 10, "ovrigt": "Upp till 100 Mbit/s. Bindning [KONTROLLERA].", "kalla": "https://www.telia.se/foretag/foretagsabonnemang"}
+      ],
+      "vaxel": "Telia Smart Connect (mobil växel för små företag): 'Kontroll på inringande samtal' 49 kr/mån per användare (just nu-pris; växel + fast nummer, öppettider, menyval, köer, röstbrevlåda utanför öppettid). 'Professionellt med lokalt nummer' från 118 kr/mån. Skräddarsydd växel enligt offert. Extra funktionsnummer 99 kr/mån, extra telefonnummer till användare 39 kr/mån. Moms och bindning anges inte [KONTROLLERA]. Ingår i Obegränsad Max.",
+      "krav": "[KONTROLLERA] Inget krav på org.nr eller regler för enskild firma anges på sidan. Mobilt ramavtal: sidan anger både 'minst 12 mobilabonnemang' och lägre pris från 6 abonnemang, vilket är motstridigt. Ramavtalet ger rabatt på månadsavgifter, data och hårdvara (ingen procentsats anges), samlad faktura, MyBusiness-portal, egen avtalskundtjänst och 0 kr för samtal inom samma internprisgrupp.",
+      "starkor": ["Växel (Smart Connect) ingår i Obegränsad Max", "Extra datasim ingår i Max och Premium", "Hög EU-surf (150 GB) på toppnivåerna", "Billig växel från 49 kr/användare", "Ramavtal med egen kundtjänst"],
+      "svagheter": ["Högst ordinarie priser bland de stora (699/599/499)", "Kampanjpriser, och ordinarie pris gäller efter kampanjen", "10 GB kostar lika mycket som Obegränsad (349 kr)", "Extra datasim kostar 249 kr [KONTROLLERA om engångs- eller månadsavgift]"],
+      "kallor": ["https://www.telia.se/foretag/foretagsabonnemang", "https://www.telia.se/foretag/foretagsabonnemang/mobilt-ramavtal", "https://www.telia.se/foretag/vaxlar/vaxel-sma-foretag"],
+      "osakert": ["Moms exkl./inkl. anges inte", "Bindningstid anges inte på Telias sida (test.se: 24 mån)", "Startavgift anges inte", "Ramavtalskrav: 6 eller 12 abonnemang", "Extra datasim 249 kr: per månad eller engångs?", "Ingen uttrycklig 'dela surf'-tjänst (bara 'Med ett Extra simkort kan du dela surfen med andra enheter')"]
+    },
+    {
+      "slug": "tele2-foretag",
+      "namn": "Tele2 Företag",
+      "nat": "Tele2",
+      "om": "Tre företagsabonnemang med kampanjpris vid 24 månaders bindning. Kollega-rabatt, 'Ringa fritt till kollegor i hela världen' inom samma org.nr, Tele2 Växel och Tele2 Ai-receptionist.",
+      "prisinfo": "[KONTROLLERA] Ordet 'moms' finns inte på sidan, så exkl./inkl. moms anges inte.",
+      "abonnemang": [
+        {"namn": "Mobilabonnemang 60 GB", "gb": 60, "obegransad": false, "pris": 269, "bindning": 24, "euGb": 60, "ovrigt": "Kampanjpris med 24 mån bindning, ordinarie 399 kr/mån. 100 Mbit/s. Fria samtal/sms/mms i Sverige och EU/EES.", "kalla": "https://www.tele2.se/foretag/mobilabonnemang"},
+        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 299, "bindning": 24, "euGb": 120, "ovrigt": "Kampanjpris med 24 mån bindning, ordinarie 499 kr/mån. 300 Mbit/s. 60 GB i EU/EES + 60 GB i övriga utvalda destinationer inkl. Storbritannien. Ringa fritt till kollegor utomlands. Efter 50 GB/dag fyller man på via sms utan kostnad.", "kalla": "https://www.tele2.se/foretag/mobilabonnemang"},
+        {"namn": "Obegränsad Max", "gb": null, "obegransad": true, "pris": 349, "bindning": 24, "euGb": 120, "ovrigt": "Kampanjpris med 24 mån bindning, ordinarie 599 kr/mån. 1 500 Mbit/s. 1 000 fria samtal/sms/mms till Norden. Ringa i utlandet och Ringa till Norden ingår.", "kalla": "https://www.tele2.se/foretag/mobilabonnemang"},
+        {"namn": "Kollega (Obegränsad Max)", "gb": null, "obegransad": true, "pris": 299, "bindning": 24, "euGb": 120, "ovrigt": "Upp till 9 kollegor får Obegränsad Max 50 kr/mån billigare under hela avtalstiden. Kräver huvudabonnemanget Obegränsad Max.", "kalla": "https://www.tele2.se/foretag/mobilabonnemang"}
+      ],
+      "vaxel": "Tele2 Växel i tre paket för små företag. Priserna anges inte, sidan har en kampanj 'två månader kostnadsfritt' [KONTROLLERA pris]. Även Tele2 Ai-receptionist (ramavtalskampanj 1 599 kr/mån, ord. 1 999) och Tele2 Svarsservice. I ramavtal finns kampanjen Obegränsad Max 299 kr/mån med Tele2 Växel för varje användare.",
+      "krav": "Ramavtal för företag med minst 10 anställda. Ramavtalet löper 24 eller 36 mån, med en fast minimiavgift på 90 % av uppskattad volym. 'Ringa fritt till kollegor' gäller abonnemang under samma organisationsnummer. Krav för enskild firma anges inte [KONTROLLERA].",
+      "starkor": ["Lägsta kampanjpris på obegränsat bland de stora (299 kr)", "Mest utlandssurf (120 GB inkl. Storbritannien)", "Kollega-rabatt för upp till 9 extra", "Fria samtal till kollegor världen över"],
+      "svagheter": ["Kampanjpriset kräver 24 mån bindning, ordinarie pris är 399–599 kr", "Inget extra datakort ingår (99 kr/mån)", "Växelpriser redovisas inte öppet"],
+      "kallor": ["https://www.tele2.se/foretag/mobilabonnemang", "https://www.tele2.se/foretag/vaxel", "https://www.tele2.se/foretag/information-om-ramavtal"],
+      "osakert": ["Moms anges inte", "Startavgift nämns inte", "Växelpriser saknas", "Ingen uttrycklig delad surfpool. Extra datakort 99 kr/mån; om det delar huvudabonnemangets surf framgår inte"]
+    },
+    {
+      "slug": "telenor-foretag",
+      "namn": "Telenor Företag",
+      "nat": "Telenor",
+      "om": "Företagsabonnemang från 7 GB upp till obegränsad 5G-surf (upp till 1 500 Mbit/s). Säkerhetspaket mot bedrägerier och skadliga sidor ingår i alla abonnemang. Telenors produktsidor gick inte att läsa (bara metadata), så detaljpriserna nedan kommer från en tredjepartssida och måste kontrolleras.",
+      "prisinfo": "[KONTROLLERA] Telenors egen sida anger 'från 279 kr/mån' utan uppgift om moms. Tredjepartskällan (operatör.se) anger exkl. moms.",
+      "abonnemang": [
+        {"namn": "7 GB", "gb": 7, "obegransad": false, "pris": 279, "bindning": 24, "euGb": 7, "ovrigt": "'Från 279 kr/mån' bekräftat på telenor.se. Enligt tredjepart: 279 kr i 24 mån, sedan 329 kr. Utan bindning 329 kr. [KONTROLLERA]", "kalla": "https://www.telenor.se/foretag/handla/abonnemang/"},
+        {"namn": "15 GB", "gb": 15, "obegransad": false, "pris": null, "bindning": null, "euGb": 15, "ovrigt": "[KONTROLLERA] Tredjepart: 319 kr i 24 mån, sedan 369 kr. Utan bindning 369 kr.", "kalla": "https://www.xn--operatr-f1a.se/mobilabonnemang/f%C3%B6retag/telenor"},
+        {"namn": "Obegränsat (Fri surf)", "gb": null, "obegransad": true, "pris": null, "bindning": null, "euGb": null, "ovrigt": "[KONTROLLERA] Tredjepart: 349 kr i 24 mån, sedan 449 kr, och 75 GB EU. test.se: 449 kr, 100 GB EU. prisfakta: 399 kr, 100 GB EU/EES, 300 Mbit/s. Uppgifterna går isär.", "kalla": "https://www.xn--operatr-f1a.se/mobilabonnemang/f%C3%B6retag/telenor"},
+        {"namn": "Obegränsat Plus/Max (Fri surf)", "gb": null, "obegransad": true, "pris": null, "bindning": null, "euGb": null, "ovrigt": "[KONTROLLERA] Tredjepart: 499 kr i 24 mån, sedan 599 kr, och 150 GB EU. Namnet är osäkert.", "kalla": "https://www.xn--operatr-f1a.se/mobilabonnemang/f%C3%B6retag/telenor"}
+      ],
+      "vaxel": null,
+      "krav": null,
+      "starkor": ["Säkerhetspaket ingår i alla abonnemang", "Opensignal 2025: bästa nätet (enligt Telenors marknadsföring, återgiven av Elgiganten)", "Abonnemang på 30 GB eller mindre: all surf gäller även utomlands (enligt Elgiganten)"],
+      "svagheter": ["Dyra småpaket (7 GB för 279–329 kr)", "Priserna gick inte att verifiera på Telenors egen sida"],
+      "kallor": ["https://www.telenor.se/foretag/handla/abonnemang/", "https://www.elgiganten.se/foretag/mobiler-tablets-smartklockor/mobilabonnemang/mobilabonnemang-fran-telenor", "https://www.xn--operatr-f1a.se/mobilabonnemang/f%C3%B6retag/telenor"],
+      "osakert": ["Alla priser utom 'från 279 kr' är [KONTROLLERA]", "Moms", "EU-surf för obegränsade (75/100/150 GB, uppgifterna går isär)", "Växel: Telenor har företagsväxel men den har inte verifierats", "Dela surf och extra sim", "Krav och rabatter"]
+    },
+    {
+      "slug": "tre-foretag",
+      "namn": "Tre Företag (3Företag)",
+      "nat": "Tre (Hi3G Access AB)",
+      "om": "Två obegränsade företagsabonnemang. 3Företag Obegränsad Max har surf och samtal i över 100 länder (3Världen Företag) och ett datakort som ingår. Mobil växel 3Koppla.",
+      "prisinfo": "exkl moms",
+      "abonnemang": [
+        {"namn": "3Företag Obegränsad", "gb": null, "obegransad": true, "pris": 249, "bindning": null, "euGb": 100, "ovrigt": "Exkl. moms, upp till 300 Mbit/s. EU/EES 100 GB enligt prislistan från 2024 [KONTROLLERA mot aktuell]. Tre:s överlåtelsesida anger 299 kr/mån exkl. moms (373,75 kr inkl.) när privatabonnemang överlåts till företag, så priset varierar med bindning/kampanj [KONTROLLERA]. Bindning 0/12/24 mån enligt äldre prislistor.", "kalla": "https://www.tre.se/treforetag/handla/foretagsabonnemang/abonnemang"},
+        {"namn": "3Företag Obegränsad Max", "gb": null, "obegransad": true, "pris": 299, "bindning": 24, "euGb": 100, "ovrigt": "Exkl. moms. Introduktionspris 299 kr/mån i 24 mån, sedan 449 kr/mån. Minsta totalkostnad 7 176 kr. Upp till 1 000 Mbit/s. Surf och samtal i över 100 länder (3Världen Företag; Företagarna anger 100 GB/mån i 100 länder). Ett 3Företag Datakort ingår.", "kalla": "https://www.tre.se/treforetag/handla/foretagsabonnemang/abonnemang"},
+        {"namn": "3Företag Datakort", "gb": null, "obegransad": false, "pris": 69, "bindning": 0, "euGb": null, "ovrigt": "Delar surfmängd med huvudabonnemanget (max 100 GB/mån i Sverige). Ingår i Obegränsad Max. 69 kr enligt prislistan från aug 2024 (49 kr i listan från jan 2024) [KONTROLLERA].", "kalla": "https://assets.tre.se/dokument/foretag/abonnemangsprislistor/prislista-och-tjanstespecifika-villkor-rostabonnemang.pdf"},
+        {"namn": "3Kollega", "gb": null, "obegransad": true, "pris": null, "bindning": null, "euGb": 100, "ovrigt": "[KONTROLLERA om det fortfarande säljs] 249 kr i prislistan från jan 2024. Kräver Obegränsad Max som huvudabonnemang, max 5 per huvudabonnemang och 16 per kund.", "kalla": "https://assets.tre.se/dokument/foretag/abonnemangsprislistor/prislista-och-tjanstespecifika-villkor-voice-b2b.pdf"}
+      ],
+      "vaxel": "3Koppla (mobil växel): 129 kr/mån per användare som tilläggstjänst, moms anges inte [KONTROLLERA]. 8 företagsnummer, webbchatt, återuppringning i stället för kö, köstatistik i realtid, integration med M365/Teams/Google Workspace, appar för HubSpot, Salesforce och WhatsApp Business. 3Växel Externt Nummer 49 kr/mån exkl. moms (prislista).",
+      "krav": "[KONTROLLERA] Inget uttryckligt krav på org.nr finns i underlaget. Uppsägningstid 30 dagar (prislistan). Aktiveringsavgift 250 kr enligt prislistan från jan 2024 [KONTROLLERA aktuell]. Företagarnas medlemmar får upp till 50 % rabatt.",
+      "starkor": ["Tydliga priser exkl. moms", "Datakort med delad surf ingår i Max", "Surf i 100+ länder med Max", "Billigt obegränsat (249 kr exkl. moms)", "Gratis överlåtelse via Mitt3"],
+      "svagheter": ["Max går upp till 449 kr efter 24 mån", "Aktiveringsavgift kan tillkomma", "Tres nät har något sämre täckning på landsbygden [KONTROLLERA]"],
+      "kallor": ["https://www.tre.se/treforetag/handla/foretagsabonnemang/abonnemang", "https://www.tre.se/treforetag", "https://www.tre.se/treforetag/handla/vaxel", "https://assets.tre.se/dokument/foretag/abonnemangsprislistor/prislista-och-tjanstespecifika-villkor-rostabonnemang.pdf", "https://www.tre.se/support/overlatelse", "https://www.foretagarna.se/medlemsformaner/it--telefoni/tre/"],
+      "osakert": ["Pris för Obegränsad: 249 eller 299 kr beroende på källa/bindning", "Startavgift och aktiveringsavgift 2026", "Aktuell EU-GB", "Om 3Kollega fortfarande säljs", "Moms för 3Koppla"]
+    },
+    {
+      "slug": "hallon-foretag",
+      "namn": "Hallon Företag",
+      "nat": "Tre (Hi3G Access AB)",
+      "om": "Lågprisvarumärke från Tre med enkla företagsabonnemang utan bindningstid. Fria samtal och sms i Sverige, upp till 150 Mbit/s.",
+      "prisinfo": "[KONTROLLERA] Varken företagssidan eller prislistan anger exkl./inkl. moms.",
+      "abonnemang": [
+        {"namn": "Företag 10 GB", "gb": 10, "obegransad": false, "pris": 129, "bindning": 0, "euGb": null, "ovrigt": "Ingen bindningstid. 150 Mbit/s. EU-surf [KONTROLLERA] (test.se anger 10 GB). test.se visar även kampanjpris 29 kr.", "kalla": "https://www.hallon.se/foretag"},
+        {"namn": "Företag 30 GB", "gb": 30, "obegransad": false, "pris": 179, "bindning": 0, "euGb": null, "ovrigt": "EU-surf [KONTROLLERA] (test.se anger 25 GB). Kampanjpris enligt test.se 49 kr.", "kalla": "https://www.hallon.se/foretag"},
+        {"namn": "Företag 150 GB", "gb": 150, "obegransad": false, "pris": 269, "bindning": 0, "euGb": null, "ovrigt": "EU-surf [KONTROLLERA] (test.se anger 35 GB). Kampanjpris enligt test.se 69 kr.", "kalla": "https://www.hallon.se/foretag"}
+      ],
+      "vaxel": null,
+      "krav": null,
+      "starkor": ["Billigast med fast surfmängd", "Ingen bindningstid", "Tres nät"],
+      "svagheter": ["Ingen obegränsad surf", "Ingen växel", "Max 150 Mbit/s", "Samtal och sms ingår bara i Sverige"],
+      "kallor": ["https://www.hallon.se/foretag", "https://www.hallon.se/cms/media/faegtbwu/hf_prislistor_mobilabonnemang_2026-05-18.pdf", "https://www.test.se/foretagsabonnemang/"],
+      "osakert": ["Moms", "EU-surf", "Krav (org.nr/enskild firma)", "Kampanjpriser"]
+    },
+    {
+      "slug": "telavox",
+      "namn": "Telavox",
+      "nat": null,
+      "om": "Molnbaserad företagstelefoni där mobilabonnemanget är ihopbyggt med växel, app, chatt/video och AI (AI Assist som spelar in och sammanfattar samtal och röstbrevlådor). Integrationer med HubSpot, Zendesk, Teams, Salesforce och Google Workspace. Nummerflytt kan göras på några timmar.",
+      "prisinfo": "exkl moms",
+      "abonnemang": [
+        {"namn": "Obegränsad Plus", "gb": null, "obegransad": true, "pris": 298, "bindning": null, "euGb": null, "ovrigt": "Obegränsad 5G-surf i Sverige, fria samtal och sms/mms i Sverige, adminportal. Ingen växel. Bindning: obundet eller 36 mån (pris per variant [KONTROLLERA]). Startavgift finns men beloppet anges inte [KONTROLLERA].", "kalla": "https://telavox.se/produkt-kategori/obundet/"},
+        {"namn": "Obegränsad Premium", "gb": null, "obegransad": true, "pris": 399, "bindning": null, "euGb": null, "ovrigt": "Allt i Plus + växel, fria interna samtal världen över, app för mobil och dator, chatt/video, fast telefoni/softphone, AI Assist 500 min.", "kalla": "https://telavox.se/produkt-kategori/obundet/"},
+        {"namn": "Obegränsad Max", "gb": null, "obegransad": true, "pris": 549, "bindning": null, "euGb": null, "ovrigt": "Allt i Premium + ärendehantering, CRM-integrationer, Teams-integration, samtalsinspelning, avancerad statistik och full växelfunktionalitet.", "kalla": "https://telavox.se/produkt-kategori/obundet/"}
+      ],
+      "vaxel": "Växel ingår från Premium (399 kr). Fixed Premium (fast/softphone med växel, utan mobil) 219 kr/mån exkl. moms. Fixed Max enligt offert. AI-receptionist Essentials 999 kr/mån (2,50 kr/min), Pro 3 999 kr/mån (2 000 min ingår). Mobilleasing från 99 kr/mån exkl. moms (24 mån).",
+      "krav": "[KONTROLLERA] Riktar sig bara till företag. Krav för enskild firma anges inte.",
+      "starkor": ["Växel, app och AI i samma abonnemang", "Starka integrationer (CRM, Teams)", "Obundet alternativ finns", "Egenadministration i appen"],
+      "svagheter": ["Dyrt om man bara behöver surf och samtal", "Startavgift och extra sim-kostnad anges inte öppet", "EU-surf anges inte tydligt"],
+      "kallor": ["https://telavox.se/produkt-kategori/obundet/", "https://telavox.se/mobilabonnemang/", "https://telavox.se/foretagstelefon/"],
+      "osakert": ["Vilket mobilnät som används", "EU-surf i GB", "Startavgift", "Pris med 36 mån bindning jämfört med obundet", "Extra sim"]
+    },
+    {
+      "slug": "telness",
+      "namn": "Telness",
+      "nat": "Telia",
+      "om": "Utmanaroperatör för företag i Telias nät. Mobilabonnemang, fastnummer och växel. Ingen bindnings- eller uppsägningstid, BankID-inloggning, '100 % nöjd kund-garanti' och support med svarstid under en minut i snitt. Hjälper kostnadsfritt med bytet från tidigare operatör.",
+      "prisinfo": "exkl moms (enligt Elgiganten). Telness egen sida gick inte att nå [KONTROLLERA].",
+      "abonnemang": [
+        {"namn": "Telness 3 GB", "gb": 3, "obegransad": false, "pris": 229, "bindning": 0, "euGb": null, "ovrigt": "Enligt Elgiganten, exkl. moms. Företagarna anger i stället 5 GB för ord. 229 kr [KONTROLLERA].", "kalla": "https://www.elgiganten.se/foretag/mobiler-tablets-smartklockor/mobilabonnemang/mobilabonnemang-for-foretag-fran-telness"},
+        {"namn": "Telness 20 GB", "gb": 20, "obegransad": false, "pris": 299, "bindning": 0, "euGb": null, "ovrigt": "Enligt Elgiganten. Företagarna anger 30 GB för ord. 299 kr [KONTROLLERA].", "kalla": "https://www.elgiganten.se/foretag/mobiler-tablets-smartklockor/mobilabonnemang/mobilabonnemang-for-foretag-fran-telness"},
+        {"namn": "Telness Obegränsat 5G", "gb": null, "obegransad": true, "pris": 399, "bindning": 0, "euGb": null, "ovrigt": "Bara obegränsat har 5G. Pris för Företagarnas medlemmar 279 kr.", "kalla": "https://www.foretagarna.se/medlemsformaner/it--telefoni/telness/"}
+      ],
+      "vaxel": "Fastnummer 29 kr/mån. Växelanvändare ord. 149 kr/mån (99 kr för Företagarnas medlemmar). Moms [KONTROLLERA].",
+      "krav": null,
+      "starkor": ["Ingen bindning och ingen uppsägningstid", "Telias nät", "Billig växel och fastnummer", "Snabb support"],
+      "svagheter": ["Dyrt per GB för de små paketen", "5G bara i obegränsat", "Uppgifterna om GB-nivåer går isär mellan källorna"],
+      "kallor": ["https://www.foretagarna.se/medlemsformaner/it--telefoni/telness/", "https://www.elgiganten.se/foretag/mobiler-tablets-smartklockor/mobilabonnemang/mobilabonnemang-for-foretag-fran-telness"],
+      "osakert": ["Exakta GB-nivåer (3/20 eller 5/30 GB)", "EU-surf", "Inte verifierat på telness.se"]
+    },
+    {
+      "slug": "chili-mobil-foretag",
+      "namn": "Chili Mobil Företag",
+      "nat": null,
+      "om": "[KONTROLLERA] Listas av test.se (uppdaterad 2026-10-20) med tre obegränsade företagsabonnemang. Inte verifierat på operatörens egen sida.",
+      "prisinfo": "[KONTROLLERA]",
+      "abonnemang": [
+        {"namn": "Obegränsat (25 GB EU)", "gb": null, "obegransad": true, "pris": null, "bindning": 0, "euGb": null, "ovrigt": "[KONTROLLERA] test.se: 299 kr, 25 GB EU.", "kalla": "https://www.test.se/foretagsabonnemang/"},
+        {"namn": "Obegränsat (30 GB EU)", "gb": null, "obegransad": true, "pris": null, "bindning": 0, "euGb": null, "ovrigt": "[KONTROLLERA] test.se: 349 kr respektive 399 kr, 30 GB EU.", "kalla": "https://www.test.se/foretagsabonnemang/"}
+      ],
+      "vaxel": null,
+      "krav": null,
+      "starkor": [],
+      "svagheter": [],
+      "kallor": ["https://www.test.se/foretagsabonnemang/"],
+      "osakert": ["Allt om denna operatör måste verifieras"]
+    }
+  ],
+  "ej_verifierade_operatorer": [
+    {"namn": "Comviq Företag", "status": "Inget företagserbjudande hittades och comviq.se/foretag var inte nåbar. [KONTROLLERA]"},
+    {"namn": "Fello Företag", "status": "Inget företagserbjudande hittades. [KONTROLLERA]"},
+    {"namn": "Vimla Företag", "status": "Inget företagserbjudande hittades. [KONTROLLERA]"},
+    {"namn": "Bredband2 Företag", "status": "Inga uppgifter om mobilabonnemang för företag hittades. [KONTROLLERA]"},
+    {"namn": "Soluno", "status": "Molnväxel med mobil i fokus. Priser hittades inte. [KONTROLLERA]"},
+    {"namn": "Weblink", "status": "Företagstelefoni (finns på businesswith.se). Priser hittades inte. [KONTROLLERA]"},
+    {"namn": "Teleservice, Zeuz", "status": "Inte undersökt (sökbudgeten tog slut). [KONTROLLERA]"}
+  ],
+  "fakta": [
+    {"amne": "Momsavdrag på mobilabonnemang", "text": "Ett momsregistrerat företag får dra av ingående moms (25 %) på inköp som används i verksamheten. Används inköpet både i verksamheten och privat får man bara dra av den del av momsen som hör till verksamheten, efter en skälig fördelning som man ska kunna visa (anteckningar, beräkningar). Skatteverkets exempel: 50 % privat ger 50 % avdrag. Exempel från Tre: 299 kr/mån exkl. moms blir 373,75 kr inkl. moms, och företaget kan återfå 74,75 kr i moms. Företagsabonnemang prissätts i regel exkl. moms.", "kalla": "https://skatteverket.se/foretag/moms/kopavarorochtjanster/inkoptillforetaget.4.7459477810df5bccdd480005156.html"},
+    {"amne": "Tjänstemobil som förmån för anställda (AB och anställda)", "text": "Får en anställd använda arbetsgivarens mobil, dator eller dataabonnemang privat är det inte en skattepliktig förmån om utrustningen normalt är nödvändig för arbetet. Enligt Skatteverkets ställningstagande 2018-06-07 är privat användning utanför arbetsplatsen skattefri om utrustningen/abonnemanget behövs i arbetet, den privata nyttan är svår att skilja från tjänstenyttan och värdet är begränsat. Ett abonnemang mot fast avgift räknas som en tjänst även om det innehåller samtal, sms, mms och data. Är utrustningen inte nödvändig för arbetet och arbetsgivaren tillåter privat användning blir den en skattepliktig förmån till marknadsvärde, som ska redovisas i arbetsgivardeklarationen. Privata tjänster som debiteras utöver den fasta avgiften (t.ex. betalsamtal, utlandssamtal som går att särskilja) är alltid skattepliktiga om arbetsgivaren betalar dem. Ingen ändring för 2026 hittades [KONTROLLERA].", "kalla": "https://skatteverket.se/foretag/arbetsgivare/lonochersattning/formaner/arbetsredskap.4.3016b5d91791bf546791ad4.html"},
+    {"amne": "Skatteverkets ställningstagande om elektronisk utrustning", "text": "'Förmånsbeskattning av elektronisk utrustning eller abonnemang mot fast avgift', 2018-06-07, ersätter ställningstagandet från 2014-07-09. Tips: om utrustningen inte är nödvändig i arbetet bör avtalet ange att privat användning inte är tillåten, så undviks förmånsbeskattning.", "kalla": "https://www.faronline.se/dokument/skatteverket/stallningstaganden2/2018/skvstallningst2018060701/"},
+    {"amne": "Enskild firma: avdrag och uttagsbeskattning", "text": "En enskild näringsidkare är inte anställd i sitt eget företag, så förmånsreglerna gäller inte. I stället gäller uttagsbeskattning. Enligt Skatteverkets ställningstagande 2015-08-25 ('Utgifter för dator och telefon i enskild näringsverksamhet') kan mobilabonnemang och en mobil av mindre värde som bokförs i verksamheten dras av direkt, men den privata användningen ska uttagsbeskattas. Om mobilen köps privat ges skäligt avdrag för verksamhetsdelen. Vid jämn fördelning kan hälften av utgiften ligga till grund. Fast telefonabonnemang i bostaden är aldrig avdragsgillt, bara rörliga samtalskostnader i verksamheten.", "kalla": "https://www.faronline.se/dokument/skatteverket/stallningstaganden2/2015/skvstallningst2015082502/"},
+    {"amne": "Enskild firma jämfört med aktiebolag", "text": "Aktiebolag: abonnemanget är bolagets kostnad. Ägare och anställda omfattas av förmånsreglerna, så privat användning är skattefri om mobilen behövs i arbetet. Enskild firma: kostnaden dras av i firman och den privata delen uttagsbeskattas, eller så görs en skälig fördelning. I båda fallen dras momsen av bara för verksamhetsdelen (momsregistrerat företag). Om operatörerna godtar enskild firma framgick inte av deras sidor [KONTROLLERA per operatör]. Tre kräver vid överlåtelse kreditprövning och att mottagaren är över 18 år.", "kalla": "https://skatteverket.se/foretag/arbetsgivare/lonochersattning/formaner/arbetsredskap.4.3016b5d91791bf546791ad4.html"},
+    {"amne": "LEK 2022:482: bindningstid för företag", "text": "7 kap. 8 § LEK: ett avtal med en konsument får ha högst 24 månaders bindningstid. Enligt 7 kap. 10 § gäller 8 och 9 §§ även mikroföretag, andra små företag och ideella organisationer, om de inte uttryckligen har samtyckt till avsteg. Ett företag kan alltså avtala bort 24-månadersgränsen (t.ex. 36 mån), men bara uttryckligen. Definition i 1 kap. 7 §: mikroföretag har färre än 10 sysselsatta och högst 2 MEUR i omsättning eller balansomslutning. Småföretag har färre än 50 sysselsatta och högst 10 MEUR.", "kalla": "https://data.riksdagen.se/dokument/sfs-2022-482.text"},
+    {"amne": "LEK 2022:482: information, avtalssammanfattning och paket", "text": "7 kap. 1 § (förhandsinformation och kortfattad avtalssammanfattning) gäller konsumenter och enligt 7 kap. 3 § även mikroföretag, små företag och ideella organisationer, om de inte uttryckligen avstår. 7 kap. 28 § utvidgar reglerna om paketerbjudanden (26 §) och förlängd bindningstid som kräver uttryckligt samtycke (27 §) till samma grupper. Bara för konsumenter gäller 7 kap. 15 § (operatörslås tas bort gratis efter bindningstiden) och 17 § (påföljder vid avvikande prestanda).", "kalla": "https://data.riksdagen.se/dokument/sfs-2022-482.text"},
+    {"amne": "LEK 2022:482: uppsägning och villkorsändring", "text": "7 kap. 13 § (högst en månads uppsägningstid och ingen tidigare uppsägning än en månad före bindningstidens slut) gäller bara konsumenter, så företag kan få längre uppsägningstid. 7 kap. 12 § gäller alla slutanvändare, även företag: ändrade villkor ska aviseras minst en månad i förväg, och den som inte godtar dem får säga upp avtalet utan kostnad inom tre månader (undantag för ändringar som bara gynnar kunden, är rent administrativa eller krävs enligt lag). 7 kap. 14 §: efter automatisk förlängning får slutanvändaren säga upp när som helst med högst en månads uppsägningstid. 7 kap. 16 §: vid förtida uppsägning får ersättning bara krävas för subventionerad utrustning man behåller, högst det lägsta av tidsproportionellt restvärde och återstående avgifter.", "kalla": "https://data.riksdagen.se/dokument/sfs-2022-482.text"},
+    {"amne": "Överlåtelse av abonnemang mellan privat och företag", "text": "Exempel från Tre: överlåtelse sker i Mitt3 med BankID (gratis) eller med blankett (250 kr per abonnemang för privatkunder, gratis för företagsabonnemang). Mottagaren ska vara över 18 år och godkännas i kreditkontrollen, och förfallna fakturor ska vara betalda. Handläggningen tar cirka 10 arbetsdagar och återstående bindningstid följer med. När ett privatabonnemang överlåts till företag blir det 3Företag Obegränsad för 299 kr/mån exkl. moms (373,75 kr inkl.). Om numret alltid behålls anges inte uttryckligen [KONTROLLERA]. Andra operatörer har inte verifierats.", "kalla": "https://www.tre.se/support/overlatelse"},
+    {"amne": "Nummerportering vid byte av operatör", "text": "PTSFS 2022:4: bindningstid eller obetalda fakturor hindrar inte portering (4 §). Abonnenten har rätt att porta numret minst en månad efter att avtalet upphört, om hen inte uttryckligen har avstått (7 §). Någon generell porteringsavgift får inte tas ut av slutanvändaren. Undantaget är en kostnadsbaserad avgift för återbetalning av kontantkortssaldo (9 §). Mottagande operatör ska komma överens om tidpunkt med abonnenten (4 §), och misslyckas porteringen ska den gamla operatören återaktivera numret (6 §). Föreskriften talar om 'slutanvändare som är abonnent' och skiljer inte på privat och företag. Numret följer abonnenten, så vid byte från privat till företag krävs normalt överlåtelse till företaget (ny abonnent) [KONTROLLERA hos respektive operatör].", "kalla": "https://WWW.PTS.SE/globalassets/startpage/dokument/legala-dokument/foreskrifter/telefoni/ny-lek-2022/ptsfs-2022_4-om-nummerportabilitet.pdf"},
+    {"amne": "Priser exkl. moms på marknaden", "text": "Företagspriser anges i regel exkl. moms (Tre, Telavox och Telness via Elgiganten säger det uttryckligen). Telia, Tele2 och Hallon anger det inte på sina abonnemangssidor [KONTROLLERA]. Inkl. moms = exkl. × 1,25. Jämförelse för obegränsat (kampanj/introduktion): Tre Max 299, Tele2 Obegränsad 299, Telia Obegränsad 349, Telenor ca 349 [KONTROLLERA], Telness 399 (279 för Företagarnas medlemmar).", "kalla": "https://www.test.se/foretagsabonnemang/"}
+  ]
+}

@@ -1,0 +1,293 @@
+{
+  "inaktiva": [
+    {"namn": "Lebara", "notis": "Hittade ingen svensk Lebara-sajt (sökning på lebara.se gav inga träffar). Enligt Wikipedia finns Lebara i dag i UK, Frankrike, Danmark, Nederländerna och Tyskland, inte i Sverige. [KONTROLLERA] om lebara.se finns kvar."},
+    {"namn": "Vectone Mobile", "notis": "Hittade ingen svensk operatörssida, bara laddningsbutiker för andra länder. Räknas som inaktiv i Sverige. [KONTROLLERA]"},
+    {"namn": "Ownit mobil", "notis": "Ownits telefonisidor visar bara hemtelefoni via fiber (49 kr/mån) och inget mobilabonnemang (https://www.ownit.se/telefoni/telefonipaket)."},
+    {"namn": "Bahnhof mobil", "notis": "Hittade inget mobilabonnemang på bahnhof.se, bara bredband och TV. [KONTROLLERA]"},
+    {"namn": "Bredband2 (varumärke)", "notis": "Bredband2 har köpt A3, och privatkundsdokumenten ligger nu på docs.a3.se. Mobilen tas upp under A3 (se operatorer) så att den inte räknas två gånger."},
+    {"namn": "Telavox", "notis": "Telavox säljer mobil till företag (växel/mobil). Hittade inget privaterbjudande."},
+    {"namn": "Teletopia", "notis": "Norsk aktör. Hittade inga svenska mobilabonnemang."},
+    {"namn": "Linkmobility", "notis": "SMS-/CPaaS-leverantör, ingen mobiloperatör för konsumenter."},
+    {"namn": "Djuice", "notis": "Telenors gamla varumärke, nedlagt sedan länge. Hittade inget aktivt erbjudande."},
+    {"namn": "Penny", "notis": "Hittade ingen svensk mobiloperatör med det namnet."},
+    {"namn": "Allente mobil", "notis": "Allente är TV-distributör (Canal Digital/Viasat). Hittade inget mobilabonnemang. [KONTROLLERA]"},
+    {"namn": "Viasat", "notis": "Ingår i Allente, inget mobilabonnemang."},
+    {"namn": "Hello", "notis": "Hittade ingen svensk mobiloperatör med det namnet."},
+    {"namn": "Ice", "notis": "Norsk operatör (Lyse), inte aktiv i Sverige."},
+    {"namn": "Lyse", "notis": "Norskt bolag, inte aktivt med mobil i Sverige."},
+    {"namn": "Com Hem mobil", "notis": "Del av Tele2 sedan sammanslagningen. Ingår i Tele2, som görs av någon annan."},
+    {"namn": "Netett", "notis": "Hittade inget aktivt svenskt mobilerbjudande. [KONTROLLERA]"},
+    {"namn": "Glocalnet", "notis": "Gammalt Telia-varumärke, nedlagt sedan länge."},
+    {"namn": "Folke", "notis": "Bredband2 har köpt Folkes bredbandskunder (Affärsvärlden). Hittade inget mobilabonnemang. [KONTROLLERA]"},
+    {"namn": "Mobilio", "notis": "Hittade ingen aktiv svensk operatör. [KONTROLLERA]"},
+    {"namn": "Spectrum", "notis": "Amerikansk operatör, inte svensk."},
+    {"namn": "Övriga namn i listor (One Mobile, Nestor Mobil, Telly, Mingla, Verbal, Smultron, Fonia, Lila mobil, Pling, Wifog)", "notis": "Namnen finns på jämförelsesajten mobilpriskoll.se men är inte kontrollerade mot operatörernas egna sajter, eftersom sökbudgeten tog slut. Status okänd. [KONTROLLERA]"}
+  ],
+  "operatorer": [
+    {
+      "slug": "fello",
+      "namn": "Fello",
+      "agare": "Telia Sverige AB (sidfoten: 'Fello en del av Telia Sverige AB', org.nr 556430-0142)",
+      "nat": "Telia",
+      "femg": true,
+      "esim": true,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "Chatt på support.fello.se, e-post hello@fello.se, telefon 0770-33 22 22 (vardagar 12–16, enligt LO/PRO-artikeln)",
+      "om": "Fello är en lågprisoperatör i Telias nät och ägs i dag av Telia Sverige AB. Abonnemangen har ingen bindningstid och fria samtal och sms i Sverige. Det finns separata abonnemang för alla, studenter, 55+ och under 18, samt mobilt bredband. Outnyttjad surf sparas automatiskt.",
+      "starkor": ["Telias nät", "Ingen bindningstid", "Sparad surf upp till 100 GB (abonnemang från 2 juni 2025)", "Separata abonnemang för student, 55+ och under 18", "Kampanj: 30 kr/mån i 4 mån och Dubbel Surf i 24 mån (t.o.m. 1 nov 2026)"],
+      "svagheter": ["Aktuell prislista med GB och priser gick inte att läsa på fello.se (innehållet laddas dynamiskt)", "EU-surf max 60 GB/mån, därefter 12,50 kr/GB", "Sparad surf försvinner när abonnemanget sägs upp"],
+      "villkor": {
+        "uppsagningstid": "1 månad (allmänna villkor 14.1)",
+        "startavgift": "Nämns inte i villkoren [KONTROLLERA]",
+        "ovrigt": "Pappersfaktura 29 kr enligt den gamla prislistan (t.o.m. 2025-06-01) [KONTROLLERA aktuell]. Alla aktiva abonnemang har 5G. Äldre abonnemang (Fello 3 GB, Student 7 GB, Fastpris) saknar 5G. Värva vän: båda får rabatt."
+      },
+      "abonnemang": [
+        {"namn": "Fello mobilabonnemang (för alla), aktuell GB-trappa [KONTROLLERA]", "gb": null, "obegransad": false, "pris": null, "kampanjpris": 30, "kampanjMan": 4, "kampanjText": "30 kr/mån i 4 mån för nya beställningar (inte vid abonnemangsbyte) + Dubbel Surf i 24 mån. Gäller t.o.m. 1 november 2026.", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms inom Sverige", "hastighet": "5G", "ovrigt": "Från 120 kr/mån enligt fello.se. Exakta GB-nivåer och ordinarie priser gick inte att läsa ut. Sidan fello.se/kassa/?pid=fello-2025-20-gb visar att det finns en 20 GB-nivå (2025). [KONTROLLERA]", "kalla": "https://www.fello.se/"},
+        {"namn": "Fello Student [KONTROLLERA]", "gb": null, "obegransad": false, "pris": null, "kampanjpris": null, "kampanjMan": null, "kampanjText": "[KONTROLLERA]", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms inom Sverige", "hastighet": "5G", "ovrigt": "Från 120 kr/mån. Sparad surf upp till 100 GB.", "kalla": "https://www.fello.se/student-abonnemang/"},
+        {"namn": "Fello 55+ [KONTROLLERA]", "gb": null, "obegransad": false, "pris": null, "kampanjpris": null, "kampanjMan": null, "kampanjText": "[KONTROLLERA]", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms inom Sverige", "hastighet": "5G", "ovrigt": "Från 110 kr/mån", "kalla": "https://www.fello.se/seniorabonnemang/"},
+        {"namn": "Fello Under 18 [KONTROLLERA]", "gb": null, "obegransad": false, "pris": null, "kampanjpris": null, "kampanjMan": null, "kampanjText": "[KONTROLLERA]", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms inom Sverige", "hastighet": "5G", "ovrigt": "Från 110 kr/mån", "kalla": "https://www.fello.se/under-18ar/"}
+      ],
+      "kallor": ["https://www.fello.se/", "https://www.fello.se/mobilabonnemang/", "https://www.fello.se/villkor/", "https://support.fello.se/sv/articles/257288-hur-mycket-surf-kan-jag-spara", "https://support.fello.se/sv/articles/257095-kan-jag-anvanda-hela-min-surfmangd-nar-jag-reser-inom-eu-ees", "https://support.fello.se/sv/articles/314999-vilka-abonnemang-har-5g", "https://support.fello.se/sv/articles/409302-vad-ar-esim", "https://www.fello.se/files/prislista-tom-juni-2025.pdf"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Aktuella GB-nivåer och ordinarie priser saknas. fello.se/prislista renderas dynamiskt och kunde inte läsas. Kontrollera manuellt i webbläsare.", "Det finns supportartiklar om eSIM, men eSIM-villkoren (kostnad m.m.) är inte lästa", "Startavgift ej verifierad", "Det är oklart om 'betala per GB' fortfarande är en modell. Hittade inget om det på sajten."]
+    },
+    {
+      "slug": "chilimobil",
+      "namn": "Chilimobil",
+      "agare": "Chilimobil Sweden AB (org.nr 559216-4387, Västerås). Ägare bakom bolaget anges inte [KONTROLLERA]",
+      "nat": "Tre",
+      "femg": true,
+      "esim": true,
+      "wifiSamtal": true,
+      "kontantkort": false,
+      "kundtjanst": "kundservice@chilimobil.se, supportsida. Inget telefonnummer anges.",
+      "om": "Chilimobil säljer fri surf i Tres nät, och priset sätts av vilken maxhastighet man väljer (3, 10 eller 100 Mbit/s eller Full Fart) i stället för hur många GB man får. 5G, VoLTE och WiFi-samtal ingår i alla abonnemang. Det finns också årsabonnemang som betalas i förskott och Chili DUO, där mobil och mobilt bredband paketeras.",
+      "starkor": ["Fri surf i alla abonnemang, priset styrs av hastigheten", "5G, VoLTE och WiFi-samtal ingår", "Ingen bindningstid (utom Mobilt Bredband Full Fart med router)", "Årsabonnemang: 12 månader för priset av 10", "Viaplay 3 mån, Truecaller Premium 12 mån, NordVPN till halva priset i 4 mån", "Kompisrabatt 20 kr/mån var"],
+      "svagheter": ["Månadspriserna per hastighet finns bara som bild/PDF och gick inte att läsa ut helt", "Uppsägningstid 1–1,5 månad", "Hastigheten är ett tak, inte en garanti", "Ingen kundtjänst på telefon angiven"],
+      "villkor": {
+        "uppsagningstid": "1 månad till månadsskifte. Säger man upp före den 15:e avslutas abonnemanget vid kommande månadsskifte, annars vid nästa (alltså 1–1,5 mån)",
+        "startavgift": "Nämns inte [KONTROLLERA]",
+        "ovrigt": "Pausa abonnemang: 49 kr/mån efter ett halvår. Nummerbyte 49 kr. Extra surf-SIM 179 kr/mån. Nummerflytt ca 7 arbetsdagar med SIM, ca 2 dagar med eSIM. 3G stängdes 1 dec 2025. Tillfällig Full Fart kan köpas för 24 h, 72 h eller 168 h (pris ej angivet)."
+      },
+      "abonnemang": [
+        {"namn": "Privat Fri Surf 100 Mbit/s", "gb": null, "obegransad": true, "pris": 249, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Viaplay 3 mån ingår", "bindning": 0, "euGb": 45, "samtalSms": "Fria samtal, sms och mms i Sverige och EU/EES", "hastighet": "Upp till 100 Mbit/s, 5G", "ovrigt": "249 kr/mån enligt rubriken på mobilabonnemangssidan. Det är oklart om det är ordinarie pris eller kampanjpris [KONTROLLERA]. EU-surf 45 GB enligt supportsidan om surfmängd och hastigheter, men student- och seniorsidorna säger 'upp till 25 GB' [KONTROLLERA].", "kalla": "https://chilimobil.se/mobilabonnemang/"},
+        {"namn": "Privat Fri Surf 3 Mbit/s", "gb": null, "obegransad": true, "pris": null, "kampanjpris": null, "kampanjMan": null, "kampanjText": "[KONTROLLERA]", "bindning": 0, "euGb": 23, "samtalSms": "Fria samtal, sms och mms", "hastighet": "Upp till 3 Mbit/s", "ovrigt": "Pris finns bara i prislistebilden [KONTROLLERA]", "kalla": "https://chilimobil.se/support/surfmangd-hastigheter/"},
+        {"namn": "Privat Fri Surf 10 Mbit/s", "gb": null, "obegransad": true, "pris": null, "kampanjpris": null, "kampanjMan": null, "kampanjText": "[KONTROLLERA]", "bindning": 0, "euGb": 38, "samtalSms": "Fria samtal, sms och mms", "hastighet": "Upp till 10 Mbit/s", "ovrigt": "Pris finns bara i prislistebilden [KONTROLLERA]", "kalla": "https://chilimobil.se/support/surfmangd-hastigheter/"},
+        {"namn": "Privat Fri Surf Full Fart", "gb": null, "obegransad": true, "pris": 399, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 51, "samtalSms": "Fria samtal, sms och mms", "hastighet": "Full Fart (max vad nätet klarar)", "ovrigt": "399 kr/mån är det pris som DUO-sidan anger för 'mobilabonnemang' vid separat köp. Det är inte bekräftat att det gäller just Full Fart [KONTROLLERA]. Årsabonnemangets ordinarie pris 4 788 kr/12 = 399 kr/mån stämmer med det.", "kalla": "https://chilimobil.se/duo/"},
+        {"namn": "Senior Fri Surf", "gb": null, "obegransad": true, "pris": 159, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Från 159 kr/mån, valbar hastighet", "bindning": 0, "euGb": 25, "samtalSms": "Obegränsade samtal, sms och mms i Sverige", "hastighet": "Valbar, 5G", "ovrigt": "Lägsta pris. Vilken hastighet det gäller anges inte [KONTROLLERA]", "kalla": "https://chilimobil.se/senior/"},
+        {"namn": "Student Fri Surf", "gb": null, "obegransad": true, "pris": null, "kampanjpris": null, "kampanjMan": 2, "kampanjText": "Halva priset i 2 månader", "bindning": 0, "euGb": 25, "samtalSms": "Fria samtal, sms och mms i Sverige", "hastighet": "5G", "ovrigt": "Ordinarie pris anges inte [KONTROLLERA]", "kalla": "https://chilimobil.se/student/"},
+        {"namn": "Fri Surf Mobil Årsabonnemang 10 Mbit/s", "gb": null, "obegransad": true, "pris": 249, "kampanjpris": null, "kampanjMan": null, "kampanjText": "2 990 kr/år i förskott (ord. 3 588 kr), 12 mån för priset av 10", "bindning": 12, "euGb": 25, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "10 Mbit/s", "ovrigt": "Månadspriset 249 kr är 2 990/12 avrundat. Sidan anger EU-surf både som 25 GB och 20 GB [KONTROLLERA]", "kalla": "https://shop.chilimobil.se/abonnemang/aarsabonnemang/fri-surf-mobil-aarsabonnemang-10-mbit-s"},
+        {"namn": "Fri Surf Mobil Årsabonnemang 100 Mbit/s", "gb": null, "obegransad": true, "pris": 291, "kampanjpris": null, "kampanjMan": null, "kampanjText": "3 490 kr/år i förskott (ord. 4 188 kr)", "bindning": 12, "euGb": 25, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "100 Mbit/s", "ovrigt": "Månadspriset 291 kr är 3 490/12 avrundat", "kalla": "https://shop.chilimobil.se/abonnemang/aarsabonnemang/fri-surf-mobil-aarsabonnemang-100-mbit-s"},
+        {"namn": "Fri Surf Mobil Årsabonnemang Full Fart", "gb": null, "obegransad": true, "pris": 333, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Ordinarie 4 788 kr/år, spara 798 kr (alltså 3 990 kr/år i förskott)", "bindning": 12, "euGb": 25, "samtalSms": "Fria samtal, sms och mms", "hastighet": "Full Fart, ingen begränsning", "ovrigt": "Slutpriset 3 990 kr är uträknat som 4 788 − 798. Det står inte uttryckligen på sidan [KONTROLLERA]", "kalla": "https://shop.chilimobil.se/abonnemang/aarsabonnemang/fri-surf-mobil-aarsabonnemang-full-fart"},
+        {"namn": "Chili DUO (mobil + mobilt bredband)", "gb": null, "obegransad": true, "pris": 599, "kampanjpris": 499, "kampanjMan": 2, "kampanjText": "499 kr/mån de två första månaderna för båda abonnemangen", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": "Snabbaste 5G", "ovrigt": "Separat kostar det 399 + 449 = 848 kr/mån. Om ett av abonnemangen sägs upp går det andra tillbaka till ordinarie pris.", "kalla": "https://chilimobil.se/duo/"}
+      ],
+      "kallor": ["https://chilimobil.se/", "https://chilimobil.se/mobilabonnemang/", "https://chilimobil.se/support/abonnemang/", "https://chilimobil.se/support/surfmangd-hastigheter/", "https://chilimobil.se/hastighetsguide/", "https://chilimobil.se/duo/", "https://chilimobil.se/student/", "https://chilimobil.se/senior/", "https://chilimobil.se/villkor/", "https://chilimobil.se/prislista/i-sverige/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Månadspris för 3 och 10 Mbit/s samt Student finns bara i bilden prislista-privat-260101.png [KONTROLLERA]", "Om 249 kr för 100 Mbit/s är kampanj eller ordinarie pris", "EU-surf: supportsidan anger 23/38/45/51 GB, kampanjsidorna 'upp till 25 GB'", "Lägsta hastighet anges både som 1 och 3 Mbit/s", "Ägare bakom Chilimobil Sweden AB"]
+    },
+    {
+      "slug": "lycamobile",
+      "namn": "Lyca Mobile",
+      "agare": "Lycamobile (Lyca Group) [KONTROLLERA svenskt bolagsnamn]",
+      "nat": "Telenor [KONTROLLERA – uppgiften kommer från jämförelsesajter, inte från lycamobile.se]",
+      "femg": true,
+      "esim": true,
+      "wifiSamtal": null,
+      "kontantkort": true,
+      "kundtjanst": "[KONTROLLERA]",
+      "om": "Lyca Mobile säljer kontantkort och riktar sig främst till kunder som ringer mycket utomlands. Paketen gäller 30 dagar och innehåller obegränsade samtal och sms i Sverige, en kvot internationella minuter till en lista med länder och EU-roaming (från 1 jan 2026 även Ukraina och Moldavien). Det finns ingen bindningstid. Paketen förnyas automatiskt om saldot räcker, och långtidspaket för 3, 6 eller 12 månader går att köpa.",
+      "starkor": ["Internationella minuter ingår (100–1000 min) till bl.a. EU, USA, Kanada, Indien, Kina, Brasilien och Marocko", "Ingen bindningstid", "5G och eSIM", "Outnyttjad data sparas (enligt paketsidorna)", "Långtidspaket med rabatt"],
+      "svagheter": ["Kontantkort som förnyas var 30:e dag, inte per kalendermånad", "Delvis inaktuell eller motsägelsefull villkorstext på paketsidorna", "Paketsidan visar 340 kr i rubriken men 99 kr i texten för 120 GB-paketet", "Roaming i UK och Schweiz har lägre tak"],
+      "villkor": {
+        "uppsagningstid": "Ingen bindningstid. Automatisk förnyelse kan stängas av i My Lyca.",
+        "startavgift": "[KONTROLLERA]",
+        "ovrigt": "Paketen förnyas automatiskt efter 30 dagar om saldot räcker. Förbrukning utöver paketet debiteras enligt standardpris."
+      },
+      "abonnemang": [
+        {"namn": "Lyca Fast Pris Week 49", "gb": 1, "obegransad": false, "pris": 49, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 1, "samtalSms": "300 minuter och sms", "hastighet": "5G", "ovrigt": "Giltigt 7 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 85", "gb": 4, "obegransad": false, "pris": 85, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 4, "samtalSms": "Obegränsade samtal och sms i Sverige", "hastighet": "5G", "ovrigt": "30 dagar. Internationella minuter anges inte.", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 99", "gb": 10, "obegransad": false, "pris": 99, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 10, "samtalSms": "Obegränsade samtal och sms i Sverige + 100 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 149", "gb": 20, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Obegränsade samtal och sms i Sverige + 300 internationella min", "hastighet": "5G", "ovrigt": "30 dagar, data sparas. UK/Schweiz max 10 GB.", "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-10gb/"},
+        {"namn": "Lyca Fast Pris 199", "gb": 30, "obegransad": false, "pris": 199, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Långtid: 455 kr/3 mån, 860 kr/6 mån, 1 620 kr/12 mån", "bindning": 0, "euGb": 27, "samtalSms": "Obegränsade samtal och sms i Sverige + 500 internationella min", "hastighet": "5G", "ovrigt": "30 dagar. UK/Schweiz max 13,5 GB. Länder för int. minuter: EU-länder, Norge, Island, UK, USA, Kanada, Mexiko, Brasilien, Chile, Colombia, Hongkong, Indien, Kina, Malaysia, Singapore, Thailand, Nya Zeeland, Marocko (vissa bara fast nät).", "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/"},
+        {"namn": "Lyca Fast Pris 238", "gb": 40, "obegransad": false, "pris": 238, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 32, "samtalSms": "Obegränsade samtal och sms i Sverige + 500 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 340", "gb": 120, "obegransad": false, "pris": 340, "kampanjpris": 99, "kampanjMan": null, "kampanjText": "Rubriken säger 340 kr, texten 99 kr [KONTROLLERA]", "bindning": 0, "euGb": 46, "samtalSms": "Fria samtal och sms i Sverige + 1000 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 398", "gb": 200, "obegransad": false, "pris": 398, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 53, "samtalSms": "Obegränsade samtal och sms i Sverige + 1000 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Surf XL (endast data)", "gb": 40, "obegransad": false, "pris": 199, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 27, "samtalSms": "Inga samtal eller sms ingår", "hastighet": null, "ovrigt": "30 dagar, datapaket för mobilt bredband", "kalla": "https://www.lycamobile.se/sv/bundle/surf-xl/"}
+      ],
+      "kallor": ["https://www.lycamobile.se/sv/paket/mobilabonnemang/", "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-10gb/", "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/", "https://www.lycamobile.se/sv/bundle/surf-xl/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Nät (Telenor) är inte bekräftat på lycamobile.se", "Pris för 120 GB-paketet: 340 eller 99 kr", "Kundtjänst och startavgift (SIM-kostnad) inte kontrollerade", "Långtidspaketens villkorstext anger felaktiga månadsbelopp (47/55/56 kr)"]
+    },
+    {
+      "slug": "mybeat",
+      "namn": "My Beat",
+      "agare": "My Beat AB (org.nr 556988-7556). Ägare anges inte [KONTROLLERA]",
+      "nat": "Telenor",
+      "femg": true,
+      "esim": null,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "Bemannad kundtjänst: 019-55 55 500, support@mybeat.se, chatt",
+      "om": "My Beat är en virtuell operatör i Telenors nät. Kundtjänsten är bemannad och nås på telefon, chatt och e-post. Det finns fyra abonnemang från 5 GB till fri surf, alla utan bindningstid och med 5G upp till 100 Mbit/s. Tilläggstjänster som bedrägeriskydd, F-Secure och extra surf-SIM kan köpas till.",
+      "starkor": ["Bemannad kundtjänst på telefon", "Ingen bindningstid", "All surf gäller inom EU/EES på GB-abonnemangen", "5G ingår"],
+      "svagheter": ["Dyrt per GB jämfört med marknaden", "Hastigheten är begränsad till 100 Mbit/s", "VoLTE anges inte för Fri Surf"],
+      "villkor": {
+        "uppsagningstid": "[KONTROLLERA]",
+        "startavgift": "[KONTROLLERA] – sidan skriver 'Inga bindningstider eller dolda avgifter'",
+        "ovrigt": "Produktsidan för 15 GB har titeln '143, 15 GB – förskott', vilket kan betyda ett annat pris vid förskottsbetalning [KONTROLLERA]. Extra SIM för surf från 59 kr/mån."
+      },
+      "abonnemang": [
+        {"namn": "5 GB", "gb": 5, "obegransad": false, "pris": 225, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 5, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "5G upp till 100 Mbit/s", "ovrigt": "VoLTE", "kalla": "https://mybeat.se/mobilabonnemang-2/"},
+        {"namn": "15 GB", "gb": 15, "obegransad": false, "pris": 324, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 15, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "5G upp till 100 Mbit/s", "ovrigt": "VoLTE. Produktsidan nämner '143, 15 GB – förskott' [KONTROLLERA]", "kalla": "https://mybeat.se/mobilabonnemang-2/"},
+        {"namn": "35 GB", "gb": 35, "obegransad": false, "pris": 354, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 35, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "5G upp till 100 Mbit/s", "ovrigt": "VoLTE", "kalla": "https://mybeat.se/mobilabonnemang-2/"},
+        {"namn": "Fri Surf", "gb": null, "obegransad": true, "pris": 459, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 35, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "5G upp till 100 Mbit/s", "ovrigt": "35 GB/mån inom EU/EES", "kalla": "https://mybeat.se/mobilabonnemang-2/"}
+      ],
+      "kallor": ["https://mybeat.se/", "https://mybeat.se/mobilabonnemang-2/", "https://mybeat.se/om-oss/", "https://mybeat.se/erbjudanden/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Ingen datering på prissidan", "eSIM, uppsägningstid och startavgift ej verifierade", "Förskottspris 143 kr för 15 GB?"]
+    },
+    {
+      "slug": "tellus",
+      "namn": "Tellus Mobil",
+      "agare": "Tell Us Mobil AB (org.nr 559447-0386, Västerås). Ägare anges inte [KONTROLLERA]",
+      "nat": "Tele2",
+      "femg": null,
+      "esim": null,
+      "wifiSamtal": true,
+      "kontantkort": false,
+      "kundtjanst": "0771-20 10 00, hej@tellusmobil.se (mån–fre 09–17)",
+      "om": "Tellus Mobil är en virtuell operatör i Tele2:s nät. Abonnemangen har varken bindningstid eller uppsägningstid, och 55+ får rabatt. För varje ny kund planteras ett träd (Vi-skogen) eller rensas 1 kg skräp från haven (Håll Sverige Rent). Outnyttjad surf sparas i upp till 90 dagar.",
+      "starkor": ["Ingen bindningstid och ingen uppsägningstid", "Billiga 55+-abonnemang", "Sparad surf i 90 dagar", "4G- och WiFi-samtal ingår", "Startavgift 0 kr", "Hållbarhetsprofil"],
+      "svagheter": ["Vissa nivåer (20 GB, 100 GB) bara för 55+", "EU-surf max 20 GB på större abonnemang", "5G och eSIM nämns inte på sajten", "Pappersfaktura 30 kr"],
+      "villkor": {
+        "uppsagningstid": "Ingen uppsägningstid. Abonnemanget avslutas sista dagen i den månad uppsägningen kommer in.",
+        "startavgift": "0 kr",
+        "ovrigt": "Prislista uppdaterad 2025-03-24. Extra surf: 1 GB 50 kr, 3 GB 100 kr, 5 GB 150 kr. Nytt SIM 99 kr. Pappersfaktura utan autogiro 30 kr. Värva vän: en månad gratis."
+      },
+      "abonnemang": [
+        {"namn": "Tellus Rörligt 1 GB", "gb": 1, "obegransad": false, "pris": 69, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 59 kr", "bindning": 0, "euGb": 1, "samtalSms": "Rörligt: 0,59 kr/min + 0,59 kr öppning, sms 0,59 kr, mms 1,59 kr", "hastighet": null, "ovrigt": "Startsidan säger 'från 49 kr/mån' [KONTROLLERA]", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil 3 GB", "gb": 3, "obegransad": false, "pris": 99, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 89 kr", "bindning": 0, "euGb": 3, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil 10 GB", "gb": 10, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 129 kr", "bindning": 0, "euGb": 10, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil 20 GB (endast 55+)", "gb": 20, "obegransad": false, "pris": 189, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil 30 GB", "gb": 30, "obegransad": false, "pris": 249, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 249 kr", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil 100 GB (endast 55+)", "gb": 100, "obegransad": false, "pris": 299, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Mobil Obegränsat", "gb": null, "obegransad": true, "pris": 349, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Fair use 150 GB/mån, därefter gratis påfyllning med 5 GB åt gången", "kalla": "https://tellusmobil.se/prislista/"}
+      ],
+      "kallor": ["https://tellusmobil.se/", "https://tellusmobil.se/prislista/", "https://tellusmobil.se/handla/", "https://tellusmobil.se/allmannavillkor/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Prislistan är daterad 2025-03-24, men kampanjer kan ha tillkommit", "Startsidan säger 'från 49 kr/mån', prislistan börjar på 69 kr", "5G och eSIM ej bekräftade", "EU-surf 20 GB på 30 GB och större: prislistan stämmer inte med abonnemangsnamnen"]
+    },
+    {
+      "slug": "fibio",
+      "namn": "Fibio",
+      "agare": "Fibio Nordic AB (Helsingborg), del av Delavar Capital AB-koncernen [KONTROLLERA på fibio.se – uppgiften kommer från telekomradgivarna.se]",
+      "nat": "Telenor",
+      "femg": null,
+      "esim": null,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "010-550 02 00, kundservice@fibio.se (helgfria vardagar 10–17)",
+      "om": "Fibio är en virtuell operatör i Telenors nät med säte i Helsingborg. Bolaget säljer mobil och bredband och har kraftiga introduktionskampanjer de första tre månaderna. Det finns separata sidor för familje-, senior- och barnabonnemang.",
+      "starkor": ["Mycket låga kampanjpriser i 3 månader (19–49 kr/mån)", "Telenors nät", "Ingen startavgift (generell uppgift på sajten)", "Viaplay ingår i 2 månader"],
+      "svagheter": ["Höga ordinarie priser efter kampanjen (169–469 kr/mån)", "EU-surf, sparad surf och bindningstid anges inte på abonnemangssidan", "Sidan visar olika GB-nivåer på olika ställen"],
+      "villkor": {
+        "uppsagningstid": "[KONTROLLERA]",
+        "startavgift": "Ingen (generell uppgift på sidan)",
+        "ovrigt": "Surfpotten förnyas den 1:a varje månad. Fria samtal, sms och mms i EU/EES."
+      },
+      "abonnemang": [
+        {"namn": "2 GB", "gb": 2, "obegransad": false, "pris": 169, "kampanjpris": 19, "kampanjMan": 3, "kampanjText": "19 kr/mån i 3 mån", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Bindning ej angiven [KONTROLLERA]", "kalla": "https://www.fibio.se/mobilabonnemang/"},
+        {"namn": "5 GB", "gb": 5, "obegransad": false, "pris": 219, "kampanjpris": 29, "kampanjMan": 3, "kampanjText": "29 kr/mån i 3 mån", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Bindning ej angiven [KONTROLLERA]", "kalla": "https://www.fibio.se/mobilabonnemang/"},
+        {"namn": "20 GB", "gb": 20, "obegransad": false, "pris": 269, "kampanjpris": 39, "kampanjMan": 3, "kampanjText": "39 kr/mån i 3 mån", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Bindning ej angiven [KONTROLLERA]", "kalla": "https://www.fibio.se/mobilabonnemang/"},
+        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 469, "kampanjpris": 49, "kampanjMan": 3, "kampanjText": "49 kr/mån i 3 mån", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Prisfältet säger 'Obeg'. Bindning ej angiven [KONTROLLERA]", "kalla": "https://www.fibio.se/mobilabonnemang/"}
+      ],
+      "kallor": ["https://www.fibio.se/mobilabonnemang/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Brödtexten nämner 6/20/40 GB och obegränsat, prisfältet 2/5/20 GB och obegränsat", "Bindningstid, EU-surf, 5G och eSIM ej verifierade", "Ägaruppgift kommer från tredjepartssajt"]
+    },
+    {
+      "slug": "katshing",
+      "namn": "katshing",
+      "agare": "[KONTROLLERA] – bolagsuppgifter kunde inte hämtas (om oss-sidan svarade inte)",
+      "nat": "Tre",
+      "femg": true,
+      "esim": null,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "[KONTROLLERA]",
+      "om": "katshing säljer mobilabonnemang och elavtal, separat eller tillsammans, och mobilen går i Tres nät med 4G och 5G. Det finns sex singelabonnemang från 5 GB till obegränsat och familjeabonnemang med obegränsad surf för 2–6 personer. Inga tjänster har bindningstid. Kampanjen Vinterskydd ger en årlig rabatt.",
+      "starkor": ["Ingen bindningstid", "Familjeabonnemang med obegränsad surf från 595 kr/mån för 2 personer", "EU-roaming ingår", "Kan kombineras med elavtal"],
+      "svagheter": ["Det framgår inte hur mycket EU-surf som ingår", "eSIM och startavgift nämns inte", "Hur Vinterskydd-rabatten räknas av förklaras inte"],
+      "villkor": {
+        "uppsagningstid": "[KONTROLLERA]",
+        "startavgift": "[KONTROLLERA]",
+        "ovrigt": "Vinterskydd-rabatt anges i kr/år per abonnemang (t.ex. 240 kr/år för 5 GB, 600 kr/år för obegränsat)."
+      },
+      "abonnemang": [
+        {"namn": "5 GB", "gb": 5, "obegransad": false, "pris": 145, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −240 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "15 GB", "gb": 15, "obegransad": false, "pris": 195, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −300 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "25 GB", "gb": 25, "obegransad": false, "pris": 245, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −360 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "50 GB", "gb": 50, "obegransad": false, "pris": 295, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −420 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "100 GB", "gb": 100, "obegransad": false, "pris": 345, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −480 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 395, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −600 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "Familj 2 personer (obegränsad)", "gb": null, "obegransad": true, "pris": 595, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −1 200 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "3 pers 745, 4 pers 895, 5 pers 1 045, 6 pers 1 195 kr/mån (totalpris)", "kalla": "https://www.katshing.com/priser"}
+      ],
+      "kallor": ["https://www.katshing.com/", "https://www.katshing.com/priser"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Bolag och ägare", "eSIM, startavgift, uppsägningstid och EU-surf i GB", "Samtal/sms ingår troligen, men det står inte på prissidan"]
+    },
+    {
+      "slug": "lingon",
+      "namn": "Lingon Mobil",
+      "agare": "Berry Telekom AB [KONTROLLERA – uppgiften kommer från telekomradgivarna.se]. Systerverksamhet: Lingon Energi (elavtal)",
+      "nat": "Tele2",
+      "femg": null,
+      "esim": null,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "060-60 66 203, kontaktformulär på lingon.se",
+      "om": "Lingon Mobil är en virtuell operatör i Tele2:s nät och säljer också elavtal (Lingon Energi). Den som har el hos Lingon får 30 kr/mån i rabatt på mobilabonnemanget. Samtal, sms och surf fungerar i EU/EES som hemma.",
+      "starkor": ["Tele2:s nät", "30 kr/mån i rabatt för elkunder", "Kundtjänst på telefon"],
+      "svagheter": ["Abonnemangspriserna gick inte att läsa på lingon.se", "Dyr extrasurf (99 kr/GB)"],
+      "villkor": {
+        "uppsagningstid": "[KONTROLLERA]",
+        "startavgift": "[KONTROLLERA]",
+        "ovrigt": "Extra surf: 1 GB 99 kr, 5 GB 249 kr, 10 GB 349 kr. Utlandssamtal: 0,50 kr öppning + 0,85 kr/min (Norden) till 15 kr/min (övriga världen)."
+      },
+      "abonnemang": [],
+      "kallor": ["https://lingon.se/mobilabonnemang-2/", "https://lingon.se/support-abonnemang-2/"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Abonnemang och priser kunde inte läsas (laddas i popup). Hela abonnemangslistan måste kontrolleras manuellt.", "5G och eSIM ej bekräftade", "Ägare"]
+    },
+    {
+      "slug": "a3-bredband2",
+      "namn": "A3 / Bredband2 Mobil",
+      "agare": "Bredband2 i Skandinavien AB (börsnoterat), som har köpt A3",
+      "nat": "Telenor",
+      "femg": null,
+      "esim": null,
+      "wifiSamtal": null,
+      "kontantkort": false,
+      "kundtjanst": "[KONTROLLERA]",
+      "om": "Bredband2, som har köpt A3, säljer mobilabonnemang i Telenors nät till privatkunder, främst som tillägg till fiberbredband. GB-abonnemangen har ingen bindningstid, men Mobil Obegränsat binder i 24 månader. Det finns ett familjeerbjudande som heter 'Tillsammans'.",
+      "starkor": ["Ingen startavgift eller porteringsavgift", "Låga priser för 3–100 GB", "100 GB/mån inom EU/EES (enligt prislistan)"],
+      "svagheter": ["24 månaders bindning på Obegränsat", "Normalhastighet anges till 10–40 Mbit/s (max 100)", "Strypt till 32 kbit/s när surfen är slut", "Prislistan är från 2024-04-15 och kan vara inaktuell"],
+      "villkor": {
+        "uppsagningstid": "1 månad",
+        "startavgift": "0 kr (porteringsavgift 0 kr)",
+        "ovrigt": "Topup från 49 kr (1 GB) till 299 kr (100 GB). Frakt av hårdvara 99 kr. 'Tillsammans 129 kr/mån' står i prislistan utan förklaring [KONTROLLERA]."
+      },
+      "abonnemang": [
+        {"namn": "Mobil 3 GB", "gb": 3, "obegransad": false, "pris": 85, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "10–40 Mbit/s normalt, max 100 Mbit/s", "ovrigt": "Prislista gäller från 2024-04-15 [KONTROLLERA aktuell]", "kalla": "https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf"},
+        {"namn": "Mobil 12 GB", "gb": 12, "obegransad": false, "pris": 135, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "10–40 Mbit/s normalt, max 100 Mbit/s", "ovrigt": "", "kalla": "https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf"},
+        {"namn": "Mobil 25 GB", "gb": 25, "obegransad": false, "pris": 199, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "10–40 Mbit/s normalt, max 100 Mbit/s", "ovrigt": "", "kalla": "https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf"},
+        {"namn": "Mobil 100 GB", "gb": 100, "obegransad": false, "pris": 259, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 100, "samtalSms": "[KONTROLLERA]", "hastighet": "10–40 Mbit/s normalt, max 100 Mbit/s", "ovrigt": "", "kalla": "https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf"},
+        {"namn": "Mobil Obegränsat", "gb": null, "obegransad": true, "pris": 499, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 24, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "10–40 Mbit/s normalt, max 100 Mbit/s", "ovrigt": "Obegränsat gäller bara i Sverige", "kalla": "https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf"}
+      ],
+      "kallor": ["https://docs.bredband2.se/Prislistor/Bredband2_mobilabonnemang_250415.pdf", "https://docs.a3.se/Prislistor/Bredband2_privat_utlandsprislista.pdf"],
+      "kontrollerad": "2026-10-29",
+      "osakert": ["Prislistan är från 2024/2025, och butikssidorna (a3.se, bredband2.com) kunde inte läsas", "Om abonnemangen säljs under varumärket A3 eller Bredband2 i dag", "5G, eSIM, EU-surf per nivå och samtal/sms ej verifierade"]
+    }
+  ]
+}

@@ -38,7 +38,7 @@ export const Route = createFileRoute("/operatorer/$slug")({
       ? `${o.namn} mobilabonnemang 2026 – priser, nät och villkor`
       : `${o.namn} läggs ned – vad gäller och vart byta?`;
     const description = billigast
-      ? `${o.namn}s mobilabonnemang jämförda: pris efter kampanjen, bindningstid och surf. Billigast från ${kr(snittForstaAret(billigast))}/mån i snitt första året. Kör i ${MOBILNAT[o.nat].namn.toLowerCase()}.`
+      ? `${o.namn}s mobilabonnemang jämförda: pris efter kampanjen, bindningstid och surf. Billigast från ${kr(snittForstaAret(billigast))}/mån i snitt första året. Kör i ${MOBILNAT[o.nat].namn}.`
       : `${o.namn}: vilket nät, villkor, kundnöjdhet och alternativ i samma nät. Fakta med källa och datum.`;
     return pageHead({
       title: `${title} | Mobilpoolen`,
@@ -108,7 +108,7 @@ function OperatorSida() {
             </div>
             <p className="mt-5 max-w-3xl text-[18px] leading-relaxed text-white/85">{o.om}</p>
             <p className="mt-5 text-[13.5px] text-white/70">
-              Kör i {nat.namn.toLowerCase()} · Priser kontrollerade {datumText(o.kontrollerad)} ·{" "}
+              Kör i {nat.namn} · Priser kontrollerade {datumText(o.kontrollerad)} ·{" "}
               <a
                 href={o.webb}
                 target="_blank"
@@ -187,6 +187,7 @@ function OperatorSida() {
                   <Jamforelse
                     visaFilter={false}
                     antalForst={30}
+                    forval={{ villkorade: true }}
                     urval={(a) => a.operator === o.slug}
                     id="abonnemang"
                   />
@@ -272,11 +273,11 @@ function OperatorSida() {
             <div className="prosa">
               <h2>Nät och täckning</h2>
               <p>
-                {o.namn} kör i {nat.namn.toLowerCase()}. {nat.beskrivning}
+                {o.namn} kör i {nat.namn}. {nat.beskrivning}
               </p>
               <p>
                 Täckningen beror på var du bor och rör dig. Kontrollera {o.namn}s täckningskarta för
-                din adress innan du byter, och läs vad de oberoende mätningarna säger i guiden om{" "}
+                din adress innan du byter, och läs vad mätningarna från PTS och Opensignal säger i guiden om{" "}
                 <Link to={"/guider/basta-tackning-sverige" as never}>
                   vilket nät som har bäst täckning
                 </Link>
@@ -299,7 +300,7 @@ function OperatorSida() {
               ) : (
                 <p>
                   {o.namn} redovisas inte separat i Svenskt Kvalitetsindex mätning 2025, så vi har
-                  ingen oberoende siffra på kundnöjdheten.
+                  ingen extern siffra på kundnöjdheten.
                 </p>
               )}
               {o.aktiv && (
@@ -320,7 +321,7 @@ function OperatorSida() {
               {grannar.length > 0 && (
                 <div>
                   <h2 className="text-[24px] font-bold sm:text-[28px]">
-                    Andra operatörer i {nat.namn.toLowerCase()}
+                    Andra operatörer i {nat.namn}
                   </h2>
                   <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                     {grannar.map((g) => {

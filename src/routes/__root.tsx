@@ -33,12 +33,12 @@ function NotFoundComponent() {
             Sidan finns inte
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/90">
-            Länken kan vara gammal, eller så har sidan flyttat (felkod 404). Letar du efter hemlarm
-            kan du jämföra bolagens priser direkt.
+            Länken kan vara gammal, eller så har sidan flyttat (felkod 404). Letar du efter ett billigare mobilabonnemang
+            kan du jämföra operatörernas priser direkt.
           </p>
           <div className="mt-7">
-            <a href="/#priser" className="btn-cta">
-              Jämför priser på hemlarm
+            <a href="/#alla" className="btn-cta">
+              Jämför mobilabonnemang
             </a>
           </div>
           <nav
@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           // så att sidan bara får ett <title>-element.
           title: sidanFinnsInte
             ? "Sidan finns inte | Mobilpoolen"
-            : "Mobilpoolen – Jämför hemlarm och hitta rätt till din bostad",
+            : "Mobilpoolen – Jämför mobilabonnemang och betala mindre",
         },
         // Sajten är indexerbar. Bara 404-sidan säger noindex, utöver sidor som
         // själva sätter pageHead({ noindex: true }).
@@ -128,15 +128,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         {
           name: "description",
           content:
-            "Mobilpoolen jämför hemlarm. Se vad som ingår, vad det kostar och vilket larm som passar din bostad.",
+            "Mobilpoolen jämför mobilabonnemang för privatpersoner och företag. Pris efter kampanjen, bindningstid och nät, med källa och datum.",
         },
         { name: "author", content: "Mobilpoolen" },
         { name: "theme-color", content: "#3B28CC" },
-        { property: "og:title", content: "Mobilpoolen – Jämför hemlarm" },
+        { property: "og:title", content: "Mobilpoolen – Jämför mobilabonnemang" },
         {
           property: "og:description",
           content:
-            "Mobilpoolen jämför hemlarm. Se vad som ingår, vad det kostar och vilket larm som passar din bostad.",
+            "Mobilpoolen jämför mobilabonnemang för privatpersoner och företag. Pris efter kampanjen, bindningstid och nät, med källa och datum.",
         },
         { property: "og:url", content: "https://mobilpoolen.se" },
         { property: "og:type", content: "website" },
@@ -146,11 +146,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
         { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "Mobilpoolen – Jämför hemlarm" },
+        { name: "twitter:title", content: "Mobilpoolen – Jämför mobilabonnemang" },
         {
           name: "twitter:description",
           content:
-            "Mobilpoolen jämför hemlarm. Se vad som ingår, vad det kostar och vilket larm som passar din bostad.",
+            "Mobilpoolen jämför mobilabonnemang för privatpersoner och företag. Pris efter kampanjen, bindningstid och nät, med källa och datum.",
         },
         { name: "twitter:image", content: OG_IMAGE_URL },
       ],
@@ -181,7 +181,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 },
                 image: OG_IMAGE_URL,
                 description:
-                  "Mobilpoolen jämför hemlarm: larmbolagens publicerade priser och villkor, med källa och datum.",
+                  "Mobilpoolen jämför mobilabonnemang: operatörernas publicerade priser och villkor, med källa och datum.",
                 email: "info@mobilpoolen.se",
                 address: {
                   "@type": "PostalAddress",

@@ -392,7 +392,7 @@ function SaFungerarDet() {
 function NatSektion() {
   const perNat = (Object.keys(MOBILNAT) as NatId[]).map((id) => ({
     nat: MOBILNAT[id],
-    operatorer: OPERATORER.filter((o) => o.nat === id),
+    operatorer: OPERATORER.filter((o) => o.nat === id && o.aktiv && !o.natNotis),
   }));
   return (
     <SectionShell>

@@ -5,7 +5,9 @@ import { ABONNEMANG, MOBILNAT, operator } from "@/lib/mobil/data";
 import type { Abonnemang, Kundtyp, Malgrupp, NatId } from "@/lib/mobil/typer";
 import {
   bindningText,
+  arVillkorat,
   datumText,
+  formatTal,
   momsText,
   gbText,
   iSurfIntervall,
@@ -34,7 +36,11 @@ export type Forval = {
   operator?: string;
   malgrupp?: Malgrupp;
   sortering?: Sortering;
+  /** Visa även abonnemang med ålderskrav eller studentkrav från början. */
+  villkorade?: boolean;
 };
+
+export { arVillkorat };
 
 /**
  * Jämförelsen av mobilabonnemang. Samma komponent används på startsidan och på
@@ -68,6 +74,7 @@ export function Jamforelse({
   const [sortering, setSortering] = useState<Sortering>(forval.sortering ?? "snitt-ar");
   const [antal, setAntal] = useState(antalForst);
   const [filterOppen, setFilterOppen] = useState(false);
+  const [villkorade, setVillkorade] = useState(forval.villkorade ?? Boolean(forval.malgrupp));
 
   // Besparingsräknaren i heron skickar nya förval när besökaren räknar om.
   useEffect(() => {
@@ -105,10 +112,12 @@ export function Jamforelse({
         (!utanBindning || a.bindning === 0) &&
         (!bara5g || a.femg) &&
         (nat === "alla" || operator(a.operator)?.nat === nat) &&
-        (op === "alla" || a.operator === op),
+        (op === "alla" || a.operator === op) &&
+        (villkorade || !arVillkorat(a)),
     );
     return sortera(lista, sortering);
-  }, [bas, surf, behovGb, utanBindning, bara5g, nat, op, sortering]);
+  }, [bas, surf, behovGb, utanBindning, bara5g, nat, op, sortering, villkorade]);
+  const antalVillkorade = useMemo(() => bas.filter(arVillkorat).length, [bas]);
 
   const aktivaFilter =
     (surf !== "alla" ? 1 : 0) +
@@ -136,7 +145,7 @@ export function Jamforelse({
       {visaFilter && (
         <div className="rounded-2xl border border-border bg-surface p-4 shadow-kort-litet sm:p-5">
           {/* Surfmängd: det viktigaste valet, alltid synligt */}
-          <fieldset>
+          <fieldset className="min-w-0">
             <legend className="mb-2 text-[14px] font-semibold text-foreground">
               Hur mycket surf behöver du?
             </legend>
@@ -214,6 +223,18 @@ export function Jamforelse({
 
           {filterOppen && (
             <div className="mt-4 grid gap-3 border-t border-border pt-4 sm:grid-cols-2">
+              {antalVillkorade > 0 && (
+                <div className="sm:col-span-2">
+                  <Vaxel
+                    checked={villkorade}
+                    onChange={(v) => {
+                      setVillkorade(v);
+                      setAntal(antalForst);
+                    }}
+                    label={`Visa student-, ungdoms- och seniorerbjudanden (${antalVillkorade})`}
+                  />
+                </div>
+              )}
               <label className="text-[14px] font-semibold text-foreground">
                 Mobilnät
                 <select
@@ -406,6 +427,10 @@ export function AbonnemangKort({
                 </li>
               )}
               {a.kontantkort && <li>Kontantkort</li>}
+              {a.malgrupp?.includes("senior") && <li>Ålderskrav</li>}
+              {(a.malgrupp?.includes("student") || a.malgrupp?.includes("ung")) && (
+                <li>Student eller ung</li>
+              )}
               {momsText(a.moms) && <li>Pris {momsText(a.moms)}</li>}
               {a.hastighet && a.gb == null && /mbit/i.test(a.hastighet) && <li>{a.hastighet}</li>}
               {natNamn && <li>{natNamn}</li>}
@@ -420,7 +445,7 @@ export function AbonnemangKort({
               {gbText(a.gb)}
             </div>
             <div className="mt-1 text-[13px] text-foreground/65">
-              {a.euGb != null ? `${a.euGb} GB i EU` : "surf per månad"}
+              {a.euGb != null ? `${formatTal(a.euGb)} GB i EU` : "surf per månad"}
             </div>
           </div>
           <div className="text-right md:text-left">
@@ -429,9 +454,16 @@ export function AbonnemangKort({
               <span className="ml-1 text-[14px] font-semibold text-foreground/70">{prisEnhet}</span>
             </div>
             <div className="mt-1 text-[13px] text-foreground/65">
-              {harKampanj
-                ? `i ${a.kampanjManader} mån, sedan ${kr(a.pris)}`
-                : `snitt ${kr(snitt)} första året`}
+              {harKampanj ? (
+                <>
+                  i {a.kampanjManader} mån, sedan {kr(a.pris)}
+                  <span className="block font-semibold text-foreground/80">
+                    snitt {kr(snitt)} första året
+                  </span>
+                </>
+              ) : (
+                `snitt ${kr(snitt)} första året`
+              )}
             </div>
           </div>
         </div>
@@ -484,7 +516,7 @@ export function AbonnemangKort({
               }
             />
             <Rad t="Samtal och sms" v={a.friaSamtal ? "Fria i Sverige" : "Enligt prislista"} />
-            {a.euGb != null && <Rad t="Surf i EU/EES" v={`${a.euGb} GB per månad`} />}
+            {a.euGb != null && <Rad t="Surf i EU/EES" v={`${formatTal(a.euGb)} GB per månad`} />}
             {a.sparadSurf != null && <Rad t="Sparad surf" v={a.sparadSurf ? "Ja" : "Nej"} />}
             {a.hastighet && <Rad t="Hastighet" v={a.hastighet} />}
             {a.uppsagning != null && <Rad t="Uppsägningstid" v={`${a.uppsagning} mån`} />}

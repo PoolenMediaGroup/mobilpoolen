@@ -1,26 +1,12 @@
 # Mobilpoolen
 
-Mobilpoolen är en svensk jämförelsetjänst för hemlarm. Besökaren jämför larmbolagens publicerade villkor och kan skicka en offertförfrågan, som går vidare till två till tre utvalda larmbolag.
+Mobilpoolen (mobilpoolen.se) jämför mobilabonnemang för privatpersoner och företag. Besökaren ser alla operatörers priser efter kampanjen, bindningstid och nät, med källa och datum, och beställer direkt hos operatören.
 
-Sajten drivs av PMG Poolen Media Group AB (559602-5287) och är syskonsajt till Elpoolen. Mobilpoolen får ersättning från larmbolagen. Det står öppet på `/sa-tjanar-vi-pengar` och vid varje offertknapp.
+Sajten drivs av PMG Poolen Media Group AB (559602-5287) och är syskonsajt till Elpoolen och Larmpoolen.
 
 ## Läs CLAUDE.md först
 
-`CLAUDE.md` gäller för allt arbete i repot, både för människor och för AI-sessioner. Där står reglerna för innehåll, SEO, bilder, design, git och vilka påståenden som är kontrollerade. Den här filen är bara en översikt.
-
-## Två saker som aldrig får stå på sajten
-
-- **Ordet "oberoende" om Mobilpoolen.** Vi får betalt av larmbolagen och är inte oberoende. Skriv det inte, inte heller i omskriven form.
-- **Påståenden om att vi testar larm.** Vi installerar inga larm och provar dem inte i bruk. Vi jämför bolagens publicerade villkor och priser. Skriv aldrig "testat", "testvinnare", "bäst i test" eller liknande, och sätt aldrig egna betyg eller stjärnor på bolagen.
-
-Hitta heller aldrig på siffror. Varje pris och villkor kontrolleras mot bolagets egen webbplats och får ett datum.
-
-## Teknik
-
-- TanStack Start (SSR), React och Tailwind CSS
-- Supabase som backend: larmbolag, publicerade startpaket och offertförfrågningar (`src/lib/mobilpoolen-supabase.ts`)
-- Hostas på Cloudflare Workers (worker `mobilpoolen`). Cloudflare Workers Builds bygger och publicerar varje merge till `main` automatiskt.
-- Bun som pakethanterare
+`CLAUDE.md` gäller för allt arbete i repot. Där står reglerna för innehåll, data, SEO, design och git.
 
 ## Köra lokalt
 
@@ -29,20 +15,36 @@ bun install
 bun run dev
 ```
 
-Före en PR:
+Före merge:
 
 ```sh
-bun run fix          # prettier + eslint --fix
+bun run fix
 npx tsc --noEmit
-bun run lint
+npx eslint src
 bun run build
 ```
 
-Allt ska vara grönt innan något mergas. Arbeta på en egen gren och pusha aldrig direkt till `main`.
+## Uppdatera priser
 
-## Struktur i korthet
+Priserna ligger i `src/lib/mobil/operatorer-data.ts` och genereras ur `research/*.json`:
+
+```sh
+python3 scripts/bygg_data.py
+```
+
+## Publicera på Cloudflare
+
+Samma upplägg som Larmpoolen:
+
+1. Cloudflare → Workers & Pages → Create → Import a repository → välj `PoolenMediaGroup/mobilpoolen`.
+2. Build command: `bun run build`. Deploy command: `npx wrangler deploy` (Nitro skriver konfigurationen till `.output/server/wrangler.json`).
+3. Lägg till domänen `mobilpoolen.se` (och `www`) under Settings → Domains & Routes.
+4. Valfritt: miljövariablerna `VITE_SUPABASE_URL` och `VITE_SUPABASE_PUBLISHABLE_KEY` för besöksräkning (SQL i `supabase/migrations/`).
+
+## Struktur
 
 - `src/routes/`: en fil per sida
-- `src/components/`: sidmallar och delade komponenter
-- `src/lib/`: data och hjälpfunktioner, bland annat `seo.ts`, `guides.ts` och bildbanken `bildbank.ts`
-- `public/`: `robots.txt`, `llms.txt` och statiska filer
+- `src/components/mobil/`: jämförelse, pelarsidor, kalkylator
+- `src/lib/mobil/`: data, uträkningar, fakta med källor
+- `research/`: underlaget som priser och fakta bygger på
+- `public/`: `robots.txt`, `llms.txt`, ikoner

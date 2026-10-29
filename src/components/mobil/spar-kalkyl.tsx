@@ -1,7 +1,7 @@
 import { useId, useState } from "react";
 import { ArrowDown, Sparkles } from "lucide-react";
 import { PRIVATA, operator } from "@/lib/mobil/data";
-import { billigastForBehov, gbText, kr, snittForstaAret } from "@/lib/mobil/berakna";
+import { arVillkorat, billigastForBehov, gbText, kr, snittForstaAret } from "@/lib/mobil/berakna";
 import type { Abonnemang } from "@/lib/mobil/typer";
 
 export const BEHOV_VAL: { gb: number; label: string; text: string }[] = [

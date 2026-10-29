@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ABONNEMANG, operator, SENAST_KONTROLLERAD } from "@/lib/mobil/data";
 import {
+  arVillkorat,
   billigastForBehov,
   datumText,
   gbText,
@@ -19,7 +20,10 @@ export function billigastPerNiva(
   kundtyp: Kundtyp = "privat",
   filter?: (a: Abonnemang) => boolean,
 ): BilligastRad[] {
-  const lista = ABONNEMANG.filter((a) => a.kundtyp === kundtyp && (!filter || filter(a)));
+  // Utan eget filter räknas bara abonnemang som alla kan köpa (inga ålders- eller studentkrav).
+  const lista = ABONNEMANG.filter(
+    (a) => a.kundtyp === kundtyp && (filter ? filter(a) : !arVillkorat(a)),
+  );
   const rader: BilligastRad[] = [];
   for (const gb of SURFNIVAER) {
     const a = billigastForBehov(
@@ -43,7 +47,7 @@ export function billigastPerNiva(
 export function BilligastTabell({
   kundtyp = "privat",
   filter,
-  rubrikNiva = "Surf",
+  rubrikNiva = "Behov",
 }: {
   kundtyp?: Kundtyp;
   filter?: (a: Abonnemang) => boolean;

@@ -4,7 +4,7 @@
  * Inget här får påstå något som inte står i datan.
  */
 import { ABONNEMANG, MOBILNAT, OPERATORER, operator } from "./data";
-import { bindningText, gbText, kr, snittForstaAret, sortera } from "./berakna";
+import { arVillkorat, bindningText, gbText, kr, snittForstaAret, sortera } from "./berakna";
 import type { Abonnemang, Operator } from "./typer";
 
 export const SKI_BRANSCH_PRIVAT = 65.8;
@@ -16,8 +16,11 @@ export function privataFor(slug: string): Abonnemang[] {
   return ABONNEMANG.filter((a) => a.operator === slug && a.kundtyp === "privat");
 }
 
+/** Billigaste abonnemanget som alla kan köpa (utan ålders- eller studentkrav), annars billigaste totalt. */
 export function billigasteFor(slug: string): Abonnemang | undefined {
-  return sortera(privataFor(slug), "snitt-ar")[0];
+  const alla = privataFor(slug);
+  const oppna = alla.filter((a) => !arVillkorat(a));
+  return sortera(oppna.length ? oppna : alla, "snitt-ar")[0];
 }
 
 export function samtNat(o: Operator): Operator[] {
@@ -57,8 +60,8 @@ export function operatorFaq(o: Operator): Qa[] {
     q: `Vilket nät använder ${o.namn}?`,
     a:
       o.grupp === "natagare"
-        ? `${o.namn} äger och driver ${nat.namn.toLowerCase()} själv.${o.nat === "tele2" || o.nat === "telenor" ? " Radionätet för 4G och 5G delas med " + (o.nat === "tele2" ? "Telenor" : "Tele2") + " genom det samägda bolaget Net4Mobility." : ""}`
-        : `${o.namn} kör i ${nat.namn.toLowerCase()}. Täckningen är därför densamma som för andra operatörer i samma nät.`,
+        ? `${o.namn} äger och driver ${nat.namn} själv.${o.nat === "tele2" || o.nat === "telenor" ? " Radionätet för 4G och 5G delas med " + (o.nat === "tele2" ? "Telenor" : "Tele2") + " genom det samägda bolaget Net4Mobility." : ""}`
+        : `${o.namn} kör i ${nat.namn}. Täckningen är därför densamma som för andra operatörer i samma nät.`,
   });
   if (billigast) {
     fragor.push({

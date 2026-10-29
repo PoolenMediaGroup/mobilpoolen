@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { PelarSida } from "@/components/mobil/pelar-sida";
 import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { MOBILNAT, operator } from "@/lib/mobil/data";
-import { billigastForBehov, gbText, kr, snittForstaAret, totalKostnad } from "@/lib/mobil/berakna";
+import { arVillkorat, billigastForBehov, gbText, kr, snittForstaAret, totalKostnad } from "@/lib/mobil/berakna";
 import {
   billigasteFor,
   bindningsSpann,
@@ -34,8 +34,8 @@ function jamforFaq(a: Operator, b: Operator) {
     q: `Har ${a.namn} och ${b.namn} samma nät?`,
     a:
       a.nat === b.nat
-        ? `Ja. Båda kör i ${MOBILNAT[a.nat].namn.toLowerCase()}, så täckningen är densamma.`
-        : `Nej. ${a.namn} kör i ${MOBILNAT[a.nat].namn.toLowerCase()} och ${b.namn} i ${MOBILNAT[b.nat].namn.toLowerCase()}. Kolla båda operatörernas täckningskartor för din adress.`,
+        ? `Ja. Båda kör i ${MOBILNAT[a.nat].namn}, så täckningen är densamma.`
+        : `Nej. ${a.namn} kör i ${MOBILNAT[a.nat].namn} och ${b.namn} i ${MOBILNAT[b.nat].namn}. Kolla båda operatörernas täckningskartor för din adress.`,
   });
   if (a.skiPrivat != null && b.skiPrivat != null) {
     fragor.push({
@@ -79,8 +79,9 @@ function Sida() {
   const p = Route.useLoaderData();
   const a = operator(p.a)!;
   const b = operator(p.b)!;
-  const la = privataFor(a.slug);
-  const lb = privataFor(b.slug);
+  // Bara abonnemang som alla kan köpa, utan ålders- eller studentkrav.
+  const la = privataFor(a.slug).filter((x) => !arVillkorat(x));
+  const lb = privataFor(b.slug).filter((x) => !arVillkorat(x));
   const samma = a.nat === b.nat;
 
   const rader = NIVAER.map((gb) => ({
@@ -153,8 +154,8 @@ function Sida() {
       ingress={
         <p>
           {samma
-            ? `${a.namn} och ${b.namn} kör båda i ${MOBILNAT[a.nat].namn.toLowerCase()}, så täckningen är densamma. Skillnaden ligger i pris, villkor och tjänster.`
-            : `${a.namn} kör i ${MOBILNAT[a.nat].namn.toLowerCase()} och ${b.namn} i ${MOBILNAT[b.nat].namn.toLowerCase()}. Börja med täckningen där du bor, jämför sedan priset för den surf du behöver.`}{" "}
+            ? `${a.namn} och ${b.namn} kör båda i ${MOBILNAT[a.nat].namn}, så täckningen är densamma. Skillnaden ligger i pris, villkor och tjänster.`
+            : `${a.namn} kör i ${MOBILNAT[a.nat].namn} och ${b.namn} i ${MOBILNAT[b.nat].namn}. Börja med täckningen där du bor, jämför sedan priset för den surf du behöver.`}{" "}
           {harPriser &&
             (vinnare.a !== vinnare.b
               ? `Räknat som snittpris första året är ${vinnare.a > vinnare.b ? a.namn : b.namn} billigast på ${Math.max(vinnare.a, vinnare.b)} av ${rader.filter((r) => r.a && r.b).length} surfnivåer där båda har ett abonnemang.`

@@ -20,14 +20,14 @@ function natFaq(id: NatId) {
   const egen = OPERATORER.find((o) => o.slug === id);
   const fragor = [
     {
-      q: `Vilka operatörer finns i ${nat.namn.toLowerCase()}?`,
+      q: `Vilka operatörer finns i ${nat.namn}?`,
       a: `${ops.map((o) => o.namn).join(", ")}. Alla får samma täckning eftersom de kör i samma nät, men pris, maxhastighet och tjänster skiljer sig.`,
     },
   ];
   if (billigast) {
     const o = OPERATORER.find((x) => x.slug === billigast.operator)!;
     fragor.push({
-      q: `Vilket är det billigaste abonnemanget i ${nat.namn.toLowerCase()}?`,
+      q: `Vilket är det billigaste abonnemanget i ${nat.namn}?`,
       a: `Räknat som snittpris per månad första året är ${o.namn} ${billigast.namn} billigast just nu, för ${kr(snittForstaAret(billigast))} i månaden. Behöver du mer surf, se tabellen per surfmängd på sidan.`,
     });
   }
@@ -35,10 +35,10 @@ function natFaq(id: NatId) {
     const ski = SKI_PRIVAT.find((s) => s.namn === egen.namn);
     const vinster = OPENSIGNAL.filter((r) => r.vinnare === egen.namn);
     fragor.push({
-      q: `Hur bra är ${nat.namn.toLowerCase()}?`,
+      q: `Hur bra är ${nat.namn}?`,
       a: `${
         vinster.length
-          ? `I Opensignals mätning från december 2025 vann ${egen.namn} ${vinster.map((v) => v.kategori.toLowerCase()).join(" och ")}.`
+          ? `I Opensignals mätning från december 2025 vann ${egen.namn} ${vinster.map((v) => v.kategori.charAt(0).toLowerCase() + v.kategori.slice(1)).join(" och ")}.`
           : `${egen.namn} vann ingen kategori ensam i Opensignals mätning från december 2025.`
       }${ski ? ` I Svenskt Kvalitetsindex 2025 fick ${egen.namn} ${decimal(ski.varde)} bland privatkunderna.` : ""} Täckningen där du bor avgör mest, så kolla operatörens täckningskarta.`,
     });
@@ -56,8 +56,8 @@ export const Route = createFileRoute("/nat/$slug")({
     const id = params.slug as NatId;
     const nat = MOBILNAT[id];
     return pageHead({
-      title: `Operatörer i ${nat.namn.toLowerCase()} – billigaste abonnemang | Mobilpoolen`,
-      description: `Alla operatörer som kör i ${nat.namn.toLowerCase()}, billigaste abonnemanget per surfmängd och vad mätningarna säger om nätet. Priser med källa och datum.`,
+      title: `Operatörer i ${nat.namn} – billigaste abonnemang | Mobilpoolen`,
+      description: `Alla operatörer som kör i ${nat.namn}, billigaste abonnemanget per surfmängd och vad mätningarna säger om nätet. Priser med källa och datum.`,
       canonical: `/nat/${id}`,
       scripts: [
         breadcrumbJsonLd([
@@ -85,7 +85,7 @@ function Sida() {
         { name: "Mobilnät och täckning", path: "/nat" },
         { name: nat.namn, path: `/nat/${id}` },
       ]}
-      rubrik={`Billigaste mobilabonnemangen i ${nat.namn.toLowerCase()}`}
+      rubrik={`Billigaste mobilabonnemangen i ${nat.namn}`}
       ingress={
         <p>
           {nat.beskrivning} Här ser du alla {antal} abonnemang vi jämför i nätet, sorterade efter
@@ -93,7 +93,7 @@ function Sida() {
         </p>
       }
       nyckeltal={[
-        { varde: String(ops.length), text: `operatörer i ${nat.namn.toLowerCase()}` },
+        { varde: String(ops.length), text: `operatörer i ${nat.namn}` },
         { varde: String(antal), text: "abonnemang i jämförelsen" },
         { varde: nat.agare.split(",")[0], text: "äger nätet" },
       ]}
@@ -103,7 +103,7 @@ function Sida() {
           <Jamforelse urval={(a) => iNatet(a.operator)} id="lista" />
         </div>
       }
-      jamforelseRubrik={`Billigast per surfmängd i ${nat.namn.toLowerCase()}`}
+      jamforelseRubrik={`Billigast per surfmängd i ${nat.namn}`}
       faq={natFaq(id)}
       lankar={[
         ...ops

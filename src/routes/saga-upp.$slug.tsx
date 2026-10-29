@@ -148,7 +148,7 @@ function Sida() {
           <h2>Alternativ i samma nät</h2>
           <p>
             Vill du ha samma täckning som hos {o.namn} kan du välja en annan operatör i{" "}
-            {MOBILNAT[o.nat].namn.toLowerCase()}:{" "}
+            {MOBILNAT[o.nat].namn}:{" "}
             {alternativ.map((g, i) => (
               <span key={g.slug}>
                 {i > 0 ? (i === alternativ.length - 1 ? " och " : ", ") : ""}

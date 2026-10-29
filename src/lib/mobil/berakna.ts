@@ -146,3 +146,8 @@ export function billigastForBehov(lista: Abonnemang[], behovGb: number): Abonnem
   const kandidater = lista.filter((a) => tackerBehov(a, behovGb));
   return sortera(kandidater, "snitt-ar")[0] ?? null;
 }
+
+/** Abonnemang som bara kan köpas av vissa (ålderskrav eller student). */
+export function arVillkorat(a: Abonnemang): boolean {
+  return Boolean(a.malgrupp?.some((m) => m === "senior" || m === "student" || m === "ung"));
+}
