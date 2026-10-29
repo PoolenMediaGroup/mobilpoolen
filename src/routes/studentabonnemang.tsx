@@ -39,7 +39,11 @@ const B50_ALLA = billigastForBehov(OPPNA, 50);
 
 /** Telia: 50 kr/mån rabatt för under 28 år på 20 GB och uppåt (Telias webbplats, 2026-10-29). */
 const TELIA_RABATT = 50;
-const TELIA_UNG = ["telia-mobil-20-gb", "telia-obegransad", "telia-obegransad-plus"]
+const TELIA_UNG = [
+  "telia-telia-mobil-20-gb",
+  "telia-telia-mobil-obegransad",
+  "telia-telia-mobil-obegransad-plus",
+]
   .map((id) => ABONNEMANG.find((a) => a.id === id))
   .filter((a): a is Abonnemang => !!a);
 

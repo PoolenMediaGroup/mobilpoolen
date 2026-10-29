@@ -117,12 +117,17 @@ function Page() {
   const tele2Obeg = hitta("tele2-mobil-obegransad");
   const tellusObeg = hitta("tellus-tellus-mobil-obegransat");
 
-  const teliaPlus = hitta("telia-obegransad-plus");
-  const teliaNetflix = hitta("telia-obegransad-plus-netflix");
+  const teliaPlus = hitta("telia-telia-mobil-obegransad-plus");
+  const teliaNetflix = hitta("telia-telia-obegransad-plus-netflix-24-man-bindning");
 
   // Vanliga abonnemang hos de stora operatörerna, jämförda med det billigaste
   // abonnemanget utan bindning med minst lika mycket surf.
-  const jamforelser = ["telia-mobil-10-gb", "telia-mobil-20-gb", "tre-25-gb", "telia-obegransad"]
+  const jamforelser = [
+    "telia-telia-mobil-10-gb",
+    "telia-telia-mobil-20-gb",
+    "tre-25-gb",
+    "telia-telia-mobil-obegransad",
+  ]
     .map((id) => hitta(id))
     .filter((a): a is Abonnemang => !!a)
     .map((a) => ({ a, alt: billigasteFria(a.gb) }))

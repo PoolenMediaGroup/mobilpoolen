@@ -109,7 +109,7 @@ function billigastISammaNat(ref: Abonnemang) {
 function Page() {
   // Underlag att ta med till samtalet: vanliga abonnemang hos nätägarna och det
   // billigaste i samma nät, både ordinarie och snitt första året.
-  const underlag = ["telia-mobil-20-gb", "tele2-mobil-obegransad", "tre-25-gb"]
+  const underlag = ["telia-telia-mobil-20-gb", "tele2-mobil-obegransad", "tre-25-gb"]
     .map((id) => PRIVATA.find((a) => a.id === id))
     .filter((a): a is Abonnemang => !!a)
     .map((a) => ({ a, alt: billigastISammaNat(a) }))

@@ -27,8 +27,8 @@ const MEDLEM = {
 } as const;
 
 const hitta = (id: string) => ABONNEMANG.find((a) => a.id === id);
-const COMVIQ = hitta("comviq-comviq-20-gb");
-const TELIA = hitta("telia-obegransad-plus");
+const COMVIQ = hitta("comviq-comviq-mobilabonnemang-20-gb");
+const TELIA = hitta("telia-telia-mobil-obegransad-plus");
 const TRE = hitta("tre-obegransad-surf");
 const TRE25 = hitta("tre-25-gb");
 const TELE2 = hitta("tele2-mobil-15-gb");

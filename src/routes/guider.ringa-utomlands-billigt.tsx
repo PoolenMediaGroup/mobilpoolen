@@ -35,8 +35,8 @@ const TOC = [
 
 /** Utlandsminuter enligt operatörernas egna uppgifter (Comviq och Lyca Mobile). */
 const UTLANDSMINUTER: { id: string; minuter: number }[] = [
-  { id: "comviq-comviq-20-gb", minuter: 100 },
-  { id: "comviq-comviq-100-gb", minuter: 1000 },
+  { id: "comviq-comviq-mobilabonnemang-20-gb", minuter: 100 },
+  { id: "comviq-comviq-mobilabonnemang-100-gb", minuter: 1000 },
   { id: "lycamobile-lyca-fast-pris-99", minuter: 100 },
   { id: "lycamobile-lyca-fast-pris-149", minuter: 300 },
   { id: "lycamobile-lyca-fast-pris-199", minuter: 500 },
