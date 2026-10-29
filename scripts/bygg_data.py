@@ -153,3 +153,7 @@ out.append('export const OPERATORER_DATA: Operator[] = '+json.dumps(opl,ensure_a
 out.append('export const ABONNEMANG_DATA: Abonnemang[] = '+json.dumps(alla,ensure_ascii=False,indent=2)+';\n')
 open(os.path.join(ROT,'src/lib/mobil/operatorer-data.ts'),'w').write(''.join(out))
 print('ops',len(opl),'plans',len(alla))
+
+# Formatera som resten av repot
+import subprocess
+subprocess.run(['npx','prettier','--write',os.path.join(ROT,'src/lib/mobil/operatorer-data.ts')],cwd=ROT,stdout=subprocess.DEVNULL)

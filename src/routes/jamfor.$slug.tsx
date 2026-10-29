@@ -3,7 +3,14 @@ import { Check } from "lucide-react";
 import { PelarSida } from "@/components/mobil/pelar-sida";
 import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { MOBILNAT, operator } from "@/lib/mobil/data";
-import { arVillkorat, billigastForBehov, gbText, kr, snittForstaAret, totalKostnad } from "@/lib/mobil/berakna";
+import {
+  arVillkorat,
+  billigastForBehov,
+  gbText,
+  kr,
+  snittForstaAret,
+  totalKostnad,
+} from "@/lib/mobil/berakna";
 import {
   billigasteFor,
   bindningsSpann,

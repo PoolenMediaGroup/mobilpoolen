@@ -277,7 +277,8 @@ function OperatorSida() {
               </p>
               <p>
                 Täckningen beror på var du bor och rör dig. Kontrollera {o.namn}s täckningskarta för
-                din adress innan du byter, och läs vad mätningarna från PTS och Opensignal säger i guiden om{" "}
+                din adress innan du byter, och läs vad mätningarna från PTS och Opensignal säger i
+                guiden om{" "}
                 <Link to={"/guider/basta-tackning-sverige" as never}>
                   vilket nät som har bäst täckning
                 </Link>

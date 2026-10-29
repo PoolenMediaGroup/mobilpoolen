@@ -33,8 +33,8 @@ function NotFoundComponent() {
             Sidan finns inte
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-foreground/90">
-            Länken kan vara gammal, eller så har sidan flyttat (felkod 404). Letar du efter ett billigare mobilabonnemang
-            kan du jämföra operatörernas priser direkt.
+            Länken kan vara gammal, eller så har sidan flyttat (felkod 404). Letar du efter ett
+            billigare mobilabonnemang kan du jämföra operatörernas priser direkt.
           </p>
           <div className="mt-7">
             <a href="/#alla" className="btn-cta">

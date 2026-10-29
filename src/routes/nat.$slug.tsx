@@ -106,13 +106,11 @@ function Sida() {
       jamforelseRubrik={`Billigast per surfmängd i ${nat.namn}`}
       faq={natFaq(id)}
       lankar={[
-        ...ops
-          .slice(0, 4)
-          .map((o) => ({
-            href: `/operatorer/${o.slug}`,
-            label: o.namn,
-            text: `Alla ${o.namn}s abonnemang och villkor.`,
-          })),
+        ...ops.slice(0, 4).map((o) => ({
+          href: `/operatorer/${o.slug}`,
+          label: o.namn,
+          text: `Alla ${o.namn}s abonnemang och villkor.`,
+        })),
         { href: "/nat", label: "Alla fyra mobilnät", text: "Jämför näten och mätningarna." },
       ]}
       ctaBild="mobilmast-bla-himmel"
