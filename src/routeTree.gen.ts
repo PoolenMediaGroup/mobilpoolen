@@ -9,31 +9,97 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UtanBindningstidRouteImport } from './routes/utan-bindningstid'
+import { Route as UngdomRouteImport } from './routes/ungdom'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SaTjanarViPengarRouteImport } from './routes/sa-tjanar-vi-pengar'
 import { Route as SaJamforViRouteImport } from './routes/sa-jamfor-vi'
 import { Route as SaFungerarMobilpoolenRouteImport } from './routes/sa-fungerar-mobilpoolen'
+import { Route as PrisindexRouteImport } from './routes/prisindex'
+import { Route as PensionarRouteImport } from './routes/pensionar'
 import { Route as OrdlistaRouteImport } from './routes/ordlista'
 import { Route as OmOssRouteImport } from './routes/om-oss'
+import { Route as ObegransadSurfRouteImport } from './routes/obegransad-surf'
+import { Route as KontantkortRouteImport } from './routes/kontantkort'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IntegritetspolicyRouteImport } from './routes/integritetspolicy'
 import { Route as ForetagRouteImport } from './routes/foretag'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FamiljeabonnemangRouteImport } from './routes/familjeabonnemang'
+import { Route as EsimRouteImport } from './routes/esim'
 import { Route as CookiepolicyRouteImport } from './routes/cookiepolicy'
+import { Route as BilligasteMobilabonnemangRouteImport } from './routes/billigaste-mobilabonnemang'
+import { Route as BastaMobilabonnemangRouteImport } from './routes/basta-mobilabonnemang'
+import { Route as BarnRouteImport } from './routes/barn'
 import { Route as AnvandarvillkorRouteImport } from './routes/anvandarvillkor'
+import { Route as R5gAbonnemangRouteImport } from './routes/5g-abonnemang'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as VerktygIndexRouteImport } from './routes/verktyg.index'
 import { Route as SagaUppIndexRouteImport } from './routes/saga-upp.index'
 import { Route as OperatorerIndexRouteImport } from './routes/operatorer.index'
 import { Route as NatIndexRouteImport } from './routes/nat.index'
 import { Route as JamforIndexRouteImport } from './routes/jamfor.index'
 import { Route as GuiderIndexRouteImport } from './routes/guider.index'
+import { Route as VerktygKampanjkalkylatorRouteImport } from './routes/verktyg.kampanjkalkylator'
+import { Route as VerktygHurMycketSurfBehoverJagRouteImport } from './routes/verktyg.hur-mycket-surf-behover-jag'
+import { Route as VerktygForetagskalkylatorRouteImport } from './routes/verktyg.foretagskalkylator'
+import { Route as VerktygBetalarJagForMycketRouteImport } from './routes/verktyg.betalar-jag-for-mycket'
 import { Route as SkribentLeonHallstromRouteImport } from './routes/skribent.leon-hallstrom'
 import { Route as SagaUppSlugRouteImport } from './routes/saga-upp.$slug'
 import { Route as OperatorerSlugRouteImport } from './routes/operatorer.$slug'
 import { Route as NatSlugRouteImport } from './routes/nat.$slug'
 import { Route as JamforSlugRouteImport } from './routes/jamfor.$slug'
+import { Route as GuiderWifiSamtalOchDaligTackningRouteImport } from './routes/guider.wifi-samtal-och-dalig-tackning'
+import { Route as GuiderVirtuellaOperatorerRouteImport } from './routes/guider.virtuella-operatorer'
+import { Route as GuiderVilketNatAnvanderOperatorenRouteImport } from './routes/guider.vilket-nat-anvander-operatoren'
+import { Route as GuiderVaxelEllerMobilRouteImport } from './routes/guider.vaxel-eller-mobil'
+import { Route as GuiderVadArEsimRouteImport } from './routes/guider.vad-ar-esim'
+import { Route as GuiderSurfaUtanforEuRouteImport } from './routes/guider.surfa-utanfor-eu'
+import { Route as GuiderSurfaIEuRouteImport } from './routes/guider.surfa-i-eu'
+import { Route as GuiderSparraKopBarnMobilRouteImport } from './routes/guider.sparra-kop-barn-mobil'
+import { Route as GuiderSparadSurfDubbelSurfRouteImport } from './routes/guider.sparad-surf-dubbel-surf'
+import { Route as GuiderSankMobilrakningenRouteImport } from './routes/guider.sank-mobilrakningen'
+import { Route as GuiderRingaUtomlandsBilligtRouteImport } from './routes/guider.ringa-utomlands-billigt'
+import { Route as GuiderRacker5GbSurfRouteImport } from './routes/guider.racker-5-gb-surf'
+import { Route as GuiderPrivatEllerForetagsabonnemangRouteImport } from './routes/guider.privat-eller-foretagsabonnemang'
+import { Route as GuiderPrishojningMobilabonnemangRouteImport } from './routes/guider.prishojning-mobilabonnemang'
+import { Route as GuiderOverlataAbonnemangTillForetagRouteImport } from './routes/guider.overlata-abonnemang-till-foretag'
+import { Route as GuiderNarSurfenTarSlutRouteImport } from './routes/guider.nar-surfen-tar-slut'
+import { Route as GuiderMomsMobilabonnemangRouteImport } from './routes/guider.moms-mobilabonnemang'
+import { Route as GuiderMobilmarknadenISiffrorRouteImport } from './routes/guider.mobilmarknaden-i-siffror'
+import { Route as GuiderMobilMedEllerUtanAbonnemangRouteImport } from './routes/guider.mobil-med-eller-utan-abonnemang'
+import { Route as GuiderKontantkortEllerAbonnemangRouteImport } from './routes/guider.kontantkort-eller-abonnemang'
+import { Route as GuiderKlagaPaOperatorenRouteImport } from './routes/guider.klaga-pa-operatoren'
+import { Route as GuiderKampanjprisEfterKampanjenRouteImport } from './routes/guider.kampanjpris-efter-kampanjen'
+import { Route as GuiderJobbmobilFormansskattRouteImport } from './routes/guider.jobbmobil-formansskatt'
+import { Route as GuiderHurMycketSurfDrarApparRouteImport } from './routes/guider.hur-mycket-surf-drar-appar'
+import { Route as GuiderHalebopLaggsNedRouteImport } from './routes/guider.halebop-laggs-ned'
+import { Route as GuiderForstaMobilabonnemangBarnRouteImport } from './routes/guider.forsta-mobilabonnemang-barn'
+import { Route as GuiderForhandlaMedOperatorenRouteImport } from './routes/guider.forhandla-med-operatoren'
+import { Route as GuiderDeladSurfForetagRouteImport } from './routes/guider.delad-surf-foretag'
+import { Route as GuiderBytaOperatorMedBindningstidRouteImport } from './routes/guider.byta-operator-med-bindningstid'
+import { Route as GuiderBytaOperatorBehallaNummerRouteImport } from './routes/guider.byta-operator-behalla-nummer'
+import { Route as GuiderBindningstidUppsagningstidRouteImport } from './routes/guider.bindningstid-uppsagningstid'
+import { Route as GuiderBehoverJag5gRouteImport } from './routes/guider.behover-jag-5g'
+import { Route as GuiderBedrageriSimSwapOchBluffsamtalRouteImport } from './routes/guider.bedrageri-sim-swap-och-bluffsamtal'
+import { Route as GuiderBastaTackningSverigeRouteImport } from './routes/guider.basta-tackning-sverige'
+import { Route as GuiderAvdragMobilabonnemangEnskildFirmaRouteImport } from './routes/guider.avdrag-mobilabonnemang-enskild-firma'
+import { Route as GuiderAngerrattMobilabonnemangRouteImport } from './routes/guider.angerratt-mobilabonnemang'
+import { Route as Guider2g3gNedslackningRouteImport } from './routes/guider.2g-3g-nedslackning'
+import { Route as ForetagEnskildFirmaRouteImport } from './routes/foretag_.enskild-firma'
+import { Route as ForetagBilligasteForetagsabonnemangRouteImport } from './routes/foretag_.billigaste-foretagsabonnemang'
 import { Route as ApiChattRouteImport } from './routes/api.chatt'
 
+const UtanBindningstidRoute = UtanBindningstidRouteImport.update({
+  id: '/utan-bindningstid',
+  path: '/utan-bindningstid',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UngdomRoute = UngdomRouteImport.update({
+  id: '/ungdom',
+  path: '/ungdom',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -54,6 +120,16 @@ const SaFungerarMobilpoolenRoute = SaFungerarMobilpoolenRouteImport.update({
   path: '/sa-fungerar-mobilpoolen',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrisindexRoute = PrisindexRouteImport.update({
+  id: '/prisindex',
+  path: '/prisindex',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PensionarRoute = PensionarRouteImport.update({
+  id: '/pensionar',
+  path: '/pensionar',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrdlistaRoute = OrdlistaRouteImport.update({
   id: '/ordlista',
   path: '/ordlista',
@@ -62,6 +138,16 @@ const OrdlistaRoute = OrdlistaRouteImport.update({
 const OmOssRoute = OmOssRouteImport.update({
   id: '/om-oss',
   path: '/om-oss',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ObegransadSurfRoute = ObegransadSurfRouteImport.update({
+  id: '/obegransad-surf',
+  path: '/obegransad-surf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontantkortRoute = KontantkortRouteImport.update({
+  id: '/kontantkort',
+  path: '/kontantkort',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontaktRoute = KontaktRouteImport.update({
@@ -84,9 +170,35 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FamiljeabonnemangRoute = FamiljeabonnemangRouteImport.update({
+  id: '/familjeabonnemang',
+  path: '/familjeabonnemang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EsimRoute = EsimRouteImport.update({
+  id: '/esim',
+  path: '/esim',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CookiepolicyRoute = CookiepolicyRouteImport.update({
   id: '/cookiepolicy',
   path: '/cookiepolicy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BilligasteMobilabonnemangRoute =
+  BilligasteMobilabonnemangRouteImport.update({
+    id: '/billigaste-mobilabonnemang',
+    path: '/billigaste-mobilabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BastaMobilabonnemangRoute = BastaMobilabonnemangRouteImport.update({
+  id: '/basta-mobilabonnemang',
+  path: '/basta-mobilabonnemang',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BarnRoute = BarnRouteImport.update({
+  id: '/barn',
+  path: '/barn',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnvandarvillkorRoute = AnvandarvillkorRouteImport.update({
@@ -94,9 +206,19 @@ const AnvandarvillkorRoute = AnvandarvillkorRouteImport.update({
   path: '/anvandarvillkor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const R5gAbonnemangRoute = R5gAbonnemangRouteImport.update({
+  id: '/5g-abonnemang',
+  path: '/5g-abonnemang',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerktygIndexRoute = VerktygIndexRouteImport.update({
+  id: '/verktyg/',
+  path: '/verktyg/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SagaUppIndexRoute = SagaUppIndexRouteImport.update({
@@ -124,6 +246,30 @@ const GuiderIndexRoute = GuiderIndexRouteImport.update({
   path: '/guider/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VerktygKampanjkalkylatorRoute =
+  VerktygKampanjkalkylatorRouteImport.update({
+    id: '/verktyg/kampanjkalkylator',
+    path: '/verktyg/kampanjkalkylator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VerktygHurMycketSurfBehoverJagRoute =
+  VerktygHurMycketSurfBehoverJagRouteImport.update({
+    id: '/verktyg/hur-mycket-surf-behover-jag',
+    path: '/verktyg/hur-mycket-surf-behover-jag',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VerktygForetagskalkylatorRoute =
+  VerktygForetagskalkylatorRouteImport.update({
+    id: '/verktyg/foretagskalkylator',
+    path: '/verktyg/foretagskalkylator',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const VerktygBetalarJagForMycketRoute =
+  VerktygBetalarJagForMycketRouteImport.update({
+    id: '/verktyg/betalar-jag-for-mycket',
+    path: '/verktyg/betalar-jag-for-mycket',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SkribentLeonHallstromRoute = SkribentLeonHallstromRouteImport.update({
   id: '/skribent/leon-hallstrom',
   path: '/skribent/leon-hallstrom',
@@ -149,6 +295,228 @@ const JamforSlugRoute = JamforSlugRouteImport.update({
   path: '/jamfor/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuiderWifiSamtalOchDaligTackningRoute =
+  GuiderWifiSamtalOchDaligTackningRouteImport.update({
+    id: '/guider/wifi-samtal-och-dalig-tackning',
+    path: '/guider/wifi-samtal-och-dalig-tackning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderVirtuellaOperatorerRoute =
+  GuiderVirtuellaOperatorerRouteImport.update({
+    id: '/guider/virtuella-operatorer',
+    path: '/guider/virtuella-operatorer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderVilketNatAnvanderOperatorenRoute =
+  GuiderVilketNatAnvanderOperatorenRouteImport.update({
+    id: '/guider/vilket-nat-anvander-operatoren',
+    path: '/guider/vilket-nat-anvander-operatoren',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderVaxelEllerMobilRoute = GuiderVaxelEllerMobilRouteImport.update({
+  id: '/guider/vaxel-eller-mobil',
+  path: '/guider/vaxel-eller-mobil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderVadArEsimRoute = GuiderVadArEsimRouteImport.update({
+  id: '/guider/vad-ar-esim',
+  path: '/guider/vad-ar-esim',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderSurfaUtanforEuRoute = GuiderSurfaUtanforEuRouteImport.update({
+  id: '/guider/surfa-utanfor-eu',
+  path: '/guider/surfa-utanfor-eu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderSurfaIEuRoute = GuiderSurfaIEuRouteImport.update({
+  id: '/guider/surfa-i-eu',
+  path: '/guider/surfa-i-eu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderSparraKopBarnMobilRoute =
+  GuiderSparraKopBarnMobilRouteImport.update({
+    id: '/guider/sparra-kop-barn-mobil',
+    path: '/guider/sparra-kop-barn-mobil',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderSparadSurfDubbelSurfRoute =
+  GuiderSparadSurfDubbelSurfRouteImport.update({
+    id: '/guider/sparad-surf-dubbel-surf',
+    path: '/guider/sparad-surf-dubbel-surf',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderSankMobilrakningenRoute =
+  GuiderSankMobilrakningenRouteImport.update({
+    id: '/guider/sank-mobilrakningen',
+    path: '/guider/sank-mobilrakningen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderRingaUtomlandsBilligtRoute =
+  GuiderRingaUtomlandsBilligtRouteImport.update({
+    id: '/guider/ringa-utomlands-billigt',
+    path: '/guider/ringa-utomlands-billigt',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderRacker5GbSurfRoute = GuiderRacker5GbSurfRouteImport.update({
+  id: '/guider/racker-5-gb-surf',
+  path: '/guider/racker-5-gb-surf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderPrivatEllerForetagsabonnemangRoute =
+  GuiderPrivatEllerForetagsabonnemangRouteImport.update({
+    id: '/guider/privat-eller-foretagsabonnemang',
+    path: '/guider/privat-eller-foretagsabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderPrishojningMobilabonnemangRoute =
+  GuiderPrishojningMobilabonnemangRouteImport.update({
+    id: '/guider/prishojning-mobilabonnemang',
+    path: '/guider/prishojning-mobilabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderOverlataAbonnemangTillForetagRoute =
+  GuiderOverlataAbonnemangTillForetagRouteImport.update({
+    id: '/guider/overlata-abonnemang-till-foretag',
+    path: '/guider/overlata-abonnemang-till-foretag',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderNarSurfenTarSlutRoute = GuiderNarSurfenTarSlutRouteImport.update({
+  id: '/guider/nar-surfen-tar-slut',
+  path: '/guider/nar-surfen-tar-slut',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderMomsMobilabonnemangRoute =
+  GuiderMomsMobilabonnemangRouteImport.update({
+    id: '/guider/moms-mobilabonnemang',
+    path: '/guider/moms-mobilabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderMobilmarknadenISiffrorRoute =
+  GuiderMobilmarknadenISiffrorRouteImport.update({
+    id: '/guider/mobilmarknaden-i-siffror',
+    path: '/guider/mobilmarknaden-i-siffror',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderMobilMedEllerUtanAbonnemangRoute =
+  GuiderMobilMedEllerUtanAbonnemangRouteImport.update({
+    id: '/guider/mobil-med-eller-utan-abonnemang',
+    path: '/guider/mobil-med-eller-utan-abonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderKontantkortEllerAbonnemangRoute =
+  GuiderKontantkortEllerAbonnemangRouteImport.update({
+    id: '/guider/kontantkort-eller-abonnemang',
+    path: '/guider/kontantkort-eller-abonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderKlagaPaOperatorenRoute = GuiderKlagaPaOperatorenRouteImport.update({
+  id: '/guider/klaga-pa-operatoren',
+  path: '/guider/klaga-pa-operatoren',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderKampanjprisEfterKampanjenRoute =
+  GuiderKampanjprisEfterKampanjenRouteImport.update({
+    id: '/guider/kampanjpris-efter-kampanjen',
+    path: '/guider/kampanjpris-efter-kampanjen',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderJobbmobilFormansskattRoute =
+  GuiderJobbmobilFormansskattRouteImport.update({
+    id: '/guider/jobbmobil-formansskatt',
+    path: '/guider/jobbmobil-formansskatt',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderHurMycketSurfDrarApparRoute =
+  GuiderHurMycketSurfDrarApparRouteImport.update({
+    id: '/guider/hur-mycket-surf-drar-appar',
+    path: '/guider/hur-mycket-surf-drar-appar',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderHalebopLaggsNedRoute = GuiderHalebopLaggsNedRouteImport.update({
+  id: '/guider/halebop-laggs-ned',
+  path: '/guider/halebop-laggs-ned',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderForstaMobilabonnemangBarnRoute =
+  GuiderForstaMobilabonnemangBarnRouteImport.update({
+    id: '/guider/forsta-mobilabonnemang-barn',
+    path: '/guider/forsta-mobilabonnemang-barn',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderForhandlaMedOperatorenRoute =
+  GuiderForhandlaMedOperatorenRouteImport.update({
+    id: '/guider/forhandla-med-operatoren',
+    path: '/guider/forhandla-med-operatoren',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderDeladSurfForetagRoute = GuiderDeladSurfForetagRouteImport.update({
+  id: '/guider/delad-surf-foretag',
+  path: '/guider/delad-surf-foretag',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderBytaOperatorMedBindningstidRoute =
+  GuiderBytaOperatorMedBindningstidRouteImport.update({
+    id: '/guider/byta-operator-med-bindningstid',
+    path: '/guider/byta-operator-med-bindningstid',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderBytaOperatorBehallaNummerRoute =
+  GuiderBytaOperatorBehallaNummerRouteImport.update({
+    id: '/guider/byta-operator-behalla-nummer',
+    path: '/guider/byta-operator-behalla-nummer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderBindningstidUppsagningstidRoute =
+  GuiderBindningstidUppsagningstidRouteImport.update({
+    id: '/guider/bindningstid-uppsagningstid',
+    path: '/guider/bindningstid-uppsagningstid',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderBehoverJag5gRoute = GuiderBehoverJag5gRouteImport.update({
+  id: '/guider/behover-jag-5g',
+  path: '/guider/behover-jag-5g',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuiderBedrageriSimSwapOchBluffsamtalRoute =
+  GuiderBedrageriSimSwapOchBluffsamtalRouteImport.update({
+    id: '/guider/bedrageri-sim-swap-och-bluffsamtal',
+    path: '/guider/bedrageri-sim-swap-och-bluffsamtal',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderBastaTackningSverigeRoute =
+  GuiderBastaTackningSverigeRouteImport.update({
+    id: '/guider/basta-tackning-sverige',
+    path: '/guider/basta-tackning-sverige',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderAvdragMobilabonnemangEnskildFirmaRoute =
+  GuiderAvdragMobilabonnemangEnskildFirmaRouteImport.update({
+    id: '/guider/avdrag-mobilabonnemang-enskild-firma',
+    path: '/guider/avdrag-mobilabonnemang-enskild-firma',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const GuiderAngerrattMobilabonnemangRoute =
+  GuiderAngerrattMobilabonnemangRouteImport.update({
+    id: '/guider/angerratt-mobilabonnemang',
+    path: '/guider/angerratt-mobilabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Guider2g3gNedslackningRoute = Guider2g3gNedslackningRouteImport.update({
+  id: '/guider/2g-3g-nedslackning',
+  path: '/guider/2g-3g-nedslackning',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForetagEnskildFirmaRoute = ForetagEnskildFirmaRouteImport.update({
+  id: '/foretag_/enskild-firma',
+  path: '/foretag/enskild-firma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForetagBilligasteForetagsabonnemangRoute =
+  ForetagBilligasteForetagsabonnemangRouteImport.update({
+    id: '/foretag_/billigaste-foretagsabonnemang',
+    path: '/foretag/billigaste-foretagsabonnemang',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiChattRoute = ApiChattRouteImport.update({
   id: '/api/chatt',
   path: '/api/chatt',
@@ -157,193 +525,599 @@ const ApiChattRoute = ApiChattRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/barn': typeof BarnRoute
+  '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
+  '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
   '/cookiepolicy': typeof CookiepolicyRoute
+  '/esim': typeof EsimRoute
+  '/familjeabonnemang': typeof FamiljeabonnemangRoute
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kontantkort': typeof KontantkortRoute
+  '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
+  '/pensionar': typeof PensionarRoute
+  '/prisindex': typeof PrisindexRoute
   '/sa-fungerar-mobilpoolen': typeof SaFungerarMobilpoolenRoute
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ungdom': typeof UngdomRoute
+  '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/foretag/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
+  '/foretag/enskild-firma': typeof ForetagEnskildFirmaRoute
+  '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
+  '/guider/angerratt-mobilabonnemang': typeof GuiderAngerrattMobilabonnemangRoute
+  '/guider/avdrag-mobilabonnemang-enskild-firma': typeof GuiderAvdragMobilabonnemangEnskildFirmaRoute
+  '/guider/basta-tackning-sverige': typeof GuiderBastaTackningSverigeRoute
+  '/guider/bedrageri-sim-swap-och-bluffsamtal': typeof GuiderBedrageriSimSwapOchBluffsamtalRoute
+  '/guider/behover-jag-5g': typeof GuiderBehoverJag5gRoute
+  '/guider/bindningstid-uppsagningstid': typeof GuiderBindningstidUppsagningstidRoute
+  '/guider/byta-operator-behalla-nummer': typeof GuiderBytaOperatorBehallaNummerRoute
+  '/guider/byta-operator-med-bindningstid': typeof GuiderBytaOperatorMedBindningstidRoute
+  '/guider/delad-surf-foretag': typeof GuiderDeladSurfForetagRoute
+  '/guider/forhandla-med-operatoren': typeof GuiderForhandlaMedOperatorenRoute
+  '/guider/forsta-mobilabonnemang-barn': typeof GuiderForstaMobilabonnemangBarnRoute
+  '/guider/halebop-laggs-ned': typeof GuiderHalebopLaggsNedRoute
+  '/guider/hur-mycket-surf-drar-appar': typeof GuiderHurMycketSurfDrarApparRoute
+  '/guider/jobbmobil-formansskatt': typeof GuiderJobbmobilFormansskattRoute
+  '/guider/kampanjpris-efter-kampanjen': typeof GuiderKampanjprisEfterKampanjenRoute
+  '/guider/klaga-pa-operatoren': typeof GuiderKlagaPaOperatorenRoute
+  '/guider/kontantkort-eller-abonnemang': typeof GuiderKontantkortEllerAbonnemangRoute
+  '/guider/mobil-med-eller-utan-abonnemang': typeof GuiderMobilMedEllerUtanAbonnemangRoute
+  '/guider/mobilmarknaden-i-siffror': typeof GuiderMobilmarknadenISiffrorRoute
+  '/guider/moms-mobilabonnemang': typeof GuiderMomsMobilabonnemangRoute
+  '/guider/nar-surfen-tar-slut': typeof GuiderNarSurfenTarSlutRoute
+  '/guider/overlata-abonnemang-till-foretag': typeof GuiderOverlataAbonnemangTillForetagRoute
+  '/guider/prishojning-mobilabonnemang': typeof GuiderPrishojningMobilabonnemangRoute
+  '/guider/privat-eller-foretagsabonnemang': typeof GuiderPrivatEllerForetagsabonnemangRoute
+  '/guider/racker-5-gb-surf': typeof GuiderRacker5GbSurfRoute
+  '/guider/ringa-utomlands-billigt': typeof GuiderRingaUtomlandsBilligtRoute
+  '/guider/sank-mobilrakningen': typeof GuiderSankMobilrakningenRoute
+  '/guider/sparad-surf-dubbel-surf': typeof GuiderSparadSurfDubbelSurfRoute
+  '/guider/sparra-kop-barn-mobil': typeof GuiderSparraKopBarnMobilRoute
+  '/guider/surfa-i-eu': typeof GuiderSurfaIEuRoute
+  '/guider/surfa-utanfor-eu': typeof GuiderSurfaUtanforEuRoute
+  '/guider/vad-ar-esim': typeof GuiderVadArEsimRoute
+  '/guider/vaxel-eller-mobil': typeof GuiderVaxelEllerMobilRoute
+  '/guider/vilket-nat-anvander-operatoren': typeof GuiderVilketNatAnvanderOperatorenRoute
+  '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
+  '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
+  '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
+  '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
+  '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider/': typeof GuiderIndexRoute
   '/jamfor/': typeof JamforIndexRoute
   '/nat/': typeof NatIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
+  '/verktyg/': typeof VerktygIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/barn': typeof BarnRoute
+  '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
+  '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
   '/cookiepolicy': typeof CookiepolicyRoute
+  '/esim': typeof EsimRoute
+  '/familjeabonnemang': typeof FamiljeabonnemangRoute
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kontantkort': typeof KontantkortRoute
+  '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
+  '/pensionar': typeof PensionarRoute
+  '/prisindex': typeof PrisindexRoute
   '/sa-fungerar-mobilpoolen': typeof SaFungerarMobilpoolenRoute
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ungdom': typeof UngdomRoute
+  '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/foretag/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
+  '/foretag/enskild-firma': typeof ForetagEnskildFirmaRoute
+  '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
+  '/guider/angerratt-mobilabonnemang': typeof GuiderAngerrattMobilabonnemangRoute
+  '/guider/avdrag-mobilabonnemang-enskild-firma': typeof GuiderAvdragMobilabonnemangEnskildFirmaRoute
+  '/guider/basta-tackning-sverige': typeof GuiderBastaTackningSverigeRoute
+  '/guider/bedrageri-sim-swap-och-bluffsamtal': typeof GuiderBedrageriSimSwapOchBluffsamtalRoute
+  '/guider/behover-jag-5g': typeof GuiderBehoverJag5gRoute
+  '/guider/bindningstid-uppsagningstid': typeof GuiderBindningstidUppsagningstidRoute
+  '/guider/byta-operator-behalla-nummer': typeof GuiderBytaOperatorBehallaNummerRoute
+  '/guider/byta-operator-med-bindningstid': typeof GuiderBytaOperatorMedBindningstidRoute
+  '/guider/delad-surf-foretag': typeof GuiderDeladSurfForetagRoute
+  '/guider/forhandla-med-operatoren': typeof GuiderForhandlaMedOperatorenRoute
+  '/guider/forsta-mobilabonnemang-barn': typeof GuiderForstaMobilabonnemangBarnRoute
+  '/guider/halebop-laggs-ned': typeof GuiderHalebopLaggsNedRoute
+  '/guider/hur-mycket-surf-drar-appar': typeof GuiderHurMycketSurfDrarApparRoute
+  '/guider/jobbmobil-formansskatt': typeof GuiderJobbmobilFormansskattRoute
+  '/guider/kampanjpris-efter-kampanjen': typeof GuiderKampanjprisEfterKampanjenRoute
+  '/guider/klaga-pa-operatoren': typeof GuiderKlagaPaOperatorenRoute
+  '/guider/kontantkort-eller-abonnemang': typeof GuiderKontantkortEllerAbonnemangRoute
+  '/guider/mobil-med-eller-utan-abonnemang': typeof GuiderMobilMedEllerUtanAbonnemangRoute
+  '/guider/mobilmarknaden-i-siffror': typeof GuiderMobilmarknadenISiffrorRoute
+  '/guider/moms-mobilabonnemang': typeof GuiderMomsMobilabonnemangRoute
+  '/guider/nar-surfen-tar-slut': typeof GuiderNarSurfenTarSlutRoute
+  '/guider/overlata-abonnemang-till-foretag': typeof GuiderOverlataAbonnemangTillForetagRoute
+  '/guider/prishojning-mobilabonnemang': typeof GuiderPrishojningMobilabonnemangRoute
+  '/guider/privat-eller-foretagsabonnemang': typeof GuiderPrivatEllerForetagsabonnemangRoute
+  '/guider/racker-5-gb-surf': typeof GuiderRacker5GbSurfRoute
+  '/guider/ringa-utomlands-billigt': typeof GuiderRingaUtomlandsBilligtRoute
+  '/guider/sank-mobilrakningen': typeof GuiderSankMobilrakningenRoute
+  '/guider/sparad-surf-dubbel-surf': typeof GuiderSparadSurfDubbelSurfRoute
+  '/guider/sparra-kop-barn-mobil': typeof GuiderSparraKopBarnMobilRoute
+  '/guider/surfa-i-eu': typeof GuiderSurfaIEuRoute
+  '/guider/surfa-utanfor-eu': typeof GuiderSurfaUtanforEuRoute
+  '/guider/vad-ar-esim': typeof GuiderVadArEsimRoute
+  '/guider/vaxel-eller-mobil': typeof GuiderVaxelEllerMobilRoute
+  '/guider/vilket-nat-anvander-operatoren': typeof GuiderVilketNatAnvanderOperatorenRoute
+  '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
+  '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
+  '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
+  '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
+  '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider': typeof GuiderIndexRoute
   '/jamfor': typeof JamforIndexRoute
   '/nat': typeof NatIndexRoute
   '/operatorer': typeof OperatorerIndexRoute
   '/saga-upp': typeof SagaUppIndexRoute
+  '/verktyg': typeof VerktygIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/barn': typeof BarnRoute
+  '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
+  '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
   '/cookiepolicy': typeof CookiepolicyRoute
+  '/esim': typeof EsimRoute
+  '/familjeabonnemang': typeof FamiljeabonnemangRoute
   '/faq': typeof FaqRoute
   '/foretag': typeof ForetagRoute
   '/integritetspolicy': typeof IntegritetspolicyRoute
   '/kontakt': typeof KontaktRoute
+  '/kontantkort': typeof KontantkortRoute
+  '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
+  '/pensionar': typeof PensionarRoute
+  '/prisindex': typeof PrisindexRoute
   '/sa-fungerar-mobilpoolen': typeof SaFungerarMobilpoolenRoute
   '/sa-jamfor-vi': typeof SaJamforViRoute
   '/sa-tjanar-vi-pengar': typeof SaTjanarViPengarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/ungdom': typeof UngdomRoute
+  '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/foretag_/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
+  '/foretag_/enskild-firma': typeof ForetagEnskildFirmaRoute
+  '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
+  '/guider/angerratt-mobilabonnemang': typeof GuiderAngerrattMobilabonnemangRoute
+  '/guider/avdrag-mobilabonnemang-enskild-firma': typeof GuiderAvdragMobilabonnemangEnskildFirmaRoute
+  '/guider/basta-tackning-sverige': typeof GuiderBastaTackningSverigeRoute
+  '/guider/bedrageri-sim-swap-och-bluffsamtal': typeof GuiderBedrageriSimSwapOchBluffsamtalRoute
+  '/guider/behover-jag-5g': typeof GuiderBehoverJag5gRoute
+  '/guider/bindningstid-uppsagningstid': typeof GuiderBindningstidUppsagningstidRoute
+  '/guider/byta-operator-behalla-nummer': typeof GuiderBytaOperatorBehallaNummerRoute
+  '/guider/byta-operator-med-bindningstid': typeof GuiderBytaOperatorMedBindningstidRoute
+  '/guider/delad-surf-foretag': typeof GuiderDeladSurfForetagRoute
+  '/guider/forhandla-med-operatoren': typeof GuiderForhandlaMedOperatorenRoute
+  '/guider/forsta-mobilabonnemang-barn': typeof GuiderForstaMobilabonnemangBarnRoute
+  '/guider/halebop-laggs-ned': typeof GuiderHalebopLaggsNedRoute
+  '/guider/hur-mycket-surf-drar-appar': typeof GuiderHurMycketSurfDrarApparRoute
+  '/guider/jobbmobil-formansskatt': typeof GuiderJobbmobilFormansskattRoute
+  '/guider/kampanjpris-efter-kampanjen': typeof GuiderKampanjprisEfterKampanjenRoute
+  '/guider/klaga-pa-operatoren': typeof GuiderKlagaPaOperatorenRoute
+  '/guider/kontantkort-eller-abonnemang': typeof GuiderKontantkortEllerAbonnemangRoute
+  '/guider/mobil-med-eller-utan-abonnemang': typeof GuiderMobilMedEllerUtanAbonnemangRoute
+  '/guider/mobilmarknaden-i-siffror': typeof GuiderMobilmarknadenISiffrorRoute
+  '/guider/moms-mobilabonnemang': typeof GuiderMomsMobilabonnemangRoute
+  '/guider/nar-surfen-tar-slut': typeof GuiderNarSurfenTarSlutRoute
+  '/guider/overlata-abonnemang-till-foretag': typeof GuiderOverlataAbonnemangTillForetagRoute
+  '/guider/prishojning-mobilabonnemang': typeof GuiderPrishojningMobilabonnemangRoute
+  '/guider/privat-eller-foretagsabonnemang': typeof GuiderPrivatEllerForetagsabonnemangRoute
+  '/guider/racker-5-gb-surf': typeof GuiderRacker5GbSurfRoute
+  '/guider/ringa-utomlands-billigt': typeof GuiderRingaUtomlandsBilligtRoute
+  '/guider/sank-mobilrakningen': typeof GuiderSankMobilrakningenRoute
+  '/guider/sparad-surf-dubbel-surf': typeof GuiderSparadSurfDubbelSurfRoute
+  '/guider/sparra-kop-barn-mobil': typeof GuiderSparraKopBarnMobilRoute
+  '/guider/surfa-i-eu': typeof GuiderSurfaIEuRoute
+  '/guider/surfa-utanfor-eu': typeof GuiderSurfaUtanforEuRoute
+  '/guider/vad-ar-esim': typeof GuiderVadArEsimRoute
+  '/guider/vaxel-eller-mobil': typeof GuiderVaxelEllerMobilRoute
+  '/guider/vilket-nat-anvander-operatoren': typeof GuiderVilketNatAnvanderOperatorenRoute
+  '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
+  '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
+  '/verktyg/betalar-jag-for-mycket': typeof VerktygBetalarJagForMycketRoute
+  '/verktyg/foretagskalkylator': typeof VerktygForetagskalkylatorRoute
+  '/verktyg/hur-mycket-surf-behover-jag': typeof VerktygHurMycketSurfBehoverJagRoute
+  '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider/': typeof GuiderIndexRoute
   '/jamfor/': typeof JamforIndexRoute
   '/nat/': typeof NatIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
+  '/verktyg/': typeof VerktygIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/barn'
+    | '/basta-mobilabonnemang'
+    | '/billigaste-mobilabonnemang'
     | '/cookiepolicy'
+    | '/esim'
+    | '/familjeabonnemang'
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
     | '/kontakt'
+    | '/kontantkort'
+    | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
+    | '/pensionar'
+    | '/prisindex'
     | '/sa-fungerar-mobilpoolen'
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/ungdom'
+    | '/utan-bindningstid'
     | '/api/chatt'
+    | '/foretag/billigaste-foretagsabonnemang'
+    | '/foretag/enskild-firma'
+    | '/guider/2g-3g-nedslackning'
+    | '/guider/angerratt-mobilabonnemang'
+    | '/guider/avdrag-mobilabonnemang-enskild-firma'
+    | '/guider/basta-tackning-sverige'
+    | '/guider/bedrageri-sim-swap-och-bluffsamtal'
+    | '/guider/behover-jag-5g'
+    | '/guider/bindningstid-uppsagningstid'
+    | '/guider/byta-operator-behalla-nummer'
+    | '/guider/byta-operator-med-bindningstid'
+    | '/guider/delad-surf-foretag'
+    | '/guider/forhandla-med-operatoren'
+    | '/guider/forsta-mobilabonnemang-barn'
+    | '/guider/halebop-laggs-ned'
+    | '/guider/hur-mycket-surf-drar-appar'
+    | '/guider/jobbmobil-formansskatt'
+    | '/guider/kampanjpris-efter-kampanjen'
+    | '/guider/klaga-pa-operatoren'
+    | '/guider/kontantkort-eller-abonnemang'
+    | '/guider/mobil-med-eller-utan-abonnemang'
+    | '/guider/mobilmarknaden-i-siffror'
+    | '/guider/moms-mobilabonnemang'
+    | '/guider/nar-surfen-tar-slut'
+    | '/guider/overlata-abonnemang-till-foretag'
+    | '/guider/prishojning-mobilabonnemang'
+    | '/guider/privat-eller-foretagsabonnemang'
+    | '/guider/racker-5-gb-surf'
+    | '/guider/ringa-utomlands-billigt'
+    | '/guider/sank-mobilrakningen'
+    | '/guider/sparad-surf-dubbel-surf'
+    | '/guider/sparra-kop-barn-mobil'
+    | '/guider/surfa-i-eu'
+    | '/guider/surfa-utanfor-eu'
+    | '/guider/vad-ar-esim'
+    | '/guider/vaxel-eller-mobil'
+    | '/guider/vilket-nat-anvander-operatoren'
+    | '/guider/virtuella-operatorer'
+    | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/verktyg/betalar-jag-for-mycket'
+    | '/verktyg/foretagskalkylator'
+    | '/verktyg/hur-mycket-surf-behover-jag'
+    | '/verktyg/kampanjkalkylator'
     | '/guider/'
     | '/jamfor/'
     | '/nat/'
     | '/operatorer/'
     | '/saga-upp/'
+    | '/verktyg/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/barn'
+    | '/basta-mobilabonnemang'
+    | '/billigaste-mobilabonnemang'
     | '/cookiepolicy'
+    | '/esim'
+    | '/familjeabonnemang'
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
     | '/kontakt'
+    | '/kontantkort'
+    | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
+    | '/pensionar'
+    | '/prisindex'
     | '/sa-fungerar-mobilpoolen'
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/ungdom'
+    | '/utan-bindningstid'
     | '/api/chatt'
+    | '/foretag/billigaste-foretagsabonnemang'
+    | '/foretag/enskild-firma'
+    | '/guider/2g-3g-nedslackning'
+    | '/guider/angerratt-mobilabonnemang'
+    | '/guider/avdrag-mobilabonnemang-enskild-firma'
+    | '/guider/basta-tackning-sverige'
+    | '/guider/bedrageri-sim-swap-och-bluffsamtal'
+    | '/guider/behover-jag-5g'
+    | '/guider/bindningstid-uppsagningstid'
+    | '/guider/byta-operator-behalla-nummer'
+    | '/guider/byta-operator-med-bindningstid'
+    | '/guider/delad-surf-foretag'
+    | '/guider/forhandla-med-operatoren'
+    | '/guider/forsta-mobilabonnemang-barn'
+    | '/guider/halebop-laggs-ned'
+    | '/guider/hur-mycket-surf-drar-appar'
+    | '/guider/jobbmobil-formansskatt'
+    | '/guider/kampanjpris-efter-kampanjen'
+    | '/guider/klaga-pa-operatoren'
+    | '/guider/kontantkort-eller-abonnemang'
+    | '/guider/mobil-med-eller-utan-abonnemang'
+    | '/guider/mobilmarknaden-i-siffror'
+    | '/guider/moms-mobilabonnemang'
+    | '/guider/nar-surfen-tar-slut'
+    | '/guider/overlata-abonnemang-till-foretag'
+    | '/guider/prishojning-mobilabonnemang'
+    | '/guider/privat-eller-foretagsabonnemang'
+    | '/guider/racker-5-gb-surf'
+    | '/guider/ringa-utomlands-billigt'
+    | '/guider/sank-mobilrakningen'
+    | '/guider/sparad-surf-dubbel-surf'
+    | '/guider/sparra-kop-barn-mobil'
+    | '/guider/surfa-i-eu'
+    | '/guider/surfa-utanfor-eu'
+    | '/guider/vad-ar-esim'
+    | '/guider/vaxel-eller-mobil'
+    | '/guider/vilket-nat-anvander-operatoren'
+    | '/guider/virtuella-operatorer'
+    | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/verktyg/betalar-jag-for-mycket'
+    | '/verktyg/foretagskalkylator'
+    | '/verktyg/hur-mycket-surf-behover-jag'
+    | '/verktyg/kampanjkalkylator'
     | '/guider'
     | '/jamfor'
     | '/nat'
     | '/operatorer'
     | '/saga-upp'
+    | '/verktyg'
   id:
     | '__root__'
     | '/'
+    | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/barn'
+    | '/basta-mobilabonnemang'
+    | '/billigaste-mobilabonnemang'
     | '/cookiepolicy'
+    | '/esim'
+    | '/familjeabonnemang'
     | '/faq'
     | '/foretag'
     | '/integritetspolicy'
     | '/kontakt'
+    | '/kontantkort'
+    | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
+    | '/pensionar'
+    | '/prisindex'
     | '/sa-fungerar-mobilpoolen'
     | '/sa-jamfor-vi'
     | '/sa-tjanar-vi-pengar'
     | '/sitemap.xml'
+    | '/ungdom'
+    | '/utan-bindningstid'
     | '/api/chatt'
+    | '/foretag_/billigaste-foretagsabonnemang'
+    | '/foretag_/enskild-firma'
+    | '/guider/2g-3g-nedslackning'
+    | '/guider/angerratt-mobilabonnemang'
+    | '/guider/avdrag-mobilabonnemang-enskild-firma'
+    | '/guider/basta-tackning-sverige'
+    | '/guider/bedrageri-sim-swap-och-bluffsamtal'
+    | '/guider/behover-jag-5g'
+    | '/guider/bindningstid-uppsagningstid'
+    | '/guider/byta-operator-behalla-nummer'
+    | '/guider/byta-operator-med-bindningstid'
+    | '/guider/delad-surf-foretag'
+    | '/guider/forhandla-med-operatoren'
+    | '/guider/forsta-mobilabonnemang-barn'
+    | '/guider/halebop-laggs-ned'
+    | '/guider/hur-mycket-surf-drar-appar'
+    | '/guider/jobbmobil-formansskatt'
+    | '/guider/kampanjpris-efter-kampanjen'
+    | '/guider/klaga-pa-operatoren'
+    | '/guider/kontantkort-eller-abonnemang'
+    | '/guider/mobil-med-eller-utan-abonnemang'
+    | '/guider/mobilmarknaden-i-siffror'
+    | '/guider/moms-mobilabonnemang'
+    | '/guider/nar-surfen-tar-slut'
+    | '/guider/overlata-abonnemang-till-foretag'
+    | '/guider/prishojning-mobilabonnemang'
+    | '/guider/privat-eller-foretagsabonnemang'
+    | '/guider/racker-5-gb-surf'
+    | '/guider/ringa-utomlands-billigt'
+    | '/guider/sank-mobilrakningen'
+    | '/guider/sparad-surf-dubbel-surf'
+    | '/guider/sparra-kop-barn-mobil'
+    | '/guider/surfa-i-eu'
+    | '/guider/surfa-utanfor-eu'
+    | '/guider/vad-ar-esim'
+    | '/guider/vaxel-eller-mobil'
+    | '/guider/vilket-nat-anvander-operatoren'
+    | '/guider/virtuella-operatorer'
+    | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
+    | '/verktyg/betalar-jag-for-mycket'
+    | '/verktyg/foretagskalkylator'
+    | '/verktyg/hur-mycket-surf-behover-jag'
+    | '/verktyg/kampanjkalkylator'
     | '/guider/'
     | '/jamfor/'
     | '/nat/'
     | '/operatorer/'
     | '/saga-upp/'
+    | '/verktyg/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R5gAbonnemangRoute: typeof R5gAbonnemangRoute
   AnvandarvillkorRoute: typeof AnvandarvillkorRoute
+  BarnRoute: typeof BarnRoute
+  BastaMobilabonnemangRoute: typeof BastaMobilabonnemangRoute
+  BilligasteMobilabonnemangRoute: typeof BilligasteMobilabonnemangRoute
   CookiepolicyRoute: typeof CookiepolicyRoute
+  EsimRoute: typeof EsimRoute
+  FamiljeabonnemangRoute: typeof FamiljeabonnemangRoute
   FaqRoute: typeof FaqRoute
   ForetagRoute: typeof ForetagRoute
   IntegritetspolicyRoute: typeof IntegritetspolicyRoute
   KontaktRoute: typeof KontaktRoute
+  KontantkortRoute: typeof KontantkortRoute
+  ObegransadSurfRoute: typeof ObegransadSurfRoute
   OmOssRoute: typeof OmOssRoute
   OrdlistaRoute: typeof OrdlistaRoute
+  PensionarRoute: typeof PensionarRoute
+  PrisindexRoute: typeof PrisindexRoute
   SaFungerarMobilpoolenRoute: typeof SaFungerarMobilpoolenRoute
   SaJamforViRoute: typeof SaJamforViRoute
   SaTjanarViPengarRoute: typeof SaTjanarViPengarRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  UngdomRoute: typeof UngdomRoute
+  UtanBindningstidRoute: typeof UtanBindningstidRoute
   ApiChattRoute: typeof ApiChattRoute
+  ForetagBilligasteForetagsabonnemangRoute: typeof ForetagBilligasteForetagsabonnemangRoute
+  ForetagEnskildFirmaRoute: typeof ForetagEnskildFirmaRoute
+  Guider2g3gNedslackningRoute: typeof Guider2g3gNedslackningRoute
+  GuiderAngerrattMobilabonnemangRoute: typeof GuiderAngerrattMobilabonnemangRoute
+  GuiderAvdragMobilabonnemangEnskildFirmaRoute: typeof GuiderAvdragMobilabonnemangEnskildFirmaRoute
+  GuiderBastaTackningSverigeRoute: typeof GuiderBastaTackningSverigeRoute
+  GuiderBedrageriSimSwapOchBluffsamtalRoute: typeof GuiderBedrageriSimSwapOchBluffsamtalRoute
+  GuiderBehoverJag5gRoute: typeof GuiderBehoverJag5gRoute
+  GuiderBindningstidUppsagningstidRoute: typeof GuiderBindningstidUppsagningstidRoute
+  GuiderBytaOperatorBehallaNummerRoute: typeof GuiderBytaOperatorBehallaNummerRoute
+  GuiderBytaOperatorMedBindningstidRoute: typeof GuiderBytaOperatorMedBindningstidRoute
+  GuiderDeladSurfForetagRoute: typeof GuiderDeladSurfForetagRoute
+  GuiderForhandlaMedOperatorenRoute: typeof GuiderForhandlaMedOperatorenRoute
+  GuiderForstaMobilabonnemangBarnRoute: typeof GuiderForstaMobilabonnemangBarnRoute
+  GuiderHalebopLaggsNedRoute: typeof GuiderHalebopLaggsNedRoute
+  GuiderHurMycketSurfDrarApparRoute: typeof GuiderHurMycketSurfDrarApparRoute
+  GuiderJobbmobilFormansskattRoute: typeof GuiderJobbmobilFormansskattRoute
+  GuiderKampanjprisEfterKampanjenRoute: typeof GuiderKampanjprisEfterKampanjenRoute
+  GuiderKlagaPaOperatorenRoute: typeof GuiderKlagaPaOperatorenRoute
+  GuiderKontantkortEllerAbonnemangRoute: typeof GuiderKontantkortEllerAbonnemangRoute
+  GuiderMobilMedEllerUtanAbonnemangRoute: typeof GuiderMobilMedEllerUtanAbonnemangRoute
+  GuiderMobilmarknadenISiffrorRoute: typeof GuiderMobilmarknadenISiffrorRoute
+  GuiderMomsMobilabonnemangRoute: typeof GuiderMomsMobilabonnemangRoute
+  GuiderNarSurfenTarSlutRoute: typeof GuiderNarSurfenTarSlutRoute
+  GuiderOverlataAbonnemangTillForetagRoute: typeof GuiderOverlataAbonnemangTillForetagRoute
+  GuiderPrishojningMobilabonnemangRoute: typeof GuiderPrishojningMobilabonnemangRoute
+  GuiderPrivatEllerForetagsabonnemangRoute: typeof GuiderPrivatEllerForetagsabonnemangRoute
+  GuiderRacker5GbSurfRoute: typeof GuiderRacker5GbSurfRoute
+  GuiderRingaUtomlandsBilligtRoute: typeof GuiderRingaUtomlandsBilligtRoute
+  GuiderSankMobilrakningenRoute: typeof GuiderSankMobilrakningenRoute
+  GuiderSparadSurfDubbelSurfRoute: typeof GuiderSparadSurfDubbelSurfRoute
+  GuiderSparraKopBarnMobilRoute: typeof GuiderSparraKopBarnMobilRoute
+  GuiderSurfaIEuRoute: typeof GuiderSurfaIEuRoute
+  GuiderSurfaUtanforEuRoute: typeof GuiderSurfaUtanforEuRoute
+  GuiderVadArEsimRoute: typeof GuiderVadArEsimRoute
+  GuiderVaxelEllerMobilRoute: typeof GuiderVaxelEllerMobilRoute
+  GuiderVilketNatAnvanderOperatorenRoute: typeof GuiderVilketNatAnvanderOperatorenRoute
+  GuiderVirtuellaOperatorerRoute: typeof GuiderVirtuellaOperatorerRoute
+  GuiderWifiSamtalOchDaligTackningRoute: typeof GuiderWifiSamtalOchDaligTackningRoute
   JamforSlugRoute: typeof JamforSlugRoute
   NatSlugRoute: typeof NatSlugRoute
   OperatorerSlugRoute: typeof OperatorerSlugRoute
   SagaUppSlugRoute: typeof SagaUppSlugRoute
   SkribentLeonHallstromRoute: typeof SkribentLeonHallstromRoute
+  VerktygBetalarJagForMycketRoute: typeof VerktygBetalarJagForMycketRoute
+  VerktygForetagskalkylatorRoute: typeof VerktygForetagskalkylatorRoute
+  VerktygHurMycketSurfBehoverJagRoute: typeof VerktygHurMycketSurfBehoverJagRoute
+  VerktygKampanjkalkylatorRoute: typeof VerktygKampanjkalkylatorRoute
   GuiderIndexRoute: typeof GuiderIndexRoute
   JamforIndexRoute: typeof JamforIndexRoute
   NatIndexRoute: typeof NatIndexRoute
   OperatorerIndexRoute: typeof OperatorerIndexRoute
   SagaUppIndexRoute: typeof SagaUppIndexRoute
+  VerktygIndexRoute: typeof VerktygIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/utan-bindningstid': {
+      id: '/utan-bindningstid'
+      path: '/utan-bindningstid'
+      fullPath: '/utan-bindningstid'
+      preLoaderRoute: typeof UtanBindningstidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ungdom': {
+      id: '/ungdom'
+      path: '/ungdom'
+      fullPath: '/ungdom'
+      preLoaderRoute: typeof UngdomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -372,6 +1146,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SaFungerarMobilpoolenRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prisindex': {
+      id: '/prisindex'
+      path: '/prisindex'
+      fullPath: '/prisindex'
+      preLoaderRoute: typeof PrisindexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pensionar': {
+      id: '/pensionar'
+      path: '/pensionar'
+      fullPath: '/pensionar'
+      preLoaderRoute: typeof PensionarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ordlista': {
       id: '/ordlista'
       path: '/ordlista'
@@ -384,6 +1172,20 @@ declare module '@tanstack/react-router' {
       path: '/om-oss'
       fullPath: '/om-oss'
       preLoaderRoute: typeof OmOssRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/obegransad-surf': {
+      id: '/obegransad-surf'
+      path: '/obegransad-surf'
+      fullPath: '/obegransad-surf'
+      preLoaderRoute: typeof ObegransadSurfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontantkort': {
+      id: '/kontantkort'
+      path: '/kontantkort'
+      fullPath: '/kontantkort'
+      preLoaderRoute: typeof KontantkortRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontakt': {
@@ -414,11 +1216,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/familjeabonnemang': {
+      id: '/familjeabonnemang'
+      path: '/familjeabonnemang'
+      fullPath: '/familjeabonnemang'
+      preLoaderRoute: typeof FamiljeabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/esim': {
+      id: '/esim'
+      path: '/esim'
+      fullPath: '/esim'
+      preLoaderRoute: typeof EsimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cookiepolicy': {
       id: '/cookiepolicy'
       path: '/cookiepolicy'
       fullPath: '/cookiepolicy'
       preLoaderRoute: typeof CookiepolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/billigaste-mobilabonnemang': {
+      id: '/billigaste-mobilabonnemang'
+      path: '/billigaste-mobilabonnemang'
+      fullPath: '/billigaste-mobilabonnemang'
+      preLoaderRoute: typeof BilligasteMobilabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/basta-mobilabonnemang': {
+      id: '/basta-mobilabonnemang'
+      path: '/basta-mobilabonnemang'
+      fullPath: '/basta-mobilabonnemang'
+      preLoaderRoute: typeof BastaMobilabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/barn': {
+      id: '/barn'
+      path: '/barn'
+      fullPath: '/barn'
+      preLoaderRoute: typeof BarnRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/anvandarvillkor': {
@@ -428,11 +1265,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnvandarvillkorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/5g-abonnemang': {
+      id: '/5g-abonnemang'
+      path: '/5g-abonnemang'
+      fullPath: '/5g-abonnemang'
+      preLoaderRoute: typeof R5gAbonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verktyg/': {
+      id: '/verktyg/'
+      path: '/verktyg'
+      fullPath: '/verktyg/'
+      preLoaderRoute: typeof VerktygIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/saga-upp/': {
@@ -470,6 +1321,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GuiderIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/verktyg/kampanjkalkylator': {
+      id: '/verktyg/kampanjkalkylator'
+      path: '/verktyg/kampanjkalkylator'
+      fullPath: '/verktyg/kampanjkalkylator'
+      preLoaderRoute: typeof VerktygKampanjkalkylatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verktyg/hur-mycket-surf-behover-jag': {
+      id: '/verktyg/hur-mycket-surf-behover-jag'
+      path: '/verktyg/hur-mycket-surf-behover-jag'
+      fullPath: '/verktyg/hur-mycket-surf-behover-jag'
+      preLoaderRoute: typeof VerktygHurMycketSurfBehoverJagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verktyg/foretagskalkylator': {
+      id: '/verktyg/foretagskalkylator'
+      path: '/verktyg/foretagskalkylator'
+      fullPath: '/verktyg/foretagskalkylator'
+      preLoaderRoute: typeof VerktygForetagskalkylatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verktyg/betalar-jag-for-mycket': {
+      id: '/verktyg/betalar-jag-for-mycket'
+      path: '/verktyg/betalar-jag-for-mycket'
+      fullPath: '/verktyg/betalar-jag-for-mycket'
+      preLoaderRoute: typeof VerktygBetalarJagForMycketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/skribent/leon-hallstrom': {
       id: '/skribent/leon-hallstrom'
       path: '/skribent/leon-hallstrom'
@@ -505,6 +1384,279 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JamforSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guider/wifi-samtal-och-dalig-tackning': {
+      id: '/guider/wifi-samtal-och-dalig-tackning'
+      path: '/guider/wifi-samtal-och-dalig-tackning'
+      fullPath: '/guider/wifi-samtal-och-dalig-tackning'
+      preLoaderRoute: typeof GuiderWifiSamtalOchDaligTackningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/virtuella-operatorer': {
+      id: '/guider/virtuella-operatorer'
+      path: '/guider/virtuella-operatorer'
+      fullPath: '/guider/virtuella-operatorer'
+      preLoaderRoute: typeof GuiderVirtuellaOperatorerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/vilket-nat-anvander-operatoren': {
+      id: '/guider/vilket-nat-anvander-operatoren'
+      path: '/guider/vilket-nat-anvander-operatoren'
+      fullPath: '/guider/vilket-nat-anvander-operatoren'
+      preLoaderRoute: typeof GuiderVilketNatAnvanderOperatorenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/vaxel-eller-mobil': {
+      id: '/guider/vaxel-eller-mobil'
+      path: '/guider/vaxel-eller-mobil'
+      fullPath: '/guider/vaxel-eller-mobil'
+      preLoaderRoute: typeof GuiderVaxelEllerMobilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/vad-ar-esim': {
+      id: '/guider/vad-ar-esim'
+      path: '/guider/vad-ar-esim'
+      fullPath: '/guider/vad-ar-esim'
+      preLoaderRoute: typeof GuiderVadArEsimRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/surfa-utanfor-eu': {
+      id: '/guider/surfa-utanfor-eu'
+      path: '/guider/surfa-utanfor-eu'
+      fullPath: '/guider/surfa-utanfor-eu'
+      preLoaderRoute: typeof GuiderSurfaUtanforEuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/surfa-i-eu': {
+      id: '/guider/surfa-i-eu'
+      path: '/guider/surfa-i-eu'
+      fullPath: '/guider/surfa-i-eu'
+      preLoaderRoute: typeof GuiderSurfaIEuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/sparra-kop-barn-mobil': {
+      id: '/guider/sparra-kop-barn-mobil'
+      path: '/guider/sparra-kop-barn-mobil'
+      fullPath: '/guider/sparra-kop-barn-mobil'
+      preLoaderRoute: typeof GuiderSparraKopBarnMobilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/sparad-surf-dubbel-surf': {
+      id: '/guider/sparad-surf-dubbel-surf'
+      path: '/guider/sparad-surf-dubbel-surf'
+      fullPath: '/guider/sparad-surf-dubbel-surf'
+      preLoaderRoute: typeof GuiderSparadSurfDubbelSurfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/sank-mobilrakningen': {
+      id: '/guider/sank-mobilrakningen'
+      path: '/guider/sank-mobilrakningen'
+      fullPath: '/guider/sank-mobilrakningen'
+      preLoaderRoute: typeof GuiderSankMobilrakningenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/ringa-utomlands-billigt': {
+      id: '/guider/ringa-utomlands-billigt'
+      path: '/guider/ringa-utomlands-billigt'
+      fullPath: '/guider/ringa-utomlands-billigt'
+      preLoaderRoute: typeof GuiderRingaUtomlandsBilligtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/racker-5-gb-surf': {
+      id: '/guider/racker-5-gb-surf'
+      path: '/guider/racker-5-gb-surf'
+      fullPath: '/guider/racker-5-gb-surf'
+      preLoaderRoute: typeof GuiderRacker5GbSurfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/privat-eller-foretagsabonnemang': {
+      id: '/guider/privat-eller-foretagsabonnemang'
+      path: '/guider/privat-eller-foretagsabonnemang'
+      fullPath: '/guider/privat-eller-foretagsabonnemang'
+      preLoaderRoute: typeof GuiderPrivatEllerForetagsabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/prishojning-mobilabonnemang': {
+      id: '/guider/prishojning-mobilabonnemang'
+      path: '/guider/prishojning-mobilabonnemang'
+      fullPath: '/guider/prishojning-mobilabonnemang'
+      preLoaderRoute: typeof GuiderPrishojningMobilabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/overlata-abonnemang-till-foretag': {
+      id: '/guider/overlata-abonnemang-till-foretag'
+      path: '/guider/overlata-abonnemang-till-foretag'
+      fullPath: '/guider/overlata-abonnemang-till-foretag'
+      preLoaderRoute: typeof GuiderOverlataAbonnemangTillForetagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/nar-surfen-tar-slut': {
+      id: '/guider/nar-surfen-tar-slut'
+      path: '/guider/nar-surfen-tar-slut'
+      fullPath: '/guider/nar-surfen-tar-slut'
+      preLoaderRoute: typeof GuiderNarSurfenTarSlutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/moms-mobilabonnemang': {
+      id: '/guider/moms-mobilabonnemang'
+      path: '/guider/moms-mobilabonnemang'
+      fullPath: '/guider/moms-mobilabonnemang'
+      preLoaderRoute: typeof GuiderMomsMobilabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/mobilmarknaden-i-siffror': {
+      id: '/guider/mobilmarknaden-i-siffror'
+      path: '/guider/mobilmarknaden-i-siffror'
+      fullPath: '/guider/mobilmarknaden-i-siffror'
+      preLoaderRoute: typeof GuiderMobilmarknadenISiffrorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/mobil-med-eller-utan-abonnemang': {
+      id: '/guider/mobil-med-eller-utan-abonnemang'
+      path: '/guider/mobil-med-eller-utan-abonnemang'
+      fullPath: '/guider/mobil-med-eller-utan-abonnemang'
+      preLoaderRoute: typeof GuiderMobilMedEllerUtanAbonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/kontantkort-eller-abonnemang': {
+      id: '/guider/kontantkort-eller-abonnemang'
+      path: '/guider/kontantkort-eller-abonnemang'
+      fullPath: '/guider/kontantkort-eller-abonnemang'
+      preLoaderRoute: typeof GuiderKontantkortEllerAbonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/klaga-pa-operatoren': {
+      id: '/guider/klaga-pa-operatoren'
+      path: '/guider/klaga-pa-operatoren'
+      fullPath: '/guider/klaga-pa-operatoren'
+      preLoaderRoute: typeof GuiderKlagaPaOperatorenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/kampanjpris-efter-kampanjen': {
+      id: '/guider/kampanjpris-efter-kampanjen'
+      path: '/guider/kampanjpris-efter-kampanjen'
+      fullPath: '/guider/kampanjpris-efter-kampanjen'
+      preLoaderRoute: typeof GuiderKampanjprisEfterKampanjenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/jobbmobil-formansskatt': {
+      id: '/guider/jobbmobil-formansskatt'
+      path: '/guider/jobbmobil-formansskatt'
+      fullPath: '/guider/jobbmobil-formansskatt'
+      preLoaderRoute: typeof GuiderJobbmobilFormansskattRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/hur-mycket-surf-drar-appar': {
+      id: '/guider/hur-mycket-surf-drar-appar'
+      path: '/guider/hur-mycket-surf-drar-appar'
+      fullPath: '/guider/hur-mycket-surf-drar-appar'
+      preLoaderRoute: typeof GuiderHurMycketSurfDrarApparRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/halebop-laggs-ned': {
+      id: '/guider/halebop-laggs-ned'
+      path: '/guider/halebop-laggs-ned'
+      fullPath: '/guider/halebop-laggs-ned'
+      preLoaderRoute: typeof GuiderHalebopLaggsNedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/forsta-mobilabonnemang-barn': {
+      id: '/guider/forsta-mobilabonnemang-barn'
+      path: '/guider/forsta-mobilabonnemang-barn'
+      fullPath: '/guider/forsta-mobilabonnemang-barn'
+      preLoaderRoute: typeof GuiderForstaMobilabonnemangBarnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/forhandla-med-operatoren': {
+      id: '/guider/forhandla-med-operatoren'
+      path: '/guider/forhandla-med-operatoren'
+      fullPath: '/guider/forhandla-med-operatoren'
+      preLoaderRoute: typeof GuiderForhandlaMedOperatorenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/delad-surf-foretag': {
+      id: '/guider/delad-surf-foretag'
+      path: '/guider/delad-surf-foretag'
+      fullPath: '/guider/delad-surf-foretag'
+      preLoaderRoute: typeof GuiderDeladSurfForetagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/byta-operator-med-bindningstid': {
+      id: '/guider/byta-operator-med-bindningstid'
+      path: '/guider/byta-operator-med-bindningstid'
+      fullPath: '/guider/byta-operator-med-bindningstid'
+      preLoaderRoute: typeof GuiderBytaOperatorMedBindningstidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/byta-operator-behalla-nummer': {
+      id: '/guider/byta-operator-behalla-nummer'
+      path: '/guider/byta-operator-behalla-nummer'
+      fullPath: '/guider/byta-operator-behalla-nummer'
+      preLoaderRoute: typeof GuiderBytaOperatorBehallaNummerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/bindningstid-uppsagningstid': {
+      id: '/guider/bindningstid-uppsagningstid'
+      path: '/guider/bindningstid-uppsagningstid'
+      fullPath: '/guider/bindningstid-uppsagningstid'
+      preLoaderRoute: typeof GuiderBindningstidUppsagningstidRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/behover-jag-5g': {
+      id: '/guider/behover-jag-5g'
+      path: '/guider/behover-jag-5g'
+      fullPath: '/guider/behover-jag-5g'
+      preLoaderRoute: typeof GuiderBehoverJag5gRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/bedrageri-sim-swap-och-bluffsamtal': {
+      id: '/guider/bedrageri-sim-swap-och-bluffsamtal'
+      path: '/guider/bedrageri-sim-swap-och-bluffsamtal'
+      fullPath: '/guider/bedrageri-sim-swap-och-bluffsamtal'
+      preLoaderRoute: typeof GuiderBedrageriSimSwapOchBluffsamtalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/basta-tackning-sverige': {
+      id: '/guider/basta-tackning-sverige'
+      path: '/guider/basta-tackning-sverige'
+      fullPath: '/guider/basta-tackning-sverige'
+      preLoaderRoute: typeof GuiderBastaTackningSverigeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/avdrag-mobilabonnemang-enskild-firma': {
+      id: '/guider/avdrag-mobilabonnemang-enskild-firma'
+      path: '/guider/avdrag-mobilabonnemang-enskild-firma'
+      fullPath: '/guider/avdrag-mobilabonnemang-enskild-firma'
+      preLoaderRoute: typeof GuiderAvdragMobilabonnemangEnskildFirmaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/angerratt-mobilabonnemang': {
+      id: '/guider/angerratt-mobilabonnemang'
+      path: '/guider/angerratt-mobilabonnemang'
+      fullPath: '/guider/angerratt-mobilabonnemang'
+      preLoaderRoute: typeof GuiderAngerrattMobilabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guider/2g-3g-nedslackning': {
+      id: '/guider/2g-3g-nedslackning'
+      path: '/guider/2g-3g-nedslackning'
+      fullPath: '/guider/2g-3g-nedslackning'
+      preLoaderRoute: typeof Guider2g3gNedslackningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/foretag_/enskild-firma': {
+      id: '/foretag_/enskild-firma'
+      path: '/foretag/enskild-firma'
+      fullPath: '/foretag/enskild-firma'
+      preLoaderRoute: typeof ForetagEnskildFirmaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/foretag_/billigaste-foretagsabonnemang': {
+      id: '/foretag_/billigaste-foretagsabonnemang'
+      path: '/foretag/billigaste-foretagsabonnemang'
+      fullPath: '/foretag/billigaste-foretagsabonnemang'
+      preLoaderRoute: typeof ForetagBilligasteForetagsabonnemangRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chatt': {
       id: '/api/chatt'
       path: '/api/chatt'
@@ -517,29 +1669,93 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R5gAbonnemangRoute: R5gAbonnemangRoute,
   AnvandarvillkorRoute: AnvandarvillkorRoute,
+  BarnRoute: BarnRoute,
+  BastaMobilabonnemangRoute: BastaMobilabonnemangRoute,
+  BilligasteMobilabonnemangRoute: BilligasteMobilabonnemangRoute,
   CookiepolicyRoute: CookiepolicyRoute,
+  EsimRoute: EsimRoute,
+  FamiljeabonnemangRoute: FamiljeabonnemangRoute,
   FaqRoute: FaqRoute,
   ForetagRoute: ForetagRoute,
   IntegritetspolicyRoute: IntegritetspolicyRoute,
   KontaktRoute: KontaktRoute,
+  KontantkortRoute: KontantkortRoute,
+  ObegransadSurfRoute: ObegransadSurfRoute,
   OmOssRoute: OmOssRoute,
   OrdlistaRoute: OrdlistaRoute,
+  PensionarRoute: PensionarRoute,
+  PrisindexRoute: PrisindexRoute,
   SaFungerarMobilpoolenRoute: SaFungerarMobilpoolenRoute,
   SaJamforViRoute: SaJamforViRoute,
   SaTjanarViPengarRoute: SaTjanarViPengarRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  UngdomRoute: UngdomRoute,
+  UtanBindningstidRoute: UtanBindningstidRoute,
   ApiChattRoute: ApiChattRoute,
+  ForetagBilligasteForetagsabonnemangRoute:
+    ForetagBilligasteForetagsabonnemangRoute,
+  ForetagEnskildFirmaRoute: ForetagEnskildFirmaRoute,
+  Guider2g3gNedslackningRoute: Guider2g3gNedslackningRoute,
+  GuiderAngerrattMobilabonnemangRoute: GuiderAngerrattMobilabonnemangRoute,
+  GuiderAvdragMobilabonnemangEnskildFirmaRoute:
+    GuiderAvdragMobilabonnemangEnskildFirmaRoute,
+  GuiderBastaTackningSverigeRoute: GuiderBastaTackningSverigeRoute,
+  GuiderBedrageriSimSwapOchBluffsamtalRoute:
+    GuiderBedrageriSimSwapOchBluffsamtalRoute,
+  GuiderBehoverJag5gRoute: GuiderBehoverJag5gRoute,
+  GuiderBindningstidUppsagningstidRoute: GuiderBindningstidUppsagningstidRoute,
+  GuiderBytaOperatorBehallaNummerRoute: GuiderBytaOperatorBehallaNummerRoute,
+  GuiderBytaOperatorMedBindningstidRoute:
+    GuiderBytaOperatorMedBindningstidRoute,
+  GuiderDeladSurfForetagRoute: GuiderDeladSurfForetagRoute,
+  GuiderForhandlaMedOperatorenRoute: GuiderForhandlaMedOperatorenRoute,
+  GuiderForstaMobilabonnemangBarnRoute: GuiderForstaMobilabonnemangBarnRoute,
+  GuiderHalebopLaggsNedRoute: GuiderHalebopLaggsNedRoute,
+  GuiderHurMycketSurfDrarApparRoute: GuiderHurMycketSurfDrarApparRoute,
+  GuiderJobbmobilFormansskattRoute: GuiderJobbmobilFormansskattRoute,
+  GuiderKampanjprisEfterKampanjenRoute: GuiderKampanjprisEfterKampanjenRoute,
+  GuiderKlagaPaOperatorenRoute: GuiderKlagaPaOperatorenRoute,
+  GuiderKontantkortEllerAbonnemangRoute: GuiderKontantkortEllerAbonnemangRoute,
+  GuiderMobilMedEllerUtanAbonnemangRoute:
+    GuiderMobilMedEllerUtanAbonnemangRoute,
+  GuiderMobilmarknadenISiffrorRoute: GuiderMobilmarknadenISiffrorRoute,
+  GuiderMomsMobilabonnemangRoute: GuiderMomsMobilabonnemangRoute,
+  GuiderNarSurfenTarSlutRoute: GuiderNarSurfenTarSlutRoute,
+  GuiderOverlataAbonnemangTillForetagRoute:
+    GuiderOverlataAbonnemangTillForetagRoute,
+  GuiderPrishojningMobilabonnemangRoute: GuiderPrishojningMobilabonnemangRoute,
+  GuiderPrivatEllerForetagsabonnemangRoute:
+    GuiderPrivatEllerForetagsabonnemangRoute,
+  GuiderRacker5GbSurfRoute: GuiderRacker5GbSurfRoute,
+  GuiderRingaUtomlandsBilligtRoute: GuiderRingaUtomlandsBilligtRoute,
+  GuiderSankMobilrakningenRoute: GuiderSankMobilrakningenRoute,
+  GuiderSparadSurfDubbelSurfRoute: GuiderSparadSurfDubbelSurfRoute,
+  GuiderSparraKopBarnMobilRoute: GuiderSparraKopBarnMobilRoute,
+  GuiderSurfaIEuRoute: GuiderSurfaIEuRoute,
+  GuiderSurfaUtanforEuRoute: GuiderSurfaUtanforEuRoute,
+  GuiderVadArEsimRoute: GuiderVadArEsimRoute,
+  GuiderVaxelEllerMobilRoute: GuiderVaxelEllerMobilRoute,
+  GuiderVilketNatAnvanderOperatorenRoute:
+    GuiderVilketNatAnvanderOperatorenRoute,
+  GuiderVirtuellaOperatorerRoute: GuiderVirtuellaOperatorerRoute,
+  GuiderWifiSamtalOchDaligTackningRoute: GuiderWifiSamtalOchDaligTackningRoute,
   JamforSlugRoute: JamforSlugRoute,
   NatSlugRoute: NatSlugRoute,
   OperatorerSlugRoute: OperatorerSlugRoute,
   SagaUppSlugRoute: SagaUppSlugRoute,
   SkribentLeonHallstromRoute: SkribentLeonHallstromRoute,
+  VerktygBetalarJagForMycketRoute: VerktygBetalarJagForMycketRoute,
+  VerktygForetagskalkylatorRoute: VerktygForetagskalkylatorRoute,
+  VerktygHurMycketSurfBehoverJagRoute: VerktygHurMycketSurfBehoverJagRoute,
+  VerktygKampanjkalkylatorRoute: VerktygKampanjkalkylatorRoute,
   GuiderIndexRoute: GuiderIndexRoute,
   JamforIndexRoute: JamforIndexRoute,
   NatIndexRoute: NatIndexRoute,
   OperatorerIndexRoute: OperatorerIndexRoute,
   SagaUppIndexRoute: SagaUppIndexRoute,
+  VerktygIndexRoute: VerktygIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
