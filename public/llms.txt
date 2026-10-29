@@ -20,6 +20,16 @@ Fakta om tjänsten:
 - [Mobilabonnemang 100 GB](https://mobilpoolen.se/surf/100-gb): Billigaste abonnemangen med 100 GB surf, prisskillnaden till nästa nivå och billigast per mobilnät.
 - [Kampanjer](https://mobilpoolen.se/kampanjer): Alla kampanjer på mobilabonnemang just nu, sorterade på vad du betalar första året, med pris efter kampanjen.
 - [Mobilt bredband](https://mobilpoolen.se/mobilt-bredband): Mobilt bredband med router eller surf-SIM jämfört på snittpris första året, routerns pris, bindningstid och fritidshus.
+- [Mobil med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang): Mobiler med abonnemang hos operatörerna jämförda på totalkostnad, och mot att köpa mobilen själv.
+- [Apple iPhone 17 med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/iphone-17): Pris för Apple iPhone 17 hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Apple iPhone 17 Pro med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/iphone-17-pro): Pris för Apple iPhone 17 Pro hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Apple iPhone 18 Pro med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/iphone-18-pro): Pris för Apple iPhone 18 Pro hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Apple iPhone 17e med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/iphone-17e): Pris för Apple iPhone 17e hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Apple iPhone 16 med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/iphone-16): Pris för Apple iPhone 16 hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Samsung Galaxy S26 med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/galaxy-s26): Pris för Samsung Galaxy S26 hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Samsung Galaxy A57 5G med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/galaxy-a57-5g): Pris för Samsung Galaxy A57 5G hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Samsung Galaxy A37 5G med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/galaxy-a37-5g): Pris för Samsung Galaxy A37 5G hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
+- [Google Pixel 11 med abonnemang](https://mobilpoolen.se/mobil-med-abonnemang/pixel-11): Pris för Google Pixel 11 hos varje operatör, totalkostnad och jämförelse med tillverkarens pris.
 - [Utan bindningstid](https://mobilpoolen.se/utan-bindningstid): Mobilabonnemang utan bindningstid och vad lagen säger om bindning och uppsägning.
 - [Familjeabonnemang](https://mobilpoolen.se/familjeabonnemang): Abonnemang för familjer, extra användare och delad surf.
 - [Mobilabonnemang för barn](https://mobilpoolen.se/barn): Abonnemang för barn, spärrar och pris.

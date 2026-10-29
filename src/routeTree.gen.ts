@@ -41,6 +41,7 @@ import { Route as VerktygIndexRouteImport } from './routes/verktyg.index'
 import { Route as SagaUppIndexRouteImport } from './routes/saga-upp.index'
 import { Route as OperatorerIndexRouteImport } from './routes/operatorer.index'
 import { Route as NatIndexRouteImport } from './routes/nat.index'
+import { Route as MobilMedAbonnemangIndexRouteImport } from './routes/mobil-med-abonnemang.index'
 import { Route as JamforIndexRouteImport } from './routes/jamfor.index'
 import { Route as GuiderIndexRouteImport } from './routes/guider.index'
 import { Route as VerktygKampanjkalkylatorRouteImport } from './routes/verktyg.kampanjkalkylator'
@@ -52,6 +53,7 @@ import { Route as SkribentLeonHallstromRouteImport } from './routes/skribent.leo
 import { Route as SagaUppSlugRouteImport } from './routes/saga-upp.$slug'
 import { Route as OperatorerSlugRouteImport } from './routes/operatorer.$slug'
 import { Route as NatSlugRouteImport } from './routes/nat.$slug'
+import { Route as MobilMedAbonnemangModellRouteImport } from './routes/mobil-med-abonnemang.$modell'
 import { Route as JamforSlugRouteImport } from './routes/jamfor.$slug'
 import { Route as GuiderWifiSamtalOchDaligTackningRouteImport } from './routes/guider.wifi-samtal-och-dalig-tackning'
 import { Route as GuiderVirtuellaOperatorerRouteImport } from './routes/guider.virtuella-operatorer'
@@ -255,6 +257,11 @@ const NatIndexRoute = NatIndexRouteImport.update({
   path: '/nat/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MobilMedAbonnemangIndexRoute = MobilMedAbonnemangIndexRouteImport.update({
+  id: '/mobil-med-abonnemang/',
+  path: '/mobil-med-abonnemang/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JamforIndexRoute = JamforIndexRouteImport.update({
   id: '/jamfor/',
   path: '/jamfor/',
@@ -314,6 +321,12 @@ const NatSlugRoute = NatSlugRouteImport.update({
   path: '/nat/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MobilMedAbonnemangModellRoute =
+  MobilMedAbonnemangModellRouteImport.update({
+    id: '/mobil-med-abonnemang/$modell',
+    path: '/mobil-med-abonnemang/$modell',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const JamforSlugRoute = JamforSlugRouteImport.update({
   id: '/jamfor/$slug',
   path: '/jamfor/$slug',
@@ -617,6 +630,7 @@ export interface FileRoutesByFullPath {
   '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
   '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
+  '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
@@ -628,6 +642,7 @@ export interface FileRoutesByFullPath {
   '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider/': typeof GuiderIndexRoute
   '/jamfor/': typeof JamforIndexRoute
+  '/mobil-med-abonnemang/': typeof MobilMedAbonnemangIndexRoute
   '/nat/': typeof NatIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
@@ -703,6 +718,7 @@ export interface FileRoutesByTo {
   '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
   '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
+  '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
@@ -714,6 +730,7 @@ export interface FileRoutesByTo {
   '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider': typeof GuiderIndexRoute
   '/jamfor': typeof JamforIndexRoute
+  '/mobil-med-abonnemang': typeof MobilMedAbonnemangIndexRoute
   '/nat': typeof NatIndexRoute
   '/operatorer': typeof OperatorerIndexRoute
   '/saga-upp': typeof SagaUppIndexRoute
@@ -790,6 +807,7 @@ export interface FileRoutesById {
   '/guider/virtuella-operatorer': typeof GuiderVirtuellaOperatorerRoute
   '/guider/wifi-samtal-och-dalig-tackning': typeof GuiderWifiSamtalOchDaligTackningRoute
   '/jamfor/$slug': typeof JamforSlugRoute
+  '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
@@ -801,6 +819,7 @@ export interface FileRoutesById {
   '/verktyg/kampanjkalkylator': typeof VerktygKampanjkalkylatorRoute
   '/guider/': typeof GuiderIndexRoute
   '/jamfor/': typeof JamforIndexRoute
+  '/mobil-med-abonnemang/': typeof MobilMedAbonnemangIndexRoute
   '/nat/': typeof NatIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
@@ -878,6 +897,7 @@ export interface FileRouteTypes {
     | '/guider/virtuella-operatorer'
     | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
+    | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
@@ -889,6 +909,7 @@ export interface FileRouteTypes {
     | '/verktyg/kampanjkalkylator'
     | '/guider/'
     | '/jamfor/'
+    | '/mobil-med-abonnemang/'
     | '/nat/'
     | '/operatorer/'
     | '/saga-upp/'
@@ -964,6 +985,7 @@ export interface FileRouteTypes {
     | '/guider/virtuella-operatorer'
     | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
+    | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
@@ -975,6 +997,7 @@ export interface FileRouteTypes {
     | '/verktyg/kampanjkalkylator'
     | '/guider'
     | '/jamfor'
+    | '/mobil-med-abonnemang'
     | '/nat'
     | '/operatorer'
     | '/saga-upp'
@@ -1050,6 +1073,7 @@ export interface FileRouteTypes {
     | '/guider/virtuella-operatorer'
     | '/guider/wifi-samtal-och-dalig-tackning'
     | '/jamfor/$slug'
+    | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
@@ -1061,6 +1085,7 @@ export interface FileRouteTypes {
     | '/verktyg/kampanjkalkylator'
     | '/guider/'
     | '/jamfor/'
+    | '/mobil-med-abonnemang/'
     | '/nat/'
     | '/operatorer/'
     | '/saga-upp/'
@@ -1137,6 +1162,7 @@ export interface RootRouteChildren {
   GuiderVirtuellaOperatorerRoute: typeof GuiderVirtuellaOperatorerRoute
   GuiderWifiSamtalOchDaligTackningRoute: typeof GuiderWifiSamtalOchDaligTackningRoute
   JamforSlugRoute: typeof JamforSlugRoute
+  MobilMedAbonnemangModellRoute: typeof MobilMedAbonnemangModellRoute
   NatSlugRoute: typeof NatSlugRoute
   OperatorerSlugRoute: typeof OperatorerSlugRoute
   SagaUppSlugRoute: typeof SagaUppSlugRoute
@@ -1148,6 +1174,7 @@ export interface RootRouteChildren {
   VerktygKampanjkalkylatorRoute: typeof VerktygKampanjkalkylatorRoute
   GuiderIndexRoute: typeof GuiderIndexRoute
   JamforIndexRoute: typeof JamforIndexRoute
+  MobilMedAbonnemangIndexRoute: typeof MobilMedAbonnemangIndexRoute
   NatIndexRoute: typeof NatIndexRoute
   OperatorerIndexRoute: typeof OperatorerIndexRoute
   SagaUppIndexRoute: typeof SagaUppIndexRoute
@@ -1380,6 +1407,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NatIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mobil-med-abonnemang/': {
+      id: '/mobil-med-abonnemang/'
+      path: '/mobil-med-abonnemang'
+      fullPath: '/mobil-med-abonnemang/'
+      preLoaderRoute: typeof MobilMedAbonnemangIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/jamfor/': {
       id: '/jamfor/'
       path: '/jamfor'
@@ -1455,6 +1489,13 @@ declare module '@tanstack/react-router' {
       path: '/nat/$slug'
       fullPath: '/nat/$slug'
       preLoaderRoute: typeof NatSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobil-med-abonnemang/$modell': {
+      id: '/mobil-med-abonnemang/$modell'
+      path: '/mobil-med-abonnemang/$modell'
+      fullPath: '/mobil-med-abonnemang/$modell'
+      preLoaderRoute: typeof MobilMedAbonnemangModellRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/jamfor/$slug': {
@@ -1825,6 +1866,7 @@ const rootRouteChildren: RootRouteChildren = {
   GuiderVirtuellaOperatorerRoute: GuiderVirtuellaOperatorerRoute,
   GuiderWifiSamtalOchDaligTackningRoute: GuiderWifiSamtalOchDaligTackningRoute,
   JamforSlugRoute: JamforSlugRoute,
+  MobilMedAbonnemangModellRoute: MobilMedAbonnemangModellRoute,
   NatSlugRoute: NatSlugRoute,
   OperatorerSlugRoute: OperatorerSlugRoute,
   SagaUppSlugRoute: SagaUppSlugRoute,
@@ -1836,6 +1878,7 @@ const rootRouteChildren: RootRouteChildren = {
   VerktygKampanjkalkylatorRoute: VerktygKampanjkalkylatorRoute,
   GuiderIndexRoute: GuiderIndexRoute,
   JamforIndexRoute: JamforIndexRoute,
+  MobilMedAbonnemangIndexRoute: MobilMedAbonnemangIndexRoute,
   NatIndexRoute: NatIndexRoute,
   OperatorerIndexRoute: OperatorerIndexRoute,
   SagaUppIndexRoute: SagaUppIndexRoute,

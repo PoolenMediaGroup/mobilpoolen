@@ -27,6 +27,7 @@ const COLS: { title: string; links: FooterLink[] }[] = [
       { label: "Kontantkort", to: "/kontantkort" },
       { label: "Kampanjer just nu", to: "/kampanjer" },
       { label: "Mobilt bredband", to: "/mobilt-bredband" },
+      { label: "Mobil med abonnemang", to: "/mobil-med-abonnemang" },
     ],
   },
   {

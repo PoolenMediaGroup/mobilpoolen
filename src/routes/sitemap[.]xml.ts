@@ -5,6 +5,7 @@ import { FASTA_SIDOR } from "@/lib/sidor";
 import { MOBILNAT, OPERATORER } from "@/lib/mobil/data";
 import { GILTIGA_PAR, parSlug } from "@/lib/mobil/sidtexter";
 import { SURF_NIVAER } from "@/lib/mobil/surf";
+import { TELEFONMODELLER } from "@/lib/mobil/telefon-data";
 
 const BASE_URL = "https://mobilpoolen.se";
 
@@ -18,6 +19,10 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...OPERATORER.filter((o) => o.aktiv).map((o) => ({
             path: `/saga-upp/${o.slug}`,
             lastmod: o.kontrollerad,
+          })),
+          ...TELEFONMODELLER.map((m) => ({
+            path: `/mobil-med-abonnemang/${m.slug}`,
+            lastmod: "2026-10-29",
           })),
           ...SURF_NIVAER.map((n) => ({ path: `/surf/${n.slug}`, lastmod: "2026-10-29" })),
           ...Object.keys(MOBILNAT).map((id) => ({ path: `/nat/${id}`, lastmod: "2026-10-29" })),
