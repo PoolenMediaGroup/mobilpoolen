@@ -42,7 +42,7 @@ const FAQ = [
   },
   {
     q: "Vad gör jag om barnet har fått en dyr räkning?",
-    a: "Kontakta operatören direkt, be om en specificerad faktura och fråga vad posterna är. Bestrid det du anser är fel innan förfallodagen. Få du inte rätt, kan du få hjälp av Telekområdgivarna.",
+    a: "Kontakta operatören direkt, be om en specificerad faktura och fråga vad posterna är. Bestrid det du anser är fel innan förfallodagen. Får du inte rätt kan du få hjälp av Telekområdgivarna.",
   },
   {
     q: "Vad gör jag med bluff-sms på barnets mobil?",

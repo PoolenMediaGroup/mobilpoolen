@@ -90,7 +90,7 @@ function Sida() {
           Billigast är {BILLIGAST ? vem(BILLIGAST) : "–"} för{" "}
           {BILLIGAST ? kr(snittForstaAret(BILLIGAST)) : ""} i månaden i snitt första året
           {B10 ? `, och med minst 10 GB ${vem(B10)} för ${kr(snittForstaAret(B10))}` : ""}. Tele2s
-          och Telenors gemensamma 5G-nät täcker {TACKNING.n4m5gYta} procent av Sveriges yta, och{" "}
+          och Telenors gemensamma 5G-nät täcker {TACKNING.n4m5gYta} procent av Sveriges landyta, och{" "}
           {MARKNAD.femgAndel} procent av abonnemangen använde 5G 2025.
         </p>
       }

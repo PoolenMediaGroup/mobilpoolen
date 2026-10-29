@@ -22,7 +22,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 - Standardsortering: snittpris per månad första året (`snittForstaAret`), med kampanjens längd och startavgift. Totalkostnad 24 mån finns i detaljerna.
 - Priser i löptext ska räknas fram ur datan, inte skrivas för hand, så att texten följer priserna.
 - Kontrollerade marknadsfakta (PTS, Opensignal, SKI, LEK, roaming) ligger i `src/lib/mobil/fakta.ts` med källor. Ändra där, så ändras de överallt.
-- **Status 29 oktober 2026:** Telenor, Vimla, Fello och Lingon saknar kontrollerade priser (sajterna gick inte att läsa automatiskt). De har operatörssidor men finns inte i prisjämförelsen. Halebop avvecklas (Telia, juni 2026) och är `aktiv: false`. Företagspriser hos Telia, Tele2 och Hallon anges utan uppgift om moms (`moms: "okand"`).
+- **Status 29 oktober 2026:** 139 privata abonnemang från 15 operatörer och 21 företagsabonnemang. Telenor, Vimla, Fello, Lingon, Chilimobil, Comviq och Telia kompletterades samma dag (`research/komplettering-a.json` och `-b.json`), som ersätter operatörens abonnemang i bygget. Halebop avvecklas (Telia, juni 2026) och är `aktiv: false`. Företagspriser hos Telia, Tele2 och Hallon anges utan uppgift om moms (`moms: "okand"`). Fellos kampanj gäller till 1 november 2026 och Comviqs till 10 november 2026: kontrollera och uppdatera efter de datumen.
 
 ## Uppdatera priser
 

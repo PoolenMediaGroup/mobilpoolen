@@ -8,6 +8,22 @@ for f in ['operatorer-stora.json','operatorer-mvno.json']:
     for o in json.load(open(R+f))['operatorer']: d[o['slug']]=o
 foretag=json.load(open(R+'foretag.json'))
 
+# Kompletteringar (kontrollerade på operatörernas egna sidor). En komplettering
+# ersätter operatörens abonnemang helt och fyller i fält som saknades.
+for fil in ['komplettering-a.json','komplettering-b.json']:
+    if not os.path.exists(R+fil): continue
+    for k in json.load(open(R+fil))['operatorer']:
+        bas=d.setdefault(k['slug'],{'slug':k['slug'],'namn':k.get('namn',k['slug']),'abonnemang':[]})
+        if k.get('abonnemang'): bas['abonnemang']=k['abonnemang']
+        for falt,v in k.items():
+            if falt in ('abonnemang','slug','noteringar'): continue
+            if falt in ('kallor','osakert'):
+                bas[falt]=list(dict.fromkeys((bas.get(falt) or [])+(v or [])))
+            elif falt=='villkor':
+                bas['villkor']={**(bas.get('villkor') or {}),**{a:b for a,b in (v or {}).items() if b}}
+            elif v not in (None,'',[],{}):
+                bas[falt]=v
+
 def ren(t):
     if t is None: return None
     t=re.sub(r'\s*\[KONTROLLERA[^\]]*\]','',t)
@@ -17,9 +33,10 @@ def ren(t):
 NAT={'telia':'telia','tele2':'tele2','telenor':'telenor','tre':'tre','halebop':'telia','comviq':'tele2','vimla':'telenor','hallon':'tre','fello':'telia','chilimobil':'tre','lycamobile':'telenor','mybeat':'telenor','tellus':'tele2','fibio':'telenor','katshing':'tre','lingon':'tele2'}
 GRUPP={'telia':'natagare','tele2':'natagare','telenor':'natagare','tre':'natagare','halebop':'varumarke','comviq':'varumarke','vimla':'varumarke','hallon':'varumarke','fello':'varumarke'}
 NAMN={'tre':'Tre','lycamobile':'Lyca Mobile','mybeat':'My Beat','tellus':'Tellus Mobil','lingon':'Lingon Mobil'}
-AGARE={'tre':'Hi3G Access AB','telia':'Telia Company','tele2':'Tele2','telenor':'Telenor','comviq':'Tele2','hallon':'Hi3G Access AB (Tre)','fello':'Telia Sverige AB','halebop':'Telia Company','vimla':'Telenor'}
+AGARE={'chilimobil':'Chilimobil Sweden AB','mybeat':'My Beat AB','tellus':'Tell Us Mobil AB','fibio':'Fibio Nordic AB','katshing':'Uppgift saknas','lingon':'Berry Telekom AB enligt sajtens sidfot','lycamobile':'Lyca Mobile (Lyca Group)','tre':'Hi3G Access AB','telia':'Telia Company','tele2':'Tele2','telenor':'Telenor','comviq':'Tele2','hallon':'Hi3G Access AB (Tre)','fello':'Telia Sverige AB','halebop':'Telia Company','vimla':'Telenor'}
 WEBB={'telia':'https://www.telia.se/mobilabonnemang','tele2':'https://www.tele2.se/mobilabonnemang','telenor':'https://www.telenor.se/handla/mobilabonnemang/','tre':'https://www.tre.se/mobilabonnemang','halebop':'https://www.halebop.se/','comviq':'https://www.comviq.se/mobilabonnemang','vimla':'https://vimla.se/','hallon':'https://www.hallon.se/mobilabonnemang','fello':'https://www.fello.se/','chilimobil':'https://www.chilimobil.se/','lycamobile':'https://www.lycamobile.se/','mybeat':'https://www.mybeat.se/','tellus':'https://www.tellusmobil.se/','fibio':'https://www.fibio.se/','katshing':'https://www.katshing.se/','lingon':'https://www.lingonmobil.se/'}
 HOPPA_OVER=set(['a3-bredband2'])
+PREFIX={'tellus':['Tellus Mobil','Tellus'],'lycamobile':['Lyca'],'chilimobil':['Chilimobil'],'telia':['Telia'],'comviq':['Comviq Mobilabonnemang','Comviq'],'hallon':['Hallon'],'lingon':['Lingon Mobil'],'vimla':['Vimla'],'fello':['Fello'],'telenor':['Telenor'],'halebop':['Halebop']}
 UTAN_JAMFORELSE={'halebop'}  # läggs ned 2026
 
 def num(x):
@@ -35,6 +52,7 @@ def malgrupp(namn,ovrigt):
     t=(namn+' '+(ovrigt or '')).lower(); m=[]
     if 'student' in t: m+=['student','ung']
     if 'ungdom' in t or 'under 18' in t or 'under 26' in t: m+=['ung']
+    if 'under 18' in t: m+=['barn']
     if 'senior' in t or '55' in namn or '65+' in t or '55+' in t: m+=['senior']
     if 'barn' in t: m+=['barn']
     if 'familj' in t: m+=['familj']
@@ -52,22 +70,21 @@ for slug,o in d.items():
         if 'extra' in nl or 'per extra' in nl or 'familj' in nl and 'medlem' in nl: continue
         if 'week' in nl: continue
         if slug=='lycamobile' and 'endast data' in nl: continue
-        if slug=='chilimobil' and ('duo' in nl or 'full fart' in nl and 'års' not in nl): continue
+        if slug=='chilimobil' and ('duo' in nl or 'viaplay' in nl): continue
         if slug=='katshing' and 'familj' in nl: continue
         gb=None if a.get('obegransad') else num(a.get('gb'))
         if gb is None and not a.get('obegransad'): continue
         km=a.get('kampanjMan'); kp=a.get('kampanjpris')
         if kp is None or not km: kp=None; km=None
-        p=dict(id=plan_id(slug,n),operator=slug,namn=re.sub(r'\s*\[KONTROLLERA\]','',n).replace('Hallon ','').replace('Comviq ','').replace('Halebop ','').replace('Tellus Mobil ','').replace('Tellus ','').replace('Lyca ','').strip(),
+        rent=re.sub(r'\s*\[KONTROLLERA\]','',n).strip()
+        for prefix in PREFIX.get(slug,[])+[NAMN.get(slug,o['namn'])]:
+            if rent.startswith(prefix+' '): rent=rent[len(prefix)+1:]; break
+        rent=re.sub(r'^Mobilabonnemang ','',rent).replace('Studentabonnemang','Student')
+        p=dict(id=plan_id(slug,n),operator=slug,namn=rent,
             kundtyp='privat',gb=gb,pris=a['pris'],kampanjpris=kp,kampanjManader=km,kampanjText=ren(a.get('kampanjText')),
             bindning=None if re.search(r'[Bb]indning( ej angiven)?\s*\[KONTROLLERA',a.get('ovrigt') or '') else a.get('bindning'),euGb=num(a.get('euGb')),friaSamtal=True,femg=bool(o.get('femg')),
             hastighet=ren(a.get('hastighet')),notis=ren(a.get('ovrigt')),kalla=a.get('kalla') or WEBB.get(slug),
             malgrupp=malgrupp(n,a.get('ovrigt')),kontantkort=(slug=='lycamobile'))
-        if slug=='comviq' and kp:
-            # Kampanjen kräver 12 mån bindning: två varianter
-            base=dict(p); base['kampanjpris']=None; base['kampanjManader']=None; base['kampanjText']=None; base['bindning']=0
-            camp=dict(p); camp['id']=p['id']+'-kampanj'; camp['namn']=p['namn']+' (kampanj)'; camp['bindning']=12
-            plans+= [base,camp]; continue
         plans.append(p)
 
 def ts(v):
@@ -118,6 +135,13 @@ for op,namn,gb,pris,kp,km,b,eu,moms,notis,kalla in F:
 SKI_P={'vimla':82.5,'fello':81.7,'comviq':75.5,'halebop':74.1,'hallon':72.3,'telia':66.6,'telenor':63.9,'tele2':63.3,'tre':61.5}
 SKI_F={'telia':70.1,'telenor':65.2,'tele2':65.1,'tre':65.0}
 
+def vk(v):
+    v={k:ren(x) for k,x in (v or {}).items() if isinstance(x,str)}
+    ut={k:v.pop(k,None) for k in ('uppsagningstid','startavgift','ovrigt')}
+    extra=[x for x in v.values() if x]
+    if extra: ut['ovrigt']=' '.join([ut['ovrigt'] or '']+extra).strip()
+    return ut
+
 def opts(slug,o):
     namn=NAMN.get(slug,o['namn'].split(' (')[0])
     priv=[p for p in plans if p['operator']==slug]
@@ -129,7 +153,7 @@ def opts(slug,o):
       harForetag=slug in ('telia','tele2','telenor','tre','hallon'),webb=WEBB.get(slug,(o.get('kallor') or [''])[0]),
       kundtjanst=ren(o.get('kundtjanst')),om=ren(o.get('om')) or '',starkor=[ren(x) for x in (o.get('starkor') or []) if ren(x)],
       svagheter=[ren(x) for x in (o.get('svagheter') or []) if ren(x)],
-      villkor={k:ren(v) for k,v in (o.get('villkor') or {}).items()},kallor=o.get('kallor') or [],kontrollerad=o.get('kontrollerad','2026-10-29'),
+      villkor=vk(o.get('villkor')),kallor=o.get('kallor') or [],kontrollerad=o.get('kontrollerad','2026-10-29'),
       osakert=o.get('osakert') or [],partner=False,aktiv=aktiv,status=status,skiPrivat=SKI_P.get(slug),skiForetag=SKI_F.get(slug),
       prisKontrollerade=len(priv)>0)
 

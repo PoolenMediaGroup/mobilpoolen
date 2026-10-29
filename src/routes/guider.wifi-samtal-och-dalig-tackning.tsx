@@ -154,7 +154,7 @@ function Page() {
         </li>
         <li>
           <strong>Slå på 4G-samtal (VoLTE).</strong> Sedan 2G och 3G stängdes i de flesta nät går
-          samtalen över 4G. En telefon som ringer över ett gammalt nät tappar lättare samtal. Läs
+          samtalen över 4G. Utan VoLTE kan telefonen inte ringa i Tele2s, Telenors och Tres nät. Läs
           mer i guiden om <A href="/guider/2g-3g-nedslackning">2G- och 3G-nedsläckningen</A>.
         </li>
         <li>

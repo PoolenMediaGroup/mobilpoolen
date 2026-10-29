@@ -223,9 +223,8 @@ function Page() {
       <H3>Andra kampanjer med dubbel surf</H3>
       <P>
         Fello anger dubbel surf i 24 månader för nya beställningar, i en kampanj som gäller till och
-        med 1 november 2026. Fellos aktuella surfmängder och priser har vi inte kunnat läsa, så
-        Fello finns inte i tabellen. Läs alltid kampanjvillkoren hos operatören. Vad som händer med
-        priset efteråt beskrivs i guiden om{" "}
+        med 1 november 2026. Vimla anger dubbel surf i 24 månader för nya kunder. Läs alltid
+        kampanjvillkoren hos operatören. Vad som händer med priset efteråt beskrivs i guiden om{" "}
         <A href="/guider/kampanjpris-efter-kampanjen">kampanjpris efter kampanjen</A>.
       </P>
 

@@ -131,7 +131,7 @@ function Sida() {
         },
         {
           href: "/guider/overlata-abonnemang-till-foretag",
-          label: "Flytta numret till firman",
+          label: "Behålla numret i firman",
           text: "Överlåtelse från privat till företag.",
         },
         {
@@ -261,10 +261,13 @@ function Sida() {
         <Link to={"/foretag" as never}>mobilabonnemang för företag</Link>.
       </p>
 
-      <h2>Flytta numret till firman</h2>
+      <h2>Behålla ditt nummer i firman</h2>
       <p>
-        Har du ett privat nummer som kunderna redan känner till kan du överlåta abonnemanget till
-        firman. Hos Tre görs det gratis i Mitt3 med BankID, och den återstående bindningstiden
+        En enskild firma är samma juridiska person som du, så ditt privata abonnemang kan stå kvar
+        och dras av till den del det används i verksamheten. Vill du i stället ha ett
+        företagsabonnemang på firmans organisationsnummer och behålla numret, fråga operatören hur
+        de gör bytet. Startar du sedan ett aktiebolag är det en överlåtelse till en annan juridisk
+        person. Hos Tre görs en överlåtelse i Mitt3 med BankID, och den återstående bindningstiden
         följer med. Läs mer i guiden om att{" "}
         <Link to={"/guider/overlata-abonnemang-till-foretag" as never}>
           överlåta ett abonnemang till företag

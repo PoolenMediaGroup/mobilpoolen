@@ -110,7 +110,7 @@ export const FAQ_GROUPS = [
       {
         q: "Får operatören höja priset under avtalstiden?",
         a: "Ja, om avtalet tillåter det, men du ska få besked minst en månad innan ändringen gäller. Du har då rätt att säga upp avtalet utan extra kostnad, även om du har bindningstid kvar, om ändringen inte enbart är till din fördel.",
-        kalla: "12 kap. 17 § lagen (2022:482) om elektronisk kommunikation",
+        kalla: "12 kap. 12 § lagen (2022:482) om elektronisk kommunikation",
         href: "/guider/prishojning-mobilabonnemang",
       },
       {

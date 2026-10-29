@@ -169,7 +169,8 @@ function Sida() {
         Priserna i tabellen är ordinarie månadspris. Flera har kampanjpris de första månaderna, och
         det räknas in i snittpriset i jämförelsen ovan. Telia skriver själva att de inte har några
         mobilabonnemang med seniorrabatt. Comviq har ingen seniorprislista som vi har kunnat hitta.
-        Fello och Vimla har prislistor för 55+, men deras priser har vi inte kunnat kontrollera.
+        Fello, Vimla och Hallon har egna prislistor för den som fyllt 55 år, och de finns med i
+        jämförelsen ovan.
       </p>
 
       <h2>Är seniorabonnemang billigare än vanliga abonnemang?</h2>

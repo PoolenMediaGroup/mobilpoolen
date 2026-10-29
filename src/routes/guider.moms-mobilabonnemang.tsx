@@ -112,8 +112,9 @@ function Page() {
         kostnaden.
       </P>
       <P>
-        Momsavdraget gäller oavsett om abonnemanget är ett företagsabonnemang eller ett privat
-        abonnemang som företaget betalar. Det avgörande är att inköpet används i verksamheten.
+        Det avgörande är att inköpet används i verksamheten och att fakturan går att bokföra där.
+        Fråga din redovisningskonsult om abonnemanget står på dig privat men betalas av ett
+        aktiebolag.
       </P>
 
       <H2 id="privat">Om mobilen används både i jobbet och privat</H2>

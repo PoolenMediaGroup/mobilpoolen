@@ -62,7 +62,7 @@ const FAQ = [
   },
   {
     q: "Vilka operatörer har studentabonnemang?",
-    a: `I jämförelsen har ${OPS.join(", ")} abonnemang med student- eller ungdomspris. Fello och Vimla har också studentpriser, men dem har vi inte kunnat kontrollera.`,
+    a: `I jämförelsen har ${OPS.join(", ")} abonnemang med student- eller ungdomspris.`,
   },
   {
     q: "Hur visar jag att jag är student?",
@@ -154,10 +154,8 @@ function Sida() {
     >
       <h2>Vilka operatörer har studentabonnemang?</h2>
       <p>
-        I jämförelsen har {OPS.join(", ")} abonnemang med student- eller ungdomspris. Fello och
-        Vimla har också egna prislistor för studenter, men deras priser har vi inte kunnat
-        kontrollera. Telia har ingen särskild studentprislista i jämförelsen men ger rabatt till den
-        som är under 28 år.
+        I jämförelsen har {OPS.join(", ")} abonnemang med student- eller ungdomspris. Telia har
+        ingen särskild studentprislista i jämförelsen men ger rabatt till den som är under 28 år.
       </p>
 
       <h2>Hur mycket billigare är ett studentabonnemang?</h2>
@@ -243,12 +241,12 @@ function Sida() {
 
       <h2>Ska du plugga utomlands?</h2>
       <p>
-        Inom EU, EES och Norge gäller Roam like at home till 2032, så du surfar och ringer som
-        hemma. På stora abonnemang får operatören sätta en gräns för EU-surfen, och den står vid
-        varje abonnemang i jämförelsen. Hos Comviq anges upp till 40 GB i EU för
-        studentabonnemangen. Ska du vara borta länge kan operatören enligt reglerna för rimlig
-        användning ta ut tillägg om du surfar mer utomlands än hemma under en längre tid. Läs mer i
-        guiden om att <Link to={"/guider/surfa-i-eu" as never}>surfa i EU</Link>.
+        Inom EU samt Island, Liechtenstein och Norge gäller Roam like at home till 2032, så du
+        surfar och ringer som hemma. På stora abonnemang får operatören sätta en gräns för
+        EU-surfen, och den står vid varje abonnemang i jämförelsen. Hos Comviq anges upp till 40 GB
+        i EU för studentabonnemangen. Ska du vara borta länge kan operatören enligt reglerna för
+        rimlig användning ta ut tillägg om du surfar mer utomlands än hemma under en längre tid. Läs
+        mer i guiden om att <Link to={"/guider/surfa-i-eu" as never}>surfa i EU</Link>.
       </p>
 
       <h2>Under 18 år?</h2>

@@ -125,7 +125,7 @@ const FAQ = [
   },
   {
     q: "Varför är vissa operatörer inte med i jämförelsen?",
-    a: "Vi visar bara priser som vi har kunnat kontrollera på operatörens egen webbplats. Telenors, Vimlas, Fellos och Lingons priser har vi inte kunnat kontrollera, och Halebop avvecklas. De finns därför inte med i prisjämförelsen.",
+    a: "Vi visar bara priser som vi har kunnat kontrollera på operatörens egen webbplats. Halebop avvecklas och finns därför inte med. Saknas en operatör beror det på att vi inte har kunnat kontrollera dess priser.",
   },
 ];
 

@@ -136,10 +136,10 @@ function Page() {
 
       <H2 id="telefon">Sålt i telefon: avtalet gäller först när du accepterat skriftligt</H2>
       <P>
-        Sedan 2018 finns en särskild regel för telefonförsäljning. Ringer ett företag upp dig för
-        att sälja något ska det bekräfta erbjudandet skriftligt eller i en annan varaktig form, till
-        exempel e-post eller sms. Avtalet blir giltigt först när du efter samtalet har accepterat
-        erbjudandet skriftligt.
+        Sedan 1 januari 2019 finns en särskild regel för telefonförsäljning. Ringer ett företag upp
+        dig för att sälja något ska det bekräfta erbjudandet skriftligt eller i en annan varaktig
+        form, till exempel e-post eller sms. Avtalet blir giltigt först när du efter samtalet har
+        accepterat erbjudandet skriftligt.
       </P>
       <Callout>
         Har du sagt ja i telefon men aldrig accepterat skriftligt efteråt finns inget giltigt avtal.

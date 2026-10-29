@@ -2,7 +2,7 @@ import type { Abonnemang, MobilNat, NatId, Operator } from "./typer";
 import { OPERATORER_DATA, ABONNEMANG_DATA } from "./operatorer-data";
 
 /**
- * Sveriges tre mobilnät. Alla operatörer på sajten kör i något av dem.
+ * Sveriges fyra mobilnät. Alla operatörer på sajten kör i något av dem.
  * Beskrivningarna hålls till det som går att belägga.
  */
 export const MOBILNAT: Record<NatId, MobilNat> = {
