@@ -12,22 +12,20 @@ type FooterLink = {
   asButton?: boolean;
 };
 
-// Sex kolumner som på Elpoolen, med korta etiketter som beskriver sidan de
-// pekar på (ankartexten räknas för sökmotorerna). Alla mål är indexerbara
-// sidor som svarar 200. "Så tjänar vi pengar" ska stå kvar (CLAUDE.md).
+// Sex kolumner med sex länkar var och korta etiketter som inte bryts, så att
+// kolumnerna blir lika höga, precis som på Elpoolen och Larmpoolen. Alla mål är
+// indexerbara sidor som svarar 200. eSIM och Mobilt bredband nås från menyn.
+// "Så tjänar vi pengar" ska stå kvar (CLAUDE.md).
 const COLS: { title: string; links: FooterLink[] }[] = [
   {
     title: "Jämför",
     links: [
-      { label: "Jämför mobilabonnemang", to: "/", hash: "alla" },
-      { label: "Billigaste mobilabonnemang", to: "/billigaste-mobilabonnemang" },
-      { label: "Bästa mobilabonnemang", to: "/basta-mobilabonnemang" },
+      { label: "Jämför abonnemang", to: "/", hash: "alla" },
+      { label: "Billigaste abonnemang", to: "/billigaste-mobilabonnemang" },
+      { label: "Bästa abonnemang", to: "/basta-mobilabonnemang" },
       { label: "Obegränsad surf", to: "/obegransad-surf" },
       { label: "Utan bindningstid", to: "/utan-bindningstid" },
-      { label: "Kontantkort", to: "/kontantkort" },
       { label: "Kampanjer just nu", to: "/kampanjer" },
-      { label: "Mobilt bredband", to: "/mobilt-bredband" },
-      { label: "Mobil med abonnemang", to: "/mobil-med-abonnemang" },
     ],
   },
   {
@@ -37,8 +35,8 @@ const COLS: { title: string; links: FooterLink[] }[] = [
       { label: "Barn", to: "/barn" },
       { label: "Studentabonnemang", to: "/studentabonnemang" },
       { label: "Pensionärer", to: "/pensionar" },
+      { label: "Kontantkort", to: "/kontantkort" },
       { label: "5G-abonnemang", to: "/5g-abonnemang" },
-      { label: "eSIM", to: "/esim" },
     ],
   },
   {
@@ -57,28 +55,28 @@ const COLS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: "Byta operatör", to: "/guider/byta-operator-behalla-nummer" },
       { label: "Säga upp abonnemang", to: "/saga-upp" },
-      { label: "Hur mycket surf behöver jag?", to: "/verktyg/hur-mycket-surf-behover-jag" },
+      { label: "Hur mycket surf?", to: "/verktyg/hur-mycket-surf-behover-jag" },
+      { label: "Mobil med abonnemang", to: "/mobil-med-abonnemang" },
       { label: "Prisindex", to: "/prisindex" },
-      { label: "Verktyg", to: "/verktyg" },
       { label: "Alla guider", to: "/guider" },
     ],
   },
   {
     title: "Företag",
     links: [
-      { label: "Mobilabonnemang för företag", to: "/foretag" },
-      { label: "Billigaste företagsabonnemang", to: "/foretag/billigaste-foretagsabonnemang" },
+      { label: "Abonnemang för företag", to: "/foretag" },
+      { label: "Billigaste för företag", to: "/foretag/billigaste-foretagsabonnemang" },
       { label: "Enskild firma", to: "/foretag/enskild-firma" },
       { label: "Företagskalkylator", to: "/verktyg/foretagskalkylator" },
       { label: "Jobbmobil och förmån", to: "/guider/jobbmobil-formansskatt" },
-      { label: "Moms på mobilabonnemang", to: "/guider/moms-mobilabonnemang" },
+      { label: "Moms på abonnemang", to: "/guider/moms-mobilabonnemang" },
     ],
   },
   {
     title: "Om oss",
     links: [
       { label: "Om Mobilpoolen", to: "/om-oss" },
-      { label: "Så fungerar Mobilpoolen", to: "/sa-fungerar-mobilpoolen" },
+      { label: "Så fungerar det", to: "/sa-fungerar-mobilpoolen" },
       { label: "Så jämför vi", to: "/sa-jamfor-vi" },
       { label: "Så tjänar vi pengar", to: "/sa-tjanar-vi-pengar" },
       { label: "Frågor och svar", to: "/faq" },
@@ -160,9 +158,8 @@ export function SiteFooter() {
           Priser med källa och datum, och guider som hjälper dig betala mindre.
         </p>
 
-        {/* Kolumnerna som på Elpoolen: tätare rutnät och samma rytm. Rubrikerna
-            står i gemener med versal begynnelsebokstav (Mobilpoolens regel),
-            vit 80 procent ger 10,9:1 mot marinblått. */}
+        {/* Kolumnerna som på Elpoolen och Larmpoolen: samma rutnät, samma rytm
+            och versala kolumnrubriker. */}
         <div className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10 items-start sm:grid-cols-3 lg:grid-cols-6">
           {COLS.map((c) => (
             <div key={c.title}>
