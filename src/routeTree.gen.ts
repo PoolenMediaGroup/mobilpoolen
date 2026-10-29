@@ -21,6 +21,7 @@ import { Route as PensionarRouteImport } from './routes/pensionar'
 import { Route as OrdlistaRouteImport } from './routes/ordlista'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as ObegransadSurfRouteImport } from './routes/obegransad-surf'
+import { Route as MobiltBredbandRouteImport } from './routes/mobilt-bredband'
 import { Route as KontantkortRouteImport } from './routes/kontantkort'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KampanjerRouteImport } from './routes/kampanjer'
@@ -151,6 +152,11 @@ const OmOssRoute = OmOssRouteImport.update({
 const ObegransadSurfRoute = ObegransadSurfRouteImport.update({
   id: '/obegransad-surf',
   path: '/obegransad-surf',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MobiltBredbandRoute = MobiltBredbandRouteImport.update({
+  id: '/mobilt-bredband',
+  path: '/mobilt-bredband',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KontantkortRoute = KontantkortRouteImport.update({
@@ -557,6 +563,7 @@ export interface FileRoutesByFullPath {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
@@ -642,6 +649,7 @@ export interface FileRoutesByTo {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
@@ -728,6 +736,7 @@ export interface FileRoutesById {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
   '/ordlista': typeof OrdlistaRoute
@@ -815,6 +824,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
@@ -900,6 +910,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
@@ -985,6 +996,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
     | '/ordlista'
@@ -1071,6 +1083,7 @@ export interface RootRouteChildren {
   KampanjerRoute: typeof KampanjerRoute
   KontaktRoute: typeof KontaktRoute
   KontantkortRoute: typeof KontantkortRoute
+  MobiltBredbandRoute: typeof MobiltBredbandRoute
   ObegransadSurfRoute: typeof ObegransadSurfRoute
   OmOssRoute: typeof OmOssRoute
   OrdlistaRoute: typeof OrdlistaRoute
@@ -1225,6 +1238,13 @@ declare module '@tanstack/react-router' {
       path: '/obegransad-surf'
       fullPath: '/obegransad-surf'
       preLoaderRoute: typeof ObegransadSurfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobilt-bredband': {
+      id: '/mobilt-bredband'
+      path: '/mobilt-bredband'
+      fullPath: '/mobilt-bredband'
+      preLoaderRoute: typeof MobiltBredbandRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontantkort': {
@@ -1743,6 +1763,7 @@ const rootRouteChildren: RootRouteChildren = {
   KampanjerRoute: KampanjerRoute,
   KontaktRoute: KontaktRoute,
   KontantkortRoute: KontantkortRoute,
+  MobiltBredbandRoute: MobiltBredbandRoute,
   ObegransadSurfRoute: ObegransadSurfRoute,
   OmOssRoute: OmOssRoute,
   OrdlistaRoute: OrdlistaRoute,

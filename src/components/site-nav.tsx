@@ -22,6 +22,8 @@ const NAV: NavPost[] = [
           { href: "/kontantkort", label: "Kontantkort" },
           { href: "/5g-abonnemang", label: "5G-abonnemang" },
           { href: "/esim", label: "eSIM" },
+          { href: "/kampanjer", label: "Kampanjer just nu" },
+          { href: "/mobilt-bredband", label: "Mobilt bredband" },
         ],
       },
     ],
@@ -33,7 +35,7 @@ const NAV: NavPost[] = [
         lankar: [
           { href: "/familjeabonnemang", label: "Familj" },
           { href: "/barn", label: "Barn" },
-          { href: "/studentabonnemang", label: "Unga och studenter" },
+          { href: "/studentabonnemang", label: "Studenter" },
           { href: "/pensionar", label: "Pensionärer" },
         ],
       },
