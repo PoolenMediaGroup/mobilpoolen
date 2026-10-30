@@ -232,15 +232,24 @@ function Sida() {
       )}
 
       <h2>Vad kostar {namn} hos operatörerna?</h2>
+      {/* Kolumnen mot tillverkarens pris visas bara när det priset finns. */}
       <GuideTable
         brytForsta
-        head={["Operatör", "Per månad", "Mobilen totalt", `Mot ${m.marke}`]}
+        head={
+          lista.some((e) => mobilRabatt(m, e) != null)
+            ? ["Operatör", "Per månad", "Mobilen totalt", `Mot ${m.marke}`]
+            : ["Operatör", "Per månad", "Mobilen totalt"]
+        }
         rows={lista.map((e) => {
           const r = mobilRabatt(m, e);
-          return [
+          const rad = [
             opNamn(e),
             e.perManad != null ? `${kr(e.perManad)} i ${e.manader} mån` : "Kontant",
             kr((e.telefonTotalt ?? e.kontantpris) as number),
+          ];
+          if (!lista.some((x) => mobilRabatt(m, x) != null)) return rad;
+          return [
+            ...rad,
             r == null ? "–" : r === 0 ? "Samma" : r > 0 ? `${kr(r)} billigare` : `${kr(-r)} dyrare`,
           ];
         })}

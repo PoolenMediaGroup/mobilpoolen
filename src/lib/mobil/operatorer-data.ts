@@ -17,7 +17,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: true,
     webb: "https://www.telia.se/mobilabonnemang",
-    kundtjanst: "90 200 (anges på mobilabonnemangssidan för t.ex. uppsägning). Öppettider: null",
+    kundtjanst: "90 200",
     om: "Telia är Sveriges största operatör och har ett eget mobilnät. Utbudet sträcker sig från 10 GB till obegränsad surf, och Obegränsad Plus finns i flera varianter med inbyggda streamingtjänster. Prisnivån är bland de högsta på marknaden, men Telia erbjuder rabatter för personer under 28 år, studenter och kunder med Telia-bredband.",
     starkor: [
       "Eget rikstäckande nät, 5G ingår i alla abonnemang",
@@ -29,14 +29,13 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     svagheter: [
       "Högt ordinarie pris (10 GB kostar 299 kr/mån)",
-      "Startavgift 299 kr enligt prislistan, slopas bara vid köp online",
-      "Ingen seniorrabatt (Telia skriver själva: 'Vi har inte några mobilabonnemang med seniorrabatt')",
+      "Startavgift 299 kr, utom vid köp online",
+      "Ingen seniorrabatt",
       "Extra användare går inte att lägga till på vanliga Obegränsad, 20 GB eller 10 GB",
     ],
     villkor: {
-      uppsagningstid: "1 månad ('En månads uppsägningstid gäller för alla våra abonnemang')",
-      startavgift:
-        "299 kr enligt prislistan (gäller från 2026-01-07). 'Fri startavgift online' enligt webbsidan.",
+      uppsagningstid: "1 månad",
+      startavgift: "299 kr, ingen vid köp online",
       ovrigt:
         "Bindningstidens längd för abonnemang utan telefon framgår inte. Telefon köps med 24 mån abonnemang. Har man 90 dagar eller mindre kvar av bindningstiden går det att sänka surfmängden. Prisändringsklausul hittades inte i villkoren. Avgift för nytt SIM/eSIM anges inte. E-sim till klocka kostar 69 kr/mån. Pappersfaktura 59 kr. Öppning efter spärr 195 kr. EU/EES: 'som hemma', max 50 GB/mån enligt prislistan, därefter 31 kr/GB. Alla fyra abonnemangen går att köpa utan bindningstid ('Ingen bindningstid') till ordinarie pris. 10 GB, Obegränsad och Obegränsad Plus har även val 24 mån bindning; 20 GB bara utan bindning. 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 kr/mån Från 469 kr/mån gäller Obegränsad Plus (och streamingvarianterna Netflix, HBO Max, Disney+, Prime, TV4 Play, Viaplay) med 24 mån bindningstid, rabatten gäller 12 mån, därefter ordinarie pris. 'Netflix, HBO Max, Disney+' 599 i 12 mån (ord. 699). 10 GB: 249 kr/mån i 12 mån med 24 mån bindning. Obegränsad: ingen rabatt. 20 GB: ingen rabatt. Fortsätter automatiskt som obundet abonnemang 50 kr/mån rabatt på 20 GB, Obegränsad, Obegränsad Plus och Plus med streaming 100 kr/mån med Telia-bredband på Obegränsad-abonnemangen Motstridigt: produkttexten för Obegränsad och Obegränsad Plus säger 'Inom EU/EES har du en surfpott på 100 GB', FAQ på samma sida säger 'maxgräns på surf på 50 GB/mån' för obegränsad surf. 10/20 GB: surfmängden gäller inom hela EU/EES.",
     },
@@ -82,8 +81,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: null,
     harForetag: true,
     webb: "https://www.tele2.se/mobilabonnemang",
-    kundtjanst:
-      "90 222 (från utlandet +46 772-25 25 25). Vardagar 08–19, lördag 09–15, söndag stängt.",
+    kundtjanst: "90 222, vardagar 08–19 och lördag 09–15",
     om: "Tele2 är en av de fyra nätägande operatörerna i Sverige. Utbudet för privatpersoner består av tre huvudabonnemang: 15 GB, Obegränsad och Obegränsad Max. Kampanjpriserna gäller vanligen i 24 månader och kräver 24 månaders bindningstid. Det finns också familje- och seniorvarianter (65+).",
     starkor: [
       "Starka kampanjpriser över 24 månader",
@@ -99,7 +97,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Uppgifterna skiljer sig mellan olika Tele2-sidor (GB och priser för 15 GB och Max)",
     ],
     villkor: {
-      uppsagningstid: "'De flesta abonnemang har en månads uppsägningstid'",
+      uppsagningstid: "1 månad för de flesta abonnemang",
       startavgift: null,
       ovrigt:
         "Startavgift anges inte på webbsidorna. Allmänna villkor gäller från 2026-04-16 (kunde inte läsas, så prisändringsklausulen är inte kontrollerad). Familj: upp till 10 familjeabonnemang (5 via webben), 24 mån bindning. 'Ring fritt inom familjen' är ett tillval.",
@@ -144,7 +142,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: true,
     webb: "https://www.telenor.se/handla/mobilabonnemang/",
-    kundtjanst: "Telefon 020-222 222, telenor.se/kontakta-oss, appen Mitt Telenor",
+    kundtjanst: "020-222 222 och appen Mitt Telenor",
     om: "Telenor är en av Sveriges fyra nätägande operatörer och driver ett eget mobilnät med 5G som enligt Telenor täcker 99,9 % av befolkningen. Privatabonnemangen finns med 10 GB, 25 GB och obegränsad surf, och fria samtal och sms i Sverige ingår. Bindningstid är valfri och ger rabatt på de flesta abonnemang. Flera användare kan dela ett abonnemang i Telenor Familj.",
     starkor: [
       "Eget nät med 5G som enligt Telenor täcker 99,9 % av befolkningen",
@@ -159,7 +157,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Fast surfmängd stängs av när den tar slut, extra surf kostar",
     ],
     villkor: {
-      uppsagningstid: "1 månad, dock tidigast till bindningstidens slut (prislistan TY32141)",
+      uppsagningstid: "1 månad, tidigast till bindningstidens slut",
       startavgift: null,
       ovrigt:
         "Fakturaavgift: se telenor.se, ingen avgift med autogiro eller e-faktura. Uppläggningsavgift 295 kr för delbetalning av hårdvara. Dröjsmålsavgift 2 %/mån eller ränta 24 %/år. Under bindningstid kan du byta till mer men inte mindre surf. Debiteringsintervall 60 sekunder. Automatisk spärr för datautlandsanvändning vid 625 kr/mån.",
@@ -207,8 +205,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: null,
     harForetag: true,
     webb: "https://www.tre.se/mobilabonnemang",
-    kundtjanst:
-      "Abonnemangsavdelningen (t.ex. för uppsägning): 0735-300 344, vardagar 09–18. Växel 076-333 33 33. AI-chatten Trelin finns dygnet runt.",
+    kundtjanst: "0735-300 344 för abonnemang, vardagar 09–18",
     om: "Tre ägs av Hi3G Access och har ett eget mobilnät. På webbsidan finns tre huvudabonnemang: 6 GB, 25 GB och Obegränsad, alla prissatta med 24 månaders bindningstid. Familjemedlemmar delar på huvudabonnemangets surf.",
     starkor: [
       "Eget nät, 5G ingår i alla abonnemang",
@@ -221,11 +218,11 @@ export const OPERATORER_DATA: Operator[] = [
       "Webbpriserna förutsätter 24 månaders bindningstid",
       "Aktiveringsavgift 250 kr i butik",
       "Oanvänd surf sparas inte till nästa månad",
-      "Ingen angiven maxhastighet, bara nivåerna '3Snabbare'/'3Snabbast'",
+      "Ingen angiven maxhastighet, bara nivåerna 3Snabbare och 3Snabbast",
     ],
     villkor: {
-      uppsagningstid: "30 dagar (enligt prislistan som gäller från 2025-07-16)",
-      startavgift: "0 kr online, aktiveringsavgift 250 kr i butik",
+      uppsagningstid: "30 dagar",
+      startavgift: "0 kr online, 250 kr i butik",
       ovrigt:
         "Ej konsumerad surf överförs inte till nästa månad. eSIM är gratis, och när det aktiveras slutar det fysiska SIM-kortet att fungera. Prisändringsklausulen har inte kontrollerats. Extra uppkoppling: 99 kr/mån (upp till 3 st).",
     },
@@ -263,7 +260,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: false,
     webb: "https://www.halebop.se/",
-    kundtjanst: "Chatt dygnet runt, alla dagar. Telefonnummer: null",
+    kundtjanst: "Chatt dygnet runt",
     om: "Halebop är ett lågprisvarumärke som surfar i Telias nät. Fria samtal och sms ingår, och oanvänd surf sparas. Utbudet består av fyra surfnivåer mellan 169 och 399 kr/mån enligt prislistan från 2025-12-16. Halebop säljer även kontantkort.",
     starkor: [
       "Telias nät",
@@ -278,7 +275,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Webbsidan kunde inte läsas, så aktuella kampanjer är okända",
     ],
     villkor: {
-      uppsagningstid: "1 månad ('Uppsägningstiden är 1 månad')",
+      uppsagningstid: "1 månad",
       startavgift: null,
       ovrigt:
         "Prislistan gäller från 2025-12-16. Raden 'Öppningsavgift' finns, men beloppet gick inte att läsa ut. Registerutdrag 250 kr om det begärs fler än två gånger per år. Bindningstid anges inte i prislistan.",
@@ -320,8 +317,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: false,
     webb: "https://www.comviq.se/mobilabonnemang",
-    kundtjanst:
-      "0772-21 21 21 (från utlandet +46 772-21 21 21), vardagar 09–17. Chatt med medarbetare alla dagar 07–22, chatbot dygnet runt.",
+    kundtjanst: "0772-21 21 21, vardagar 09–17. Chatt alla dagar 07–22",
     om: "Comviq är ett lågprisvarumärke i Tele2:s nät som säljer både abonnemang och kontantkort. Ordinarie abonnemang finns med 5, 20 och 100 GB för 129–359 kr/mån. Just nu pågår en kampanj med 45 kr/mån i 3 månader och dubbel surf, som kräver 12 månaders bindning. Det finns också student-, barn- och familjeerbjudanden.",
     starkor: [
       "Tele2:s nät (99,9 % av befolkningen), 5G upp till 1000 Mbit/s",
@@ -338,8 +334,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Telefonsupport bara vardagar 09–17",
     ],
     villkor: {
-      uppsagningstid:
-        "Ingen uppsägningstid ('Hos Comviq har vi ingen uppsägningstid på våra mobilabonnemang'); man betalar innevarande fakturaperiod",
+      uppsagningstid: "Ingen, du betalar innevarande fakturaperiod",
       startavgift: null,
       ovrigt:
         "Prislistan gäller från 2026-01-20. Upp till 20 000 min och 20 000 sms/mms/mån ingår, därefter 30 öre. Med telefon på avbetalning gäller 24 mån bindning. Startavgift och SIM/eSIM-avgift anges inte. 45 kr/mån i 3 mån finns i två varianter: (a) UTAN bindningstid på startsidan (erbjudandena 'ATL 5GB/20GB/100GB 3m45 b0', rubrik 'Halva priset på abonnemang utan bindning'), (b) MED 12 mån bindningstid på /mobilabonnemang, då med dubbel surf i 12 mån ('ATL ... DD 3m45 b12'). Båda: nya kunder samt byte från kontantkort. Ordinarie pris 129/229/359 kr/mån efter 3 mån. Efter bindningstid: inget särskilt angivet på sidan; dubbel surf gäller 12 mån. Dubbel surf-erbjudandet (12 mån bindning) gäller t.o.m. 10 november. Slutdatum för 45 kr utan bindning framgick inte. Ja, 45 kr/mån i 3 mån gäller även studentabonnemangen, utan bindningstid: 14 GB 129, 40 GB 209, 100 GB 309 kr/mån 5 GB→5, 20 GB→20, 100 GB→46 GB i EU/EES; student 14→14, 40→20, 100→40 GB 'Skaffar du mobilabonnemang utan att köpa till en mobil är bindningstiden valfri'",
@@ -386,8 +381,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: false,
     webb: "https://vimla.se/",
-    kundtjanst:
-      "Chatt vardagar 09:00–16:30 (inloggad, Mobilt BankID) och supportärende via Mitt Vimla, svar vanligtvis inom 5 vardagar. Ingen telefonsupport angiven.",
+    kundtjanst: "Chatt vardagar 09.00–16.30 och ärenden via Mitt Vimla. Ingen telefonsupport",
     om: "Vimla är en digital lågprisoperatör och ett varumärke inom Telenor Sverige AB, med Telenors mobilnät och 5G. Abonnemangen har varken bindnings- eller uppsägningstid och betalas i förskott månadsvis. Det finns ordinarie abonnemang samt varianter för studenter, personer över 55 år och barn under 18. Osurfad surf sparas utan tidsgräns.",
     starkor: [
       "Ingen bindningstid, ingen uppsägningstid, ingen anslutnings- eller fakturaavgift",
@@ -396,7 +390,7 @@ export const OPERATORER_DATA: Operator[] = [
       "eSIM utan extra kostnad på alla abonnemang",
       "Kampanj: 20 kr/mån i 3 mån och dubbel surf i 24 mån för nya kunder",
       "Tipsrabatt 10 kr/mån för båda, och 20 kr/mån per nytt abonnemang när du samlar hushållet",
-      "Utsedd till mobiloperatören med Sveriges nöjdaste kunder 2022–2025 enligt Svenskt Kvalitetsindex (enligt vimla.se)",
+      "Sveriges nöjdaste mobilkunder 2022–2025 enligt Svenskt Kvalitetsindex",
     ],
     svagheter: [
       "Normal surfhastighet 5–40 Mbit/s ned, lägre än nätägarnas angivna maxhastighet",
@@ -406,9 +400,8 @@ export const OPERATORER_DATA: Operator[] = [
       "Inga kontantkort",
     ],
     villkor: {
-      uppsagningstid:
-        "Ingen. Avtalet kan sägas upp när som helst på Mitt Vimla och upphör sista dagen i den månad uppsägningen görs (särskilda villkor p. 12.1)",
-      startavgift: "Ingen (prissidan: anslutningsavgift 'Fy.', startavgift samtal 'Nada')",
+      uppsagningstid: "Ingen. Avtalet upphör sista dagen i den månad du säger upp",
+      startavgift: "Ingen",
       ovrigt:
         "Månadsavgift betalas i förskott med betalkort, autogiro eller faktura. Ingen fakturaavgift. Ersättnings-SIM 100 kr, pausningsavgift 70 kr. Extrasurf 1 GB 50 kr, 5 GB 150 kr, 24 h obegränsat 55 kr. Sparad surf raderas när avtalet upphör. Prislista giltig fr.o.m. 2026-01-15.",
     },
@@ -461,8 +454,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: true,
     harForetag: true,
     webb: "https://www.hallon.se/mobilabonnemang",
-    kundtjanst:
-      "Chatt vardagar 09–16, e-post kundservice@hallon.se (svar inom 5 arbetsdagar), forum och AI-assistent. Inget telefonnummer anges på kontaktsidan.",
+    kundtjanst: "Chatt vardagar 09–16 och kundservice@hallon.se. Ingen telefonsupport",
     om: "Hallon ingår i Hi3G Access (samma bolag som Tre) och använder Tre:s nät. Alla abonnemang är utan bindningstid, oanvänd surf sparas och 5G ingår. Hallon kör ofta kampanjer med dubbel surf och låga priser de första 4 månaderna. Det finns även student- och 55+-varianter.",
     starkor: [
       "Ingen bindningstid, avtalet förnyas en månad i taget",
@@ -473,14 +465,13 @@ export const OPERATORER_DATA: Operator[] = [
       "eSIM utan extra kostnad, abonnemanget kan pausas gratis i 6 mån",
     ],
     svagheter: [
-      "Hastigheten är begränsad: max 150 Mbit/s enligt 5G-sidan, 100 Mbit/s enligt prislistan",
+      "Hastigheten är begränsad till 100 eller 150 Mbit/s (operatörens sidor anger olika)",
       "Ingen telefonsupport, och chatten är bara öppen vardagar 09–16",
       "Samtal och sms från Sverige till utlandet ingår inte",
       "Dubbel surf försvinner om man byter prisplan",
     ],
     villkor: {
-      uppsagningstid:
-        "Ingen bindningstid. Kan sägas upp när som helst och upphör vid nästkommande månadsskifte (allmänna villkor p. 10.1)",
+      uppsagningstid: "Ingen. Abonnemanget upphör vid nästa månadsskifte",
       startavgift: null,
       ovrigt:
         "Ändringar till kundens nackdel aviseras minst en månad i förväg (p. 4.1). Nytt SIM-kort (ersättningskort) 99 kr enligt prislistan från 2025-06-28. Paus i 6 mån gratis, därefter 39 kr/mån. Återbetalning av kontantkortssaldo 350 kr. Startavgift anges inte på webbsidan.",
@@ -525,8 +516,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.fello.se/",
-    kundtjanst:
-      "Chatt på support.fello.se, e-post hello@fello.se, telefon 0770-33 22 22 (vardagar 12–16, enligt LO/PRO-artikeln)",
+    kundtjanst: "Chatt på support.fello.se och hello@fello.se",
     om: "Fello är en lågprisoperatör i Telias nät och ägs i dag av Telia Sverige AB. Abonnemangen har ingen bindningstid och fria samtal och sms i Sverige. Det finns separata abonnemang för alla, studenter, 55+ och under 18, samt mobilt bredband. Outnyttjad surf sparas automatiskt.",
     starkor: [
       "Telias nät",
@@ -541,8 +531,8 @@ export const OPERATORER_DATA: Operator[] = [
       "Sparad surf försvinner när abonnemanget sägs upp",
     ],
     villkor: {
-      uppsagningstid: "1 månad (allmänna villkor 14.1)",
-      startavgift: "Nämns inte i villkoren",
+      uppsagningstid: "1 månad",
+      startavgift: null,
       ovrigt:
         "Pappersfaktura 29 kr enligt den gamla prislistan (t.o.m. 2025-06-01). Alla aktiva abonnemang har 5G. Äldre abonnemang (Fello 3 GB, Student 7 GB, Fastpris) saknar 5G. Värva vän: båda får rabatt. Ingen bindningstid på något abonnemang 30 kr/mån i 4 mån vid nybeställning, ej vid abonnemangsbyte. Dubbel Surf giltig i 24 mån, kan inte läggas på befintliga Trippel/Dubbel Surf. Gäller till 1 november 2026. Gäller alla fyra målgrupper (För alla, Student, 55+, Under 18) enligt produkt-API:t (discount PRICE_MONTHS, 4 mån, label '30 kr/mån i 4 månader'). Fri roaming inom EU/EES, surfmängden i abonnemanget men max 60 GB/mån; därefter 12,25 kr/GB Telias nät, 5G ingår Sidan anger 'Tidigare lägsta pris 20 kr/mån' API anger extraMonths: 1 per rabatt (troligen värva-vän, oklart)",
     },
@@ -588,7 +578,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.chilimobil.se/",
-    kundtjanst: "kundservice@chilimobil.se, supportsida. Inget telefonnummer anges.",
+    kundtjanst: "kundservice@chilimobil.se. Ingen telefonsupport",
     om: "Chilimobil säljer fri surf i Tres nät, och priset sätts av vilken maxhastighet man väljer (3, 10 eller 100 Mbit/s eller Full Fart) i stället för hur många GB man får. 5G, VoLTE och WiFi-samtal ingår i alla abonnemang. Det finns också årsabonnemang som betalas i förskott och Chili DUO, där mobil och mobilt bredband paketeras.",
     starkor: [
       "Fri surf i alla abonnemang, priset styrs av hastigheten",
@@ -605,8 +595,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Ingen kundtjänst på telefon angiven",
     ],
     villkor: {
-      uppsagningstid:
-        "1 månad till månadsskifte. Säger man upp före den 15:e avslutas abonnemanget vid kommande månadsskifte, annars vid nästa (alltså 1–1,5 mån)",
+      uppsagningstid: "Till månadsskiftet. Säger du upp efter den 15:e gäller månadsskiftet efter",
       startavgift: "Ingen",
       ovrigt:
         "Pausa abonnemang: 49 kr/mån efter ett halvår. Nummerbyte 49 kr. Extra surf-SIM 179 kr/mån. Nummerflytt ca 7 arbetsdagar med SIM, ca 2 dagar med eSIM. 3G stängdes 1 dec 2025. Tillfällig Full Fart kan köpas för 24 h, 72 h eller 168 h (pris ej angivet). Ingen bindningstid, max 1 mån uppsägningstid 20 GB/dygn för Alltid Fri Surf, därefter 1 Mbit/s; ytterligare 5 GB kan beställas kostnadsfritt Ingår som hemma enligt prislistan: 3 Mbit 8 GB, 10 Mbit 20 GB, 100 Mbit 25 GB, Full Fart 25 GB, Viaplay-varianterna 30 GB 10 Mbit/s 2 990 kr/år, 100 Mbit/s 3 490 kr/år, förskott, inga bindningskrav Privat: rabatt i 2 mån (3 Mbit 149, 10 Mbit 199, 100 Mbit 249, Full Fart 299). Startsidan för mobilabonnemang: '249 kr/mån för Fri Surf ... avser upp till 100 Mbit/s'. Fri Surf Extra-SIM 179 kr/mån Pausa upp till 12 mån, från mån 7 49 kr/mån Senior finns i alla hastigheter (3, 10, 100 Mbit/s och Full Fart), från 159 kr/mån",
@@ -665,7 +654,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Internationella minuter ingår (100–1000 min) till bl.a. EU, USA, Kanada, Indien, Kina, Brasilien och Marocko",
       "Ingen bindningstid",
       "5G och eSIM",
-      "Outnyttjad data sparas (enligt paketsidorna)",
+      "Outnyttjad surf sparas till nästa månad",
       "Långtidspaket med rabatt",
     ],
     svagheter: [
@@ -675,7 +664,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Roaming i UK och Schweiz har lägre tak",
     ],
     villkor: {
-      uppsagningstid: "Ingen bindningstid. Automatisk förnyelse kan stängas av i My Lyca.",
+      uppsagningstid: "Ingen. Stäng av den automatiska förnyelsen i My Lyca",
       startavgift: null,
       ovrigt:
         "Paketen förnyas automatiskt efter 30 dagar om saldot räcker. Förbrukning utöver paketet debiteras enligt standardpris.",
@@ -713,7 +702,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.mybeat.se/",
-    kundtjanst: "Bemannad kundtjänst: 019-55 55 500, support@mybeat.se, chatt",
+    kundtjanst: "019-55 55 500, support@mybeat.se och chatt",
     om: "My Beat är en virtuell operatör i Telenors nät. Kundtjänsten är bemannad och nås på telefon, chatt och e-post. Det finns fyra abonnemang från 5 GB till fri surf, alla utan bindningstid och med 5G upp till 100 Mbit/s. Tilläggstjänster som bedrägeriskydd, F-Secure och extra surf-SIM kan köpas till.",
     starkor: [
       "Bemannad kundtjänst på telefon",
@@ -728,7 +717,7 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     villkor: {
       uppsagningstid: null,
-      startavgift: "– sidan skriver 'Inga bindningstider eller dolda avgifter'",
+      startavgift: null,
       ovrigt:
         "Produktsidan för 15 GB har titeln '143, 15 GB – förskott', vilket kan betyda ett annat pris vid förskottsbetalning. Extra SIM för surf från 59 kr/mån.",
     },
@@ -764,7 +753,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.tellusmobil.se/",
-    kundtjanst: "0771-20 10 00, hej@tellusmobil.se (mån–fre 09–17)",
+    kundtjanst: "0771-20 10 00 och hej@tellusmobil.se, vardagar 09–17",
     om: "Tellus Mobil är en virtuell operatör i Tele2:s nät. Abonnemangen har varken bindningstid eller uppsägningstid, och 55+ får rabatt. För varje ny kund planteras ett träd (Vi-skogen) eller rensas 1 kg skräp från haven (Håll Sverige Rent). Outnyttjad surf sparas i upp till 90 dagar.",
     starkor: [
       "Ingen bindningstid och ingen uppsägningstid",
@@ -781,8 +770,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Pappersfaktura 30 kr",
     ],
     villkor: {
-      uppsagningstid:
-        "Ingen uppsägningstid. Abonnemanget avslutas sista dagen i den månad uppsägningen kommer in.",
+      uppsagningstid: "Ingen. Abonnemanget upphör sista dagen i den månad du säger upp",
       startavgift: "0 kr",
       ovrigt:
         "Prislista uppdaterad 2025-03-24. Extra surf: 1 GB 50 kr, 3 GB 100 kr, 5 GB 150 kr. Nytt SIM 99 kr. Pappersfaktura utan autogiro 30 kr. Värva vän: en månad gratis.",
@@ -820,7 +808,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.fibio.se/",
-    kundtjanst: "010-550 02 00, kundservice@fibio.se (helgfria vardagar 10–17)",
+    kundtjanst: "010-550 02 00 och kundservice@fibio.se, vardagar 10–17",
     om: "Fibio är en virtuell operatör i Telenors nät med säte i Helsingborg. Bolaget säljer mobil och bredband och har kraftiga introduktionskampanjer de första tre månaderna. Det finns separata sidor för familje-, senior- och barnabonnemang.",
     starkor: [
       "Mycket låga kampanjpriser i 3 månader (19–49 kr/mån)",
@@ -835,7 +823,7 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     villkor: {
       uppsagningstid: null,
-      startavgift: "Ingen (generell uppgift på sidan)",
+      startavgift: "Ingen",
       ovrigt: "Surfpotten förnyas den 1:a varje månad. Fria samtal, sms och mms i EU/EES.",
     },
     kallor: ["https://www.fibio.se/mobilabonnemang/"],
@@ -911,8 +899,7 @@ export const OPERATORER_DATA: Operator[] = [
     kontantkort: false,
     harForetag: false,
     webb: "https://www.lingonmobil.se/",
-    kundtjanst:
-      "Telefon 060-60 66 203 (10:00–17:00, lunchstängt 12–13), e-post support@lingon.net, kontaktformulär",
+    kundtjanst: "060-60 66 203, 10–17 med lunchstängt 12–13, och support@lingon.net",
     om: "Lingon Mobil är en mobiloperatör grundad i Sundsvall 2020 som använder Tele2:s nät. Enligt bolaget bor över 70 % av kunderna i Norrland. Abonnemangen har fast surfmängd från 3 till 60 GB med fria samtal och sms. Lingon säljer även elavtal och ger elkunder rabatt på mobilen.",
     starkor: [
       "Tele2:s nät",
