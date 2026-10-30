@@ -319,3 +319,12 @@ out=['// GENERERAD av scripts/bygg_data.py ur research/mobil-med-abonnemang.json
 p=os.path.join(ROT,'src/lib/mobil/telefon-data.ts'); open(p,'w').write(''.join(out))
 subprocess.run(['npx','prettier','--write',p],cwd=ROT,stdout=subprocess.DEVNULL)
 print('telefoner',len(telefoner),'modeller',[m['slug'] for m in modeller])
+
+# Uppsägning per operatör (research/uppsagning.json) till src/lib/mobil/uppsagning-data.ts.
+upp=json.load(open(os.path.join(ROT,'research/uppsagning.json')))
+p_upp=os.path.join(ROT,'src/lib/mobil/uppsagning-data.ts')
+open(p_upp,'w').write('// GENERERAD av scripts/bygg_data.py ur research/uppsagning.json. Ändra inte för hand.\n\n'
+  'export type Uppsagning = { kanaler: string[]; upphor: string | null; telefon_avbetalning: string | null; kontantkort_saldo: string | null; nummerflytt: string | null; sarskilt: string | null; kalla: string[] };\n\n'
+  f'export const UPPSAGNING_KONTROLLERAD = "{upp["kontrollerad"]}";\n\n'
+  'export const UPPSAGNING: Record<string, Uppsagning> = '+json.dumps(upp['operatorer'],ensure_ascii=False,indent=2)+';\n')
+subprocess.run(['npx','prettier','--write',p_upp],cwd=ROT,stdout=subprocess.DEVNULL)
