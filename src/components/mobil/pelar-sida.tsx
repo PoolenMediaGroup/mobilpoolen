@@ -71,7 +71,7 @@ export function PelarSida({
               {datumText(uppdaterad)} · Av{" "}
               <Link
                 to="/skribent/leon-hallstrom"
-                className="underline underline-offset-2 hover:text-white"
+                className="whitespace-nowrap underline underline-offset-2 hover:text-white"
               >
                 Leon Hallström
               </Link>

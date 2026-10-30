@@ -416,8 +416,9 @@ export function AbonnemangKort({
               <span className="font-semibold text-foreground/70">{a.namn}</span>
             </h3>
             <ul className="mt-1.5 flex flex-wrap gap-x-3 gap-y-1 text-[13px] text-foreground/70">
+              {/* Bocken står bara för det som är en fördel: ingen bindningstid. */}
               <li className="inline-flex items-center gap-1">
-                <Check className="h-3.5 w-3.5 text-savings" aria-hidden />
+                {a.bindning === 0 && <Check className="h-3.5 w-3.5 text-savings" aria-hidden />}
                 {bindningText(a.bindning)}
               </li>
               {a.femg && (
@@ -431,7 +432,9 @@ export function AbonnemangKort({
               {(a.malgrupp?.includes("student") || a.malgrupp?.includes("ung")) && (
                 <li>Student eller ung</li>
               )}
-              {momsText(a.moms) && <li>Pris {momsText(a.moms)}</li>}
+              {momsText(a.moms) && (
+                <li>{a.moms === "okand" ? "Moms anges inte" : `Pris ${momsText(a.moms)}`}</li>
+              )}
               {a.hastighet &&
                 a.gb == null &&
                 /\d\s*Mbit\/s/i.test(a.hastighet) &&

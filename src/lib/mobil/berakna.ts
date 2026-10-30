@@ -33,7 +33,8 @@ export function gbText(gb: number | null): string {
 }
 
 export function kr(n: number): string {
-  return `${formatTal(Math.round(n))} kr`;
+  // Hårt mellanslag så att "kr" aldrig hamnar ensamt på en ny rad.
+  return `${formatTal(Math.round(n))}\u00a0kr`;
 }
 
 export function formatTal(n: number): string {

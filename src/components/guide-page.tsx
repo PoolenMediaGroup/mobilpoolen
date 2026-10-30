@@ -204,7 +204,7 @@ export function GuidePage({
                     Av{" "}
                     <Link
                       to="/skribent/leon-hallstrom"
-                      className="text-primary underline underline-offset-2 hover:opacity-80"
+                      className="whitespace-nowrap text-primary underline underline-offset-2 hover:opacity-80"
                     >
                       Leon Hallström
                     </Link>

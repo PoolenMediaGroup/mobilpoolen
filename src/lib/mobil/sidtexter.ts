@@ -80,8 +80,8 @@ export function operatorFaq(o: Operator): Qa[] {
       q: `Har ${o.namn} bindningstid?`,
       a:
         bindning === "Ingen bindningstid"
-          ? `Nej, de abonnemang vi jämför hos ${o.namn} har ingen bindningstid.${o.villkor.uppsagningstid ? ` Uppsägning: ${o.villkor.uppsagningstid}` : ""}`
-          : `Det beror på abonnemanget. Hos ${o.namn} har de abonnemang vi jämför ${bindning} bindningstid.${o.villkor.uppsagningstid ? ` Uppsägning: ${o.villkor.uppsagningstid}` : ""}`,
+          ? `Nej, de abonnemang vi jämför hos ${o.namn} har ingen bindningstid.${o.villkor.uppsagningstid ? ` Uppsägning: ${o.villkor.uppsagningstid}.` : ""}`
+          : `Det beror på abonnemanget. Hos ${o.namn} har de abonnemang vi jämför ${bindning} bindningstid.${o.villkor.uppsagningstid ? ` Uppsägning: ${o.villkor.uppsagningstid}.` : ""}`,
     });
   }
   if (o.esim != null) {

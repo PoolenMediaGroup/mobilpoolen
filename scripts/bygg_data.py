@@ -163,6 +163,41 @@ opl.append(dict(slug='telavox',namn='Telavox',agare='Telavox AB',grupp='mvno',na
   om='Telavox säljer mobilabonnemang till företag tillsammans med en molnbaserad växel. Priserna anges exkl. moms, och de dyrare nivåerna har växel, app för mobil och dator och integrationer med andra system.',
   starkor=['Växel ingår från Premium-nivån','Priser anges exkl. moms'],svagheter=['Inga abonnemang för privatpersoner','Vilket nät som används framgår inte av prissidan'],villkor={},kallor=['https://telavox.com/sv/priser/'],kontrollerad='2026-10-29',osakert=['Vilket mobilnät Telavox använder','Bindningstid'],partner=False,aktiv=True,status=None,skiPrivat=None,skiForetag=None,prisKontrollerade=False))
 
+# Visningstexter: underlaget innehåller citat och arbetsanteckningar. Det som visas
+# på sajten skrivs här i ren form. Underlaget i research/ ändras inte.
+VISNING={
+ 'telia':dict(kundtjanst='90 200',uppsagningstid='1 månad',startavgift='299 kr, ingen vid köp online'),
+ 'tele2':dict(kundtjanst='90 222, vardagar 08–19 och lördag 09–15',uppsagningstid='1 månad för de flesta abonnemang'),
+ 'telenor':dict(kundtjanst='020-222 222 och appen Mitt Telenor',uppsagningstid='1 månad, tidigast till bindningstidens slut'),
+ 'tre':dict(kundtjanst='0735-300 344 för abonnemang, vardagar 09–18',uppsagningstid='30 dagar',startavgift='0 kr online, 250 kr i butik'),
+ 'halebop':dict(kundtjanst='Chatt dygnet runt',uppsagningstid='1 månad'),
+ 'comviq':dict(kundtjanst='0772-21 21 21, vardagar 09–17. Chatt alla dagar 07–22',uppsagningstid='Ingen, du betalar innevarande fakturaperiod'),
+ 'vimla':dict(kundtjanst='Chatt vardagar 09.00–16.30 och ärenden via Mitt Vimla. Ingen telefonsupport',uppsagningstid='Ingen. Avtalet upphör sista dagen i den månad du säger upp',startavgift='Ingen'),
+ 'hallon':dict(kundtjanst='Chatt vardagar 09–16 och kundservice@hallon.se. Ingen telefonsupport',uppsagningstid='Ingen. Abonnemanget upphör vid nästa månadsskifte'),
+ 'fello':dict(kundtjanst='Chatt på support.fello.se och hello@fello.se',uppsagningstid='1 månad',startavgift=None),
+ 'chilimobil':dict(kundtjanst='kundservice@chilimobil.se. Ingen telefonsupport',uppsagningstid='Till månadsskiftet. Säger du upp efter den 15:e gäller månadsskiftet efter',startavgift='Ingen'),
+ 'lycamobile':dict(uppsagningstid='Ingen. Stäng av den automatiska förnyelsen i My Lyca'),
+ 'mybeat':dict(kundtjanst='019-55 55 500, support@mybeat.se och chatt',startavgift=None),
+ 'tellus':dict(kundtjanst='0771-20 10 00 och hej@tellusmobil.se, vardagar 09–17',uppsagningstid='Ingen. Abonnemanget upphör sista dagen i den månad du säger upp',startavgift='0 kr'),
+ 'fibio':dict(kundtjanst='010-550 02 00 och kundservice@fibio.se, vardagar 10–17',startavgift='Ingen'),
+ 'lingon':dict(kundtjanst='060-60 66 203, 10–17 med lunchstängt 12–13, och support@lingon.net'),
+}
+LISTRADER={
+ 'Utsedd till mobiloperatören med Sveriges nöjdaste kunder 2022–2025 enligt Svenskt Kvalitetsindex (enligt vimla.se)':'Sveriges nöjdaste mobilkunder 2022–2025 enligt Svenskt Kvalitetsindex',
+ 'Outnyttjad data sparas (enligt paketsidorna)':'Outnyttjad surf sparas till nästa månad',
+ 'Startavgift 299 kr enligt prislistan, slopas bara vid köp online':'Startavgift 299 kr, utom vid köp online',
+ "Ingen seniorrabatt (Telia skriver själva: 'Vi har inte några mobilabonnemang med seniorrabatt')":'Ingen seniorrabatt',
+ "Ingen angiven maxhastighet, bara nivåerna '3Snabbare'/'3Snabbast'":'Ingen angiven maxhastighet, bara nivåerna 3Snabbare och 3Snabbast',
+ 'Hastigheten är begränsad: max 150 Mbit/s enligt 5G-sidan, 100 Mbit/s enligt prislistan':'Hastigheten är begränsad till 100 eller 150 Mbit/s (operatörens sidor anger olika)',
+}
+for o in opl:
+    v=VISNING.get(o['slug'],{})
+    if 'kundtjanst' in v: o['kundtjanst']=v['kundtjanst']
+    for k in ('uppsagningstid','startavgift'):
+        if k in v: o['villkor'][k]=v[k]
+    o['starkor']=[LISTRADER.get(x,x) for x in o['starkor']]
+    o['svagheter']=[LISTRADER.get(x,x) for x in o['svagheter']]
+
 alla=plans+fplans
 for p in alla:
     if p.get('malgrupp') is None: p.pop('malgrupp',None)

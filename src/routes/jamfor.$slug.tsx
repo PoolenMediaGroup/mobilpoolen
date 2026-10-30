@@ -93,14 +93,9 @@ function Sida() {
 
   const rader = NIVAER.map((gb) => ({
     niva: `Minst ${gb} GB`,
-    a: billigastForBehov(
-      la.filter((x) => x.gb != null),
-      gb,
-    ),
-    b: billigastForBehov(
-      lb.filter((x) => x.gb != null),
-      gb,
-    ),
+    // Obegränsad surf räknas också: den täcker varje nivå.
+    a: billigastForBehov(la, gb),
+    b: billigastForBehov(lb, gb),
   }));
   rader.push({
     niva: "Obegränsad",

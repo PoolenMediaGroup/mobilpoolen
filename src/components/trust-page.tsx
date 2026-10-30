@@ -42,7 +42,7 @@ export function TrustPage({ title, intro, children, bild, bildFokus, updated }: 
                 Uppdaterad {updated}. Ansvarig:{" "}
                 <Link
                   to="/skribent/leon-hallstrom"
-                  className="underline underline-offset-2 hover:text-white"
+                  className="whitespace-nowrap underline underline-offset-2 hover:text-white"
                 >
                   Leon Hallström
                 </Link>

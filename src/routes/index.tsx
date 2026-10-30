@@ -31,7 +31,7 @@ import { pageHead, faqJsonLd, jsonLdScript, SITE_URL } from "@/lib/seo";
 import { fragorUrRegistret } from "@/lib/faq";
 import { PUBLISHED_GUIDES } from "@/lib/guides";
 import { MOBILNAT, OPERATORER, PRIVATA, SENAST_KONTROLLERAD, operator } from "@/lib/mobil/data";
-import { datumText, gbText, kr, snittForstaAret } from "@/lib/mobil/berakna";
+import { arVillkorat, datumText, gbText, kr, snittForstaAret } from "@/lib/mobil/berakna";
 import { bild } from "@/lib/bildbank";
 import { storMatt } from "@/lib/bildbank-matt";
 import type { NatId } from "@/lib/mobil/typer";
@@ -77,6 +77,9 @@ export const Route = createFileRoute("/")({
 });
 
 const ANTAL_OPERATORER = new Set(PRIVATA.map((a) => a.operator)).size;
+// Samma antal som listan nedan visar: abonnemang som alla kan teckna.
+const ALLMANNA = PRIVATA.filter((a) => !arVillkorat(a)).length;
+const VILLKORADE = PRIVATA.length - ALLMANNA;
 
 function Startsida() {
   const [forval, setForval] = useState<Forval>({});
@@ -229,8 +232,9 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
             Jämför mobilabonnemang och betala mindre varje månad
           </h1>
           <p className="mt-5 max-w-xl text-[18px] leading-relaxed text-white/85">
-            {PRIVATA.length} abonnemang från {ANTAL_OPERATORER} operatörer, med pris efter
-            kampanjen, bindningstid och nät. Varje pris kommer från operatörens egen webbplats.
+            {ALLMANNA} abonnemang från {ANTAL_OPERATORER} operatörer som alla kan teckna, plus{" "}
+            {VILLKORADE} för studenter, unga och seniorer. Med pris efter kampanjen, bindningstid
+            och nät, direkt från operatörernas egna webbplatser.
           </p>
           <ul className="mt-7 space-y-3">
             {[
