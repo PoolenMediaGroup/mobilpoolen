@@ -1,0 +1,1542 @@
+{
+ "telia|Mobil 10 GB|privat": {
+  "pris": 299,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil 10 GB",
+  "kundtyp": "privat"
+ },
+ "telia|Mobil 10 GB (24 mån bindning)|privat": {
+  "pris": 299,
+  "kampanjpris": 249,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil 10 GB (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Mobil 20 GB|privat": {
+  "pris": 399,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil 20 GB",
+  "kundtyp": "privat"
+ },
+ "telia|Mobil Obegränsad|privat": {
+  "pris": 499,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil Obegränsad",
+  "kundtyp": "privat"
+ },
+ "telia|Mobil Obegränsad Plus|privat": {
+  "pris": 569,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil Obegränsad Plus",
+  "kundtyp": "privat"
+ },
+ "telia|Mobil Obegränsad Plus (24 mån bindning)|privat": {
+  "pris": 569,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Mobil Obegränsad Plus (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus Netflix (24 mån bindning)|privat": {
+  "pris": 629,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus Netflix (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus HBO Max (24 mån bindning)|privat": {
+  "pris": 609,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus HBO Max (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus Disney+ (24 mån bindning)|privat": {
+  "pris": 599,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus Disney+ (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus Amazon Prime (24 mån bindning)|privat": {
+  "pris": 599,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus Amazon Prime (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus TV4 Play (24 mån bindning)|privat": {
+  "pris": 599,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus TV4 Play (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus Viaplay (24 mån bindning)|privat": {
+  "pris": 599,
+  "kampanjpris": 469,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus Viaplay (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "telia|Obegränsad Plus Netflix, HBO Max, Disney+ (24 mån bindning)|privat": {
+  "pris": 699,
+  "kampanjpris": 599,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Obegränsad Plus Netflix, HBO Max, Disney+ (24 mån bindning)",
+  "kundtyp": "privat"
+ },
+ "tele2|Mobil 15 GB|privat": {
+  "pris": 329,
+  "kampanjpris": 199,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/mobilabonnemang",
+  "operator": "tele2",
+  "namn": "Mobil 15 GB",
+  "kundtyp": "privat"
+ },
+ "tele2|Mobil Obegränsad|privat": {
+  "pris": 479,
+  "kampanjpris": 399,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/mobilabonnemang",
+  "operator": "tele2",
+  "namn": "Mobil Obegränsad",
+  "kundtyp": "privat"
+ },
+ "tele2|Mobil Obegränsad Max|privat": {
+  "pris": 519,
+  "kampanjpris": 449,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/erbjudanden",
+  "operator": "tele2",
+  "namn": "Mobil Obegränsad Max",
+  "kundtyp": "privat"
+ },
+ "tele2|Seniorabonnemang 5 GB (65+)|privat": {
+  "pris": 249,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/mobilabonnemang/senior",
+  "operator": "tele2",
+  "namn": "Seniorabonnemang 5 GB (65+)",
+  "kundtyp": "privat"
+ },
+ "tele2|Seniorabonnemang 15 GB (65+)|privat": {
+  "pris": 279,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/mobilabonnemang/senior",
+  "operator": "tele2",
+  "namn": "Seniorabonnemang 15 GB (65+)",
+  "kundtyp": "privat"
+ },
+ "tele2|Seniorabonnemang Obegränsad (65+)|privat": {
+  "pris": 429,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/mobilabonnemang/senior",
+  "operator": "tele2",
+  "namn": "Seniorabonnemang Obegränsad (65+)",
+  "kundtyp": "privat"
+ },
+ "telenor|Obegränsat Plus|privat": {
+  "pris": 629,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
+  "operator": "telenor",
+  "namn": "Obegränsat Plus",
+  "kundtyp": "privat"
+ },
+ "telenor|Obegränsat Plus, 24 mån bindning|privat": {
+  "pris": 629,
+  "kampanjpris": 529,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "operator": "telenor",
+  "namn": "Obegränsat Plus, 24 mån bindning",
+  "kundtyp": "privat"
+ },
+ "telenor|Obegränsat|privat": {
+  "pris": 499,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
+  "operator": "telenor",
+  "namn": "Obegränsat",
+  "kundtyp": "privat"
+ },
+ "telenor|Obegränsat, 24 mån bindning|privat": {
+  "pris": 499,
+  "kampanjpris": 449,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "operator": "telenor",
+  "namn": "Obegränsat, 24 mån bindning",
+  "kundtyp": "privat"
+ },
+ "telenor|25 GB|privat": {
+  "pris": 399,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
+  "operator": "telenor",
+  "namn": "25 GB",
+  "kundtyp": "privat"
+ },
+ "telenor|25 GB, 24 mån bindning|privat": {
+  "pris": 399,
+  "kampanjpris": 349,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "operator": "telenor",
+  "namn": "25 GB, 24 mån bindning",
+  "kundtyp": "privat"
+ },
+ "telenor|10 GB|privat": {
+  "pris": 299,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
+  "operator": "telenor",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "tre|Obegränsad surf|privat": {
+  "pris": 429,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tre.se/handla/mobilabonnemang",
+  "operator": "tre",
+  "namn": "Obegränsad surf",
+  "kundtyp": "privat"
+ },
+ "tre|25 GB|privat": {
+  "pris": 329,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tre.se/handla/mobilabonnemang",
+  "operator": "tre",
+  "namn": "25 GB",
+  "kundtyp": "privat"
+ },
+ "tre|6 GB|privat": {
+  "pris": 229,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tre.se/handla/mobilabonnemang",
+  "operator": "tre",
+  "namn": "6 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|5 GB|privat": {
+  "pris": 129,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/",
+  "operator": "comviq",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|5 GB (12 mån bindning, dubbel surf)|privat": {
+  "pris": 129,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang",
+  "operator": "comviq",
+  "namn": "5 GB (12 mån bindning, dubbel surf)",
+  "kundtyp": "privat"
+ },
+ "comviq|20 GB|privat": {
+  "pris": 229,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/",
+  "operator": "comviq",
+  "namn": "20 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|20 GB (12 mån bindning, dubbel surf)|privat": {
+  "pris": 229,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang",
+  "operator": "comviq",
+  "namn": "20 GB (12 mån bindning, dubbel surf)",
+  "kundtyp": "privat"
+ },
+ "comviq|100 GB|privat": {
+  "pris": 359,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/",
+  "operator": "comviq",
+  "namn": "100 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|100 GB (12 mån bindning, dubbel surf)|privat": {
+  "pris": 359,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang",
+  "operator": "comviq",
+  "namn": "100 GB (12 mån bindning, dubbel surf)",
+  "kundtyp": "privat"
+ },
+ "comviq|Student 14 GB|privat": {
+  "pris": 129,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang/student",
+  "operator": "comviq",
+  "namn": "Student 14 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|Student 40 GB|privat": {
+  "pris": 209,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang/student",
+  "operator": "comviq",
+  "namn": "Student 40 GB",
+  "kundtyp": "privat"
+ },
+ "comviq|Student 100 GB|privat": {
+  "pris": 309,
+  "kampanjpris": 45,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.comviq.se/mobilabonnemang/student",
+  "operator": "comviq",
+  "namn": "Student 100 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|5 GB|privat": {
+  "pris": 120,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/",
+  "operator": "vimla",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|10 GB|privat": {
+  "pris": 170,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/",
+  "operator": "vimla",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|15 GB|privat": {
+  "pris": 210,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/",
+  "operator": "vimla",
+  "namn": "15 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|25 GB|privat": {
+  "pris": 260,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/",
+  "operator": "vimla",
+  "namn": "25 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|100 GB|privat": {
+  "pris": 370,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/",
+  "operator": "vimla",
+  "namn": "100 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|55+ 0,5 GB|privat": {
+  "pris": 100,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/55plus/",
+  "operator": "vimla",
+  "namn": "55+ 0,5 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|55+ 4 GB|privat": {
+  "pris": 110,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/55plus/",
+  "operator": "vimla",
+  "namn": "55+ 4 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|55+ 10 GB|privat": {
+  "pris": 140,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/55plus/",
+  "operator": "vimla",
+  "namn": "55+ 10 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|55+ 15 GB|privat": {
+  "pris": 180,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/55plus/",
+  "operator": "vimla",
+  "namn": "55+ 15 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|55+ 40 GB|privat": {
+  "pris": 250,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/55plus/",
+  "operator": "vimla",
+  "namn": "55+ 40 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Student 10 GB|privat": {
+  "pris": 120,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/student/",
+  "operator": "vimla",
+  "namn": "Student 10 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Student 15 GB|privat": {
+  "pris": 160,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/student/",
+  "operator": "vimla",
+  "namn": "Student 15 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Student 25 GB|privat": {
+  "pris": 200,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/student/",
+  "operator": "vimla",
+  "namn": "Student 25 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Student 40 GB|privat": {
+  "pris": 240,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/student/",
+  "operator": "vimla",
+  "namn": "Student 40 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Student 80 GB|privat": {
+  "pris": 320,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/student/",
+  "operator": "vimla",
+  "namn": "Student 80 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Under 18 1 GB|privat": {
+  "pris": 100,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/under18/",
+  "operator": "vimla",
+  "namn": "Under 18 1 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Under 18 10 GB|privat": {
+  "pris": 120,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/under18/",
+  "operator": "vimla",
+  "namn": "Under 18 10 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Under 18 15 GB|privat": {
+  "pris": 160,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/under18/",
+  "operator": "vimla",
+  "namn": "Under 18 15 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Under 18 25 GB|privat": {
+  "pris": 210,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/under18/",
+  "operator": "vimla",
+  "namn": "Under 18 25 GB",
+  "kundtyp": "privat"
+ },
+ "vimla|Under 18 40 GB|privat": {
+  "pris": 250,
+  "kampanjpris": 20,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://vimla.se/bestall/under18/",
+  "operator": "vimla",
+  "namn": "Under 18 40 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|5 GB|privat": {
+  "pris": 109,
+  "kampanjpris": 19,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang",
+  "operator": "hallon",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|10 GB|privat": {
+  "pris": 159,
+  "kampanjpris": 29,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang",
+  "operator": "hallon",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|25 GB|privat": {
+  "pris": 259,
+  "kampanjpris": 39,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang",
+  "operator": "hallon",
+  "namn": "25 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|50 GB|privat": {
+  "pris": 309,
+  "kampanjpris": 49,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang",
+  "operator": "hallon",
+  "namn": "50 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|100 GB|privat": {
+  "pris": 359,
+  "kampanjpris": 59,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang",
+  "operator": "hallon",
+  "namn": "100 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Student 10 GB|privat": {
+  "pris": 109,
+  "kampanjpris": 19,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
+  "operator": "hallon",
+  "namn": "Student 10 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Student 20 GB|privat": {
+  "pris": 159,
+  "kampanjpris": 29,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
+  "operator": "hallon",
+  "namn": "Student 20 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Student 50 GB|privat": {
+  "pris": 259,
+  "kampanjpris": 39,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
+  "operator": "hallon",
+  "namn": "Student 50 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Student 100 GB|privat": {
+  "pris": 309,
+  "kampanjpris": 49,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
+  "operator": "hallon",
+  "namn": "Student 100 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Student 200 GB|privat": {
+  "pris": 359,
+  "kampanjpris": 59,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
+  "operator": "hallon",
+  "namn": "Student 200 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Över 55 4 GB|privat": {
+  "pris": 99,
+  "kampanjpris": 19,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
+  "operator": "hallon",
+  "namn": "Över 55 4 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Över 55 10 GB|privat": {
+  "pris": 129,
+  "kampanjpris": 29,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
+  "operator": "hallon",
+  "namn": "Över 55 10 GB",
+  "kundtyp": "privat"
+ },
+ "hallon|Över 55 16 GB|privat": {
+  "pris": 179,
+  "kampanjpris": 39,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
+  "operator": "hallon",
+  "namn": "Över 55 16 GB",
+  "kundtyp": "privat"
+ },
+ "fello|5 GB|privat": {
+  "pris": 120,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "fello|10 GB|privat": {
+  "pris": 180,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "fello|20 GB|privat": {
+  "pris": 230,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "20 GB",
+  "kundtyp": "privat"
+ },
+ "fello|40 GB|privat": {
+  "pris": 290,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "40 GB",
+  "kundtyp": "privat"
+ },
+ "fello|100 GB|privat": {
+  "pris": 370,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "100 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Student 10 GB|privat": {
+  "pris": 120,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Student 10 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Student 20 GB|privat": {
+  "pris": 160,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Student 20 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Student 30 GB|privat": {
+  "pris": 200,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Student 30 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Student 50 GB|privat": {
+  "pris": 250,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Student 50 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Student 100 GB|privat": {
+  "pris": 320,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Student 100 GB",
+  "kundtyp": "privat"
+ },
+ "fello|55+ 4 GB|privat": {
+  "pris": 110,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "55+ 4 GB",
+  "kundtyp": "privat"
+ },
+ "fello|55+ 10 GB|privat": {
+  "pris": 150,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "55+ 10 GB",
+  "kundtyp": "privat"
+ },
+ "fello|55+ 20 GB|privat": {
+  "pris": 200,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "55+ 20 GB",
+  "kundtyp": "privat"
+ },
+ "fello|55+ 30 GB|privat": {
+  "pris": 240,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "55+ 30 GB",
+  "kundtyp": "privat"
+ },
+ "fello|55+ 50 GB|privat": {
+  "pris": 280,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "55+ 50 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Under 18 4 GB|privat": {
+  "pris": 110,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Under 18 4 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Under 18 10 GB|privat": {
+  "pris": 140,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Under 18 10 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Under 18 20 GB|privat": {
+  "pris": 190,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Under 18 20 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Under 18 30 GB|privat": {
+  "pris": 230,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Under 18 30 GB",
+  "kundtyp": "privat"
+ },
+ "fello|Under 18 50 GB|privat": {
+  "pris": 280,
+  "kampanjpris": 30,
+  "kampanjManader": 4,
+  "startavgift": null,
+  "kalla": "https://api.fello.se/fello-product-service/v5/products",
+  "operator": "fello",
+  "namn": "Under 18 50 GB",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf 3 Mbit/s|privat": {
+  "pris": 179,
+  "kampanjpris": 149,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf 3 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf 10 Mbit/s|privat": {
+  "pris": 299,
+  "kampanjpris": 199,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf 10 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf 100 Mbit/s|privat": {
+  "pris": 349,
+  "kampanjpris": 249,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf 100 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf Full Fart|privat": {
+  "pris": 399,
+  "kampanjpris": 299,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf Full Fart",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf 10 Mbit/s Årsabonnemang|privat": {
+  "pris": 249.17,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf 10 Mbit/s Årsabonnemang",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Fri Surf 100 Mbit/s Årsabonnemang|privat": {
+  "pris": 290.83,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
+  "operator": "chilimobil",
+  "namn": "Fri Surf 100 Mbit/s Årsabonnemang",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Student Fri Surf 3 Mbit/s|privat": {
+  "pris": 159,
+  "kampanjpris": 79,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/student/ (orderflödets paketdata, distributör 103)",
+  "operator": "chilimobil",
+  "namn": "Student Fri Surf 3 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Student Fri Surf 10 Mbit/s|privat": {
+  "pris": 279,
+  "kampanjpris": 139,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/student/ (orderflödets paketdata, distributör 103)",
+  "operator": "chilimobil",
+  "namn": "Student Fri Surf 10 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Student Fri Surf 100 Mbit/s|privat": {
+  "pris": 329,
+  "kampanjpris": 165,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/student/ (orderflödets paketdata, distributör 103)",
+  "operator": "chilimobil",
+  "namn": "Student Fri Surf 100 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Student Fri Surf Full Fart|privat": {
+  "pris": 379,
+  "kampanjpris": 189,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/student/ (orderflödets paketdata, distributör 103)",
+  "operator": "chilimobil",
+  "namn": "Student Fri Surf Full Fart",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Senior Fri Surf 3 Mbit/s|privat": {
+  "pris": 159,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/senior/ (orderflödets paketdata, distributör 114)",
+  "operator": "chilimobil",
+  "namn": "Senior Fri Surf 3 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Senior Fri Surf 10 Mbit/s|privat": {
+  "pris": 279,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/senior/ (orderflödets paketdata, distributör 114)",
+  "operator": "chilimobil",
+  "namn": "Senior Fri Surf 10 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Senior Fri Surf 100 Mbit/s|privat": {
+  "pris": 329,
+  "kampanjpris": 279,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/senior/ (orderflödets paketdata, distributör 114)",
+  "operator": "chilimobil",
+  "namn": "Senior Fri Surf 100 Mbit/s",
+  "kundtyp": "privat"
+ },
+ "chilimobil|Senior Fri Surf Full Fart|privat": {
+  "pris": 379,
+  "kampanjpris": 279,
+  "kampanjManader": 2,
+  "startavgift": null,
+  "kalla": "https://chilimobil.se/senior/ (orderflödets paketdata, distributör 114)",
+  "operator": "chilimobil",
+  "namn": "Senior Fri Surf Full Fart",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 85|privat": {
+  "pris": 85,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 85",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 99|privat": {
+  "pris": 99,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 99",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 149|privat": {
+  "pris": 149,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-10gb/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 149",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 199|privat": {
+  "pris": 199,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 199",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 238|privat": {
+  "pris": 238,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 238",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 340|privat": {
+  "pris": 340,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 340",
+  "kundtyp": "privat"
+ },
+ "lycamobile|Fast Pris 398|privat": {
+  "pris": 398,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+  "operator": "lycamobile",
+  "namn": "Fast Pris 398",
+  "kundtyp": "privat"
+ },
+ "mybeat|5 GB|privat": {
+  "pris": 225,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mybeat.se/mobilabonnemang-2/",
+  "operator": "mybeat",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "mybeat|15 GB|privat": {
+  "pris": 324,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mybeat.se/mobilabonnemang-2/",
+  "operator": "mybeat",
+  "namn": "15 GB",
+  "kundtyp": "privat"
+ },
+ "mybeat|35 GB|privat": {
+  "pris": 354,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mybeat.se/mobilabonnemang-2/",
+  "operator": "mybeat",
+  "namn": "35 GB",
+  "kundtyp": "privat"
+ },
+ "mybeat|Fri Surf|privat": {
+  "pris": 459,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://mybeat.se/mobilabonnemang-2/",
+  "operator": "mybeat",
+  "namn": "Fri Surf",
+  "kundtyp": "privat"
+ },
+ "tellus|Rörligt 1 GB|privat": {
+  "pris": 69,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "Rörligt 1 GB",
+  "kundtyp": "privat"
+ },
+ "tellus|3 GB|privat": {
+  "pris": 99,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "3 GB",
+  "kundtyp": "privat"
+ },
+ "tellus|10 GB|privat": {
+  "pris": 149,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "tellus|20 GB (endast 55+)|privat": {
+  "pris": 189,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "20 GB (endast 55+)",
+  "kundtyp": "privat"
+ },
+ "tellus|30 GB|privat": {
+  "pris": 249,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "30 GB",
+  "kundtyp": "privat"
+ },
+ "tellus|100 GB (endast 55+)|privat": {
+  "pris": 299,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "100 GB (endast 55+)",
+  "kundtyp": "privat"
+ },
+ "tellus|Obegränsat|privat": {
+  "pris": 349,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/prislista/",
+  "operator": "tellus",
+  "namn": "Obegränsat",
+  "kundtyp": "privat"
+ },
+ "fibio|2 GB|privat": {
+  "pris": 169,
+  "kampanjpris": 19,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.fibio.se/mobilabonnemang/",
+  "operator": "fibio",
+  "namn": "2 GB",
+  "kundtyp": "privat"
+ },
+ "fibio|5 GB|privat": {
+  "pris": 219,
+  "kampanjpris": 29,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.fibio.se/mobilabonnemang/",
+  "operator": "fibio",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "fibio|20 GB|privat": {
+  "pris": 269,
+  "kampanjpris": 39,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.fibio.se/mobilabonnemang/",
+  "operator": "fibio",
+  "namn": "20 GB",
+  "kundtyp": "privat"
+ },
+ "fibio|Obegränsad|privat": {
+  "pris": 469,
+  "kampanjpris": 49,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://www.fibio.se/mobilabonnemang/",
+  "operator": "fibio",
+  "namn": "Obegränsad",
+  "kundtyp": "privat"
+ },
+ "katshing|5 GB|privat": {
+  "pris": 145,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "5 GB",
+  "kundtyp": "privat"
+ },
+ "katshing|15 GB|privat": {
+  "pris": 195,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "15 GB",
+  "kundtyp": "privat"
+ },
+ "katshing|25 GB|privat": {
+  "pris": 245,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "25 GB",
+  "kundtyp": "privat"
+ },
+ "katshing|50 GB|privat": {
+  "pris": 295,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "50 GB",
+  "kundtyp": "privat"
+ },
+ "katshing|100 GB|privat": {
+  "pris": 345,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "100 GB",
+  "kundtyp": "privat"
+ },
+ "katshing|Obegränsad|privat": {
+  "pris": 395,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.katshing.com/priser",
+  "operator": "katshing",
+  "namn": "Obegränsad",
+  "kundtyp": "privat"
+ },
+ "lingon|3 GB|privat": {
+  "pris": 149,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "3 GB",
+  "kundtyp": "privat"
+ },
+ "lingon|6 GB|privat": {
+  "pris": 199,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "6 GB",
+  "kundtyp": "privat"
+ },
+ "lingon|10 GB|privat": {
+  "pris": 249,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "10 GB",
+  "kundtyp": "privat"
+ },
+ "lingon|20 GB|privat": {
+  "pris": 299,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "20 GB",
+  "kundtyp": "privat"
+ },
+ "lingon|32 GB|privat": {
+  "pris": 349,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "32 GB",
+  "kundtyp": "privat"
+ },
+ "lingon|60 GB|privat": {
+  "pris": 399,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://lingon.se/mobilabonnemang-2/",
+  "operator": "lingon",
+  "namn": "60 GB",
+  "kundtyp": "privat"
+ },
+ "telia|Företag Obegränsad Max|foretag": {
+  "pris": 699,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Max",
+  "kundtyp": "foretag"
+ },
+ "telia|Företag Obegränsad Premium|foretag": {
+  "pris": 599,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Premium",
+  "kundtyp": "foretag"
+ },
+ "telia|Företag Obegränsad|foretag": {
+  "pris": 499,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "operator": "telia",
+  "namn": "Företag Obegränsad",
+  "kundtyp": "foretag"
+ },
+ "telia|Företag 10 GB|foretag": {
+  "pris": 349,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "operator": "telia",
+  "namn": "Företag 10 GB",
+  "kundtyp": "foretag"
+ },
+ "tele2|Företag 60 GB|foretag": {
+  "pris": 399,
+  "kampanjpris": 269,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
+  "operator": "tele2",
+  "namn": "Företag 60 GB",
+  "kundtyp": "foretag"
+ },
+ "tele2|Företag Obegränsad|foretag": {
+  "pris": 499,
+  "kampanjpris": 299,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
+  "operator": "tele2",
+  "namn": "Företag Obegränsad",
+  "kundtyp": "foretag"
+ },
+ "tele2|Företag Obegränsad Max|foretag": {
+  "pris": 599,
+  "kampanjpris": 349,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
+  "operator": "tele2",
+  "namn": "Företag Obegränsad Max",
+  "kundtyp": "foretag"
+ },
+ "tre|3Företag Obegränsad|foretag": {
+  "pris": 249,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.tre.se/treforetag/handla/foretagsabonnemang/abonnemang",
+  "operator": "tre",
+  "namn": "3Företag Obegränsad",
+  "kundtyp": "foretag"
+ },
+ "tre|3Företag Obegränsad Max|foretag": {
+  "pris": 449,
+  "kampanjpris": 299,
+  "kampanjManader": 24,
+  "startavgift": null,
+  "kalla": "https://www.tre.se/treforetag/handla/foretagsabonnemang/abonnemang",
+  "operator": "tre",
+  "namn": "3Företag Obegränsad Max",
+  "kundtyp": "foretag"
+ },
+ "hallon|Företag 10 GB|foretag": {
+  "pris": 129,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/foretag",
+  "operator": "hallon",
+  "namn": "Företag 10 GB",
+  "kundtyp": "foretag"
+ },
+ "hallon|Företag 30 GB|foretag": {
+  "pris": 179,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/foretag",
+  "operator": "hallon",
+  "namn": "Företag 30 GB",
+  "kundtyp": "foretag"
+ },
+ "hallon|Företag 150 GB|foretag": {
+  "pris": 269,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://www.hallon.se/foretag",
+  "operator": "hallon",
+  "namn": "Företag 150 GB",
+  "kundtyp": "foretag"
+ },
+ "telavox|Obegränsad Plus|foretag": {
+  "pris": 298,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://telavox.se/produkt-kategori/obundet/",
+  "operator": "telavox",
+  "namn": "Obegränsad Plus",
+  "kundtyp": "foretag"
+ },
+ "telavox|Obegränsad Premium|foretag": {
+  "pris": 399,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://telavox.se/produkt-kategori/obundet/",
+  "operator": "telavox",
+  "namn": "Obegränsad Premium",
+  "kundtyp": "foretag"
+ },
+ "telavox|Obegränsad Max|foretag": {
+  "pris": 549,
+  "kampanjpris": null,
+  "kampanjManader": null,
+  "startavgift": null,
+  "kalla": "https://telavox.se/produkt-kategori/obundet/",
+  "operator": "telavox",
+  "namn": "Obegränsad Max",
+  "kundtyp": "foretag"
+ }
+}

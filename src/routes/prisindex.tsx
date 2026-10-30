@@ -16,7 +16,10 @@ import {
   prisPerGb,
   snittForstaAret,
 } from "@/lib/mobil/berakna";
-import type { Abonnemang } from "@/lib/mobil/typer";
+import { harKampanj, indexNyckeltal, indexUrval, median, perNiva } from "@/lib/mobil/prisindex";
+import { PRISINDEX_HISTORIK } from "@/lib/mobil/prisindex-historik";
+import { PRISANDRINGAR, type Prisandring } from "@/lib/mobil/prisandringar";
+import { PrisspannDiagram, IndexTrend } from "@/components/mobil/prisindex-diagram";
 import { absoluteUrl, breadcrumbJsonLd, faqJsonLd, jsonLdScript, pageHead } from "@/lib/seo";
 
 const PATH = "/prisindex";
@@ -28,68 +31,12 @@ const TRAIL = [
 /* ---------------- Uträkningen, gjord en gång vid bygget ---------------- */
 
 const MANAD = datumText(SENAST_KONTROLLERAD).replace(/^\d+ /, ""); // "oktober 2026"
-const NIVAER = [1, 5, 10, 20, 50, 100] as const;
-const TAK = 3;
-
 /** Abonnemang som alla kan teckna: inga ålders- eller studentkrav. */
-const URVAL = PRIVATA.filter((a) => !arVillkorat(a));
+const URVAL = indexUrval(PRIVATA);
 const VILLKORADE = PRIVATA.length - URVAL.length;
-
-function median(xs: number[]): number | null {
-  if (xs.length === 0) return null;
-  const s = [...xs].sort((a, b) => a - b);
-  const m = Math.floor(s.length / 2);
-  return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
-}
-
-function harKampanj(a: Abonnemang): boolean {
-  return a.kampanjpris != null && (a.kampanjManader ?? 0) > 0 && a.kampanjpris < a.pris;
-}
-
-type NivaRad = {
-  niva: string;
-  regel: string;
-  antal: number;
-  min: number | null;
-  med: number | null;
-  max: number | null;
-  kampanjAndel: number | null;
-};
-
-function nivaRad(niva: string, regel: string, lista: Abonnemang[]): NivaRad {
-  const p = lista.map(snittForstaAret);
-  return {
-    niva,
-    regel,
-    antal: lista.length,
-    min: p.length ? Math.min(...p) : null,
-    med: median(p),
-    max: p.length ? Math.max(...p) : null,
-    kampanjAndel: lista.length ? (lista.filter(harKampanj).length / lista.length) * 100 : null,
-  };
-}
-
-const PER_NIVA: NivaRad[] = [
-  ...NIVAER.map((n) =>
-    nivaRad(
-      `${n} GB`,
-      `${formatTal(n)}–${formatTal(n * TAK)} GB`,
-      URVAL.filter((a) => a.gb != null && a.gb >= n && a.gb <= n * TAK),
-    ),
-  ),
-  nivaRad(
-    "Obegränsad",
-    "Obegränsad surf",
-    URVAL.filter((a) => a.gb == null),
-  ),
-];
-
+const PER_NIVA = perNiva(URVAL);
 const MED_KAMPANJ = URVAL.filter(harKampanj);
-const hojningar = MED_KAMPANJ.map((a) => a.pris / (a.kampanjpris as number));
-const SNITT_HOJNING = hojningar.length
-  ? hojningar.reduce((s, x) => s + x, 0) / hojningar.length
-  : null;
-const MEDIAN_HOJNING_KR = median(MED_KAMPANJ.map((a) => a.pris - (a.kampanjpris as number)));
+const { snittHojning: SNITT_HOJNING, medianHojningKr: MEDIAN_HOJNING_KR } = indexNyckeltal(URVAL);
 const UTAN_BINDNING = URVAL.filter((a) => a.bindning === 0).length;
 const BINDNING_OKAND = URVAL.filter((a) => a.bindning == null).length;
 const PER_GB = URVAL.map(prisPerGb).filter((x): x is number => x != null);
@@ -141,6 +88,26 @@ const NYCKEL: { mått: string; varde: string; forklaring: string }[] = [
     forklaring: `ordinarie pris delat med surf, ${PER_GB.length} abonnemang med fast surfmängd`,
   },
 ];
+
+/* ---------------- Prisändringar ---------------- */
+
+const FALTNAMN: Record<string, string> = {
+  pris: "Ordinarie pris",
+  kampanjpris: "Kampanjpris",
+  kampanjManader: "Kampanjens längd",
+  startavgift: "Startavgift",
+};
+
+/** De senaste ändringarna för privatpersoner, loggade av scripts/bygg_data.py. */
+const SENASTE_ANDRINGAR = PRISANDRINGAR.filter((e) => e.kundtyp === "privat").slice(0, 12);
+
+function andringText(e: Prisandring): string {
+  const v = (x: number | null) =>
+    x == null ? "ingen" : e.falt === "kampanjManader" ? `${x} mån` : kr(x);
+  if (e.typ === "nytt") return `Nytt abonnemang, ${e.till != null ? `${kr(e.till)}/mån` : ""}`;
+  if (e.typ === "borttaget") return "Finns inte längre";
+  return `${FALTNAMN[e.falt ?? ""] ?? "Pris"}: ${v(e.fran)} till ${v(e.till)}`;
+}
 
 /* ---------------- CSV ---------------- */
 
@@ -299,6 +266,9 @@ function Sida() {
           <p className="mt-1 text-[15px] text-foreground/75">
             Kronor per månad inklusive moms, med kampanj och startavgift inräknade.
           </p>
+          <div className="mt-4">
+            <PrisspannDiagram rader={PER_NIVA} />
+          </div>
           <div className="mt-4 overflow-x-auto rounded-xl border border-border bg-surface">
             <table className="w-full min-w-[640px] text-[15px]">
               <caption className="sr-only">
@@ -350,6 +320,38 @@ function Sida() {
               </tbody>
             </table>
           </div>
+
+          {PRISINDEX_HISTORIK.length >= 2 && (
+            <>
+              <h3 className="mt-10 text-[20px] font-bold">Så har priserna utvecklats</h3>
+              <div className="mt-4">
+                <IndexTrend historik={PRISINDEX_HISTORIK} />
+              </div>
+            </>
+          )}
+
+          {SENASTE_ANDRINGAR.length > 0 && (
+            <>
+              <h3 className="mt-10 text-[20px] font-bold">Senaste prisändringarna</h3>
+              <p className="mt-1 text-[15px] text-foreground/75">
+                Det vi har sett ändras sedan förra kontrollen, nyast först.
+              </p>
+              <ul className="mt-4 divide-y divide-border rounded-xl border border-border bg-surface">
+                {SENASTE_ANDRINGAR.map((e, i) => (
+                  <li
+                    key={`${e.datum}-${e.operator}-${e.namn}-${e.falt}-${i}`}
+                    className="grid gap-1 px-4 py-3 text-[15px] sm:grid-cols-[110px_minmax(0,1fr)_minmax(0,1fr)] sm:gap-4"
+                  >
+                    <span className="text-foreground/60">{datumText(e.datum)}</span>
+                    <span className="font-semibold">
+                      {OPERATORER.find((o) => o.slug === e.operator)?.namn ?? e.operator} {e.namn}
+                    </span>
+                    <span>{andringText(e)}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
 
           <h3 className="mt-10 text-[20px] font-bold">Kampanjer, bindningstid och pris per GB</h3>
           <div className="mt-4 overflow-x-auto rounded-xl border border-border bg-surface">
