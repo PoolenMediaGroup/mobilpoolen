@@ -117,6 +117,11 @@ function Sida() {
       faq={FAQ}
       lankar={[
         {
+          href: "/mobilabonnemang-med-streaming",
+          label: "Obegränsat med streaming",
+          text: "Netflix, HBO Max eller Disney+ i abonnemanget: lönar det sig?",
+        },
+        {
           href: "/surf/100-gb",
           label: "100 GB surf",
           text: "Billigaste abonnemangen med 100 GB, om obegränsat är mer än du behöver.",

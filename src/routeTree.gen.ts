@@ -22,6 +22,7 @@ import { Route as OrdlistaRouteImport } from './routes/ordlista'
 import { Route as OmOssRouteImport } from './routes/om-oss'
 import { Route as ObegransadSurfRouteImport } from './routes/obegransad-surf'
 import { Route as MobiltBredbandRouteImport } from './routes/mobilt-bredband'
+import { Route as MobilabonnemangMedStreamingRouteImport } from './routes/mobilabonnemang-med-streaming'
 import { Route as KontantkortRouteImport } from './routes/kontantkort'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KampanjerRouteImport } from './routes/kampanjer'
@@ -161,6 +162,12 @@ const MobiltBredbandRoute = MobiltBredbandRouteImport.update({
   path: '/mobilt-bredband',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MobilabonnemangMedStreamingRoute =
+  MobilabonnemangMedStreamingRouteImport.update({
+    id: '/mobilabonnemang-med-streaming',
+    path: '/mobilabonnemang-med-streaming',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const KontantkortRoute = KontantkortRouteImport.update({
   id: '/kontantkort',
   path: '/kontantkort',
@@ -576,6 +583,7 @@ export interface FileRoutesByFullPath {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilabonnemang-med-streaming': typeof MobilabonnemangMedStreamingRoute
   '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
@@ -664,6 +672,7 @@ export interface FileRoutesByTo {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilabonnemang-med-streaming': typeof MobilabonnemangMedStreamingRoute
   '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
@@ -753,6 +762,7 @@ export interface FileRoutesById {
   '/kampanjer': typeof KampanjerRoute
   '/kontakt': typeof KontaktRoute
   '/kontantkort': typeof KontantkortRoute
+  '/mobilabonnemang-med-streaming': typeof MobilabonnemangMedStreamingRoute
   '/mobilt-bredband': typeof MobiltBredbandRoute
   '/obegransad-surf': typeof ObegransadSurfRoute
   '/om-oss': typeof OmOssRoute
@@ -843,6 +853,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilabonnemang-med-streaming'
     | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
@@ -931,6 +942,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilabonnemang-med-streaming'
     | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
@@ -1019,6 +1031,7 @@ export interface FileRouteTypes {
     | '/kampanjer'
     | '/kontakt'
     | '/kontantkort'
+    | '/mobilabonnemang-med-streaming'
     | '/mobilt-bredband'
     | '/obegransad-surf'
     | '/om-oss'
@@ -1108,6 +1121,7 @@ export interface RootRouteChildren {
   KampanjerRoute: typeof KampanjerRoute
   KontaktRoute: typeof KontaktRoute
   KontantkortRoute: typeof KontantkortRoute
+  MobilabonnemangMedStreamingRoute: typeof MobilabonnemangMedStreamingRoute
   MobiltBredbandRoute: typeof MobiltBredbandRoute
   ObegransadSurfRoute: typeof ObegransadSurfRoute
   OmOssRoute: typeof OmOssRoute
@@ -1272,6 +1286,13 @@ declare module '@tanstack/react-router' {
       path: '/mobilt-bredband'
       fullPath: '/mobilt-bredband'
       preLoaderRoute: typeof MobiltBredbandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mobilabonnemang-med-streaming': {
+      id: '/mobilabonnemang-med-streaming'
+      path: '/mobilabonnemang-med-streaming'
+      fullPath: '/mobilabonnemang-med-streaming'
+      preLoaderRoute: typeof MobilabonnemangMedStreamingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kontantkort': {
@@ -1804,6 +1825,7 @@ const rootRouteChildren: RootRouteChildren = {
   KampanjerRoute: KampanjerRoute,
   KontaktRoute: KontaktRoute,
   KontantkortRoute: KontantkortRoute,
+  MobilabonnemangMedStreamingRoute: MobilabonnemangMedStreamingRoute,
   MobiltBredbandRoute: MobiltBredbandRoute,
   ObegransadSurfRoute: ObegransadSurfRoute,
   OmOssRoute: OmOssRoute,

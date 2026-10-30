@@ -328,3 +328,12 @@ open(p_upp,'w').write('// GENERERAD av scripts/bygg_data.py ur research/uppsagni
   f'export const UPPSAGNING_KONTROLLERAD = "{upp["kontrollerad"]}";\n\n'
   'export const UPPSAGNING: Record<string, Uppsagning> = '+json.dumps(upp['operatorer'],ensure_ascii=False,indent=2)+';\n')
 subprocess.run(['npx','prettier','--write',p_upp],cwd=ROT,stdout=subprocess.DEVNULL)
+
+# Streamingtjänsternas ordinarie priser (research/streaming.json) till src/lib/mobil/streaming-data.ts.
+st=json.load(open(os.path.join(ROT,'research/streaming.json')))
+p_st=os.path.join(ROT,'src/lib/mobil/streaming-data.ts')
+open(p_st,'w').write('// GENERERAD av scripts/bygg_data.py ur research/streaming.json. Ändra inte för hand.\n\n'
+  'export type Streamingpris = { tjanst: string; niva: string; pris: number | null; kalla: string; notis: string | null };\n\n'
+  f'export const STREAMING_KONTROLLERAD = "{st["kontrollerad"]}";\n\n'
+  'export const STREAMINGPRISER: Streamingpris[] = '+json.dumps([{k:t.get(k) for k in ('tjanst','niva','pris','kalla','notis')} for t in st['tjanster']],ensure_ascii=False,indent=2)+';\n')
+subprocess.run(['npx','prettier','--write',p_st],cwd=ROT,stdout=subprocess.DEVNULL)
