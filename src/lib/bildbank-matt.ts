@@ -43,6 +43,15 @@ const MATT: Record<string, readonly [number, number, number, number]> = {
   "underskrift-brev": [1280, 851, 800, 532],
   "glasogon-finstilt": [1280, 853, 800, 533],
   "vanner-middag-utomhus": [1600, 1067, 800, 534],
+  "antenn-5g-himmel": [1280, 853, 800, 533],
+  "diagram-papper": [1280, 848, 800, 530],
+  "esim-simkort-verktyg": [1280, 960, 800, 600],
+  "fakturabok-haftapparat": [1280, 851, 800, 532],
+  "gammal-mobil-lera": [1280, 720, 800, 450],
+  "handslag-kostym": [1280, 961, 800, 601],
+  "mote-kontor-team": [1280, 853, 800, 533],
+  "tom-kundvagn": [1280, 670, 800, 419],
+  "mobil-laddar-batteri": [1280, 853, 800, 533],
 };
 
 export type Matt = { width: number; height: number };
