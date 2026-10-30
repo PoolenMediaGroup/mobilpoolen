@@ -78,7 +78,7 @@ function OperatorSida() {
     { t: "Wifi-samtal", v: o.wifiSamtal == null ? "Uppgift saknas" : o.wifiSamtal ? "Ja" : "Nej" },
     { t: "Uppsägning", v: o.villkor.uppsagningstid ?? "Uppgift saknas" },
     { t: "Startavgift", v: o.villkor.startavgift ?? "Uppgift saknas" },
-    { t: "Företagsabonnemang", v: o.harForetag ? "Ja" : "Nej" },
+    { t: "För företag", v: o.harForetag ? "Ja" : "Nej" },
   ];
 
   return (
@@ -118,7 +118,7 @@ function OperatorSida() {
                 {o.namn}s webbplats
               </a>
             </p>
-            <dl className="mt-8 grid gap-3 sm:grid-cols-3">
+            <dl className="mt-6 grid gap-2 sm:mt-8 sm:grid-cols-3 sm:gap-3">
               <Nyckel
                 varde={billigast ? kr(snittForstaAret(billigast)) : "–"}
                 text={
@@ -215,25 +215,31 @@ function OperatorSida() {
         </section>
 
         <section className="border-y border-border bg-surface py-14 lg:py-20">
-          <div className="mx-auto grid max-w-[1140px] gap-10 px-6 lg:grid-cols-2">
-            <div>
+          {/* grid-cols-1 och min-w-0: långa värden får inte spräcka rutnätet i mobilen. */}
+          <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-10 px-6 lg:grid-cols-2">
+            <div className="min-w-0">
               <h2 className="font-bold">Fakta om {o.namn}</h2>
               <dl className="mt-6 divide-y divide-border rounded-2xl border border-border">
                 {fakta.map((f) => (
-                  <div key={f.t} className="grid grid-cols-[150px_1fr] gap-4 px-5 py-3 text-[15px]">
+                  <div
+                    key={f.t}
+                    className="grid grid-cols-[112px_minmax(0,1fr)] gap-3 px-4 py-3 text-[15px] sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-4 sm:px-5"
+                  >
                     <dt className="text-foreground/65">{f.t}</dt>
-                    <dd className="font-medium text-foreground">{f.v}</dd>
+                    <dd className="font-medium text-foreground [overflow-wrap:anywhere]">{f.v}</dd>
                   </div>
                 ))}
                 {o.kundtjanst && (
-                  <div className="grid grid-cols-[150px_1fr] gap-4 px-5 py-3 text-[15px]">
+                  <div className="grid grid-cols-[112px_minmax(0,1fr)] gap-3 px-4 py-3 text-[15px] sm:grid-cols-[150px_minmax(0,1fr)] sm:gap-4 sm:px-5">
                     <dt className="text-foreground/65">Kundtjänst</dt>
-                    <dd className="font-medium text-foreground">{o.kundtjanst}</dd>
+                    <dd className="font-medium text-foreground [overflow-wrap:anywhere]">
+                      {o.kundtjanst}
+                    </dd>
                   </div>
                 )}
               </dl>
             </div>
-            <div>
+            <div className="min-w-0">
               {o.starkor.length > 0 && (
                 <>
                   <h2 className="font-bold">Passar dig som vill ha</h2>
@@ -269,7 +275,7 @@ function OperatorSida() {
         </section>
 
         <section className="py-14 lg:py-20">
-          <div className="mx-auto grid max-w-[1140px] gap-10 px-6 lg:grid-cols-2">
+          <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-10 px-6 lg:grid-cols-2">
             <div className="prosa">
               <h2>Nät och täckning</h2>
               <p>
@@ -436,11 +442,15 @@ function OperatorSida() {
 
 function Nyckel({ varde, text }: { varde: string; text: string }) {
   return (
-    <div className="rounded-2xl border border-white/15 bg-white/[0.06] px-5 py-4">
+    <div className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-2.5 sm:px-5 sm:py-4">
       <dt className="sr-only">{text}</dt>
-      <dd>
-        <div className="font-display text-[28px] font-bold leading-tight text-white">{varde}</div>
-        <div className="mt-1 text-[14px] leading-snug text-white/75">{text}</div>
+      <dd className="flex items-baseline gap-3 sm:block">
+        <div className="shrink-0 font-display text-[22px] font-bold leading-tight text-white sm:text-[28px]">
+          {varde}
+        </div>
+        <div className="text-[13.5px] leading-snug text-white/75 sm:mt-1 sm:text-[14px]">
+          {text}
+        </div>
       </dd>
     </div>
   );

@@ -166,18 +166,54 @@ function Sida() {
       }
       jamforelse={
         <div className="space-y-12">
-          <div className="grid grid-cols-2 gap-3">
-            {[a, b].map((o) => (
-              <Link
-                key={o.slug}
-                to="/operatorer/$slug"
-                params={{ slug: o.slug }}
-                className="flex items-center gap-3 rounded-2xl border border-border bg-surface p-4 hover:shadow-kort"
-              >
-                <OperatorMonogram namn={o.namn} />
-                <span className="font-display text-[18px] font-bold">{o.namn}</span>
-              </Link>
-            ))}
+          {/* Sammanfattning per operatör: det man jämför först. */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {[
+              { o: a, vunna: vinnare.a, lista: la },
+              { o: b, vunna: vinnare.b, lista: lb },
+            ].map(({ o, vunna, lista }) => {
+              const billigast = lista.length
+                ? lista.reduce((x, y) => (snittForstaAret(y) < snittForstaAret(x) ? y : x))
+                : null;
+              return (
+                <Link
+                  key={o.slug}
+                  to="/operatorer/$slug"
+                  params={{ slug: o.slug }}
+                  className="block rounded-2xl border border-border bg-surface p-5 transition-shadow hover:shadow-kort"
+                >
+                  <div className="flex items-center gap-3">
+                    <OperatorMonogram namn={o.namn} />
+                    <span className="font-display text-[20px] font-bold">{o.namn}</span>
+                  </div>
+                  <dl className="mt-4 grid grid-cols-3 gap-3 text-[13px]">
+                    <div>
+                      <dt className="text-foreground/60">Billigast</dt>
+                      <dd className="mt-0.5 text-[16px] font-semibold text-foreground">
+                        {billigast ? `${kr(snittForstaAret(billigast))}/mån` : "–"}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-foreground/60">Nät</dt>
+                      <dd className="mt-0.5 text-[16px] font-semibold text-foreground">
+                        {MOBILNAT[o.nat].namn.replace(/s nät$/, "")}
+                      </dd>
+                    </div>
+                    <div>
+                      <dt className="text-foreground/60">Nöjdhet (SKI)</dt>
+                      <dd className="mt-0.5 text-[16px] font-semibold text-foreground">
+                        {o.skiPrivat != null ? decimal(o.skiPrivat) : "–"}
+                      </dd>
+                    </div>
+                  </dl>
+                  {harPriser && vunna > 0 && (
+                    <p className="mt-3 text-[13px] text-foreground/65">
+                      Billigast på {vunna} av {rader.filter((r) => r.a && r.b).length} surfnivåer
+                    </p>
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {harPriser ? (
@@ -187,7 +223,48 @@ function Sida() {
                 Billigaste abonnemanget hos var och en som ger minst så mycket surf. Snitt per månad
                 första året och totalt över 24 månader.
               </p>
-              <div className="mt-5 overflow-x-auto rounded-2xl border border-border bg-surface">
+              {/* Mobil: en rad per surfnivå med båda operatörerna sida vid sida, så att
+                  ingen kolumn göms bakom sidledsscroll. */}
+              <ul className="mt-5 divide-y divide-border rounded-2xl border border-border bg-surface sm:hidden">
+                {rader.map((r) => {
+                  const sa = r.a ? snittForstaAret(r.a) : null;
+                  const sb = r.b ? snittForstaAret(r.b) : null;
+                  const cell = (
+                    op: typeof a,
+                    x: typeof r.a,
+                    s: number | null,
+                    annan: number | null,
+                  ) => (
+                    <div className="min-w-0">
+                      <div className="text-[12.5px] text-foreground/60">{op.namn}</div>
+                      {x ? (
+                        <>
+                          <div
+                            className={`text-[17px] font-semibold ${s != null && annan != null && s < annan ? "text-savings" : ""}`}
+                          >
+                            {kr(s!)}/mån
+                          </div>
+                          <div className="text-[12.5px] leading-snug text-foreground/65 [overflow-wrap:anywhere]">
+                            {x.namn}
+                          </div>
+                        </>
+                      ) : (
+                        <div className="text-[15px] text-foreground/50">Finns inte</div>
+                      )}
+                    </div>
+                  );
+                  return (
+                    <li key={r.niva} className="px-4 py-3.5">
+                      <div className="text-[14px] font-semibold">{r.niva}</div>
+                      <div className="mt-2 grid grid-cols-2 gap-4">
+                        {cell(a, r.a, sa, sb)}
+                        {cell(b, r.b, sb, sa)}
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+              <div className="mt-5 hidden overflow-x-auto rounded-2xl border border-border bg-surface sm:block">
                 <table className="w-full min-w-[560px] text-[15px]">
                   <thead className="bg-muted/60 text-left text-[12.5px] uppercase tracking-wide text-foreground/70">
                     <tr>
