@@ -231,12 +231,13 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
           >
             Jämför mobilabonnemang och betala mindre varje månad
           </h1>
-          <p className="mt-5 max-w-xl text-[18px] leading-relaxed text-white/85">
+          <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-white/85 sm:text-[18px]">
             {ALLMANNA} abonnemang från {ANTAL_OPERATORER} operatörer som alla kan teckna, plus{" "}
             {VILLKORADE} för studenter, unga och seniorer. Med pris efter kampanjen, bindningstid
             och nät, direkt från operatörernas egna webbplatser.
           </p>
-          <ul className="mt-7 space-y-3">
+          {/* Bockarna göms i mobilen så att kalkylatorn och listan kommer närmare. */}
+          <ul className="mt-7 hidden space-y-3 sm:block">
             {[
               billigast
                 ? `Från ${kr(snittForstaAret(billigast.a))} i månaden i snitt första året`
@@ -482,9 +483,10 @@ function OperatorSektion() {
           title="Operatörerna vi jämför"
           sub="Varje operatör har en egen sida med alla abonnemang, villkor, nät och vad kunderna tycker enligt Svenskt Kvalitetsindex."
         />
-        <ul className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-2.5 sm:gap-3 lg:grid-cols-4">
           {lista.map((o) => {
-            const billigaste = PRIVATA.filter((a) => a.operator === o.slug).sort(
+            // Samma mått som listan: snittpris första året, bland abonnemang alla kan teckna.
+            const billigaste = PRIVATA.filter((a) => a.operator === o.slug && !arVillkorat(a)).sort(
               (a, b) => snittForstaAret(a) - snittForstaAret(b),
             )[0];
             return (
@@ -492,17 +494,16 @@ function OperatorSektion() {
                 <Link
                   to="/operatorer/$slug"
                   params={{ slug: o.slug }}
-                  className="group flex h-full items-center gap-3 rounded-2xl border border-border p-4 transition-shadow hover:shadow-kort"
+                  className="group flex h-full items-center gap-2.5 rounded-2xl border border-border p-3 transition-shadow hover:shadow-kort sm:gap-3 sm:p-4"
                 >
-                  <OperatorMonogram namn={o.namn} size={40} />
+                  <OperatorMonogram namn={o.namn} size={36} />
                   <span className="min-w-0">
                     <span className="block font-display text-[16px] font-bold text-foreground group-hover:text-primary">
                       {o.namn}
                     </span>
                     {billigaste && (
                       <span className="block text-[13px] text-foreground/65">
-                        Från {kr(billigaste.kampanjpris ?? billigaste.pris)}/mån ·{" "}
-                        {gbText(billigaste.gb)}
+                        Från {kr(snittForstaAret(billigaste))}/mån · {gbText(billigaste.gb)}
                       </span>
                     )}
                   </span>
