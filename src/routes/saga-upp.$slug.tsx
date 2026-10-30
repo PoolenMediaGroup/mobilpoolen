@@ -6,9 +6,30 @@ import { billigasteFor, bindningsSpann, privataFor, samtNat } from "@/lib/mobil/
 import { KALLOR } from "@/lib/mobil/fakta";
 import { breadcrumbJsonLd, faqJsonLd, pageHead } from "@/lib/seo";
 import type { Operator } from "@/lib/mobil/typer";
+import { UPPSAGNING, UPPSAGNING_KONTROLLERAD } from "@/lib/mobil/uppsagning-data";
+
+/** Uppgifter om när abonnemanget upphör som krockar med uppsägningstiden i prislistan visas inte. */
+const UTAN_UPPHOR = new Set(["tre"]);
+
+const varden = (u: string) => {
+  try {
+    return new URL(u).hostname.replace(/^www\./, "");
+  } catch {
+    return u;
+  }
+};
 
 function uppsagFaq(o: Operator) {
+  const u = UPPSAGNING[o.slug];
   return [
+    ...(u && u.kanaler.length > 0
+      ? [
+          {
+            q: `Hur säger jag upp mitt abonnemang hos ${o.namn}?`,
+            a: `${o.namn} anger de här sätten: ${u.kanaler.join(", ").replace(/^./, (c) => c.toLowerCase())}. Byter du operatör och vill behålla numret behöver du inte säga upp själv, det sköter den nya operatören.`,
+          },
+        ]
+      : []),
     {
       q: `Hur lång uppsägningstid har ${o.namn}?`,
       a: o.villkor.uppsagningstid
@@ -59,6 +80,7 @@ function Sida() {
   const o = operator(slug)!;
   const bindning = bindningsSpann(privataFor(o.slug));
   const alternativ = samtNat(o).filter((g) => billigasteFor(g.slug));
+  const u = UPPSAGNING[o.slug];
   return (
     <PelarSida
       trail={[
@@ -94,7 +116,7 @@ function Sida() {
       ]}
       ctaRubrik={`Hitta något billigare än ${o.namn}`}
       ctaBild="flyttkartong-nyckel"
-      uppdaterad="2026-10-29"
+      uppdaterad="2026-10-30"
     >
       <h2>Så säger du upp {o.namn}</h2>
       <h3>Om du byter operatör och behåller numret</h3>
@@ -110,19 +132,82 @@ function Sida() {
         </li>
         <li>Spara bekräftelsen och kolla att slutfakturan stämmer.</li>
       </ol>
+      {u?.nummerflytt && (
+        <p>
+          <strong>Hur lång tid flytten tar:</strong> {u.nummerflytt}
+        </p>
+      )}
       <h3>Om du vill avsluta numret</h3>
       <ol>
-        <li>
-          Kontakta {o.namn}
-          {o.kundtjanst ? ` (${o.kundtjanst})` : ""} eller säg upp via Mina sidor eller appen om det
-          går.
-        </li>
+        {u && u.kanaler.length > 0 ? (
+          <li>
+            Säg upp på något av de sätt {o.namn} själv anger:
+            <ul>
+              {u.kanaler.map((k) => (
+                <li key={k}>{k}</li>
+              ))}
+            </ul>
+          </li>
+        ) : (
+          <li>
+            Kontakta {o.namn}
+            {o.kundtjanst ? ` (${o.kundtjanst})` : ""} eller säg upp via Mina sidor eller appen om
+            det går.
+          </li>
+        )}
         <li>Be om en skriftlig bekräftelse med slutdatum.</li>
-        <li>
-          Har du köpt en telefon på avbetalning via {o.namn} fortsätter avbetalningen tills den är
-          betald.
-        </li>
+        {!u?.telefon_avbetalning && (
+          <li>
+            Har du köpt en telefon på avbetalning via {o.namn} fortsätter avbetalningen tills den är
+            betald.
+          </li>
+        )}
       </ol>
+      {u &&
+        ((u.upphor && !UTAN_UPPHOR.has(o.slug)) ||
+          u.telefon_avbetalning ||
+          u.kontantkort_saldo ||
+          u.sarskilt) && (
+          <>
+            <h3>Det här gäller hos {o.namn}</h3>
+            <ul>
+              {u.upphor && !UTAN_UPPHOR.has(o.slug) && (
+                <li>
+                  <strong>När abonnemanget upphör:</strong> {u.upphor}
+                </li>
+              )}
+              {u.telefon_avbetalning && (
+                <li>
+                  <strong>Telefon på avbetalning:</strong> {u.telefon_avbetalning}
+                </li>
+              )}
+              {u.kontantkort_saldo && (
+                <li>
+                  <strong>Kontantkort:</strong> {u.kontantkort_saldo}
+                </li>
+              )}
+              {u.sarskilt && (
+                <li>
+                  <strong>Bra att veta:</strong> {u.sarskilt}
+                </li>
+              )}
+            </ul>
+            <p className="kalla">
+              Källa:{" "}
+              {u.kalla
+                .filter((k, i, alla) => alla.findIndex((x) => varden(x) === varden(k)) === i)
+                .map((k, i) => (
+                  <span key={k}>
+                    {i > 0 ? ", " : ""}
+                    <a href={k} target="_blank" rel="noopener nofollow">
+                      {varden(k)}
+                    </a>
+                  </span>
+                ))}
+              , kontrollerat {datumText(UPPSAGNING_KONTROLLERAD)}.
+            </p>
+          </>
+        )}
       <h2>Villkor hos {o.namn}</h2>
       <ul>
         <li>
