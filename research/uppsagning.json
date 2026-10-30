@@ -1,0 +1,140 @@
+{
+  "kontrollerad": "2026-10-30",
+  "operatorer": {
+    "telia": {
+      "kanaler": ["Kundservice på telefon 90 200", "Skriftligt, om Telia kan identifiera dig säkert"],
+      "upphor": "Uppsägningstiden är 30 dagar. Har du bindningstid kvar kan du säga upp till bindningstidens slut eller få en slutfaktura för resten av den.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": null,
+      "sarskilt": "Mobilabonnemang kan inte pausas, men kan göras om till kontantkort efter bindningstiden.",
+      "kalla": ["https://www.telia.se/support/avsluta-och-andra", "https://www.telia.se/kontantkort"]
+    },
+    "tele2": {
+      "kanaler": ["Kundservice på telefon 90 222", "Chatt med kundservice", "E-post"],
+      "upphor": "En månads uppsägningstid för avtal tecknade efter 1 maj 2014 och tre kalendermånader för äldre avtal. Har du bindningstid kvar kan du behöva betala återstående avgifter.",
+      "telefon_avbetalning": "En telefon på delbetalning kräver ett aktivt mobilabonnemang. Delbetalningen avslutas via kundservice.",
+      "kontantkort_saldo": null,
+      "nummerflytt": "Cirka 14 dagar till Tele2. Från Comviq inom fem arbetsdagar efter att SIM-kortet skickats.",
+      "sarskilt": "Uppsägning via e-post har längre svarstid, tre till fem arbetsdagar.",
+      "kalla": ["https://www.tele2.se/support/avsluta/avsluta-abonnemang", "https://www.tele2.se/support/kontakta-oss", "https://www.tele2.se/dokument/abonnemangsvillkor-for-privattjanster", "https://www.tele2.se/support/mobilt/byt-till-tele2"]
+    },
+    "telenor": {
+      "kanaler": ["Kundservice på telefon 020-222 222"],
+      "upphor": "Uppsägningstiden för mobilabonnemang är en månad.",
+      "telefon_avbetalning": "Har du delbetalning kvar på mobilen går kundservice igenom kostnaden när du ringer och berättar om du får en slutfaktura och på vilket belopp.",
+      "kontantkort_saldo": null,
+      "nummerflytt": "Cirka sex dagar till Telenor.",
+      "sarskilt": "Kontantkort sägs inte upp utan avslutas automatiskt när det inte laddats på 12 månader.",
+      "kalla": ["https://www.telenor.se/support/mobiltelefoni/abonnemang/avsluta-abonnemang", "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid", "https://www.telenor.se/support/mobiltelefoni/nummerflytt"]
+    },
+    "tre": {
+      "kanaler": ["Chatt med kundservice", "Kundservice på telefon"],
+      "upphor": "En till tre månaders uppsägningstid räknat från den dag du säger upp abonnemanget.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Vanligtvis tre till fem helgfria vardagar till Tre.",
+      "sarskilt": "Det går inte att säga upp abonnemanget på Mitt3, det sköts av abonnemangsavdelningen helgfria vardagar 9 till 18.",
+      "kalla": ["https://www.tre.se/support", "https://community.tre.se/abonnemang-45/aendra-eller-avsluta-abonnemang-790", "https://community.tre.se/nummer-85/nummerflytt-till-tre-20"]
+    },
+    "comviq": {
+      "kanaler": ["Kundservice på telefon 0772-21 21 21", "Chatt med kundservice", "Nummerflytt till en annan operatör"],
+      "upphor": "Ingen uppsägningstid. Abonnemanget upphör när den fakturaperiod som pågår vid uppsägningen har löpt ut. Med bindningstid kan du avsluta vid bindningstidens slut eller direkt mot en slutfaktura.",
+      "telefon_avbetalning": "Väljer du att avsluta direkt läggs resterande delbetalningar på mobilen på samma slutfaktura.",
+      "kontantkort_saldo": null,
+      "nummerflytt": "Vanligtvis cirka 10 dagar till Comviq.",
+      "sarskilt": "Ha BankID redo när du ringer, och du får en bekräftelse via mejl när uppsägningen är klar.",
+      "kalla": ["https://www.comviq.se/hjalp/avtal-och-villkor/uppsagning-av-abonnemang", "https://www.comviq.se/hjalp/kontakta-oss", "https://www.comviq.se/hjalp/mobiltelefoni/nummerflytt", "https://assets.ctfassets.net/iidtcybzv1rq/4j7sEJLG85pbIIO5NWhtxL/6c4cf273c6b616415c223ddd1d5736c6/COM0423025_Allma_nna_villkor_240604.pdf"]
+    },
+    "vimla": {
+      "kanaler": ["Mitt Vimla", "Nummerflytt till en annan operatör"],
+      "upphor": "Ingen uppsägningstid. Abonnemanget avslutas vid nästa månadsskifte, eller samma dag som numret flyttas ut. En påbörjad månad betalas alltid fullt.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": null,
+      "sarskilt": "Abonnemanget kan pausas på Mitt Vimla i stället, mot en avgift på 70 kr per paus.",
+      "kalla": ["https://faq.vimla.se/hc/sv/articles/360019827818-Avsluta-abonnemang", "https://faq.vimla.se/hc/sv/articles/360019665137-Upps%C3%A4gnings-bindningstid", "https://faq.vimla.se/hc/sv/articles/360019828098-Pausa-abonnemang"]
+    },
+    "hallon": {
+      "kanaler": ["Chatt med abonnemangsavdelningen efter inloggning på Mina sidor med BankID", "Kundservice", "Nummerflytt till en annan operatör"],
+      "upphor": "Abonnemanget upphör vid nästa månadsskifte. Vid nummerflytt gäller avtalet till månadsskiftet men tjänsten fungerar inte efter flytten.",
+      "telefon_avbetalning": "Delbetalningen är skild från abonnemanget och påverkas inte när du avslutar det.",
+      "kontantkort_saldo": "Avslutas ett kontantkort genom nummerflytt kan du begära återbetalning av kvarvarande saldo. Hallon drar då en avgift på 350 kr.",
+      "nummerflytt": null,
+      "sarskilt": "Abonnemangsavdelningen i chatten har öppet helgfria vardagar 9 till 16.",
+      "kalla": ["https://www.hallon.se/support/abonnemang/avsluta-abonnemang", "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf", "https://www.hallon.se/support/betalningar/delbetalning-av-mobiler-och-prylar"]
+    },
+    "fello": {
+      "kanaler": ["Mina sidor", "Nummerflytt till en annan operatör"],
+      "upphor": "En månads uppsägningstid. På Mina sidor väljer du datum, och avslutet sker kl. 23.55 den dagen. Vid nummerflytt avslutas abonnemanget samma dag och hela månaden betalas.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Tidigast sex arbetsdagar efter beställning till Fello.",
+      "sarskilt": "Abonnemanget kan pausas gratis i upp till ett år, därefter kostar pausen 50 kr i månaden.",
+      "kalla": ["https://support.fello.se/sv/articles/257264-hur-sager-jag-upp-mitt-abonnemang", "https://support.fello.se/sv/articles/257262-har-jag-nagon-bindningstid-eller-uppsagningstid-hos-fello", "https://support.fello.se/sv/articles/257243-hur-lang-tid-tar-det-att-flytta-over-mitt-nummer-till-fello", "https://support.fello.se/sv/articles/257281-kan-jag-pausa-mitt-fello-abonnemang"]
+    },
+    "chilimobil": {
+      "kanaler": ["E-post till kundservice@chilimobil.se"],
+      "upphor": "Abonnemanget avslutas alltid vid ett månadsskifte. Säger du upp före den 15:e avslutas det vid kommande månadsskifte, annars vid månadsskiftet därefter.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Cirka fyra till sex arbetsdagar till Chilimobil, och tre till fyra dagar med eSIM.",
+      "sarskilt": "Ett årsabonnemang kan inte sägas upp efter den 14 dagar långa ångerrätten.",
+      "kalla": ["https://chilimobil.se/support/abonnemang/"]
+    },
+    "lycamobile": {
+      "kanaler": ["Kundtjänst på 3332 från en Lyca Mobile eller 08-520 549 77", "Nummerflytt via den nya operatören"],
+      "upphor": "Lyca Mobile säljer bara kontantkort. Kortet avaktiveras automatiskt efter 90 dagar utan samtal eller sms, och numret försvinner efter ytterligare 30 dagar.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": "Kvarvarande kredit betalas inte tillbaka, inte heller när avtalet sägs upp.",
+      "nummerflytt": "Inom fem arbetsdagar efter att Lyca fått ett ifyllt porteringsformulär, men det kan ta längre tid beroende på den tidigare operatören.",
+      "sarskilt": "Nummerflytt till Lyca Mobile kräver att du skickar in ett porteringsformulär via e-post eller post.",
+      "kalla": ["https://www.lycamobile.se/sv/general-faq/number-transfer-sim-transfer/", "https://www.lycamobile.se/sv/general-faq/general/", "https://www.lycamobile.se/sv/termscondition/"]
+    },
+    "mybeat": {
+      "kanaler": ["Kundtjänst", "MyBeats app", "Nummerflytt till en annan operatör"],
+      "upphor": "Utan bindningstid avslutas abonnemanget det datum du väljer, men hela avgiften för den sista månaden betalas. Vid nummerflytt avslutas det på porteringsdatumet.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": null,
+      "sarskilt": null,
+      "kalla": ["https://mybeat.se/allmanna-villkor/"]
+    },
+    "tellus": {
+      "kanaler": ["Kundtjänst på telefon 0771-20 10 00"],
+      "upphor": "Abonnemanget avslutas sista dagen i den månad Tellus tagit emot och hanterat uppsägningen. Hela den månaden betalas, och förskottsbetalda avgifter återbetalas inte.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Minst fem arbetsdagar.",
+      "sarskilt": "Det är den som står på abonnemanget som måste ringa och säga upp det.",
+      "kalla": ["https://tellusmobil.se/hjalp/faq/", "https://tellusmobil.se/allmannavillkor/", "https://tellusmobil.se/hjalp/"]
+    },
+    "fibio": {
+      "kanaler": [],
+      "upphor": "30 dagars uppsägningstid om inget annat avtalats. Bryts avtalet i förtid debiteras resterande bindningstid.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Som snabbast inom fem arbetsdagar till Fibio.",
+      "sarskilt": "Abonnemanget kan pausas gratis en gång per år i upp till sex månader genom kundservice.",
+      "kalla": ["https://www.fibio.se/allmanna-villkor/", "https://www.fibio.se/kundservice/", "https://www.fibio.se/byte-av-mobiloperator/"]
+    },
+    "katshing": {
+      "kanaler": ["Mitt katshing", "E-post"],
+      "upphor": "Vid nedstängning upphör abonnemanget efter innevarande månad. Vid byte av operatör upphör det den dag nummerflytten är klar.",
+      "telefon_avbetalning": null,
+      "kontantkort_saldo": null,
+      "nummerflytt": "Normalt inom fem arbetsdagar vid flytt från katshing.",
+      "sarskilt": "Vid uppsägningen väljer du mellan att stänga ned abonnemanget och att byta operatör.",
+      "kalla": ["https://www.katshing.com/allmanna-villkor-mobil"]
+    },
+    "lingon": {
+      "kanaler": ["Telefon 060-60 66 203", "Kontaktformulär", "E-post"],
+      "upphor": null,
+      "telefon_avbetalning": "Delbetalning genom förhöjd månadsavgift ska betalas under hela avtalets 24 månader.",
+      "kontantkort_saldo": null,
+      "nummerflytt": null,
+      "sarskilt": "Enligt villkoren bör uppsägningen göras skriftligen.",
+      "kalla": ["https://lingon.se/support-abonnemang/", "https://lingon.se/kundservice/", "https://lingon.se/villkor/"]
+    }
+  }
+}
