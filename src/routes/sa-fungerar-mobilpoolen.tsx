@@ -26,7 +26,7 @@ const FAQ = [
 export const Route = createFileRoute("/sa-fungerar-mobilpoolen")({
   head: () =>
     pageHead({
-      title: `${HEAD_TITLE}: gratis jämförelse av mobilabonnemang`,
+      title: `${HEAD_TITLE}: jämför mobilabonnemang gratis`,
       description: DESC,
       socialTitle: HEAD_TITLE,
       canonical: PATH,
