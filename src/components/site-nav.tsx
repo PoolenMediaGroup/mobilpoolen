@@ -365,6 +365,24 @@ export function SiteNav() {
               Jämför gratis →
             </Link>
 
+            {/* Genvägar till det flest letar efter, innan grupperna. */}
+            <div className="mb-4 flex flex-wrap gap-2">
+              {[
+                { to: "/billigaste-mobilabonnemang", label: "Billigaste" },
+                { to: "/kampanjer", label: "Kampanjer just nu" },
+                { to: "/verktyg/hur-mycket-surf-behover-jag", label: "Hur mycket surf?" },
+              ].map((g) => (
+                <Link
+                  key={g.to}
+                  to={g.to}
+                  onClick={() => setOpen(false)}
+                  className="inline-flex min-h-10 items-center rounded-full border border-border px-3.5 text-[14px] font-medium text-foreground hover:border-primary/50 hover:text-primary"
+                >
+                  {g.label}
+                </Link>
+              ))}
+            </div>
+
             {NAV.map((post, i) => {
               if (post.href) {
                 const active = isPathActive(pathname, post.href);

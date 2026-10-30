@@ -480,7 +480,13 @@ export function AbonnemangKort({
             href={a.kalla}
             target="_blank"
             rel={`noopener ${o?.partner ? "sponsored" : "nofollow"}`}
-            className="inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-[10px] bg-cta px-4 text-[15px] font-semibold text-cta-foreground hover:bg-cta-hover md:flex-none"
+            className={`inline-flex min-h-11 flex-1 items-center justify-center gap-1.5 rounded-[10px] px-4 text-[15px] font-semibold md:flex-none ${
+              /* Orange bara på översta kortet. Övriga kort får en lugnare knapp,
+                 så att listan inte blir en vägg av huvudknappar (CLAUDE.md, Design). */
+              etta
+                ? "bg-cta text-cta-foreground hover:bg-cta-hover"
+                : "border border-primary/35 bg-surface text-primary hover:border-primary hover:bg-highlight"
+            }`}
           >
             Till {o?.namn ?? "operatören"}
             <ExternalLink className="h-3.5 w-3.5" aria-hidden />

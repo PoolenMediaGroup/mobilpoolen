@@ -386,7 +386,11 @@ function Sida() {
           <p className="mt-3 text-[13.5px] text-foreground/65">
             Källa: operatörernas webbplatser, kontrollerade {datumText(SENAST_KONTROLLERAD)}.
           </p>
-          <button type="button" onClick={laddaNer} className="btn-cta mt-5">
+          <button
+            type="button"
+            onClick={laddaNer}
+            className="mt-5 inline-flex min-h-12 items-center gap-2 rounded-[12px] border border-primary/35 bg-surface px-5 font-display text-[15px] font-semibold text-primary hover:border-primary hover:bg-highlight"
+          >
             <Download className="h-5 w-5" aria-hidden />
             Ladda ner tabellerna som CSV
           </button>
