@@ -30,6 +30,7 @@ import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { pageHead, faqJsonLd, jsonLdScript, SITE_URL } from "@/lib/seo";
 import { fragorUrRegistret } from "@/lib/faq";
 import { PUBLISHED_GUIDES } from "@/lib/guides";
+import { getGuideImage } from "@/lib/guide-images";
 import { MOBILNAT, OPERATORER, PRIVATA, SENAST_KONTROLLERAD, operator } from "@/lib/mobil/data";
 import { arVillkorat, datumText, gbText, kr, snittForstaAret } from "@/lib/mobil/berakna";
 import { bild } from "@/lib/bildbank";
@@ -75,6 +76,23 @@ export const Route = createFileRoute("/")({
   },
   component: Startsida,
 });
+
+// En guide per kategori, så att startsidan visar bredden och inte sex kort om pris.
+// Hoppar över guider vars bild redan syns på sidan (samma bild aldrig två gånger).
+const STARTSIDANS_GUIDER = (() => {
+  const upptagna = new Set<string>(["kontor-motesrum", "vanner-middag-utomhus"]);
+  const sedda = new Set<string>();
+  const ut: typeof PUBLISHED_GUIDES = [];
+  for (const g of PUBLISHED_GUIDES) {
+    const nyckel = getGuideImage(g.slug)?.nyckel;
+    if (sedda.has(g.category) || (nyckel && upptagna.has(nyckel))) continue;
+    sedda.add(g.category);
+    if (nyckel) upptagna.add(nyckel);
+    ut.push(g);
+    if (ut.length === 6) break;
+  }
+  return ut;
+})();
 
 const ANTAL_OPERATORER = new Set(PRIVATA.map((a) => a.operator)).size;
 // Samma antal som listan nedan visar: abonnemang som alla kan teckna.
@@ -161,7 +179,7 @@ function Startsida() {
             sub="Korta svar på det som avgör priset: surf, bindningstid, kampanjer och nät."
           />
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {PUBLISHED_GUIDES.slice(0, 6).map((g) => (
+            {STARTSIDANS_GUIDER.map((g) => (
               <GuideCard key={g.slug} guide={g} />
             ))}
           </div>

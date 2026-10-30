@@ -65,7 +65,7 @@ function Page() {
               filter: "blur(4px)",
             }}
           />
-          <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-8 lg:pt-12 lg:pb-10">
+          <div className="relative mx-auto max-w-[1140px] px-6 pt-8 pb-8 lg:pt-12 lg:pb-10">
             <h1
               className="font-bold text-white"
               style={{
@@ -98,7 +98,7 @@ function Page() {
           </div>
         </section>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-[64px] lg:pb-[96px]">
+        <div className="mx-auto max-w-[1140px] px-6 pt-10 pb-[64px] lg:pb-[96px]">
           <div className="flex flex-wrap gap-2">
             {chips.map((c) => {
               const active = category === c;

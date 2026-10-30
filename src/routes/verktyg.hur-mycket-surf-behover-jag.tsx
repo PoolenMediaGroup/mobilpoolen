@@ -379,7 +379,11 @@ function AbKort({ a, etta }: { a: Abonnemang; etta: boolean }) {
         href={a.kalla}
         target="_blank"
         rel={`noopener ${o?.partner ? "sponsored" : "nofollow"}`}
-        className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-[10px] bg-cta px-4 text-[15px] font-semibold text-cta-foreground hover:bg-cta-hover"
+        className={`mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-[10px] px-4 text-[15px] font-semibold ${
+          etta
+            ? "bg-cta text-cta-foreground hover:bg-cta-hover"
+            : "border border-primary/35 bg-surface text-primary hover:border-primary hover:bg-highlight"
+        }`}
       >
         Till {o?.namn ?? "operatören"}
         <ExternalLink className="h-3.5 w-3.5" aria-hidden />
