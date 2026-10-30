@@ -37,11 +37,18 @@ export type PageSeo = {
 
 export function pageHead(seo: PageSeo): { meta: Tag[]; links: Tag[]; scripts?: Tag[] } {
   const url = absoluteUrl(seo.canonical);
-  const socialTitle = seo.socialTitle ?? seo.title;
+  const socialTitle = seo.socialTitle ?? seo.title.replace(/ \| Mobilpoolen$/, "");
   const socialDescription = seo.socialDescription ?? seo.description;
 
+  // Google kapar titlar kring 60 tecken. Ryms inte varumärket tas det bort,
+  // så att sökordet och det sidan lovar syns i stället för "| Mobilp…".
+  const title =
+    seo.title.length > 60 && seo.title.endsWith(" | Mobilpoolen")
+      ? seo.title.slice(0, -" | Mobilpoolen".length)
+      : seo.title;
+
   const meta: Tag[] = [
-    { title: seo.title },
+    { title },
     { name: "description", content: seo.description },
     { property: "og:title", content: socialTitle },
     { name: "twitter:title", content: socialTitle },

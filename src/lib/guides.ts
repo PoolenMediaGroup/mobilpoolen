@@ -165,7 +165,7 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "vilket-nat-anvander-operatoren",
-    title: "Vilket nät använder din operatör? Hallon, Vimla, Comviq med flera",
+    title: "Vilket nät använder din operatör? Hallon, Vimla och Comviq",
     excerpt:
       "Lista över vilket av de fyra mobilnäten varje operatör kör i, och varför samma nät ger samma täckning till lägre pris.",
     category: "Surf och nät",
@@ -381,7 +381,7 @@ export const GUIDES: GuideMeta[] = [
   },
   {
     slug: "mobilmarknaden-i-siffror",
-    title: "Mobilmarknaden i siffror 2026: abonnemang, surf och marknadsandelar",
+    title: "Mobilmarknaden i siffror 2026: surf och marknadsandelar",
     excerpt:
       "Statistik om den svenska mobilmarknaden från PTS: antal abonnemang, marknadsandelar per operatör, surf per månad och hur många som använder 5G.",
     category: "Säkerhet och rättigheter",
