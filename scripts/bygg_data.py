@@ -1,5 +1,5 @@
 """Bygger src/lib/mobil/operatorer-data.ts ur researchfilerna."""
-import json, re
+import json, re, subprocess
 import os
 ROT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R=os.path.join(ROT,'research')+'/'
@@ -207,6 +207,38 @@ for p in alla:
     if p['bindning'] is not None: p['bindning']=int(p['bindning'])
     for k in ['gb','euGb']:
         if p.get(k) is not None and float(p[k]).is_integer(): p[k]=int(p[k])
+# Prisändringar: jämför med förra körningens priser (research/senaste-priser.json)
+# och logga varje skillnad i research/prisandringar.json. Första körningen loggar
+# inget, den sparar bara utgångsläget. Nyckeln är operatör, namn och kundtyp,
+# eftersom id kan bytas när underlaget kompletteras.
+SENASTE=os.path.join(ROT,'research/senaste-priser.json')
+LOGG=os.path.join(ROT,'research/prisandringar.json')
+FALT=('pris','kampanjpris','kampanjManader','startavgift')
+kontr={o['slug']:o['kontrollerad'] for o in opl}
+def pnyckel(p): return f"{p['operator']}|{p['namn']}|{p['kundtyp']}"
+nu={pnyckel(p):{**{f:p.get(f) for f in FALT},'kalla':p.get('kalla'),'operator':p['operator'],'namn':p['namn'],'kundtyp':p['kundtyp']} for p in alla}
+logg=json.load(open(LOGG)) if os.path.exists(LOGG) else []
+if os.path.exists(SENASTE):
+    forra=json.load(open(SENASTE)); nya=[]
+    for k,v in nu.items():
+        d=kontr.get(v['operator'],'')
+        bas=dict(datum=d,operator=v['operator'],namn=v['namn'],kundtyp=v['kundtyp'],kalla=v['kalla'])
+        if k not in forra: nya.append({**bas,'typ':'nytt','falt':None,'fran':None,'till':v['pris']}); continue
+        for f in FALT:
+            if forra[k].get(f)!=v.get(f): nya.append({**bas,'typ':'andrat','falt':f,'fran':forra[k].get(f),'till':v.get(f)})
+    for k,v in forra.items():
+        if k not in nu: nya.append(dict(datum=max(kontr.values()),operator=v['operator'],namn=v['namn'],kundtyp=v['kundtyp'],kalla=v.get('kalla'),typ='borttaget',falt=None,fran=v.get('pris'),till=None))
+    logg=sorted(logg+nya,key=lambda e:(e['datum'],e['operator'],e['namn']),reverse=True)
+    json.dump(logg,open(LOGG,'w'),ensure_ascii=False,indent=1); print('prisändringar',len(nya),'nya,',len(logg),'totalt')
+elif not os.path.exists(LOGG):
+    json.dump([],open(LOGG,'w'))
+json.dump(nu,open(SENASTE,'w'),ensure_ascii=False,indent=1)
+p_logg=os.path.join(ROT,'src/lib/mobil/prisandringar.ts')
+open(p_logg,'w').write('// GENERERAD av scripts/bygg_data.py ur research/prisandringar.json. Ändra inte för hand.\n\n'
+  'export type Prisandring = { datum: string; operator: string; namn: string; kundtyp: "privat" | "foretag"; kalla: string | null; typ: "nytt" | "andrat" | "borttaget"; falt: "pris" | "kampanjpris" | "kampanjManader" | "startavgift" | null; fran: number | null; till: number | null };\n\n'
+  'export const PRISANDRINGAR: Prisandring[] = '+json.dumps(logg,ensure_ascii=False,indent=2)+';\n')
+subprocess.run(['npx','prettier','--write',p_logg],cwd=ROT,stdout=subprocess.DEVNULL)
+
 out=['// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, kontrollerade 2026-10-29.\n// Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).\n\nimport type { Abonnemang, Operator } from "./typer";\n\n']
 out.append('export const OPERATORER_DATA: Operator[] = '+json.dumps(opl,ensure_ascii=False,indent=2)+';\n\n')
 out.append('export const ABONNEMANG_DATA: Abonnemang[] = '+json.dumps(alla,ensure_ascii=False,indent=2)+';\n')

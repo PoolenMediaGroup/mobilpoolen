@@ -32,7 +32,11 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 1. Kontrollera priserna på operatörens egen sida.
 2. Uppdatera `research/operatorer-*.json` (eller listan `F` i `scripts/bygg_data.py` för företag) med källa och datum.
-3. Kör `python3 scripts/bygg_data.py` och sedan build.
+3. Kör `python3 scripts/bygg_data.py`, sedan `bun scripts/prisindex_manad.ts` och sedan build.
+
+`bygg_data.py` jämför med förra körningen (`research/senaste-priser.json`) och loggar varje ändring av pris, kampanjpris, kampanjlängd och startavgift i `research/prisandringar.json`. De senaste ändringarna visas på /prisindex. Ta inte bort loggen eller utgångsläget: de är historiken.
+
+`prisindex_manad.ts` sparar månadens prisindex i `research/prisindex-historik.json`. Samma månad skrivs över, tidigare månader ändras aldrig. Från två sparade månader visar /prisindex hur medianpriserna har utvecklats. Kör prisuppdateringen minst en gång i månaden, annars blir det hål i serien.
 
 ## Stack
 
