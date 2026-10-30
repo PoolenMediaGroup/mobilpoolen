@@ -1,0 +1,120 @@
+// GENERERAD av scripts/bygg_data.py ur research/streaming.json. Ändra inte för hand.
+
+export type Streamingpris = {
+  tjanst: string;
+  niva: string;
+  pris: number | null;
+  kalla: string;
+  notis: string | null;
+};
+
+export const STREAMING_KONTROLLERAD = "2026-10-30";
+
+export const STREAMINGPRISER: Streamingpris[] = [
+  {
+    tjanst: "Netflix",
+    niva: "Standard",
+    pris: 169,
+    kalla: "https://help.netflix.com/sv/node/24926/SE",
+    notis:
+      "Ordinarie pris, 169 kr/månad. Extra medlem 65 kr/månad tillkommer om man vill. Netflix säljer bara månadsabonnemang.",
+  },
+  {
+    tjanst: "Netflix",
+    niva: "Standard med reklam",
+    pris: null,
+    kalla: "https://help.netflix.com/sv/node/24926/SE",
+    notis:
+      "Finns inte i Sverige. Hjälpcentrets sida för Sverige listar bara Basic, Standard och Premium, alla utan reklam.",
+  },
+  {
+    tjanst: "Netflix",
+    niva: "Basic",
+    pris: 129,
+    kalla: "https://help.netflix.com/sv/node/24926/SE",
+    notis: null,
+  },
+  {
+    tjanst: "Netflix",
+    niva: "Premium",
+    pris: 219,
+    kalla: "https://help.netflix.com/sv/node/24926/SE",
+    notis: "Extra medlem 65 kr/månad styck, upp till två.",
+  },
+  {
+    tjanst: "HBO Max",
+    niva: "Basic med reklam",
+    pris: 89,
+    kalla: "https://www.hbomax.com/se/sv",
+    notis:
+      "Årspris 890 kr/år finns också. Hjälpcentret (help.hbomax.com) anger inga priser utan hänvisar till hbomax.com. Tillägget Sport kostar 70 kr/månad.",
+  },
+  {
+    tjanst: "HBO Max",
+    niva: "Standard",
+    pris: 149,
+    kalla: "https://www.hbomax.com/se/sv",
+    notis: "Årspris 1 490 kr/år finns också.",
+  },
+  {
+    tjanst: "HBO Max",
+    niva: "Premium",
+    pris: 189,
+    kalla: "https://www.hbomax.com/se/sv",
+    notis: "Årspris 1 890 kr/år finns också.",
+  },
+  {
+    tjanst: "Disney+",
+    niva: "Standard med reklam",
+    pris: 89,
+    kalla: "https://www.disneyplus.com/sv-se/welcome/stream",
+    notis:
+      "Ordinarie pris utan bindning. Med 6 månaders bindningstid 79 kr/månad. Inget årspris för den här nivån.",
+  },
+  {
+    tjanst: "Disney+",
+    niva: "Standard",
+    pris: 129,
+    kalla: "https://www.disneyplus.com/sv-se/welcome/stream",
+    notis: "Utan reklam. Med 6 månaders bindningstid 109 kr/månad. Årspris 1 290 kr/år.",
+  },
+  {
+    tjanst: "Disney+",
+    niva: "Premium",
+    pris: 179,
+    kalla: "https://www.disneyplus.com/sv-se/welcome/stream",
+    notis: "Med 6 månaders bindningstid 139 kr/månad. Årspris 1 790 kr/år.",
+  },
+  {
+    tjanst: "TV4 Play",
+    niva: "Plus",
+    pris: 69,
+    kalla: "https://www.tv4play.se/paket",
+    notis:
+      "Grundpriset är med reklam. Utan reklam kostar 100 kr/månad extra (alltså 169 kr/månad). Med 12 månaders bindning 20 kr/månad lägre. Sidan laddar priserna med JavaScript, så de hämtades ur TV4:s eget API som sidan använder (nordic-gateway.tv4.a2d.tv, subscriptionPackages, pris 6900 öre). Det finns ingen nivå som heter Basic. Övriga nivåer: Gratis 0 kr, Sport 349 kr, Sport Fotboll 449 kr, Sport Hockey 599 kr, Sport Total 649 kr/månad (alla med reklam, utan reklam +50 kr).",
+  },
+  {
+    tjanst: "Viaplay",
+    niva: "Film & Serier",
+    pris: 169,
+    kalla: "https://viaplay.se/",
+    notis:
+      "Ordinarie pris utan reklam och utan bindning. Valen på sidan: Med reklam -70 kr/mån, 6 mån bindning -20 kr/mån. Övriga paket på samma sida: Medium 449 kr/mån och Total 749 kr/mån (båda med sport). Film & Serier med Apple TV 199 kr/mån.",
+  },
+  {
+    tjanst: "Viaplay",
+    niva: "Film & Serier med reklam",
+    pris: 99,
+    kalla: "https://viaplay.se/",
+    notis:
+      "Sidan anger inte 99 kr som ett eget pris utan 169 kr/mån och valet 'Med reklam (-70 kr/mån)'. Beloppet är 169 minus 70.",
+  },
+  {
+    tjanst: "Amazon Prime",
+    niva: "Amazon Prime (månatligen)",
+    pris: 69,
+    kalla: "https://www.amazon.se/amazonprime",
+    notis:
+      "Prime Video ingår, enligt sidan 'med begränsad reklam'. Årspris 649 kr/år. 30 dagars gratis provperiod. Pris för att slippa reklam i Prime Video står inte på sidan.",
+  },
+];
