@@ -38,6 +38,16 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 `prisindex_manad.ts` sparar månadens prisindex i `research/prisindex-historik.json`. Samma månad skrivs över, tidigare månader ändras aldrig. Från två sparade månader visar /prisindex hur medianpriserna har utvecklats. Kör prisuppdateringen minst en gång i månaden, annars blir det hål i serien.
 
+## Mobilpoolen Autopilot
+
+- Gratis bevakning av kundens abonnemang: /autopilot (formulär i tre steg), /autopilot/bekrafta, /autopilot/avsluta och /autopilot/villkor. Samma modell som Elpoolen Autopilot innan fullmaktsbytet är öppet: vi mejlar, kunden byter själv.
+- Eget Supabase-projekt **Mobilpoolen**. SQL och funktioner i `supabase/autopilot/` och `supabase/functions/autopilot*`. Drift och uppsättning i `supabase/autopilot/README.md`.
+- `AUTOPILOT_URL` och `AUTOPILOT_NYCKEL` i `src/lib/autopilot.ts`. Är de null visar formuläret att Autopilot öppnar snart.
+- Samtyckestexterna står både i `src/lib/autopilot.ts` och i `supabase/functions/autopilot/index.ts`. Servern sparar sin egen kopia. Ändra båda.
+- Ingen fullmakt ges i formuläret, bara ett intresse. Skriv inte att vi byter åt kunden. Inga sms skickas än, bara samtycket sparas.
+- Förslagen i mejlen kommer från `/api/autopilot/forslag` (`src/lib/mobil/autopilot-forslag.ts`), så de följer prisdatan.
+- Ändringar som rör formuläret, kunddata, mejlutskicken eller databasens struktur mergas av Leon.
+
 ## Stack
 
 - TanStack Start (SSR) + React + Tailwind. Byggs med Nitro för Cloudflare Workers (worker `mobilpoolen`, `wrangler.jsonc`).

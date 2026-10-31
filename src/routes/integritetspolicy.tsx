@@ -7,7 +7,7 @@ export const Route = createFileRoute("/integritetspolicy")({
     pageHead({
       title: "Integritetspolicy | Mobilpoolen",
       description:
-        "Mobilpoolen har ingen inloggning, inga formulär och inga spårande kakor. Här står vilka uppgifter som ändå behandlas, varför och vilka rättigheter du har.",
+        "Vilka uppgifter Mobilpoolen behandlar, till exempel när du startar Autopilot, varför, hur länge och vilka rättigheter du har. Inga spårande kakor.",
       canonical: "https://mobilpoolen.se/integritetspolicy",
     }),
   component: IntegritetspolicyPage,
@@ -19,12 +19,13 @@ function IntegritetspolicyPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Integritetspolicy</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 29 oktober 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 31 oktober 2026</p>
 
       <p>
         Här förklarar vi på vanlig svenska vilka uppgifter som behandlas när du använder
-        Mobilpoolen, varför och vilka rättigheter du har. Kort sagt: du kan använda hela sajten utan
-        att lämna några uppgifter om dig själv. Vi har ingen inloggning och inga formulär, och vi
+        Mobilpoolen, varför och vilka rättigheter du har. Kort sagt: du kan jämföra och använda
+        kalkylatorerna utan att lämna några uppgifter om dig själv. Uppgifter om dig behandlas bara
+        om du själv startar Mobilpoolen Autopilot eller mejlar oss. Vi har ingen inloggning och
         använder inga kakor för statistik eller marknadsföring. Policyn beskriver det sajten gör i
         dag. Ändras det uppdaterar vi policyn innan den nya behandlingen börjar.
       </p>
@@ -69,6 +70,25 @@ function IntegritetspolicyPage() {
         beställer.
       </p>
 
+      <p id="autopilot" className="mt-6 scroll-mt-28 font-semibold">
+        När du startar Mobilpoolen Autopilot:
+      </p>
+      <p className="mt-3">
+        Vi sparar det du fyller i: namn, e-post, mobilnummer om du anger det, och uppgifter om ditt
+        abonnemang (operatör, abonnemangets namn, vad du betalar, rabatt och pris efter rabatten,
+        surf, surf i EU, fria samtal och sms, samtal till utlandet, antal SIM-kort, bindningstid,
+        uppsägningstid och om du betalar av en mobil). Vi sparar också dina val i formuläret, den
+        samtyckestext du godkände, när du bekräftade din e-post och vilka påminnelser vi har
+        skickat. Vi behöver inte och ber inte om personnummer.
+      </p>
+      <p className="mt-3">
+        Uppgifterna används för att mejla dig innan din bindningstid eller rabatt tar slut, med de
+        abonnemang som passar dig bäst just då, och halvårsvis om du saknar bindningstid och rabatt.
+        Har du gett samtycke till sms sparar vi det, men vi skickar inga sms än. Har du kryssat i
+        att du är intresserad av att vi byter åt dig med fullmakt hör vi av oss och frågar först.
+        Någon fullmakt ger du inte genom formuläret.
+      </p>
+
       <p className="mt-6 font-semibold">När du mejlar oss:</p>
       <p className="mt-3">
         Vi får din e-postadress, ditt namn om det står i mejlet och det du skriver. Skriv inga
@@ -87,6 +107,14 @@ function IntegritetspolicyPage() {
       <h2 className={H2}>3. Varför behandlar vi uppgifterna, och med vilken rätt?</h2>
       <p>Varje ändamål har en rättslig grund enligt dataskyddsförordningen (GDPR):</p>
       <ul className="mt-3 list-disc pl-6 space-y-3">
+        <li>
+          <strong>Mobilpoolen Autopilot</strong>: påminnelser om ditt abonnemang och förslag på
+          abonnemang. Grund: ditt samtycke, som du lämnar i formuläret och bekräftar från din
+          inkorg. Du kan ta tillbaka samtycket när du vill med länken i våra mejl.
+        </li>
+        <li>
+          <strong>Nyhetsbrev och sms</strong>, om du har kryssat i det. Grund: ditt samtycke.
+        </li>
         <li>
           <strong>Besvara mejl</strong> som du skickar till oss. Grund: berättigat intresse av att
           kunna svara dig och rätta fel som du rapporterar.
@@ -109,7 +137,11 @@ function IntegritetspolicyPage() {
       </p>
       <ul className="mt-3 list-disc pl-6 space-y-2">
         <li>Cloudflare: drift av webbplatsen.</li>
-        <li>Supabase: databas där besöksräkningen lagras som antal per dag.</li>
+        <li>
+          Supabase: databas där besöksräkningen lagras som antal per dag, och där uppgifterna för
+          Autopilot lagras. Servrarna står i Stockholm.
+        </li>
+        <li>Resend: skickar mejlen från Autopilot.</li>
         <li>Vår e-postleverantör: tar emot och lagrar mejl som du skickar till oss.</li>
       </ul>
 
@@ -124,6 +156,11 @@ function IntegritetspolicyPage() {
 
       <h2 className={H2}>6. Hur länge sparar vi uppgifterna?</h2>
       <ul className="mt-3 list-disc pl-6 space-y-2">
+        <li>
+          <strong>Autopilot:</strong> så länge bevakningen är igång. Avslutar du tar vi bort ditt
+          mobilnummer direkt och resten efter 90 dagar. En anmälan som aldrig bekräftas raderas
+          efter 30 dagar.
+        </li>
         <li>
           <strong>Mejl till oss:</strong> så länge det behövs för att hantera ärendet, och högst 12
           månader efter att det är avslutat.
@@ -161,8 +198,9 @@ function IntegritetspolicyPage() {
       <h2 className={H2}>8. Säkerhet</h2>
       <p>
         Vi begränsar åtkomsten till personuppgifter och använder tekniska och organisatoriska skydd
-        för att minska risken för obehörig åtkomst, förlust eller ändring. Besöksräkningen kan inte
-        läsas via sajten, bara av oss.
+        för att minska risken för obehörig åtkomst, förlust eller ändring. Besöksräkningen och
+        uppgifterna för Autopilot kan inte läsas via sajten, bara av oss. Ändrar någon uppgifterna
+        för en e-postadress måste ändringen bekräftas från den inkorgen innan den gäller.
       </p>
 
       <h2 className={H2}>9. Kakor och lagring i webbläsaren</h2>
@@ -177,8 +215,8 @@ function IntegritetspolicyPage() {
 
       <h2 className={H2}>10. Ändringar i policyn</h2>
       <p>
-        Ändrar vi hur vi behandlar personuppgifter, till exempel om vi inför ett formulär, en chatt
-        eller ett nytt mätverktyg, uppdaterar vi policyn här innan ändringen börjar gälla och
+        Ändrar vi hur vi behandlar personuppgifter, till exempel om vi börjar skicka sms, inför en
+        chatt eller ett nytt mätverktyg, uppdaterar vi policyn här innan ändringen börjar gälla och
         skriver ut datumet överst.
       </p>
 

@@ -20,7 +20,7 @@ function AnvandarvillkorPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Användarvillkor</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterade: 29 oktober 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterade: 31 oktober 2026</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-3">1. Om tjänsten</h2>
       <p>
@@ -28,7 +28,12 @@ function AnvandarvillkorPage() {
         12, 113 69 Stockholm. Mobilpoolen är en kostnadsfri tjänst där du kan jämföra
         mobilabonnemang för privatpersoner och företag, läsa guider och använda kalkylatorer. Vi
         säljer inga abonnemang och tar inte emot beställningar. Du behöver inget konto och lämnar
-        inga uppgifter för att använda tjänsten.
+        inga uppgifter för att jämföra. Vill du att vi bevakar ditt abonnemang kan du starta den
+        kostnadsfria tjänsten Mobilpoolen Autopilot, som har{" "}
+        <Link to={"/autopilot/villkor" as never} className={LANK}>
+          egna villkor
+        </Link>
+        .
       </p>
 
       <h2 className={H2}>2. Kostnadsfritt</h2>

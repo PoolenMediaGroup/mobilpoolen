@@ -93,7 +93,7 @@ export const FAQ_GROUPS = [
       },
       {
         q: "Säljer ni abonnemang själva?",
-        a: "Nej. Du beställer alltid direkt hos operatören, och avtalet gäller mellan dig och operatören. Vi hanterar inga personuppgifter för din beställning.",
+        a: "Nej. Du beställer alltid direkt hos operatören, och avtalet gäller mellan dig och operatören. Vi hanterar inga uppgifter för din beställning.",
       },
     ],
   },
