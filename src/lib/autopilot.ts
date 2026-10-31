@@ -1,16 +1,17 @@
 /**
  * Mobilpoolen Autopilot på sajten: adressen till funktionen i Supabase och texterna
- * som kunden godkänner. Samma texter står i supabase/functions/autopilot/index.ts, där
+ * som kunden godkänner. Samma texter står i supabase/functions/mobilpoolen-autopilot/index.ts, där
  * de sparas. Ändras en text här ska den ändras där också.
  *
- * Autopilot har ett eget Supabase-projekt (Mobilpoolen), skilt från Elpoolens.
- * Den publika nyckeln får stå i koden: tabellerna har RLS utan policyer, så nyckeln
- * kan bara anropa funktionen, inte läsa några uppgifter.
+ * Autopilot ligger i PMG:s gemensamma Supabase-projekt (Elpoolen), med egna tabeller och
+ * funktioner som börjar på mobilpoolen_. Den publika nyckeln får stå i koden: tabellerna
+ * har RLS utan policyer, så nyckeln kan bara anropa funktionen, inte läsa några uppgifter.
  */
 
-/** Sätts när Supabase-projektet Mobilpoolen finns. Null: formuläret visar att Autopilot öppnar snart. */
-export const AUTOPILOT_URL: string | null = null;
-export const AUTOPILOT_NYCKEL: string | null = null;
+/** Null: formuläret visar att Autopilot öppnar snart. */
+export const AUTOPILOT_URL: string | null =
+  "https://rilpjkuozcglwnxwfxgl.supabase.co/functions/v1/mobilpoolen-autopilot";
+export const AUTOPILOT_NYCKEL: string | null = "sb_publishable__kv9a1vIC2DQ1lGIwt0Fdg_0qZYfWaU";
 
 export const AUTOPILOT_OPPEN = AUTOPILOT_URL != null && AUTOPILOT_NYCKEL != null;
 

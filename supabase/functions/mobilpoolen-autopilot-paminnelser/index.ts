@@ -1,5 +1,5 @@
 // Daglig bevakning för Mobilpoolen Autopilot. Anropas av pg_cron med headern
-// x-autopilot-nyckel (värdet ligger i tabellen app_secrets, namn 'autopilot_cron').
+// x-autopilot-nyckel (värdet ligger i tabellen app_secrets, name 'mobilpoolen_autopilot').
 // Body: { "mode": "dry" } listar bara, { "mode": "send" } skickar.
 //
 // Steg för en bindningstid eller rabatt som tar slut (bevaka_datum):
@@ -61,11 +61,11 @@ Deno.serve(async (req) => {
 
   const { data: hemlig } = await db
     .from("app_secrets")
-    .select("varde")
-    .eq("namn", "autopilot_cron")
+    .select("value")
+    .eq("name", "mobilpoolen_autopilot")
     .maybeSingle();
   const nyckel = req.headers.get("x-autopilot-nyckel") ?? "";
-  if (!hemlig?.varde || !lika(nyckel, String(hemlig.varde))) return svar({ ok: false }, 401);
+  if (!hemlig?.value || !lika(nyckel, String(hemlig.value))) return svar({ ok: false }, 401);
 
   let mode = "dry";
   try {
@@ -76,7 +76,7 @@ Deno.serve(async (req) => {
 
   const grans = plusManader(new Date().toISOString().slice(0, 10), 2);
   const { data: lista, error } = await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .select("*")
     .not("bekraftad", "is", null)
     .is("avslutad", null)
@@ -93,7 +93,7 @@ Deno.serve(async (req) => {
     if (!s) continue;
 
     const { data: gjord } = await db
-      .from("autopilot_handelser")
+      .from("mobilpoolen_autopilot_handelser")
       .select("id")
       .eq("anmalan_id", a.id)
       .eq("typ", `paminnelse_${s}`)
@@ -162,7 +162,7 @@ ${knapp(`${SITE}/#alla`, "Jämför alla abonnemang")}
     });
 
     if (ok) {
-      await db.from("autopilot_handelser").insert({
+      await db.from("mobilpoolen_autopilot_handelser").insert({
         anmalan_id: a.id,
         typ: `paminnelse_${s}`,
         data: { bevaka_datum: a.bevaka_datum, forslag: tre.map((f) => `${f.operator} ${f.namn}`) },
@@ -170,7 +170,7 @@ ${knapp(`${SITE}/#alla`, "Jämför alla abonnemang")}
       // Efter sista steget rullar bevakningen ett halvår, så att kunden aldrig tappas bort.
       if (s === "t0") {
         await db
-          .from("autopilot_anmalningar")
+          .from("mobilpoolen_autopilot_anmalningar")
           .update({ bevaka_datum: plusManader(a.bevaka_datum, 6) })
           .eq("id", a.id);
       }

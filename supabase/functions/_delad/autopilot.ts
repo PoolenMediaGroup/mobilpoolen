@@ -1,4 +1,4 @@
-// Delat mellan funktionerna autopilot och autopilot-paminnelser.
+// Delat mellan funktionerna mobilpoolen-autopilot och mobilpoolen-autopilot-paminnelser.
 
 export const SITE = "https://mobilpoolen.se";
 export const FROM = "Mobilpoolen <hej@send.mobilpoolen.se>";
@@ -90,7 +90,7 @@ export const avslutaLank = (token: string) => `${SITE}/autopilot/avsluta?token=$
 
 /** Ett-klicks-avslut för mejlprogrammens avslutsknapp (List-Unsubscribe-Post, RFC 8058). */
 export const ettKlickAvslut = (token: string) =>
-  `${Deno.env.get("SUPABASE_URL")}/functions/v1/autopilot?action=avsluta&token=${token}`;
+  `${Deno.env.get("SUPABASE_URL")}/functions/v1/mobilpoolen-autopilot?action=avsluta&token=${token}`;
 
 export const avslutsHuvuden = (token: string) => ({
   "List-Unsubscribe": `<${ettKlickAvslut(token)}>, <mailto:${REPLY_TO}?subject=Avsluta%20Autopilot>`,

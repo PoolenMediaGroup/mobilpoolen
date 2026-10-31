@@ -172,9 +172,9 @@ async function anmalan(b: Record<string, unknown>, o: string | null) {
 
   const db = supa();
   const { data: finns } = await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .select("id,uppdaterad")
-    .ilike("epost", epost)
+    .eq("epost", epost)
     .maybeSingle();
 
   // Spärr: samma adress sparas och mejlas högst en gång per tio minuter, så att ingen kan
@@ -190,8 +190,8 @@ async function anmalan(b: Record<string, unknown>, o: string | null) {
   rad.bekraftad = null;
 
   const { error } = finns
-    ? await db.from("autopilot_anmalningar").update(rad).eq("id", finns.id)
-    : await db.from("autopilot_anmalningar").insert(rad);
+    ? await db.from("mobilpoolen_autopilot_anmalningar").update(rad).eq("id", finns.id)
+    : await db.from("mobilpoolen_autopilot_anmalningar").insert(rad);
   if (error) {
     console.error("spara fel:", error.message);
     return svar({ ok: false, fel: "spara" }, 500, o);
@@ -223,7 +223,7 @@ async function bekrafta(b: Record<string, unknown>, o: string | null) {
   if (!UUID_RE.test(token)) return svar({ ok: false, status: "ogiltig" }, 400, o);
   const db = supa();
   const { data: a } = await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .select("*")
     .eq("bekrafta_token", token)
     .maybeSingle();
@@ -232,10 +232,10 @@ async function bekrafta(b: Record<string, unknown>, o: string | null) {
   if (a.bekraftad && !a.avslutad) return svar({ ok: true, status: "redan", fornamn }, 200, o);
 
   await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .update({ bekraftad: new Date().toISOString(), avslutad: null })
     .eq("id", a.id);
-  await db.from("autopilot_handelser").insert({ anmalan_id: a.id, typ: "bekraftad" });
+  await db.from("mobilpoolen_autopilot_handelser").insert({ anmalan_id: a.id, typ: "bekraftad" });
 
   // Välkomstmejl: vad vi har registrerat, när vi hör av oss, och vad som är billigast just nu.
   const { forslag } = await hamtaForslag(a);
@@ -318,18 +318,18 @@ async function avsluta(token: string, o: string | null) {
   if (!UUID_RE.test(token)) return svar({ ok: false, status: "ogiltig" }, 400, o);
   const db = supa();
   const { data: a } = await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .select("id,avslutad")
     .eq("avsluta_token", token)
     .maybeSingle();
   if (!a) return svar({ ok: false, status: "ogiltig" }, 404, o);
   if (a.avslutad) return svar({ ok: true, status: "redan" }, 200, o);
-  // Telefonnumret behövs inte längre. Resten gallras efter 90 dagar (autopilot_gallra).
+  // Telefonnumret behövs inte längre. Resten gallras efter 90 dagar (mobilpoolen_autopilot_gallra).
   await db
-    .from("autopilot_anmalningar")
+    .from("mobilpoolen_autopilot_anmalningar")
     .update({ avslutad: new Date().toISOString(), mobil: null, sms: false, nyhetsbrev: false })
     .eq("id", a.id);
-  await db.from("autopilot_handelser").insert({ anmalan_id: a.id, typ: "avslutad" });
+  await db.from("mobilpoolen_autopilot_handelser").insert({ anmalan_id: a.id, typ: "avslutad" });
   return svar({ ok: true, status: "ok" }, 200, o);
 }
 
