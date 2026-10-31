@@ -88,6 +88,12 @@ function IntegritetspolicyPage() {
         att du är intresserad av att vi byter åt dig med fullmakt hör vi av oss och frågar först.
         Någon fullmakt ger du inte genom formuläret.
       </p>
+      <p className="mt-3">
+        Innan Autopilot har öppnat blir formuläret en intresseanmälan. Vi sparar då namn, e-post,
+        uppgifterna om ditt abonnemang, dina val och den samtyckestext du godkände, men inget
+        mobilnummer. Vi skickar inga mejl förrän Autopilot öppnar. Då mejlar vi dig en gång och ber
+        dig bekräfta, och först när du har bekräftat startar bevakningen.
+      </p>
 
       <p className="mt-6 font-semibold">När du mejlar oss:</p>
       <p className="mt-3">
@@ -110,7 +116,9 @@ function IntegritetspolicyPage() {
         <li>
           <strong>Mobilpoolen Autopilot</strong>: påminnelser om ditt abonnemang och förslag på
           abonnemang. Grund: ditt samtycke, som du lämnar i formuläret och bekräftar från din
-          inkorg. Du kan ta tillbaka samtycket när du vill med länken i våra mejl.
+          inkorg. Du kan ta tillbaka samtycket när du vill med länken i våra mejl. En
+          intresseanmälan före lansering bygger på samma samtycke. Vill du ta tillbaka det innan vi
+          har öppnat, mejla info@mobilpoolen.se.
         </li>
         <li>
           <strong>Nyhetsbrev och sms</strong>, om du har kryssat i det. Grund: ditt samtycke.
@@ -160,6 +168,11 @@ function IntegritetspolicyPage() {
           <strong>Autopilot:</strong> så länge bevakningen är igång. Avslutar du tar vi bort ditt
           mobilnummer direkt och resten efter 90 dagar. En anmälan som aldrig bekräftas raderas
           efter 30 dagar.
+        </li>
+        <li>
+          <strong>Intresseanmälan före lansering:</strong> högst 12 månader om Autopilot inte har
+          öppnat. När vi har mejlat dig om lanseringen tas intresseanmälan bort efter 30 dagar,
+          oavsett om du bekräftar eller inte.
         </li>
         <li>
           <strong>Mejl till oss:</strong> så länge det behövs för att hantera ärendet, och högst 12

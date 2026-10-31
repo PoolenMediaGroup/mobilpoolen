@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LegalPage } from "@/components/legal-page";
 import { pageHead } from "@/lib/seo";
-import { SAMTYCKE } from "@/lib/autopilot";
+import { INTRESSE_SAMTYCKE, SAMTYCKE } from "@/lib/autopilot";
 
 export const Route = createFileRoute("/autopilot_/villkor")({
   head: () =>
@@ -41,6 +41,11 @@ function Sida() {
         </Link>{" "}
         och godkänner texten: "{SAMTYCKE}" Bevakningen börjar när du har bekräftat din e-post med
         länken vi skickar.
+      </p>
+      <p className="mt-3">
+        Innan Autopilot har öppnat blir formuläret en intresseanmälan, och du godkänner i stället
+        texten: "{INTRESSE_SAMTYCKE}" Vi skickar inga mejl förrän vi öppnar. Då mejlar vi dig en
+        gång och ber dig bekräfta, och först då gäller resten av villkoren.
       </p>
 
       <h2 className={H2}>3. Det här gör vi</h2>

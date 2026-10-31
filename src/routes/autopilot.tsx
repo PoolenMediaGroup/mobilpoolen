@@ -8,6 +8,7 @@ import { AutopilotFormular } from "@/components/autopilot/autopilot-formular";
 import { breadcrumbJsonLd, faqJsonLd, pageHead } from "@/lib/seo";
 import { PRISINDEX_HISTORIK } from "@/lib/mobil/prisindex-historik";
 import { formatTal, kr } from "@/lib/mobil/berakna";
+import { AUTOPILOT_LANSERAD } from "@/lib/autopilot";
 
 const PATH = "/autopilot";
 const TRAIL = [
@@ -20,6 +21,14 @@ const HOJNING = PRISINDEX_HISTORIK.at(-1)?.nyckeltal.medianHojningKr ?? null;
 const SNITT_HOJNING = PRISINDEX_HISTORIK.at(-1)?.nyckeltal.snittHojning ?? null;
 
 const FAQ = [
+  ...(AUTOPILOT_LANSERAD
+    ? []
+    : [
+        {
+          q: "När öppnar Autopilot?",
+          a: "Inom kort. Du kan anmäla dig redan nu med uppgifterna om ditt abonnemang. När vi öppnar mejlar vi dig en gång och ber dig bekräfta, och då startar bevakningen. Fram till dess skickar vi inga mejl. Intresseanmälan sparas högst 12 månader.",
+        },
+      ]),
   {
     q: "Vad kostar Mobilpoolen Autopilot?",
     a: "Ingenting. Autopilot är gratis och du förbinder dig inte till något. Du kan avsluta när du vill med länken i våra mejl.",
@@ -96,6 +105,12 @@ function Sida() {
                 {HOJNING != null ? `, i median ${kr(HOJNING)} mer i månaden` : ""}. Autopilot håller
                 koll åt dig och mejlar i god tid med de abonnemang som passar dig bäst just då.
               </p>
+              {!AUTOPILOT_LANSERAD && (
+                <p className="mt-4 max-w-xl text-[15px] text-white/75">
+                  Autopilot öppnar inom kort. Anmäl ditt intresse nu, så startar bevakningen när vi
+                  öppnar.
+                </p>
+              )}
               <ul className="mt-7 space-y-3">
                 {[
                   "Gratis, utan bindning och utan säljare som ringer",
@@ -194,7 +209,7 @@ function Sida() {
             <h2 className="mb-6 font-bold">Vanliga frågor</h2>
             <FaqAccordion items={FAQ} />
             <a href="#starta" className="btn-cta mt-8 inline-flex">
-              Starta Autopilot
+              {AUTOPILOT_LANSERAD ? "Starta Autopilot" : "Anmäl intresse"}
             </a>
           </div>
         </section>

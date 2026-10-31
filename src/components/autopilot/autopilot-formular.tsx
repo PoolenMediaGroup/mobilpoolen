@@ -5,7 +5,10 @@ import { OPERATORER } from "@/lib/mobil/data";
 import { kr, snittForstaAret } from "@/lib/mobil/berakna";
 import { forslagFor } from "@/lib/mobil/autopilot-forslag";
 import {
+  AUTOPILOT_LANSERAD,
   AUTOPILOT_OPPEN,
+  INTRESSE_SAMTYCKE,
+  anmalIntresse,
   FULLMAKT_INTRESSE,
   NYHETSBREV,
   SAMTYCKE,
@@ -218,14 +221,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
     setFel(f);
     if (f) return;
     setSkickar(true);
-    const svar = await anropaAutopilot({
-      action: "anmalan",
-      kalla,
-      webbplats: u.webbplats,
-      namn: u.namn,
-      epost: u.epost,
-      mobil: u.mobil,
-      sms: u.sms,
+    const abonnemang = {
       operator: u.operator,
       abonnemang: u.abonnemang,
       manadskostnad: u.manadskostnad,
@@ -245,10 +241,32 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
       telefon_avbetalning: u.avbetalning === "ja" ? true : u.avbetalning === "nej" ? false : null,
       avbetalning_manader: u.avbetalningManader,
       vill_byta_nu: u.bindning === "ingen",
-      fullmakt_intresse: u.fullmakt,
-      nyhetsbrev: u.nyhetsbrev,
-      samtycke: u.samtycke,
-    });
+    };
+    const svar = AUTOPILOT_LANSERAD
+      ? await anropaAutopilot({
+          action: "anmalan",
+          kalla,
+          webbplats: u.webbplats,
+          namn: u.namn,
+          epost: u.epost,
+          mobil: u.mobil,
+          sms: u.sms,
+          ...abonnemang,
+          fullmakt_intresse: u.fullmakt,
+          nyhetsbrev: u.nyhetsbrev,
+          samtycke: u.samtycke,
+        })
+      : await anmalIntresse({
+          namn: u.namn,
+          epost: u.epost,
+          webbplats: u.webbplats,
+          samtycke: u.samtycke,
+          nyhetsbrev: u.nyhetsbrev,
+          fullmakt_intresse: u.fullmakt,
+          kalla,
+          // Uppgifterna räknas om till datum när Autopilot öppnar, från anmälningsdagen.
+          uppgifter: { ...abonnemang, anmald: new Date().toISOString().slice(0, 10) },
+        });
     setSkickar(false);
     if (svar.ok) setKlart(true);
     else
@@ -266,11 +284,24 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
         aria-live="polite"
       >
         <MailCheck className="h-10 w-10 text-primary" aria-hidden />
-        <h2 className="mt-4 text-[24px] font-bold">Kolla din inkorg</h2>
-        <p className="mt-2 text-[16px] text-foreground/80">
-          Vi har skickat ett mejl till <strong>{u.epost}</strong>. Klicka på knappen i mejlet så
-          startar bevakningen. Hittar du det inte, titta i skräpposten.
-        </p>
+        {AUTOPILOT_LANSERAD ? (
+          <>
+            <h2 className="mt-4 text-[24px] font-bold">Kolla din inkorg</h2>
+            <p className="mt-2 text-[16px] text-foreground/80">
+              Vi har skickat ett mejl till <strong>{u.epost}</strong>. Klicka på knappen i mejlet så
+              startar bevakningen. Hittar du det inte, titta i skräpposten.
+            </p>
+          </>
+        ) : (
+          <>
+            <h2 className="mt-4 text-[24px] font-bold">Tack, du står på listan</h2>
+            <p className="mt-2 text-[16px] text-foreground/80">
+              Autopilot öppnar inom kort. Då mejlar vi dig en gång till <strong>{u.epost}</strong>{" "}
+              och ber dig bekräfta, och sedan startar bevakningen med uppgifterna du har fyllt i.
+              Fram till dess får du inga mejl från oss.
+            </p>
+          </>
+        )}
         {spar != null && spar >= 20 && (
           <p className="mt-4 rounded-xl bg-highlight p-4 text-[15px]">
             Med din surf finns abonnemang för {kr(snittForstaAret(billigast!))} i månaden i snitt
@@ -625,25 +656,27 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 maxLength={200}
               />
             </Falt>
-            <Falt
-              id={`${uid}-mobil`}
-              etikett={
-                <>
-                  Mobilnummer <span className="font-normal text-foreground/60">(valfritt)</span>
-                </>
-              }
-              hjalp="Bara om du vill ha sms-påminnelser när vi börjar skicka dem."
-            >
-              <input
+            {AUTOPILOT_LANSERAD && (
+              <Falt
                 id={`${uid}-mobil`}
-                type="tel"
-                autoComplete="tel"
-                value={u.mobil}
-                onChange={(e) => satt("mobil", e.target.value)}
-                placeholder="070 123 45 67"
-                className={INPUT}
-              />
-            </Falt>
+                etikett={
+                  <>
+                    Mobilnummer <span className="font-normal text-foreground/60">(valfritt)</span>
+                  </>
+                }
+                hjalp="Bara om du vill ha sms-påminnelser när vi börjar skicka dem."
+              >
+                <input
+                  id={`${uid}-mobil`}
+                  type="tel"
+                  autoComplete="tel"
+                  value={u.mobil}
+                  onChange={(e) => satt("mobil", e.target.value)}
+                  placeholder="070 123 45 67"
+                  className={INPUT}
+                />
+              </Falt>
+            )}
             {/* Honungsfält mot botar. Syns inte och nås inte med tab. */}
             <input
               type="text"
@@ -657,9 +690,9 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
             />
             <div className="mt-6 rounded-xl border border-border p-4">
               <Kryss checked={u.samtycke} onChange={(v) => satt("samtycke", v)}>
-                {SAMTYCKE}
+                {AUTOPILOT_LANSERAD ? SAMTYCKE : INTRESSE_SAMTYCKE}
               </Kryss>
-              {u.mobil.trim() && (
+              {AUTOPILOT_LANSERAD && u.mobil.trim() && (
                 <Kryss checked={u.sms} onChange={(v) => satt("sms", v)}>
                   {SMS_SAMTYCKE}
                 </Kryss>
@@ -733,13 +766,15 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
           ) : (
             <>
               <Check className="h-4 w-4" aria-hidden />
-              Starta Autopilot
+              {AUTOPILOT_LANSERAD ? "Starta Autopilot" : "Anmäl intresse"}
             </>
           )}
         </button>
       </div>
-      {!AUTOPILOT_OPPEN && (
-        <p className="mt-3 text-[12.5px] text-foreground/60">Autopilot öppnar inom kort.</p>
+      {(!AUTOPILOT_OPPEN || !AUTOPILOT_LANSERAD) && steg === 2 && (
+        <p className="mt-3 text-[12.5px] text-foreground/60">
+          Autopilot öppnar inom kort. Anmäl dig nu, så startar din bevakning när vi öppnar.
+        </p>
       )}
     </form>
   );
