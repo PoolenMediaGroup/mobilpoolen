@@ -118,7 +118,7 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
               </p>
             )}
             <a
-              href="#jamfor"
+              href="#alla"
               className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-primary underline underline-offset-2"
             >
               Se alla som passar dig
