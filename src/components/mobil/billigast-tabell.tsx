@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { ABONNEMANG, operator, SENAST_KONTROLLERAD } from "@/lib/mobil/data";
 import {
   arVillkorat,
@@ -68,7 +69,9 @@ export function BilligastTabell({
               <th className="px-4 py-3 font-semibold">Billigast</th>
               <th className="px-4 py-3 font-semibold">Surf</th>
               <th className="px-4 py-3 text-right font-semibold">Pris första mån</th>
-              <th className="px-4 py-3 text-right font-semibold">Snitt år 1</th>
+              <th className="bg-highlight px-4 py-3 text-right font-semibold text-primary">
+                Snitt/mån år 1
+              </th>
             </tr>
           </thead>
           <tbody className="max-sm:block">
@@ -77,37 +80,48 @@ export function BilligastTabell({
               return (
                 <tr
                   key={niva}
-                  className="border-t border-border max-sm:block max-sm:px-4 max-sm:py-3"
+                  className="border-t border-border transition-colors hover:bg-highlight/40 max-sm:grid max-sm:grid-cols-[auto_1fr_auto] max-sm:items-center max-sm:gap-x-3 max-sm:gap-y-1 max-sm:px-4 max-sm:py-3"
                 >
-                  <th
-                    scope="row"
-                    className="px-4 py-3 text-left font-semibold text-foreground max-sm:block max-sm:p-0"
-                  >
-                    {niva}
+                  <th scope="row" className="px-4 py-3.5 text-left max-sm:col-span-3 max-sm:p-0">
+                    <span className="inline-flex items-center rounded-full bg-highlight px-3 py-1 text-[13.5px] font-semibold text-primary">
+                      {niva}
+                    </span>
                   </th>
-                  <td className="px-4 py-3 max-sm:block max-sm:p-0 max-sm:pt-1">
-                    {o ? (
-                      <Link
-                        to="/operatorer/$slug"
-                        params={{ slug: o.slug }}
-                        className="font-semibold text-primary hover:underline"
-                      >
-                        {o.namn}
-                      </Link>
-                    ) : (
-                      a.operator
-                    )}{" "}
-                    <span className="text-foreground/75">{a.namn}</span>
+                  <td className="px-4 py-3.5 max-sm:col-span-2 max-sm:p-0">
+                    <span className="flex items-center gap-3">
+                      <OperatorMonogram namn={o?.namn ?? a.operator} size={32} />
+                      <span className="min-w-0 leading-snug">
+                        {o ? (
+                          <Link
+                            to="/operatorer/$slug"
+                            params={{ slug: o.slug }}
+                            className="font-semibold text-foreground hover:text-primary hover:underline"
+                          >
+                            {o.namn}
+                          </Link>
+                        ) : (
+                          a.operator
+                        )}
+                        <span className="block text-[13.5px] text-muted-foreground">
+                          {a.namn}
+                          {!a.namn.includes(gbText(a.gb)) && (
+                            <span className="sm:hidden"> · {gbText(a.gb)}</span>
+                          )}
+                        </span>
+                      </span>
+                    </span>
                   </td>
-                  <td className="px-4 py-3 text-foreground/80 max-sm:inline max-sm:p-0 max-sm:after:content-['_·_']">
-                    {gbText(a.gb)}
-                  </td>
-                  <td className="px-4 py-3 text-right tabular-nums max-sm:inline max-sm:p-0 max-sm:after:content-['_·_']">
+                  <td className="px-4 py-3.5 text-foreground/80 max-sm:hidden">{gbText(a.gb)}</td>
+                  <td className="px-4 py-3.5 text-right tabular-nums text-foreground/70 max-sm:hidden">
                     {kr(prisNu(a))}
                   </td>
-                  <td className="px-4 py-3 text-right font-semibold tabular-nums max-sm:inline max-sm:p-0">
-                    <span className="sm:hidden">snitt </span>
-                    {kr(snittForstaAret(a))}
+                  <td className="bg-highlight/50 px-4 py-3.5 text-right tabular-nums max-sm:bg-transparent max-sm:p-0">
+                    <span className="font-display text-[18px] font-bold text-primary">
+                      {kr(snittForstaAret(a))}
+                    </span>
+                    <span className="block text-[11.5px] text-muted-foreground sm:hidden">
+                      snitt/mån år 1
+                    </span>
                   </td>
                 </tr>
               );
