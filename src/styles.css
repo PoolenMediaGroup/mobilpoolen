@@ -1135,6 +1135,12 @@ body:has([data-chatt-lyft]) .chatt-bubbla {
     opacity: 0.5;
   }
 }
+/* Flytande "Tillbaka till jämförelsen" på startsidan: ur vägen när chatten
+   eller dess hälsningsbubbla syns, så de inte krockar på mobil. Samma regel som
+   på Elpoolen och Larmpoolen. */
+body:has(.chatt-panel:not([hidden]), .chatt-bubbla) .tillbaka-knapp {
+  display: none;
+}
 .chatt-panel[hidden] {
   display: none;
 }
