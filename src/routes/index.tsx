@@ -99,8 +99,8 @@ function Startsida() {
   const onResultat = (r: KalkylResultat) => {
     setForval(
       r.behovGb >= 1000
-        ? { surf: "obegransad", sortering: "snitt-ar" }
-        : { behovGb: r.behovGb, sortering: "snitt-ar" },
+        ? { surf: "obegransad", maxSnitt: r.maxSnitt, sortering: "snitt-ar" }
+        : { behovGb: r.behovGb, maxSnitt: r.maxSnitt, sortering: "snitt-ar" },
     );
   };
 
@@ -205,47 +205,159 @@ function Lank({ to, children }: { to: string; children: React.ReactNode }) {
 
 /* ---------------- Hero ---------------- */
 
+// Rubriken i två rader som Elpoolens: sökordet först, löftet i accentfärg.
+// Tre rader: sökordet på två rader och löftet lika brett under.
+const HERO_RAD_1A = "Jämför";
+const HERO_RAD_1B = "mobilabonnemang.";
+const HERO_RAD_2 = "Hitta ditt bästa pris.";
+const HERO_ACCENT = "#C4BBFF";
+
 function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
   const billigast = billigastPerNiva()[0];
   return (
     <section
       id="jamfor"
-      className="relative overflow-hidden bg-primary"
-      style={{
-        backgroundImage:
-          "radial-gradient(1200px 600px at 85% -10%, color-mix(in oklab, white 12%, transparent), transparent 60%), radial-gradient(900px 500px at -10% 120%, color-mix(in oklab, var(--dark-section) 45%, transparent), transparent 60%)",
-      }}
+      // Samma upplägg som Elpoolens hero: centrerad i fönstret på dator och
+      // skalad med --hz så att proportionerna blir desamma på alla skärmar.
+      className="relative overflow-hidden lg:flex lg:min-h-[calc(100svh-128px-var(--nav-extra,0px))] lg:flex-col lg:justify-center"
+      style={{ background: "var(--primary)" }}
     >
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center lg:gap-16 lg:pb-24 lg:pt-20">
-        <div>
-          <h1
-            className="max-w-[560px] font-bold text-white"
-            style={{
-              fontSize: "clamp(36px, 5.4vw, 56px)",
-              lineHeight: 1.04,
-              letterSpacing: "-0.035em",
-            }}
-          >
-            Jämför mobilabonnemang och betala mindre
-          </h1>
-          <p className="mt-5 max-w-[500px] text-[17px] leading-relaxed text-white/80 sm:text-[19px]">
-            Se vad mobilen faktiskt kostar, inte bara första månaden. {ANTAL_OPERATORER} operatörer
-            {billigast ? `, från ${kr(snittForstaAret(billigast.a))}/mån` : ""}.
-          </p>
-          <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[15px] font-medium text-white/90">
-            {["Gratis och utan konto", "Ingen betald placering", "Källa på varje pris"].map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <Check className="h-4 w-4 text-white/70" aria-hidden />
-                {t}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-8 hidden items-center gap-2 text-[13.5px] text-white/65 lg:flex">
-            <span aria-hidden className="inline-block h-2 w-2 rounded-full bg-live" />
-            Priserna kontrollerades senast {datumText(SENAST_KONTROLLERAD)}
-          </p>
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-40 -top-48 h-[560px] w-[560px] rounded-full"
+        style={{ background: "color-mix(in oklab, white 10%, transparent)", filter: "blur(4px)" }}
+      />
+      <div className="hero-skala relative mx-auto w-full max-w-7xl px-4 pb-[20px] pt-[28px] sm:px-6 sm:pb-[34px] sm:pt-[56px] lg:px-8 lg:py-[56px]">
+        <div className="flex flex-col gap-3 sm:gap-10 lg:flex-row lg:items-start lg:gap-16">
+          {/* Vänsterkolumn */}
+          <div className="contents lg:flex lg:w-[520px] lg:shrink-0 lg:flex-col lg:self-start">
+            <div className="order-1 flex flex-col">
+              <h1
+                className="font-bold text-white"
+                style={{
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.1,
+                  fontSize: "clamp(32px, 6.4vw, 52px)",
+                }}
+              >
+                {HERO_RAD_1A}
+                <br />
+                {HERO_RAD_1B}
+                <br />
+                <span style={{ color: HERO_ACCENT }}>{HERO_RAD_2}</span>
+              </h1>
+              <p
+                className="mt-3 sm:mt-4"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  fontSize: "clamp(16px, 1.9vw, 18px)",
+                  lineHeight: 1.5,
+                }}
+              >
+                På bara 30 sekunder. Gratis och enkelt.
+              </p>
+            </div>
+
+            <div className="order-3 flex flex-col lg:order-2">
+              <ul className="mt-1 hidden flex-col gap-2.5 sm:mt-6 sm:flex sm:gap-3.5">
+                {[
+                  "Pris efter kampanjen, inte bara första månaden",
+                  "Ordningen styrs av pris, aldrig av ersättning",
+                  "Byt smidigt, numret följer med",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-3">
+                    <Check
+                      className="h-[20px] w-[20px] shrink-0"
+                      style={{ color: "#5BE39B", marginTop: 2 }}
+                      strokeWidth={2.5}
+                      aria-hidden
+                    />
+                    <span
+                      className="text-white"
+                      style={{ fontSize: "clamp(15px, 1.7vw, 17px)", lineHeight: 1.45 }}
+                    >
+                      {t}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div
+                className="mt-3.5 inline-flex items-center gap-3 self-start sm:mt-5"
+                style={{ color: "rgba(226,222,255,0.85)", fontSize: 12.5 }}
+              >
+                <span className="flex w-[20px] shrink-0 justify-center" aria-hidden>
+                  <span
+                    className="inline-block h-1.5 w-1.5 rounded-full"
+                    style={{ background: "#5BE39B" }}
+                  />
+                </span>
+                <span>
+                  Kontrollerat {datumText(SENAST_KONTROLLERAD)} · Källa: operatörernas egna
+                  webbplatser
+                </span>
+              </div>
+
+              <div className="mt-5 flex flex-col items-start gap-3 sm:mt-10 lg:mt-16">
+                <Link
+                  to="/autopilot"
+                  className="inline-flex items-center gap-2 text-[13.5px] hover:underline"
+                  style={{ color: "#DCD8F5" }}
+                >
+                  <BellRing
+                    className="h-4 w-4 shrink-0"
+                    style={{ color: HERO_ACCENT }}
+                    aria-hidden
+                  />
+                  Inte redo att byta? Få besked innan kampanjen tar slut →
+                </Link>
+                <Link
+                  to="/foretag"
+                  className="inline-flex items-center gap-2 text-[13.5px] hover:underline"
+                  style={{ color: "#DCD8F5" }}
+                >
+                  <Briefcase
+                    className="h-4 w-4 shrink-0"
+                    style={{ color: HERO_ACCENT }}
+                    aria-hidden
+                  />
+                  Har du företag? Jämför företagsabonnemang →
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Formulärkolumn */}
+          <div className="relative order-2 mt-4 lg:mt-0 lg:flex-1 lg:self-start">
+            <div className="relative z-10">
+              {billigast && (
+                <div className="absolute right-3 top-0 z-20 -translate-y-1/2 sm:right-6">
+                  <div
+                    className="inline-flex items-center px-2 py-1 text-[11px] sm:px-3 sm:py-[7px] sm:text-[13px]"
+                    style={{
+                      background: "#FFF8EF",
+                      border: "1px solid rgba(232,132,44,0.28)",
+                      borderRadius: 999,
+                      boxShadow: "0 4px 12px rgba(22,19,58,0.18)",
+                      fontWeight: 600,
+                      color: "#16133A",
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Från {kr(snittForstaAret(billigast.a))}/mån i snitt
+                  </div>
+                </div>
+              )}
+              <SparKalkyl onResultat={onResultat} />
+              <div
+                className="text-center"
+                style={{ marginTop: 12, fontSize: 13, color: "#DCD8F5" }}
+              >
+                Jämför på 30 sekunder · Helt gratis · Du väljer själv
+              </div>
+            </div>
+          </div>
         </div>
-        <SparKalkyl onResultat={onResultat} />
       </div>
     </section>
   );
