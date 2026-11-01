@@ -11,6 +11,7 @@ import {
   Receipt,
   BellRing,
   Heart,
+  Info,
   Users,
   Wallet,
   Tag,
@@ -24,7 +25,7 @@ import { GuideCard } from "@/components/guide-card";
 import { SectionHeader, SectionShell } from "@/components/section-layout";
 import { Jamforelse, type Forval } from "@/components/mobil/jamforelse";
 import { OperatorLogoRad } from "@/components/mobil/operator-logo-rad";
-import { SparKalkyl, type KalkylResultat } from "@/components/mobil/spar-kalkyl";
+import { SparKalkyl, sparExempel, type KalkylResultat } from "@/components/mobil/spar-kalkyl";
 import { BilligastTabell, billigastPerNiva } from "@/components/mobil/billigast-tabell";
 import { SURF_NIVAER } from "@/lib/mobil/surf";
 import { pageHead, faqJsonLd, jsonLdScript, SITE_URL } from "@/lib/seo";
@@ -331,24 +332,9 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
           {/* Formulärkolumn */}
           <div className="relative order-2 mt-4 lg:mt-0 lg:flex-1 lg:self-start">
             <div className="relative z-10">
-              {billigast && (
-                <div className="absolute right-3 top-0 z-20 -translate-y-1/2 sm:right-6">
-                  <div
-                    className="inline-flex items-center px-2 py-1 text-[11px] sm:px-3 sm:py-[7px] sm:text-[13px]"
-                    style={{
-                      background: "#FFF8EF",
-                      border: "1px solid rgba(232,132,44,0.28)",
-                      borderRadius: 999,
-                      boxShadow: "0 4px 12px rgba(22,19,58,0.18)",
-                      fontWeight: 600,
-                      color: "#16133A",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    Från {kr(snittForstaAret(billigast.a))}/mån i snitt
-                  </div>
-                </div>
-              )}
+              <div className="absolute right-3 top-0 z-20 -translate-y-1/2 sm:right-6">
+                <SparPill />
+              </div>
               <SparKalkyl onResultat={onResultat} />
               <div
                 className="text-center"
@@ -361,6 +347,58 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
         </div>
       </div>
     </section>
+  );
+}
+
+/* ---------------- Sparpill ---------------- */
+
+/** Pillret ovanför räknaren, som Elpoolens: en siffra ur datan och ett räkneexempel bakom (i). */
+function SparPill() {
+  const [oppen, setOppen] = useState(false);
+  const ex = sparExempel(15);
+  if (!ex) return null;
+  return (
+    <div className="relative">
+      <div
+        className="inline-flex items-center gap-1.5 px-2 py-1 text-[11px] sm:gap-2 sm:px-3 sm:py-[7px] sm:text-[13px]"
+        style={{
+          background: "#FFF8EF",
+          border: "1px solid rgba(232,132,44,0.28)",
+          borderRadius: 999,
+          boxShadow: "0 4px 12px rgba(22,19,58,0.18)",
+          fontWeight: 600,
+          color: "#16133A",
+          whiteSpace: "nowrap",
+        }}
+      >
+        <span>Spara ca {kr(ex.perAr)}/år</span>
+        <button
+          type="button"
+          onMouseEnter={() => setOppen(true)}
+          onMouseLeave={() => setOppen(false)}
+          onClick={() => setOppen((v) => !v)}
+          aria-label="Om beräkningen"
+          aria-expanded={oppen}
+          className="shrink-0"
+          style={{ color: "#8A6A4A", lineHeight: 0 }}
+        >
+          <Info className="h-[12px] w-[12px] sm:h-[15px] sm:w-[15px]" aria-hidden />
+        </button>
+      </div>
+      {oppen && (
+        <div
+          role="tooltip"
+          className="absolute right-0 z-40 rounded-xl bg-white p-3 text-[12.5px] leading-snug text-foreground shadow-lg"
+          style={{ top: "calc(100% + 8px)", width: 280, border: "1px solid var(--border)" }}
+        >
+          Räkneexempel för minst {ex.gb} GB surf. Ett abonnemang mitt i prisspannet kostar{" "}
+          {kr(ex.median)}/mån i snitt första året, det billigaste {kr(ex.lagst)}/mån. Skillnaden är
+          ca {kr(ex.perAr)} per år. Kampanj och startavgift är inräknade. Priser från operatörernas
+          egna webbplatser, kontrollerade {datumText(SENAST_KONTROLLERAD)}. Din besparing beror på
+          vad du betalar i dag.
+        </div>
+      )}
+    </div>
   );
 }
 
