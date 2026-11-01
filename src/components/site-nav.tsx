@@ -220,7 +220,7 @@ export function SiteNav() {
 
   return (
     <>
-      <div aria-hidden className="h-12 md:h-[72px]" />
+      <div aria-hidden className="nav-skala h-12 md:h-[72px]" />
       {/* Som på Elpoolen: navbaren har samma höjd och storlek hela tiden, även
           när man scrollar. Bara skuggan kommer till när sidan rört sig. */}
       <header
@@ -228,13 +228,14 @@ export function SiteNav() {
           scrolled ? "shadow-nav" : ""
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between xl:grid xl:grid-cols-[auto_1fr_auto] h-12 md:h-[72px]">
-          <BrandLogo width={170} mobileWidth={140} className="items-center" />
+        <div className="nav-skala mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-12 md:h-[72px]">
+          {/* Samma storlek som Elpoolens ordmärke: versalhöjden blir 22,2 px (17,1 px i mobil). */}
+          <BrandLogo width={188} mobileWidth={145} className="items-center" />
 
           <nav
             ref={navRef}
-            className="site-nav-links hidden xl:flex items-center justify-self-center"
-            style={{ gap: 26 }}
+            className="site-nav-links hidden lg:flex lg:flex-1 items-center justify-center"
+            style={{ gap: 28 }}
             aria-label="Huvudmeny"
           >
             {NAV.map((post, i) => {
@@ -317,15 +318,16 @@ export function SiteNav() {
             <Link
               to="/"
               hash="alla"
-              className="inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-[10px] bg-cta px-4 py-2.5 lg:min-h-0 text-[15px] font-semibold text-cta-foreground shadow-none hover:bg-cta-hover min-[400px]:min-w-[164px] min-[400px]:px-5"
-              style={{ lineHeight: 1.2, boxShadow: "none" }}
+              className="inline-flex items-center justify-center whitespace-nowrap bg-cta hover:bg-cta-hover text-cta-foreground font-semibold rounded-[10px] transition-all duration-200 motion-reduce:transition-none"
+              style={{ padding: "10px 20px", fontSize: 15, lineHeight: 1.2 }}
             >
-              {/* Under 400 px rör loggan och knappen nästan varandra, så knappen blir kortare. */}
-              <span className="min-[400px]:hidden">Jämför →</span>
-              <span className="hidden min-[400px]:inline">Jämför gratis →</span>
+              {/* Samma mått, text och vita textfärg som Elpoolens knapp (Leons beslut 1 nov 2026).
+                  Under 360 px står den korta texten. */}
+              <span className="min-[360px]:hidden">Jämför →</span>
+              <span className="hidden min-[360px]:inline">Jämför gratis →</span>
             </Link>
             <button
-              className="xl:hidden inline-flex items-center justify-center min-h-11 min-w-11 rounded-md hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="lg:hidden inline-flex items-center justify-center min-h-11 min-w-11 rounded-md hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label={open ? "Stäng meny" : "Öppna meny"}
               aria-expanded={open}
               aria-controls="mobilmeny"
@@ -340,7 +342,7 @@ export function SiteNav() {
       {open && (
         <div
           id="mobilmeny"
-          className="xl:hidden fixed inset-0 z-[110] bg-surface overflow-y-auto overscroll-contain"
+          className="lg:hidden fixed inset-0 z-[110] bg-surface overflow-y-auto overscroll-contain"
         >
           <div className="flex items-center justify-between h-12 px-4 border-b border-border">
             <BrandLogo width={140} />

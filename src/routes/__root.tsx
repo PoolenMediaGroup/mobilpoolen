@@ -207,11 +207,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ],
       links: [
         { rel: "stylesheet", href: appCss },
-        { rel: "icon", href: "/favicon.ico?v=2", sizes: "16x16 32x32 48x48" },
-        { rel: "icon", href: "/favicon-16.png?v=2", type: "image/png", sizes: "16x16" },
-        { rel: "icon", href: "/favicon-32.png?v=2", type: "image/png", sizes: "32x32" },
-        { rel: "icon", href: "/favicon-48.png?v=2", type: "image/png", sizes: "48x48" },
-        { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=2", sizes: "180x180" },
+        { rel: "icon", href: "/favicon.ico?v=3", sizes: "16x16 32x32 48x48" },
+        { rel: "icon", href: "/favicon.svg?v=3", type: "image/svg+xml" },
+        { rel: "icon", href: "/favicon-16.png?v=3", type: "image/png", sizes: "16x16" },
+        { rel: "icon", href: "/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+        { rel: "icon", href: "/favicon-48.png?v=3", type: "image/png", sizes: "48x48" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=3", sizes: "180x180" },
         { rel: "manifest", href: "/site.webmanifest" },
       ],
     };
