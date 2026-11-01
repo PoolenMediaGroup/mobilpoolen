@@ -23,6 +23,7 @@ import { FaqItem } from "@/components/faq-section";
 import { GuideCard } from "@/components/guide-card";
 import { SectionHeader, SectionShell } from "@/components/section-layout";
 import { Jamforelse, type Forval } from "@/components/mobil/jamforelse";
+import { OperatorLogoRad } from "@/components/mobil/operator-logo-rad";
 import { SparKalkyl, type KalkylResultat } from "@/components/mobil/spar-kalkyl";
 import { BilligastTabell, billigastPerNiva } from "@/components/mobil/billigast-tabell";
 import { SURF_NIVAER } from "@/lib/mobil/surf";
@@ -368,26 +369,10 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
 function OperatorRad() {
   const lista = OPERATORER.filter((o) => o.aktiv && PRIVATA.some((a) => a.operator === o.slug));
   return (
-    <section className="border-b border-border bg-surface">
-      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 sm:px-6 lg:px-8 py-6 lg:flex-row lg:items-center lg:gap-8">
-        <p className="shrink-0 text-[14px] font-semibold text-muted-foreground">
-          Vi jämför {lista.length} operatörer
-        </p>
-        <ul className="-mx-6 flex gap-x-5 overflow-x-auto whitespace-nowrap px-6 [scrollbar-width:none] lg:mx-0 lg:flex-wrap lg:gap-y-1.5 lg:overflow-visible lg:whitespace-normal lg:px-0">
-          {lista.map((o) => (
-            <li key={o.slug}>
-              <Link
-                to="/operatorer/$slug"
-                params={{ slug: o.slug }}
-                className="font-display text-[15.5px] font-semibold text-foreground/55 transition-colors hover:text-primary"
-              >
-                {o.namn}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+    <OperatorLogoRad
+      operatorer={lista}
+      rubrik="Vi jämför mobilabonnemang från Sveriges största operatörer, bland andra"
+    />
   );
 }
 

@@ -82,5 +82,5 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 - Indigo (`--primary: #3b28cc`) är enda mättade färgen, orange (`--cta`) bara för huvudknappar. Mörka sektioner i djup indigo (`--dark-section: #16133a`). Typsnitt som Elpoolen: Inter och Sora. Ordmärket "mobilpoolen." med orange punkt (`src/assets/mobilpoolen-logo.svg`).
 - Inga versala etiketter ovanför rubriker. Rubriken bär sektionen själv.
-- Operatörer visas med initialer (`OperatorMonogram`), inte med deras logotyper.
+- Operatörer visas med sin logotyp (beslut av Leon 1 nov 2026), som på Elpoolen. Filerna ligger i `public/logos/`, registret i `src/lib/mobil/logotyper.ts`. `OperatorMonogram` visar logotypen i en vit bricka och faller tillbaka på initialer när logotyp saknas (katshing, Halebop). Logoraden under startsidans hero är `OperatorLogoRad`. Ny operatör: hämta logotypen från operatörens egen webbplats och lägg till den i registret.
 - Bilder bara ur bildbanken (`src/lib/bildbank.ts`). Samma bild aldrig två gånger på en sida.

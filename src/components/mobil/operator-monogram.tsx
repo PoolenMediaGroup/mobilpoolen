@@ -1,7 +1,9 @@
+import { logotyp } from "@/lib/mobil/logotyper";
+
 /**
- * Operatörens initialer i en rund bricka. Vi visar inte operatörernas
- * logotyper: namnet bär identiteten, och brickan hjälper ögat att hitta raden.
- * Färgen är alltid sajtens egen, så ingen operatör sticker ut i listan.
+ * Operatörens logotyp i en vit bricka (lika stor för alla, så att raderna
+ * linjerar). Saknar vi logotypen visas initialerna i en rund bricka i stället.
+ * Namnet står alltid bredvid i text, så brickan är dold för skärmläsare.
  */
 /** Fasta initialer där de automatiska skulle krocka (Telia, Tele2, Telenor). */
 const INITIALER: Record<string, string> = {
@@ -26,6 +28,27 @@ export function OperatorMonogram({
   size?: number;
   className?: string;
 }) {
+  const logo = logotyp(namn);
+  if (logo) {
+    const bredd = Math.round(size * 1.8);
+    return (
+      <span
+        aria-hidden
+        className={`inline-flex shrink-0 items-center justify-center rounded-xl border border-border bg-white ${className}`}
+        style={{ width: bredd, height: size, padding: Math.max(4, Math.round(size * 0.14)) }}
+      >
+        <img
+          src={logo.src}
+          alt=""
+          width={logo.w}
+          height={logo.h}
+          loading="lazy"
+          decoding="async"
+          className="block h-full w-full object-contain"
+        />
+      </span>
+    );
+  }
   const ord = namn
     .replace(/[^\p{L}\p{N} ]/gu, "")
     .split(/\s+/)
