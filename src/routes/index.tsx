@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
+  ArrowDown,
   ArrowRight,
+  Gauge,
+  Repeat,
+  Scale,
   Baby,
   Briefcase,
   Calculator,
@@ -24,6 +28,7 @@ import { FaqItem } from "@/components/faq-section";
 import { GuideCard } from "@/components/guide-card";
 import { SectionHeader, SectionShell } from "@/components/section-layout";
 import { Jamforelse, type Forval } from "@/components/mobil/jamforelse";
+import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { OperatorLogoRad } from "@/components/mobil/operator-logo-rad";
 import { SparKalkyl, sparExempel, type KalkylResultat } from "@/components/mobil/spar-kalkyl";
 import { BilligastTabell, billigastPerNiva } from "@/components/mobil/billigast-tabell";
@@ -123,14 +128,16 @@ function Startsida() {
 
         <AutopilotTeaser />
 
-        <SectionShell flushTop>
-          <SectionHeader
-            title="Billigaste mobilabonnemanget per surfmängd"
-            sub="Det billigaste abonnemanget som ger minst så här mycket surf, räknat som snittpris per månad första året."
-          />
-          <BilligastTabell />
-          <Genvagar />
-        </SectionShell>
+        <section className="bg-surface">
+          <SectionShell>
+            <SectionHeader
+              title="Billigaste mobilabonnemanget per surfmängd"
+              sub="Det billigaste abonnemanget som ger minst så här mycket surf, räknat som snittpris per månad första året."
+            />
+            <BilligastTabell />
+            <Genvagar />
+          </SectionShell>
+        </section>
 
         <SaFungerarDet />
         <NatSektion />
@@ -503,38 +510,67 @@ function Genvagar() {
 function SaFungerarDet() {
   const steg = [
     {
+      ikon: Gauge,
       t: "Kolla hur mycket du surfar",
       d: "Se förbrukningen de senaste månaderna i mobilens inställningar. Många behöver mindre än de tror.",
       lank: { to: "/verktyg/hur-mycket-surf-behover-jag", label: "Räkna ut ditt surfbehov" },
     },
     {
+      ikon: Scale,
       t: "Jämför priset över ett år",
       d: "Tre månader kampanjpris väger lätt över tolv. Vi räknar snittet åt dig, startavgiften inräknad.",
       lank: { to: "/guider/kampanjpris-efter-kampanjen", label: "Så fungerar kampanjpriser" },
     },
     {
+      ikon: Repeat,
       t: "Beställ och behåll numret",
       d: "Nya operatören flyttar numret och avslutar det gamla abonnemanget. Avbrottet är högst en arbetsdag.",
       lank: { to: "/guider/byta-operator-behalla-nummer", label: "Byta operatör steg för steg" },
     },
   ];
   return (
-    <section className="bg-surface">
+    <section className="bg-dark-section text-white">
       <SectionShell>
         <SectionHeader
+          dark
           title="Byt till ett billigare abonnemang på tio minuter"
-          sub="Numret följer med och du behöver inte säga upp något själv."
+          sub="Tre steg. Numret följer med och du behöver inte säga upp något själv."
         />
-        <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
+        <ol className="grid items-stretch gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:gap-5">
           {steg.map((s, i) => (
-            <li key={s.t} className="border-t-2 border-primary pt-6">
-              <span className="font-display text-[15px] font-bold text-primary">Steg {i + 1}</span>
-              <h3 className="mt-2 text-[21px] text-foreground">{s.t}</h3>
-              <p className="mt-3 text-[15.5px] leading-relaxed text-muted-foreground">{s.d}</p>
-              <div className="mt-3">
-                <Lank to={s.lank.to}>{s.lank.label}</Lank>
-              </div>
-            </li>
+            <Fragment key={s.t}>
+              <li className="flex flex-col rounded-[18px] border border-white/15 bg-white/[0.06] p-7 shadow-[0_24px_48px_-16px_rgba(4,6,24,0.5)]">
+                <div className="flex items-center gap-4">
+                  <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_8px_24px_rgba(59,40,204,0.45)]">
+                    <s.ikon className="h-7 w-7 text-white" strokeWidth={2.2} aria-hidden />
+                  </span>
+                  <span
+                    className="font-display text-5xl font-extrabold"
+                    style={{ color: "var(--cta)", textShadow: "0 2px 14px rgba(232,132,44,0.28)" }}
+                  >
+                    {i + 1}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-[20px] font-semibold text-white">{s.t}</h3>
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-dark-muted">{s.d}</p>
+                <Link
+                  to={s.lank.to as never}
+                  className="mt-4 inline-flex min-h-11 items-center gap-1.5 text-[15px] font-semibold text-white underline-offset-4 hover:underline"
+                >
+                  {s.lank.label}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </li>
+              {i < steg.length - 1 && (
+                <li aria-hidden className="flex items-center justify-center py-1 md:py-0">
+                  <ArrowRight
+                    className="hidden h-8 w-8 text-dark-accent md:block"
+                    strokeWidth={2}
+                  />
+                  <ArrowDown className="h-7 w-7 text-dark-accent md:hidden" strokeWidth={2.5} />
+                </li>
+              )}
+            </Fragment>
           ))}
         </ol>
       </SectionShell>
@@ -547,7 +583,8 @@ function SaFungerarDet() {
 function NatSektion() {
   const perNat = (Object.keys(MOBILNAT) as NatId[]).map((id) => ({
     nat: MOBILNAT[id],
-    operatorer: OPERATORER.filter((o) => o.nat === id && o.aktiv && !o.natNotis),
+    agare: OPERATORER.find((o) => o.slug === id),
+    operatorer: OPERATORER.filter((o) => o.nat === id && o.aktiv && !o.natNotis && o.slug !== id),
   }));
   return (
     <SectionShell>
@@ -555,33 +592,48 @@ function NatSektion() {
         title="Fyra mobilnät, samma täckning för mindre"
         sub="Alla operatörer kör i något av fyra nät. Väljer du en billigare operatör i samma nät får du samma täckning."
       />
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {perNat.map(({ nat, operatorer }) => (
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {perNat.map(({ nat, agare, operatorer }) => (
           <div
             key={nat.id}
-            className="flex flex-col rounded-2xl border border-border bg-surface p-5"
+            className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-kort"
           >
             <Link
               to="/nat/$slug"
               params={{ slug: nat.id }}
-              className="font-display text-[19px] font-bold text-foreground hover:text-primary"
+              className="group flex items-center gap-3 border-b border-border bg-highlight/60 px-5 py-4"
             >
-              {nat.namn}
+              {agare && <OperatorMonogram namn={agare.namn} size={36} />}
+              <span className="min-w-0">
+                <span className="block font-display text-[18px] font-bold text-foreground group-hover:text-primary">
+                  {nat.namn}
+                </span>
+                <span className="block text-[12.5px] leading-snug text-muted-foreground">
+                  {nat.agare}
+                </span>
+              </span>
             </Link>
-            <span className="mt-1 text-[13.5px] text-muted-foreground">{nat.agare}</span>
-            <ul className="mt-4 flex flex-wrap gap-1.5">
-              {operatorer.map((o) => (
-                <li key={o.slug}>
-                  <Link
-                    to="/operatorer/$slug"
-                    params={{ slug: o.slug }}
-                    className="inline-block rounded-full bg-muted px-2.5 py-1 text-[13px] font-semibold text-foreground hover:bg-highlight hover:text-primary"
-                  >
-                    {o.namn}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div className="flex-1 px-5 py-4">
+              <p className="text-[12.5px] font-semibold text-muted-foreground">
+                {operatorer.length > 0
+                  ? "Andra operatörer i nätet"
+                  : "Inga andra operatörer i jämförelsen"}
+              </p>
+              <ul className="mt-3 grid gap-2">
+                {operatorer.map((o) => (
+                  <li key={o.slug}>
+                    <Link
+                      to="/operatorer/$slug"
+                      params={{ slug: o.slug }}
+                      className="flex items-center gap-3 rounded-xl px-1 py-1 text-[14.5px] font-semibold text-foreground hover:bg-muted hover:text-primary"
+                    >
+                      <OperatorMonogram namn={o.namn} size={28} />
+                      {o.namn}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>
