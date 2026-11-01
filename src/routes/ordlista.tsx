@@ -453,7 +453,7 @@ function Page() {
                 <a
                   key={term}
                   href={`#${termId(term)}`}
-                  className="group rounded-2xl border border-border bg-surface p-5 transition-colors hover:border-primary/50 hover:bg-muted/40"
+                  className="group rounded-2xl border border-border bg-white p-5 shadow-kort-litet transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_22px_44px_-20px_rgba(59,40,204,0.45)] motion-reduce:hover:translate-y-0"
                 >
                   <span className="icon-badge icon-badge-cta">
                     <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden />

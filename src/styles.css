@@ -1191,6 +1191,15 @@ body:has([data-chatt-lyft]) .chatt-bubbla {
 .prosa strong {
   color: var(--foreground);
 }
+/* Komponenter inne i löptext (kort, rutnät) ska inte få prosans listor och länkar. */
+.prosa .ingen-prosa {
+  list-style: none;
+  padding-left: 0;
+}
+.prosa .ingen-prosa a {
+  text-decoration: none;
+  color: inherit;
+}
 .prosa .kalla {
   font-size: 14px;
   color: color-mix(in srgb, var(--foreground) 62%, transparent);

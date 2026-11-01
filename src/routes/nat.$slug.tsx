@@ -1,5 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 import { PelarSida } from "@/components/mobil/pelar-sida";
+import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { Jamforelse } from "@/components/mobil/jamforelse";
 import { BilligastTabell } from "@/components/mobil/billigast-tabell";
 import { MOBILNAT, OPERATORER, PRIVATA } from "@/lib/mobil/data";
@@ -117,19 +119,53 @@ function Sida() {
       uppdaterad="2026-10-29"
     >
       <h2>Operatörerna i nätet</h2>
-      <ul>
-        {ops.map((o) => (
-          <li key={o.slug}>
-            <Link to="/operatorer/$slug" params={{ slug: o.slug }}>
-              {o.namn}
-            </Link>
-            {o.grupp === "natagare"
-              ? " äger nätet."
-              : o.agare !== "Uppgift saknas"
-                ? `, ägs av ${o.agare}.`
-                : "."}
-          </li>
-        ))}
+      <ul className="ingen-prosa grid gap-3 sm:grid-cols-2">
+        {ops.map((o) => {
+          const billigast = sortera(
+            PRIVATA.filter((x) => x.operator === o.slug),
+            "snitt-ar",
+          )[0];
+          const agare = o.grupp === "natagare";
+          return (
+            <li key={o.slug} className={`!mt-0 ${agare ? "sm:col-span-2" : ""}`}>
+              <Link
+                to="/operatorer/$slug"
+                params={{ slug: o.slug }}
+                className={`group flex h-full items-center gap-4 rounded-2xl border bg-white p-4 shadow-kort-litet transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_36px_-20px_rgba(59,40,204,0.45)] motion-reduce:hover:translate-y-0 ${
+                  agare
+                    ? "border-primary/30 sm:col-span-2"
+                    : "border-border hover:border-primary/30"
+                }`}
+              >
+                <OperatorMonogram namn={o.namn} size={agare ? 48 : 40} />
+                <span className="min-w-0 flex-1">
+                  <span className="flex flex-wrap items-center gap-2">
+                    <span className="font-display text-[17px] font-bold text-foreground group-hover:text-primary">
+                      {o.namn}
+                    </span>
+                    {agare && (
+                      <span className="rounded-full bg-gradient-to-r from-primary to-[#7c63ff] px-2.5 py-0.5 text-[11.5px] font-semibold text-white">
+                        Äger nätet
+                      </span>
+                    )}
+                  </span>
+                  <span className="mt-0.5 block text-[13.5px] leading-snug text-foreground/65">
+                    {agare
+                      ? "Bygger och driver nätet"
+                      : o.agare !== "Uppgift saknas"
+                        ? `Virtuell operatör, ägs av ${o.agare}`
+                        : "Virtuell operatör"}
+                    {billigast ? ` · från ${kr(snittForstaAret(billigast))}/mån` : ""}
+                  </span>
+                </span>
+                <ArrowRight
+                  aria-hidden
+                  className="h-5 w-5 shrink-0 text-foreground/40 transition-all group-hover:translate-x-0.5 group-hover:text-primary"
+                />
+              </Link>
+            </li>
+          );
+        })}
       </ul>
       <p>
         Täckningen är densamma hos alla operatörer i nätet. Skillnaderna ligger i pris,
