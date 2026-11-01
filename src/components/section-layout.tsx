@@ -16,7 +16,7 @@ export function SectionHeader({
   dark?: boolean;
 }) {
   return (
-    <header className="mb-12 text-left" data-reveal>
+    <header className="mb-9 text-left lg:mb-10" data-reveal>
       <h2
         className={`font-bold ${dark ? "text-white" : "text-foreground"}`}
         style={{
@@ -45,7 +45,7 @@ export function SectionHeader({
 
 /**
  * Sektionsskal som på Elpoolen: samma bredd (1140 px), sidmarginal och luft
- * på alla sektioner, 80 px på mobil och 128 px på dator. När två sektioner i
+ * på alla sektioner, 56 px på mobil och 80 px på dator (tätare sedan 1 nov 2026). När två sektioner i
  * rad har samma bakgrund sätts `flushTop` på den andra, så att mellanrummet
  * inte blir dubbelt. Styr luften med props, inte med pt-/pb-klasser i
  * className: lg:pt-32 här vinner över ett pt-0 utifrån.
@@ -63,7 +63,7 @@ export function SectionShell({
   flushTop?: boolean;
   children: ReactNode;
 }) {
-  const luft = flushTop ? "pt-0 pb-20 lg:pb-32" : "pt-20 pb-20 lg:pt-32 lg:pb-32";
+  const luft = flushTop ? "pt-0 pb-14 lg:pb-20" : "pt-14 pb-14 lg:pt-20 lg:pb-20";
   return (
     <section id={id} className={`${luft} ${className}`} style={style}>
       <div className="mx-auto w-full max-w-[1140px] px-6">{children}</div>

@@ -1,5 +1,15 @@
+import { Fragment } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BellRing, Check, ClipboardList, Repeat, ShieldCheck } from "lucide-react";
+import {
+  ArrowDown,
+  ArrowRight,
+  BellRing,
+  Check,
+  ClipboardList,
+  Repeat,
+  ShieldCheck,
+  X,
+} from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumbs } from "@/components/page-breadcrumbs";
@@ -81,131 +91,393 @@ const STEG = [
   },
 ];
 
+const NYCKEL = PRISINDEX_HISTORIK.at(-1);
+const MANAD = NYCKEL
+  ? new Date(`${NYCKEL.manad}-01T12:00:00`).toLocaleDateString("sv-SE", {
+      month: "long",
+      year: "numeric",
+    })
+  : null;
+
+const PAMINNELSER = [
+  {
+    nar: "30 dagar innan",
+    d: "Första mejlet, med abonnemangen som passar dig bäst just då. En nummerflytt tar en till två veckor.",
+  },
+  { nar: "10 dagar innan", d: "En påminnelse om du inte har bytt än." },
+  { nar: "Samma dag", d: "Sista påminnelsen, dagen priset stiger eller bindningen släpper." },
+];
+
+const GOR = [
+  "Mejlar dig innan bindningstid eller rabatt tar slut",
+  "Jämför priserna halvårsvis om du saknar båda",
+  "Föreslår bara abonnemang som är minst lika bra som ditt",
+  "Sorterar på vad abonnemangen kostar första året",
+];
+const GOR_INTE = [
+  "Byter åt dig eller säger upp något",
+  "Säljer eller lämnar ut dina uppgifter",
+  "Ringer dig",
+  "Tar betalt",
+];
+
 function Sida() {
+  const cta = AUTOPILOT_LANSERAD ? "Starta Autopilot" : "Anmäl intresse";
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main>
+        {/* ---------- Hero ---------- */}
         <section className="relative overflow-hidden hero-mesh text-white">
-          <div className="relative mx-auto grid max-w-[1140px] gap-10 px-6 pb-14 pt-8 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-14 lg:pb-20 lg:pt-12">
-            <div>
+          <div aria-hidden className="pointer-events-none absolute inset-0">
+            <div
+              className="svava absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-60 blur-3xl"
+              style={{
+                background: "radial-gradient(circle, rgba(176,108,245,0.6), transparent 65%)",
+              }}
+            />
+            <div
+              className="svava absolute -bottom-56 left-1/4 h-[460px] w-[460px] rounded-full opacity-40 blur-3xl [animation-delay:-7s]"
+              style={{
+                background: "radial-gradient(circle, rgba(232,132,44,0.45), transparent 65%)",
+              }}
+            />
+          </div>
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-12">
+            <div className="lg:pt-6">
               <PageBreadcrumbs trail={TRAIL} tone="dark" />
-              <h1 className="mt-2 font-bold text-white">Mobilpoolen Autopilot</h1>
-              <p className="mt-3 font-display text-[22px] font-semibold text-white/90">
-                Vi ser till att du byter i tid.
-              </p>
-              <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-white/85">
+              {!AUTOPILOT_LANSERAD && (
+                <span className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[13px] font-semibold text-white backdrop-blur">
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#5BE39B] opacity-75 motion-reduce:animate-none" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#5BE39B]" />
+                  </span>
+                  Öppnar snart · anmäl intresse nu
+                </span>
+              )}
+              <h1
+                className="mt-4 font-bold text-white"
+                style={{
+                  fontSize: "clamp(34px, 4.6vw, 46px)",
+                  lineHeight: 1.04,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                Mobilpoolen Autopilot
+                <br />
+                <span className="text-gradient-ljus">Vi ser till att du byter i tid.</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/85 sm:text-[18px]">
                 De flesta abonnemang börjar med ett lågt kampanjpris och blir dyrare när rabatten
                 eller bindningstiden tar slut
                 {HOJNING != null ? `, i median ${kr(HOJNING)} mer i månaden` : ""}. Autopilot håller
                 koll åt dig och mejlar i god tid med de abonnemang som passar dig bäst just då.
               </p>
-              {!AUTOPILOT_LANSERAD && (
-                <p className="mt-4 max-w-xl text-[15px] text-white/75">
-                  Autopilot öppnar inom kort. Anmäl ditt intresse nu, så startar bevakningen när vi
-                  öppnar.
-                </p>
-              )}
-              <ul className="mt-7 space-y-3">
+              <ul className="mt-8 space-y-3.5">
                 {[
                   "Gratis, utan bindning och utan säljare som ringer",
                   "Påminnelse en månad innan priset stiger",
                   "Du väljer själv om du vill byta",
                 ].map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-[16px] text-white">
-                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15">
-                      <Check className="h-4 w-4" aria-hidden />
-                    </span>
+                  <li key={t} className="flex items-start gap-3 text-[16.5px] text-white">
+                    <Check
+                      className="mt-0.5 h-5 w-5 shrink-0"
+                      style={{ color: "#5BE39B" }}
+                      strokeWidth={2.5}
+                      aria-hidden
+                    />
                     {t}
                   </li>
                 ))}
               </ul>
+              {!AUTOPILOT_LANSERAD && (
+                <p className="mt-6 max-w-xl text-[14px] text-white/65">
+                  Anmäl dig nu, så startar bevakningen när vi öppnar. Fram till dess skickar vi inga
+                  mejl.
+                </p>
+              )}
             </div>
-            <div id="starta">
-              <AutopilotFormular />
+            <div id="starta" className="relative scroll-mt-24">
+              <div
+                aria-hidden
+                className="absolute -inset-3 rounded-[30px] bg-gradient-to-br from-[#b06cf5]/40 via-transparent to-[#e8842c]/30 blur-2xl"
+              />
+              <div className="relative">
+                <AutopilotFormular />
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-14 lg:py-20">
-          <div className="mx-auto max-w-[1140px] px-6">
-            <h2 className="font-bold">Så fungerar Autopilot</h2>
-            <ol className="mt-8 grid gap-4 md:grid-cols-3">
-              {STEG.map((s, i) => (
-                <li key={s.t} className="rounded-2xl border border-border bg-surface p-6">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-highlight text-primary">
-                      <s.ikon className="h-5 w-5" aria-hidden />
-                    </span>
-                    <span className="text-[13px] font-semibold text-foreground/60">
-                      Steg {i + 1}
-                    </span>
+        {/* ---------- Varför: siffror ur prisindexet ---------- */}
+        {NYCKEL &&
+          NYCKEL.nyckeltal.kampanjAndel != null &&
+          NYCKEL.nyckeltal.medianHojningKr != null &&
+          NYCKEL.nyckeltal.snittHojning != null && (
+            <section className="bg-surface">
+              <div className="mx-auto max-w-[1140px] px-6 py-14 lg:py-16">
+                <div className="grid gap-10 lg:grid-cols-[minmax(0,420px)_minmax(0,1fr)] lg:items-center lg:gap-16">
+                  <div>
+                    <h2
+                      className="font-bold"
+                      style={{
+                        fontSize: "clamp(28px, 3.6vw, 40px)",
+                        lineHeight: 1.1,
+                        letterSpacing: "-0.025em",
+                      }}
+                    >
+                      Kampanjpriset är <span className="text-gradient">tillfälligt</span>
+                    </h2>
+                    <span
+                      aria-hidden
+                      className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
+                    />
+                    <p className="mt-5 text-[16.5px] leading-relaxed text-foreground/85">
+                      Ett kampanjpris gäller oftast i tre till tolv månader. Sedan betalar du
+                      ordinarie pris, och bindningstiden kan löpa vidare. Det är där pengarna
+                      försvinner, och det är där Autopilot påminner dig.
+                    </p>
+                    <p className="mt-4 text-[13.5px] text-foreground/60">
+                      Källa:{" "}
+                      <Link
+                        to="/prisindex"
+                        className="underline underline-offset-2 hover:text-primary"
+                      >
+                        Mobilpoolens prisindex
+                      </Link>
+                      {MANAD ? `, ${MANAD}` : ""}. {NYCKEL.nyckeltal.antal} abonnemang från{" "}
+                      {NYCKEL.nyckeltal.operatorer} operatörer.
+                    </p>
                   </div>
-                  <h3 className="mt-4 text-[19px] font-bold">{s.t}</h3>
-                  <p className="mt-2 text-[15.5px] text-foreground/75">{s.d}</p>
-                </li>
+                  <dl className="grid gap-4 sm:grid-cols-3">
+                    {[
+                      {
+                        v: `${formatTal(Math.round(NYCKEL.nyckeltal.kampanjAndel ?? 0))} %`,
+                        t: "av abonnemangen har ett kampanjpris",
+                      },
+                      {
+                        v: `+${kr(NYCKEL.nyckeltal.medianHojningKr ?? 0)}`,
+                        t: "per månad i median när kampanjen tar slut",
+                      },
+                      {
+                        v: `${formatTal(Math.round((NYCKEL.nyckeltal.snittHojning ?? 0) * 10) / 10)}×`,
+                        t: "så högt pris i snitt efter kampanjen",
+                      },
+                    ].map((k) => (
+                      <div
+                        key={k.t}
+                        className="kort-lyft rounded-2xl border border-border bg-gradient-to-br from-white to-highlight p-6 shadow-kort"
+                      >
+                        <dd className="text-gradient font-display text-[40px] font-bold leading-none tracking-tight">
+                          {k.v}
+                        </dd>
+                        <dt className="mt-3 text-[14.5px] leading-snug text-foreground/75">
+                          {k.t}
+                        </dt>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              </div>
+            </section>
+          )}
+
+        {/* ---------- Så fungerar det ---------- */}
+        <section className="hero-mesh text-white">
+          <div className="mx-auto max-w-[1140px] px-6 py-14 lg:py-20">
+            <h2
+              className="font-bold text-white"
+              style={{
+                fontSize: "clamp(30px, 4.2vw, 44px)",
+                lineHeight: 1.12,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Så fungerar Autopilot
+            </h2>
+            <span
+              aria-hidden
+              className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-[#ffb877] to-[#d9d3ff]"
+            />
+            <p className="mt-4 max-w-[640px] text-[18px] leading-relaxed text-dark-muted">
+              Tre steg. Du lägger två minuter, sedan håller vi koll åt dig.
+            </p>
+            <ol className="mt-12 grid items-stretch gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:gap-5">
+              {STEG.map((s, i) => (
+                <Fragment key={s.t}>
+                  <li className="flex flex-col rounded-[18px] border border-white/15 bg-white/[0.06] p-7 shadow-[0_24px_48px_-16px_rgba(4,6,24,0.5)] backdrop-blur">
+                    <div className="flex items-center gap-4">
+                      <span className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-primary shadow-[0_8px_24px_rgba(59,40,204,0.45)]">
+                        <s.ikon className="h-7 w-7 text-white" strokeWidth={2.2} aria-hidden />
+                      </span>
+                      <span
+                        className="font-display text-5xl font-extrabold"
+                        style={{
+                          color: "var(--cta)",
+                          textShadow: "0 2px 14px rgba(232,132,44,0.28)",
+                        }}
+                      >
+                        {i + 1}
+                      </span>
+                    </div>
+                    <h3 className="mt-5 text-[20px] font-semibold text-white">{s.t}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-dark-muted">{s.d}</p>
+                  </li>
+                  {i < STEG.length - 1 && (
+                    <li aria-hidden className="flex items-center justify-center py-1 md:py-0">
+                      <ArrowRight
+                        className="hidden h-8 w-8 text-dark-accent md:block"
+                        strokeWidth={2}
+                      />
+                      <ArrowDown className="h-7 w-7 text-dark-accent md:hidden" strokeWidth={2.5} />
+                    </li>
+                  )}
+                </Fragment>
               ))}
             </ol>
+
+            {/* Tidslinje för påminnelserna */}
+            <div className="mt-14 rounded-[22px] border border-white/15 bg-white/[0.05] p-6 sm:p-8">
+              <p className="flex items-center gap-2 font-display text-[18px] font-semibold text-white">
+                <BellRing className="h-5 w-5 text-[#ffb877]" aria-hidden />
+                När vi hör av oss
+              </p>
+              <ol className="relative mt-8 grid gap-8 md:grid-cols-3 md:gap-6">
+                <span
+                  aria-hidden
+                  className="absolute left-[7px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-[#b06cf5] to-[#e8842c] md:left-0 md:right-0 md:top-[7px] md:bottom-auto md:h-0.5 md:w-auto md:bg-gradient-to-r"
+                />
+                {PAMINNELSER.map((p) => (
+                  <li key={p.nar} className="relative pl-8 md:pl-0 md:pt-8">
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-1 h-4 w-4 rounded-full border-2 border-white bg-primary shadow-[0_0_0_4px_rgba(124,99,255,0.35)] md:top-0"
+                    />
+                    <p className="font-display text-[17px] font-semibold text-white">{p.nar}</p>
+                    <p className="mt-1.5 text-[14.5px] leading-relaxed text-dark-muted">{p.d}</p>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-8 text-[13.5px] text-dark-muted">
+                Har du ingen bindningstid eller rabatt jämför vi priserna åt dig två gånger per år.
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="border-y border-border bg-surface py-14 lg:py-20">
-          <div className="prosa mx-auto max-w-[760px] px-6">
-            <h2>Därför lönar det sig att byta i tid</h2>
-            <p>
-              Ett kampanjpris gäller oftast i tre till tolv månader. Sedan betalar du ordinarie
-              pris, och bindningstiden kan löpa vidare.
-              {SNITT_HOJNING != null
-                ? ` Enligt Mobilpoolens prisindex blir priset i snitt ${formatTal(Math.round(SNITT_HOJNING * 10) / 10)} gånger så högt när kampanjen tar slut.`
-                : ""}{" "}
-              Läs mer om{" "}
-              <Link to={"/guider/kampanjpris-efter-kampanjen" as never}>
-                vad du betalar efter kampanjen
-              </Link>{" "}
-              och se hur priserna utvecklas i <Link to="/prisindex">Mobilpoolens prisindex</Link>.
-            </p>
-            <p>
-              Att byta är enkelt. Du beställer hos den nya operatören och väljer att flytta ditt
-              nummer. Den nya operatören säger upp det gamla abonnemanget åt dig, och avbrottet får
-              vara högst en arbetsdag. Så går det till steg för steg i guiden om att{" "}
-              <Link to={"/guider/byta-operator-behalla-nummer" as never}>
-                byta operatör och behålla numret
-              </Link>
-              .
-            </p>
-            <h2>Det här gör vi, och det här gör vi inte</h2>
-            <ul>
-              <li>
-                Vi mejlar dig innan din bindningstid eller rabatt tar slut, och halvårsvis om du
-                saknar båda.
-              </li>
-              <li>
-                Vi föreslår bara abonnemang som är minst lika bra som det du har, sorterade på vad
-                de kostar första året.
-              </li>
-              <li>
-                Vi byter inte åt dig och säger inte upp något. Det gör du själv, eller den nya
-                operatören när du flyttar numret.
-              </li>
-              <li>Vi säljer inga uppgifter och ingen ringer dig.</li>
-            </ul>
-            <p className="flex items-start gap-2 text-[15px] text-foreground/75">
-              <ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-primary" aria-hidden />
-              <span>
-                Mobilpoolen har inga avtal med operatörer och får ingen ersättning när du byter. Läs{" "}
-                <Link to={"/autopilot/villkor" as never}>villkoren för Autopilot</Link>.
-              </span>
-            </p>
+        {/* ---------- Gör / gör inte ---------- */}
+        <section className="bg-mesh-light">
+          <div className="mx-auto max-w-[1140px] px-6 py-14 lg:py-20">
+            <h2
+              className="font-bold"
+              style={{
+                fontSize: "clamp(28px, 3.6vw, 40px)",
+                lineHeight: 1.1,
+                letterSpacing: "-0.025em",
+              }}
+            >
+              Det här gör vi, och det här gör vi inte
+            </h2>
+            <span
+              aria-hidden
+              className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
+            />
+            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              <div className="kort-lyft rounded-[22px] border border-primary/15 bg-white p-7 shadow-kort sm:p-8">
+                <p className="font-display text-[19px] font-bold">Autopilot gör</p>
+                <ul className="mt-5 space-y-3.5">
+                  {GOR.map((t) => (
+                    <li key={t} className="flex items-start gap-3 text-[15.5px] text-foreground/85">
+                      <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#5BE39B]/20 text-[#1f9d57]">
+                        <Check className="h-4 w-4" strokeWidth={2.75} aria-hidden />
+                      </span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="kort-lyft rounded-[22px] border border-border bg-white p-7 shadow-kort sm:p-8">
+                <p className="font-display text-[19px] font-bold">Autopilot gör inte</p>
+                <ul className="mt-5 space-y-3.5">
+                  {GOR_INTE.map((t) => (
+                    <li key={t} className="flex items-start gap-3 text-[15.5px] text-foreground/85">
+                      <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-foreground/60">
+                        <X className="h-4 w-4" strokeWidth={2.75} aria-hidden />
+                      </span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-5 lg:grid-cols-2">
+              <p className="text-[15.5px] leading-relaxed text-foreground/80">
+                Att byta är enkelt. Du beställer hos den nya operatören och väljer att flytta ditt
+                nummer. Den nya operatören säger upp det gamla abonnemanget åt dig, och avbrottet
+                får vara högst en arbetsdag. Så går det till i guiden om att{" "}
+                <Link
+                  to={"/guider/byta-operator-behalla-nummer" as never}
+                  className="font-semibold text-primary underline underline-offset-2"
+                >
+                  byta operatör och behålla numret
+                </Link>
+                .
+              </p>
+              <p className="flex items-start gap-2 text-[14.5px] leading-relaxed text-foreground/70">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
+                <span>
+                  Mobilpoolen har inga avtal med operatörer och får ingen ersättning när du byter.
+                  Läs{" "}
+                  <Link
+                    to={"/autopilot/villkor" as never}
+                    className="font-semibold text-primary underline underline-offset-2"
+                  >
+                    villkoren för Autopilot
+                  </Link>{" "}
+                  och{" "}
+                  <Link
+                    to={"/guider/kampanjpris-efter-kampanjen" as never}
+                    className="font-semibold text-primary underline underline-offset-2"
+                  >
+                    vad du betalar efter kampanjen
+                  </Link>
+                  .
+                </span>
+              </p>
+            </div>
           </div>
         </section>
 
-        <section className="py-14 lg:py-20">
-          <div className="mx-auto max-w-[760px] px-6">
-            <h2 className="mb-6 font-bold">Vanliga frågor</h2>
+        {/* ---------- FAQ ---------- */}
+        <section className="bg-surface">
+          <div className="mx-auto grid max-w-[1140px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:gap-16 lg:py-20">
+            <div className="lg:sticky lg:top-28 lg:self-start">
+              <h2
+                className="font-bold"
+                style={{
+                  fontSize: "clamp(30px, 4vw, 44px)",
+                  lineHeight: 1.08,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                Frågor om <span className="text-gradient">Autopilot</span>
+              </h2>
+              <span
+                aria-hidden
+                className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
+              />
+              <div className="mt-8 overflow-hidden rounded-2xl hero-mesh p-6 text-white shadow-[0_24px_48px_-24px_rgba(22,19,58,0.6)]">
+                <p className="font-display text-[19px] font-semibold">Klart på två minuter</p>
+                <p className="mt-2 text-[14.5px] leading-relaxed text-dark-muted">
+                  Fyll i ditt abonnemang, så hör vi av oss innan priset stiger.
+                </p>
+                <a href="#starta" className="btn-cta mt-5 w-full">
+                  {cta}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </a>
+              </div>
+            </div>
             <FaqAccordion items={FAQ} />
-            <a href="#starta" className="btn-cta mt-8 inline-flex">
-              {AUTOPILOT_LANSERAD ? "Starta Autopilot" : "Anmäl intresse"}
-            </a>
           </div>
         </section>
       </main>

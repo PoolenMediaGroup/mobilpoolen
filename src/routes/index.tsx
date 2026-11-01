@@ -130,7 +130,7 @@ function Startsida() {
         {/* Jämförelsen: rubriken på ett mörkt band och filterpanelen som flyter
             ut över kanten, så att sektionen bryter mot de ljusa runt omkring. */}
         <section id="alla" className="scroll-mt-20">
-          <div className="relative overflow-hidden hero-mesh pb-32 pt-20 text-white lg:pb-36 lg:pt-28">
+          <div className="relative overflow-hidden hero-mesh pb-28 pt-14 text-white lg:pb-32 lg:pt-20">
             <div className="mx-auto w-full max-w-[1140px] px-6">
               <div className="flex flex-wrap items-end justify-between gap-6">
                 <div>
@@ -167,7 +167,7 @@ function Startsida() {
               </div>
             </div>
           </div>
-          <div className="relative -mt-24 pb-20 lg:pb-32">
+          <div className="relative -mt-24 pb-14 lg:pb-20">
             <div className="mx-auto w-full max-w-[1140px] px-6">
               <Jamforelse forval={forval} id="lista" />
             </div>
