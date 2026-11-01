@@ -20,6 +20,7 @@ function ikonFor(varde: string, text: string): LucideIcon {
   if (/obegräns/.test(t)) return InfinityIcon;
   if (/\d+\s*gb|5g|mbit/.test(t)) return Signal;
   if (/kr/.test(varde.toLowerCase())) return Wallet;
+  if (/%|gånger|×/.test(varde)) return Gauge;
   if (/abonnemang|operatör/.test(t)) return ListChecks;
   if (/%|gånger|×/.test(t)) return Gauge;
   return Sparkles;

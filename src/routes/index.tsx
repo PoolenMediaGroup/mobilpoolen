@@ -16,6 +16,7 @@ import {
   BellRing,
   Heart,
   Info,
+  MessageCircle,
   Users,
   Wallet,
   Tag,
@@ -233,15 +234,27 @@ function Startsida() {
                 <div className="mt-8 overflow-hidden rounded-2xl hero-mesh p-6 text-white shadow-[0_24px_48px_-24px_rgba(22,19,58,0.6)]">
                   <p className="font-display text-[19px] font-semibold">Hittar du inte svaret?</p>
                   <p className="mt-2 text-[14.5px] leading-relaxed text-dark-muted">
-                    Fler frågor och svar om abonnemang, byten, nät och företag finns samlade på ett
-                    ställe.
+                    Fråga vår AI-assistent. Den svarar direkt, dygnet runt, utifrån priserna och
+                    guiderna på sajten.
                   </p>
-                  <Link
-                    to="/faq"
+                  <button
+                    type="button"
+                    // Öppnar chatten genom att klicka på chattknappen, så att chattens
+                    // gemensamma kod (likadan på Elpoolen och Larmpoolen) inte behöver ändras.
+                    onClick={() =>
+                      document.querySelector<HTMLButtonElement>("button.chatt-knapp")?.click()
+                    }
                     className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-white px-4 font-display text-[15px] font-semibold text-primary transition-transform hover:-translate-y-0.5"
                   >
-                    Alla frågor och svar
-                    <ArrowRight className="h-4 w-4" aria-hidden />
+                    <MessageCircle className="h-4 w-4" aria-hidden />
+                    Fråga vår AI-chatt
+                  </button>
+                  <Link
+                    to="/faq"
+                    className="mt-3 flex items-center gap-1.5 text-[14px] font-semibold text-white/80 underline-offset-4 hover:text-white hover:underline"
+                  >
+                    Eller läs alla frågor och svar
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
                   </Link>
                 </div>
               </div>
