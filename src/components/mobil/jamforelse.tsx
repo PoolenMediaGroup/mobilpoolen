@@ -30,6 +30,8 @@ export type Forval = {
   surf?: SurfIntervall;
   /** Minsta surf i GB. Används av besparingsräknaren. */
   behovGb?: number;
+  /** Högsta snittpris första året. Besparingsräknaren visar bara det som är billigare än i dag. */
+  maxSnitt?: number;
   utanBindning?: boolean;
   bara5g?: boolean;
   nat?: NatId | "alla";
@@ -67,6 +69,7 @@ export function Jamforelse({
 }) {
   const [surf, setSurf] = useState<SurfIntervall>(forval.surf ?? "alla");
   const [behovGb, setBehovGb] = useState<number | undefined>(forval.behovGb);
+  const [maxSnitt, setMaxSnitt] = useState<number | undefined>(forval.maxSnitt);
   const [utanBindning, setUtanBindning] = useState(forval.utanBindning ?? false);
   const [bara5g, setBara5g] = useState(forval.bara5g ?? false);
   const [nat, setNat] = useState<NatId | "alla">(forval.nat ?? "alla");
@@ -80,9 +83,10 @@ export function Jamforelse({
   useEffect(() => {
     setSurf(forval.surf ?? "alla");
     setBehovGb(forval.behovGb);
+    setMaxSnitt(forval.maxSnitt);
     if (forval.sortering) setSortering(forval.sortering);
     setAntal(antalForst);
-  }, [forval.surf, forval.behovGb, forval.sortering, antalForst]);
+  }, [forval.surf, forval.behovGb, forval.maxSnitt, forval.sortering, antalForst]);
 
   const bas = useMemo(
     () =>
@@ -109,6 +113,7 @@ export function Jamforelse({
       (a) =>
         iSurfIntervall(a, surf) &&
         (behovGb == null || tackerBehov(a, behovGb)) &&
+        (maxSnitt == null || snittForstaAret(a) <= maxSnitt) &&
         (!utanBindning || a.bindning === 0) &&
         (!bara5g || a.femg) &&
         (nat === "alla" || operator(a.operator)?.nat === nat) &&
@@ -116,12 +121,13 @@ export function Jamforelse({
         (villkorade || !arVillkorat(a)),
     );
     return sortera(lista, sortering);
-  }, [bas, surf, behovGb, utanBindning, bara5g, nat, op, sortering, villkorade]);
+  }, [bas, surf, behovGb, maxSnitt, utanBindning, bara5g, nat, op, sortering, villkorade]);
   const antalVillkorade = useMemo(() => bas.filter(arVillkorat).length, [bas]);
 
   const aktivaFilter =
     (surf !== "alla" ? 1 : 0) +
     (behovGb != null ? 1 : 0) +
+    (maxSnitt != null ? 1 : 0) +
     (utanBindning ? 1 : 0) +
     (bara5g ? 1 : 0) +
     (nat !== "alla" ? 1 : 0) +
@@ -130,6 +136,7 @@ export function Jamforelse({
   const nollstall = () => {
     setSurf("alla");
     setBehovGb(undefined);
+    setMaxSnitt(undefined);
     setUtanBindning(false);
     setBara5g(false);
     setNat("alla");
@@ -160,6 +167,7 @@ export function Jamforelse({
                     onClick={() => {
                       setSurf(s.id);
                       setBehovGb(undefined);
+                      setMaxSnitt(undefined);
                       setAntal(antalForst);
                     }}
                     className={`inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-[14.5px] font-semibold transition-colors ${
@@ -281,8 +289,8 @@ export function Jamforelse({
           {traffar.length === 0
             ? "Inga abonnemang matchar filtren."
             : `${traffar.length} abonnemang${behovGb != null ? ` med minst ${behovGb} GB` : ""}${
-                aktivaFilter ? " matchar" : ""
-              }`}
+                maxSnitt != null ? ` för högst ${kr(maxSnitt)}/mån i snitt` : ""
+              }${aktivaFilter ? " matchar" : ""}`}
         </p>
         {aktivaFilter > 0 && (
           <button

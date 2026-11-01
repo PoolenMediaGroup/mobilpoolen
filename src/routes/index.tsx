@@ -99,8 +99,8 @@ function Startsida() {
   const onResultat = (r: KalkylResultat) => {
     setForval(
       r.behovGb >= 1000
-        ? { surf: "obegransad", sortering: "snitt-ar" }
-        : { behovGb: r.behovGb, sortering: "snitt-ar" },
+        ? { surf: "obegransad", maxSnitt: r.maxSnitt, sortering: "snitt-ar" }
+        : { behovGb: r.behovGb, maxSnitt: r.maxSnitt, sortering: "snitt-ar" },
     );
   };
 
