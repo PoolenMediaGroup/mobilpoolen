@@ -9,6 +9,7 @@ import { FaqAccordion } from "@/components/guide-page";
 import type { Bildnyckel } from "@/lib/bildbank";
 import { datumText } from "@/lib/mobil/berakna";
 import { SENAST_KONTROLLERAD } from "@/lib/mobil/data";
+import { HeroNyckeltal } from "@/components/mobil/hero-nyckeltal";
 
 export type Nyckeltal = { varde: string; text: string };
 export type Lank = { href: string; label: string; text?: string };
@@ -72,23 +73,9 @@ export function PelarSida({
               </Link>
             </p>
             {nyckeltal && nyckeltal.length > 0 && (
-              <dl className="mt-6 grid gap-2 sm:mt-8 sm:grid-cols-3 sm:gap-3">
+              <dl className="mt-6 grid gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
                 {nyckeltal.map((n) => (
-                  <div
-                    key={n.text}
-                    className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-2.5 backdrop-blur-sm sm:px-5 sm:py-4"
-                  >
-                    <dt className="sr-only">{n.text}</dt>
-                    {/* Mobil: värde och text på en rad, så att tre nyckeltal inte tar en hel skärm. */}
-                    <dd className="flex items-baseline gap-3 sm:block">
-                      <div className="shrink-0 font-display text-[22px] font-bold leading-tight text-white sm:text-[28px]">
-                        {n.varde}
-                      </div>
-                      <div className="text-[13.5px] leading-snug text-white/75 sm:mt-1 sm:text-[14px]">
-                        {n.text}
-                      </div>
-                    </dd>
-                  </div>
+                  <HeroNyckeltal key={n.text} varde={n.varde} text={n.text} />
                 ))}
               </dl>
             )}
