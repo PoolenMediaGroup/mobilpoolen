@@ -52,7 +52,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 - TanStack Start (SSR) + React + Tailwind. Byggs med Nitro för Cloudflare Workers (worker `mobilpoolen`, `wrangler.jsonc`).
 - Supabase är valfritt: `VITE_SUPABASE_URL` och `VITE_SUPABASE_PUBLISHABLE_KEY` vid bygget slår på besöksräkningen (`src/matning.ts`). Utan dem körs sajten utan databas.
-- AI-chatten finns kvar från Larmpoolen men är avslagen (`CHATT_PA = false` i `src/lib/chatt/sajt-klient.ts`). Systemprompten i `src/lib/chatt/sajt-server.ts` måste skrivas om för mobilabonnemang innan den slås på.
+- AI-chatten är påslagen sedan 1 november 2026 (`CHATT_PA = true` i `src/lib/chatt/sajt-klient.ts`), samma knapp och motor som på Elpoolen och Larmpoolen. Systemprompten i `src/lib/chatt/sajt-server.ts` är skriven för mobilabonnemang och Autopilot, och reglerna i den här filen gäller även prompten. Motorn (`protokoll`, `motor`, `las-sida`, `sidtext`, `skydd`, `klient`, `forhamtning` och chattkomponenterna) är likadan i syskonrepona: ändra i alla tre. Kräver hemligheten `ANTHROPIC_API_KEY` på workern `mobilpoolen` i Cloudflare; utan den svarar chatten att den inte är igång. Valfritt: `CHATT_MODELL`, `CHATT_DAGSTAK`, `CHATT_DB_NYCKEL`. Integritetspolicyn beskriver chatten under `#ai-chatt`.
 
 ## Arbetssätt i git
 

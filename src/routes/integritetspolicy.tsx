@@ -19,7 +19,7 @@ function IntegritetspolicyPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Integritetspolicy</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 31 oktober 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 1 november 2026</p>
 
       <p>
         Här förklarar vi på vanlig svenska vilka uppgifter som behandlas när du använder
@@ -105,9 +105,20 @@ function IntegritetspolicyPage() {
         AI-chatt:
       </p>
       <p className="mt-3">
-        Mobilpoolen har ingen AI-chatt i bruk. Om vi inför en chatt uppdaterar vi den här policyn
-        innan den används, med vad som sparas, hur länge och vilka leverantörer som behandlar
-        uppgifterna.
+        Chatten på webbplatsen är en AI-assistent, inte en människa. När du skriver i chatten
+        skickas samtalet till oss och vidare till Anthropic, som skriver svaren för vår räkning.
+        Svaren kan bli fel, så kontrollera det som är viktigt för dig. Skriv inga personuppgifter i
+        chatten, det behövs inte för att få svar.
+      </p>
+      <p className="mt-3">
+        Vi sparar frågorna och svaren, vilken sida du stod på och ett slumpat id för samtalet i 90
+        dagar, för att kunna förbättra svaren och webbplatsen. Innan de sparas försöker vi
+        automatiskt ta bort e-postadresser, telefonnummer, personnummer och andra långa nummer. Vi
+        sparar ingen IP-adress, och ingenting sparas i din webbläsare: samtalet försvinner när du
+        stänger sidan. IP-adressen används bara tillfälligt, i minnet, för att begränsa hur många
+        frågor som kan skickas på kort tid. Anthropic använder inte uppgifterna för att träna sina
+        AI-modeller, men kan spara dem en kortare tid för drift och säkerhet. Rättslig grund är vårt
+        berättigade intresse av att svara på dina frågor och förbättra tjänsten.
       </p>
 
       <h2 className={H2}>3. Varför behandlar vi uppgifterna, och med vilken rätt?</h2>
@@ -150,6 +161,14 @@ function IntegritetspolicyPage() {
           Autopilot lagras. Servrarna står i Stockholm.
         </li>
         <li>Resend: skickar mejlen från Autopilot.</li>
+        <li>
+          Anthropic: skriver svaren i AI-chatten. Samtalet lagras även i vår databas hos Supabase,
+          se{" "}
+          <a href="#ai-chatt" className="underline underline-offset-2">
+            AI-chatt
+          </a>
+          .
+        </li>
         <li>Vår e-postleverantör: tar emot och lagrar mejl som du skickar till oss.</li>
       </ul>
 
@@ -173,6 +192,9 @@ function IntegritetspolicyPage() {
           <strong>Intresseanmälan före lansering:</strong> högst 12 månader om Autopilot inte har
           öppnat. När vi har mejlat dig om lanseringen tas intresseanmälan bort efter 30 dagar,
           oavsett om du bekräftar eller inte.
+        </li>
+        <li>
+          <strong>AI-chatten:</strong> frågor och svar i 90 dagar, utan IP-adress.
         </li>
         <li>
           <strong>Mejl till oss:</strong> så länge det behövs för att hantera ärendet, och högst 12
