@@ -207,7 +207,7 @@ function Lank({ to, children }: { to: string; children: React.ReactNode }) {
 
 // Rubriken i två rader som Elpoolens: sökordet först, löftet i accentfärg.
 const HERO_RAD_1 = "Jämför mobilabonnemang.";
-const HERO_RAD_2 = "Sänk räkningen.";
+const HERO_RAD_2 = "Hitta ditt bästa pris.";
 const HERO_ACCENT = "#C4BBFF";
 
 function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
