@@ -150,7 +150,7 @@ export function Jamforelse({
   return (
     <div id={id} className="scroll-mt-24">
       {visaFilter && (
-        <div className="rounded-2xl border border-border bg-surface p-4 shadow-kort-litet sm:p-5">
+        <div className="relative rounded-[22px] bg-surface p-4 shadow-[0_30px_60px_-24px_rgba(22,19,58,0.35)] ring-1 ring-[#16133a]/[0.06] sm:p-6">
           {/* Surfmängd: det viktigaste valet, alltid synligt */}
           <fieldset className="min-w-0">
             <legend className="mb-2 text-[14px] font-semibold text-foreground">
@@ -172,8 +172,8 @@ export function Jamforelse({
                     }}
                     className={`inline-flex min-h-11 shrink-0 items-center rounded-full border px-4 text-[14.5px] font-semibold transition-colors ${
                       aktiv
-                        ? "border-primary bg-primary text-primary-foreground"
-                        : "border-border bg-surface text-foreground hover:border-primary/50"
+                        ? "border-transparent bg-gradient-to-br from-primary to-[#6a55f5] text-primary-foreground shadow-[0_8px_18px_-8px_rgba(59,40,204,0.7)]"
+                        : "border-transparent bg-muted text-foreground hover:bg-highlight hover:text-primary"
                     }`}
                   >
                     {s.label}

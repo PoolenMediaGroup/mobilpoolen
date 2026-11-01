@@ -101,8 +101,8 @@ const SYSKON = [
     text: "Jämför hemlarm på",
     aria: "Jämför hemlarm och larmbolag på Larmpoolen",
     logo: "/img/larmpoolen-logo-white.svg",
-    bredd: 936,
-    hojd: 158,
+    bredd: 1098,
+    hojd: 184,
   },
 ] as const;
 
@@ -197,7 +197,8 @@ export function SiteFooter() {
                 height={s.hojd}
                 loading="lazy"
                 decoding="async"
-                className="h-[26px] w-auto"
+                // Elpoolens ordmärke har lite lägre x-höjd, så det får 1 px mer för att linjera.
+                className={s.namn === "Elpoolen" ? "h-[27px] w-auto" : "h-[26px] w-auto"}
               />
               <ArrowRight
                 className="h-4 w-4 text-dark-accent transition-transform group-hover:translate-x-0.5"
