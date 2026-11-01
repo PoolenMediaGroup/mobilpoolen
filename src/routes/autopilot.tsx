@@ -477,7 +477,7 @@ function Sida() {
                 </a>
               </div>
             </div>
-            <FaqAccordion items={FAQ} />
+            <FaqAccordion items={FAQ} fot={false} />
           </div>
         </section>
       </main>
