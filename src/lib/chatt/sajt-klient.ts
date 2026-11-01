@@ -4,12 +4,12 @@
  * CHATT_PA styr om chattknappen syns för alla. Med false går den ändå att öppna
  * med ?chatt=1 i adressen, för test innan den visas. Kräver ANTHROPIC_API_KEY
  * som hemlighet på workern i Cloudflare (Runtime variables). Slå på först när
- * nyckeln finns och chatten är testad med ?chatt=1.
+ * nyckeln finns och chatten är testad med ?chatt=1. Påslagen 1 november 2026.
  */
-export const CHATT_PA = false;
+export const CHATT_PA = true;
 
-/** Sidor där chattknappen inte visas: formulärsidorna för offerter. */
-export const CHATT_DOLD_PA = /^\/offert(\/|$)/;
+/** Sidor där chattknappen inte visas: Autopilots bekräftelse- och avslutsflöden. */
+export const CHATT_DOLD_PA = /^\/autopilot\/(bekrafta|avsluta)(\/|$)/;
 
 export const CHATT_SAJT = {
   namn: "Mobilpoolen",
@@ -23,7 +23,7 @@ export const CHATT_SAJT = {
     "Vilket abonnemang är billigast?",
     "Hur mycket surf behöver jag?",
     "Vad händer när kampanjen tar slut?",
-    "Hur byter jag operatör?",
+    "Vad är Mobilpoolen Autopilot?",
   ],
   integritet: "/integritetspolicy#ai-chatt",
   kontaktEpost: "info@mobilpoolen.se",
@@ -36,6 +36,7 @@ export const CHATT_ATGARDER = {
   kampanjer: { etikett: "Kampanjer just nu", href: "/kampanjer" },
   surf: { etikett: "Räkna ut surfbehovet", href: "/verktyg/hur-mycket-surf-behover-jag" },
   byta: { etikett: "Så byter du operatör", href: "/guider/byta-operator-behalla-nummer" },
+  autopilot: { etikett: "Läs om Autopilot", href: "/autopilot" },
   kontakt: { etikett: "Kontakta oss", href: "/kontakt" },
 } as const satisfies Record<string, { etikett: string; href?: string }>;
 
