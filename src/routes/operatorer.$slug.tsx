@@ -6,6 +6,7 @@ import { PageBreadcrumbs } from "@/components/page-breadcrumbs";
 import { CtaBand } from "@/components/cta-band";
 import { FaqAccordion } from "@/components/guide-page";
 import { Jamforelse } from "@/components/mobil/jamforelse";
+import { HeroNyckeltal } from "@/components/mobil/hero-nyckeltal";
 import { OperatorMonogram } from "@/components/mobil/operator-monogram";
 import { ABONNEMANG, MOBILNAT, operator } from "@/lib/mobil/data";
 import { datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
@@ -113,7 +114,7 @@ function OperatorSida() {
                 {o.namn}s webbplats
               </a>
             </p>
-            <dl className="mt-6 grid gap-2 sm:mt-8 sm:grid-cols-3 sm:gap-3">
+            <dl className="mt-6 grid gap-3 sm:mt-10 sm:grid-cols-3 sm:gap-4">
               <Nyckel
                 varde={billigast ? kr(snittForstaAret(billigast)) : "–"}
                 text={
@@ -436,17 +437,5 @@ function OperatorSida() {
 }
 
 function Nyckel({ varde, text }: { varde: string; text: string }) {
-  return (
-    <div className="rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-2.5 sm:px-5 sm:py-4">
-      <dt className="sr-only">{text}</dt>
-      <dd className="flex items-baseline gap-3 sm:block">
-        <div className="shrink-0 font-display text-[22px] font-bold leading-tight text-white sm:text-[28px]">
-          {varde}
-        </div>
-        <div className="text-[13.5px] leading-snug text-white/75 sm:mt-1 sm:text-[14px]">
-          {text}
-        </div>
-      </dd>
-    </div>
-  );
+  return <HeroNyckeltal varde={varde} text={text} />;
 }
