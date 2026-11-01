@@ -288,7 +288,7 @@ function Kalkylator() {
       </form>
 
       <div aria-live="polite" className="flex flex-col gap-4">
-        <section className="rounded-2xl bg-dark-section p-5 text-white sm:p-6">
+        <section className="rounded-2xl hero-mesh p-5 text-white sm:p-6">
           <h2 className="text-[18px] font-bold text-white">Ditt surfbehov</h2>
           <p className="mt-2 font-display text-[44px] font-bold leading-none text-white">
             {formatTal(r.totalt)} GB

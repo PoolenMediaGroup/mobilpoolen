@@ -394,7 +394,7 @@ function Page() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main>
-        <section className="relative overflow-hidden bg-dark-section text-footer-foreground">
+        <section className="relative overflow-hidden hero-mesh text-footer-foreground">
           <picture>
             <source srcSet={HEROBILD.webp} type="image/webp" />
             <img

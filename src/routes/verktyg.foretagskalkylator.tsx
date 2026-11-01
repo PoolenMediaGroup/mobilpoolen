@@ -223,7 +223,7 @@ function Kalkylator() {
       </form>
 
       <section aria-live="polite" className="flex flex-col gap-4">
-        <div className="rounded-2xl bg-dark-section p-5 text-white sm:p-6">
+        <div className="rounded-2xl hero-mesh p-5 text-white sm:p-6">
           <h2 className="text-[18px] font-bold text-white">
             {n} användare
             {valt && val !== "eget" ? `, ${o?.namn} ${valt.namn}` : ""}

@@ -245,7 +245,7 @@ function Resultat({ r, obegransad }: { r: R; obegransad: boolean }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <section className="rounded-2xl bg-dark-section p-5 text-white sm:p-6">
+      <section className="rounded-2xl hero-mesh p-5 text-white sm:p-6">
         <h2 className="text-[18px] font-bold text-white">
           {billigare ? "Du kan betala mindre" : "Du har ett bra pris"}
         </h2>

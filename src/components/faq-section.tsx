@@ -303,44 +303,65 @@ function matchar(text: string, q: string) {
   return text.toLocaleLowerCase("sv-SE").includes(q);
 }
 
-export function FaqItem({ item }: { item: Qa }) {
+export function FaqItem({ item, nr }: { item: Qa; nr?: number }) {
   const [open, setOpen] = useState(false);
   const svarId = useId();
 
   return (
     <div
-      // Som på Elpoolen: den öppna frågan får en ljus tonad yta och plus blir minus.
-      className={`overflow-hidden rounded-[var(--radius)] border transition-[background-color,border-color,box-shadow] duration-200 motion-reduce:transition-none ${
+      className={`group/faq relative overflow-hidden rounded-2xl border transition-[background-color,border-color,box-shadow,transform] duration-300 motion-reduce:transition-none ${
         open
-          ? "border-primary/25 bg-secondary shadow-sm"
-          : "border-border bg-surface hover:border-primary/25 hover:shadow-md"
+          ? "border-primary/30 bg-white shadow-[0_24px_48px_-24px_rgba(59,40,204,0.45)]"
+          : "border-border bg-white/80 backdrop-blur hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_18px_36px_-22px_rgba(22,19,58,0.35)] motion-reduce:hover:translate-y-0"
       }`}
     >
+      {/* Accentrand till vänster som växer fram när frågan öppnas. */}
+      <span
+        aria-hidden
+        className={`absolute inset-y-0 left-0 w-1 origin-top bg-gradient-to-b from-primary to-[#b06cf5] transition-transform duration-300 ${
+          open ? "scale-y-100" : "scale-y-0"
+        }`}
+      />
       <button
         type="button"
         aria-expanded={open}
         aria-controls={svarId}
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full cursor-pointer items-center justify-between gap-4 text-left px-5 py-5 sm:px-6"
+        className="flex w-full cursor-pointer items-center gap-4 px-5 py-5 text-left sm:px-6"
       >
-        <span className="text-[16px] font-semibold text-foreground">{item.q}</span>
-        {open ? (
-          <Minus className="h-5 w-5 shrink-0 text-primary" aria-hidden />
-        ) : (
-          <Plus className="h-5 w-5 shrink-0 text-primary" aria-hidden />
+        {nr != null && (
+          <span
+            aria-hidden
+            className="text-gradient hidden w-8 shrink-0 font-display text-[18px] font-bold tabular-nums sm:block"
+          >
+            {String(nr).padStart(2, "0")}
+          </span>
         )}
+        <span className="flex-1 text-[16px] font-semibold text-foreground">{item.q}</span>
+        <span
+          aria-hidden
+          className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
+            open
+              ? "rotate-45 bg-gradient-to-br from-primary to-[#7c63ff] text-white shadow-[0_6px_16px_-6px_rgba(59,40,204,0.8)]"
+              : "bg-highlight text-primary group-hover/faq:bg-primary group-hover/faq:text-white"
+          }`}
+        >
+          <Plus className="h-4.5 w-4.5" />
+        </span>
       </button>
       {/* Svaret ligger alltid i HTML:en, så att sökmotorer läser det även stängt.
           inert gör att en dold "Läs mer"-länk inte går att tabba till. */}
       <div
         id={svarId}
-        className={`grid transition-all duration-200 ease-out ${
-          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        className={`grid transition-all duration-300 ease-out ${
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
         inert={!open}
       >
         <div className="overflow-hidden">
-          <div className="text-[15px] leading-relaxed text-muted-foreground px-5 pb-5 sm:px-6 sm:pb-6">
+          <div
+            className={`px-5 pb-5 text-[15px] leading-relaxed text-muted-foreground sm:px-6 sm:pb-6 ${nr != null ? "sm:pl-[4.5rem]" : ""}`}
+          >
             <p>{item.a}</p>
             {item.kalla ? <p className="mt-2 text-[14px]">{`Källa: ${item.kalla}.`}</p> : null}
             {item.href ? (

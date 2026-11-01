@@ -60,7 +60,7 @@ function Page() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main>
-        <section className="bg-dark-section text-footer-foreground">
+        <section className="hero-mesh text-footer-foreground">
           <div className="mx-auto max-w-[1140px] px-6 py-16 lg:py-24">
             <h1 className="max-w-3xl font-bold text-white">{TITLE}</h1>
             <p className="mt-5 max-w-3xl text-[18px] leading-relaxed text-white/80">

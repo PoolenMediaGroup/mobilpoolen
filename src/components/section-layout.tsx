@@ -27,6 +27,10 @@ export function SectionHeader({
       >
         {title}
       </h2>
+      <span
+        aria-hidden
+        className={`mt-4 block h-1 w-14 rounded-full ${dark ? "bg-gradient-to-r from-[#ffb877] to-[#d9d3ff]" : "bg-gradient-to-r from-primary to-[#b06cf5]"}`}
+      />
       {sub ? (
         <p
           className={`mt-4 ${dark ? "text-dark-muted" : "text-muted-foreground"}`}

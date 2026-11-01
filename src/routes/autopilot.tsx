@@ -86,12 +86,7 @@ function Sida() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main>
-        <section className="relative overflow-hidden bg-dark-section text-white">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-40 -top-56 h-[520px] w-[520px] rounded-full"
-            style={{ background: "color-mix(in oklab, var(--color-primary) 55%, transparent)" }}
-          />
+        <section className="relative overflow-hidden hero-mesh text-white">
           <div className="relative mx-auto grid max-w-[1140px] gap-10 px-6 pb-14 pt-8 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-14 lg:pb-20 lg:pt-12">
             <div>
               <PageBreadcrumbs trail={TRAIL} tone="dark" />
