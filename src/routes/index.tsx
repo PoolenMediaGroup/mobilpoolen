@@ -38,7 +38,7 @@ import { fragorUrRegistret } from "@/lib/faq";
 import { PUBLISHED_GUIDES } from "@/lib/guides";
 import { getGuideImage } from "@/lib/guide-images";
 import { MOBILNAT, OPERATORER, PRIVATA, SENAST_KONTROLLERAD, operator } from "@/lib/mobil/data";
-import { datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
+import { arVillkorat, datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
 import { AUTOPILOT_LANSERAD } from "@/lib/autopilot";
 import type { NatId } from "@/lib/mobil/typer";
 
@@ -99,6 +99,15 @@ const STARTSIDANS_GUIDER = (() => {
   return ut;
 })();
 
+const ALLMANNA = PRIVATA.filter((a) => !arVillkorat(a)).length;
+
+/** "29 okt" ur ett ISO-datum. */
+function kortDatum(iso: string) {
+  const m = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+  const [, mm, dd] = iso.split("-");
+  return `${Number(dd)} ${m[Number(mm) - 1]}`;
+}
+
 const ANTAL_OPERATORER = new Set(PRIVATA.map((a) => a.operator)).size;
 
 function Startsida() {
@@ -118,13 +127,58 @@ function Startsida() {
         <Hero onResultat={onResultat} />
         <OperatorRad />
 
-        <SectionShell id="alla">
-          <SectionHeader
-            title="Alla mobilabonnemang, sorterade efter vad du faktiskt betalar"
-            sub="Kampanjens längd och startavgiften är inräknade. Det billigaste i dag är inte alltid det billigaste på ett år."
-          />
-          <Jamforelse forval={forval} id="lista" />
-        </SectionShell>
+        {/* Jämförelsen: rubriken på ett mörkt band och filterpanelen som flyter
+            ut över kanten, så att sektionen bryter mot de ljusa runt omkring. */}
+        <section id="alla" className="scroll-mt-20">
+          <div
+            className="relative overflow-hidden bg-dark-section pb-32 pt-20 text-white lg:pb-36 lg:pt-28"
+            style={{
+              backgroundImage:
+                "radial-gradient(700px 360px at 85% 0%, rgba(106,85,245,0.45), transparent 70%), radial-gradient(600px 300px at 0% 100%, rgba(59,40,204,0.35), transparent 70%)",
+            }}
+          >
+            <div className="mx-auto w-full max-w-[1140px] px-6">
+              <div className="flex flex-wrap items-end justify-between gap-6">
+                <div>
+                  <h2
+                    className="max-w-[760px] font-bold text-white"
+                    style={{
+                      fontSize: "clamp(30px, 4.2vw, 44px)",
+                      lineHeight: 1.12,
+                      letterSpacing: "-0.025em",
+                    }}
+                  >
+                    Alla mobilabonnemang, sorterade efter vad du faktiskt betalar
+                  </h2>
+                  <p className="mt-4 max-w-[640px] text-[17px] leading-relaxed text-dark-muted">
+                    Kampanjens längd och startavgiften är inräknade. Det billigaste i dag är inte
+                    alltid det billigaste på ett år.
+                  </p>
+                </div>
+                <dl className="flex gap-6 sm:gap-8">
+                  {[
+                    [String(ALLMANNA), "abonnemang"],
+                    [String(ANTAL_OPERATORER), "operatörer"],
+                    [kortDatum(SENAST_KONTROLLERAD), "senast kontrollerat"],
+                  ].map(([v, t]) => (
+                    <div key={t}>
+                      <dt className="sr-only">{t}</dt>
+                      <dd className="font-display text-[26px] font-bold leading-none text-white sm:text-[30px]">
+                        {v}
+                      </dd>
+                      <dd className="mt-1.5 text-[12.5px] text-dark-muted">{t}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div className="relative -mt-24 pb-20 lg:pb-32">
+            <div className="mx-auto w-full max-w-[1140px] px-6">
+              <Jamforelse forval={forval} id="lista" />
+            </div>
+          </div>
+        </section>
 
         <AutopilotTeaser />
 
@@ -601,15 +655,18 @@ function NatSektion() {
             <Link
               to="/nat/$slug"
               params={{ slug: nat.id }}
-              className="group flex items-center gap-3 border-b border-border bg-highlight/60 px-5 py-4"
+              className="group flex min-h-[132px] flex-col justify-between gap-3 border-b border-border bg-gradient-to-br from-highlight to-surface px-5 py-5"
             >
-              {agare && <OperatorMonogram namn={agare.namn} size={36} />}
-              <span className="min-w-0">
-                <span className="block font-display text-[18px] font-bold text-foreground group-hover:text-primary">
+              {agare && <OperatorMonogram namn={agare.namn} size={40} />}
+              <span className="block">
+                <span className="block font-display text-[19px] font-bold text-foreground group-hover:text-primary">
                   {nat.namn}
                 </span>
-                <span className="block text-[12.5px] leading-snug text-muted-foreground">
-                  {nat.agare}
+                <span
+                  className="mt-0.5 block truncate text-[12.5px] text-muted-foreground"
+                  title={nat.agare}
+                >
+                  {nat.agare.split(",")[0]}
                 </span>
               </span>
             </Link>
@@ -627,7 +684,7 @@ function NatSektion() {
                       params={{ slug: o.slug }}
                       className="flex items-center gap-3 rounded-xl px-1 py-1 text-[14.5px] font-semibold text-foreground hover:bg-muted hover:text-primary"
                     >
-                      <OperatorMonogram namn={o.namn} size={28} />
+                      <OperatorMonogram namn={o.namn} size={30} />
                       {o.namn}
                     </Link>
                   </li>

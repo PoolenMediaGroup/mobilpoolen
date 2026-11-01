@@ -61,8 +61,8 @@ export function OperatorMonogram({
   return (
     <span
       aria-hidden
-      className={`inline-flex shrink-0 items-center justify-center rounded-full bg-highlight font-display font-bold text-primary ${className}`}
-      style={{ width: size, height: size, fontSize: Math.round(size * 0.38) }}
+      className={`inline-flex shrink-0 items-center justify-center rounded-xl border border-border bg-highlight font-display font-bold text-primary ${className}`}
+      style={{ width: Math.round(size * 1.8), height: size, fontSize: Math.round(size * 0.38) }}
     >
       {INITIALER[namn] ?? initialer.charAt(0).toUpperCase() + initialer.slice(1).toLowerCase()}
     </span>
