@@ -747,9 +747,14 @@
   }
 }
 
-/* Menyn skalas som Elpoolens: ritad för ca 1 440 px och förminskad i steg om 32 px
-   ner till 1 024 px, så att syskonsajternas menyer har samma storlek på alla skärmar.
-   Värdena är desamma som i Elpoolens styles.css. */
+/* Startsidan på dator. Heron och navbaren är ritade för Leons dator, där webbläsaren
+   är ca 1 440 px bred, och skalas i små steg (32 px) så att proportionerna blir
+   desamma på alla skärmar från 1 024 px och uppåt. Mellan 1 392 och 1 455 px är
+   förstoringen exakt 1, alltså originaldesignen. Under 1 024 px gäller den vanliga
+   layouten för surfplatta och mobil. Navbaren skalas likadant på alla sidor så
+   att den har samma storlek och läge överallt.
+   --nav-extra är hur mycket högre navbaren blir (72 px gånger förstoringen minus 1),
+   så att heron fortfarande ryms på skärmen. */
 @media (min-width: 1024px) {
   :root {
     --hz: 0.717;
@@ -815,7 +820,196 @@
     --hz: 1;
   }
 }
+@media (min-width: 1424px) {
+  :root {
+    --hz: 1;
+  }
+}
+@media (min-width: 1456px) {
+  :root {
+    --hz: 1.022;
+  }
+}
+@media (min-width: 1488px) {
+  :root {
+    --hz: 1.044;
+  }
+}
+@media (min-width: 1520px) {
+  :root {
+    --hz: 1.067;
+  }
+}
+@media (min-width: 1552px) {
+  :root {
+    --hz: 1.089;
+  }
+}
+@media (min-width: 1584px) {
+  :root {
+    --hz: 1.111;
+  }
+}
+@media (min-width: 1616px) {
+  :root {
+    --hz: 1.133;
+  }
+}
+@media (min-width: 1648px) {
+  :root {
+    --hz: 1.156;
+  }
+}
+@media (min-width: 1680px) {
+  :root {
+    --hz: 1.178;
+  }
+}
+@media (min-width: 1712px) {
+  :root {
+    --hz: 1.2;
+  }
+}
+@media (min-width: 1744px) {
+  :root {
+    --hz: 1.222;
+  }
+}
+@media (min-width: 1776px) {
+  :root {
+    --hz: 1.244;
+  }
+}
+@media (min-width: 1808px) {
+  :root {
+    --hz: 1.267;
+  }
+}
+@media (min-width: 1840px) {
+  :root {
+    --hz: 1.289;
+  }
+}
+@media (min-width: 1872px) {
+  :root {
+    --hz: 1.311;
+  }
+}
+@media (min-width: 1904px) {
+  :root {
+    --hz: 1.333;
+  }
+}
+@media (min-width: 1936px) {
+  :root {
+    --hz: 1.356;
+  }
+}
+@media (min-width: 1968px) {
+  :root {
+    --hz: 1.378;
+  }
+}
+@media (min-width: 2000px) {
+  :root {
+    --hz: 1.4;
+  }
+}
+@media (min-width: 2032px) {
+  :root {
+    --hz: 1.422;
+  }
+}
+@media (min-width: 2064px) {
+  :root {
+    --hz: 1.444;
+  }
+}
+@media (min-width: 2096px) {
+  :root {
+    --hz: 1.467;
+  }
+}
+@media (min-width: 2128px) {
+  :root {
+    --hz: 1.489;
+  }
+}
+@media (min-width: 2160px) {
+  :root {
+    --hz: 1.511;
+  }
+}
+@media (min-width: 2192px) {
+  :root {
+    --hz: 1.533;
+  }
+}
+@media (min-width: 2224px) {
+  :root {
+    --hz: 1.556;
+  }
+}
+@media (min-width: 2256px) {
+  :root {
+    --hz: 1.578;
+  }
+}
+@media (min-width: 2288px) {
+  :root {
+    --hz: 1.6;
+  }
+}
+@media (min-width: 2320px) {
+  :root {
+    --hz: 1.622;
+  }
+}
+@media (min-width: 2352px) {
+  :root {
+    --hz: 1.644;
+  }
+}
+@media (min-width: 2384px) {
+  :root {
+    --hz: 1.667;
+  }
+}
+@media (min-width: 2416px) {
+  :root {
+    --hz: 1.689;
+  }
+}
+@media (min-width: 2448px) {
+  :root {
+    --hz: 1.711;
+  }
+}
+@media (min-width: 2480px) {
+  :root {
+    --hz: 1.733;
+  }
+}
+@media (min-width: 2512px) {
+  :root {
+    --hz: 1.756;
+  }
+}
+@media (min-width: 2544px) {
+  :root {
+    --hz: 1.778;
+  }
+}
+@media (min-width: 2576px) {
+  :root {
+    --hz: 1.8;
+  }
+}
 @media (min-width: 1024px) {
+  :root {
+    --nav-extra: calc(72px * (var(--hz) - 1));
+  }
+  .hero-skala,
   .nav-skala {
     zoom: var(--hz);
   }

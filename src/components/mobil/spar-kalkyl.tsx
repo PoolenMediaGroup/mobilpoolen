@@ -43,15 +43,15 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
   return (
     <form
       onSubmit={rakna}
-      className="rounded-[22px] bg-surface p-5 text-foreground shadow-mork sm:p-7"
+      className="flex flex-col gap-4 rounded-[20px] bg-surface p-5 text-left text-foreground shadow-mork sm:p-7"
       aria-labelledby={`${uid}-rubrik`}
     >
-      <h2 id={`${uid}-rubrik`} className="text-[22px] font-bold sm:text-[24px]">
-        Räkna ut vad du kan spara
+      <h2 id={`${uid}-rubrik`} className="font-sans text-[16px] font-medium text-foreground">
+        Om ditt abonnemang
       </h2>
-      <fieldset className="mt-5">
-        <legend className="mb-2 text-[14.5px] font-semibold">Hur mycket surfar du?</legend>
-        <div className="grid grid-cols-2 gap-2">
+      <fieldset>
+        <legend className="mb-1 text-[14px] font-semibold">Hur mycket surfar du?</legend>
+        <div className="grid grid-cols-2 gap-1 rounded-xl bg-muted p-1">
           {BEHOV_VAL.map((v) => {
             const aktiv = behov === v.gb;
             return (
@@ -60,45 +60,49 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
                 type="button"
                 aria-pressed={aktiv}
                 onClick={() => setBehov(v.gb)}
-                className={`rounded-xl border px-3 py-2.5 text-left transition-colors ${
+                className={`min-h-[52px] rounded-lg border-2 px-3 py-1.5 text-center transition-all ${
                   aktiv
-                    ? "border-primary bg-highlight ring-1 ring-primary"
-                    : "border-border hover:border-primary/50"
+                    ? "border-primary bg-surface text-primary shadow-sm"
+                    : "border-transparent text-foreground/70 hover:text-foreground"
                 }`}
               >
-                <span className="block text-[15px] font-bold">{v.label}</span>
-                <span className="block text-[12.5px] leading-snug text-foreground/70">
-                  {v.text}
-                </span>
+                <span className="block text-[14.5px] font-semibold">{v.label}</span>
+                <span className="block text-[12px] leading-snug opacity-80">{v.text}</span>
               </button>
             );
           })}
         </div>
       </fieldset>
-      <label htmlFor={`${uid}-pris`} className="mt-5 block text-[14.5px] font-semibold">
-        Vad betalar du i dag? <span className="font-normal text-foreground/65">(valfritt)</span>
-      </label>
-      <div className="relative mt-2">
-        <input
-          id={`${uid}-pris`}
-          inputMode="numeric"
-          autoComplete="off"
-          placeholder="t.ex. 349"
-          value={pris}
-          onChange={(e) => setPris(e.target.value.replace(/[^\d\s,]/g, ""))}
-          className="block min-h-[52px] w-full rounded-xl border border-input-border bg-input px-4 pr-20 text-[17px] font-semibold"
-        />
-        <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[14px] text-foreground/60">
-          kr/mån
-        </span>
+      <div>
+        <label
+          htmlFor={`${uid}-pris`}
+          className="mb-1 flex items-center gap-1.5 text-[14px] font-semibold"
+        >
+          Vad betalar du i dag?
+          <span className="text-[12px] font-normal text-muted-foreground">valfritt</span>
+        </label>
+        <div className="relative">
+          <input
+            id={`${uid}-pris`}
+            inputMode="numeric"
+            autoComplete="off"
+            placeholder="Ex. 349"
+            value={pris}
+            onChange={(e) => setPris(e.target.value.replace(/[^\d\s,]/g, ""))}
+            className="block min-h-[52px] w-full rounded-xl border border-input-border bg-input px-4 pr-20 text-[16px] focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/15"
+          />
+          <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[14px] text-foreground/60">
+            kr/mån
+          </span>
+        </div>
       </div>
-      <button type="submit" className="btn-cta mt-5 w-full">
-        Räkna ut
+      <button type="submit" className="btn-cta w-full">
+        Visa mitt pris →
       </button>
 
       <div aria-live="polite">
         {svar && (
-          <div className="mt-5 rounded-xl bg-highlight p-4">
+          <div className="rounded-xl bg-highlight p-4">
             <p className="flex items-start gap-2 text-[15px] leading-snug">
               <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
               <span>
@@ -127,9 +131,6 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
           </div>
         )}
       </div>
-      <p className="mt-4 text-[12.5px] text-foreground/60">
-        Vi sparar ingenting av det du fyller i. Uträkningen sker i din webbläsare.
-      </p>
     </form>
   );
 }
