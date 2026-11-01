@@ -46,7 +46,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 - Samtyckestexterna står både i `src/lib/autopilot.ts` och i `supabase/functions/mobilpoolen-autopilot/index.ts`. Servern sparar sin egen kopia. Ändra båda.
 - Ingen fullmakt ges i formuläret, bara ett intresse. Skriv inte att vi byter åt kunden. Inga sms skickas än, bara samtycket sparas.
 - Förslagen i mejlen kommer från `/api/autopilot/forslag` (`src/lib/mobil/autopilot-forslag.ts`), så de följer prisdatan.
-- Ändringar som rör formuläret, kunddata, mejlutskicken eller databasens struktur mergas av Leon.
+- Ändringar som rör formuläret, kunddata, mejlutskicken eller databasens struktur: beskriv dem tydligt i PR-texten. Claude mergar själv när allt är grönt (se Arbetssätt i git).
 
 ## Stack
 
@@ -58,6 +58,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 - Arbeta på en egen gren `claude/<namn>` och öppna en PR per avgränsat område när sajten är live. Före lansering har grunden byggts direkt på `main`.
 - Grönt före merge: `bun run build`, `npx tsc --noEmit`, `npx eslint src` (0 fel), och en kontroll av title, description, canonical och sitemap.
+- **Claude mergar själv** när allt är grönt, utan att fråga (Leons beslut 1 november 2026). Det gäller även ändringar som rör Autopilot. Säg i svaret vad som gick live, och kontrollera live-sajten efter merge.
 
 ## SEO-byggstenar
 
