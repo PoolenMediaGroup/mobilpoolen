@@ -1,5 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { logotyp } from "@/lib/mobil/logotyper";
+import { logotyp, type Logotyp } from "@/lib/mobil/logotyper";
+
+/** Bredd och höjd i px: så hög som maxH, men aldrig bredare än maxW. */
+function storlek(l: Logotyp, maxH: number, maxW: number) {
+  const h = Math.min(maxH, (maxW * l.h) / l.w);
+  return { height: Math.round(h), width: Math.round((h * l.w) / l.h) };
+}
 
 export type LogoOperator = { slug: string; namn: string };
 
@@ -43,7 +49,11 @@ export function OperatorLogoRad({
                         height={l.h}
                         alt={o.namn}
                         loading="eager"
-                        className="block h-auto max-h-7 w-auto max-w-[110px] object-contain"
+                        // Fast storlek ur bildens proportioner. iOS Safari räknar annars
+                        // fel bredd på svg i en rullande flexrad, och loggorna lägger sig
+                        // ovanpå varandra.
+                        style={storlek(l, 28, 110)}
+                        className="block shrink-0 object-contain"
                       />
                     </li>
                   );
@@ -72,7 +82,8 @@ export function OperatorLogoRad({
                       alt={o.namn}
                       loading="lazy"
                       decoding="async"
-                      className="block h-auto max-h-9 w-auto max-w-[130px] object-contain transition-transform group-hover:scale-105"
+                      style={storlek(l, 36, 130)}
+                      className="block shrink-0 object-contain transition-transform group-hover:scale-105"
                     />
                   </span>
                   <span className="whitespace-nowrap text-center text-[12px] font-medium leading-4 text-muted-foreground group-hover:text-primary">
