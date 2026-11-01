@@ -550,15 +550,24 @@ export function FaqAccordion({
     <div className="mb-6">
       <div className="space-y-3">
         {sidansFragor(items, antal ?? items.length).map((it) => (
-          <details key={it.q} className="group rounded-xl border border-border bg-surface p-5">
+          <details
+            key={it.q}
+            className="group relative overflow-hidden rounded-2xl border border-border bg-white p-5 transition-[border-color,box-shadow] duration-300 open:border-primary/30 open:shadow-[0_24px_48px_-24px_rgba(59,40,204,0.45)] hover:border-primary/30 sm:px-6"
+          >
+            <span
+              aria-hidden
+              className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-gradient-to-b from-primary to-[#b06cf5] transition-transform duration-300 group-open:scale-y-100"
+            />
             {/* Plustecknet vrids till ett kryss när frågan är öppen, som på Elpoolen. */}
-            <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 text-[17px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
               {it.q}
               {/* Ikon, inte ett tecken, så att frågans text i HTML:en förblir ren. */}
-              <Plus
+              <span
                 aria-hidden
-                className="mt-1 h-5 w-5 shrink-0 text-primary transition-transform group-open:rotate-45 motion-reduce:transition-none"
-              />
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-highlight text-primary transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-primary group-open:to-[#7c63ff] group-open:text-white motion-reduce:transition-none"
+              >
+                <Plus className="h-4.5 w-4.5" />
+              </span>
             </summary>
             <p className="mt-3 text-[16px] text-muted-foreground">{it.a}</p>
             {it.kalla ? (

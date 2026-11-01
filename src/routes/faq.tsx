@@ -28,7 +28,7 @@ function FaqPage() {
       <SiteNav />
 
       <main>
-        <section className="relative overflow-hidden bg-dark-section">
+        <section className="relative overflow-hidden hero-mesh">
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-8 pb-8 lg:pt-12 lg:pb-10">
             <h1
               className="font-bold"

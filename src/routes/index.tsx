@@ -130,13 +130,7 @@ function Startsida() {
         {/* Jämförelsen: rubriken på ett mörkt band och filterpanelen som flyter
             ut över kanten, så att sektionen bryter mot de ljusa runt omkring. */}
         <section id="alla" className="scroll-mt-20">
-          <div
-            className="relative overflow-hidden bg-dark-section pb-32 pt-20 text-white lg:pb-36 lg:pt-28"
-            style={{
-              backgroundImage:
-                "radial-gradient(700px 360px at 85% 0%, rgba(106,85,245,0.45), transparent 70%), radial-gradient(600px 300px at 0% 100%, rgba(59,40,204,0.35), transparent 70%)",
-            }}
-          >
+          <div className="relative overflow-hidden hero-mesh pb-32 pt-20 text-white lg:pb-36 lg:pt-28">
             <div className="mx-auto w-full max-w-[1140px] px-6">
               <div className="flex flex-wrap items-end justify-between gap-6">
                 <div>
@@ -214,27 +208,45 @@ function Startsida() {
           </div>
         </SectionShell>
 
-        <section className="bg-surface">
+        <section className="bg-mesh-light">
           <SectionShell>
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-16">
-              <div>
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,360px)_minmax(0,1fr)] lg:gap-16">
+              <div className="lg:sticky lg:top-28 lg:self-start">
                 <h2
                   className="font-bold text-foreground"
-                  style={{ fontSize: "clamp(28px, 3.6vw, 38px)", letterSpacing: "-0.025em" }}
+                  style={{
+                    fontSize: "clamp(32px, 4.2vw, 46px)",
+                    lineHeight: 1.08,
+                    letterSpacing: "-0.03em",
+                  }}
                 >
-                  Vanliga frågor
+                  Vanliga <span className="text-gradient">frågor</span>
                 </h2>
-                <p className="mt-4 text-[17px] leading-relaxed text-muted-foreground">
-                  Hittar du inte svaret? Det finns fler frågor och svar om abonnemang, byten och
-                  nät.
+                <span
+                  aria-hidden
+                  className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
+                />
+                <p className="mt-5 text-[17px] leading-relaxed text-muted-foreground">
+                  Korta svar på det folk undrar mest över: pris, surf, nät och hur bytet går till.
                 </p>
-                <div className="mt-4">
-                  <Lank to="/faq">Alla frågor och svar</Lank>
+                <div className="mt-8 overflow-hidden rounded-2xl hero-mesh p-6 text-white shadow-[0_24px_48px_-24px_rgba(22,19,58,0.6)]">
+                  <p className="font-display text-[19px] font-semibold">Hittar du inte svaret?</p>
+                  <p className="mt-2 text-[14.5px] leading-relaxed text-dark-muted">
+                    Fler frågor och svar om abonnemang, byten, nät och företag finns samlade på ett
+                    ställe.
+                  </p>
+                  <Link
+                    to="/faq"
+                    className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-xl bg-white px-4 font-display text-[15px] font-semibold text-primary transition-transform hover:-translate-y-0.5"
+                  >
+                    Alla frågor och svar
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
                 </div>
               </div>
               <div className="grid gap-3">
-                {STARTSIDANS_QA.map((q) => (
-                  <FaqItem key={q.q} item={q} />
+                {STARTSIDANS_QA.map((q, i) => (
+                  <FaqItem key={q.q} item={q} nr={i + 1} />
                 ))}
               </div>
             </div>
@@ -283,13 +295,31 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
       // Samma upplägg som Elpoolens hero: centrerad i fönstret på dator och
       // skalad med --hz så att proportionerna blir desamma på alla skärmar.
       className="relative overflow-hidden lg:flex lg:min-h-[calc(100svh-128px-var(--nav-extra,0px))] lg:flex-col lg:justify-center"
-      style={{ background: "var(--primary)" }}
+      style={{
+        background: "linear-gradient(135deg, #3b28cc 0%, #4a2fd8 45%, #5b2ed1 100%)",
+      }}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-40 -top-48 h-[560px] w-[560px] rounded-full"
-        style={{ background: "color-mix(in oklab, white 10%, transparent)", filter: "blur(4px)" }}
-      />
+      {/* Ljusfläckar som svävar långsamt, och ett svagt rutnät. Dekor. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div
+          className="svava absolute -right-32 -top-40 h-[560px] w-[560px] rounded-full opacity-70 blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(176,108,245,0.75), transparent 65%)" }}
+        />
+        <div
+          className="svava absolute -bottom-48 -left-24 h-[480px] w-[480px] rounded-full opacity-60 blur-3xl [animation-delay:-7s]"
+          style={{ background: "radial-gradient(circle, rgba(232,132,44,0.45), transparent 65%)" }}
+        />
+        <div
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+            maskImage: "radial-gradient(ellipse at 30% 40%, black, transparent 75%)",
+            WebkitMaskImage: "radial-gradient(ellipse at 30% 40%, black, transparent 75%)",
+          }}
+        />
+      </div>
       <div className="hero-skala relative mx-auto w-full max-w-7xl px-4 pb-[20px] pt-[28px] sm:px-6 sm:pb-[34px] sm:pt-[56px] lg:px-8 lg:py-[56px]">
         <div className="flex flex-col gap-3 sm:gap-10 lg:flex-row lg:items-start lg:gap-16">
           {/* Vänsterkolumn */}
@@ -480,7 +510,7 @@ function OperatorRad() {
 function AutopilotTeaser() {
   return (
     <SectionShell flushTop>
-      <div className="grid items-center gap-8 rounded-[28px] bg-dark-section p-7 text-white sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:p-12">
+      <div className="grid items-center gap-8 rounded-[28px] hero-mesh p-7 text-white sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:p-12">
         <div className="flex items-start gap-5">
           <span className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-dark-accent sm:inline-flex">
             <BellRing className="h-7 w-7" aria-hidden />
@@ -583,7 +613,7 @@ function SaFungerarDet() {
     },
   ];
   return (
-    <section className="bg-dark-section text-white">
+    <section className="hero-mesh text-white">
       <SectionShell>
         <SectionHeader
           dark
@@ -650,7 +680,7 @@ function NatSektion() {
         {perNat.map(({ nat, agare, operatorer }) => (
           <div
             key={nat.id}
-            className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-kort"
+            className="kort-lyft flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-kort"
           >
             <Link
               to="/nat/$slug"
@@ -708,7 +738,7 @@ function NatSektion() {
 function ForetagBand() {
   return (
     <SectionShell flushTop>
-      <div className="grid items-center gap-6 rounded-[28px] border border-border bg-surface p-7 sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
+      <div className="relative grid items-center gap-6 overflow-hidden rounded-[28px] border border-primary/15 bg-gradient-to-br from-white via-white to-highlight p-7 shadow-[0_24px_48px_-28px_rgba(59,40,204,0.45)] sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
         <div>
           <h2
             className="font-bold text-foreground"

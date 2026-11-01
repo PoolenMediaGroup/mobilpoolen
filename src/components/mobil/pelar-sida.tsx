@@ -54,12 +54,7 @@ export function PelarSida({
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
       <main>
-        <section className="relative overflow-hidden bg-dark-section text-white">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-40 -top-56 h-[520px] w-[520px] rounded-full"
-            style={{ background: "color-mix(in oklab, var(--color-primary) 55%, transparent)" }}
-          />
+        <section className="relative overflow-hidden hero-mesh text-white">
           <div className="relative mx-auto max-w-[1140px] px-6 pb-14 pt-8 lg:pb-20 lg:pt-12">
             <PageBreadcrumbs trail={trail} tone="dark" />
             <h1 className="mt-2 max-w-3xl font-bold text-white">{rubrik}</h1>

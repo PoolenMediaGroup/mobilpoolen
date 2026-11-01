@@ -357,6 +357,11 @@
   padding: 0 28px;
   border-radius: 14px;
   background-color: var(--color-cta);
+  /* Lätt gradient och en glansrand som sveper över vid hover. */
+  background-image: linear-gradient(135deg, #f39a45 0%, var(--color-cta) 45%, #d96f12 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   color: var(--color-cta-foreground);
   font-weight: 600;
   font-size: 16px;
@@ -367,10 +372,27 @@
     background-color var(--elp-dur) var(--elp-ease),
     transform var(--elp-dur) var(--elp-ease),
     box-shadow var(--elp-dur) var(--elp-ease);
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 700ms var(--elp-ease);
+  }
   &:hover {
     background-color: var(--color-cta-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(232, 132, 44, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -6px rgba(232, 132, 44, 0.6);
+  }
+  &:hover::after {
+    transform: translateX(120%);
   }
   &:active {
     transform: translateY(0);
@@ -1204,5 +1226,80 @@ body:has([data-chatt-lyft]) .chatt-bubbla {
   }
   .elp-marquee-track > ul[aria-hidden] {
     display: none;
+  }
+}
+
+/* ============ Modern lyft (nov 2026) ============ */
+
+/* Mörka heros och band: mjuka indigo/violetta ljuskällor och ett svagt rutnät. */
+@utility hero-mesh {
+  background-color: var(--dark-section);
+  background-image:
+    radial-gradient(640px 420px at 88% -8%, rgba(124, 99, 255, 0.55), transparent 70%),
+    radial-gradient(520px 360px at 6% 112%, rgba(59, 40, 204, 0.5), transparent 70%),
+    radial-gradient(420px 280px at 55% 50%, rgba(232, 132, 44, 0.08), transparent 70%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    auto,
+    44px 44px,
+    44px 44px;
+}
+
+/* Ljusa sektioner som ska bryta mot vitt: tonad bakgrund med svaga färgfläckar. */
+@utility bg-mesh-light {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(600px 380px at 100% 0%, rgba(124, 99, 255, 0.12), transparent 70%),
+    radial-gradient(520px 340px at 0% 100%, rgba(232, 132, 44, 0.08), transparent 70%);
+}
+
+/* Gradienttext för ett accentord i en rubrik. */
+@utility text-gradient {
+  background-image: linear-gradient(100deg, var(--primary) 0%, #7c63ff 55%, #b06cf5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility text-gradient-ljus {
+  background-image: linear-gradient(100deg, #ffffff 0%, #d9d3ff 50%, #ffb877 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Kort som lyfts vid hover. */
+@utility kort-lyft {
+  transition:
+    transform var(--elp-dur) var(--elp-ease),
+    box-shadow var(--elp-dur) var(--elp-ease),
+    border-color var(--elp-dur) var(--elp-ease);
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 44px -20px rgba(22, 19, 58, 0.35);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Långsamt svävande ljusfläck i heron. */
+@keyframes svava {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, 18px, 0) scale(1.06);
+  }
+}
+@utility svava {
+  animation: svava 14s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 }

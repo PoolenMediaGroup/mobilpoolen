@@ -55,7 +55,7 @@ function KontaktPage() {
       <SiteNav />
 
       <main>
-        <section className="relative overflow-hidden bg-dark-section">
+        <section className="relative overflow-hidden hero-mesh">
           <div
             aria-hidden
             className="pointer-events-none absolute -top-40 -right-32 w-[480px] h-[480px] rounded-full"

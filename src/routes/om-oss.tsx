@@ -53,7 +53,7 @@ function OmOssPage() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
 
-      <section className="bg-dark-section text-footer-foreground">
+      <section className="hero-mesh text-footer-foreground">
         <div className="mx-auto max-w-[1140px] px-6 py-12 sm:py-16">
           <h1
             className="font-bold tracking-tight"
