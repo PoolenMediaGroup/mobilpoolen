@@ -197,8 +197,9 @@ export function SiteFooter() {
                 height={s.hojd}
                 loading="lazy"
                 decoding="async"
-                // Elpoolens ordmärke har lite lägre x-höjd, så det får 1 px mer för att linjera.
-                className={s.namn === "Elpoolen" ? "h-[27px] w-auto" : "h-[26px] w-auto"}
+                // Larmpoolens ordmärke är tjockare än Elpoolens, så det får lägre höjd
+                // för att de två ska se lika stora ut bredvid varandra.
+                className={s.namn === "Larmpoolen" ? "h-[23px] w-auto" : "h-[26px] w-auto"}
               />
               <ArrowRight
                 className="h-4 w-4 text-dark-accent transition-transform group-hover:translate-x-0.5"
