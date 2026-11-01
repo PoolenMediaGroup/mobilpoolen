@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { ArrowDown, BellRing, Sparkles } from "lucide-react";
+import { ArrowDown, BellRing, Check, Sparkles } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { PRIVATA, operator } from "@/lib/mobil/data";
 import {
@@ -26,6 +26,22 @@ export type KalkylResultat = { behovGb: number; nuvarande: number; maxSnitt: num
  * 0,15 = vi visar bara abonnemang som är minst 15 procent billigare.
  */
 export const SPAR_MARGINAL = 0.15;
+
+/**
+ * Räkneexempel till pillret i heron: vad den som har ett medelpriset abonnemang
+ * (median bland alla som täcker surfen) sparar per år på att byta till det
+ * billigaste. Räknas ur prisdatan, avrundat nedåt till hela hundralappar.
+ */
+export function sparExempel(gb = 15) {
+  const priser = PRIVATA.filter((a) => !arVillkorat(a) && tackerBehov(a, gb))
+    .map(snittForstaAret)
+    .sort((x, y) => x - y);
+  if (priser.length < 3) return null;
+  const median = priser[Math.floor(priser.length / 2)];
+  const lagst = priser[0];
+  const perAr = Math.floor(((median - lagst) * 12) / 100) * 100;
+  return perAr > 0 ? { gb, median, lagst, perAr } : null;
+}
 
 type Svar = {
   nuvarande: number;
@@ -88,7 +104,7 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
       </h2>
       <fieldset>
         <legend className="mb-1 text-[14px] font-semibold">Hur mycket surfar du?</legend>
-        <div className="grid grid-cols-2 gap-1 rounded-xl bg-muted p-1">
+        <div className="grid grid-cols-2 gap-2">
           {BEHOV_VAL.map((v) => {
             const aktiv = behov === v.gb;
             return (
@@ -97,14 +113,26 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
                 type="button"
                 aria-pressed={aktiv}
                 onClick={() => setBehov(v.gb)}
-                className={`min-h-[52px] rounded-lg border-2 px-3 py-1.5 text-center transition-all ${
+                className={`relative min-h-[60px] rounded-xl border-2 px-3 py-2 text-center transition-all ${
                   aktiv
-                    ? "border-primary bg-surface text-primary shadow-sm"
-                    : "border-transparent text-foreground/70 hover:text-foreground"
+                    ? "border-primary bg-highlight text-primary shadow-[0_6px_16px_-8px_rgba(59,40,204,0.55)]"
+                    : "border-border bg-white text-foreground shadow-sm hover:-translate-y-px hover:border-primary/50 hover:shadow-md"
                 }`}
               >
-                <span className="block text-[14.5px] font-semibold">{v.label}</span>
-                <span className="block text-[12px] leading-snug opacity-80">{v.text}</span>
+                {aktiv && (
+                  <span
+                    aria-hidden
+                    className="absolute right-1.5 top-1.5 inline-flex h-4 w-4 items-center justify-center rounded-full bg-primary text-white"
+                  >
+                    <Check className="h-3 w-3" strokeWidth={3} />
+                  </span>
+                )}
+                <span className="block text-[15px] font-bold">{v.label}</span>
+                <span
+                  className={`block text-[12px] leading-snug ${aktiv ? "text-primary/80" : "text-muted-foreground"}`}
+                >
+                  {v.text}
+                </span>
               </button>
             );
           })}
