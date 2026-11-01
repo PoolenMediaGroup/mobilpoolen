@@ -228,14 +228,14 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
       <div className="hero-skala relative mx-auto w-full max-w-7xl px-4 pb-[20px] pt-[28px] sm:px-6 sm:pb-[34px] sm:pt-[56px] lg:px-8 lg:py-[56px]">
         <div className="flex flex-col gap-3 sm:gap-10 lg:flex-row lg:items-start lg:gap-16">
           {/* Vänsterkolumn */}
-          <div className="contents lg:flex lg:w-[520px] lg:shrink-0 lg:flex-col lg:self-start">
+          <div className="contents lg:flex lg:w-[580px] lg:shrink-0 lg:flex-col lg:self-start">
             <div className="order-1 flex flex-col">
               <h1
                 className="font-bold text-white"
                 style={{
                   letterSpacing: "-0.02em",
                   lineHeight: 1.1,
-                  fontSize: "clamp(32px, 6.4vw, 52px)",
+                  fontSize: "clamp(30px, 6.4vw, 42px)",
                 }}
               >
                 {HERO_RAD_1}
