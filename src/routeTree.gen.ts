@@ -35,6 +35,7 @@ import { Route as CookiepolicyRouteImport } from './routes/cookiepolicy'
 import { Route as BilligasteMobilabonnemangRouteImport } from './routes/billigaste-mobilabonnemang'
 import { Route as BastaMobilabonnemangRouteImport } from './routes/basta-mobilabonnemang'
 import { Route as BarnRouteImport } from './routes/barn'
+import { Route as AutopilotRouteImport } from './routes/autopilot'
 import { Route as AnvandarvillkorRouteImport } from './routes/anvandarvillkor'
 import { Route as R5gAbonnemangRouteImport } from './routes/5g-abonnemang'
 import { Route as IndexRouteImport } from './routes/index'
@@ -95,7 +96,11 @@ import { Route as GuiderAngerrattMobilabonnemangRouteImport } from './routes/gui
 import { Route as Guider2g3gNedslackningRouteImport } from './routes/guider.2g-3g-nedslackning'
 import { Route as ForetagEnskildFirmaRouteImport } from './routes/foretag_.enskild-firma'
 import { Route as ForetagBilligasteForetagsabonnemangRouteImport } from './routes/foretag_.billigaste-foretagsabonnemang'
+import { Route as AutopilotVillkorRouteImport } from './routes/autopilot_.villkor'
+import { Route as AutopilotBekraftaRouteImport } from './routes/autopilot_.bekrafta'
+import { Route as AutopilotAvslutaRouteImport } from './routes/autopilot_.avsluta'
 import { Route as ApiChattRouteImport } from './routes/api.chatt'
+import { Route as ApiAutopilotForslagRouteImport } from './routes/api.autopilot.forslag'
 
 const UtanBindningstidRoute = UtanBindningstidRouteImport.update({
   id: '/utan-bindningstid',
@@ -227,6 +232,11 @@ const BastaMobilabonnemangRoute = BastaMobilabonnemangRouteImport.update({
 const BarnRoute = BarnRouteImport.update({
   id: '/barn',
   path: '/barn',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutopilotRoute = AutopilotRouteImport.update({
+  id: '/autopilot',
+  path: '/autopilot',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnvandarvillkorRoute = AnvandarvillkorRouteImport.update({
@@ -561,9 +571,29 @@ const ForetagBilligasteForetagsabonnemangRoute =
     path: '/foretag/billigaste-foretagsabonnemang',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AutopilotVillkorRoute = AutopilotVillkorRouteImport.update({
+  id: '/autopilot_/villkor',
+  path: '/autopilot/villkor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutopilotBekraftaRoute = AutopilotBekraftaRouteImport.update({
+  id: '/autopilot_/bekrafta',
+  path: '/autopilot/bekrafta',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutopilotAvslutaRoute = AutopilotAvslutaRouteImport.update({
+  id: '/autopilot_/avsluta',
+  path: '/autopilot/avsluta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChattRoute = ApiChattRouteImport.update({
   id: '/api/chatt',
   path: '/api/chatt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAutopilotForslagRoute = ApiAutopilotForslagRouteImport.update({
+  id: '/api/autopilot/forslag',
+  path: '/api/autopilot/forslag',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -571,6 +601,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/autopilot': typeof AutopilotRoute
   '/barn': typeof BarnRoute
   '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
   '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
@@ -598,6 +629,9 @@ export interface FileRoutesByFullPath {
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/autopilot/avsluta': typeof AutopilotAvslutaRoute
+  '/autopilot/bekrafta': typeof AutopilotBekraftaRoute
+  '/autopilot/villkor': typeof AutopilotVillkorRoute
   '/foretag/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
   '/foretag/enskild-firma': typeof ForetagEnskildFirmaRoute
   '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
@@ -655,11 +689,13 @@ export interface FileRoutesByFullPath {
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
   '/verktyg/': typeof VerktygIndexRoute
+  '/api/autopilot/forslag': typeof ApiAutopilotForslagRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/autopilot': typeof AutopilotRoute
   '/barn': typeof BarnRoute
   '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
   '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
@@ -687,6 +723,9 @@ export interface FileRoutesByTo {
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/autopilot/avsluta': typeof AutopilotAvslutaRoute
+  '/autopilot/bekrafta': typeof AutopilotBekraftaRoute
+  '/autopilot/villkor': typeof AutopilotVillkorRoute
   '/foretag/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
   '/foretag/enskild-firma': typeof ForetagEnskildFirmaRoute
   '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
@@ -744,12 +783,14 @@ export interface FileRoutesByTo {
   '/operatorer': typeof OperatorerIndexRoute
   '/saga-upp': typeof SagaUppIndexRoute
   '/verktyg': typeof VerktygIndexRoute
+  '/api/autopilot/forslag': typeof ApiAutopilotForslagRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/5g-abonnemang': typeof R5gAbonnemangRoute
   '/anvandarvillkor': typeof AnvandarvillkorRoute
+  '/autopilot': typeof AutopilotRoute
   '/barn': typeof BarnRoute
   '/basta-mobilabonnemang': typeof BastaMobilabonnemangRoute
   '/billigaste-mobilabonnemang': typeof BilligasteMobilabonnemangRoute
@@ -777,6 +818,9 @@ export interface FileRoutesById {
   '/ungdom': typeof UngdomRoute
   '/utan-bindningstid': typeof UtanBindningstidRoute
   '/api/chatt': typeof ApiChattRoute
+  '/autopilot_/avsluta': typeof AutopilotAvslutaRoute
+  '/autopilot_/bekrafta': typeof AutopilotBekraftaRoute
+  '/autopilot_/villkor': typeof AutopilotVillkorRoute
   '/foretag_/billigaste-foretagsabonnemang': typeof ForetagBilligasteForetagsabonnemangRoute
   '/foretag_/enskild-firma': typeof ForetagEnskildFirmaRoute
   '/guider/2g-3g-nedslackning': typeof Guider2g3gNedslackningRoute
@@ -834,6 +878,7 @@ export interface FileRoutesById {
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
   '/verktyg/': typeof VerktygIndexRoute
+  '/api/autopilot/forslag': typeof ApiAutopilotForslagRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -841,6 +886,7 @@ export interface FileRouteTypes {
     | '/'
     | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/autopilot'
     | '/barn'
     | '/basta-mobilabonnemang'
     | '/billigaste-mobilabonnemang'
@@ -868,6 +914,9 @@ export interface FileRouteTypes {
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
+    | '/autopilot/avsluta'
+    | '/autopilot/bekrafta'
+    | '/autopilot/villkor'
     | '/foretag/billigaste-foretagsabonnemang'
     | '/foretag/enskild-firma'
     | '/guider/2g-3g-nedslackning'
@@ -925,11 +974,13 @@ export interface FileRouteTypes {
     | '/operatorer/'
     | '/saga-upp/'
     | '/verktyg/'
+    | '/api/autopilot/forslag'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/autopilot'
     | '/barn'
     | '/basta-mobilabonnemang'
     | '/billigaste-mobilabonnemang'
@@ -957,6 +1008,9 @@ export interface FileRouteTypes {
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
+    | '/autopilot/avsluta'
+    | '/autopilot/bekrafta'
+    | '/autopilot/villkor'
     | '/foretag/billigaste-foretagsabonnemang'
     | '/foretag/enskild-firma'
     | '/guider/2g-3g-nedslackning'
@@ -1014,11 +1068,13 @@ export interface FileRouteTypes {
     | '/operatorer'
     | '/saga-upp'
     | '/verktyg'
+    | '/api/autopilot/forslag'
   id:
     | '__root__'
     | '/'
     | '/5g-abonnemang'
     | '/anvandarvillkor'
+    | '/autopilot'
     | '/barn'
     | '/basta-mobilabonnemang'
     | '/billigaste-mobilabonnemang'
@@ -1046,6 +1102,9 @@ export interface FileRouteTypes {
     | '/ungdom'
     | '/utan-bindningstid'
     | '/api/chatt'
+    | '/autopilot_/avsluta'
+    | '/autopilot_/bekrafta'
+    | '/autopilot_/villkor'
     | '/foretag_/billigaste-foretagsabonnemang'
     | '/foretag_/enskild-firma'
     | '/guider/2g-3g-nedslackning'
@@ -1103,12 +1162,14 @@ export interface FileRouteTypes {
     | '/operatorer/'
     | '/saga-upp/'
     | '/verktyg/'
+    | '/api/autopilot/forslag'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   R5gAbonnemangRoute: typeof R5gAbonnemangRoute
   AnvandarvillkorRoute: typeof AnvandarvillkorRoute
+  AutopilotRoute: typeof AutopilotRoute
   BarnRoute: typeof BarnRoute
   BastaMobilabonnemangRoute: typeof BastaMobilabonnemangRoute
   BilligasteMobilabonnemangRoute: typeof BilligasteMobilabonnemangRoute
@@ -1136,6 +1197,9 @@ export interface RootRouteChildren {
   UngdomRoute: typeof UngdomRoute
   UtanBindningstidRoute: typeof UtanBindningstidRoute
   ApiChattRoute: typeof ApiChattRoute
+  AutopilotAvslutaRoute: typeof AutopilotAvslutaRoute
+  AutopilotBekraftaRoute: typeof AutopilotBekraftaRoute
+  AutopilotVillkorRoute: typeof AutopilotVillkorRoute
   ForetagBilligasteForetagsabonnemangRoute: typeof ForetagBilligasteForetagsabonnemangRoute
   ForetagEnskildFirmaRoute: typeof ForetagEnskildFirmaRoute
   Guider2g3gNedslackningRoute: typeof Guider2g3gNedslackningRoute
@@ -1193,6 +1257,7 @@ export interface RootRouteChildren {
   OperatorerIndexRoute: typeof OperatorerIndexRoute
   SagaUppIndexRoute: typeof SagaUppIndexRoute
   VerktygIndexRoute: typeof VerktygIndexRoute
+  ApiAutopilotForslagRoute: typeof ApiAutopilotForslagRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1377,6 +1442,13 @@ declare module '@tanstack/react-router' {
       path: '/barn'
       fullPath: '/barn'
       preLoaderRoute: typeof BarnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autopilot': {
+      id: '/autopilot'
+      path: '/autopilot'
+      fullPath: '/autopilot'
+      preLoaderRoute: typeof AutopilotRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/anvandarvillkor': {
@@ -1799,11 +1871,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForetagBilligasteForetagsabonnemangRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/autopilot_/villkor': {
+      id: '/autopilot_/villkor'
+      path: '/autopilot/villkor'
+      fullPath: '/autopilot/villkor'
+      preLoaderRoute: typeof AutopilotVillkorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autopilot_/bekrafta': {
+      id: '/autopilot_/bekrafta'
+      path: '/autopilot/bekrafta'
+      fullPath: '/autopilot/bekrafta'
+      preLoaderRoute: typeof AutopilotBekraftaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autopilot_/avsluta': {
+      id: '/autopilot_/avsluta'
+      path: '/autopilot/avsluta'
+      fullPath: '/autopilot/avsluta'
+      preLoaderRoute: typeof AutopilotAvslutaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chatt': {
       id: '/api/chatt'
       path: '/api/chatt'
       fullPath: '/api/chatt'
       preLoaderRoute: typeof ApiChattRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/autopilot/forslag': {
+      id: '/api/autopilot/forslag'
+      path: '/api/autopilot/forslag'
+      fullPath: '/api/autopilot/forslag'
+      preLoaderRoute: typeof ApiAutopilotForslagRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -1813,6 +1913,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   R5gAbonnemangRoute: R5gAbonnemangRoute,
   AnvandarvillkorRoute: AnvandarvillkorRoute,
+  AutopilotRoute: AutopilotRoute,
   BarnRoute: BarnRoute,
   BastaMobilabonnemangRoute: BastaMobilabonnemangRoute,
   BilligasteMobilabonnemangRoute: BilligasteMobilabonnemangRoute,
@@ -1840,6 +1941,9 @@ const rootRouteChildren: RootRouteChildren = {
   UngdomRoute: UngdomRoute,
   UtanBindningstidRoute: UtanBindningstidRoute,
   ApiChattRoute: ApiChattRoute,
+  AutopilotAvslutaRoute: AutopilotAvslutaRoute,
+  AutopilotBekraftaRoute: AutopilotBekraftaRoute,
+  AutopilotVillkorRoute: AutopilotVillkorRoute,
   ForetagBilligasteForetagsabonnemangRoute:
     ForetagBilligasteForetagsabonnemangRoute,
   ForetagEnskildFirmaRoute: ForetagEnskildFirmaRoute,
@@ -1905,6 +2009,7 @@ const rootRouteChildren: RootRouteChildren = {
   OperatorerIndexRoute: OperatorerIndexRoute,
   SagaUppIndexRoute: SagaUppIndexRoute,
   VerktygIndexRoute: VerktygIndexRoute,
+  ApiAutopilotForslagRoute: ApiAutopilotForslagRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -89,6 +89,7 @@ const NAV: NavPost[] = [
       },
     ],
   },
+  { label: "Autopilot", href: "/autopilot" },
   {
     label: "Företag",
     kolumner: [
