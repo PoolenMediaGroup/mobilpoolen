@@ -1085,6 +1085,12 @@ h1[tabindex="-1"]:focus {
 .bg-surface .overflow-x-auto:has(> table) {
   --tbl-bg: var(--surface);
 }
+/* Tabeller på mörka ytor (resultatrutorna i verktygen): ingen ljus täckfärg,
+   annars blir tabellen en vit ruta med vit text. */
+.hero-mesh .overflow-x-auto:has(> table),
+.hero-mesh .overflow-auto:has(> table) {
+  background: transparent;
+}
 
 /* AI-chatten (src/components/chatt). Knappen flyttas upp när en annan flytande rad ligger längst ner. */
 body:has([data-chatt-lyft]) .chatt-knapp {
