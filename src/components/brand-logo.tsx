@@ -35,8 +35,8 @@ export function BrandLogo({
         src={variant === "dark" ? logoWhite : logo}
         alt=""
         width={safeWidth}
-        /* Ordmärkets viewBox är 825 x 158. */
-        height={Math.round((safeWidth * 158) / 825)}
+        /* Ordmärkets viewBox är 1192,2 x 184. */
+        height={Math.round((safeWidth * 184) / 1192.2)}
         className="block h-auto w-full"
       />
     </Link>

@@ -195,13 +195,13 @@
   --aga: #74542d;
   --aga-soft: #f5ebdd;
   --aga-border: #d6b57f;
-  /* Knapp: primär åtgärd, orange som på Elpoolen. Texten är marinblå (samma
-     ton som --dark-section): vit på orangen ger bara 2,70:1, marinblått ger
-     6,11:1 mot #e8842c och 5,16:1 mot hover #d97617. Orange text på ljus
-     botten klarar inte 4,5:1, använd text-primary där. */
+  /* Knapp: primär åtgärd, orange med vit text som på Elpoolen (Leons beslut
+     1 november 2026). Vit mot #e8842c ger 2,70:1, vilket klarar 3:1 för stor
+     text först från 18,66 px fet. Orange text på ljus botten klarar inte
+     4,5:1, använd text-primary där. */
   --cta: #e8842c;
   --cta-hover: #d97617;
-  --cta-foreground: #16133a;
+  --cta-foreground: #ffffff;
   /* Övertoning över fotografier, en mörkare marin än --dark-section. CtaBand
      och statistikheron är kontrastkontrollerade mot just den här tonen, så
      den får inte bytas mot --dark-section utan ny kontroll. */
@@ -345,8 +345,7 @@
 }
 
 /* Huvudknapp som på Elpoolen: Sora 600, minst 56 px hög, radie 14 px.
-   Texten är marinblå (6,11:1 mot orange, 5,16:1 vid hover), inte vit som
-   på Elpoolen, där vitt ger 2,70:1. min-height i stället för height, så att
+   Vit text som på Elpoolen. min-height i stället för height, så att
    en knapptext som bryter rad på 320 px växer i stället för att kapas. */
 @utility btn-cta {
   font-family: var(--font-display);
@@ -383,7 +382,7 @@
     outline: none;
     box-shadow:
       0 0 0 2px #ffffff,
-      0 0 0 4px var(--color-cta-foreground);
+      0 0 0 4px #16133a;
   }
 
   &:disabled {
@@ -738,6 +737,87 @@
 @media (max-width: 767px) {
   .brand-logo-responsive {
     width: var(--brand-logo-mobile-width) !important;
+  }
+
+  /* Menyknappen kompakt i mobil, som på Elpoolen. */
+  header.fixed a.bg-cta {
+    padding: 7px 12px !important;
+    font-size: 13px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* Menyn skalas som Elpoolens: ritad för ca 1 440 px och förminskad i steg om 32 px
+   ner till 1 024 px, så att syskonsajternas menyer har samma storlek på alla skärmar.
+   Värdena är desamma som i Elpoolens styles.css. */
+@media (min-width: 1024px) {
+  :root {
+    --hz: 0.717;
+  }
+}
+@media (min-width: 1040px) {
+  :root {
+    --hz: 0.733;
+  }
+}
+@media (min-width: 1072px) {
+  :root {
+    --hz: 0.756;
+  }
+}
+@media (min-width: 1104px) {
+  :root {
+    --hz: 0.778;
+  }
+}
+@media (min-width: 1136px) {
+  :root {
+    --hz: 0.8;
+  }
+}
+@media (min-width: 1168px) {
+  :root {
+    --hz: 0.822;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --hz: 0.844;
+  }
+}
+@media (min-width: 1232px) {
+  :root {
+    --hz: 0.867;
+  }
+}
+@media (min-width: 1264px) {
+  :root {
+    --hz: 0.889;
+  }
+}
+@media (min-width: 1296px) {
+  :root {
+    --hz: 0.911;
+  }
+}
+@media (min-width: 1328px) {
+  :root {
+    --hz: 0.933;
+  }
+}
+@media (min-width: 1360px) {
+  :root {
+    --hz: 0.956;
+  }
+}
+@media (min-width: 1392px) {
+  :root {
+    --hz: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .nav-skala {
+    zoom: var(--hz);
   }
 }
 
