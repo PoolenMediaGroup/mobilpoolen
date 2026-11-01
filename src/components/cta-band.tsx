@@ -55,7 +55,7 @@ export function CtaBand({
         />
       </div>
       {/* Samma luft som Elpoolens bildband: 80 px mobil, 112 px dator. */}
-      <div className="relative mx-auto max-w-[1140px] px-6 py-20 text-center lg:py-28">
+      <div className="relative mx-auto max-w-[1140px] px-6 py-16 text-center lg:py-20">
         <h2
           className="font-bold text-white"
           style={{
