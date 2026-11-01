@@ -1,4 +1,4 @@
-import { useId, useMemo, useState, type ReactNode } from "react";
+import { useId, useMemo, useRef, useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight, Check, MailCheck, Sparkles } from "lucide-react";
 import { OPERATORER } from "@/lib/mobil/data";
@@ -76,7 +76,16 @@ const TOM: Uppgifter = {
   webbplats: "",
 };
 
-const STEG = ["Ditt abonnemang", "Bindning och rabatt", "Så når vi dig"] as const;
+const STEG = [
+  "Ditt abonnemang i dag",
+  "Din surf",
+  "Samtal och sms",
+  "Om abonnemanget",
+  "Bindningstid",
+  "Rabatt och avbetalning",
+  "Så når vi dig",
+] as const;
+const SISTA = STEG.length - 1;
 const MANADER = Array.from({ length: 36 }, (_, i) => i + 1);
 const INPUT =
   "block min-h-[50px] w-full rounded-xl border border-input-border bg-input px-4 text-[16px] focus:outline-none focus:ring-2 focus:ring-primary/40";
@@ -191,14 +200,14 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
     if (s === 0) {
       if (!u.operator) return "Välj din operatör.";
       if (kostnad == null) return "Fyll i vad du betalar per månad.";
+    }
+    if (s === 1) {
       if (!u.surf) return "Välj hur mycket surf du har.";
       if (u.surf === "gb" && behovGb == null) return "Fyll i hur många GB du har.";
     }
-    if (s === 1) {
-      if (!u.bindning) return "Svara på om du har bindningstid.";
-      if (!u.harRabatt) return "Svara på om du har rabatt just nu.";
-    }
-    if (s === 2) {
+    if (s === 4 && !u.bindning) return "Svara på om du har bindningstid.";
+    if (s === 5 && !u.harRabatt) return "Svara på om du har rabatt just nu.";
+    if (s === SISTA) {
       if (!u.namn.trim()) return "Fyll i ditt namn.";
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(u.epost.trim()))
         return "Fyll i en giltig e-postadress.";
@@ -210,14 +219,23 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
     return null;
   }
 
+  const formRef = useRef<HTMLFormElement>(null);
+  function bytSteg(till: number) {
+    setSteg(till);
+    // På mobil kan formulärets topp ha scrollat ur bild när steget blir kortare.
+    const el = formRef.current;
+    if (el && el.getBoundingClientRect().top < 0)
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   function nasta() {
     const f = kontrollera(steg);
     setFel(f);
-    if (!f) setSteg((x) => x + 1);
+    if (!f) bytSteg(steg + 1);
   }
 
   async function skicka() {
-    const f = kontrollera(2);
+    const f = kontrollera(SISTA);
     setFel(f);
     if (f) return;
     setSkickar(true);
@@ -322,10 +340,11 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
 
   return (
     <form
-      className="rounded-[22px] bg-surface p-5 text-foreground shadow-mork sm:p-7"
+      ref={formRef}
+      className="scroll-mt-24 rounded-[22px] bg-surface p-5 text-foreground shadow-mork sm:p-7"
       onSubmit={(e) => {
         e.preventDefault();
-        if (steg < 2) nasta();
+        if (steg < SISTA) nasta();
         else void skicka();
       }}
       noValidate
@@ -335,13 +354,15 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
         <h2 id={`${uid}-rubrik`} className="text-[21px] font-bold sm:text-[23px]">
           {STEG[steg]}
         </h2>
-        <span className="text-[13px] text-foreground/60">Steg {steg + 1} av 3</span>
+        <span className="text-[13px] text-foreground/60">
+          Steg {steg + 1} av {STEG.length}
+        </span>
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-1.5" aria-hidden>
+      <div className="mt-3 flex gap-1.5" aria-hidden>
         {STEG.map((s, i) => (
           <span
             key={s}
-            className={`h-1.5 rounded-full ${i <= steg ? "bg-primary" : "bg-border"}`}
+            className={`h-1.5 flex-1 rounded-full transition-colors ${i <= steg ? "bg-primary" : "bg-border"}`}
           />
         ))}
       </div>
@@ -366,24 +387,6 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
               </select>
             </Falt>
             <Falt
-              id={`${uid}-ab`}
-              etikett={
-                <>
-                  Abonnemangets namn{" "}
-                  <span className="font-normal text-foreground/60">(valfritt)</span>
-                </>
-              }
-            >
-              <input
-                id={`${uid}-ab`}
-                value={u.abonnemang}
-                onChange={(e) => satt("abonnemang", e.target.value)}
-                placeholder="t.ex. Mobil 20 GB"
-                className={INPUT}
-                maxLength={120}
-              />
-            </Falt>
-            <Falt
               id={`${uid}-kost`}
               etikett="Vad betalar du per månad?"
               hjalp="Det som står på fakturan i dag, med eventuell rabatt."
@@ -402,6 +405,11 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 </span>
               </div>
             </Falt>
+          </>
+        )}
+
+        {steg === 1 && (
+          <>
             <Falt etikett="Hur mycket surf ingår?">
               <Knappval
                 namn="Surf"
@@ -428,6 +436,14 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 </div>
               )}
             </Falt>
+          </>
+        )}
+
+        {steg === 2 && (
+          <>
+            <p className="-mt-2 mb-1 text-[14px] text-foreground/65">
+              Allt här är valfritt. Hoppa över det du inte vet.
+            </p>
             <div className="mt-5 grid gap-5 sm:grid-cols-2 [&>div]:mt-0">
               <Falt etikett="Fria samtal?">
                 <Knappval
@@ -454,6 +470,27 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 />
               </Falt>
             </div>
+            <Falt etikett="Samtal till utlandet">
+              <Knappval
+                namn="Samtal till utlandet"
+                varde={u.utlandssamtal}
+                onChange={(v) => satt("utlandssamtal", v)}
+                alternativ={[
+                  { v: "ingar", t: "Ingår" },
+                  { v: "kostar", t: "Kostar extra" },
+                  { v: "anvander_inte", t: "Ringer inte utomlands" },
+                  { v: "vet_ej", t: "Vet ej" },
+                ]}
+              />
+            </Falt>
+          </>
+        )}
+
+        {steg === 3 && (
+          <>
+            <p className="-mt-2 mb-1 text-[14px] text-foreground/65">
+              Också valfritt. Det hjälper oss att föreslå rätt.
+            </p>
             <Falt
               id={`${uid}-eu`}
               etikett={
@@ -477,19 +514,6 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 </span>
               </div>
             </Falt>
-            <Falt etikett="Samtal till utlandet">
-              <Knappval
-                namn="Samtal till utlandet"
-                varde={u.utlandssamtal}
-                onChange={(v) => satt("utlandssamtal", v)}
-                alternativ={[
-                  { v: "ingar", t: "Ingår" },
-                  { v: "kostar", t: "Kostar extra" },
-                  { v: "anvander_inte", t: "Ringer inte utomlands" },
-                  { v: "vet_ej", t: "Vet ej" },
-                ]}
-              />
-            </Falt>
             <Falt
               id={`${uid}-sim`}
               etikett="Hur många SIM-kort har du på abonnemanget?"
@@ -508,10 +532,28 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 ))}
               </select>
             </Falt>
+            <Falt
+              id={`${uid}-ab`}
+              etikett={
+                <>
+                  Abonnemangets namn{" "}
+                  <span className="font-normal text-foreground/60">(valfritt)</span>
+                </>
+              }
+            >
+              <input
+                id={`${uid}-ab`}
+                value={u.abonnemang}
+                onChange={(e) => satt("abonnemang", e.target.value)}
+                placeholder="t.ex. Mobil 20 GB"
+                className={INPUT}
+                maxLength={120}
+              />
+            </Falt>
           </>
         )}
 
-        {steg === 1 && (
+        {steg === 4 && (
           <>
             <Falt etikett="Har du bindningstid?">
               <Knappval
@@ -546,6 +588,24 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 </p>
               )}
             </Falt>
+            <Falt etikett="Uppsägningstid">
+              <Knappval
+                namn="Uppsägningstid"
+                varde={u.uppsagningstid}
+                onChange={(v) => satt("uppsagningstid", v)}
+                alternativ={[
+                  { v: "0", t: "Ingen" },
+                  { v: "1", t: "1 månad" },
+                  { v: "3", t: "3 månader" },
+                  { v: "vet_ej", t: "Vet ej" },
+                ]}
+              />
+            </Falt>
+          </>
+        )}
+
+        {steg === 5 && (
+          <>
             <Falt
               etikett="Har du rabatt eller kampanjpris just nu?"
               hjalp="Till exempel halva priset i sex månader."
@@ -591,19 +651,6 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
                 </div>
               )}
             </Falt>
-            <Falt etikett="Uppsägningstid">
-              <Knappval
-                namn="Uppsägningstid"
-                varde={u.uppsagningstid}
-                onChange={(v) => satt("uppsagningstid", v)}
-                alternativ={[
-                  { v: "0", t: "Ingen" },
-                  { v: "1", t: "1 månad" },
-                  { v: "3", t: "3 månader" },
-                  { v: "vet_ej", t: "Vet ej" },
-                ]}
-              />
-            </Falt>
             <Falt etikett="Betalar du av en mobil via operatören?">
               <Knappval
                 namn="Mobil på avbetalning"
@@ -633,7 +680,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
           </>
         )}
 
-        {steg === 2 && (
+        {steg === SISTA && (
           <>
             <Falt id={`${uid}-namn`} etikett="Namn">
               <input
@@ -719,7 +766,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
         )}
       </div>
 
-      {steg === 0 && spar != null && spar >= 20 && billigast && (
+      {steg === 1 && spar != null && spar >= 20 && billigast && (
         <div
           className="mt-6 flex items-start gap-2 rounded-xl bg-highlight p-4 text-[15px] leading-snug"
           aria-live="polite"
@@ -747,7 +794,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
             type="button"
             onClick={() => {
               setFel(null);
-              setSteg((x) => x - 1);
+              bytSteg(steg - 1);
             }}
             className="inline-flex min-h-12 items-center gap-1.5 rounded-xl border border-border px-4 font-semibold hover:border-primary/50"
           >
@@ -756,7 +803,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
           </button>
         )}
         <button type="submit" disabled={skickar} className="btn-cta flex-1 disabled:opacity-60">
-          {steg < 2 ? (
+          {steg < SISTA ? (
             <>
               Nästa
               <ArrowRight className="h-4 w-4" aria-hidden />
@@ -771,7 +818,7 @@ export function AutopilotFormular({ kalla = "autopilot" }: { kalla?: string }) {
           )}
         </button>
       </div>
-      {(!AUTOPILOT_OPPEN || !AUTOPILOT_LANSERAD) && steg === 2 && (
+      {(!AUTOPILOT_OPPEN || !AUTOPILOT_LANSERAD) && steg === SISTA && (
         <p className="mt-3 text-[12.5px] text-foreground/60">
           Autopilot öppnar inom kort. Anmäl dig nu, så startar din bevakning när vi öppnar.
         </p>
