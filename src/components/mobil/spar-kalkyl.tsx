@@ -178,7 +178,7 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
 
       <div aria-live="polite">
         {svar && basta && (
-          <div className="rounded-xl bg-highlight p-4">
+          <div data-resultat className="rounded-xl bg-highlight p-4">
             <p className="flex items-start gap-2 text-[15px] leading-snug">
               <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden />
               <span>
@@ -206,7 +206,7 @@ export function SparKalkyl({ onResultat }: { onResultat: (r: KalkylResultat) => 
           </div>
         )}
         {svar && !basta && (
-          <div className="rounded-xl bg-highlight p-4 text-[15px] leading-snug">
+          <div data-resultat className="rounded-xl bg-highlight p-4 text-[15px] leading-snug">
             <p className="font-semibold text-foreground">Du betalar redan ett bra pris.</p>
             <p className="mt-1">
               Inget abonnemang med din surf är {procent} % billigare än {kr(svar.nuvarande)} just nu

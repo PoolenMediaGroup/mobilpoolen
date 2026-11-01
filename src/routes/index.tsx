@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { TillbakaKnapp } from "@/components/tillbaka-knapp";
 import { CtaBand } from "@/components/cta-band";
 import { FaqItem } from "@/components/faq-section";
 import { GuideCard } from "@/components/guide-card";
@@ -262,6 +263,7 @@ function Startsida() {
         />
       </main>
       <SiteFooter />
+      <TillbakaKnapp malId="jamfor-form" />
     </div>
   );
 }
@@ -426,7 +428,9 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
               <div className="absolute right-3 top-0 z-20 -translate-y-1/2 sm:right-6">
                 <SparPill />
               </div>
-              <SparKalkyl onResultat={onResultat} />
+              <div id="jamfor-form" className="scroll-mt-24">
+                <SparKalkyl onResultat={onResultat} />
+              </div>
               <div
                 className="text-center"
                 style={{ marginTop: 12, fontSize: 13, color: "#DCD8F5" }}
