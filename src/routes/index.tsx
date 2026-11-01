@@ -31,7 +31,7 @@ import { fragorUrRegistret } from "@/lib/faq";
 import { PUBLISHED_GUIDES } from "@/lib/guides";
 import { getGuideImage } from "@/lib/guide-images";
 import { MOBILNAT, OPERATORER, PRIVATA, SENAST_KONTROLLERAD, operator } from "@/lib/mobil/data";
-import { arVillkorat, datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
+import { datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
 import { AUTOPILOT_LANSERAD } from "@/lib/autopilot";
 import type { NatId } from "@/lib/mobil/typer";
 
@@ -93,9 +93,6 @@ const STARTSIDANS_GUIDER = (() => {
 })();
 
 const ANTAL_OPERATORER = new Set(PRIVATA.map((a) => a.operator)).size;
-// Samma antal som listan nedan visar: abonnemang som alla kan teckna.
-const ALLMANNA = PRIVATA.filter((a) => !arVillkorat(a)).length;
-const VILLKORADE = PRIVATA.length - ALLMANNA;
 
 function Startsida() {
   const [forval, setForval] = useState<Forval>({});
@@ -232,9 +229,8 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
             Jämför mobilabonnemang och betala mindre
           </h1>
           <p className="mt-5 max-w-[500px] text-[17px] leading-relaxed text-white/80 sm:text-[19px]">
-            {ALLMANNA} abonnemang från {ANTAL_OPERATORER} operatörer
-            {billigast ? `, från ${kr(snittForstaAret(billigast.a))} i månaden` : ""}. Vi visar vad
-            du betalar efter kampanjen, inte bara första månaden.
+            Se vad mobilen faktiskt kostar, inte bara första månaden. {ANTAL_OPERATORER} operatörer
+            {billigast ? `, från ${kr(snittForstaAret(billigast.a))}/mån` : ""}.
           </p>
           <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[15px] font-medium text-white/90">
             {["Gratis och utan konto", "Ingen betald placering", "Källa på varje pris"].map((t) => (
