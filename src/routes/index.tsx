@@ -216,7 +216,7 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
           "radial-gradient(1200px 600px at 85% -10%, color-mix(in oklab, white 12%, transparent), transparent 60%), radial-gradient(900px 500px at -10% 120%, color-mix(in oklab, var(--dark-section) 45%, transparent), transparent 60%)",
       }}
     >
-      <div className="relative mx-auto grid max-w-[1140px] gap-10 px-6 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-16 lg:pb-24 lg:pt-20">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:px-8 pb-14 pt-10 sm:pt-14 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-center lg:gap-16 lg:pb-24 lg:pt-20">
         <div>
           <h1
             className="max-w-[560px] font-bold text-white"
@@ -257,7 +257,7 @@ function OperatorRad() {
   const lista = OPERATORER.filter((o) => o.aktiv && PRIVATA.some((a) => a.operator === o.slug));
   return (
     <section className="border-b border-border bg-surface">
-      <div className="mx-auto flex max-w-[1140px] flex-col gap-3 px-6 py-6 lg:flex-row lg:items-center lg:gap-8">
+      <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 sm:px-6 lg:px-8 py-6 lg:flex-row lg:items-center lg:gap-8">
         <p className="shrink-0 text-[14px] font-semibold text-muted-foreground">
           Vi jämför {lista.length} operatörer
         </p>
