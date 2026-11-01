@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Ersattningsrad } from "@/components/ersattningsrad";
+import { FragaAiKort } from "@/components/fraga-ai-knapp";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Clock, Plus } from "lucide-react";
 import { SiteNav } from "@/components/site-nav";
@@ -542,46 +543,107 @@ export function GuideTable({
 export function FaqAccordion({
   items,
   antal,
+  fot = true,
 }: {
   items: readonly { q: string; a: ReactNode; kalla?: string }[];
   antal?: number;
+  /** Kortet "Hittar du inte svaret?" under frågorna. Av där sidan redan har det bredvid. */
+  fot?: boolean;
 }) {
   return (
     <div className="mb-6">
       <div className="space-y-3">
-        {sidansFragor(items, antal ?? items.length).map((it) => (
+        {sidansFragor(items, antal ?? items.length).map((it, i) => (
           <details
             key={it.q}
-            className="group relative overflow-hidden rounded-2xl border border-border bg-white p-5 transition-[border-color,box-shadow] duration-300 open:border-primary/30 open:shadow-[0_24px_48px_-24px_rgba(59,40,204,0.45)] hover:border-primary/30 sm:px-6"
+            className="group relative overflow-hidden rounded-2xl border border-border bg-white p-5 transition-[border-color,box-shadow,transform] duration-300 open:border-primary/30 open:shadow-[0_24px_48px_-24px_rgba(59,40,204,0.45)] hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-[0_18px_36px_-22px_rgba(22,19,58,0.35)] open:hover:translate-y-0 motion-reduce:hover:translate-y-0 sm:px-6"
           >
             <span
               aria-hidden
               className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-gradient-to-b from-primary to-[#b06cf5] transition-transform duration-300 group-open:scale-y-100"
             />
             {/* Plustecknet vrids till ett kryss när frågan är öppen, som på Elpoolen. */}
-            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
-              {it.q}
+            <summary className="flex min-h-11 cursor-pointer list-none items-center gap-4 text-[17px] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+              <span
+                aria-hidden
+                className="text-gradient hidden w-8 shrink-0 font-display text-[18px] font-bold tabular-nums sm:block"
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="flex-1">{it.q}</span>
               {/* Ikon, inte ett tecken, så att frågans text i HTML:en förblir ren. */}
               <span
                 aria-hidden
-                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-highlight text-primary transition-all duration-300 group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-primary group-open:to-[#7c63ff] group-open:text-white motion-reduce:transition-none"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-highlight text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white group-open:rotate-45 group-open:bg-gradient-to-br group-open:from-primary group-open:to-[#7c63ff] group-open:text-white motion-reduce:transition-none"
               >
                 <Plus className="h-4.5 w-4.5" />
               </span>
             </summary>
-            <p className="mt-3 text-[16px] text-muted-foreground">{it.a}</p>
-            {it.kalla ? (
-              <p className="mt-2 text-[14px] text-muted-foreground">{`Källa: ${it.kalla}.`}</p>
-            ) : null}
+            <div className="sm:pl-12">
+              <p className="mt-3 text-[16px] leading-relaxed text-muted-foreground">{it.a}</p>
+              {it.kalla ? (
+                <p className="mt-2 text-[14px] text-muted-foreground">{`Källa: ${it.kalla}.`}</p>
+              ) : null}
+            </div>
           </details>
         ))}
       </div>
-      <Link
-        to="/faq"
-        className="mt-5 inline-flex min-h-11 items-center text-[15px] font-semibold text-primary underline underline-offset-2"
-      >
-        Fler frågor och svar →
-      </Link>
+      {fot && <FragaAiKort className="mt-6" />}
     </div>
+  );
+}
+
+/**
+ * FAQ-sektion för undersidorna, som startsidans: rubrik med gradientord och
+ * AI-kortet i en klistrig vänsterkolumn, frågorna till höger.
+ */
+export function FaqSektion({
+  items,
+  rubrik = "Vanliga frågor",
+  accent,
+  className = "",
+  children,
+}: {
+  items: readonly { q: string; a: ReactNode; kalla?: string }[];
+  /** Rubrikens första del. */
+  rubrik?: string;
+  /** Ord i gradient efter rubriken, t.ex. operatörens namn. */
+  accent?: string;
+  className?: string;
+  children?: ReactNode;
+}) {
+  return (
+    <section className={`bg-mesh-light ${className}`}>
+      <div className="mx-auto grid max-w-[1140px] gap-10 px-6 py-14 lg:grid-cols-[minmax(0,340px)_minmax(0,1fr)] lg:gap-16 lg:py-20">
+        <div className="lg:sticky lg:top-28 lg:self-start">
+          <h2
+            className="font-bold text-foreground"
+            style={{
+              fontSize: "clamp(30px, 4vw, 42px)",
+              lineHeight: 1.08,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            {rubrik}
+            {accent ? (
+              <>
+                {" "}
+                <span className="text-gradient">{accent}</span>
+              </>
+            ) : null}
+          </h2>
+          <span
+            aria-hidden
+            className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
+          />
+          <FragaAiKort className="mt-8 hidden lg:block" />
+        </div>
+        <div className="min-w-0">
+          <FaqAccordion items={items} fot={false} />
+          <FragaAiKort className="mt-6 lg:hidden" />
+          {children}
+        </div>
+      </div>
+    </section>
   );
 }

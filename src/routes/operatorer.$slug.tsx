@@ -4,7 +4,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumbs } from "@/components/page-breadcrumbs";
 import { CtaBand } from "@/components/cta-band";
-import { FaqAccordion } from "@/components/guide-page";
+import { FaqSektion } from "@/components/guide-page";
 import { Jamforelse } from "@/components/mobil/jamforelse";
 import { HeroNyckeltal } from "@/components/mobil/hero-nyckeltal";
 import { OperatorMonogram } from "@/components/mobil/operator-monogram";
@@ -394,10 +394,8 @@ function OperatorSida() {
           </div>
         </section>
 
-        <section className="border-t border-border bg-surface py-14 lg:py-20">
-          <div className="mx-auto max-w-[760px] px-6">
-            <h2 className="mb-6 font-bold">Vanliga frågor om {o.namn}</h2>
-            <FaqAccordion items={faq} />
+        <FaqSektion items={faq} rubrik="Vanliga frågor om" accent={o.namn}>
+          <div>
             <h2 className="mt-12 text-[20px] font-bold">Källor</h2>
             <ul className="mt-3 space-y-1.5 text-[14px] text-foreground/70">
               {o.kallor.slice(0, 8).map((k) => (
@@ -421,7 +419,7 @@ function OperatorSida() {
               , så rättar vi.
             </p>
           </div>
-        </section>
+        </FaqSektion>
 
         <CtaBand
           rubrik={`Billigare än ${o.namn}?`}

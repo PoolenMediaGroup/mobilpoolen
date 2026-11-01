@@ -5,7 +5,7 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { PageBreadcrumbs, type Crumb } from "@/components/page-breadcrumbs";
 import { CtaBand } from "@/components/cta-band";
-import { FaqAccordion } from "@/components/guide-page";
+import { FaqSektion } from "@/components/guide-page";
 import type { Bildnyckel } from "@/lib/bildbank";
 import { datumText } from "@/lib/mobil/berakna";
 import { SENAST_KONTROLLERAD } from "@/lib/mobil/data";
@@ -105,14 +105,7 @@ export function PelarSida({
           </section>
         )}
 
-        {faq && faq.length > 0 && (
-          <section className="py-14 lg:py-20">
-            <div className="mx-auto max-w-[760px] px-6">
-              <h2 className="mb-6 font-bold">Vanliga frågor</h2>
-              <FaqAccordion items={faq} />
-            </div>
-          </section>
-        )}
+        {faq && faq.length > 0 && <FaqSektion items={faq} rubrik="Vanliga" accent="frågor" />}
 
         {lankar && lankar.length > 0 && (
           <section className="pb-16 lg:pb-24">
