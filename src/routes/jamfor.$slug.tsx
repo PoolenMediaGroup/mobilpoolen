@@ -180,7 +180,7 @@ function Sida() {
                   key={o.slug}
                   to="/operatorer/$slug"
                   params={{ slug: o.slug }}
-                  className="block rounded-2xl border border-border bg-surface p-5 transition-shadow hover:shadow-kort"
+                  className="block rounded-2xl border border-border bg-white p-5 shadow-kort-litet transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_22px_44px_-20px_rgba(59,40,204,0.45)] motion-reduce:hover:translate-y-0"
                 >
                   <div className="flex items-center gap-3">
                     <OperatorMonogram namn={o.namn} />

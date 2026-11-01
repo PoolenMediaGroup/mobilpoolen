@@ -9,6 +9,7 @@ import { FaqAccordion } from "@/components/guide-page";
 import type { Bildnyckel } from "@/lib/bildbank";
 import { datumText } from "@/lib/mobil/berakna";
 import { SENAST_KONTROLLERAD } from "@/lib/mobil/data";
+import { LankKort } from "@/components/mobil/lank-kort";
 import { HeroNyckeltal } from "@/components/mobil/hero-nyckeltal";
 
 export type Nyckeltal = { varde: string; text: string };
@@ -117,21 +118,10 @@ export function PelarSida({
           <section className="pb-16 lg:pb-24">
             <div className="mx-auto max-w-[1140px] px-6">
               <h2 className="mb-6 text-[24px] font-bold sm:text-[28px]">Läs vidare</h2>
-              <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {lankar.map((l) => (
                   <li key={l.href}>
-                    <Link
-                      to={l.href as never}
-                      className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-5 transition-shadow hover:shadow-kort"
-                    >
-                      <span className="flex items-center justify-between gap-3 font-display text-[17px] font-bold text-foreground group-hover:text-primary">
-                        {l.label}
-                        <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
-                      </span>
-                      {l.text && (
-                        <span className="mt-2 text-[14.5px] text-foreground/70">{l.text}</span>
-                      )}
-                    </Link>
+                    <LankKort href={l.href} label={l.label} text={l.text} />
                   </li>
                 ))}
               </ul>

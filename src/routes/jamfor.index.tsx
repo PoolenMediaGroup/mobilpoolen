@@ -44,7 +44,7 @@ function Sida() {
                 <Link
                   to="/jamfor/$slug"
                   params={{ slug: parSlug(p) }}
-                  className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-5 transition-shadow hover:shadow-kort"
+                  className="group flex h-full flex-col rounded-2xl border border-border bg-white p-5 shadow-kort-litet transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_22px_44px_-20px_rgba(59,40,204,0.45)] motion-reduce:hover:translate-y-0"
                 >
                   <span className="flex items-center justify-between gap-3 font-display text-[18px] font-bold group-hover:text-primary">
                     {a.namn} eller {b.namn}
