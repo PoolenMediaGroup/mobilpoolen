@@ -27,7 +27,6 @@ const TRAIL = [
 ];
 
 // Hur mycket priset stiger när kampanjen tar slut, ur prisindexet (median i kronor).
-const HOJNING = PRISINDEX_HISTORIK.at(-1)?.nyckeltal.medianHojningKr ?? null;
 const SNITT_HOJNING = PRISINDEX_HISTORIK.at(-1)?.nyckeltal.snittHojning ?? null;
 
 const FAQ = [
@@ -128,7 +127,10 @@ function Sida() {
       <SiteNav />
       <main>
         {/* ---------- Hero ---------- */}
-        <section className="relative overflow-hidden hero-mesh text-white">
+        <section
+          // Samma höjd som startsidans hero: en vit kant syns längst ner på dator.
+          className="relative overflow-hidden hero-mesh text-white lg:flex lg:min-h-[calc(100svh-128px-var(--nav-extra,0px))] lg:flex-col lg:justify-center"
+        >
           <div aria-hidden className="pointer-events-none absolute inset-0">
             <div
               className="svava absolute -right-40 -top-40 h-[560px] w-[560px] rounded-full opacity-60 blur-3xl"
@@ -143,8 +145,8 @@ function Sida() {
               }}
             />
           </div>
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-16 lg:px-8 lg:pb-24 lg:pt-12">
-            <div className="lg:pt-6">
+          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-16 lg:px-8 lg:py-12">
+            <div>
               <PageBreadcrumbs trail={TRAIL} tone="dark" />
               {!AUTOPILOT_LANSERAD && (
                 <span className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[13px] font-semibold text-white backdrop-blur">
@@ -167,11 +169,8 @@ function Sida() {
                 <br />
                 <span className="text-gradient-ljus">Vi ser till att du byter i tid.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-white/85 sm:text-[18px]">
-                De flesta abonnemang börjar med ett lågt kampanjpris och blir dyrare när rabatten
-                eller bindningstiden tar slut
-                {HOJNING != null ? `, i median ${kr(HOJNING)} mer i månaden` : ""}. Autopilot håller
-                koll åt dig och mejlar i god tid med de abonnemang som passar dig bäst just då.
+              <p className="mt-6 max-w-xl text-[18px] leading-snug text-white/90 sm:text-[20px]">
+                Kampanjpriset tar slut. Vi mejlar dig innan det gör det.
               </p>
               <ul className="mt-8 space-y-3.5">
                 {[
@@ -190,12 +189,6 @@ function Sida() {
                   </li>
                 ))}
               </ul>
-              {!AUTOPILOT_LANSERAD && (
-                <p className="mt-6 max-w-xl text-[14px] text-white/65">
-                  Anmäl dig nu, så startar bevakningen när vi öppnar. Fram till dess skickar vi inga
-                  mejl.
-                </p>
-              )}
             </div>
             <div id="starta" className="relative scroll-mt-24">
               <div
@@ -233,9 +226,10 @@ function Sida() {
                       className="mt-4 block h-1 w-14 rounded-full bg-gradient-to-r from-primary to-[#b06cf5]"
                     />
                     <p className="mt-5 text-[16.5px] leading-relaxed text-foreground/85">
-                      Ett kampanjpris gäller oftast i tre till tolv månader. Sedan betalar du
-                      ordinarie pris, och bindningstiden kan löpa vidare. Det är där pengarna
-                      försvinner, och det är där Autopilot påminner dig.
+                      De flesta abonnemang börjar med ett lågt kampanjpris som gäller i tre till
+                      tolv månader. Sedan betalar du ordinarie pris, och bindningstiden kan löpa
+                      vidare. Det är där pengarna försvinner. Autopilot håller koll åt dig och
+                      mejlar i god tid med de abonnemang som passar dig bäst just då.
                     </p>
                     <p className="mt-4 text-[13.5px] text-foreground/60">
                       Källa:{" "}
