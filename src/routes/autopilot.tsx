@@ -181,7 +181,7 @@ function Sida() {
                 >
                   Kampanjpriset tar slut. Vi mejlar dig innan det gör det.
                 </p>
-                <ul className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:gap-3.5">
+                <ul className="mt-7 flex flex-col gap-3 sm:mt-10 sm:gap-4 lg:mt-14">
                   {[
                     "Gratis, utan bindning och utan säljare som ringer",
                     "Påminnelse en månad innan priset stiger",
@@ -205,7 +205,7 @@ function Sida() {
                 </ul>
                 {!AUTOPILOT_LANSERAD && (
                   <div
-                    className="mt-3.5 inline-flex items-center gap-3 self-start sm:mt-5"
+                    className="mt-5 inline-flex items-center gap-3 self-start sm:mt-7"
                     style={{ color: "rgba(226,222,255,0.85)", fontSize: 12.5 }}
                   >
                     <span
