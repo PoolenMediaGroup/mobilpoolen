@@ -6,6 +6,7 @@ import { MOBILNAT, OPERATORER } from "@/lib/mobil/data";
 import { GILTIGA_PAR, parSlug } from "@/lib/mobil/sidtexter";
 import { SURF_NIVAER } from "@/lib/mobil/surf";
 import { TELEFONMODELLER } from "@/lib/mobil/telefon-data";
+import { HAR_NYHETER, NYHETER, NYHETER_SENAST_ANDRAD } from "@/lib/nyheter";
 
 const BASE_URL = "https://mobilpoolen.se";
 
@@ -28,6 +29,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...Object.keys(MOBILNAT).map((id) => ({ path: `/nat/${id}`, lastmod: "2026-10-29" })),
           ...GILTIGA_PAR.map((p) => ({ path: `/jamfor/${parSlug(p)}`, lastmod: "2026-10-29" })),
           ...PUBLISHED_GUIDES.map((g) => ({ path: `/guider/${g.slug}`, lastmod: g.updatedIso })),
+          // /nyheter står med först när det finns minst en nyhet (tom lista är noindex).
+          ...(HAR_NYHETER ? [{ path: "/nyheter", lastmod: NYHETER_SENAST_ANDRAD }] : []),
+          ...NYHETER.map((n) => ({ path: `/nyheter/${n.slug}`, lastmod: n.uppdateradIso })),
         ];
         const urls = entries.map(
           (e) =>

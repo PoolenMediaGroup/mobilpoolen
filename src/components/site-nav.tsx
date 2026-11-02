@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/brand-logo";
+import { HAR_NYHETER } from "@/lib/nyheter";
 
 type NavLank = { href: string; label: string };
 type NavKolumn = { rubrik?: string; lankar: NavLank[] };
@@ -89,6 +90,7 @@ const NAV: NavPost[] = [
       {
         lankar: [
           { href: "/guider", label: "Alla guider" },
+          ...(HAR_NYHETER ? [{ href: "/nyheter", label: "Nyheter" }] : []),
           { href: "/verktyg", label: "Verktyg och kalkylatorer" },
           { href: "/prisindex", label: "Prisindex" },
           { href: "/faq", label: "Frågor och svar" },

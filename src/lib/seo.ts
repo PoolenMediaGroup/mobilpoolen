@@ -104,6 +104,41 @@ export function articleJsonLd(input: {
   });
 }
 
+/** NewsArticle för en nyhet under /nyheter. Källorna går in som citation. */
+export function newsArticleJsonLd(a: {
+  title: string;
+  description: string;
+  path: string;
+  /** "YYYY-MM-DD" */
+  publishedIso: string;
+  updatedIso: string;
+  image?: string;
+  citation?: string[];
+}): Tag {
+  const url = absoluteUrl(a.path);
+  return jsonLdScript({
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: a.title,
+    description: a.description,
+    mainEntityOfPage: url,
+    url,
+    datePublished: a.publishedIso,
+    dateModified: a.updatedIso,
+    inLanguage: "sv-SE",
+    image: absoluteUrl(a.image ?? "/og-image.png"),
+    author: {
+      "@type": "Person",
+      "@id": "https://mobilpoolen.se/om-oss#leon",
+      name: "Leon Hallström",
+      jobTitle: "Grundare",
+      url: "https://mobilpoolen.se/skribent/leon-hallstrom",
+    },
+    publisher: { "@id": "https://mobilpoolen.se/#organization" },
+    ...(a.citation?.length ? { citation: a.citation } : {}),
+  });
+}
+
 /**
  * FAQPage byggd från samma data som visas i UI:t. En källrad som visas under
  * svaret följer med i svarstexten.
