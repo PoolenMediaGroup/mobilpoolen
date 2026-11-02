@@ -80,6 +80,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 7. Uppdatera `src/lib/sidor.ts`, `public/llms.txt` och datum när innehåll ändras.
 
 ## Design
+- **Sidfoten har sex länkar i varje kolumn** på Elpoolen, Larmpoolen och Mobilpoolen (Leons beslut 2 november 2026), så att kolumnerna blir lika långa på alla sajter. Ny länk i en kolumn: ta bort en annan i samma kolumn. Om oss är densamma på alla tre: Om <sajten>, Så fungerar det, Så jämför vi, Så tjänar vi pengar (Elpoolen: Energispartips), Frågor och svar, Kontakt. Testet `tests/sidfot.test.ts` kontrollerar antalet.
 
 - Indigo (`--primary: #3b28cc`) är enda mättade färgen, orange (`--cta`) bara för huvudknappar. Mörka sektioner i djup indigo (`--dark-section: #16133a`). Typsnitt som Elpoolen: Inter och Sora. Ordmärket "mobilpoolen." med orange punkt (`src/assets/mobilpoolen-logo.svg`).
 - Inga versala etiketter ovanför rubriker. Rubriken bär sektionen själv.
