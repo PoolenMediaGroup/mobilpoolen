@@ -114,7 +114,9 @@ const ANTAL_OPERATORER = new Set(PRIVATA.map((a) => a.operator)).size;
 
 function Startsida() {
   const [forval, setForval] = useState<Forval>({});
+  const [flik, setFlik] = useState<Flik>("alla");
   const onResultat = (r: KalkylResultat) => {
+    setFlik("alla");
     setForval(
       r.behovGb >= 1000
         ? { surf: "obegransad", maxSnitt: r.maxSnitt, sortering: "snitt-ar" }
@@ -129,67 +131,10 @@ function Startsida() {
         <Hero onResultat={onResultat} />
         <OperatorRad />
 
-        {/* Jämförelsen: rubriken på ett mörkt band och filterpanelen som flyter
-            ut över kanten, så att sektionen bryter mot de ljusa runt omkring. */}
-        <section id="alla" className="scroll-mt-20">
-          <div className="relative overflow-hidden hero-mesh pb-28 pt-14 text-white lg:pb-32 lg:pt-20">
-            <div className="mx-auto w-full max-w-[1140px] px-6">
-              <div className="flex flex-wrap items-end justify-between gap-6">
-                <div>
-                  <h2
-                    className="max-w-[760px] font-bold text-white"
-                    style={{
-                      fontSize: "clamp(30px, 4.2vw, 44px)",
-                      lineHeight: 1.12,
-                      letterSpacing: "-0.025em",
-                    }}
-                  >
-                    Alla mobilabonnemang, sorterade efter vad du faktiskt betalar
-                  </h2>
-                  <p className="mt-4 max-w-[640px] text-[17px] leading-relaxed text-dark-muted">
-                    Kampanjens längd och startavgiften är inräknade. Det billigaste i dag är inte
-                    alltid det billigaste på ett år.
-                  </p>
-                </div>
-                <dl className="flex gap-6 sm:gap-8">
-                  {[
-                    [String(ALLMANNA), "abonnemang"],
-                    [String(ANTAL_OPERATORER), "operatörer"],
-                    [kortDatum(SENAST_KONTROLLERAD), "senast kontrollerat"],
-                  ].map(([v, t]) => (
-                    <div key={t}>
-                      <dt className="sr-only">{t}</dt>
-                      <dd className="font-display text-[26px] font-bold leading-none text-white sm:text-[30px]">
-                        {v}
-                      </dd>
-                      <dd className="mt-1.5 text-[12.5px] text-dark-muted">{t}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            </div>
-          </div>
-          <div className="relative -mt-24 pb-14 lg:pb-20">
-            <div className="mx-auto w-full max-w-[1140px] px-6">
-              <Jamforelse forval={forval} id="lista" />
-            </div>
-          </div>
-        </section>
+        <PriserOchAvtal forval={forval} flik={flik} setFlik={setFlik} fore={<SaFungerarDet />} />
 
         <AutopilotTeaser />
 
-        <section className="bg-surface">
-          <SectionShell>
-            <SectionHeader
-              title="Billigaste mobilabonnemanget per surfmängd"
-              sub="Det billigaste abonnemanget som ger minst så här mycket surf, räknat som snittpris per månad första året."
-            />
-            <BilligastTabell />
-            <Genvagar />
-          </SectionShell>
-        </section>
-
-        <SaFungerarDet />
         <NatSektion />
         <ForetagBand />
 
@@ -606,6 +551,136 @@ function Genvagar() {
   );
 }
 
+/* ---------------- Priser och avtal (flikar) ---------------- */
+
+type Flik = "alla" | "surf";
+
+const FLIKAR: { id: Flik; label: string; rubrik: string; ingress: string }[] = [
+  {
+    id: "alla",
+    label: "Alla abonnemang",
+    rubrik: "Alla mobilabonnemang, sorterade efter vad du faktiskt betalar",
+    ingress:
+      "Kampanjens längd och startavgiften är inräknade. Det billigaste i dag är inte alltid det billigaste på ett år.",
+  },
+  {
+    id: "surf",
+    label: "Billigast per surfmängd",
+    rubrik: "Billigaste mobilabonnemanget per surfmängd",
+    ingress:
+      "Det billigaste abonnemanget som ger minst så här mycket surf, räknat som snittpris per månad första året.",
+  },
+];
+
+/**
+ * Jämförelsen och tabellen per surfmängd under två flikar. Båda panelerna
+ * renderas i HTML:en (den dolda med `hidden`), så att sökmotorer och AI-tjänster
+ * ser både listan och tabellen.
+ */
+function PriserOchAvtal({
+  forval,
+  flik,
+  setFlik,
+  fore,
+}: {
+  forval: Forval;
+  flik: Flik;
+  setFlik: (f: Flik) => void;
+  /** Visas överst på samma mörka band, så att stegen och jämförelsen hänger ihop. */
+  fore?: React.ReactNode;
+}) {
+  const aktiv = FLIKAR.find((f) => f.id === flik) ?? FLIKAR[0];
+  const tangent = (e: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+    e.preventDefault();
+    const i = FLIKAR.findIndex((f) => f.id === flik);
+    const nasta = FLIKAR[(i + (e.key === "ArrowRight" ? 1 : FLIKAR.length - 1)) % FLIKAR.length];
+    setFlik(nasta.id);
+    document.getElementById(`flik-${nasta.id}`)?.focus();
+  };
+  return (
+    <section>
+      <div className="relative overflow-hidden hero-mesh pb-28 text-white lg:pb-32">
+        {fore}
+        <div id="alla" className="mx-auto w-full max-w-[1140px] scroll-mt-20 px-6 pt-4 lg:pt-6">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <h2
+                className="max-w-[760px] font-bold text-white"
+                style={{
+                  fontSize: "clamp(30px, 4.2vw, 44px)",
+                  lineHeight: 1.12,
+                  letterSpacing: "-0.025em",
+                }}
+              >
+                {aktiv.rubrik}
+              </h2>
+              <p className="mt-4 max-w-[640px] text-[17px] leading-relaxed text-dark-muted">
+                {aktiv.ingress}
+              </p>
+            </div>
+            <dl className="flex gap-6 sm:gap-8">
+              {[
+                [String(ALLMANNA), "abonnemang"],
+                [String(ANTAL_OPERATORER), "operatörer"],
+                [kortDatum(SENAST_KONTROLLERAD), "senast kontrollerat"],
+              ].map(([v, t]) => (
+                <div key={t}>
+                  <dt className="sr-only">{t}</dt>
+                  <dd className="font-display text-[26px] font-bold leading-none text-white sm:text-[30px]">
+                    {v}
+                  </dd>
+                  <dd className="mt-1.5 text-[12.5px] text-dark-muted">{t}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+          <div
+            role="tablist"
+            aria-label="Priser och avtal"
+            className="mt-8 inline-flex max-w-full gap-1 overflow-x-auto rounded-full bg-white/10 p-1 ring-1 ring-white/15 [scrollbar-width:none]"
+          >
+            {FLIKAR.map((f) => {
+              const vald = f.id === flik;
+              return (
+                <button
+                  key={f.id}
+                  id={`flik-${f.id}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={vald}
+                  aria-controls={`panel-${f.id}`}
+                  tabIndex={vald ? 0 : -1}
+                  onClick={() => setFlik(f.id)}
+                  onKeyDown={tangent}
+                  className={`inline-flex min-h-11 shrink-0 items-center rounded-full px-5 font-display text-[15px] font-semibold transition-colors ${
+                    vald ? "bg-white text-primary shadow-sm" : "text-white/85 hover:text-white"
+                  }`}
+                >
+                  {f.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <div className="relative -mt-24 pb-14 lg:pb-20">
+        <div className="mx-auto w-full max-w-[1140px] px-6">
+          <div id="panel-alla" role="tabpanel" aria-labelledby="flik-alla" hidden={flik !== "alla"}>
+            <Jamforelse forval={forval} id="lista" />
+          </div>
+          <div id="panel-surf" role="tabpanel" aria-labelledby="flik-surf" hidden={flik !== "surf"}>
+            <div className="rounded-[22px] bg-surface p-4 shadow-[0_30px_60px_-24px_rgba(22,19,58,0.35)] ring-1 ring-[#16133a]/[0.06] sm:p-6">
+              <BilligastTabell />
+              <Genvagar />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /* ---------------- Så fungerar det ---------------- */
 
 function SaFungerarDet() {
@@ -630,7 +705,7 @@ function SaFungerarDet() {
     },
   ];
   return (
-    <section className="hero-mesh text-white">
+    <div className="text-white">
       <SectionShell>
         <SectionHeader
           dark
@@ -675,7 +750,7 @@ function SaFungerarDet() {
           ))}
         </ol>
       </SectionShell>
-    </section>
+    </div>
   );
 }
 
