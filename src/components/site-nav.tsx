@@ -6,9 +6,17 @@ import { BrandLogo } from "@/components/brand-logo";
 type NavLank = { href: string; label: string };
 type NavKolumn = { rubrik?: string; lankar: NavLank[] };
 /** En post är antingen en direktlänk (href) eller en dropdown (kolumner). */
-type NavPost = { label: string; href?: string; hash?: string; kolumner?: NavKolumn[] };
+type NavPost = {
+  label: string;
+  href?: string;
+  hash?: string;
+  kolumner?: NavKolumn[];
+  /** Visar en liten NY-bricka efter texten, som på Elpoolen. */
+  ny?: boolean;
+};
 
 const NAV: NavPost[] = [
+  { label: "Autopilot", href: "/autopilot", ny: true },
   {
     label: "Jämför",
     kolumner: [
@@ -89,7 +97,6 @@ const NAV: NavPost[] = [
       },
     ],
   },
-  { label: "Autopilot", href: "/autopilot" },
   {
     label: "Företag",
     kolumner: [
@@ -107,6 +114,17 @@ const NAV: NavPost[] = [
     ],
   },
 ];
+
+function NyBricka() {
+  return (
+    <span
+      className="ml-2 inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-bold leading-none tracking-wide"
+      style={{ color: "var(--cta)", background: "rgba(232,132,44,0.14)" }}
+    >
+      NY
+    </span>
+  );
+}
 
 const linkClass =
   "relative inline-flex items-center text-[15px] font-medium text-muted-foreground hover:text-primary transition-colors motion-reduce:transition-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm";
@@ -250,6 +268,7 @@ export function SiteNav() {
                     className={`${linkClass} h-11 ${active ? "text-primary font-semibold" : ""}`}
                   >
                     {post.label}
+                    {post.ny && <NyBricka />}
                     {active && activeIndicator}
                   </Link>
                 );
@@ -403,6 +422,7 @@ export function SiteNav() {
                     }`}
                   >
                     {post.label}
+                    {post.ny && <NyBricka />}
                   </Link>
                 );
               }
