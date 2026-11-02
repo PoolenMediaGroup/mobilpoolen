@@ -48,6 +48,11 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 - Förslagen i mejlen kommer från `/api/autopilot/forslag` (`src/lib/mobil/autopilot-forslag.ts`), så de följer prisdatan.
 - Ändringar som rör formuläret, kunddata, mejlutskicken eller databasens struktur: beskriv dem tydligt i PR-texten. Claude mergar själv när allt är grönt (se Arbetssätt i git).
 
+## Nyheter
+
+- /nyheter, /nyheter/<slug> och /nyheter/rss.xml byggs ur registret `src/lib/nyheter.ts` (samma uppbyggnad som Elpoolens). Så länge det är tomt är /nyheter noindex och syns inte i meny eller sitemap.
+- Nyhetsroboten är en schemalagd uppgift som körs fyra gånger om dagen och följer `docs/nyhetsroboten.md`. Ändra reglerna där och i kommentaren i `nyheter.ts` samtidigt.
+
 ## Stack
 
 - TanStack Start (SSR) + React + Tailwind. Byggs med Nitro för Cloudflare Workers (worker `mobilpoolen`, `wrangler.jsonc`).

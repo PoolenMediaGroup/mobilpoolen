@@ -42,6 +42,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as VerktygIndexRouteImport } from './routes/verktyg.index'
 import { Route as SagaUppIndexRouteImport } from './routes/saga-upp.index'
 import { Route as OperatorerIndexRouteImport } from './routes/operatorer.index'
+import { Route as NyheterIndexRouteImport } from './routes/nyheter.index'
 import { Route as NatIndexRouteImport } from './routes/nat.index'
 import { Route as MobilMedAbonnemangIndexRouteImport } from './routes/mobil-med-abonnemang.index'
 import { Route as JamforIndexRouteImport } from './routes/jamfor.index'
@@ -54,6 +55,8 @@ import { Route as SurfGbRouteImport } from './routes/surf.$gb'
 import { Route as SkribentLeonHallstromRouteImport } from './routes/skribent.leon-hallstrom'
 import { Route as SagaUppSlugRouteImport } from './routes/saga-upp.$slug'
 import { Route as OperatorerSlugRouteImport } from './routes/operatorer.$slug'
+import { Route as NyheterRssDotxmlRouteImport } from './routes/nyheter.rss[.]xml'
+import { Route as NyheterSlugRouteImport } from './routes/nyheter.$slug'
 import { Route as NatSlugRouteImport } from './routes/nat.$slug'
 import { Route as MobilMedAbonnemangModellRouteImport } from './routes/mobil-med-abonnemang.$modell'
 import { Route as JamforSlugRouteImport } from './routes/jamfor.$slug'
@@ -269,6 +272,11 @@ const OperatorerIndexRoute = OperatorerIndexRouteImport.update({
   path: '/operatorer/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NyheterIndexRoute = NyheterIndexRouteImport.update({
+  id: '/nyheter/',
+  path: '/nyheter/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NatIndexRoute = NatIndexRouteImport.update({
   id: '/nat/',
   path: '/nat/',
@@ -331,6 +339,16 @@ const SagaUppSlugRoute = SagaUppSlugRouteImport.update({
 const OperatorerSlugRoute = OperatorerSlugRouteImport.update({
   id: '/operatorer/$slug',
   path: '/operatorer/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NyheterRssDotxmlRoute = NyheterRssDotxmlRouteImport.update({
+  id: '/nyheter/rss.xml',
+  path: '/nyheter/rss.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NyheterSlugRoute = NyheterSlugRouteImport.update({
+  id: '/nyheter/$slug',
+  path: '/nyheter/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NatSlugRoute = NatSlugRouteImport.update({
@@ -674,6 +692,8 @@ export interface FileRoutesByFullPath {
   '/jamfor/$slug': typeof JamforSlugRoute
   '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
+  '/nyheter/$slug': typeof NyheterSlugRoute
+  '/nyheter/rss.xml': typeof NyheterRssDotxmlRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
@@ -686,6 +706,7 @@ export interface FileRoutesByFullPath {
   '/jamfor/': typeof JamforIndexRoute
   '/mobil-med-abonnemang/': typeof MobilMedAbonnemangIndexRoute
   '/nat/': typeof NatIndexRoute
+  '/nyheter/': typeof NyheterIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
   '/verktyg/': typeof VerktygIndexRoute
@@ -768,6 +789,8 @@ export interface FileRoutesByTo {
   '/jamfor/$slug': typeof JamforSlugRoute
   '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
+  '/nyheter/$slug': typeof NyheterSlugRoute
+  '/nyheter/rss.xml': typeof NyheterRssDotxmlRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
@@ -780,6 +803,7 @@ export interface FileRoutesByTo {
   '/jamfor': typeof JamforIndexRoute
   '/mobil-med-abonnemang': typeof MobilMedAbonnemangIndexRoute
   '/nat': typeof NatIndexRoute
+  '/nyheter': typeof NyheterIndexRoute
   '/operatorer': typeof OperatorerIndexRoute
   '/saga-upp': typeof SagaUppIndexRoute
   '/verktyg': typeof VerktygIndexRoute
@@ -863,6 +887,8 @@ export interface FileRoutesById {
   '/jamfor/$slug': typeof JamforSlugRoute
   '/mobil-med-abonnemang/$modell': typeof MobilMedAbonnemangModellRoute
   '/nat/$slug': typeof NatSlugRoute
+  '/nyheter/$slug': typeof NyheterSlugRoute
+  '/nyheter/rss.xml': typeof NyheterRssDotxmlRoute
   '/operatorer/$slug': typeof OperatorerSlugRoute
   '/saga-upp/$slug': typeof SagaUppSlugRoute
   '/skribent/leon-hallstrom': typeof SkribentLeonHallstromRoute
@@ -875,6 +901,7 @@ export interface FileRoutesById {
   '/jamfor/': typeof JamforIndexRoute
   '/mobil-med-abonnemang/': typeof MobilMedAbonnemangIndexRoute
   '/nat/': typeof NatIndexRoute
+  '/nyheter/': typeof NyheterIndexRoute
   '/operatorer/': typeof OperatorerIndexRoute
   '/saga-upp/': typeof SagaUppIndexRoute
   '/verktyg/': typeof VerktygIndexRoute
@@ -959,6 +986,8 @@ export interface FileRouteTypes {
     | '/jamfor/$slug'
     | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
+    | '/nyheter/$slug'
+    | '/nyheter/rss.xml'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
@@ -971,6 +1000,7 @@ export interface FileRouteTypes {
     | '/jamfor/'
     | '/mobil-med-abonnemang/'
     | '/nat/'
+    | '/nyheter/'
     | '/operatorer/'
     | '/saga-upp/'
     | '/verktyg/'
@@ -1053,6 +1083,8 @@ export interface FileRouteTypes {
     | '/jamfor/$slug'
     | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
+    | '/nyheter/$slug'
+    | '/nyheter/rss.xml'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
@@ -1065,6 +1097,7 @@ export interface FileRouteTypes {
     | '/jamfor'
     | '/mobil-med-abonnemang'
     | '/nat'
+    | '/nyheter'
     | '/operatorer'
     | '/saga-upp'
     | '/verktyg'
@@ -1147,6 +1180,8 @@ export interface FileRouteTypes {
     | '/jamfor/$slug'
     | '/mobil-med-abonnemang/$modell'
     | '/nat/$slug'
+    | '/nyheter/$slug'
+    | '/nyheter/rss.xml'
     | '/operatorer/$slug'
     | '/saga-upp/$slug'
     | '/skribent/leon-hallstrom'
@@ -1159,6 +1194,7 @@ export interface FileRouteTypes {
     | '/jamfor/'
     | '/mobil-med-abonnemang/'
     | '/nat/'
+    | '/nyheter/'
     | '/operatorer/'
     | '/saga-upp/'
     | '/verktyg/'
@@ -1242,6 +1278,8 @@ export interface RootRouteChildren {
   JamforSlugRoute: typeof JamforSlugRoute
   MobilMedAbonnemangModellRoute: typeof MobilMedAbonnemangModellRoute
   NatSlugRoute: typeof NatSlugRoute
+  NyheterSlugRoute: typeof NyheterSlugRoute
+  NyheterRssDotxmlRoute: typeof NyheterRssDotxmlRoute
   OperatorerSlugRoute: typeof OperatorerSlugRoute
   SagaUppSlugRoute: typeof SagaUppSlugRoute
   SkribentLeonHallstromRoute: typeof SkribentLeonHallstromRoute
@@ -1254,6 +1292,7 @@ export interface RootRouteChildren {
   JamforIndexRoute: typeof JamforIndexRoute
   MobilMedAbonnemangIndexRoute: typeof MobilMedAbonnemangIndexRoute
   NatIndexRoute: typeof NatIndexRoute
+  NyheterIndexRoute: typeof NyheterIndexRoute
   OperatorerIndexRoute: typeof OperatorerIndexRoute
   SagaUppIndexRoute: typeof SagaUppIndexRoute
   VerktygIndexRoute: typeof VerktygIndexRoute
@@ -1493,6 +1532,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OperatorerIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nyheter/': {
+      id: '/nyheter/'
+      path: '/nyheter'
+      fullPath: '/nyheter/'
+      preLoaderRoute: typeof NyheterIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/nat/': {
       id: '/nat/'
       path: '/nat'
@@ -1575,6 +1621,20 @@ declare module '@tanstack/react-router' {
       path: '/operatorer/$slug'
       fullPath: '/operatorer/$slug'
       preLoaderRoute: typeof OperatorerSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nyheter/rss.xml': {
+      id: '/nyheter/rss.xml'
+      path: '/nyheter/rss.xml'
+      fullPath: '/nyheter/rss.xml'
+      preLoaderRoute: typeof NyheterRssDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nyheter/$slug': {
+      id: '/nyheter/$slug'
+      path: '/nyheter/$slug'
+      fullPath: '/nyheter/$slug'
+      preLoaderRoute: typeof NyheterSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nat/$slug': {
@@ -1994,6 +2054,8 @@ const rootRouteChildren: RootRouteChildren = {
   JamforSlugRoute: JamforSlugRoute,
   MobilMedAbonnemangModellRoute: MobilMedAbonnemangModellRoute,
   NatSlugRoute: NatSlugRoute,
+  NyheterSlugRoute: NyheterSlugRoute,
+  NyheterRssDotxmlRoute: NyheterRssDotxmlRoute,
   OperatorerSlugRoute: OperatorerSlugRoute,
   SagaUppSlugRoute: SagaUppSlugRoute,
   SkribentLeonHallstromRoute: SkribentLeonHallstromRoute,
@@ -2006,6 +2068,7 @@ const rootRouteChildren: RootRouteChildren = {
   JamforIndexRoute: JamforIndexRoute,
   MobilMedAbonnemangIndexRoute: MobilMedAbonnemangIndexRoute,
   NatIndexRoute: NatIndexRoute,
+  NyheterIndexRoute: NyheterIndexRoute,
   OperatorerIndexRoute: OperatorerIndexRoute,
   SagaUppIndexRoute: SagaUppIndexRoute,
   VerktygIndexRoute: VerktygIndexRoute,
