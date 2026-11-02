@@ -77,6 +77,54 @@ export type Nyhet = {
 
 const NYHETER_OSORTERADE: Nyhet[] = [
   {
+    slug: "comviq-bas-dagsavgift-kontantkort",
+    titel: "Comviq tar 1,50 kr om dagen på kontantkort utan prisplan",
+    seoTitel: "Comviq inför dagsavgift på Bas",
+    ingress:
+      "Sedan 1 oktober 2026 drar Comviq 1,50 kr om dagen från saldot på kontantkort som ligger på Bas utan aktiv prisplan. En hel månad blir 46,50 kr.",
+    avsandare: "Comviq",
+    kategori: "Priser och villkor",
+    bild: "spargris-tra",
+    nyckeltal: { varde: "1,50 kr", text: "om dagen på Bas utan prisplan" },
+    handelseIso: "2026-10-01",
+    publiceradIso: "2026-11-02",
+    uppdateradIso: "2026-11-02",
+    innehall: [
+      {
+        typ: "p",
+        text: "Comviq har infört en daglig avgift för kontantkortskunder som ligger på Bas utan någon aktiv prisplan. Avgiften gäller från den 1 oktober 2026 och dras direkt från saldot, för att hålla numret aktivt enligt Comviq.",
+      },
+      { typ: "h2", text: "Det här gäller" },
+      {
+        typ: "ul",
+        punkter: [
+          "Avgiften är 1,50 kr om dagen. Under en månad med 31 dagar blir det 46,50 kr, utöver vad du betalar för samtal, sms och surf.",
+          "Har du en aktiv prisplan betalar du ingen dagsavgift så länge prisplanen gäller. När en prisplans giltighetstid går ut hamnar kortet på Bas.",
+          "När saldot är 10 kr eller lägre skickar Comviq en påminnelse via sms.",
+          "Når saldot 0 kr och du inte tankar inom 7 dagar spärras numret. Du behåller numret och det öppnas igen när du tankar. Nödsamtal till 112 fungerar alltid.",
+        ],
+      },
+      { typ: "h2", text: "Vad det betyder för dig" },
+      {
+        typ: "p",
+        text: "Har du ett Comviq-kontantkort som mest ligger i en låda, eller som bara används ibland, kan saldot nu ta slut av sig självt. Kolla saldot och om du har en prisplan som gäller. Ringer och surfar du lite kan ett annat kontantkort eller ett billigt abonnemang utan bindningstid bli billigare. Jämför på sidan om [kontantkort](/kontantkort) och läs [kontantkort eller abonnemang](/guider/kontantkort-eller-abonnemang).",
+      },
+    ],
+    kallor: [
+      {
+        utgivare: "Comviq",
+        titel: "Avgift för kontantkort Bas",
+        url: "https://www.comviq.se/bas-avgift",
+        datum: "gäller från 1 oktober 2026",
+      },
+    ],
+    relaterat: [
+      { href: "/kontantkort", label: "Jämför kontantkort" },
+      { href: "/guider/kontantkort-eller-abonnemang", label: "Kontantkort eller abonnemang?" },
+      { href: "/operatorer/comviq", label: "Comviq: priser och villkor" },
+    ],
+  },
+  {
     slug: "ski-mobil-2026-fello-nojdast",
     titel: "SKI Mobil 2026: Fello har nöjdast privatkunder",
     seoTitel: "SKI Mobil 2026: Fello nöjdast",
