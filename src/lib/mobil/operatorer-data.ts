@@ -1,4 +1,4 @@
-// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, kontrollerade 2026-10-29.
+// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-02.
 // Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).
 
 import type { Abonnemang, Operator } from "./typer";
@@ -48,7 +48,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.telia.se/privat/telefoni/wifi-samtal",
       "https://www.telia.se/mobilabonnemang/mobil-10-gb",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
       "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -112,7 +112,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.tele2.se/support/mobilt/wifi-samtal",
       "https://www.tele2.se/support/information/prislistor",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "15 GB-erbjudandet: 15 eller 30 GB (dubbel surf), med eller utan bindning, beroende på vilken sida man läser",
       "Kampanjpriset för Obegränsad Max: 449 eller 399 kr/mån",
@@ -232,7 +232,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
       "https://www.tre.se/om-tre/kontakt",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
       "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -349,7 +349,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.comviq.se/hjalp/kontakta-oss",
       "https://www.comviq.se/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Startavgift och avgift för SIM/eSIM är inte verifierade",
       "Kontrollera att kampanjen fortfarande gäller (t.o.m. 10 november 2026)",
@@ -422,7 +422,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://vimla.se/esim/",
       "https://vimla.se/kontakt-vimlare/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "HELA abonnemangslistan saknas: vimla.se kunde inte hämtas. Kontrollera manuellt",
       "Ägare (Telenor) och nät (Telenor) är inte verifierade på Vimlas egen sida",
@@ -486,7 +486,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
       "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
       "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",
@@ -548,7 +548,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://api.fello.se/fello-product-service/v5/products",
       "https://www.fello.se/utland/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Aktuella GB-nivåer och ordinarie priser saknas. fello.se/prislista renderas dynamiskt och kunde inte läsas. Kontrollera manuellt i webbläsare.",
       "Det finns supportartiklar om eSIM, men eSIM-villkoren (kostnad m.m.) är inte lästa",
@@ -614,7 +614,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
       "https://chilimobil.se/fetch-nya.php (getPackages, Chilimobils eget orderflöde)",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Månadspris för 3 och 10 Mbit/s samt Student finns bara i bilden prislista-privat-260101.png [KONTROLLERA]",
       "Om 249 kr för 100 Mbit/s är kampanj eller ordinarie pris",
@@ -675,7 +675,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
       "https://www.lycamobile.se/sv/bundle/surf-xl/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Nät (Telenor) är inte bekräftat på lycamobile.se",
       "Pris för 120 GB-paketet: 340 eller 99 kr",
@@ -727,7 +727,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://mybeat.se/om-oss/",
       "https://mybeat.se/erbjudanden/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Ingen datering på prissidan",
       "eSIM, uppsägningstid och startavgift ej verifierade",
@@ -781,7 +781,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://tellusmobil.se/handla/",
       "https://tellusmobil.se/allmannavillkor/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Prislistan är daterad 2025-03-24, men kampanjer kan ha tillkommit",
       "Startsidan säger 'från 49 kr/mån', prislistan börjar på 69 kr",
@@ -827,7 +827,7 @@ export const OPERATORER_DATA: Operator[] = [
       ovrigt: "Surfpotten förnyas den 1:a varje månad. Fria samtal, sms och mms i EU/EES.",
     },
     kallor: ["https://www.fibio.se/mobilabonnemang/"],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Brödtexten nämner 6/20/40 GB och obegränsat, prisfältet 2/5/20 GB och obegränsat",
       "Bindningstid, EU-surf, 5G och eSIM ej verifierade",
@@ -873,7 +873,7 @@ export const OPERATORER_DATA: Operator[] = [
         "Vinterskydd-rabatt anges i kr/år per abonnemang (t.ex. 240 kr/år för 5 GB, 600 kr/år för obegränsat).",
     },
     kallor: ["https://www.katshing.com/", "https://www.katshing.com/priser"],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Bolag och ägare",
       "eSIM, startavgift, uppsägningstid och EU-surf i GB",
@@ -932,7 +932,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://lingon.se/support-faktura/",
       "https://lingon.se/om-oss/",
     ],
-    kontrollerad: "2026-10-29",
+    kontrollerad: "2026-11-02",
     osakert: [
       "Abonnemang och priser kunde inte läsas (laddas i popup). Hela abonnemangslistan måste kontrolleras manuellt.",
       "5G och eSIM ej bekräftade",
@@ -1035,7 +1035,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     pris: 399,
     kampanjpris: null,
     kampanjManader: null,
-    kampanjText: null,
+    kampanjText:
+      "Dubbel surf: 40 GB/mån i 12 månader (20 GB extra per månad), därefter 20 GB. Utan bindningstid, 399 kr/mån.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
@@ -1245,7 +1246,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 199,
     kampanjManader: 24,
     kampanjText:
-      "199 kr/mån i 24 mån (ord. 329 kr), 'Du sparar 3120 kr'. På /erbjudanden och /mobilabonnemang-utan-bindning anges 'Nu: 30 GB' (dubbel surf) och 24 mån bindning, medan /mobilabonnemang anger 'Ingen bindning' och 'gäller endast vid köp online'",
+      "199 kr/mån i 24 mån (ord. 329 kr), 'Du sparar 3120 kr', med dubbel surf (30 GB i stället för 15 GB). Kräver 24 mån bindning. Bara t.o.m. 2 november 2026.",
     bindning: 24,
     euGb: 15,
     friaSamtal: true,
@@ -1280,7 +1281,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: null,
     pris: 519,
-    kampanjpris: 449,
+    kampanjpris: 399,
     kampanjManader: 24,
     kampanjText:
       "449 kr/mån i 24 mån enligt /mobilabonnemang och /familj, men 399 kr/mån i 24 mån ('Du sparar 2880 kr') enligt /erbjudanden och /mobilabonnemang-utan-bindning",
@@ -1290,7 +1291,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "Upp till 1000 Mbit/s",
     notis: "Extra SIM med 50 GB/mån ingår. Upp till 60 GB surf i över 170 länder",
-    kalla: "https://www.tele2.se/erbjudanden",
+    kalla: "https://www.tele2.se/mobilabonnemang",
   },
   {
     id: "tele2-seniorabonnemang-5-gb-65",
@@ -1299,8 +1300,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 5,
     pris: 249,
-    kampanjpris: null,
-    kampanjManader: null,
+    kampanjpris: 199,
+    kampanjManader: 24,
     kampanjText:
       "199 kr/mån (tidigare 249), 'Spara 1200 kr' (vilket motsvarar 24 mån). Kräver 65 år eller äldre",
     bindning: 24,
@@ -1319,8 +1320,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 15,
     pris: 279,
-    kampanjpris: null,
-    kampanjManader: null,
+    kampanjpris: 199,
+    kampanjManader: 24,
     kampanjText:
       "199 kr/mån (tidigare 279), 'Spara 1920 kr'. Surfmängden i Sverige anges inte tydligt, bara 15 GB i EU/EES",
     bindning: 24,
@@ -1339,8 +1340,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: null,
     pris: 429,
-    kampanjpris: null,
-    kampanjManader: null,
+    kampanjpris: 399,
+    kampanjManader: 24,
     kampanjText: "399 kr/mån (tidigare 429), 'Spara 720 kr'",
     bindning: 24,
     euGb: 60,
@@ -1496,7 +1497,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: null,
     kampanjManader: null,
     kampanjText:
-      "Pris med 24 mån bindning. Prislistan (2025-07-16) anger 3Flexibel Obegränsat 449 kr och 3Surfa Obegränsat 349 kr (bundet)/449 kr (obundet)",
+      "Pris med 24 mån bindning (3Flexibel Obg inkl 3Världen). Utan bindning 449 kr/mån.",
     bindning: 24,
     euGb: 60,
     friaSamtal: true,
@@ -1504,7 +1505,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     hastighet: "3Snabbare (ingen Mbit/s anges)",
     notis:
       "Extra användare 149 kr/mån (24 mån) / 169 kr/mån (utan bindning) och får obegränsad surf. Variant med Apple One finns i prislistan (549 kr)",
-    kalla: "https://www.tre.se/handla/mobilabonnemang",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   },
   {
     id: "tre-25-gb",
@@ -1515,14 +1517,16 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     pris: 329,
     kampanjpris: null,
     kampanjManader: null,
-    kampanjText: "Pris med 24 mån bindning. Prislistan anger 3Flexibel 25GB 349 kr",
+    kampanjText:
+      "Pris med 24 mån bindning (3Flexibel 25GB inkl 3Världen). Utan bindning 349 kr/mån.",
     bindning: 24,
     euGb: null,
     friaSamtal: true,
     femg: true,
     hastighet: "3Snabbare",
     notis: "Extra användare delar surfen ('först till kvarn'). EU-surf: samma pott",
-    kalla: "https://www.tre.se/handla/mobilabonnemang",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   },
   {
     id: "tre-6-gb",
@@ -1533,14 +1537,76 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     pris: 229,
     kampanjpris: null,
     kampanjManader: null,
-    kampanjText: "Pris med 24 mån bindning. Prislistan anger 3Flexibel 6GB 249 kr",
+    kampanjText:
+      "Pris med 24 mån bindning (3Flexibel 6GB inkl 3Världen). Utan bindning 249 kr/mån.",
     bindning: 24,
     euGb: null,
     friaSamtal: true,
     femg: true,
     hastighet: "3Snabbare",
     notis: "Passar den som mest använder wifi",
-    kalla: "https://www.tre.se/handla/mobilabonnemang",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
+  },
+  {
+    id: "tre-obegransad-surf-utan-bindning",
+    operator: "tre",
+    namn: "Obegränsad surf (utan bindning)",
+    kundtyp: "privat",
+    gb: null,
+    pris: 449,
+    kampanjpris: null,
+    kampanjManader: null,
+    kampanjText: null,
+    bindning: 0,
+    euGb: 60,
+    friaSamtal: true,
+    femg: true,
+    hastighet: null,
+    notis:
+      "3Flexibel Obg inkl 3Världen utan bindningstid. Med 24 mån bindning 429 kr/mån. 60 GB/mån i EU/EES och 3Världen. Ingen startavgift på tre.se (250 kr i butik).",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
+  },
+  {
+    id: "tre-25-gb-utan-bindning",
+    operator: "tre",
+    namn: "25 GB (utan bindning)",
+    kundtyp: "privat",
+    gb: 25,
+    pris: 349,
+    kampanjpris: null,
+    kampanjManader: null,
+    kampanjText: null,
+    bindning: 0,
+    euGb: null,
+    friaSamtal: true,
+    femg: true,
+    hastighet: null,
+    notis:
+      "3Flexibel 25GB inkl 3Världen utan bindningstid. Med 24 mån bindning 329 kr/mån. Ingen startavgift på tre.se (250 kr i butik).",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
+  },
+  {
+    id: "tre-6-gb-utan-bindning",
+    operator: "tre",
+    namn: "6 GB (utan bindning)",
+    kundtyp: "privat",
+    gb: 6,
+    pris: 249,
+    kampanjpris: null,
+    kampanjManader: null,
+    kampanjText: null,
+    bindning: 0,
+    euGb: null,
+    friaSamtal: true,
+    femg: true,
+    hastighet: null,
+    notis:
+      "3Flexibel 6GB inkl 3Världen utan bindningstid. Med 24 mån bindning 229 kr/mån. Ingen startavgift på tre.se (250 kr i butik).",
+    kalla:
+      "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   },
   {
     id: "comviq-comviq-mobilabonnemang-5-gb",
@@ -2368,7 +2434,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (10 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 120 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (10 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 120 kr/mån.",
     bindning: 0,
     euGb: 5,
     friaSamtal: true,
@@ -2388,7 +2454,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 180 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 180 kr/mån.",
     bindning: 0,
     euGb: 10,
     friaSamtal: true,
@@ -2408,7 +2474,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 230 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 230 kr/mån.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
@@ -2428,7 +2494,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (80 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 290 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (80 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 290 kr/mån.",
     bindning: 0,
     euGb: 40,
     friaSamtal: true,
@@ -2448,7 +2514,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (200 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 370 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (200 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 370 kr/mån.",
     bindning: 0,
     euGb: 60,
     friaSamtal: true,
@@ -2468,7 +2534,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 120 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 120 kr/mån.",
     bindning: 0,
     euGb: 10,
     friaSamtal: true,
@@ -2489,7 +2555,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 160 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 160 kr/mån.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
@@ -2510,7 +2576,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 200 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 200 kr/mån.",
     bindning: 0,
     euGb: 30,
     friaSamtal: true,
@@ -2531,7 +2597,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 250 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 250 kr/mån.",
     bindning: 0,
     euGb: 50,
     friaSamtal: true,
@@ -2552,7 +2618,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (200 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 320 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (200 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 320 kr/mån.",
     bindning: 0,
     euGb: 60,
     friaSamtal: true,
@@ -2573,7 +2639,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (8 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 110 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (8 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 110 kr/mån.",
     bindning: 0,
     euGb: 4,
     friaSamtal: true,
@@ -2594,7 +2660,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 150 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 150 kr/mån.",
     bindning: 0,
     euGb: 10,
     friaSamtal: true,
@@ -2615,7 +2681,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 200 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 200 kr/mån.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
@@ -2636,7 +2702,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 240 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 240 kr/mån.",
     bindning: 0,
     euGb: 30,
     friaSamtal: true,
@@ -2657,7 +2723,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 280 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 280 kr/mån.",
     bindning: 0,
     euGb: 50,
     friaSamtal: true,
@@ -2678,7 +2744,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (8 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 110 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (8 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 110 kr/mån.",
     bindning: 0,
     euGb: 4,
     friaSamtal: true,
@@ -2699,7 +2765,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 140 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (20 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 140 kr/mån.",
     bindning: 0,
     euGb: 10,
     friaSamtal: true,
@@ -2720,7 +2786,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 190 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (40 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 190 kr/mån.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
@@ -2741,7 +2807,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 230 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (60 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 230 kr/mån.",
     bindning: 0,
     euGb: 30,
     friaSamtal: true,
@@ -2762,7 +2828,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kampanjpris: 30,
     kampanjManader: 4,
     kampanjText:
-      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Gäller t.o.m. 1 nov 2026. Pris efter 4 mån 280 kr/mån.",
+      "30 kr/mån i 4 mån vid nybeställning (ej abonnemangsbyte) + Dubbel Surf i 24 mån (100 GB). Slutdatum framgår inte (villkorstexten anger fortfarande 1 november 2026, men kampanjen säljs 2 november). Pris efter 4 mån 280 kr/mån.",
     bindning: 0,
     euGb: 50,
     friaSamtal: true,
@@ -3158,14 +3224,15 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     pris: 340,
     kampanjpris: null,
     kampanjManader: null,
-    kampanjText: "Rubriken säger 340 kr, texten 99 kr",
+    kampanjText:
+      "70 % rabatt livet ut: 99 kr/30 dagar i stället för 340 kr. Bara nya kunder och så länge automatisk förnyelse är på.",
     bindning: 0,
     euGb: 46,
     friaSamtal: true,
     femg: true,
     hastighet: "5G",
     notis: "30 dagar",
-    kalla: "https://www.lycamobile.se/sv/paket/mobilabonnemang/",
+    kalla: "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-120gb-bf/",
     kontantkort: true,
   },
   {
@@ -3266,16 +3333,16 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 1,
     pris: 69,
-    kampanjpris: null,
-    kampanjManader: null,
-    kampanjText: "55+: 59 kr",
+    kampanjpris: 49,
+    kampanjManader: 3,
+    kampanjText: "49 kr/mån i 3 mån, sedan 69 kr. 55+: 59 kr (49 kr/mån i 3 mån)",
     bindning: 0,
     euGb: 1,
     friaSamtal: true,
     femg: false,
     hastighet: null,
-    notis: "Startsidan säger 'från 49 kr/mån'",
-    kalla: "https://tellusmobil.se/prislista/",
+    notis: null,
+    kalla: "https://tellusmobil.se/handla/",
   },
   {
     id: "tellus-tellus-mobil-3-gb",
@@ -3284,16 +3351,16 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 3,
     pris: 99,
-    kampanjpris: null,
-    kampanjManader: null,
-    kampanjText: "55+: 89 kr",
+    kampanjpris: 49,
+    kampanjManader: 3,
+    kampanjText: "49 kr/mån i 3 mån, sedan 99 kr. 55+: 89 kr (25 kr/mån i 3 mån)",
     bindning: 0,
     euGb: 3,
     friaSamtal: true,
     femg: false,
     hastighet: null,
     notis: null,
-    kalla: "https://tellusmobil.se/prislista/",
+    kalla: "https://tellusmobil.se/handla/",
   },
   {
     id: "tellus-tellus-mobil-10-gb",
@@ -3302,16 +3369,16 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 10,
     pris: 149,
-    kampanjpris: null,
-    kampanjManader: null,
-    kampanjText: "55+: 129 kr",
+    kampanjpris: 79,
+    kampanjManader: 3,
+    kampanjText: "79 kr/mån i 3 mån, sedan 149 kr. 55+: 129 kr (69 kr/mån i 3 mån)",
     bindning: 0,
     euGb: 10,
     friaSamtal: true,
     femg: false,
     hastighet: null,
     notis: null,
-    kalla: "https://tellusmobil.se/prislista/",
+    kalla: "https://tellusmobil.se/handla/",
   },
   {
     id: "tellus-tellus-mobil-20-gb-endast-55",
@@ -3329,7 +3396,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: false,
     hastighet: null,
     notis: "Endast 55+",
-    kalla: "https://tellusmobil.se/prislista/",
+    kalla: "https://tellusmobil.se/handla/",
     malgrupp: ["senior"],
   },
   {
@@ -3339,16 +3406,16 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 30,
     pris: 249,
-    kampanjpris: null,
-    kampanjManader: null,
-    kampanjText: "55+: 249 kr",
+    kampanjpris: 129,
+    kampanjManader: 3,
+    kampanjText: "129 kr/mån i 3 mån, sedan 249 kr. Ingen 55+-variant säljs längre.",
     bindning: 0,
     euGb: 20,
     friaSamtal: true,
     femg: false,
     hastighet: null,
     notis: null,
-    kalla: "https://tellusmobil.se/prislista/",
+    kalla: "https://tellusmobil.se/handla/",
   },
   {
     id: "tellus-tellus-mobil-100-gb-endast-55",
@@ -3357,8 +3424,8 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     kundtyp: "privat",
     gb: 100,
     pris: 299,
-    kampanjpris: null,
-    kampanjManader: null,
+    kampanjpris: 149,
+    kampanjManader: 3,
     kampanjText: null,
     bindning: 0,
     euGb: 20,
@@ -3366,7 +3433,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: false,
     hastighet: null,
     notis: "Endast 55+",
-    kalla: "https://tellusmobil.se/prislista/",
+    kalla: "https://tellusmobil.se/handla/",
     malgrupp: ["senior"],
   },
   {
