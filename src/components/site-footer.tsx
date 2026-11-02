@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/brand-logo";
 import type { MouseEvent } from "react";
 import { ArrowRight } from "lucide-react";
+import { HAR_NYHETER } from "@/lib/nyheter";
 
 type FooterLink = {
   label: string;
@@ -56,7 +57,7 @@ const COLS: { title: string; links: FooterLink[] }[] = [
       { label: "Byta operatör", to: "/guider/byta-operator-behalla-nummer" },
       { label: "Säga upp abonnemang", to: "/saga-upp" },
       { label: "Hur mycket surf?", to: "/verktyg/hur-mycket-surf-behover-jag" },
-      { label: "Mobil med abonnemang", to: "/mobil-med-abonnemang" },
+      ...(HAR_NYHETER ? [{ label: "Nyheter", to: "/nyheter" }] : []),
       { label: "Prisindex", to: "/prisindex" },
       { label: "Alla guider", to: "/guider" },
     ],
