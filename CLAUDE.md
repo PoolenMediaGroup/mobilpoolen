@@ -80,6 +80,7 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 7. Uppdatera `src/lib/sidor.ts`, `public/llms.txt` och datum när innehåll ändras.
 
 ## Design
+- **Menyn och heron ser likadana ut på alla skärmstorlekar** på Elpoolen, Larmpoolen och Mobilpoolen (Leons beslut 2 november 2026). Variabeln `--hz` i `src/styles.css` skalar `.nav-skala` och `.hero-skala` med `zoom` i steg om 32 px, från 0,717 vid 1024 px till 1,8 vid 2576 px (1 mellan 1392 och 1455 px). Heron fyller skärmen: `lg:min-h-[calc(100svh-128px-var(--nav-extra,0px))]` och centreras vertikalt. Samma uppbyggnad på alla tre: H1 52 px med radavstånd 1,1, tre gröna bockar (#5BE39B), en diskret statusrad med källa och datum, två korta länkar under. Ändras skalningen eller heron på en sajt, ändra på alla tre.
 - **Sidfoten har sex länkar i varje kolumn** på Elpoolen, Larmpoolen och Mobilpoolen (Leons beslut 2 november 2026), så att kolumnerna blir lika långa på alla sajter. Ny länk i en kolumn: ta bort en annan i samma kolumn. Om oss är densamma på alla tre: Om <sajten>, Så fungerar det, Så jämför vi, Så tjänar vi pengar (Elpoolen: Energispartips), Frågor och svar, Kontakt. Testet `tests/sidfot.test.ts` kontrollerar antalet.
 
 - Indigo (`--primary: #3b28cc`) är enda mättade färgen, orange (`--cta`) bara för huvudknappar. Mörka sektioner i djup indigo (`--dark-section: #16133a`). Typsnitt som Elpoolen: Inter och Sora. Ordmärket "mobilpoolen." med orange punkt (`src/assets/mobilpoolen-logo.svg`).
