@@ -111,12 +111,12 @@
         {"namn": "Lyca Fast Pris 149", "gb": 20, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Obegränsade samtal och sms i Sverige + 300 internationella min", "hastighet": "5G", "ovrigt": "30 dagar, data sparas. UK/Schweiz max 10 GB.", "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-10gb/"},
         {"namn": "Lyca Fast Pris 199", "gb": 30, "obegransad": false, "pris": 199, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Långtid: 455 kr/3 mån, 860 kr/6 mån, 1 620 kr/12 mån", "bindning": 0, "euGb": 27, "samtalSms": "Obegränsade samtal och sms i Sverige + 500 internationella min", "hastighet": "5G", "ovrigt": "30 dagar. UK/Schweiz max 13,5 GB. Länder för int. minuter: EU-länder, Norge, Island, UK, USA, Kanada, Mexiko, Brasilien, Chile, Colombia, Hongkong, Indien, Kina, Malaysia, Singapore, Thailand, Nya Zeeland, Marocko (vissa bara fast nät).", "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/"},
         {"namn": "Lyca Fast Pris 238", "gb": 40, "obegransad": false, "pris": 238, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 32, "samtalSms": "Obegränsade samtal och sms i Sverige + 500 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
-        {"namn": "Lyca Fast Pris 340", "gb": 120, "obegransad": false, "pris": 340, "kampanjpris": 99, "kampanjMan": null, "kampanjText": "Rubriken säger 340 kr, texten 99 kr [KONTROLLERA]", "bindning": 0, "euGb": 46, "samtalSms": "Fria samtal och sms i Sverige + 1000 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
+        {"namn": "Lyca Fast Pris 340", "gb": 120, "obegransad": false, "pris": 340, "kampanjpris": 99, "kampanjMan": null, "kampanjText": "70 % rabatt livet ut: 99 kr/30 dagar i stället för 340 kr. Bara nya kunder och så länge automatisk förnyelse är på.", "bindning": 0, "euGb": 46, "samtalSms": "Fria samtal och sms i Sverige + 1000 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-120gb-bf/"},
         {"namn": "Lyca Fast Pris 398", "gb": 200, "obegransad": false, "pris": 398, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 53, "samtalSms": "Obegränsade samtal och sms i Sverige + 1000 internationella min", "hastighet": "5G", "ovrigt": "30 dagar", "kalla": "https://www.lycamobile.se/sv/paket/mobilabonnemang/"},
         {"namn": "Surf XL (endast data)", "gb": 40, "obegransad": false, "pris": 199, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 27, "samtalSms": "Inga samtal eller sms ingår", "hastighet": null, "ovrigt": "30 dagar, datapaket för mobilt bredband", "kalla": "https://www.lycamobile.se/sv/bundle/surf-xl/"}
       ],
       "kallor": ["https://www.lycamobile.se/sv/paket/mobilabonnemang/", "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-10gb/", "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/", "https://www.lycamobile.se/sv/bundle/surf-xl/"],
-      "kontrollerad": "2026-10-29",
+      "kontrollerad": "2026-11-02",
       "osakert": ["Nät (Telenor) är inte bekräftat på lycamobile.se", "Pris för 120 GB-paketet: 340 eller 99 kr", "Kundtjänst och startavgift (SIM-kostnad) inte kontrollerade", "Långtidspaketens villkorstext anger felaktiga månadsbelopp (47/55/56 kr)"]
     },
     {
@@ -144,7 +144,7 @@
         {"namn": "Fri Surf", "gb": null, "obegransad": true, "pris": 459, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 35, "samtalSms": "Samtal, sms och mms ingår", "hastighet": "5G upp till 100 Mbit/s", "ovrigt": "35 GB/mån inom EU/EES", "kalla": "https://mybeat.se/mobilabonnemang-2/"}
       ],
       "kallor": ["https://mybeat.se/", "https://mybeat.se/mobilabonnemang-2/", "https://mybeat.se/om-oss/", "https://mybeat.se/erbjudanden/"],
-      "kontrollerad": "2026-10-29",
+      "kontrollerad": "2026-11-02",
       "osakert": ["Ingen datering på prissidan", "eSIM, uppsägningstid och startavgift ej verifierade", "Förskottspris 143 kr för 15 GB?"]
     },
     {
@@ -166,16 +166,16 @@
         "ovrigt": "Prislista uppdaterad 2025-03-24. Extra surf: 1 GB 50 kr, 3 GB 100 kr, 5 GB 150 kr. Nytt SIM 99 kr. Pappersfaktura utan autogiro 30 kr. Värva vän: en månad gratis."
       },
       "abonnemang": [
-        {"namn": "Tellus Rörligt 1 GB", "gb": 1, "obegransad": false, "pris": 69, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 59 kr", "bindning": 0, "euGb": 1, "samtalSms": "Rörligt: 0,59 kr/min + 0,59 kr öppning, sms 0,59 kr, mms 1,59 kr", "hastighet": null, "ovrigt": "Startsidan säger 'från 49 kr/mån' [KONTROLLERA]", "kalla": "https://tellusmobil.se/prislista/"},
-        {"namn": "Tellus Mobil 3 GB", "gb": 3, "obegransad": false, "pris": 99, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 89 kr", "bindning": 0, "euGb": 3, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
-        {"namn": "Tellus Mobil 10 GB", "gb": 10, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 129 kr", "bindning": 0, "euGb": 10, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
-        {"namn": "Tellus Mobil 20 GB (endast 55+)", "gb": 20, "obegransad": false, "pris": 189, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/prislista/"},
-        {"namn": "Tellus Mobil 30 GB", "gb": 30, "obegransad": false, "pris": 249, "kampanjpris": null, "kampanjMan": null, "kampanjText": "55+: 249 kr", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/prislista/"},
-        {"namn": "Tellus Mobil 100 GB (endast 55+)", "gb": 100, "obegransad": false, "pris": 299, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/prislista/"},
+        {"namn": "Tellus Rörligt 1 GB", "gb": 1, "obegransad": false, "pris": 69, "kampanjpris": 49, "kampanjMan": 3, "kampanjText": "49 kr/mån i 3 mån, sedan 69 kr. 55+: 59 kr (49 kr/mån i 3 mån)", "bindning": 0, "euGb": 1, "samtalSms": "Rörligt: 0,59 kr/min + 0,59 kr öppning, sms 0,59 kr, mms 1,59 kr", "hastighet": null, "ovrigt": null, "kalla": "https://tellusmobil.se/handla/"},
+        {"namn": "Tellus Mobil 3 GB", "gb": 3, "obegransad": false, "pris": 99, "kampanjpris": 49, "kampanjMan": 3, "kampanjText": "49 kr/mån i 3 mån, sedan 99 kr. 55+: 89 kr (25 kr/mån i 3 mån)", "bindning": 0, "euGb": 3, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/handla/"},
+        {"namn": "Tellus Mobil 10 GB", "gb": 10, "obegransad": false, "pris": 149, "kampanjpris": 79, "kampanjMan": 3, "kampanjText": "79 kr/mån i 3 mån, sedan 149 kr. 55+: 129 kr (69 kr/mån i 3 mån)", "bindning": 0, "euGb": 10, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/handla/"},
+        {"namn": "Tellus Mobil 20 GB (endast 55+)", "gb": 20, "obegransad": false, "pris": 189, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/handla/"},
+        {"namn": "Tellus Mobil 30 GB", "gb": 30, "obegransad": false, "pris": 249, "kampanjpris": 129, "kampanjMan": 3, "kampanjText": "129 kr/mån i 3 mån, sedan 249 kr. Ingen 55+-variant säljs längre.", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "", "kalla": "https://tellusmobil.se/handla/"},
+        {"namn": "Tellus Mobil 100 GB (endast 55+)", "gb": 100, "obegransad": false, "pris": 299, "kampanjpris": 149, "kampanjMan": 3, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Endast 55+", "kalla": "https://tellusmobil.se/handla/"},
         {"namn": "Tellus Mobil Obegränsat", "gb": null, "obegransad": true, "pris": 349, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 20, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Fair use 150 GB/mån, därefter gratis påfyllning med 5 GB åt gången", "kalla": "https://tellusmobil.se/prislista/"}
       ],
       "kallor": ["https://tellusmobil.se/", "https://tellusmobil.se/prislista/", "https://tellusmobil.se/handla/", "https://tellusmobil.se/allmannavillkor/"],
-      "kontrollerad": "2026-10-29",
+      "kontrollerad": "2026-11-02",
       "osakert": ["Prislistan är daterad 2025-03-24, men kampanjer kan ha tillkommit", "Startsidan säger 'från 49 kr/mån', prislistan börjar på 69 kr", "5G och eSIM ej bekräftade", "EU-surf 20 GB på 30 GB och större: prislistan stämmer inte med abonnemangsnamnen"]
     },
     {
@@ -203,7 +203,7 @@
         {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 469, "kampanjpris": 49, "kampanjMan": 3, "kampanjText": "49 kr/mån i 3 mån", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal, sms och mms", "hastighet": null, "ovrigt": "Prisfältet säger 'Obeg'. Bindning ej angiven [KONTROLLERA]", "kalla": "https://www.fibio.se/mobilabonnemang/"}
       ],
       "kallor": ["https://www.fibio.se/mobilabonnemang/"],
-      "kontrollerad": "2026-10-29",
+      "kontrollerad": "2026-11-02",
       "osakert": ["Brödtexten nämner 6/20/40 GB och obegränsat, prisfältet 2/5/20 GB och obegränsat", "Bindningstid, EU-surf, 5G och eSIM ej verifierade", "Ägaruppgift kommer från tredjepartssajt"]
     },
     {
@@ -225,16 +225,16 @@
         "ovrigt": "Vinterskydd-rabatt anges i kr/år per abonnemang (t.ex. 240 kr/år för 5 GB, 600 kr/år för obegränsat)."
       },
       "abonnemang": [
-        {"namn": "5 GB", "gb": 5, "obegransad": false, "pris": 145, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −240 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "15 GB", "gb": 15, "obegransad": false, "pris": 195, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −300 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "25 GB", "gb": 25, "obegransad": false, "pris": 245, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −360 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "50 GB", "gb": 50, "obegransad": false, "pris": 295, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −420 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "100 GB", "gb": 100, "obegransad": false, "pris": 345, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −480 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 395, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −600 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
-        {"namn": "Familj 2 personer (obegränsad)", "gb": null, "obegransad": true, "pris": 595, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −1 200 kr/år", "bindning": 0, "euGb": null, "samtalSms": "[KONTROLLERA]", "hastighet": "4G/5G", "ovrigt": "3 pers 745, 4 pers 895, 5 pers 1 045, 6 pers 1 195 kr/mån (totalpris)", "kalla": "https://www.katshing.com/priser"}
+        {"namn": "5 GB", "gb": 5, "obegransad": false, "pris": 145, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −240 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "15 GB", "gb": 15, "obegransad": false, "pris": 195, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −300 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "25 GB", "gb": 25, "obegransad": false, "pris": 245, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −360 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "50 GB", "gb": 50, "obegransad": false, "pris": 295, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −420 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "100 GB", "gb": 100, "obegransad": false, "pris": 345, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −480 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "Obegränsad", "gb": null, "obegransad": true, "pris": 395, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −600 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "", "kalla": "https://www.katshing.com/priser"},
+        {"namn": "Familj 2 personer (obegränsad)", "gb": null, "obegransad": true, "pris": 595, "kampanjpris": null, "kampanjMan": null, "kampanjText": "Vinterskydd: −1 200 kr/år", "bindning": 0, "euGb": null, "samtalSms": "Fria samtal och sms", "hastighet": "4G/5G", "ovrigt": "3 pers 745, 4 pers 895, 5 pers 1 045, 6 pers 1 195 kr/mån (totalpris). Vinterskydd: 3 pers −1 800 kr/år, 4–6 pers −2 400 kr/år.", "kalla": "https://www.katshing.com/priser"}
       ],
       "kallor": ["https://www.katshing.com/", "https://www.katshing.com/priser"],
-      "kontrollerad": "2026-10-29",
+      "kontrollerad": "2026-11-02",
       "osakert": ["Bolag och ägare", "eSIM, startavgift, uppsägningstid och EU-surf i GB", "Samtal/sms ingår troligen, men det står inte på prissidan"]
     },
     {

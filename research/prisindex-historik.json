@@ -76,5 +76,83 @@
       "utanBindningAndel": 63.5,
       "medianPerGb": 14.5
     }
+  },
+  {
+    "manad": "2026-11",
+    "kontrollerad": "2026-11-02",
+    "perNiva": [
+      {
+        "niva": "1 GB",
+        "regel": "1–3 GB",
+        "antal": 4,
+        "min": 64,
+        "med": 109.5,
+        "max": 149,
+        "kampanjAndel": 75
+      },
+      {
+        "niva": "5 GB",
+        "regel": "5–15 GB",
+        "antal": 24,
+        "min": 79,
+        "med": 167.5,
+        "max": 324,
+        "kampanjAndel": 54.2
+      },
+      {
+        "niva": "10 GB",
+        "regel": "10–30 GB",
+        "antal": 29,
+        "min": 99,
+        "med": 200,
+        "max": 399,
+        "kampanjAndel": 51.7
+      },
+      {
+        "niva": "20 GB",
+        "regel": "20–60 GB",
+        "antal": 23,
+        "min": 149,
+        "med": 238,
+        "max": 399,
+        "kampanjAndel": 43.5
+      },
+      {
+        "niva": "50 GB",
+        "regel": "50–150 GB",
+        "antal": 10,
+        "min": 222,
+        "med": 282,
+        "max": 399,
+        "kampanjAndel": 60
+      },
+      {
+        "niva": "100 GB",
+        "regel": "100–300 GB",
+        "antal": 8,
+        "min": 257,
+        "med": 282,
+        "max": 398,
+        "kampanjAndel": 62.5
+      },
+      {
+        "niva": "Obegränsad",
+        "regel": "Obegränsad surf",
+        "antal": 28,
+        "min": 174,
+        "med": 454,
+        "max": 629,
+        "kampanjAndel": 60.7
+      }
+    ],
+    "nyckeltal": {
+      "antal": 88,
+      "operatorer": 15,
+      "kampanjAndel": 54.5,
+      "snittHojning": 4.6,
+      "medianHojningKr": 130,
+      "utanBindningAndel": 64.8,
+      "medianPerGb": 14.5
+    }
   }
 ]

@@ -239,7 +239,7 @@ open(p_logg,'w').write('// GENERERAD av scripts/bygg_data.py ur research/prisand
   'export const PRISANDRINGAR: Prisandring[] = '+json.dumps(logg,ensure_ascii=False,indent=2)+';\n')
 subprocess.run(['npx','prettier','--write',p_logg],cwd=ROT,stdout=subprocess.DEVNULL)
 
-out=['// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, kontrollerade 2026-10-29.\n// Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).\n\nimport type { Abonnemang, Operator } from "./typer";\n\n']
+out=['// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-02.\n// Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).\n\nimport type { Abonnemang, Operator } from "./typer";\n\n']
 out.append('export const OPERATORER_DATA: Operator[] = '+json.dumps(opl,ensure_ascii=False,indent=2)+';\n\n')
 out.append('export const ABONNEMANG_DATA: Abonnemang[] = '+json.dumps(alla,ensure_ascii=False,indent=2)+';\n')
 open(os.path.join(ROT,'src/lib/mobil/operatorer-data.ts'),'w').write(''.join(out))
