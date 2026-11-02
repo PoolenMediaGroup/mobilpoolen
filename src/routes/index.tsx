@@ -131,11 +131,20 @@ function Startsida() {
         <Hero onResultat={onResultat} />
         <OperatorRad />
 
-        <PriserOchAvtal forval={forval} flik={flik} setFlik={setFlik} fore={<SaFungerarDet />} />
+        <PriserOchAvtal
+          forval={forval}
+          flik={flik}
+          setFlik={setFlik}
+          fore={
+            <>
+              <SaFungerarDet />
+              <NatSektion />
+            </>
+          }
+        />
 
         <AutopilotTeaser />
 
-        <NatSektion />
         <ForetagBand />
 
         <SectionShell flushTop>
@@ -226,11 +235,19 @@ function Startsida() {
   );
 }
 
-function Lank({ to, children }: { to: string; children: React.ReactNode }) {
+function Lank({
+  to,
+  children,
+  dark = false,
+}: {
+  to: string;
+  children: React.ReactNode;
+  dark?: boolean;
+}) {
   return (
     <Link
       to={to as never}
-      className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-primary hover:underline"
+      className={`inline-flex min-h-11 items-center gap-1.5 font-semibold hover:underline ${dark ? "text-white" : "text-primary"}`}
     >
       {children}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -762,9 +779,11 @@ function NatSektion() {
     agare: OPERATORER.find((o) => o.slug === id),
     operatorer: OPERATORER.filter((o) => o.nat === id && o.aktiv && !o.natNotis && o.slug !== id),
   }));
+  // Ligger i den mörka sektionen direkt under stegen "Byt till ett billigare abonnemang".
   return (
-    <SectionShell>
+    <SectionShell flushTop>
       <SectionHeader
+        dark
         title="Fyra mobilnät, samma täckning för mindre"
         sub="Alla operatörer kör i något av fyra nät. Väljer du en billigare operatör i samma nät får du samma täckning."
       />
@@ -817,9 +836,15 @@ function NatSektion() {
         ))}
       </div>
       <div className="mt-8 flex flex-wrap gap-x-6">
-        <Lank to="/nat">Vilket nät har bäst täckning?</Lank>
-        <Lank to="/operatorer">Alla operatörer</Lank>
-        <Lank to="/jamfor">Jämför två operatörer</Lank>
+        <Lank to="/nat" dark>
+          Vilket nät har bäst täckning?
+        </Lank>
+        <Lank to="/operatorer" dark>
+          Alla operatörer
+        </Lank>
+        <Lank to="/jamfor" dark>
+          Jämför två operatörer
+        </Lank>
       </div>
     </SectionShell>
   );
