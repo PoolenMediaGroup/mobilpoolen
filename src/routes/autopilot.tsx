@@ -145,58 +145,88 @@ function Sida() {
               }}
             />
           </div>
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-14 pt-8 sm:px-6 lg:grid-cols-[minmax(0,1fr)_480px] lg:items-center lg:gap-16 lg:px-8 lg:py-12">
-            <div>
+          {/* Samma raster, skalning och typografi som startsidans hero, så att rubrik och
+              text står på samma plats. Brödsmulorna syns inte på toppnivåsidor (som på
+              Elpoolen) men finns kvar för skärmläsare och i JSON-LD. */}
+          <div className="hero-skala relative mx-auto w-full max-w-7xl px-4 pb-[20px] pt-[28px] sm:px-6 sm:pb-[34px] sm:pt-[56px] lg:px-8 lg:py-[56px]">
+            <div className="sr-only">
               <PageBreadcrumbs trail={TRAIL} tone="dark" />
-              {!AUTOPILOT_LANSERAD && (
-                <span className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[13px] font-semibold text-white backdrop-blur">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#5BE39B] opacity-75 motion-reduce:animate-none" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#5BE39B]" />
-                  </span>
-                  Öppnar snart · anmäl intresse nu
-                </span>
-              )}
-              <h1
-                className="mt-4 font-bold text-white"
-                style={{
-                  fontSize: "clamp(34px, 4.6vw, 46px)",
-                  lineHeight: 1.04,
-                  letterSpacing: "-0.03em",
-                }}
-              >
-                Mobilpoolen Autopilot
-                <br />
-                <span className="text-gradient-ljus">Vi ser till att du byter i tid.</span>
-              </h1>
-              <p className="mt-6 max-w-xl text-[18px] leading-snug text-white/90 sm:text-[20px]">
-                Kampanjpriset tar slut. Vi mejlar dig innan det gör det.
-              </p>
-              <ul className="mt-8 space-y-3.5">
-                {[
-                  "Gratis, utan bindning och utan säljare som ringer",
-                  "Påminnelse en månad innan priset stiger",
-                  "Du väljer själv om du vill byta",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-3 text-[16.5px] text-white">
-                    <Check
-                      className="mt-0.5 h-5 w-5 shrink-0"
-                      style={{ color: "#5BE39B" }}
-                      strokeWidth={2.5}
-                      aria-hidden
-                    />
-                    {t}
-                  </li>
-                ))}
-              </ul>
             </div>
-            <div id="starta" className="relative scroll-mt-24">
-              <div
-                aria-hidden
-                className="absolute -inset-3 rounded-[30px] bg-gradient-to-br from-[#b06cf5]/40 via-transparent to-[#e8842c]/30 blur-2xl"
-              />
-              <div className="relative">
-                <AutopilotFormular />
+            {/* Lika hög som startsidans heroinnehåll (502 px före skalning), så att den
+                centrerade rubriken hamnar på exakt samma höjd. */}
+            <div className="flex flex-col gap-8 sm:gap-10 lg:min-h-[502px] lg:flex-row lg:items-start lg:gap-16">
+              <div className="lg:flex lg:w-[600px] lg:shrink-0 lg:flex-col lg:self-start">
+                <h1
+                  className="font-bold text-white"
+                  style={{
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.1,
+                    fontSize: "clamp(32px, 6.4vw, 52px)",
+                  }}
+                >
+                  <span className="lg:whitespace-nowrap">Mobilpoolen Autopilot</span>
+                  <br />
+                  <span className="text-gradient-ljus">
+                    Vi ser till att du <br className="hidden lg:inline" />
+                    byter i tid.
+                  </span>
+                </h1>
+                <p
+                  className="mt-3 sm:mt-4"
+                  style={{
+                    color: "rgba(255,255,255,0.85)",
+                    fontSize: "clamp(16px, 1.9vw, 18px)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Kampanjpriset tar slut. Vi mejlar dig innan det gör det.
+                </p>
+                <ul className="mt-5 flex flex-col gap-2.5 sm:mt-6 sm:gap-3.5">
+                  {[
+                    "Gratis, utan bindning och utan säljare som ringer",
+                    "Påminnelse en månad innan priset stiger",
+                    "Du väljer själv om du vill byta",
+                  ].map((t) => (
+                    <li key={t} className="flex items-start gap-3">
+                      <Check
+                        className="h-[20px] w-[20px] shrink-0"
+                        style={{ color: "#5BE39B", marginTop: 2 }}
+                        strokeWidth={2.5}
+                        aria-hidden
+                      />
+                      <span
+                        className="text-white"
+                        style={{ fontSize: "clamp(15px, 1.7vw, 17px)", lineHeight: 1.45 }}
+                      >
+                        {t}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {!AUTOPILOT_LANSERAD && (
+                  <div
+                    className="mt-3.5 inline-flex items-center gap-3 self-start sm:mt-5"
+                    style={{ color: "rgba(226,222,255,0.85)", fontSize: 12.5 }}
+                  >
+                    <span
+                      className="relative flex h-[20px] w-[20px] shrink-0 items-center justify-center"
+                      aria-hidden
+                    >
+                      <span className="absolute inline-flex h-1.5 w-1.5 animate-ping rounded-full bg-[#5BE39B] opacity-75 motion-reduce:animate-none" />
+                      <span className="relative inline-block h-1.5 w-1.5 rounded-full bg-[#5BE39B]" />
+                    </span>
+                    <span>Öppnar snart · anmäl intresse nu</span>
+                  </div>
+                )}
+              </div>
+              <div id="starta" className="relative scroll-mt-24 lg:flex-1 lg:self-start">
+                <div
+                  aria-hidden
+                  className="absolute -inset-3 rounded-[30px] bg-gradient-to-br from-[#b06cf5]/40 via-transparent to-[#e8842c]/30 blur-2xl"
+                />
+                <div className="relative">
+                  <AutopilotFormular />
+                </div>
               </div>
             </div>
           </div>
