@@ -341,8 +341,12 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
                   />
                 </span>
                 <span>
-                  Kontrollerat {datumText(SENAST_KONTROLLERAD)} · Källa: operatörernas egna
-                  webbplatser
+                  Priser kontrolleras varje vecka
+                  {" · "}
+                  <span className="whitespace-nowrap">
+                    senast{" "}
+                    <time dateTime={SENAST_KONTROLLERAD}>{datumText(SENAST_KONTROLLERAD)}</time>
+                  </span>
                 </span>
               </div>
 
