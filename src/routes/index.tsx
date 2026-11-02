@@ -8,7 +8,6 @@ import {
   Scale,
   Baby,
   Briefcase,
-  Calculator,
   CalendarX2,
   Check,
   Infinity as InfinityIcon,
@@ -41,7 +40,6 @@ import { PUBLISHED_GUIDES } from "@/lib/guides";
 import { getGuideImage } from "@/lib/guide-images";
 import { MOBILNAT, OPERATORER, PRIVATA, SENAST_KONTROLLERAD, operator } from "@/lib/mobil/data";
 import { arVillkorat, datumText, kr, snittForstaAret } from "@/lib/mobil/berakna";
-import { AUTOPILOT_LANSERAD } from "@/lib/autopilot";
 import type { NatId } from "@/lib/mobil/typer";
 
 const TITLE = "Jämför mobilabonnemang 2026 – hitta billigaste";
@@ -131,23 +129,11 @@ function Startsida() {
         <Hero onResultat={onResultat} />
         <OperatorRad />
 
-        <PriserOchAvtal
-          forval={forval}
-          flik={flik}
-          setFlik={setFlik}
-          fore={
-            <>
-              <SaFungerarDet />
-              <NatSektion />
-            </>
-          }
-        />
+        <SaFungerarDet />
+        <NatSektion />
+        <PriserOchAvtal forval={forval} flik={flik} setFlik={setFlik} />
 
-        <AutopilotTeaser />
-
-        <ForetagBand />
-
-        <SectionShell flushTop>
+        <SectionShell>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
             <h2
               className="font-bold text-foreground"
@@ -235,19 +221,11 @@ function Startsida() {
   );
 }
 
-function Lank({
-  to,
-  children,
-  dark = false,
-}: {
-  to: string;
-  children: React.ReactNode;
-  dark?: boolean;
-}) {
+function Lank({ to, children }: { to: string; children: React.ReactNode }) {
   return (
     <Link
       to={to as never}
-      className={`inline-flex min-h-11 items-center gap-1.5 font-semibold hover:underline ${dark ? "text-white" : "text-primary"}`}
+      className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-primary hover:underline"
     >
       {children}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -484,39 +462,6 @@ function OperatorRad() {
   );
 }
 
-/* ---------------- Autopilot ---------------- */
-
-function AutopilotTeaser() {
-  return (
-    <SectionShell flushTop>
-      <div className="grid items-center gap-8 rounded-[28px] hero-mesh p-7 text-white sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:p-12">
-        <div className="flex items-start gap-5">
-          <span className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-dark-accent sm:inline-flex">
-            <BellRing className="h-7 w-7" aria-hidden />
-          </span>
-          <div>
-            <h2
-              className="font-bold text-white"
-              style={{ fontSize: "clamp(24px, 3vw, 32px)", letterSpacing: "-0.02em" }}
-            >
-              Missa aldrig när kampanjen tar slut
-            </h2>
-            <p className="mt-3 max-w-[620px] text-[16.5px] leading-relaxed text-dark-muted">
-              Med Mobilpoolen Autopilot mejlar vi dig en månad innan priset stiger eller bindningen
-              släpper, med de abonnemang som passar dig bäst just då. Gratis, och du väljer själv om
-              du vill byta.
-            </p>
-          </div>
-        </div>
-        <Link to="/autopilot" className="btn-cta shrink-0">
-          {AUTOPILOT_LANSERAD ? "Starta Autopilot" : "Anmäl intresse"}
-          <ArrowRight className="h-4 w-4" aria-hidden />
-        </Link>
-      </div>
-    </SectionShell>
-  );
-}
-
 /* ---------------- Genvägar ---------------- */
 
 const GENVAGAR = [
@@ -598,13 +543,11 @@ function PriserOchAvtal({
   forval,
   flik,
   setFlik,
-  fore,
 }: {
   forval: Forval;
   flik: Flik;
   setFlik: (f: Flik) => void;
   /** Visas överst på samma mörka band, så att stegen och jämförelsen hänger ihop. */
-  fore?: React.ReactNode;
 }) {
   const aktiv = FLIKAR.find((f) => f.id === flik) ?? FLIKAR[0];
   const tangent = (e: React.KeyboardEvent<HTMLButtonElement>) => {
@@ -618,8 +561,7 @@ function PriserOchAvtal({
   return (
     <section>
       <div className="relative overflow-hidden hero-mesh pb-28 text-white lg:pb-32">
-        {fore}
-        <div id="alla" className="mx-auto w-full max-w-[1140px] scroll-mt-20 px-6 pt-4 lg:pt-6">
+        <div id="alla" className="mx-auto w-full max-w-[1140px] scroll-mt-20 px-6 pt-14 lg:pt-20">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <h2
@@ -722,7 +664,7 @@ function SaFungerarDet() {
     },
   ];
   return (
-    <div className="text-white">
+    <section className="relative overflow-hidden hero-mesh text-white">
       <SectionShell>
         <SectionHeader
           dark
@@ -767,7 +709,7 @@ function SaFungerarDet() {
           ))}
         </ol>
       </SectionShell>
-    </div>
+    </section>
   );
 }
 
@@ -779,109 +721,68 @@ function NatSektion() {
     agare: OPERATORER.find((o) => o.slug === id),
     operatorer: OPERATORER.filter((o) => o.nat === id && o.aktiv && !o.natNotis && o.slug !== id),
   }));
-  // Ligger i den mörka sektionen direkt under stegen "Byt till ett billigare abonnemang".
+  // Ljus sektion mellan de två mörka (stegen och jämförelsen), så att styckena skiljs åt.
   return (
-    <SectionShell flushTop>
-      <SectionHeader
-        dark
-        title="Fyra mobilnät, samma täckning för mindre"
-        sub="Alla operatörer kör i något av fyra nät. Väljer du en billigare operatör i samma nät får du samma täckning."
-      />
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {perNat.map(({ nat, agare, operatorer }) => (
-          <div
-            key={nat.id}
-            className="kort-lyft flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-kort"
-          >
-            <Link
-              to="/nat/$slug"
-              params={{ slug: nat.id }}
-              className="group flex min-h-[132px] flex-col justify-between gap-3 border-b border-border bg-gradient-to-br from-highlight to-surface px-5 py-5"
+    <section className="bg-mesh-light">
+      <SectionShell>
+        <SectionHeader
+          title="Fyra mobilnät, samma täckning för mindre"
+          sub="Alla operatörer kör i något av fyra nät. Väljer du en billigare operatör i samma nät får du samma täckning."
+        />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {perNat.map(({ nat, agare, operatorer }) => (
+            <div
+              key={nat.id}
+              className="kort-lyft flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-kort"
             >
-              {agare && <OperatorMonogram namn={agare.namn} size={40} />}
-              <span className="block">
-                <span className="block font-display text-[19px] font-bold text-foreground group-hover:text-primary">
-                  {nat.namn}
+              <Link
+                to="/nat/$slug"
+                params={{ slug: nat.id }}
+                className="group flex min-h-[132px] flex-col justify-between gap-3 border-b border-border bg-gradient-to-br from-highlight to-surface px-5 py-5"
+              >
+                {agare && <OperatorMonogram namn={agare.namn} size={40} />}
+                <span className="block">
+                  <span className="block font-display text-[19px] font-bold text-foreground group-hover:text-primary">
+                    {nat.namn}
+                  </span>
+                  <span
+                    className="mt-0.5 block truncate text-[12.5px] text-muted-foreground"
+                    title={nat.agare}
+                  >
+                    {nat.agare.split(",")[0]}
+                  </span>
                 </span>
-                <span
-                  className="mt-0.5 block truncate text-[12.5px] text-muted-foreground"
-                  title={nat.agare}
-                >
-                  {nat.agare.split(",")[0]}
-                </span>
-              </span>
-            </Link>
-            <div className="flex-1 px-5 py-4">
-              <p className="text-[12.5px] font-semibold text-muted-foreground">
-                {operatorer.length > 0
-                  ? "Andra operatörer i nätet"
-                  : "Inga andra operatörer i jämförelsen"}
-              </p>
-              <ul className="mt-3 grid gap-2">
-                {operatorer.map((o) => (
-                  <li key={o.slug}>
-                    <Link
-                      to="/operatorer/$slug"
-                      params={{ slug: o.slug }}
-                      className="flex items-center gap-3 rounded-xl px-1 py-1 text-[14.5px] font-semibold text-foreground hover:bg-muted hover:text-primary"
-                    >
-                      <OperatorMonogram namn={o.namn} size={30} />
-                      {o.namn}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              </Link>
+              <div className="flex-1 px-5 py-4">
+                <p className="text-[12.5px] font-semibold text-muted-foreground">
+                  {operatorer.length > 0
+                    ? "Andra operatörer i nätet"
+                    : "Inga andra operatörer i jämförelsen"}
+                </p>
+                <ul className="mt-3 grid gap-2">
+                  {operatorer.map((o) => (
+                    <li key={o.slug}>
+                      <Link
+                        to="/operatorer/$slug"
+                        params={{ slug: o.slug }}
+                        className="flex items-center gap-3 rounded-xl px-1 py-1 text-[14.5px] font-semibold text-foreground hover:bg-muted hover:text-primary"
+                      >
+                        <OperatorMonogram namn={o.namn} size={30} />
+                        {o.namn}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 flex flex-wrap gap-x-6">
-        <Lank to="/nat" dark>
-          Vilket nät har bäst täckning?
-        </Lank>
-        <Lank to="/operatorer" dark>
-          Alla operatörer
-        </Lank>
-        <Lank to="/jamfor" dark>
-          Jämför två operatörer
-        </Lank>
-      </div>
-    </SectionShell>
-  );
-}
-
-/* ---------------- Företag ---------------- */
-
-function ForetagBand() {
-  return (
-    <SectionShell flushTop>
-      <div className="relative grid items-center gap-6 overflow-hidden rounded-[28px] border border-primary/15 bg-gradient-to-br from-white via-white to-highlight p-7 shadow-[0_24px_48px_-28px_rgba(59,40,204,0.45)] sm:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
-        <div>
-          <h2
-            className="font-bold text-foreground"
-            style={{ fontSize: "clamp(24px, 3vw, 32px)", letterSpacing: "-0.02em" }}
-          >
-            Mobilabonnemang för företag
-          </h2>
-          <p className="mt-3 max-w-[620px] text-[16.5px] leading-relaxed text-muted-foreground">
-            Priser exkl. moms per användare, delad surf och vad som gäller för enskild firma. Räkna
-            ut vad hela företaget betalar per år.
-          </p>
+          ))}
         </div>
-        <div className="flex flex-wrap gap-3">
-          <Link to="/foretag" className="btn-cta">
-            Jämför för företag
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </Link>
-          <Link
-            to="/verktyg/foretagskalkylator"
-            className="inline-flex min-h-14 items-center gap-2 rounded-[14px] border border-border px-6 font-display font-semibold text-foreground hover:border-primary/50 hover:text-primary"
-          >
-            <Calculator className="h-4 w-4" aria-hidden />
-            Kalkylator
-          </Link>
+        <div className="mt-8 flex flex-wrap gap-x-6">
+          <Lank to="/nat">Vilket nät har bäst täckning?</Lank>
+          <Lank to="/operatorer">Alla operatörer</Lank>
+          <Lank to="/jamfor">Jämför två operatörer</Lank>
         </div>
-      </div>
-    </SectionShell>
+      </SectionShell>
+    </section>
   );
 }
