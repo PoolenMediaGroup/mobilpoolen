@@ -22,6 +22,14 @@ export function snittForstaAret(a: Abonnemang): number {
   return Math.round(totalKostnad(a, 12) / 12);
 }
 
+/**
+ * Årsabonnemang betalas i förskott för tolv månader. I datan står priset omräknat per månad
+ * (till exempel 3 490 kr / 12 = 290,83 kr). Returnerar hela årsbeloppet, annars `null`.
+ */
+export function arsbelopp(a: Abonnemang): number | null {
+  return /årsabonnemang/i.test(a.namn) ? Math.round(a.pris * 12) : null;
+}
+
 /** Kronor per GB vid ordinarie pris. `null` för obegränsad surf. */
 export function prisPerGb(a: Abonnemang): number | null {
   if (a.gb == null || a.gb === 0) return null;
