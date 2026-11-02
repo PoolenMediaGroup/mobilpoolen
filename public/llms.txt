@@ -171,6 +171,13 @@ Varje operatörssida bygger på uppgifter från operatörens egen webbplats, med
 - [Delad surf för företag: så fungerar poolad surf](https://mobilpoolen.se/guider/delad-surf-foretag): Hur delad (poolad) surf fungerar i företagsabonnemang, vilka operatörer som erbjuder det och när det blir billigare än separata surfpaket.
 - [Flytta numret från privat till företag: överlåtelse](https://mobilpoolen.se/guider/overlata-abonnemang-till-foretag): Så överlåter du ett mobilabonnemang mellan privatperson och företag, vad som händer med bindningstiden och hur du behåller numret.
 
+## Nyheter
+
+- [Nyheter om mobilabonnemang](https://mobilpoolen.se/nyheter): Nyheter om priser, operatörer, mobilnät och regler i Sverige, nyast först, var och en med källa och datum. RSS: https://mobilpoolen.se/nyheter/rss.xml
+- [SKI Mobil 2026: Fello har nöjdast privatkunder](https://mobilpoolen.se/nyheter/ski-mobil-2026-fello-nojdast): Svenskt Kvalitetsindex 5 oktober 2026. Fello 81,0, branschsnitt privat 66,2 (65,8 i fjol), företag 67,0 med Telia högst 69,2.
+- [Telia blockerar kända bedrägerisajter för alla mobilkunder](https://mobilpoolen.se/nyheter/telia-internetfilter-bedragerisajter): Internetfilter i Telias mobilnät från 5 oktober 2026, ingår utan extra kostnad och kan stängas av.
+- [Nya mobilnummer börjar på 078 från 1 oktober](https://mobilpoolen.se/nyheter/nya-mobilnummer-078-oktober-2026): PTS 13 maj 2026, nio miljoner nya mobilnummer i 0780–0782 och 0784–0789 från 1 oktober 2026. Befintliga nummer påverkas inte.
+
 ## Om tjänsten
 
 Mobilpoolen drivs av PMG Poolen Media Group AB. Tjänsten jämför operatörernas publicerade priser och villkor, och besökaren beställer direkt hos operatören. Mobilpoolen har inga avtal med operatörer och får i dag ingen ersättning. Om det ändras märks länkarna vid knappen och med rel="sponsored", och ersättning påverkar aldrig ordningen i jämförelsen.
