@@ -6,6 +6,7 @@ import type { Abonnemang, Kundtyp, Malgrupp, NatId } from "@/lib/mobil/typer";
 import {
   bindningText,
   arVillkorat,
+  arsbelopp,
   datumText,
   formatTal,
   momsText,
@@ -390,6 +391,7 @@ export function AbonnemangKort({
   const o = operator(a.operator);
   const harKampanj = a.kampanjpris != null && (a.kampanjManader ?? 0) > 0;
   const snitt = snittForstaAret(a);
+  const ar = arsbelopp(a);
   const perGb = prisPerGb(a);
   const natNamn = o ? MOBILNAT[o.nat].kortText : "";
 
@@ -464,19 +466,30 @@ export function AbonnemangKort({
           </div>
           <div className="text-right md:text-left">
             <div className="font-display text-[26px] font-bold leading-none text-foreground">
-              {harKampanj ? a.kampanjpris : a.pris}
-              <span className="ml-1 text-[14px] font-semibold text-foreground/70">{prisEnhet}</span>
+              {ar != null
+                ? formatTal(ar)
+                : formatTal(Math.round(harKampanj ? (a.kampanjpris ?? a.pris) : a.pris))}
+              <span className="ml-1 text-[14px] font-semibold text-foreground/70">
+                {ar != null ? "kr/år" : prisEnhet}
+              </span>
             </div>
             <div className="mt-1 text-[13px] text-foreground/65">
-              {harKampanj ? (
+              {ar != null ? (
                 <>
-                  i {a.kampanjManader} mån, sedan {kr(a.pris)}
+                  betalas i förskott
                   <span className="block font-semibold text-foreground/80">
-                    snitt {kr(snitt)} första året
+                    motsvarar {kr(snitt)}/mån
+                  </span>
+                </>
+              ) : harKampanj ? (
+                <>
+                  i {a.kampanjManader} mån, sedan {kr(a.pris)}/mån
+                  <span className="block font-semibold text-foreground/80">
+                    {kr(totalKostnad(a, 12))} första året
                   </span>
                 </>
               ) : (
-                `snitt ${kr(snitt)} första året`
+                `${kr(totalKostnad(a, 12))} första året`
               )}
             </div>
           </div>
@@ -524,6 +537,7 @@ export function AbonnemangKort({
                 v={a.kampanjText ?? `${kr(a.kampanjpris ?? 0)} i ${a.kampanjManader} mån`}
               />
             )}
+            <Rad t="Kostnad första året" v={kr(totalKostnad(a, 12))} />
             <Rad t="Snitt första året" v={`${kr(snitt)} per månad`} />
             <Rad t="Kostnad 24 månader" v={kr(totalKostnad(a, 24))} />
             {perGb != null && (
