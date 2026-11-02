@@ -38,6 +38,8 @@ Varje ändring ska göra Mobilpoolen mer synlig i Google, Bing och AI-tjänster 
 
 `prisindex_manad.ts` sparar månadens prisindex i `research/prisindex-historik.json`. Samma månad skrivs över, tidigare månader ändras aldrig. Från två sparade månader visar /prisindex hur medianpriserna har utvecklats. Kör prisuppdateringen minst en gång i månaden, annars blir det hål i serien.
 
+En schemalagd uppgift kontrollerar alla priser mot operatörernas sajter varje morgon (Leons beslut 2 november 2026), eftersom startsidan säger "Priser kontrolleras dagligen". Stoppas den dagliga kontrollen: ändra texten i heron.
+
 ## Mobilpoolen Autopilot
 
 - Gratis bevakning av kundens abonnemang: /autopilot (formulär i tre steg), /autopilot/bekrafta, /autopilot/avsluta och /autopilot/villkor. Samma modell som Elpoolen Autopilot innan fullmaktsbytet är öppet: vi mejlar, kunden byter själv.

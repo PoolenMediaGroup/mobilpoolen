@@ -341,7 +341,7 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
                   />
                 </span>
                 <span>
-                  Priser kontrolleras varje vecka
+                  Priser kontrolleras dagligen
                   {" · "}
                   <span className="whitespace-nowrap">
                     senast{" "}
