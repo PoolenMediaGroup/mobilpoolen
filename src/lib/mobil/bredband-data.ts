@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-02.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-03.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-02";
+export const BREDBAND_KONTROLLERAD = "2026-11-03";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -689,7 +689,7 @@ export const BREDBAND_DATA: Bredband[] = [
     kampanjManader: null,
     bindning: 24,
     uppsagning: null,
-    startavgift: null,
+    startavgift: 0,
     router: "Router 5G: hyra 49 kr/mån eller köpa för 2 500 kr",
     femg: true,
     kalla: "https://www.bredband2.com/privat/mobilt-bredband/flexibelt/",

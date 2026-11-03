@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-02",
+  "kontrollerad": "2026-11-03",
   "erbjudanden": [
     {
       "operator": "telia",
@@ -642,7 +642,7 @@
       "kampanjManader": null,
       "bindning": 24,
       "uppsagning": null,
-      "startavgift": null,
+      "startavgift": 0,
       "routerkostnad": "Router 5G: hyra 49 kr/mån eller köpa för 2 500 kr",
       "femg": true,
       "krav": false,
