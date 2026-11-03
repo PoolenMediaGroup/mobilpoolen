@@ -79,7 +79,7 @@
   },
   {
     "manad": "2026-11",
-    "kontrollerad": "2026-11-02",
+    "kontrollerad": "2026-11-03",
     "perNiva": [
       {
         "niva": "1 GB",
@@ -122,7 +122,7 @@
         "regel": "50–150 GB",
         "antal": 10,
         "min": 222,
-        "med": 282,
+        "med": 283,
         "max": 399,
         "kampanjAndel": 60
       },
@@ -130,8 +130,8 @@
         "niva": "100 GB",
         "regel": "100–300 GB",
         "antal": 8,
-        "min": 257,
-        "med": 282,
+        "min": 259,
+        "med": 283,
         "max": 398,
         "kampanjAndel": 62.5
       },
@@ -149,9 +149,9 @@
       "antal": 88,
       "operatorer": 15,
       "kampanjAndel": 54.5,
-      "snittHojning": 4.6,
+      "snittHojning": 5.1,
       "medianHojningKr": 130,
-      "utanBindningAndel": 64.8,
+      "utanBindningAndel": 65.9,
       "medianPerGb": 14.5
     }
   }
