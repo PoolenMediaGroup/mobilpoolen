@@ -331,10 +331,11 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
               </ul>
 
               <div
-                className="mt-3.5 inline-flex items-center gap-3 self-start sm:mt-5"
+                className="mt-3.5 inline-flex items-center gap-2 self-start sm:mt-5"
                 style={{ color: "rgba(226,222,255,0.85)", fontSize: 12.5 }}
               >
-                <span className="flex w-[20px] shrink-0 justify-center" aria-hidden>
+                {/* Pricken står mitt över ikonerna i länkarna under (16 px), som på Elpoolen. */}
+                <span className="flex w-4 shrink-0 justify-center" aria-hidden>
                   <span
                     className="inline-block h-1.5 w-1.5 rounded-full"
                     style={{ background: "#5BE39B" }}
