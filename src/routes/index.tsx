@@ -278,7 +278,7 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
       <div className="hero-skala relative mx-auto w-full max-w-7xl px-4 pb-[20px] pt-[28px] sm:px-6 sm:pb-[34px] sm:pt-[56px] lg:px-8 lg:py-[56px]">
         <div className="flex flex-col gap-3 sm:gap-10 lg:flex-row lg:items-start lg:gap-16">
           {/* Vänsterkolumn */}
-          <div className="contents lg:flex lg:w-[520px] lg:shrink-0 lg:flex-col lg:self-start">
+          <div className="contents lg:flex lg:w-[520px] lg:shrink-0 lg:flex-col lg:self-stretch">
             <div className="order-1 flex flex-col">
               <h1
                 className="font-bold text-white"
@@ -306,7 +306,7 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
               </p>
             </div>
 
-            <div className="order-3 flex flex-col lg:order-2">
+            <div className="order-3 flex flex-col lg:order-2 lg:flex-1">
               <ul className="mt-1 hidden flex-col gap-2.5 sm:mt-6 sm:flex sm:gap-3.5">
                 {[
                   "Pris efter kampanjen, inte bara första månaden",
@@ -350,7 +350,7 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
                 </span>
               </div>
 
-              <div className="mt-5 flex flex-col items-start gap-3 sm:mt-10 lg:mt-16">
+              <div className="mt-5 flex flex-col items-start gap-3 sm:mt-10 lg:mt-auto lg:pt-16">
                 <Link
                   to="/autopilot"
                   className="inline-flex items-center gap-2 text-[13.5px] hover:underline"
@@ -388,8 +388,10 @@ function Hero({ onResultat }: { onResultat: (r: KalkylResultat) => void }) {
               <div id="jamfor-form" className="scroll-mt-24">
                 <SparKalkyl onResultat={onResultat} />
               </div>
+              {/* Dator: raden ligger utanför flödet, så att kolumnens höjd blir kortets höjd
+                  och länkarna i vänsterkolumnen linjerar med kortets underkant. */}
               <div
-                className="text-center"
+                className="text-center lg:absolute lg:inset-x-0 lg:top-full"
                 style={{ marginTop: 12, fontSize: 13, color: "#DCD8F5" }}
               >
                 Jämför på 30 sekunder · Helt gratis · Du väljer själv
