@@ -114,8 +114,6 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     kontrollerad: "2026-11-03",
     osakert: [
-      "15 GB-erbjudandet: 15 eller 30 GB (dubbel surf), med eller utan bindning, beroende på vilken sida man läser",
-      "Kampanjpriset för Obegränsad Max: 449 eller 399 kr/mån",
       "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
       "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
       "Ordinarie prislista och prisändringsklausul har inte lästs",
@@ -523,7 +521,7 @@ export const OPERATORER_DATA: Operator[] = [
       "Ingen bindningstid",
       "Sparad surf upp till 100 GB (abonnemang från 2 juni 2025)",
       "Separata abonnemang för student, 55+ och under 18",
-      "Kampanj: 30 kr/mån i 4 mån och Dubbel Surf i 24 mån (t.o.m. 1 nov 2026)",
+      "Kampanj: 20 kr/mån i 3 mån och 100 GB extra surf i 12 mån för nya kunder",
     ],
     svagheter: [
       "Aktuell prislista med GB och priser gick inte att läsa på fello.se (innehållet laddas dynamiskt)",
@@ -534,7 +532,7 @@ export const OPERATORER_DATA: Operator[] = [
       uppsagningstid: "1 månad",
       startavgift: null,
       ovrigt:
-        "Pappersfaktura 29 kr enligt den gamla prislistan (t.o.m. 2025-06-01). Alla aktiva abonnemang har 5G. Äldre abonnemang (Fello 3 GB, Student 7 GB, Fastpris) saknar 5G. Värva vän: båda får rabatt. Ingen bindningstid på något abonnemang 30 kr/mån i 4 mån vid nybeställning, ej vid abonnemangsbyte. Dubbel Surf giltig i 24 mån, kan inte läggas på befintliga Trippel/Dubbel Surf. Gäller till 1 november 2026. Gäller alla fyra målgrupper (För alla, Student, 55+, Under 18) enligt produkt-API:t (discount PRICE_MONTHS, 4 mån, label '30 kr/mån i 4 månader'). Fri roaming inom EU/EES, surfmängden i abonnemanget men max 60 GB/mån; därefter 12,25 kr/GB Telias nät, 5G ingår Sidan anger 'Tidigare lägsta pris 20 kr/mån' API anger extraMonths: 1 per rabatt (troligen värva-vän, oklart)",
+        "Pappersfaktura 29 kr enligt den gamla prislistan (t.o.m. 2025-06-01). Alla aktiva abonnemang har 5G. Äldre abonnemang (Fello 3 GB, Student 7 GB, Fastpris) saknar 5G. Värva vän: båda får rabatt. Ingen bindningstid på något abonnemang 20 kr/mån i 3 mån vid nybeställning, ej vid abonnemangsbyte. 100 GB extra surf giltig i 12 mån. Erbjudandet gäller nya kunder. Slutdatum framgår inte (kontrollerat 3 november 2026). Gäller alla fyra målgrupper (För alla, Student, 55+, Under 18) enligt produkt-API:t. Ersätter kampanjen 30 kr/mån i 4 mån och Dubbel Surf. Fri roaming inom EU/EES, surfmängden i abonnemanget men max 60 GB/mån; därefter 12,25 kr/GB Telias nät, 5G ingår Sidan anger 'Tidigare lägsta pris: 30 kr/mån' (3 november 2026) API anger extraMonths: 1 per rabatt (troligen värva-vän, oklart)",
     },
     kallor: [
       "https://www.fello.se/",

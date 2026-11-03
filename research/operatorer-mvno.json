@@ -35,7 +35,7 @@
       "kontantkort": false,
       "kundtjanst": "Chatt på support.fello.se, e-post hello@fello.se, telefon 0770-33 22 22 (vardagar 12–16, enligt LO/PRO-artikeln)",
       "om": "Fello är en lågprisoperatör i Telias nät och ägs i dag av Telia Sverige AB. Abonnemangen har ingen bindningstid och fria samtal och sms i Sverige. Det finns separata abonnemang för alla, studenter, 55+ och under 18, samt mobilt bredband. Outnyttjad surf sparas automatiskt.",
-      "starkor": ["Telias nät", "Ingen bindningstid", "Sparad surf upp till 100 GB (abonnemang från 2 juni 2025)", "Separata abonnemang för student, 55+ och under 18", "Kampanj: 30 kr/mån i 4 mån och Dubbel Surf i 24 mån (t.o.m. 1 nov 2026)"],
+      "starkor": ["Telias nät", "Ingen bindningstid", "Sparad surf upp till 100 GB (abonnemang från 2 juni 2025)", "Separata abonnemang för student, 55+ och under 18", "Kampanj: 20 kr/mån i 3 mån och 100 GB extra surf i 12 mån för nya kunder"],
       "svagheter": ["Aktuell prislista med GB och priser gick inte att läsa på fello.se (innehållet laddas dynamiskt)", "EU-surf max 60 GB/mån, därefter 12,50 kr/GB", "Sparad surf försvinner när abonnemanget sägs upp"],
       "villkor": {
         "uppsagningstid": "1 månad (allmänna villkor 14.1)",
