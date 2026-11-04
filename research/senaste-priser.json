@@ -611,7 +611,7 @@
  },
  "hallon|5 GB|privat": {
   "pris": 109,
-  "kampanjpris": 19,
+  "kampanjpris": 9,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang",
@@ -621,7 +621,7 @@
  },
  "hallon|10 GB|privat": {
   "pris": 159,
-  "kampanjpris": 29,
+  "kampanjpris": 19,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang",
@@ -631,7 +631,7 @@
  },
  "hallon|25 GB|privat": {
   "pris": 259,
-  "kampanjpris": 39,
+  "kampanjpris": 29,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang",
@@ -641,7 +641,7 @@
  },
  "hallon|50 GB|privat": {
   "pris": 309,
-  "kampanjpris": 49,
+  "kampanjpris": 39,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang",
@@ -651,7 +651,7 @@
  },
  "hallon|100 GB|privat": {
   "pris": 359,
-  "kampanjpris": 59,
+  "kampanjpris": 49,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang",
@@ -661,7 +661,7 @@
  },
  "hallon|Student 10 GB|privat": {
   "pris": 109,
-  "kampanjpris": 19,
+  "kampanjpris": 9,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
@@ -671,7 +671,7 @@
  },
  "hallon|Student 20 GB|privat": {
   "pris": 159,
-  "kampanjpris": 29,
+  "kampanjpris": 19,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
@@ -681,7 +681,7 @@
  },
  "hallon|Student 50 GB|privat": {
   "pris": 259,
-  "kampanjpris": 39,
+  "kampanjpris": 29,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
@@ -691,7 +691,7 @@
  },
  "hallon|Student 100 GB|privat": {
   "pris": 309,
-  "kampanjpris": 49,
+  "kampanjpris": 39,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
@@ -701,7 +701,7 @@
  },
  "hallon|Student 200 GB|privat": {
   "pris": 359,
-  "kampanjpris": 59,
+  "kampanjpris": 49,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang",
@@ -711,7 +711,7 @@
  },
  "hallon|Över 55 4 GB|privat": {
   "pris": 99,
-  "kampanjpris": 19,
+  "kampanjpris": 9,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
@@ -721,7 +721,7 @@
  },
  "hallon|Över 55 10 GB|privat": {
   "pris": 129,
-  "kampanjpris": 29,
+  "kampanjpris": 19,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
@@ -731,7 +731,7 @@
  },
  "hallon|Över 55 16 GB|privat": {
   "pris": 179,
-  "kampanjpris": 39,
+  "kampanjpris": 29,
   "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/mobilabonnemang/over-55",
@@ -1221,7 +1221,7 @@
  },
  "tellus|20 GB (endast 55+)|privat": {
   "pris": 189,
-  "kampanjpris": 99,
+  "kampanjpris": 100,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://tellusmobil.se/handla/",
@@ -1247,6 +1247,16 @@
   "kalla": "https://tellusmobil.se/handla/",
   "operator": "tellus",
   "namn": "100 GB (endast 55+)",
+  "kundtyp": "privat"
+ },
+ "tellus|100 GB|privat": {
+  "pris": 349,
+  "kampanjpris": 149,
+  "kampanjManader": 3,
+  "startavgift": null,
+  "kalla": "https://tellusmobil.se/handla/",
+  "operator": "tellus",
+  "namn": "100 GB",
   "kundtyp": "privat"
  },
  "tellus|Obegränsat|privat": {
@@ -1424,7 +1434,7 @@
   "kampanjpris": null,
   "kampanjManader": null,
   "startavgift": null,
-  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
   "namn": "Företag Obegränsad Max",
   "kundtyp": "foretag"
@@ -1434,7 +1444,7 @@
   "kampanjpris": null,
   "kampanjManader": null,
   "startavgift": null,
-  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
   "namn": "Företag Obegränsad Premium",
   "kundtyp": "foretag"
@@ -1444,7 +1454,7 @@
   "kampanjpris": null,
   "kampanjManader": null,
   "startavgift": null,
-  "kalla": "https://www.telia.se/foretag/mobilt/mobilabonnemang",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
   "namn": "Företag Obegränsad",
   "kundtyp": "foretag"
@@ -1461,7 +1471,7 @@
  },
  "tele2|Företag 60 GB|foretag": {
   "pris": 399,
-  "kampanjpris": 269,
+  "kampanjpris": 259,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
@@ -1471,7 +1481,7 @@
  },
  "tele2|Företag Obegränsad|foretag": {
   "pris": 499,
-  "kampanjpris": 299,
+  "kampanjpris": 279,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
@@ -1481,7 +1491,7 @@
  },
  "tele2|Företag Obegränsad Max|foretag": {
   "pris": 599,
-  "kampanjpris": 349,
+  "kampanjpris": 289,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
@@ -1511,8 +1521,8 @@
  },
  "hallon|Företag 10 GB|foretag": {
   "pris": 129,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 9,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/foretag",
   "operator": "hallon",
@@ -1521,8 +1531,8 @@
  },
  "hallon|Företag 30 GB|foretag": {
   "pris": 179,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 19,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/foretag",
   "operator": "hallon",
@@ -1531,8 +1541,8 @@
  },
  "hallon|Företag 150 GB|foretag": {
   "pris": 269,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 29,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://www.hallon.se/foretag",
   "operator": "hallon",

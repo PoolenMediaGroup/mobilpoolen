@@ -40,6 +40,12 @@ const DUBBEL = PRIVATA.filter(
     /dubbel surf/i.test(a.kampanjText ?? ""),
 ).sort((a, b) => a.operator.localeCompare(b.operator) || (a.gb ?? 0) - (b.gb ?? 0));
 
+/** Operatörerna som har dubbel surf i datan just nu, t.ex. "Hallon och Comviq". */
+const DUBBEL_HOS = (() => {
+  const n = [...new Set(DUBBEL.map((a) => operator(a.operator)?.namn ?? a.operator))];
+  return n.length > 1 ? `${n.slice(0, -1).join(", ")} och ${n[n.length - 1]}` : (n[0] ?? "");
+})();
+
 const namn = (a: Abonnemang) => `${operator(a.operator)?.namn ?? a.operator} ${a.namn}`;
 
 /** Hallon: dubbel surf så länge man inte byter prisplan. Comviq: i 12 månader. */
@@ -121,8 +127,11 @@ function Page() {
       <P>
         Sparad surf betyder att surf du inte använder flyttas till nästa månad. Dubbel surf är en
         kampanj där du får dubbelt så mycket surf till samma pris. Hallon, Comviq, Telia och Fello
-        har sparad surf i olika former. Hallon och Comviq har just nu kampanjer med dubbel surf.
-        Båda kan ge mer surf för pengarna, men villkoren skiljer.
+        har sparad surf i olika former.{" "}
+        {DUBBEL_HOS
+          ? `${DUBBEL_HOS} har just nu kampanjer med dubbel surf som alla kan teckna.`
+          : "Just nu har varken Hallon eller Comviq dubbel surf som alla kan teckna."}{" "}
+        Båda sorterna kan ge mer surf för pengarna, men villkoren skiljer.
       </P>
 
       <H2 id="sparad-surf">Vad är sparad surf?</H2>
@@ -187,7 +196,7 @@ function Page() {
       <UL>
         <li>
           <strong>Hur länge kampanjen gäller.</strong> Hos Comviq gäller dubbel surf i 12 månader.
-          Hos Hallon gäller den så länge du inte byter prisplan.
+          När Hallon har dubbel surf gäller den så länge du inte byter prisplan.
         </li>
         <li>
           <strong>Om den kräver bindningstid.</strong> Comviqs kampanj kräver 12 månaders
@@ -201,30 +210,34 @@ function Page() {
 
       <H2 id="kampanjer">Dubbel surf just nu</H2>
       <P>
-        Här är abonnemangen med dubbel surf hos Hallon och Comviq som alla kan teckna. Surfmängden
-        med kampanjen står i andra kolumnen.
+        {DUBBEL.length > 0
+          ? `Här är abonnemangen med dubbel surf hos ${DUBBEL_HOS} som alla kan teckna. Surfmängden med kampanjen står i andra kolumnen.`
+          : "Just nu har varken Hallon eller Comviq dubbel surf som alla kan teckna."}
       </P>
-      <GuideTable
-        brytForsta
-        head={["Abonnemang", "Med dubbel surf", "Hur länge", "Snitt år 1", "Bindningstid"]}
-        rows={DUBBEL.map((a) => [
-          namn(a).replace(" (kampanj)", ""),
-          gbText((a.gb ?? 0) * 2),
-          hurLange(a),
-          `${kr(snittForstaAret(a))}/mån`,
-          bindningText(a.bindning),
-        ])}
-      />
+      {DUBBEL.length > 0 && (
+        <GuideTable
+          brytForsta
+          head={["Abonnemang", "Med dubbel surf", "Hur länge", "Snitt år 1", "Bindningstid"]}
+          rows={DUBBEL.map((a) => [
+            namn(a).replace(" (kampanj)", ""),
+            gbText((a.gb ?? 0) * 2),
+            hurLange(a),
+            `${kr(snittForstaAret(a))}/mån`,
+            bindningText(a.bindning),
+          ])}
+        />
+      )}
       <p className={KALLRAD}>
         Källa: operatörernas webbplatser, kontrollerade {datumText(SENAST_KONTROLLERAD)}.
         Snittpriset räknar med kampanjpriset de första månaderna. Kampanjer ändras ofta, kontrollera
         hos operatören innan du beställer.
       </p>
-      <H3>Andra kampanjer med dubbel surf</H3>
+      <H3>Andra kampanjer med extra surf</H3>
       <P>
-        Fello anger dubbel surf i 24 månader för nya beställningar, i en kampanj som gäller till och
-        med 1 november 2026. Vimla anger dubbel surf i 24 månader för nya kunder. Läs alltid
-        kampanjvillkoren hos operatören. Vad som händer med priset efteråt beskrivs i guiden om{" "}
+        Vimla anger dubbel surf i 24 månader för nya kunder. Fello ger i stället 100 GB extra surf
+        som gäller i 12 månader. Hallon ger under Black Weeks en extra surfpott på 60 till 100 GB i
+        stället för dubbel surf. Läs alltid kampanjvillkoren hos operatören. Vad som händer med
+        priset efteråt beskrivs i guiden om{" "}
         <A href="/guider/kampanjpris-efter-kampanjen">kampanjpris efter kampanjen</A>.
       </P>
 

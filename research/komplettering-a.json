@@ -135,7 +135,7 @@
         "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid/",
         "https://www.telenor.se/handla/mobilabonnemang/obegransad-surf/"
       ],
-      "kontrollerad": "2026-11-03",
+      "kontrollerad": "2026-11-04",
       "osakert": [
         "Kampanjpriserna (bindningsrabatt) lästes från telenor.se renderad i webbläsare med bindning påslagen. Brytaren för obundet pris gick inte att växla automatiskt; priset utan bindning är taget ur prislistan (månadsavgift) och sidans 'Tidigare'-pris, som är samma.",
         "Att abonnemangen går att teckna helt utan bindning bygger på supportsidan ('kan välja att binda') och prislistan, inte på en visad kassa.",
@@ -473,7 +473,7 @@
         "https://vimla.se/kontakt-vimlare/",
         "https://vimla.se/kontantkort/"
       ],
-      "kontrollerad": "2026-11-03",
+      "kontrollerad": "2026-11-04",
       "osakert": [
         "Kampanjens slutdatum anges inte på vimla.se.",
         "Kampanjen gäller 'nya Vimlare'; om den gäller vid nummerflytt såväl som nytt nummer framgår inte.",

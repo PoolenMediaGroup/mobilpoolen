@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-03.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-04.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-03";
+export const BREDBAND_KONTROLLERAD = "2026-11-04";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -414,8 +414,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 150 Mbit/s",
     pris: 399,
-    kampanjpris: 199,
-    kampanjManader: 2,
+    kampanjpris: 59,
+    kampanjManader: 3,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -433,8 +433,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: 200,
     hastighet: "upp till 150 Mbit/s",
     pris: 299,
-    kampanjpris: 149,
-    kampanjManader: 2,
+    kampanjpris: 49,
+    kampanjManader: 3,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -453,8 +453,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: 100,
     hastighet: "upp till 150 Mbit/s",
     pris: 249,
-    kampanjpris: 129,
-    kampanjManader: 2,
+    kampanjpris: 39,
+    kampanjManader: 3,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -472,8 +472,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: 20,
     hastighet: "upp till 150 Mbit/s",
     pris: 149,
-    kampanjpris: 79,
-    kampanjManader: 2,
+    kampanjpris: 29,
+    kampanjManader: 3,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -491,8 +491,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: 5,
     hastighet: "upp till 150 Mbit/s",
     pris: 89,
-    kampanjpris: 49,
-    kampanjManader: 2,
+    kampanjpris: 19,
+    kampanjManader: 3,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
