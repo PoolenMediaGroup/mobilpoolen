@@ -1,9 +1,10 @@
 // Kontaktformuläret på mobilpoolen.se. Validerar och skickar via Resend.
 //
-// Ligger i Elpoolens Supabase-projekt (rilpjkuozcglwnxwfxgl), eftersom det är
-// där Resend-nyckeln och avsändardomänen send.elpoolen.se finns, precis som
-// mobilpoolen-offertnotis. Inget sparas i någon databas: meddelandet går bara
-// vidare som mejl till rätt brevlåda.
+// Ligger i PMG:s gemensamma Supabase-projekt (Elpoolen, rilpjkuozcglwnxwfxgl),
+// eftersom det är där Resend-nyckeln och den verifierade avsändardomänen
+// send.elpoolen.se finns. Inget sparas i någon databas: meddelandet går bara
+// vidare som mejl till info@mobilpoolen.se, med ärendet i ämnesraden.
+// Ärendena måste vara samma som ARENDEN i src/routes/kontakt.tsx.
 //
 // verify_jwt = false: formuläret är publikt och en publik nyckel ger inget
 // skydd. Skyddet är honeypot, validering, CORS och en enkel gräns per IP.
@@ -12,7 +13,9 @@ const FROM = "Mobilpoolen <kontakt@send.elpoolen.se>";
 
 const RECIPIENTS: Record<string, string> = {
   "Allmän fråga": "info@mobilpoolen.se",
-  "Larmbolag eller samarbete": "samarbeten@mobilpoolen.se",
+  "Fel pris eller villkor": "info@mobilpoolen.se",
+  "Operatör eller samarbete": "info@mobilpoolen.se",
+  "Personuppgifter": "info@mobilpoolen.se",
 };
 
 const ALLOWED_ORIGINS = ["https://mobilpoolen.se", "https://www.mobilpoolen.se"];

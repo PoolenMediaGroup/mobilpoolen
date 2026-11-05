@@ -19,15 +19,16 @@ function IntegritetspolicyPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Integritetspolicy</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 1 november 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 5 november 2026</p>
 
       <p>
         Här förklarar vi på vanlig svenska vilka uppgifter som behandlas när du använder
         Mobilpoolen, varför och vilka rättigheter du har. Kort sagt: du kan jämföra och använda
         kalkylatorerna utan att lämna några uppgifter om dig själv. Uppgifter om dig behandlas bara
-        om du själv startar Mobilpoolen Autopilot eller mejlar oss. Vi har ingen inloggning och
-        använder inga kakor för statistik eller marknadsföring. Policyn beskriver det sajten gör i
-        dag. Ändras det uppdaterar vi policyn innan den nya behandlingen börjar.
+        om du själv startar Mobilpoolen Autopilot, skriver till oss via kontaktformuläret eller
+        mejlar oss. Vi har ingen inloggning och använder inga kakor för statistik eller
+        marknadsföring. Policyn beskriver det sajten gör i dag. Ändras det uppdaterar vi policyn
+        innan den nya behandlingen börjar.
       </p>
 
       <h2 className={H2}>1. Vem ansvarar för dina uppgifter?</h2>
@@ -95,10 +96,12 @@ function IntegritetspolicyPage() {
         dig bekräfta, och först när du har bekräftat startar bevakningen.
       </p>
 
-      <p className="mt-6 font-semibold">När du mejlar oss:</p>
+      <p className="mt-6 font-semibold">När du skriver via kontaktformuläret eller mejlar oss:</p>
       <p className="mt-3">
-        Vi får din e-postadress, ditt namn om det står i mejlet och det du skriver. Skriv inga
-        känsliga uppgifter, som personnummer.
+        Vi får ditt namn, din e-postadress, vilket ärende det gäller och det du skriver. Vi använder
+        det bara för att svara dig. Meddelanden från formuläret sparas inte på webbplatsen eller i
+        någon databas, utan skickas som mejl till vår brevlåda. Skriv inga känsliga uppgifter, som
+        personnummer.
       </p>
 
       <p id="ai-chatt" className="mt-6 scroll-mt-28 font-semibold">
@@ -160,7 +163,7 @@ function IntegritetspolicyPage() {
           Supabase: databas där besöksräkningen lagras som antal per dag, och där uppgifterna för
           Autopilot lagras. Servrarna står i Stockholm.
         </li>
-        <li>Resend: skickar mejlen från Autopilot.</li>
+        <li>Resend: skickar mejlen från Autopilot och kontaktformuläret.</li>
         <li>
           Anthropic: skriver svaren i AI-chatten. Samtalet lagras även i vår databas hos Supabase,
           se{" "}

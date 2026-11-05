@@ -1,55 +1,97 @@
+import { useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { Mail } from "lucide-react";
+import { ChevronDown, Mail } from "lucide-react";
 import { pageHead } from "@/lib/seo";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 
 const EPOST = "info@mobilpoolen.se";
 
-/** Färdiga mejl, så att det som behövs för att rätta ett pris kommer med direkt. */
-const ARENDEN: { rubrik: string; text: string; amne: string; brodtext?: string }[] = [
+/**
+ * Funktionen mobilpoolen-kontakt i PMG:s gemensamma Supabase-projekt skickar meddelandet
+ * vidare via Resend. Källkod i supabase/functions/mobilpoolen-kontakt/. Ärendena måste
+ * vara samma som RECIPIENTS där.
+ */
+const KONTAKT_URL = "https://rilpjkuozcglwnxwfxgl.supabase.co/functions/v1/mobilpoolen-kontakt";
+
+const ARENDEN: { namn: string; ledtext: string }[] = [
+  { namn: "Allmän fråga", ledtext: "Vad kan vi hjälpa dig med?" },
   {
-    rubrik: "Allmänna frågor",
-    text: "Frågor om tjänsten, jämförelsen eller guiderna.",
-    amne: "Fråga till Mobilpoolen",
+    namn: "Fel pris eller villkor",
+    ledtext:
+      "Vilken operatör och vilket abonnemang? Vad står hos oss och vad står hos operatören? Klistra gärna in länken till operatörens sida.",
   },
   {
-    rubrik: "Rapportera fel pris",
-    text: "Har en operatör ändrat pris eller villkor? Skriv vilket abonnemang det gäller och länka gärna till operatörens sida.",
-    amne: "Fel pris på Mobilpoolen",
-    brodtext:
-      "Operatör och abonnemang:\nVad som står på Mobilpoolen:\nVad som står hos operatören (länk):\n",
+    namn: "Operatör eller samarbete",
+    ledtext: "Berätta vilken operatör du företräder och vad det gäller.",
   },
   {
-    rubrik: "Operatörer och samarbeten",
-    text: "Är du operatör och vill rätta en uppgift eller prata samarbete?",
-    amne: "Operatör eller samarbete",
-  },
-  {
-    rubrik: "Dina personuppgifter",
-    text: "Frågor om hur vi behandlar personuppgifter eller om dina rättigheter.",
-    amne: "Personuppgifter",
+    namn: "Personuppgifter",
+    ledtext: "Vad gäller din fråga? Skriv inte personnummer eller andra känsliga uppgifter.",
   },
 ];
 
-function mailto(amne: string, brodtext?: string) {
-  const delar = [`subject=${encodeURIComponent(amne)}`];
-  if (brodtext) delar.push(`body=${encodeURIComponent(brodtext)}`);
-  return `mailto:${EPOST}?${delar.join("&")}`;
-}
+const FELTEXT: Record<string, string> = {
+  invalid_email: "Kontrollera e-postadressen.",
+  invalid_name: "Skriv ditt namn.",
+  invalid_message: "Skriv ett meddelande.",
+  rate_limited:
+    "Du har skickat många meddelanden på kort tid. Vänta några minuter och försök igen.",
+};
 
 export const Route = createFileRoute("/kontakt")({
   head: () =>
     pageHead({
       title: "Kontakta oss | Mobilpoolen",
       description:
-        "Mejla Mobilpoolen på info@mobilpoolen.se om du har frågor om tjänsten, vill rapportera ett fel pris eller är operatör och vill rätta en uppgift.",
+        "Kontakta Mobilpoolen om du har frågor om tjänsten, vill rapportera ett fel pris eller är operatör och vill rätta en uppgift. Vi svarar oftast inom en arbetsdag.",
       canonical: "https://mobilpoolen.se/kontakt",
     }),
   component: KontaktPage,
 });
 
 function KontaktPage() {
+  const [form, setForm] = useState({ subject: ARENDEN[0].namn, name: "", email: "", message: "" });
+  const [website, setWebsite] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [fel, setFel] = useState("");
+
+  const arende = ARENDEN.find((a) => a.namn === form.subject) ?? ARENDEN[0];
+
+  const skicka = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (status === "sending") return;
+    setStatus("sending");
+    setFel("");
+    try {
+      const res = await fetch(KONTAKT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, website }),
+      });
+      const data = (await res.json().catch(() => null)) as { ok?: boolean; error?: string } | null;
+      if (data?.ok === true) {
+        setStatus("success");
+        return;
+      }
+      setFel((data?.error && FELTEXT[data.error]) || "");
+      setStatus("error");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  const nytt = () => {
+    setForm({ subject: ARENDEN[0].namn, name: "", email: "", message: "" });
+    setWebsite("");
+    setFel("");
+    setStatus("idle");
+  };
+
+  const falt =
+    "w-full rounded-xl border border-gray-300 bg-white px-4 text-[16px] md:text-[15px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20";
+  const etikett = "mb-1.5 block text-sm font-semibold text-foreground";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteNav />
@@ -76,34 +118,137 @@ function KontaktPage() {
               Kontakta oss
             </h1>
             <p className="mt-3 max-w-2xl text-[17px] leading-relaxed text-white/82">
-              Mejla oss på{" "}
-              <a href={`mailto:${EPOST}`} className="underline underline-offset-2 hover:text-white">
-                {EPOST}
-              </a>
-              . Vi har ingen telefon och inget formulär, men vi läser varje mejl och svarar så fort
-              vi kan.
+              Frågor om tjänsten, ett pris som inte stämmer eller ett samarbete? Skriv till oss här.
+              Vi läser varje meddelande och svarar personligen, oftast inom en arbetsdag.
             </p>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-16 lg:pb-24">
           <div className="max-w-[680px]">
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {ARENDEN.map((a) => (
-                <div key={a.rubrik} className="card-soft flex flex-col p-5">
-                  <h2 className="text-[16px] font-semibold text-foreground">{a.rubrik}</h2>
-                  <p className="mt-2 flex-1 text-[14.5px] leading-relaxed text-foreground/80">
-                    {a.text}
+            <div className="card-soft p-6 sm:p-8">
+              {status === "success" ? (
+                <div className="py-6 text-center">
+                  <h2 className="text-lg font-bold text-foreground">Tack för ditt meddelande!</h2>
+                  <p className="mt-2 text-sm text-foreground/75">
+                    Vi svarar till {form.email || "din e-postadress"}, oftast inom en arbetsdag.
                   </p>
-                  <a
-                    href={mailto(a.amne, a.brodtext)}
-                    className="mt-3 inline-flex min-h-11 items-center gap-2 text-[15px] font-semibold text-primary hover:underline"
+                  <button
+                    type="button"
+                    onClick={nytt}
+                    className="mt-6 inline-flex h-11 items-center justify-center rounded-xl border border-primary/30 px-5 text-sm font-semibold text-primary transition-colors hover:bg-primary/5"
+                  >
+                    Skicka ett till
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={skicka} className="space-y-4">
+                  <div className="absolute left-[-9999px]" aria-hidden="true">
+                    <label htmlFor="kontakt-webbplats">Fyll inte i detta fält</label>
+                    <input
+                      id="kontakt-webbplats"
+                      type="text"
+                      name="website"
+                      value={website}
+                      onChange={(e) => setWebsite(e.target.value)}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="kontakt-arende" className={etikett}>
+                      Vad gäller det?
+                    </label>
+                    <div className="relative">
+                      <select
+                        id="kontakt-arende"
+                        value={form.subject}
+                        onChange={(e) => setForm((f) => ({ ...f, subject: e.target.value }))}
+                        className={`${falt} h-12 appearance-none pr-10`}
+                      >
+                        {ARENDEN.map((a) => (
+                          <option key={a.namn}>{a.namn}</option>
+                        ))}
+                      </select>
+                      <ChevronDown
+                        aria-hidden
+                        className="pointer-events-none absolute right-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="kontakt-namn" className={etikett}>
+                      Namn
+                    </label>
+                    <input
+                      id="kontakt-namn"
+                      type="text"
+                      autoComplete="name"
+                      value={form.name}
+                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                      placeholder="Ditt namn"
+                      className={`${falt} h-12`}
+                      maxLength={100}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="kontakt-epost" className={etikett}>
+                      E-postadress
+                    </label>
+                    <input
+                      id="kontakt-epost"
+                      type="email"
+                      autoComplete="email"
+                      value={form.email}
+                      onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                      placeholder="namn@exempel.se"
+                      className={`${falt} h-12`}
+                      maxLength={200}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="kontakt-meddelande" className={etikett}>
+                      Meddelande
+                    </label>
+                    <textarea
+                      id="kontakt-meddelande"
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      placeholder={arende.ledtext}
+                      rows={5}
+                      maxLength={5000}
+                      className={`${falt} resize-y py-3`}
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    disabled={status === "sending"}
+                    className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-cta font-semibold text-cta-foreground transition-colors hover:bg-cta-hover disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     <Mail className="h-4 w-4" aria-hidden />
-                    Mejla oss
-                  </a>
-                </div>
-              ))}
+                    {status === "sending" ? "Skickar…" : "Skicka meddelande"}
+                  </button>
+                  {status === "error" && (
+                    <p className="text-sm text-red-600" role="alert">
+                      {fel || "Något gick fel."} Du kan också mejla oss direkt på{" "}
+                      <a href={`mailto:${EPOST}`} className="underline underline-offset-2">
+                        {EPOST}
+                      </a>
+                      .
+                    </p>
+                  )}
+                  <p className="text-[13px] leading-relaxed text-foreground/65">
+                    Vi använder bara uppgifterna för att svara dig. Läs mer i vår{" "}
+                    <Link to="/integritetspolicy" className="underline underline-offset-2">
+                      integritetspolicy
+                    </Link>
+                    .
+                  </p>
+                </form>
+              )}
             </div>
 
             <div className="mt-12 space-y-4 text-[16px] leading-relaxed text-foreground/90">
@@ -131,8 +276,8 @@ function KontaktPage() {
                 .
               </p>
               <p>
-                Skriv inga känsliga uppgifter, som personnummer, i mejlet. Hur vi hanterar det du
-                skickar står i vår{" "}
+                Skriv inga känsliga uppgifter, som personnummer, i meddelandet. Hur vi hanterar det
+                du skickar står i vår{" "}
                 <Link to="/integritetspolicy" className="text-primary underline underline-offset-2">
                   integritetspolicy
                 </Link>
