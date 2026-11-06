@@ -1471,7 +1471,7 @@
  },
  "tele2|Företag 60 GB|foretag": {
   "pris": 399,
-  "kampanjpris": 259,
+  "kampanjpris": 269,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
@@ -1481,7 +1481,7 @@
  },
  "tele2|Företag Obegränsad|foretag": {
   "pris": 499,
-  "kampanjpris": 279,
+  "kampanjpris": 289,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",
@@ -1491,7 +1491,7 @@
  },
  "tele2|Företag Obegränsad Max|foretag": {
   "pris": 599,
-  "kampanjpris": 289,
+  "kampanjpris": 299,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tele2.se/foretag/mobilabonnemang",

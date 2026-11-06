@@ -110,9 +110,9 @@ F=[
  ('telia','Företag Obegränsad Premium',None,599,None,None,None,None,'okand','Kampanjpris 399 kr/mån enligt Telia, längd framgår inte. Ett extra datasim ingår. Upp till 1 500 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
  ('telia','Företag Obegränsad',None,499,None,None,None,None,'okand','Kampanjpris 349 kr/mån enligt Telia, längd framgår inte. Upp till 300 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
  ('telia','Företag 10 GB',10,349,None,None,None,None,'okand','Upp till 100 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
- ('tele2','Företag 60 GB',60,399,259,24,24,None,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 100 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
- ('tele2','Företag Obegränsad',None,499,279,24,24,60,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 300 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
- ('tele2','Företag Obegränsad Max',None,599,289,24,24,None,'okand','Kampanjpriset gäller i 24 månader med bindningstid. 1 500 Mbit/s. Upp till nio kollegor kan få 50 kr/mån lägre pris.','https://www.tele2.se/foretag/mobilabonnemang'),
+ ('tele2','Företag 60 GB',60,399,269,24,24,None,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 100 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
+ ('tele2','Företag Obegränsad',None,499,289,24,24,60,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 300 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
+ ('tele2','Företag Obegränsad Max',None,599,299,24,24,None,'okand','Kampanjpriset gäller i 24 månader med bindningstid. 1 500 Mbit/s. Upp till nio kollegor kan få 50 kr/mån lägre pris.','https://www.tele2.se/foretag/mobilabonnemang'),
  ('tre','3Företag Obegränsad',None,249,None,None,None,None,'exkl','Upp till 300 Mbit/s.','https://www.tre.se/foretag/mobilabonnemang'),
  ('tre','3Företag Obegränsad Max',None,449,299,24,24,None,'exkl','Introduktionspris i 24 månader. Ett datakort med delad surf ingår. Upp till 1 000 Mbit/s.','https://www.tre.se/foretag/mobilabonnemang'),
  ('hallon','Företag 10 GB',10,129,9,4,0,None,'okand','Black Weeks-deal: 9 kr/mån i 4 mån och 60 GB extra surfpott, slutdatum framgår inte. Ingen bindningstid. Upp till 150 Mbit/s.','https://www.hallon.se/foretag'),
@@ -161,7 +161,7 @@ opl=[opts(s,d[s]) for s in ops]
 # Telavox som företagsoperatör
 opl.append(dict(slug='telavox',namn='Telavox',agare='Telavox AB',grupp='mvno',nat='telia',natNotis='Telavox anger inte på sina prissidor vilket nät abonnemangen använder.',femg=True,esim=None,wifiSamtal=None,kontantkort=False,harForetag=True,webb='https://telavox.com/sv/',kundtjanst=None,
   om='Telavox säljer mobilabonnemang till företag tillsammans med en molnbaserad växel. Priserna anges exkl. moms, och de dyrare nivåerna har växel, app för mobil och dator och integrationer med andra system.',
-  starkor=['Växel ingår från Premium-nivån','Priser anges exkl. moms'],svagheter=['Inga abonnemang för privatpersoner','Vilket nät som används framgår inte av prissidan'],villkor={},kallor=['https://telavox.com/sv/priser/'],kontrollerad='2026-11-04',osakert=['Vilket mobilnät Telavox använder','Bindningstid'],partner=False,aktiv=True,status=None,skiPrivat=None,skiForetag=None,prisKontrollerade=False))
+  starkor=['Växel ingår från Premium-nivån','Priser anges exkl. moms'],svagheter=['Inga abonnemang för privatpersoner','Vilket nät som används framgår inte av prissidan'],villkor={},kallor=['https://telavox.com/sv/priser/'],kontrollerad='2026-11-06',osakert=['Vilket mobilnät Telavox använder','Bindningstid'],partner=False,aktiv=True,status=None,skiPrivat=None,skiForetag=None,prisKontrollerade=False))
 
 # Visningstexter: underlaget innehåller citat och arbetsanteckningar. Det som visas
 # på sajten skrivs här i ren form. Underlaget i research/ ändras inte.

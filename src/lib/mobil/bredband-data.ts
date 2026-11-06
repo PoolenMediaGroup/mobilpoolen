@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-04.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-06.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-04";
+export const BREDBAND_KONTROLLERAD = "2026-11-06";
 
 export const BREDBAND_DATA: Bredband[] = [
   {

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "kontrollerad": "2026-11-04",
+    "kontrollerad": "2026-11-06",
     "metod": "Uppgifter hämtade via WebFetch från operatörernas egna webbplatser och prislistor (PDF). Jämförelsesajter har inte använts som källa. Sökbudgeten tog slut innan alla luckor kunde fyllas, och vimla.se samt telenor.se kunde inte läsas (blockerade eller tomma sidor). Värden som inte gick att verifiera är null och märkta [KONTROLLERA].",
     "notering": "Kampanjpriser är märkta som kampanj. Där operatörens webbsida och prislista säger olika saker redovisas båda under 'osakert'."
   },
@@ -57,7 +57,7 @@
         "https://www.telia.se/mobilabonnemang/pensionar",
         "https://www.telia.se/privat/telefoni/wifi-samtal"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
         "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -115,7 +115,7 @@
         "https://www.tele2.se/support/mobilt/wifi-samtal",
         "https://www.tele2.se/support/information/prislistor"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
         "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
@@ -155,7 +155,7 @@
         "https://www.telenor.se/support/priser-villkor-och-blanketter/prislistor/",
         "https://mediearkivet.telenor.se/Data/mw/Pdf/Tn32141.pdf"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "HELA abonnemangslistan saknas: telenor.se renderas med JavaScript och WebFetch fick bara metadata. Kontrollera manuellt i webbläsare eller via prislistan Tn32141.pdf (rubriken nämner 'Obegränsat Plus Familj' och 'Obegränsat Familj')",
         "eSIM, wifi-samtal, startavgift, uppsägningstid och kundtjänstnummer har inte verifierats",
@@ -206,7 +206,7 @@
         "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
         "https://www.tre.se/om-tre/kontakt"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
         "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -314,7 +314,7 @@
         "https://www.comviq.se/hjalp/avtal-och-villkor/uppsagning-av-abonnemang",
         "https://www.comviq.se/hjalp/kontakta-oss"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "Startavgift och avgift för SIM/eSIM är inte verifierade",
         "Kontrollera att kampanjen fortfarande gäller (t.o.m. 10 november 2026)",
@@ -361,7 +361,7 @@
         "https://vimla.se/villkor/",
         "https://faq.vimla.se/hc/sv/articles/360019666597-Vimlas-olika-surfniv%C3%A5er"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "HELA abonnemangslistan saknas: vimla.se kunde inte hämtas. Kontrollera manuellt",
         "Ägare (Telenor) och nät (Telenor) är inte verifierade på Vimlas egen sida",
@@ -410,7 +410,7 @@
         {"namn": "Student 100 GB", "gb": 100, "obegransad": false, "pris": 309, "kampanjpris": 39, "kampanjMan": 4, "kampanjText": "KAMPANJ: 39 kr/mån i 4 mån, därefter 309 kr (Black Weeks-deal). 90 GB extra surfpott. Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": 100, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Student/ungdom", "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang"},
         {"namn": "Student 200 GB", "gb": 200, "obegransad": false, "pris": 359, "kampanjpris": 49, "kampanjMan": 4, "kampanjText": "KAMPANJ: 49 kr/mån i 4 mån, därefter 359 kr (Black Weeks-deal). 100 GB extra surfpott. Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Student/ungdom", "kalla": "https://www.hallon.se/mobilabonnemang/studentabonnemang"},
         {"namn": "Över 55 4 GB", "gb": 4, "obegransad": false, "pris": 99, "kampanjpris": 9, "kampanjMan": 4, "kampanjText": "KAMPANJ: 9 kr/mån i 4 mån, därefter 99 kr (Black Weeks-deal). 60 GB extra surfpott. Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Riktar sig till personer över 55 år (formellt ålderskrav anges inte)", "kalla": "https://www.hallon.se/mobilabonnemang/over-55"},
-        {"namn": "Över 55 10 GB", "gb": 10, "obegransad": false, "pris": 129, "kampanjpris": 19, "kampanjMan": 4, "kampanjText": "KAMPANJ: 19 kr/mån i 4 mån, därefter 129 kr (Black Weeks-deal). Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "55+", "kalla": "https://www.hallon.se/mobilabonnemang/over-55"},
+        {"namn": "Över 55 10 GB", "gb": 10, "obegransad": false, "pris": 129, "kampanjpris": 19, "kampanjMan": 4, "kampanjText": "KAMPANJ: 19 kr/mån i 4 mån, därefter 129 kr (Black Weeks-deal). 80 GB extra surfpott. Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "55+", "kalla": "https://www.hallon.se/mobilabonnemang/over-55"},
         {"namn": "Över 55 16 GB", "gb": 16, "obegransad": false, "pris": 179, "kampanjpris": 29, "kampanjMan": 4, "kampanjText": "KAMPANJ: 29 kr/mån i 4 mån, därefter 179 kr (Black Weeks-deal). 100 GB extra surfpott. Gäller nytt abonnemang. Slutdatum framgår inte", "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "55+", "kalla": "https://www.hallon.se/mobilabonnemang/over-55"},
         {"namn": "Extra användare", "gb": null, "obegransad": false, "pris": 99, "kampanjpris": null, "kampanjMan": null, "kampanjText": "", "bindning": 0, "euGb": 5, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Delar surf med huvudabonnemanget, 5 GB inom EU/EES. Källa: prislistan från 2025-06-28, kan vara inaktuell [KONTROLLERA]", "kalla": "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf"}
       ],
@@ -424,7 +424,7 @@
         "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
         "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf"
       ],
-      "kontrollerad": "2026-11-04",
+      "kontrollerad": "2026-11-06",
       "osakert": [
         "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
         "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",
