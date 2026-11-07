@@ -10,7 +10,7 @@ import {
   Scripts,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, type ReactNode, useRef } from "react";
 
 import appCss from "../styles.css?url";
 import { AutoReveal } from "../components/auto-reveal";
@@ -18,6 +18,8 @@ import ScrollToTop from "@/components/scroll-to-top";
 import { ChattKnapp } from "@/components/chatt/chatt-knapp";
 import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
+import { samtyckeHeadSkript, rapporteraSidvisning } from "@/lib/samtycke";
+import { SamtyckeBanner } from "@/components/samtycke-banner";
 
 const OG_IMAGE_URL = "https://mobilpoolen.se/og-image.png";
 
@@ -155,6 +157,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:image", content: OG_IMAGE_URL },
       ],
       scripts: [
+        // Cookiesamtycket (lib/samtycke.ts): Consent Mode, samtyckesskriptet och de
+        // vilande mätskripten. Måste ligga först. Tom lista utan påslagna verktyg.
+        ...samtyckeHeadSkript(),
         {
           // Körs före hydration så webbläsaren inte återställer gammal scrollposition.
           id: "scroll-restoration",
@@ -236,12 +241,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="sv">
+    <html lang="sv" suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
       <body>
         {children}
+        <SamtyckeBanner />
         <Scripts />
       </body>
     </html>
@@ -251,6 +257,16 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  // Sidvisning till mätverktygen vid navigering inom sajten (bara med samtycke).
+  // Den första visningen skickar skripten själva.
+  const forstaSidan = useRef(true);
+  useEffect(() => {
+    if (forstaSidan.current) {
+      forstaSidan.current = false;
+      return;
+    }
+    rapporteraSidvisning();
+  }, [pathname]);
   const isSitemap = pathname === "/sitemap.xml";
 
   return (

@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { BrandLogo } from "@/components/brand-logo";
+import { SAMTYCKE_AKTIV, visaSamtyckesInstallningar } from "@/lib/samtycke";
 import type { MouseEvent } from "react";
 import { ArrowRight } from "lucide-react";
 import { HAR_NYHETER } from "@/lib/nyheter";
@@ -111,6 +112,16 @@ const LEGAL_LINKS: FooterLink[] = [
   { label: "Användarvillkor", to: "/anvandarvillkor" },
   { label: "Integritetspolicy", to: "/integritetspolicy" },
   { label: "Cookiepolicy", to: "/cookiepolicy" },
+  // Bara när något mätverktyg är påslaget (lib/samtycke-tjanster.ts).
+  ...(SAMTYCKE_AKTIV
+    ? [
+        {
+          label: "Cookieinställningar",
+          asButton: true,
+          onClick: () => visaSamtyckesInstallningar(),
+        },
+      ]
+    : []),
 ];
 
 /* Samma täta rytm som Elpoolens sidfot på alla skärmar (beslut 26 oktober 2026):

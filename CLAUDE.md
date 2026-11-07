@@ -94,3 +94,12 @@ En schemalagd uppgift kontrollerar alla priser mot operatörernas sajter varje m
 - Inga versala etiketter ovanför rubriker. Rubriken bär sektionen själv.
 - Operatörer visas med sin logotyp (beslut av Leon 1 nov 2026), som på Elpoolen. Filerna ligger i `public/logos/`, registret i `src/lib/mobil/logotyper.ts`. `OperatorMonogram` visar logotypen i en vit bricka och faller tillbaka på initialer när logotyp saknas (katshing, Halebop). Logoraden under startsidans hero är `OperatorLogoRad`. Ny operatör: hämta logotypen från operatörens egen webbplats och lägg till den i registret.
 - Bilder bara ur bildbanken (`src/lib/bildbank.ts`). Samma bild aldrig två gånger på en sida.
+
+## Cookiesamtycke och mätverktyg (från 7 november 2026)
+
+- Egen cookieruta, likadan som Elpoolens (Leons beslut 7 november 2026). `src/lib/samtycke.ts` och `src/components/samtycke-banner.tsx` är identiska på Larmpoolen, Mobilpoolen och Solcellspoolen: ändra i alla tre. Det enda som skiljer är `src/lib/samtycke-tjanster.ts`.
+- **Slå på ett mätverktyg:** fyll i id:t i `SAMTYCKE_ID` (Google Analytics `G-...`, Meta Pixel siffror, Google Ads `AW-...`, TikTok Pixel) och höj `SAMTYCKE_VERSION`. Rutan, länken Cookieinställningar i sidfoten och avsnitten i cookie- och integritetspolicyn visas då automatiskt och beskriver bara de verktyg som är påslagna. Utan id visas ingenting, för då finns inget att fråga om.
+- Skripten laddas bara efter ja (`type="text/plain"` tills dess), Google Consent Mode v2 står på nekat som standard. Händelser skickas med `rapporteraHandelse(namn, data)`, aldrig med namn, e-post, telefon eller personnummer.
+- Knapparna: Neka finns alltid i första vyn och är lika stor som Godkänn alla. Ta aldrig bort den och gör den aldrig till en länk (IMY:s beslut mot ATG och Aller Media 2025).
+- Varje val loggas i Supabase-tabellen `mobilpoolen_samtycken i PMG:s gemensamma projekt (`mobilpoolen_logga_samtycke`, SQL i `supabase/migrations/20261107120000_mobilpoolen_samtycken.sql`)` (slumpat id, valet per tjänst som jsonb, version, sida; ingen IP-adress, rensas efter 25 månader). Den går inte att läsa med den publika nyckeln.
+- Nytt verktyg som inte finns i katalogen: lägg till det i `TJANST_KATALOG` i `samtycke.ts` (id-format, skript, cookies att rensa, Consent Mode) på alla tre sajter.
