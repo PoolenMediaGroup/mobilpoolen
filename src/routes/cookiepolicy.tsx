@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { LegalPage } from "@/components/legal-page";
+import { SAMTYCKE_AKTIV } from "@/lib/samtycke";
+import { SamtyckePolicyAvsnitt } from "@/components/samtycke-banner";
 
 export const Route = createFileRoute("/cookiepolicy")({
   head: () =>
@@ -17,7 +19,7 @@ function CookiepolicyPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Cookiepolicy</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 29 oktober 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 7 november 2026</p>
 
       <p>
         Mobilpoolen drivs av PMG Poolen Media Group AB, org.nr 559602-5287. Kontakt:
@@ -32,7 +34,11 @@ function CookiepolicyPage() {
 
       <h2 className="text-xl font-semibold mt-10 mb-3">2. Vad använder Mobilpoolen?</h2>
       <h3 className="text-lg font-semibold mt-6 mb-2">Kakor</h3>
-      <p>Mobilpoolen sätter inga kakor.</p>
+      <p>
+        {SAMTYCKE_AKTIV
+          ? "Mobilpoolen sätter inga egna kakor. Utan ditt samtycke sätts inga kakor alls."
+          : "Mobilpoolen sätter inga kakor."}
+      </p>
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Sessionslagring (sessionStorage)</h3>
       <ul className="list-disc pl-6 space-y-1 mt-2">
@@ -53,21 +59,27 @@ function CookiepolicyPage() {
         annan lagring.
       </p>
 
-      <h3 className="text-lg font-semibold mt-6 mb-2">Statistik och marknadsföring</h3>
-      <p>
-        Vi använder inga kakor, skript eller annan lagring i webbläsaren för statistik eller
-        marknadsföring. Besök räknas på vår server när sidan skickas till dig, som antal per dag och
-        utan IP-adress. Läs mer i vår{" "}
-        <Link to="/integritetspolicy" className="underline">
-          integritetspolicy
-        </Link>
-        .
-      </p>
-      <p className="mt-4">
-        Därför visar vi ingen cookieruta: lagring som krävs för att sajten ska fungera behöver inget
-        samtycke. Om vi inför något som sparar eller läser information i din webbläsare för
-        statistik eller marknadsföring frågar vi först om ditt samtycke.
-      </p>
+      {SAMTYCKE_AKTIV ? (
+        <SamtyckePolicyAvsnitt />
+      ) : (
+        <>
+          <h3 className="text-lg font-semibold mt-6 mb-2">Statistik och marknadsföring</h3>
+          <p>
+            Vi använder inga kakor, skript eller annan lagring i webbläsaren för statistik eller
+            marknadsföring. Besök räknas på vår server när sidan skickas till dig, som antal per dag
+            och utan IP-adress. Läs mer i vår{" "}
+            <Link to="/integritetspolicy" className="underline">
+              integritetspolicy
+            </Link>
+            .
+          </p>
+          <p className="mt-4">
+            Därför visar vi ingen cookieruta: lagring som krävs för att sajten ska fungera behöver
+            inget samtycke. Om vi inför något som sparar eller läser information i din webbläsare
+            för statistik eller marknadsföring frågar vi först om ditt samtycke.
+          </p>
+        </>
+      )}
 
       <h3 className="text-lg font-semibold mt-6 mb-2">Operatörernas webbplatser</h3>
       <p>

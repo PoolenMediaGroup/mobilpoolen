@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { pageHead } from "@/lib/seo";
 import { LegalPage } from "@/components/legal-page";
+import { SamtyckeIntegritetAvsnitt } from "@/components/samtycke-banner";
+import { SAMTYCKE_AKTIV } from "@/lib/samtycke";
 
 export const Route = createFileRoute("/integritetspolicy")({
   head: () =>
@@ -19,7 +21,7 @@ function IntegritetspolicyPage() {
   return (
     <LegalPage>
       <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-2">Integritetspolicy</h1>
-      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 5 november 2026</p>
+      <p className="text-sm text-muted-foreground mb-8">Senast uppdaterad: 7 november 2026</p>
 
       <p>
         Här förklarar vi på vanlig svenska vilka uppgifter som behandlas när du använder
@@ -242,14 +244,18 @@ function IntegritetspolicyPage() {
       </p>
 
       <h2 className={H2}>9. Kakor och lagring i webbläsaren</h2>
-      <p>
-        Vi använder bara den lagring i webbläsaren som behövs för att sajten ska fungera, och därför
-        visar vi ingen cookieruta. Mer finns i vår{" "}
-        <Link to="/cookiepolicy" className="text-primary hover:underline">
-          cookiepolicy
-        </Link>
-        .
-      </p>
+      {SAMTYCKE_AKTIV ? (
+        <SamtyckeIntegritetAvsnitt />
+      ) : (
+        <p>
+          Vi använder bara den lagring i webbläsaren som behövs för att sajten ska fungera, och
+          därför visar vi ingen cookieruta. Mer finns i vår{" "}
+          <Link to="/cookiepolicy" className="text-primary hover:underline">
+            cookiepolicy
+          </Link>
+          .
+        </p>
+      )}
 
       <h2 className={H2}>10. Ändringar i policyn</h2>
       <p>

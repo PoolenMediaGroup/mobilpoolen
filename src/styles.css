@@ -1324,3 +1324,80 @@ body:has(.chatt-panel:not([hidden]), .chatt-bubbla) .tillbaka-knapp {
     animation: none;
   }
 }
+
+/* Cookierutan (components/samtycke-banner.tsx, lib/samtycke.ts). Samma som på
+   Elpoolen: stor ruta mitt på skärmen med mörk bakgrund. Syns tills besökaren har valt.
+   Skriptet i <head> sätter data-samtycke-redo när det körs och data-samtycke="klart"
+   när ett giltigt val finns, innan sidan ritas, så den blinkar aldrig fram för den
+   som redan har valt. Utan javascript visas ingen ruta (och inget spårar heller).
+   Flik: data-samtycke-vy saknas = Samtycke, "installningar" = Information, "om" = Om. */
+.samtycke { display: none; }
+html[data-samtycke-redo]:not([data-samtycke="klart"]) .samtycke {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: rgba(8, 20, 24, 0.62);
+}
+html[data-samtycke-redo]:not([data-samtycke="klart"]) { overflow: hidden; }
+/* Ca 70 % av skärmen på dator. */
+.samtycke-ruta { max-width: 900px; }
+/* Växer med skärmen som resten av sajten (--hz), men bredden hålls på ca 70 %. */
+@media (min-width: 1024px) {
+  .samtycke-ruta {
+    zoom: var(--hz, 1);
+    width: calc(min(94vw, max(900px, 69vw)) / var(--hz, 1));
+    max-width: none;
+    max-height: calc(92svh / var(--hz, 1));
+  }
+}
+.samtycke .samtycke-installningar,
+.samtycke .samtycke-om,
+.samtycke .samtycke-spara { display: none; }
+html[data-samtycke-vy="installningar"] .samtycke .samtycke-forsta,
+html[data-samtycke-vy="om"] .samtycke .samtycke-forsta,
+html[data-samtycke-vy="installningar"] .samtycke .samtycke-anpassa { display: none; }
+html[data-samtycke-vy="installningar"] .samtycke .samtycke-installningar,
+html[data-samtycke-vy="om"] .samtycke .samtycke-om { display: block; }
+html[data-samtycke-vy="installningar"] .samtycke .samtycke-spara { display: inline-flex; }
+/* Aktiv flik: understruken i petrol. */
+html:not([data-samtycke-vy]) .samtycke-flik-samtycke,
+html[data-samtycke-vy="installningar"] .samtycke-flik-installningar,
+html[data-samtycke-vy="om"] .samtycke-flik-om {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+/* Av/på-brytare i Information. Avstängd som standard, aldrig förifylld. */
+.samtycke-brytare {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 30px;
+  margin-top: 2px;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+.samtycke-brytare::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s;
+}
+.samtycke-brytare:checked { background: var(--primary); }
+.samtycke-brytare:checked::after { transform: translateX(22px); }
+.samtycke-brytare:disabled { cursor: not-allowed; opacity: 0.6; }
+.samtycke-brytare:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media print { .samtycke { display: none !important; } }
