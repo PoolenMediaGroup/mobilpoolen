@@ -14,6 +14,28 @@ export type Prisandring = {
 
 export const PRISANDRINGAR: Prisandring[] = [
   {
+    datum: "2026-11-07",
+    operator: "lycamobile",
+    namn: "Fast Pris 199",
+    kundtyp: "privat",
+    kalla: "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
+    typ: "andrat",
+    falt: "kampanjpris",
+    fran: null,
+    till: 99.5,
+  },
+  {
+    datum: "2026-11-07",
+    operator: "lycamobile",
+    namn: "Fast Pris 199",
+    kundtyp: "privat",
+    kalla: "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
+    typ: "andrat",
+    falt: "kampanjManader",
+    fran: null,
+    till: 3,
+  },
+  {
     datum: "2026-11-06",
     operator: "tele2",
     namn: "Företag Obegränsad Max",
