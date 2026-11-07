@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-06",
+  "kontrollerad": "2026-11-07",
   "operatorer": [
     {
       "slug": "fello",
@@ -304,7 +304,7 @@
         "Åldersgränser för Student, 55+ och Under 18 (krav/verifiering) framgick inte."
       ],
       "noteringar": "Kampanj från 3 nov 2026: 20 kr/mån i 3 mån vid nybeställning (ej abonnemangsbyte) + 100 GB extra surf giltig i 12 mån, för nya kunder. Ersätter 30 kr i 4 mån + Dubbel Surf. Slutdatum framgår inte.",
-      "kontrollerad": "2026-11-06"
+      "kontrollerad": "2026-11-07"
     },
     {
       "slug": "chilimobil",
@@ -617,7 +617,7 @@
         "Prislistan anger 'Priserna gäller från den 1 april 2024', senast ändrad 2026-01-01."
       ],
       "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
-      "kontrollerad": "2026-11-06"
+      "kontrollerad": "2026-11-07"
     },
     {
       "slug": "comviq",
@@ -768,7 +768,7 @@
         "Comviq Senior ej kontrollerad."
       ],
       "noteringar": "Befintlig data säger att kampanjen 45 kr i 3 mån kräver 12 mån bindning – det stämmer INTE längre. 45 kr i 3 mån erbjuds även utan bindning (startsidan). Med 12 mån bindning får man dessutom dubbel surf i 12 mån (10/40/200 GB). Ordinarie priser 129/229/359 och bindning 0 är bekräftade. Lägg till studentabonnemangen 14/40/100 GB 129/209/309 kr (45 kr i 3 mån, ingen bindning). EU-surf för 100 GB är 46 GB.",
-      "kontrollerad": "2026-11-06"
+      "kontrollerad": "2026-11-07"
     },
     {
       "slug": "telia",
@@ -977,7 +977,7 @@
         "Kampanjens slutdatum (469 kr) framgick inte."
       ],
       "noteringar": "Befintlig data har bindning okänd – ändra till bindning 0 för Mobil 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 (priserna stämmer). Lägg ev. till bindningsvarianter: 10 GB 249 kr i 12 mån (24 mån bindning) och Obegränsad Plus 469 kr i 12 mån (24 mån bindning). Under 28-varianter: 20 GB 349, Obegränsad 449, Obegränsad Plus 519 (419 i 12 mån m. bindning).",
-      "kontrollerad": "2026-11-06"
+      "kontrollerad": "2026-11-07"
     }
   ]
 }

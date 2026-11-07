@@ -1111,8 +1111,8 @@
  },
  "lycamobile|Fast Pris 199|privat": {
   "pris": 199,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 99.5,
+  "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
   "operator": "lycamobile",
