@@ -617,7 +617,7 @@
         "Prislistan anger 'Priserna gäller från den 1 april 2024', senast ändrad 2026-01-01."
       ],
       "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
-      "kontrollerad": "2026-11-07"
+      "kontrollerad": "2026-11-08"
     },
     {
       "slug": "comviq",
@@ -768,7 +768,7 @@
         "Comviq Senior ej kontrollerad."
       ],
       "noteringar": "Befintlig data säger att kampanjen 45 kr i 3 mån kräver 12 mån bindning – det stämmer INTE längre. 45 kr i 3 mån erbjuds även utan bindning (startsidan). Med 12 mån bindning får man dessutom dubbel surf i 12 mån (10/40/200 GB). Ordinarie priser 129/229/359 och bindning 0 är bekräftade. Lägg till studentabonnemangen 14/40/100 GB 129/209/309 kr (45 kr i 3 mån, ingen bindning). EU-surf för 100 GB är 46 GB.",
-      "kontrollerad": "2026-11-07"
+      "kontrollerad": "2026-11-08"
     },
     {
       "slug": "telia",
@@ -826,8 +826,22 @@
           "bindning": 0,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Samma pris 499 kr/mån med och utan 24 mån bindning. Under 28 år: 449 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband.",
+          "ovrigt": "Utan bindningstid 499 kr/mån. Alternativ: 24 mån bindning ger 50 kr/mån rabatt i 12 mån (449 kr/mån), därefter 499 kr/mån. Under 28 år: 449 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband.",
           "kalla": "https://www.telia.se/mobilabonnemang"
+        },
+        {
+          "namn": "Telia Mobil Obegränsad (24 mån bindning)",
+          "gb": null,
+          "obegransad": true,
+          "pris": 499,
+          "kampanjpris": 449,
+          "kampanjMan": 12,
+          "kampanjText": "50 kr/mån rabatt i 12 mån med 24 mån bindningstid, det vill säga 449 kr/mån, därefter 499 kr/mån. Slutdatum framgår inte.",
+          "bindning": 24,
+          "euGb": null,
+          "hastighet": "upp till 1000 Mbit/s",
+          "ovrigt": "Rabatt vid nyteckning med bindningstid (kontrollerad 2026-11-08).",
+          "kalla": "https://www.telia.se/mobilabonnemang/mobil-obegraensad"
         },
         {
           "namn": "Telia Mobil Obegränsad Plus",
@@ -977,7 +991,7 @@
         "Kampanjens slutdatum (469 kr) framgick inte."
       ],
       "noteringar": "Befintlig data har bindning okänd – ändra till bindning 0 för Mobil 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 (priserna stämmer). Lägg ev. till bindningsvarianter: 10 GB 249 kr i 12 mån (24 mån bindning) och Obegränsad Plus 469 kr i 12 mån (24 mån bindning). Under 28-varianter: 20 GB 349, Obegränsad 449, Obegränsad Plus 519 (419 i 12 mån m. bindning).",
-      "kontrollerad": "2026-11-07"
+      "kontrollerad": "2026-11-08"
     }
   ]
 }

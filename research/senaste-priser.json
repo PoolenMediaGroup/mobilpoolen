@@ -39,6 +39,16 @@
   "namn": "Mobil Obegränsad",
   "kundtyp": "privat"
  },
+ "telia|Mobil Obegränsad (24 mån bindning)|privat": {
+  "pris": 499,
+  "kampanjpris": 449,
+  "kampanjManader": 12,
+  "startavgift": null,
+  "kalla": "https://www.telia.se/mobilabonnemang/mobil-obegraensad",
+  "operator": "telia",
+  "namn": "Mobil Obegränsad (24 mån bindning)",
+  "kundtyp": "privat"
+ },
  "telia|Mobil Obegränsad Plus|privat": {
   "pris": 569,
   "kampanjpris": null,
