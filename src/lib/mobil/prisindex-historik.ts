@@ -83,7 +83,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
   },
   {
     manad: "2026-11",
-    kontrollerad: "2026-11-07",
+    kontrollerad: "2026-11-08",
     perNiva: [
       {
         niva: "1 GB",
@@ -142,20 +142,20 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
       {
         niva: "Obegränsad",
         regel: "Obegränsad surf",
-        antal: 28,
+        antal: 29,
         min: 174,
-        med: 454,
+        med: 449,
         max: 629,
-        kampanjAndel: 60.7,
+        kampanjAndel: 62.1,
       },
     ],
     nyckeltal: {
-      antal: 88,
+      antal: 89,
       operatorer: 15,
-      kampanjAndel: 55.7,
-      snittHojning: 5.3,
+      kampanjAndel: 56.2,
+      snittHojning: 5.2,
       medianHojningKr: 130,
-      utanBindningAndel: 65.9,
+      utanBindningAndel: 65.2,
       medianPerGb: 14.5,
     },
   },

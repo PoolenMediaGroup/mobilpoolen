@@ -14,6 +14,17 @@ export type Prisandring = {
 
 export const PRISANDRINGAR: Prisandring[] = [
   {
+    datum: "2026-11-08",
+    operator: "telia",
+    namn: "Mobil Obegränsad (24 mån bindning)",
+    kundtyp: "privat",
+    kalla: "https://www.telia.se/mobilabonnemang/mobil-obegraensad",
+    typ: "nytt",
+    falt: null,
+    fran: null,
+    till: 499,
+  },
+  {
     datum: "2026-11-07",
     operator: "lycamobile",
     namn: "Fast Pris 199",
