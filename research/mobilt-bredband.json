@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-07",
+  "kontrollerad": "2026-11-09",
   "erbjudanden": [
     {
       "operator": "telia",
@@ -485,7 +485,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.fello.se/mobilt-bredband/",
-      "notis": "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån. Spara upp till 100 GB. Priset läses ur Fellos eget produkt-API (api.fello.se). Bindning enligt tidigare kontroll [KONTROLLERA]."
+      "notis": "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån. Spara upp till 100 GB. Priset läses ur Fellos eget produkt-API (api.fello.se). Ingen bindningstid (kontrollerad 2026-11-09)."
     },
     {
       "operator": "fello",
