@@ -23,6 +23,10 @@
  *    tjänst, versionen och sidan. Ingen IP-adress, inget annat om besökaren. Det är
  *    beviset på att samtycke gavs. SQL i supabase/samtycken.sql.
  *  - Tar besökaren tillbaka ett ja raderas tjänstens cookies och sidan laddas om.
+ *  - Skyddade sidor (SAMTYCKE_SKYDDADE_SIDOR, t.ex. länkar med token i adressen och
+ *    formulär med personuppgifter): där laddas inga mätskript och inga händelser
+ *    skickas, oavsett samtycke, och hänvisningsadressen till nästa sida blir bara
+ *    ursprunget. Adressen med token lämnar alltså aldrig sajten.
  *  - Knappar i rutan har data-samtycke-knapp. Flikarna har data-samtycke-knapp="flik"
  *    och data-flik (samtycke, installningar, om). Länkar som öppnar inställningarna
  *    (sidfoten, cookiepolicyn) anropar visaSamtyckesInstallningar().
@@ -30,7 +34,12 @@
  * Ny tjänst i katalogen: lägg till den i TJANST_KATALOG (id-format, skript, cookies,
  * Consent Mode), och ett tomt id i SAMTYCKE_ID på alla tre sajter.
  */
-import { SAMTYCKE_ID, SAMTYCKE_SAJT, SAMTYCKE_VERSION } from "./samtycke-tjanster";
+import {
+  SAMTYCKE_ID,
+  SAMTYCKE_SAJT,
+  SAMTYCKE_SKYDDADE_SIDOR,
+  SAMTYCKE_VERSION,
+} from "./samtycke-tjanster";
 
 export { SAMTYCKE_SAJT, SAMTYCKE_VERSION };
 export const SAMTYCKE_GILTIG_DAGAR = 365;
@@ -163,6 +172,16 @@ declare global {
   }
 }
 
+/** Är sidan en skyddad sida, eller en undersida till en? */
+export function arSkyddadSida(pathname: string): boolean {
+  const p = pathname.replace(/\/+$/, "") || "/";
+  return SAMTYCKE_SKYDDADE_SIDOR.some((s) => p === s || p.startsWith(`${s}/`));
+}
+
+function harSkyddadSida(): boolean {
+  return typeof window !== "undefined" && arSkyddadSida(window.location.pathname);
+}
+
 /** Har besökaren sagt ja till tjänsten? false på servern och om skriptet saknas. */
 export function harSamtycke(t: SamtyckeTjanst): boolean {
   if (typeof window === "undefined") return false;
@@ -184,7 +203,7 @@ export function visaSamtyckesInstallningar(): void {
  * Google Analytics räknar navigeringen själv (förbättrad mätning).
  */
 export function rapporteraSidvisning(): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || harSkyddadSida()) return;
   try {
     if (harSamtycke("meta")) window.fbq?.("track", "PageView");
     if (harSamtycke("tiktok")) window.ttq?.page();
@@ -199,7 +218,7 @@ export function rapporteraSidvisning(): void {
  * person i data.
  */
 export function rapporteraHandelse(namn: string, data: Record<string, string | number> = {}): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || harSkyddadSida()) return;
   try {
     if (harSamtycke("meta")) window.fbq?.("trackCustom", namn, data);
     if (harSamtycke("tiktok")) window.ttq?.track(namn, data);
@@ -256,13 +275,15 @@ export function samtyckeSkript(): string {
     r: rensa,
     u: SAMTYCKE_SAJT.rpc,
     a: SAMTYCKE_SAJT.rpcNyckel,
+    s: SAMTYCKE_SKYDDADE_SIDOR,
   });
   return `(function(){var C=${cfg};var H=document.documentElement;var aktiva={};
 function las(){try{var r=JSON.parse(localStorage.getItem(C.k)||'null');if(!r||r.v!==C.v||!r.val||typeof r.t!=='number')return null;if(Date.now()-r.t>C.d*864e5)return null;return r;}catch(e){return null;}}
 function val(){var r=las();return r?r.val:null;}
 function har(t){var v=val();return !!(v&&v[t]===true);}
 function gcm(v){if(typeof gtag!=='function')return;var u={},n=0;for(var t in C.g){if(!v[t])continue;for(var i=0;i<C.g[t].length;i++){u[C.g[t][i]]='granted';n++;}}if(n)gtag('consent','update',u);}
-function aktivera(v){gcm(v);var s=document.querySelectorAll('script[type="text/plain"][data-samtycke]');for(var i=0;i<s.length;i++){var g=s[i],t=g.getAttribute('data-samtycke');if(!v[t]||g.getAttribute('data-aktiv'))continue;g.setAttribute('data-aktiv','1');var n=document.createElement('script');if(g.src){n.src=g.src;n.async=true;}else{n.text=g.text;}g.parentNode.insertBefore(n,g.nextSibling);aktiva[t]=true;}}
+function skyddad(){var p=location.pathname.replace(/\\/+$/,'')||'/';for(var i=0;i<C.s.length;i++){if(p===C.s[i]||p.indexOf(C.s[i]+'/')===0)return true;}return false;}
+function aktivera(v){gcm(v);if(skyddad())return;var s=document.querySelectorAll('script[type="text/plain"][data-samtycke]');for(var i=0;i<s.length;i++){var g=s[i],t=g.getAttribute('data-samtycke');if(!v[t]||g.getAttribute('data-aktiv'))continue;g.setAttribute('data-aktiv','1');var n=document.createElement('script');if(g.src){n.src=g.src;n.async=true;}else{n.text=g.text;}g.parentNode.insertBefore(n,g.nextSibling);aktiva[t]=true;}}
 function nar(f){if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',f);}else{f();}}
 function rutor(v){for(var i=0;i<C.t.length;i++){var e=document.getElementById('samtycke-'+C.t[i]);if(e)e.checked=!!(v&&v[C.t[i]]);}}
 function id(){try{return crypto.randomUUID();}catch(e){return 'xxxxxxxx-xxxx-4xxx-8xxx-xxxxxxxxxxxx'.replace(/x/g,function(){return(Math.random()*16|0).toString(16);});}}
@@ -271,6 +292,7 @@ function rensa(v){var d=location.hostname.replace(/^www\\./,'');var namn=documen
 function spara(v){var gammal=las();var r={v:C.v,t:Date.now(),id:(gammal&&gammal.id)||id(),val:v};try{localStorage.setItem(C.k,JSON.stringify(r));}catch(e){}logga(r);H.setAttribute('data-samtycke','klart');H.removeAttribute('data-samtycke-vy');var aterkallad=false;for(var t in aktiva){if(aktiva[t]&&!v[t])aterkallad=true;}if(aterkallad){rensa(v);location.reload();return;}aktivera(v);}
 function allaVal(b){var v={};for(var i=0;i<C.t.length;i++)v[C.t[i]]=b;return v;}
 function visa(){rutor(val());H.removeAttribute('data-samtycke');H.setAttribute('data-samtycke-vy','installningar');nar(function(){var f=document.getElementById('samtycke-rubrik');if(f){f.focus();}});}
+if(skyddad()){var m=document.createElement('meta');m.name='referrer';m.content='origin';document.head.appendChild(m);}
 H.setAttribute('data-samtycke-redo','1');
 window.poolenSamtycke={las:val,har:har,visa:visa};
 var start=val();if(start){H.setAttribute('data-samtycke','klart');nar(function(){aktivera(start);});}

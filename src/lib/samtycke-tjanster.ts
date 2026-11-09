@@ -20,6 +20,13 @@ export const SAMTYCKE_ID: Record<"google-analytics" | "meta" | "google-ads" | "t
   tiktok: "",
 };
 
+/**
+ * Skyddade sidor (och deras undersidor): inga mätskript och inga händelser där,
+ * oavsett samtycke, och adressen följer inte med som hänvisningsadress.
+ * Autopilot: formuläret med e-post och mobilnummer, och bekräfta- och avsluta-länkarna med token i adressen.
+ */
+export const SAMTYCKE_SKYDDADE_SIDOR: readonly string[] = ["/autopilot"];
+
 /** Höj när ett verktyg slås på eller texten i rutan ändras i sak. */
 export const SAMTYCKE_VERSION = 1;
 
