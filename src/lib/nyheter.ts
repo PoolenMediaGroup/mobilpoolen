@@ -45,8 +45,11 @@ export const NYHET_KATEGORIER = [
   "Operatörer",
   "Nät och täckning",
   "Regler och konsument",
+  "Tips och råd",
 ] as const;
 export type NyhetKategori = (typeof NYHET_KATEGORIER)[number];
+
+export type NyhetTyp = "nyhet" | "fast" | "tips";
 
 export type Nyhet = {
   slug: string;
@@ -69,6 +72,13 @@ export type Nyhet = {
   handelseIso: string;
   publiceradIso: string;
   uppdateradIso: string;
+  /**
+   * Vilken sorts artikel det är. Styr taket i tests/nyhetstak.test.ts.
+   * "nyhet" (standard): något som hänt, med källa. "fast": ett återkommande
+   * dataformat, högst ett per format och månad. "tips": säsongstips med
+   * datumkrok, högst ett per vecka. Se docs/nyhetsroboten.md.
+   */
+  typ?: NyhetTyp;
   innehall: NyhetBlock[];
   kallor: NyhetKalla[];
   /** Våra egna sidor som hör ihop med nyheten, 2 till 4 stycken. */
@@ -366,4 +376,5 @@ export const KATEGORI_BAKGRUND: Record<NyhetKategori, string> = {
   Operatörer: "linear-gradient(135deg, #2a1f6e 0%, #16133a 100%)",
   "Nät och täckning": "linear-gradient(135deg, #4a3fb0 0%, #2b2470 100%)",
   "Regler och konsument": "linear-gradient(135deg, #241d5c 0%, #110e2c 100%)",
+  "Tips och råd": "linear-gradient(135deg, #5a4fd0 0%, #362c9a 100%)",
 };

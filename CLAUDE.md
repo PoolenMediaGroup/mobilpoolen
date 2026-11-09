@@ -53,7 +53,7 @@ En schemalagd uppgift kontrollerar alla priser mot operatörernas sajter varje m
 ## Nyheter
 
 - /nyheter, /nyheter/<slug> och /nyheter/rss.xml byggs ur registret `src/lib/nyheter.ts` (samma uppbyggnad som Elpoolens). Så länge det är tomt är /nyheter noindex och syns inte i meny eller sitemap.
-- Nyhetsroboten är en schemalagd uppgift som körs fyra gånger om dagen och följer `docs/nyhetsroboten.md`. Ändra reglerna där och i kommentaren i `nyheter.ts` samtidigt.
+- Nyhetsroboten är en schemalagd uppgift som körs en gång om dagen och följer `docs/nyhetsroboten.md`. Ändra reglerna där och i kommentaren i `nyheter.ts` samtidigt. Flödet har tre sorter (händelsenyheter, fasta dataformat, säsongstips) med tak som `tests/nyhetstak.test.ts` kontrollerar. Höj aldrig ett tak utan Leon.
 
 ## Stack
 
