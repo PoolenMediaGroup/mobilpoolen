@@ -87,6 +87,78 @@ export type Nyhet = {
 
 const NYHETER_OSORTERADE: Nyhet[] = [
   {
+    slug: "black-week-2026-mobilabonnemang",
+    titel: "Black Week 2026: så mycket betalar du när kampanjmånaderna är slut",
+    seoTitel: "Black Week 2026: mobilabonnemang",
+    ingress:
+      "Hallons Black Weeks pågår till 2 december. 5 GB kostar 9 kr/mån i fyra månader och sedan 109 kr. Första året blir snittet 76 kr i månaden.",
+    avsandare: "Mobilpoolen",
+    kategori: "Tips och råd",
+    typ: "tips",
+    bild: "shoppingkassar-paket",
+    nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
+    handelseIso: "2026-11-10",
+    publiceradIso: "2026-11-10",
+    uppdateradIso: "2026-11-10",
+    innehall: [
+      {
+        typ: "p",
+        text: "Black Friday infaller den 27 november 2026, men Hallons kampanj på mobilabonnemang pågår i flera veckor. Hallon startade sina Black Weeks den 3 november och skriver att de pågår till och med 2 december. Kampanjpriset gäller i fyra månader och bara när du tecknar ett nytt abonnemang.",
+      },
+      { typ: "h2", text: "Det här gäller just nu" },
+      {
+        typ: "ul",
+        punkter: [
+          "Hallon 5 GB: 9 kr/mån i fyra månader, sedan 109 kr/mån. 60 GB extra surfpott.",
+          "Hallon 100 GB: 49 kr/mån i fyra månader, sedan 359 kr/mån. 100 GB extra surfpott.",
+          "Bredvid varje Black Weeks-pris visar Hallon ett tidigare lägsta pris som är 10 kr högre per månad, till exempel 19 kr i stället för 9 kr för 5 GB. Under fyra månader blir skillnaden 40 kr.",
+          "Telenor och Comviq skriver på sina sajter att Black Week närmar sig och ber dig skriva upp dig för att få besked om erbjudandena.",
+        ],
+      },
+      { typ: "h2", text: "Vad det betyder för dig" },
+      {
+        typ: "p",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut.",
+      },
+      {
+        typ: "p",
+        text: "Jämför snittpriset första året i [jämförelsen](/), se alla [kampanjer just nu](/kampanjer) och läs [vad som händer när kampanjpriset tar slut](/guider/kampanjpris-efter-kampanjen).",
+      },
+    ],
+    kallor: [
+      {
+        utgivare: "Hallon",
+        titel: "Mobilabonnemang",
+        url: "https://www.hallon.se/mobilabonnemang",
+        datum: "kontrollerad 10 november 2026",
+      },
+      {
+        utgivare: "Hallon",
+        titel: "Black Friday och Black Week 2026",
+        url: "https://www.hallon.se/black-friday",
+        datum: "kontrollerad 10 november 2026",
+      },
+      {
+        utgivare: "Telenor",
+        titel: "Mobilabonnemang",
+        url: "https://www.telenor.se/handla/mobilabonnemang/",
+        datum: "kontrollerad 10 november 2026",
+      },
+      {
+        utgivare: "Comviq",
+        titel: "Black Week och Black Friday",
+        url: "https://www.comviq.se/erbjudanden/black-friday",
+        datum: "kontrollerad 10 november 2026",
+      },
+    ],
+    relaterat: [
+      { href: "/kampanjer", label: "Kampanjer just nu" },
+      { href: "/guider/kampanjpris-efter-kampanjen", label: "När kampanjpriset tar slut" },
+      { href: "/verktyg/kampanjkalkylator", label: "Kampanjkalkylatorn" },
+      { href: "/operatorer/hallon", label: "Hallon: priser och villkor" },
+    ],
+  },
+  {
     slug: "comviq-bas-dagsavgift-kontantkort",
     titel: "Comviq tar 1,50 kr om dagen på kontantkort utan prisplan",
     seoTitel: "Comviq inför dagsavgift på Bas",

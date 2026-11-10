@@ -72,6 +72,13 @@ type Post = {
 };
 
 export const BILDER = {
+  "shoppingkassar-paket": {
+    alt: "Papperskassar fyllda med paket och askar på ett trädäck",
+    kategori: "ovrigt",
+    taggar: ["shopping", "kampanj", "black friday", "rea", "köp"],
+    fotograf: "kaboompics",
+    kalla: "Pixabay 791582",
+  },
   "mobil-hemapp-villa": {
     alt: "Händer som styr hemmet i en mobil framför en modern villa",
     kategori: "bostad",

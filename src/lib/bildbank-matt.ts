@@ -34,6 +34,7 @@ const MATT: Record<string, readonly [number, number, number, number]> = {
   "pappa-barn-promenad": [1280, 853, 800, 533],
   "par-hemma-morgon": [1600, 1067, 800, 534],
   "sjobodar-smogen": [1600, 1067, 800, 534],
+  "shoppingkassar-paket": [1280, 853, 800, 533],
   "spargris-tra": [1280, 853, 800, 533],
   "stromavbrott-ljus": [1280, 853, 800, 533],
   "stuga-akerkant-vinter": [1200, 780, 800, 520],
