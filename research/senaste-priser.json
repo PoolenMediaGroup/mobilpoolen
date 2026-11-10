@@ -1441,8 +1441,8 @@
  },
  "telia|Företag Obegränsad Max|foretag": {
   "pris": 699,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 499,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
@@ -1451,8 +1451,8 @@
  },
  "telia|Företag Obegränsad Premium|foretag": {
   "pris": 599,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 399,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
@@ -1461,8 +1461,8 @@
  },
  "telia|Företag Obegränsad|foretag": {
   "pris": 499,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 349,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",
@@ -1470,9 +1470,9 @@
   "kundtyp": "foretag"
  },
  "telia|Företag 10 GB|foretag": {
-  "pris": 349,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "pris": 399,
+  "kampanjpris": 349,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
   "operator": "telia",

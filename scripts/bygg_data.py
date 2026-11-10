@@ -106,10 +106,10 @@ print(len(plans),'privata', len(fplans),'företag')
 # ---------------- Företag: handplockat ur foretag.json ----------------
 F=[
  # operator, namn, gb, pris(ord), kampanjpris, kampanjMan, bindning, euGb, moms, notis, kalla
- ('telia','Företag Obegränsad Max',None,699,None,None,None,None,'okand','Telia anger ett kampanjpris på 499 kr/mån utan att kampanjens längd framgår. Smart Connect-växel och ett extra datasim ingår. Upp till 1 500 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
- ('telia','Företag Obegränsad Premium',None,599,None,None,None,None,'okand','Kampanjpris 399 kr/mån enligt Telia, längd framgår inte. Ett extra datasim ingår. Upp till 1 500 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
- ('telia','Företag Obegränsad',None,499,None,None,None,None,'okand','Kampanjpris 349 kr/mån enligt Telia, längd framgår inte. Upp till 300 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
- ('telia','Företag 10 GB',10,349,None,None,None,None,'okand','Upp till 100 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
+ ('telia','Företag Obegränsad Max',None,699,499,24,24,None,'exkl','Kampanjpris 499 kr/mån i 24 månader med 24 månaders bindningstid, därefter 699 kr/mån. Erbjudandet gäller t.o.m. 23 november 2026 enligt Telias webbshop. Smart Connect-växel och ett extra datasim ingår. Upp till 1 500 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
+ ('telia','Företag Obegränsad Premium',None,599,399,24,24,None,'exkl','Kampanjpris 399 kr/mån i 24 månader med 24 månaders bindningstid, därefter 599 kr/mån. Erbjudandet gäller t.o.m. 23 november 2026 enligt Telias webbshop. Ett extra datasim ingår. Upp till 1 500 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
+ ('telia','Företag Obegränsad',None,499,349,24,24,None,'exkl','Kampanjpris 349 kr/mån i 24 månader med 24 månaders bindningstid, därefter 499 kr/mån. Erbjudandet gäller t.o.m. 23 november 2026 enligt Telias webbshop. Upp till 300 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
+ ('telia','Företag 10 GB',10,399,349,24,24,None,'exkl','349 kr/mån i 24 månader med 24 månaders bindningstid, därefter 399 kr/mån, enligt Telias webbshop. Pris utan bindningstid framgår inte. Upp till 100 Mbit/s.','https://www.telia.se/foretag/foretagsabonnemang'),
  ('tele2','Företag 60 GB',60,399,269,24,24,None,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 100 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
  ('tele2','Företag Obegränsad',None,499,289,24,24,60,'okand','Kampanjpriset gäller i 24 månader med 24 månaders bindningstid. 300 Mbit/s.','https://www.tele2.se/foretag/mobilabonnemang'),
  ('tele2','Företag Obegränsad Max',None,599,299,24,24,None,'okand','Kampanjpriset gäller i 24 månader med bindningstid. 1 500 Mbit/s. Upp till nio kollegor kan få 50 kr/mån lägre pris.','https://www.tele2.se/foretag/mobilabonnemang'),
@@ -161,7 +161,7 @@ opl=[opts(s,d[s]) for s in ops]
 # Telavox som företagsoperatör
 opl.append(dict(slug='telavox',namn='Telavox',agare='Telavox AB',grupp='mvno',nat='telia',natNotis='Telavox anger inte på sina prissidor vilket nät abonnemangen använder.',femg=True,esim=None,wifiSamtal=None,kontantkort=False,harForetag=True,webb='https://telavox.com/sv/',kundtjanst=None,
   om='Telavox säljer mobilabonnemang till företag tillsammans med en molnbaserad växel. Priserna anges exkl. moms, och de dyrare nivåerna har växel, app för mobil och dator och integrationer med andra system.',
-  starkor=['Växel ingår från Premium-nivån','Priser anges exkl. moms'],svagheter=['Inga abonnemang för privatpersoner','Vilket nät som används framgår inte av prissidan'],villkor={},kallor=['https://telavox.com/sv/priser/'],kontrollerad='2026-11-09',osakert=['Vilket mobilnät Telavox använder','Bindningstid'],partner=False,aktiv=True,status=None,skiPrivat=None,skiForetag=None,prisKontrollerade=False))
+  starkor=['Växel ingår från Premium-nivån','Priser anges exkl. moms'],svagheter=['Inga abonnemang för privatpersoner','Vilket nät som används framgår inte av prissidan'],villkor={},kallor=['https://telavox.com/sv/priser/'],kontrollerad='2026-11-10',osakert=['Vilket mobilnät Telavox använder','Bindningstid'],partner=False,aktiv=True,status=None,skiPrivat=None,skiForetag=None,prisKontrollerade=False))
 
 # Visningstexter: underlaget innehåller citat och arbetsanteckningar. Det som visas
 # på sajten skrivs här i ren form. Underlaget i research/ ändras inte.
@@ -239,7 +239,7 @@ open(p_logg,'w').write('// GENERERAD av scripts/bygg_data.py ur research/prisand
   'export const PRISANDRINGAR: Prisandring[] = '+json.dumps(logg,ensure_ascii=False,indent=2)+';\n')
 subprocess.run(['npx','prettier','--write',p_logg],cwd=ROT,stdout=subprocess.DEVNULL)
 
-out=['// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-09.\n// Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).\n\nimport type { Abonnemang, Operator } from "./typer";\n\n']
+out=['// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-10.\n// Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).\n\nimport type { Abonnemang, Operator } from "./typer";\n\n']
 out.append('export const OPERATORER_DATA: Operator[] = '+json.dumps(opl,ensure_ascii=False,indent=2)+';\n\n')
 out.append('export const ABONNEMANG_DATA: Abonnemang[] = '+json.dumps(alla,ensure_ascii=False,indent=2)+';\n')
 open(os.path.join(ROT,'src/lib/mobil/operatorer-data.ts'),'w').write(''.join(out))
