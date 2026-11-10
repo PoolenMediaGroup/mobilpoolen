@@ -1,5 +1,104 @@
 [
  {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Premium",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": null,
+  "till": 399
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Premium",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjManader",
+  "fran": null,
+  "till": 24
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Max",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": null,
+  "till": 499
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad Max",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjManader",
+  "fran": null,
+  "till": 24
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": null,
+  "till": 349
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag Obegränsad",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjManader",
+  "fran": null,
+  "till": 24
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag 10 GB",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "pris",
+  "fran": 349,
+  "till": 399
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag 10 GB",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": null,
+  "till": 349
+ },
+ {
+  "datum": "2026-11-10",
+  "operator": "telia",
+  "namn": "Företag 10 GB",
+  "kundtyp": "foretag",
+  "kalla": "https://www.telia.se/foretag/foretagsabonnemang",
+  "typ": "andrat",
+  "falt": "kampanjManader",
+  "fran": null,
+  "till": 24
+ },
+ {
   "datum": "2026-11-08",
   "operator": "telia",
   "namn": "Mobil Obegränsad (24 mån bindning)",
