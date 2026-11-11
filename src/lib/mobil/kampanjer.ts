@@ -4,15 +4,10 @@ import { arVillkorat, snittForstaAret, totalKostnad } from "./berakna";
 
 /**
  * Slutdatum som operatören själv anger. Bara kampanjer där datumet står på
- * operatörens sida, kontrollerat 2 november 2026. Efter datumet visas
+ * operatörens sida, kontrollerat 11 november 2026 (ingen aktiv kampanj har ett angivet slutdatum just nu). Efter datumet visas
  * kampanjen som "kontrollera hos operatören" tills datan är uppdaterad.
  */
-export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
-  comviq: {
-    datum: "2026-11-10",
-    text: "Comviqs erbjudande med dubbel surf och 12 månaders bindning gäller till och med 10 november 2026. Slutdatum för kampanjen utan bindning framgår inte.",
-  },
-};
+export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {};
 
 export type Kampanj = {
   a: Abonnemang;

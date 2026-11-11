@@ -135,7 +135,7 @@
         "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid/",
         "https://www.telenor.se/handla/mobilabonnemang/obegransad-surf/"
       ],
-      "kontrollerad": "2026-11-10",
+      "kontrollerad": "2026-11-11",
       "osakert": [
         "Kampanjpriserna (bindningsrabatt) lästes från telenor.se renderad i webbläsare med bindning påslagen. Brytaren för obundet pris gick inte att växla automatiskt; priset utan bindning är taget ur prislistan (månadsavgift) och sidans 'Tidigare'-pris, som är samma.",
         "Att abonnemangen går att teckna helt utan bindning bygger på supportsidan ('kan välja att binda') och prislistan, inte på en visad kassa.",
@@ -608,7 +608,7 @@
         "https://lingon.se/support-faktura/",
         "https://lingon.se/om-oss/"
       ],
-      "kontrollerad": "2026-11-10",
+      "kontrollerad": "2026-11-11",
       "osakert": [
         "lingonmobil.se leder till lingon.se. Priserna laddas med JavaScript och lästes från sidan renderad i webbläsare (stämmer med cart-v2-koden på sajten).",
         "Bindningstid anges inte någonstans; därför null.",

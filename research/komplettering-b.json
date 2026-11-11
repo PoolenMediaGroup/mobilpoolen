@@ -304,7 +304,7 @@
         "Åldersgränser för Student, 55+ och Under 18 (krav/verifiering) framgick inte."
       ],
       "noteringar": "Kampanj från 3 nov 2026: 20 kr/mån i 3 mån vid nybeställning (ej abonnemangsbyte) + 100 GB extra surf giltig i 12 mån, för nya kunder. Ersätter 30 kr i 4 mån + Dubbel Surf. Slutdatum framgår inte.",
-      "kontrollerad": "2026-11-10"
+      "kontrollerad": "2026-11-11"
     },
     {
       "slug": "chilimobil",
@@ -617,7 +617,7 @@
         "Prislistan anger 'Priserna gäller från den 1 april 2024', senast ändrad 2026-01-01."
       ],
       "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
-      "kontrollerad": "2026-11-10"
+      "kontrollerad": "2026-11-11"
     },
     {
       "slug": "comviq",
@@ -627,9 +627,9 @@
           "gb": 5,
           "obegransad": false,
           "pris": 129,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 129 kr/mån.",
+          "kampanjpris": 29,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 29 kr/mån utan bindningstid, därefter 129 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 5,
           "hastighet": null,
@@ -641,9 +641,9 @@
           "gb": 5,
           "obegransad": false,
           "pris": 129,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån + dubbel surf (10 GB) i 12 mån med 12 mån bindningstid. Därefter 129 kr/mån. Erbjudandet gäller t.o.m. 10 november (2026).",
+          "kampanjpris": 29,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 29 kr/mån, + dubbel surf (10 GB) i 12 mån med 12 mån bindningstid. Därefter 129 kr/mån. Slutdatum framgår inte.",
           "bindning": 12,
           "euGb": 5,
           "hastighet": null,
@@ -655,9 +655,9 @@
           "gb": 20,
           "obegransad": false,
           "pris": 229,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 229 kr/mån.",
+          "kampanjpris": 49,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 49 kr/mån utan bindningstid, därefter 229 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 20,
           "hastighet": null,
@@ -669,9 +669,9 @@
           "gb": 20,
           "obegransad": false,
           "pris": 229,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån + dubbel surf (40 GB) i 12 mån med 12 mån bindningstid. Därefter 229 kr/mån. Erbjudandet gäller t.o.m. 10 november (2026).",
+          "kampanjpris": 49,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 49 kr/mån, + dubbel surf (40 GB) i 12 mån med 12 mån bindningstid. Därefter 229 kr/mån. Slutdatum framgår inte.",
           "bindning": 12,
           "euGb": 20,
           "hastighet": null,
@@ -683,9 +683,9 @@
           "gb": 100,
           "obegransad": false,
           "pris": 359,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 359 kr/mån.",
+          "kampanjpris": 89,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 89 kr/mån utan bindningstid, därefter 359 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 46,
           "hastighet": null,
@@ -697,9 +697,9 @@
           "gb": 100,
           "obegransad": false,
           "pris": 359,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån + dubbel surf (200 GB) i 12 mån med 12 mån bindningstid. Därefter 359 kr/mån. Erbjudandet gäller t.o.m. 10 november (2026).",
+          "kampanjpris": 89,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 89 kr/mån, + dubbel surf (200 GB) i 12 mån med 12 mån bindningstid. Därefter 359 kr/mån. Slutdatum framgår inte.",
           "bindning": 12,
           "euGb": 46,
           "hastighet": null,
@@ -711,9 +711,9 @@
           "gb": 14,
           "obegransad": false,
           "pris": 129,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 129 kr/mån.",
+          "kampanjpris": 29,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 29 kr/mån utan bindningstid, därefter 129 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 14,
           "hastighet": null,
@@ -725,9 +725,9 @@
           "gb": 40,
           "obegransad": false,
           "pris": 209,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 209 kr/mån.",
+          "kampanjpris": 49,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 49 kr/mån utan bindningstid, därefter 209 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 20,
           "hastighet": null,
@@ -739,9 +739,9 @@
           "gb": 100,
           "obegransad": false,
           "pris": 309,
-          "kampanjpris": 45,
-          "kampanjMan": 3,
-          "kampanjText": "45 kr/mån i 3 mån utan bindningstid, därefter 309 kr/mån.",
+          "kampanjpris": 69,
+          "kampanjMan": 6,
+          "kampanjText": "Black Weeks: 75 % rabatt i 6 mån, 69 kr/mån utan bindningstid, därefter 309 kr/mån. Slutdatum framgår inte.",
           "bindning": 0,
           "euGb": 40,
           "hastighet": null,
@@ -750,10 +750,10 @@
         }
       ],
       "villkor": {
-        "kampanj45": "45 kr/mån i 3 mån finns i två varianter: (a) UTAN bindningstid på startsidan (erbjudandena 'ATL 5GB/20GB/100GB 3m45 b0', rubrik 'Halva priset på abonnemang utan bindning'), (b) MED 12 mån bindningstid på /mobilabonnemang, då med dubbel surf i 12 mån ('ATL ... DD 3m45 b12'). Båda: nya kunder samt byte från kontantkort.",
-        "efterKampanj": "Ordinarie pris 129/229/359 kr/mån efter 3 mån. Efter bindningstid: inget särskilt angivet på sidan; dubbel surf gäller 12 mån.",
-        "slutdatum": "Dubbel surf-erbjudandet (12 mån bindning) gäller t.o.m. 10 november. Slutdatum för 45 kr utan bindning framgick inte.",
-        "student": "Ja, 45 kr/mån i 3 mån gäller även studentabonnemangen, utan bindningstid: 14 GB 129, 40 GB 209, 100 GB 309 kr/mån",
+        "kampanj45": "Från 11 nov 2026 (Black Weeks): 75 % rabatt i 6 mån, 29/49/89 kr/mån för 5/20/100 GB, både utan bindningstid (startsidan) och med 12 mån bindningstid (/mobilabonnemang, då med dubbel surf i 12 mån). Ersätter 45 kr i 3 mån. Nya kunder samt byte från kontantkort.",
+        "efterKampanj": "Ordinarie pris 129/229/359 kr/mån efter 6 mån. Dubbel surf gäller 12 mån.",
+        "slutdatum": "Slutdatum för Black Weeks-kampanjen framgår inte (kontrollerat 11 nov 2026). Dubbel surf-erbjudandet som gällde t.o.m. 10 november har ersatts.",
+        "student": "Black Weeks: 75 % rabatt i 6 mån även på studentabonnemangen utan bindningstid: 14 GB 29 (ord. 129), 40 GB 49 (ord. 209), 100 GB 69 (ord. 309) kr/mån",
         "euSurf": "5 GB→5, 20 GB→20, 100 GB→46 GB i EU/EES; student 14→14, 40→20, 100→40 GB",
         "bindningAllmant": "'Skaffar du mobilabonnemang utan att köpa till en mobil är bindningstiden valfri'"
       },
@@ -764,11 +764,11 @@
       ],
       "osakert": [
         "Student 40 GB anges med 20 GB surf i EU/EES i produktdatan – kan vara fel hos Comviq.",
-        "Slutdatum för kampanjen utan bindning okänt.",
-        "Comviq Senior ej kontrollerad."
+        "Comviq Senior ej kontrollerad.",
+        "Slutdatum för Black Weeks-kampanjen (75 % i 6 mån) framgår inte."
       ],
-      "noteringar": "Befintlig data säger att kampanjen 45 kr i 3 mån kräver 12 mån bindning – det stämmer INTE längre. 45 kr i 3 mån erbjuds även utan bindning (startsidan). Med 12 mån bindning får man dessutom dubbel surf i 12 mån (10/40/200 GB). Ordinarie priser 129/229/359 och bindning 0 är bekräftade. Lägg till studentabonnemangen 14/40/100 GB 129/209/309 kr (45 kr i 3 mån, ingen bindning). EU-surf för 100 GB är 46 GB.",
-      "kontrollerad": "2026-11-10"
+      "noteringar": "11 nov 2026: 45 kr i 3 mån och dubbel surf t.o.m. 10 nov har ersatts av Black Weeks: 75 % rabatt i 6 mån (29/49/89 kr, student 29/49/69 kr) med eller utan bindning; med 12 mån bindning även dubbel surf i 12 mån. Ordinarie priser 129/229/359 (student 129/209/309) oförändrade.",
+      "kontrollerad": "2026-11-11"
     },
     {
       "slug": "telia",
@@ -991,7 +991,7 @@
         "Kampanjens slutdatum (469 kr) framgick inte."
       ],
       "noteringar": "Befintlig data har bindning okänd – ändra till bindning 0 för Mobil 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 (priserna stämmer). Lägg ev. till bindningsvarianter: 10 GB 249 kr i 12 mån (24 mån bindning) och Obegränsad Plus 469 kr i 12 mån (24 mån bindning). Under 28-varianter: 20 GB 349, Obegränsad 449, Obegränsad Plus 519 (419 i 12 mån m. bindning).",
-      "kontrollerad": "2026-11-10"
+      "kontrollerad": "2026-11-11"
     }
   ]
 }
