@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-10.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-11.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-10";
+export const BREDBAND_KONTROLLERAD = "2026-11-11";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -112,7 +112,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1000 Mbit/s",
     pris: 499,
-    kampanjpris: 289,
+    kampanjpris: 219,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -122,7 +122,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.tele2.se/bredband/mobilt-bredband",
     notis:
-      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Ingen nedräkning visas längre (2 nov 2026).",
+      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 219 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte.",
   },
   {
     id: "tele2-bb-mobilt-bredband-5g-max-utan-bindning",
@@ -153,7 +153,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 100 Mbit/s",
     pris: 399,
-    kampanjpris: 239,
+    kampanjpris: 189,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -163,7 +163,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.tele2.se/bredband/mobilt-bredband",
     notis:
-      "Obegränsad surf i Sverige, upp till 100 Mbit/s. Ingen nedräkning visas längre (2 nov 2026).",
+      "Obegränsad surf i Sverige, upp till 100 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte.",
   },
   {
     id: "tele2-bb-mobilt-bredband-5g-bas-utan-bindning",
@@ -194,7 +194,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1000 Mbit/s",
     pris: 449,
-    kampanjpris: 259,
+    kampanjpris: 209,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -203,7 +203,8 @@ export const BREDBAND_DATA: Bredband[] = [
       "1 440 kr (ord. 4 290 kr) eller 60 kr/mån i 24 mån (40 kr/mån i 36 mån), Huawei 5G CPE C7",
     femg: true,
     kalla: "https://www.comviq.se/bredband/mobilt-bredband",
-    notis: "Obegränsad surf i Sverige, Tele2:s nät. Routern till nedsatt pris vid 24 mån bindning.",
+    notis:
+      "Obegränsad surf i Sverige, Tele2:s nät. Routern till nedsatt pris vid 24 mån bindning. Black Weeks-pris 209 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte.",
   },
   {
     id: "comviq-bb-mobilt-bredband-5g-1000-utan-bindning",
@@ -234,7 +235,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 100 Mbit/s",
     pris: 399,
-    kampanjpris: 229,
+    kampanjpris: 189,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -243,7 +244,8 @@ export const BREDBAND_DATA: Bredband[] = [
       "1 440 kr (ord. 4 290 kr) eller 60 kr/mån i 24 mån (40 kr/mån i 36 mån), Huawei 5G CPE C7",
     femg: true,
     kalla: "https://www.comviq.se/bredband/mobilt-bredband",
-    notis: "Obegränsad surf i Sverige, Tele2:s nät.",
+    notis:
+      "Obegränsad surf i Sverige, Tele2:s nät. Black Weeks-pris 189 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte.",
   },
   {
     id: "comviq-bb-mobilt-bredband-5g-100-utan-bindning",

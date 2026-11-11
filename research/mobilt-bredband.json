@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-10",
+  "kontrollerad": "2026-11-11",
   "erbjudanden": [
     {
       "operator": "telia",
@@ -98,7 +98,7 @@
       "gb": null,
       "hastighet": "upp till 1000 Mbit/s",
       "pris": 499,
-      "kampanjpris": 289,
+      "kampanjpris": 219,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -107,7 +107,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.tele2.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Ingen nedräkning visas längre (2 nov 2026)."
+      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 219 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte."
     },
     {
       "operator": "tele2",
@@ -134,7 +134,7 @@
       "gb": null,
       "hastighet": "upp till 100 Mbit/s",
       "pris": 399,
-      "kampanjpris": 239,
+      "kampanjpris": 189,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -143,7 +143,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.tele2.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, upp till 100 Mbit/s. Ingen nedräkning visas längre (2 nov 2026)."
+      "notis": "Obegränsad surf i Sverige, upp till 100 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte."
     },
     {
       "operator": "tele2",
@@ -170,7 +170,7 @@
       "gb": null,
       "hastighet": "upp till 1000 Mbit/s",
       "pris": 449,
-      "kampanjpris": 259,
+      "kampanjpris": 209,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -179,7 +179,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.comviq.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, Tele2:s nät. Routern till nedsatt pris vid 24 mån bindning."
+      "notis": "Obegränsad surf i Sverige, Tele2:s nät. Routern till nedsatt pris vid 24 mån bindning. Black Weeks-pris 209 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte."
     },
     {
       "operator": "comviq",
@@ -206,7 +206,7 @@
       "gb": null,
       "hastighet": "upp till 100 Mbit/s",
       "pris": 399,
-      "kampanjpris": 229,
+      "kampanjpris": 189,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -215,7 +215,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.comviq.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, Tele2:s nät."
+      "notis": "Obegränsad surf i Sverige, Tele2:s nät. Black Weeks-pris 189 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte."
     },
     {
       "operator": "comviq",
