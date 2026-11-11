@@ -276,7 +276,7 @@
       "wifiSamtal": null,
       "kontantkort": true,
       "kundtjanst": "0772-21 21 21 (från utlandet +46 772-21 21 21), vardagar 09–17. Chatt med medarbetare alla dagar 07–22, chatbot dygnet runt.",
-      "om": "Comviq är ett lågprisvarumärke i Tele2:s nät som säljer både abonnemang och kontantkort. Ordinarie abonnemang finns med 5, 20 och 100 GB för 129–359 kr/mån. Just nu pågår en kampanj med 45 kr/mån i 3 månader och dubbel surf, som kräver 12 månaders bindning. Det finns också student-, barn- och familjeerbjudanden.",
+      "om": "Comviq är ett lågprisvarumärke i Tele2:s nät som säljer både abonnemang och kontantkort. Ordinarie abonnemang finns med 5, 20 och 100 GB för 129–359 kr/mån. Just nu pågår en Black Weeks-kampanj med 75 % rabatt i 6 månader, med eller utan bindningstid. Med 12 månaders bindning ingår även dubbel surf i 12 månader. Det finns också student-, barn- och familjeerbjudanden.",
       "starkor": [
         "Tele2:s nät (99,9 % av befolkningen), 5G upp till 1000 Mbit/s",
         "Ingen uppsägningstid: man betalar bara innevarande fakturaperiod",
@@ -286,7 +286,7 @@
         "Lång chattsupport (07–22 alla dagar)"
       ],
       "svagheter": [
-        "Kampanjen med 45 kr/mån kräver 12 månaders bindningstid",
+        "Dubbel surf i kampanjen kräver 12 månaders bindningstid",
         "100 GB-abonnemanget har bara 46 GB EU-surf",
         "Ingen obegränsad surf i det ordinarie utbudet",
         "Telefonsupport bara vardagar 09–17"
