@@ -174,7 +174,7 @@ Varje operatörssida bygger på uppgifter från operatörens egen webbplats, med
 ## Nyheter
 
 - [Nyheter om mobilabonnemang](https://mobilpoolen.se/nyheter): Nyheter om priser, operatörer, mobilnät och regler i Sverige, nyast först, var och en med källa och datum. RSS: https://mobilpoolen.se/nyheter/rss.xml
-- [Black Week 2026: så mycket betalar du när kampanjmånaderna är slut](https://mobilpoolen.se/nyheter/black-week-2026-mobilabonnemang): Hallons Black Weeks 3 november till 2 december 2026. 5 GB 9 kr/mån i 4 mån, sedan 109 kr; snitt första året 76 kr/mån. Kontrollerat 10 november 2026.
+- [Black Week 2026: så mycket betalar du när kampanjmånaderna är slut](https://mobilpoolen.se/nyheter/black-week-2026-mobilabonnemang): Hallons Black Weeks 3 november till 2 december 2026. 5 GB 9 kr/mån i 4 mån, sedan 109 kr; snitt första året 76 kr/mån. Uppdaterad 12 november 2026 med Comviqs Black Weeks (75 % rabatt i 6 mån) och Tele2:s Black Cheap Weeks.
 - [Comviq tar 1,50 kr om dagen på kontantkort utan prisplan](https://mobilpoolen.se/nyheter/comviq-bas-dagsavgift-kontantkort): Från 1 oktober 2026 dras 1,50 kr/dag från saldot på kontantkort Bas utan aktiv prisplan, enligt comviq.se/bas-avgift.
 - [SKI Mobil 2026: Fello har nöjdast privatkunder](https://mobilpoolen.se/nyheter/ski-mobil-2026-fello-nojdast): Svenskt Kvalitetsindex 5 oktober 2026. Fello 81,0, branschsnitt privat 66,2 (65,8 i fjol), företag 67,0 med Telia högst 69,2.
 - [Telia blockerar kända bedrägerisajter för alla mobilkunder](https://mobilpoolen.se/nyheter/telia-internetfilter-bedragerisajter): Internetfilter i Telias mobilnät från 5 oktober 2026, ingår utan extra kostnad och kan stängas av.

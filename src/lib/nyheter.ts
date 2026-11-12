@@ -99,7 +99,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-10",
+    uppdateradIso: "2026-11-12",
     innehall: [
       {
         typ: "p",
@@ -112,13 +112,21 @@ const NYHETER_OSORTERADE: Nyhet[] = [
           "Hallon 5 GB: 9 kr/mån i fyra månader, sedan 109 kr/mån. 60 GB extra surfpott.",
           "Hallon 100 GB: 49 kr/mån i fyra månader, sedan 359 kr/mån. 100 GB extra surfpott.",
           "Bredvid varje Black Weeks-pris visar Hallon ett tidigare lägsta pris som är 10 kr högre per månad, till exempel 19 kr i stället för 9 kr för 5 GB. Under fyra månader blir skillnaden 40 kr.",
-          "Telenor och Comviq skriver på sina sajter att Black Week närmar sig och ber dig skriva upp dig för att få besked om erbjudandena.",
+        ],
+      },
+      { typ: "h2", text: "Nytt 12 november: Comviq och Tele2 har startat" },
+      {
+        typ: "ul",
+        punkter: [
+          "Comviq har startat sina Black Weeks: 75 % rabatt i sex månader, med eller utan bindningstid. 5 GB kostar 29 kr/mån och sedan 129 kr/mån. 100 GB kostar 89 kr/mån och sedan 359 kr/mån. Med 12 månaders bindningstid får du också dubbel surf i 12 månader. Kampanjen gäller nya kunder och dig som byter från kontantkort. Slutdatum framgår inte.",
+          "Tele2 har startat Black Cheap Weeks med samma pris i 24 månader och 24 månaders bindningstid. 15 GB kostar 199 kr/mån med dubbel surf (30 GB), och Obegränsad 299 kr/mån. Tele2 visar 329 respektive 479 kr/mån som tidigare pris. Slutdatum framgår inte.",
+          "Telenor skriver fortfarande att Black Week närmar sig.",
         ],
       },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 är du i stället bunden i 24 månader.",
       },
       {
         typ: "p",
@@ -130,25 +138,37 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         utgivare: "Hallon",
         titel: "Mobilabonnemang",
         url: "https://www.hallon.se/mobilabonnemang",
-        datum: "kontrollerad 10 november 2026",
+        datum: "kontrollerad 12 november 2026",
       },
       {
         utgivare: "Hallon",
         titel: "Black Friday och Black Week 2026",
         url: "https://www.hallon.se/black-friday",
-        datum: "kontrollerad 10 november 2026",
+        datum: "kontrollerad 12 november 2026",
       },
       {
         utgivare: "Telenor",
         titel: "Mobilabonnemang",
         url: "https://www.telenor.se/handla/mobilabonnemang/",
-        datum: "kontrollerad 10 november 2026",
+        datum: "kontrollerad 12 november 2026",
       },
       {
         utgivare: "Comviq",
-        titel: "Black Week och Black Friday",
+        titel: "Black Weeks",
         url: "https://www.comviq.se/erbjudanden/black-friday",
-        datum: "kontrollerad 10 november 2026",
+        datum: "kontrollerad 12 november 2026",
+      },
+      {
+        utgivare: "Comviq",
+        titel: "Mobilabonnemang",
+        url: "https://www.comviq.se/mobilabonnemang",
+        datum: "kontrollerad 12 november 2026",
+      },
+      {
+        utgivare: "Tele2",
+        titel: "Mobilabonnemang: Black Cheap Weeks",
+        url: "https://www.tele2.se/mobilabonnemang",
+        datum: "kontrollerad 12 november 2026",
       },
     ],
     relaterat: [
