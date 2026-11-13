@@ -99,7 +99,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-12",
+    uppdateradIso: "2026-11-13",
     innehall: [
       {
         typ: "p",
@@ -120,13 +120,21 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         punkter: [
           "Comviq har startat sina Black Weeks: 75 % rabatt i sex månader, med eller utan bindningstid. 5 GB kostar 29 kr/mån och sedan 129 kr/mån. 100 GB kostar 89 kr/mån och sedan 359 kr/mån. Med 12 månaders bindningstid får du också dubbel surf i 12 månader. Kampanjen gäller nya kunder och dig som byter från kontantkort. Slutdatum framgår inte.",
           "Tele2 har startat Black Cheap Weeks med samma pris i 24 månader och 24 månaders bindningstid. 15 GB kostar 199 kr/mån med dubbel surf (30 GB), och Obegränsad 299 kr/mån. Tele2 visar 329 respektive 479 kr/mån som tidigare pris. Slutdatum framgår inte.",
-          "Telenor skriver fortfarande att Black Week närmar sig.",
+        ],
+      },
+      { typ: "h2", text: "Nytt 13 november: Telenor har smygstartat" },
+      {
+        typ: "ul",
+        punkter: [
+          "Telenor kallar sina nya priser för en smygstart på Black Week. De gäller i 24 månader och kräver 24 månaders bindningstid. Slutdatum framgår inte.",
+          "Obegränsat kostar 349 kr/mån i 24 månader och sedan 499 kr/mån. Obegränsat Plus kostar 469 kr/mån och sedan 629 kr/mån. 25 GB kostar 329 kr/mån och sedan 399 kr/mån.",
+          "10 GB ingår inte i kampanjen och kostar 299 kr/mån.",
         ],
       },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 är du i stället bunden i 24 månader.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor.",
       },
       {
         typ: "p",
@@ -150,7 +158,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         utgivare: "Telenor",
         titel: "Mobilabonnemang",
         url: "https://www.telenor.se/handla/mobilabonnemang/",
-        datum: "kontrollerad 12 november 2026",
+        datum: "kontrollerad 13 november 2026",
       },
       {
         utgivare: "Comviq",
