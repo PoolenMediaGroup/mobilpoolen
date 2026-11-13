@@ -57,7 +57,7 @@
         "https://www.telia.se/mobilabonnemang/pensionar",
         "https://www.telia.se/privat/telefoni/wifi-samtal"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
         "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -115,7 +115,7 @@
         "https://www.tele2.se/support/mobilt/wifi-samtal",
         "https://www.tele2.se/support/information/prislistor"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
         "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
@@ -155,7 +155,7 @@
         "https://www.telenor.se/support/priser-villkor-och-blanketter/prislistor/",
         "https://mediearkivet.telenor.se/Data/mw/Pdf/Tn32141.pdf"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "HELA abonnemangslistan saknas: telenor.se renderas med JavaScript och WebFetch fick bara metadata. Kontrollera manuellt i webbläsare eller via prislistan Tn32141.pdf (rubriken nämner 'Obegränsat Plus Familj' och 'Obegränsat Familj')",
         "eSIM, wifi-samtal, startavgift, uppsägningstid och kundtjänstnummer har inte verifierats",
@@ -206,7 +206,7 @@
         "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
         "https://www.tre.se/om-tre/kontakt"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
         "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -314,7 +314,7 @@
         "https://www.comviq.se/hjalp/avtal-och-villkor/uppsagning-av-abonnemang",
         "https://www.comviq.se/hjalp/kontakta-oss"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Startavgift och avgift för SIM/eSIM är inte verifierade",
         "Slutdatum för Black Weeks-kampanjen (75 % rabatt i 6 mån) framgår inte",
@@ -361,7 +361,7 @@
         "https://vimla.se/villkor/",
         "https://faq.vimla.se/hc/sv/articles/360019666597-Vimlas-olika-surfniv%C3%A5er"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "HELA abonnemangslistan saknas: vimla.se kunde inte hämtas. Kontrollera manuellt",
         "Ägare (Telenor) och nät (Telenor) är inte verifierade på Vimlas egen sida",
@@ -424,7 +424,7 @@
         "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
         "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
         "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",

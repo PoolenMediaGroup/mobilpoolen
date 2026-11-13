@@ -1,5 +1,38 @@
 [
  {
+  "datum": "2026-11-13",
+  "operator": "telenor",
+  "namn": "Obegränsat, 24 mån bindning",
+  "kundtyp": "privat",
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": 449,
+  "till": 349
+ },
+ {
+  "datum": "2026-11-13",
+  "operator": "telenor",
+  "namn": "Obegränsat Plus, 24 mån bindning",
+  "kundtyp": "privat",
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": 529,
+  "till": 469
+ },
+ {
+  "datum": "2026-11-13",
+  "operator": "telenor",
+  "namn": "25 GB, 24 mån bindning",
+  "kundtyp": "privat",
+  "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
+  "typ": "andrat",
+  "falt": "kampanjpris",
+  "fran": 349,
+  "till": 329
+ },
+ {
   "datum": "2026-11-11",
   "operator": "tele2",
   "namn": "Seniorabonnemang Obegränsad (65+)",

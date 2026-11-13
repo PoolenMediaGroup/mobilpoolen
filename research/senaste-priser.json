@@ -211,7 +211,7 @@
  },
  "telenor|Obegränsat Plus, 24 mån bindning|privat": {
   "pris": 629,
-  "kampanjpris": 529,
+  "kampanjpris": 469,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
@@ -231,7 +231,7 @@
  },
  "telenor|Obegränsat, 24 mån bindning|privat": {
   "pris": 499,
-  "kampanjpris": 449,
+  "kampanjpris": 349,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telenor.se/handla/mobilabonnemang/",
@@ -251,7 +251,7 @@
  },
  "telenor|25 GB, 24 mån bindning|privat": {
   "pris": 399,
-  "kampanjpris": 349,
+  "kampanjpris": 329,
   "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.telenor.se/handla/mobilabonnemang/",

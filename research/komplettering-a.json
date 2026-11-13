@@ -15,7 +15,7 @@
         "Eget nät med 5G som enligt Telenor täcker 99,9 % av befolkningen",
         "Surf i EU/EES och 16 länder till (bl.a. USA, Storbritannien, Schweiz, Turkiet, Thailand), max 100 GB/mån på obegränsat",
         "Säkerhetstjänster ingår: Nummerkoll, filter mot bluff-sms, kostnadskontroll och skydd mot skadliga sidor",
-        "Upp till 7 extra användare per abonnemang (249 kr/mån, 199 kr/mån med 24 mån bindning)",
+        "Upp till 7 extra användare per abonnemang (249 kr/mån, just nu 169 kr/mån i 24 mån med bindning)",
         "Upp till 100 kr/mån rabatt med tv och bredband från Telenor"
       ],
       "svagheter": [
@@ -48,9 +48,9 @@
           "gb": null,
           "obegransad": true,
           "pris": 629,
-          "kampanjpris": 529,
+          "kampanjpris": 469,
           "kampanjMan": 24,
-          "kampanjText": "Bindningsrabatt: 529 kr/mån i 24 månader, därefter 629 kr/mån. Kräver 24 månaders bindningstid.",
+          "kampanjText": "Erbjudande med bindningsrabatt: 469 kr/mån i 24 månader, därefter 629 kr/mån. Kräver 24 månaders bindningstid. Slutdatum framgår inte (telenor.se, 13 nov 2026).",
           "bindning": 24,
           "euGb": 100,
           "hastighet": "5G, 10–1000 Mbit/s (prislistan)",
@@ -76,9 +76,9 @@
           "gb": null,
           "obegransad": true,
           "pris": 499,
-          "kampanjpris": 449,
+          "kampanjpris": 349,
           "kampanjMan": 24,
-          "kampanjText": "Bindningsrabatt: 449 kr/mån i 24 månader, därefter 499 kr/mån. Kräver 24 månaders bindningstid.",
+          "kampanjText": "Erbjudande med bindningsrabatt: 349 kr/mån i 24 månader, därefter 499 kr/mån. Kräver 24 månaders bindningstid. Slutdatum framgår inte (telenor.se, 13 nov 2026).",
           "bindning": 24,
           "euGb": 100,
           "hastighet": "5G, 10–1000 Mbit/s (prislistan)",
@@ -104,9 +104,9 @@
           "gb": 25,
           "obegransad": false,
           "pris": 399,
-          "kampanjpris": 349,
+          "kampanjpris": 329,
           "kampanjMan": 24,
-          "kampanjText": "Bindningsrabatt: 349 kr/mån i 24 månader, därefter 399 kr/mån. Kräver 24 månaders bindningstid.",
+          "kampanjText": "Erbjudande med bindningsrabatt: 329 kr/mån i 24 månader, därefter 399 kr/mån. Kräver 24 månaders bindningstid. Slutdatum framgår inte (telenor.se, 13 nov 2026).",
           "bindning": 24,
           "euGb": 25,
           "hastighet": "5G, 10–1000 Mbit/s (prislistan)",
@@ -135,7 +135,7 @@
         "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid/",
         "https://www.telenor.se/handla/mobilabonnemang/obegransad-surf/"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Kampanjpriserna (bindningsrabatt) lästes från telenor.se renderad i webbläsare med bindning påslagen. Brytaren för obundet pris gick inte att växla automatiskt; priset utan bindning är taget ur prislistan (månadsavgift) och sidans 'Tidigare'-pris, som är samma.",
         "Att abonnemangen går att teckna helt utan bindning bygger på supportsidan ('kan välja att binda') och prislistan, inte på en visad kassa.",
@@ -144,7 +144,8 @@
         "Wifi-samtal: hittade ingen uppgift på de lästa sidorna.",
         "Prislistan har även 'Barnabonnemang' 119 kr/mån men surfmängden står inte; därför inte med. Barnklocka med 0,5 GB för 149 kr/mån (med bindning) finns på sidan men är inte med som abonnemang.",
         "Sidan om obegränsad surf nämner 'Obegränsat Bas' (5G upp till 100 Mbit/s), som inte finns i aktuell prislista eller jämförelsen; inte med.",
-        "Telenor säljer också kontantkort (egen prislista), kontantkort lämnat null enligt uppdraget."
+        "Telenor säljer också kontantkort (egen prislista), kontantkort lämnat null enligt uppdraget.",
+        "Erbjudandet från 13 nov 2026 (469/349/329 kr i 24 mån) saknar slutdatum; telenor.se nämner Black Week men kopplar inte priserna till den."
       ]
     },
     {
@@ -473,7 +474,7 @@
         "https://vimla.se/kontakt-vimlare/",
         "https://vimla.se/kontantkort/"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "Kampanjens slutdatum anges inte på vimla.se.",
         "Kampanjen gäller 'nya Vimlare'; om den gäller vid nummerflytt såväl som nytt nummer framgår inte.",
@@ -608,7 +609,7 @@
         "https://lingon.se/support-faktura/",
         "https://lingon.se/om-oss/"
       ],
-      "kontrollerad": "2026-11-12",
+      "kontrollerad": "2026-11-13",
       "osakert": [
         "lingonmobil.se leder till lingon.se. Priserna laddas med JavaScript och lästes från sidan renderad i webbläsare (stämmer med cart-v2-koden på sajten).",
         "Bindningstid anges inte någonstans; därför null.",
