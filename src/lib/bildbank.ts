@@ -72,6 +72,13 @@ type Post = {
 };
 
 export const BILDER = {
+  "konferensrum-tomt": {
+    alt: "Tomt konferensrum med ett långt vitt bord, svarta stolar och höga fönster",
+    kategori: "lokal",
+    taggar: ["företag", "kontor", "möte", "konferensrum", "affär"],
+    fotograf: "Pexels",
+    kalla: "Pixabay 2181916",
+  },
   "shoppingkassar-paket": {
     alt: "Papperskassar fyllda med paket och askar på ett trädäck",
     kategori: "ovrigt",
