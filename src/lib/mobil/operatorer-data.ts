@@ -1,4 +1,4 @@
-// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-13.
+// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-14.
 // Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).
 
 import type { Abonnemang, Operator } from "./typer";
@@ -48,7 +48,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.telia.se/privat/telefoni/wifi-samtal",
       "https://www.telia.se/mobilabonnemang/mobil-10-gb",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
       "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -112,7 +112,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.tele2.se/support/mobilt/wifi-samtal",
       "https://www.tele2.se/support/information/prislistor",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
       "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
@@ -169,7 +169,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
       "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "HELA abonnemangslistan saknas: telenor.se renderas med JavaScript och WebFetch fick bara metadata. Kontrollera manuellt i webbläsare eller via prislistan Tn32141.pdf (rubriken nämner 'Obegränsat Plus Familj' och 'Obegränsat Familj')",
       "eSIM, wifi-samtal, startavgift, uppsägningstid och kundtjänstnummer har inte verifierats",
@@ -231,7 +231,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
       "https://www.tre.se/om-tre/kontakt",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
       "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -348,7 +348,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.comviq.se/hjalp/kontakta-oss",
       "https://www.comviq.se/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Startavgift och avgift för SIM/eSIM är inte verifierade",
       "Slutdatum för Black Weeks-kampanjen (75 % rabatt i 6 mån) framgår inte",
@@ -421,7 +421,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://vimla.se/esim/",
       "https://vimla.se/kontakt-vimlare/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "HELA abonnemangslistan saknas: vimla.se kunde inte hämtas. Kontrollera manuellt",
       "Ägare (Telenor) och nät (Telenor) är inte verifierade på Vimlas egen sida",
@@ -484,7 +484,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
       "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
       "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",
@@ -546,7 +546,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://api.fello.se/fello-product-service/v5/products",
       "https://www.fello.se/utland/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Aktuella GB-nivåer och ordinarie priser saknas. fello.se/prislista renderas dynamiskt och kunde inte läsas. Kontrollera manuellt i webbläsare.",
       "Det finns supportartiklar om eSIM, men eSIM-villkoren (kostnad m.m.) är inte lästa",
@@ -611,7 +611,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
       "https://chilimobil.se/fetch-nya.php (getPackages, Chilimobils eget orderflöde)",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Månadspris för 3 och 10 Mbit/s samt Student finns bara i bilden prislista-privat-260101.png [KONTROLLERA]",
       "Om 249 kr för 100 Mbit/s är kampanj eller ordinarie pris",
@@ -672,7 +672,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
       "https://www.lycamobile.se/sv/bundle/surf-xl/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Nät (Telenor) är inte bekräftat på lycamobile.se",
       "Pris för 120 GB-paketet: 340 eller 99 kr",
@@ -724,7 +724,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://mybeat.se/om-oss/",
       "https://mybeat.se/erbjudanden/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Ingen datering på prissidan",
       "eSIM, uppsägningstid och startavgift ej verifierade",
@@ -778,7 +778,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://tellusmobil.se/handla/",
       "https://tellusmobil.se/allmannavillkor/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Prislistan är daterad 2025-03-24, men kampanjer kan ha tillkommit",
       "Startsidan säger 'från 49 kr/mån', prislistan börjar på 69 kr",
@@ -824,7 +824,7 @@ export const OPERATORER_DATA: Operator[] = [
       ovrigt: "Surfpotten förnyas den 1:a varje månad. Fria samtal, sms och mms i EU/EES.",
     },
     kallor: ["https://www.fibio.se/mobilabonnemang/"],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Brödtexten nämner 6/20/40 GB och obegränsat, prisfältet 2/5/20 GB och obegränsat",
       "Bindningstid, EU-surf, 5G och eSIM ej verifierade",
@@ -870,7 +870,7 @@ export const OPERATORER_DATA: Operator[] = [
         "Vinterskydd-rabatt anges i kr/år per abonnemang (t.ex. 240 kr/år för 5 GB, 600 kr/år för obegränsat).",
     },
     kallor: ["https://www.katshing.com/", "https://www.katshing.com/priser"],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Bolag och ägare",
       "eSIM, startavgift, uppsägningstid och EU-surf i GB",
@@ -929,7 +929,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://lingon.se/support-faktura/",
       "https://lingon.se/om-oss/",
     ],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: [
       "Abonnemang och priser kunde inte läsas (laddas i popup). Hela abonnemangslistan måste kontrolleras manuellt.",
       "5G och eSIM ej bekräftade",
@@ -974,7 +974,7 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     villkor: {},
     kallor: ["https://telavox.com/sv/priser/"],
-    kontrollerad: "2026-11-13",
+    kontrollerad: "2026-11-14",
     osakert: ["Vilket mobilnät Telavox använder", "Bindningstid"],
     partner: false,
     aktiv: true,
