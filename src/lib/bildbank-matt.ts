@@ -10,6 +10,7 @@
 
 const MATT: Record<string, readonly [number, number, number, number]> = {
   "aldre-kvinna-fatolj": [1280, 714, 800, 446],
+  "konferensrum-tomt": [1280, 853, 800, 533],
   "aldre-par-parkbank": [1600, 1067, 800, 534],
   "anteckningar-skrivplatta": [1280, 853, 800, 533],
   "anteckningsblock-kuvert": [1280, 745, 800, 466],

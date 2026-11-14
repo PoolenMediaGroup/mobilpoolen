@@ -87,6 +87,73 @@ export type Nyhet = {
 
 const NYHETER_OSORTERADE: Nyhet[] = [
   {
+    slug: "telia-koper-telavox-foretagskunder",
+    titel: "Telia köper Telavox företagskunder i Norden",
+    seoTitel: "Telia köper Telavox företagskunder",
+    ingress:
+      "Telia köper Telavox nordiska företagskunder för 3,8 miljarder kronor. I Sverige gäller det cirka 180 000 mobilanvändare. Affären väntas bli klar 2027.",
+    avsandare: "Telia",
+    kategori: "Operatörer",
+    typ: "nyhet",
+    bild: "konferensrum-tomt",
+    nyckeltal: { varde: "180 000", text: "mobilanvändare hos Telavox i Sverige ingår i affären" },
+    handelseIso: "2026-11-12",
+    publiceradIso: "2026-11-14",
+    uppdateradIso: "2026-11-14",
+    innehall: [
+      {
+        typ: "p",
+        text: "Telia Company meddelade den 12 november 2026 att bolaget har tecknat ett bindande avtal om att köpa Telavox kundbas för företagstjänster i Norden. Telavox säljer mobilabonnemang till företag tillsammans med en molnbaserad växel. Affären omfattar cirka 24 000 företag i Sverige, Finland, Norge och Danmark, de flesta små och medelstora.",
+      },
+      { typ: "h2", text: "Det här är klart" },
+      {
+        typ: "ul",
+        punkter: [
+          "Telia betalar 3,8 miljarder kronor, plus en möjlig tilläggsköpeskilling på 0,2 miljarder kronor.",
+          "Kundbasen har över 325 000 användare, varav över 240 000 med mobilabonnemang. Cirka 180 000 av mobilanvändarna finns i Sverige.",
+          "Enligt Telia använder de flesta av Telavox mobilanvändare i Sverige redan Telias mobilnät, genom ett grossistavtal som gäller till 2027. Övriga finns i en konkurrents nät.",
+          "Telia licensierar Telavox plattform för växel, telefoni, meddelanden och möten, och ska erbjuda den både till de köpta kunderna och till sina egna företagskunder.",
+          "Affären kräver godkännande av myndigheter och väntas bli klar under första kvartalet 2027.",
+        ],
+      },
+      { typ: "h2", text: "Det här är inte klart" },
+      {
+        typ: "ul",
+        punkter: [
+          "Varken Telia eller Telavox har sagt något om att priser, villkor eller avtal ändras för kunderna.",
+          "Det framgår inte när eller hur kunderna flyttas över till Telia.",
+        ],
+      },
+      { typ: "h2", text: "Vad det betyder för dig" },
+      {
+        typ: "p",
+        text: "Har ditt företag abonnemang hos Telavox behöver du inte göra något nu. Telavox skriver att du fortsätter använda dina tjänster som vanligt och att bolagen arbetar var för sig tills affären är klar. Läs besked om nya villkor noga om de kommer. Vill du jämföra innan dess finns [företagsabonnemang från flera operatörer](/foretag) på Mobilpoolen, och här står [hur du säger upp Telavox](/saga-upp/telavox).",
+      },
+    ],
+    kallor: [
+      {
+        utgivare: "Telia Company",
+        titel:
+          "Telia förvärvar Telavox nordiska kundbas för företagstjänster och licensierar deras plattform för enhetlig kommunikation",
+        url: "https://mfn.se/cis/a/telia-company/telia-company-telia-forvarvar-telavox-nordiska-kundbas-for-foretagstjanster-och-licensierar-deras-plattform-for-enhetlig-kommunikation-95d54c95",
+        datum: "12 november 2026",
+      },
+      {
+        utgivare: "Telavox",
+        titel:
+          "Telia förvärvar Telavox nordiska kundbas och licensierar bolagets kommunikationsplattform",
+        url: "https://telavox.se/nyheter/telia-forvarvar-telavox-nordiska-kundbas-och-licensierar-bolagets-kommunikationsplattform/",
+        datum: "12 november 2026",
+      },
+    ],
+    relaterat: [
+      { href: "/operatorer/telavox", label: "Telavox: nät och villkor" },
+      { href: "/operatorer/telia", label: "Telia: priser och villkor" },
+      { href: "/foretag", label: "Jämför företagsabonnemang" },
+      { href: "/saga-upp/telavox", label: "Säga upp Telavox" },
+    ],
+  },
+  {
     slug: "black-week-2026-mobilabonnemang",
     titel: "Black Week 2026: så mycket betalar du när kampanjmånaderna är slut",
     seoTitel: "Black Week 2026: mobilabonnemang",
