@@ -166,7 +166,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-13",
+    uppdateradIso: "2026-11-16",
     innehall: [
       {
         typ: "p",
@@ -198,10 +198,18 @@ const NYHETER_OSORTERADE: Nyhet[] = [
           "10 GB ingår inte i kampanjen och kostar 299 kr/mån.",
         ],
       },
+      { typ: "h2", text: "Nytt 16 november: Telia har startat och Tele2 har ett slutdatum" },
+      {
+        typ: "ul",
+        punkter: [
+          "Telia skriver att Black Week hos Telia pågår från 16 till 30 november. Obegränsad kostar 250 kr/mån i sex månader och sedan 499 kr/mån. Obegränsad Plus kostar 285 kr/mån och sedan 569 kr/mån. Båda kräver 24 månaders bindningstid.",
+          "Tele2 skriver nu att erbjudandena under Black Cheap Weeks gäller till och med 30 november 2026.",
+        ],
+      },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
       },
       {
         typ: "p",
@@ -238,6 +246,24 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         titel: "Mobilabonnemang",
         url: "https://www.comviq.se/mobilabonnemang",
         datum: "kontrollerad 12 november 2026",
+      },
+      {
+        utgivare: "Telia",
+        titel: "Black Friday | Black Week 2026 hos Telia",
+        url: "https://www.telia.se/erbjudanden/black-friday",
+        datum: "kontrollerad 16 november 2026",
+      },
+      {
+        utgivare: "Telia",
+        titel: "Välj mobilabonnemang",
+        url: "https://www.telia.se/mobilabonnemang",
+        datum: "kontrollerad 16 november 2026",
+      },
+      {
+        utgivare: "Tele2",
+        titel: "Black Friday 2026",
+        url: "https://www.tele2.se/erbjudanden/black-friday",
+        datum: "kontrollerad 16 november 2026",
       },
       {
         utgivare: "Tele2",
