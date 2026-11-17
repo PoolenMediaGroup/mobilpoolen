@@ -304,7 +304,7 @@
         "Åldersgränser för Student, 55+ och Under 18 (krav/verifiering) framgick inte."
       ],
       "noteringar": "Kampanj från 3 nov 2026: 20 kr/mån i 3 mån vid nybeställning (ej abonnemangsbyte) + 100 GB extra surf giltig i 12 mån, för nya kunder. Ersätter 30 kr i 4 mån + Dubbel Surf. Slutdatum framgår inte.",
-      "kontrollerad": "2026-11-16"
+      "kontrollerad": "2026-11-17"
     },
     {
       "slug": "chilimobil",
@@ -356,9 +356,9 @@
           "gb": null,
           "obegransad": true,
           "pris": 399,
-          "kampanjpris": 299,
+          "kampanjpris": 199,
           "kampanjMan": 2,
-          "kampanjText": "299 kr/mån i 2 mån, därefter 399 kr/mån.",
+          "kampanjText": "199 kr/mån i 2 mån, därefter 399 kr/mån (kontrollerad 2026-11-17).",
           "bindning": 0,
           "euGb": 25,
           "hastighet": "Full Fart (högsta möjliga, 5G)",
@@ -616,8 +616,8 @@
         "Ålderskrav/verifiering för Student och Senior framgick inte.",
         "Prislistan anger 'Priserna gäller från den 1 april 2024', senast ändrad 2026-01-01."
       ],
-      "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
-      "kontrollerad": "2026-11-16"
+      "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Full Fart 199 kr i 2 mån från 17 nov 2026 (var 299). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
+      "kontrollerad": "2026-11-17"
     },
     {
       "slug": "comviq",
@@ -768,7 +768,7 @@
         "Slutdatum för Black Weeks-kampanjen (75 % i 6 mån) framgår inte."
       ],
       "noteringar": "11 nov 2026: 45 kr i 3 mån och dubbel surf t.o.m. 10 nov har ersatts av Black Weeks: 75 % rabatt i 6 mån (29/49/89 kr, student 29/49/69 kr) med eller utan bindning; med 12 mån bindning även dubbel surf i 12 mån. Ordinarie priser 129/229/359 (student 129/209/309) oförändrade.",
-      "kontrollerad": "2026-11-16"
+      "kontrollerad": "2026-11-17"
     },
     {
       "slug": "telia",
@@ -784,21 +784,7 @@
           "bindning": 0,
           "euGb": 10,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Utan bindningstid 299 kr/mån. Alternativ: 24 mån bindning ger 249 kr/mån i 12 mån, därefter 299. Surfpott.",
-          "kalla": "https://www.telia.se/mobilabonnemang"
-        },
-        {
-          "namn": "Telia Mobil 10 GB (24 mån bindning)",
-          "gb": 10,
-          "obegransad": false,
-          "pris": 299,
-          "kampanjpris": 249,
-          "kampanjMan": 12,
-          "kampanjText": "249 kr/mån i 12 mån med 24 mån bindningstid, därefter 299 kr/mån.",
-          "bindning": 24,
-          "euGb": 10,
-          "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Rabatt vid nyteckning med bindningstid.",
+          "ovrigt": "Utan bindningstid 299 kr/mån. Telias produktdata visar bara pris utan bindningstid (kontrollerad 2026-11-17); varianten med 24 mån bindning (249 kr i 12 mån) finns inte längre. Surfpott.",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -826,7 +812,7 @@
           "bindning": 0,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Utan bindningstid 499 kr/mån. Alternativ: 24 mån bindning ger 50 kr/mån rabatt i 12 mån (449 kr/mån), därefter 499 kr/mån. Under 28 år: 449 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband.",
+          "ovrigt": "Utan bindningstid 499 kr/mån. Alternativ: 24 mån bindning ger halva priset i 6 mån (Black Week 16–30 november 2026), därefter 499 kr/mån. Under 28 år: 449 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband.",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -834,13 +820,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 499,
-          "kampanjpris": 449,
-          "kampanjMan": 12,
-          "kampanjText": "50 kr/mån rabatt i 12 mån med 24 mån bindningstid, det vill säga 449 kr/mån, därefter 499 kr/mån. Slutdatum framgår inte.",
+          "kampanjpris": 249.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: halva priset, 249,50 kr/mån (Telia visar 250 kr) i 6 mån med 24 mån bindningstid, därefter 499 kr/mån. Telias Black Week pågår 16–30 november 2026 enligt telia.se.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Rabatt vid nyteckning med bindningstid (kontrollerad 2026-11-08).",
+          "ovrigt": "Rabatt vid nyteckning med bindningstid (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang/mobil-obegraensad"
         },
         {
@@ -854,7 +840,7 @@
           "bindning": 0,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Utan bindningstid 569 kr/mån. Under 28 år: 519 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband. Kan vara huvudabonnemang för Extra användare (239 kr/mån, 175 kr/mån i 12 mån med 24 mån bindning).",
+          "ovrigt": "Utan bindningstid 569 kr/mån. Under 28 år: 519 kr/mån. Samlingsrabatt 100 kr/mån med Telia-bredband. Kan vara huvudabonnemang för Extra användare (239 kr/mån, 120 kr/mån i 6 mån med 24 mån bindning under Black Week).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -862,13 +848,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 569,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 569 kr/mån. 'Mobilabonnemang med obegränsad surf från bara 469 kr/mån. Gäller när du köper valfritt Obegränsad Plus-abonnemang. Ord. pris från 569 kr/mån.'",
+          "kampanjpris": 284.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: halva priset, 284,50 kr/mån (Telia visar 285 kr) i 6 mån med 24 mån bindningstid, därefter 569 kr/mån. Telias Black Week pågår 16–30 november 2026 enligt telia.se.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Under 28 år: 419 kr/mån i 12 mån, därefter 519.",
+          "ovrigt": "Under 28 år: 259,50 kr/mån (Telia visar 260 kr) i 6 mån, därefter 519. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -876,13 +862,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 629,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 629 kr/mån. Utan bindning 629 kr/mån.",
+          "kampanjpris": 314.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 314,50 kr/mån (Telia visar 315 kr) i 6 mån med 24 mån bindningstid, därefter 629 kr/mån. Utan bindning 629 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -890,13 +876,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 609,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 609 kr/mån. Utan bindning 609 kr/mån.",
+          "kampanjpris": 304.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 304,50 kr/mån (Telia visar 305 kr) i 6 mån med 24 mån bindningstid, därefter 609 kr/mån. Utan bindning 609 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -904,13 +890,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 599,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
+          "kampanjpris": 299.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 299,50 kr/mån (Telia visar 300 kr) i 6 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -918,13 +904,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 599,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
+          "kampanjpris": 299.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 299,50 kr/mån (Telia visar 300 kr) i 6 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -932,13 +918,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 599,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
+          "kampanjpris": 299.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 299,50 kr/mån (Telia visar 300 kr) i 6 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -946,13 +932,13 @@
           "gb": null,
           "obegransad": true,
           "pris": 599,
-          "kampanjpris": 469,
-          "kampanjMan": 12,
-          "kampanjText": "469 kr/mån i 12 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
+          "kampanjpris": 299.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 299,50 kr/mån (Telia visar 300 kr) i 6 mån med 24 mån bindningstid, därefter 599 kr/mån. Utan bindning 599 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         },
         {
@@ -960,25 +946,25 @@
           "gb": null,
           "obegransad": true,
           "pris": 699,
-          "kampanjpris": 599,
-          "kampanjMan": 12,
-          "kampanjText": "599 kr/mån i 12 mån med 24 mån bindningstid, därefter 699 kr/mån. Utan bindning 699 kr/mån.",
+          "kampanjpris": 349.5,
+          "kampanjMan": 6,
+          "kampanjText": "Black Week: 349,50 kr/mån (Telia visar 350 kr) i 6 mån med 24 mån bindningstid, därefter 699 kr/mån. Utan bindning 699 kr/mån.",
           "bindning": 24,
           "euGb": null,
           "hastighet": "upp till 1000 Mbit/s",
-          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre.",
+          "ovrigt": "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
           "kalla": "https://www.telia.se/mobilabonnemang"
         }
       ],
       "villkor": {
-        "bindningUtanTelefon": "Alla fyra abonnemangen går att köpa utan bindningstid ('Ingen bindningstid') till ordinarie pris. 10 GB, Obegränsad och Obegränsad Plus har även val 24 mån bindning; 20 GB bara utan bindning.",
+        "bindningUtanTelefon": "Alla abonnemangen går att köpa utan bindningstid till ordinarie pris. Obegränsad, Obegränsad Plus och streamingvarianterna har även 24 mån bindning; 10 GB och 20 GB bara utan bindning (kontrollerat 2026-11-17).",
         "prisUtanBindning": "10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 kr/mån",
-        "kampanj469": "Från 469 kr/mån gäller Obegränsad Plus (och streamingvarianterna Netflix, HBO Max, Disney+, Prime, TV4 Play, Viaplay) med 24 mån bindningstid, rabatten gäller 12 mån, därefter ordinarie pris. 'Netflix, HBO Max, Disney+' 599 i 12 mån (ord. 699).",
-        "ovrigaKampanjer": "10 GB: 249 kr/mån i 12 mån med 24 mån bindning. Obegränsad: ingen rabatt. 20 GB: ingen rabatt.",
+        "ovrigaKampanjer": "10 GB: ingen rabatt, bara utan bindning. 20 GB: dubbel surf (40 GB) i 12 mån, utan bindning.",
         "efterBindning": "Fortsätter automatiskt som obundet abonnemang",
         "under28": "50 kr/mån rabatt på 20 GB, Obegränsad, Obegränsad Plus och Plus med streaming",
         "samlingsrabatt": "100 kr/mån med Telia-bredband på Obegränsad-abonnemangen",
-        "euSurf": "Motstridigt: produkttexten för Obegränsad och Obegränsad Plus säger 'Inom EU/EES har du en surfpott på 100 GB', FAQ på samma sida säger 'maxgräns på surf på 50 GB/mån' för obegränsad surf. 10/20 GB: surfmängden gäller inom hela EU/EES."
+        "euSurf": "Motstridigt: produkttexten för Obegränsad och Obegränsad Plus säger 'Inom EU/EES har du en surfpott på 100 GB', FAQ på samma sida säger 'maxgräns på surf på 50 GB/mån' för obegränsad surf. 10/20 GB: surfmängden gäller inom hela EU/EES.",
+        "kampanjBlackWeek": "Black Week 16–30 november 2026 enligt telia.se: halva priset i 6 mån med 24 mån bindningstid på Obegränsad (249,50), Obegränsad Plus (284,50) och streamingvarianterna (299,50–349,50), därefter ordinarie pris. Telia visar priserna avrundade uppåt till hela kronor."
       },
       "kallor": [
         "https://www.telia.se/mobilabonnemang",
@@ -988,10 +974,10 @@
       "osakert": [
         "EU-surf för Obegränsad/Obegränsad Plus: 100 GB (produkttext) eller 50 GB (FAQ). Produkttexten är troligen nyare, men osäkert – euGb satt till null.",
         "Telias prislista som PDF hittades inte; uppgifterna kommer från produktdatan på telia.se/mobilabonnemang.",
-        "Kampanjens slutdatum (469 kr) framgick inte."
+        "Produktsidan för Obegränsad skriver fortfarande \"50 kronor rabatt/mån i 12 månader\" och 10 GB-sidan \"rabatt i 12 månader vid nyteckning med bindningstid\", men produktdatan och prisrutan visar Black Week-priset respektive bara pris utan bindning."
       ],
-      "noteringar": "Befintlig data har bindning okänd – ändra till bindning 0 för Mobil 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 (priserna stämmer). Lägg ev. till bindningsvarianter: 10 GB 249 kr i 12 mån (24 mån bindning) och Obegränsad Plus 469 kr i 12 mån (24 mån bindning). Under 28-varianter: 20 GB 349, Obegränsad 449, Obegränsad Plus 519 (419 i 12 mån m. bindning).",
-      "kontrollerad": "2026-11-16"
+      "noteringar": "17 nov 2026: Black Week (16–30 nov) ersätter 449/469-rabatterna i 12 mån. Halva priset i 6 mån med 24 mån bindning på Obegränsad, Obegränsad Plus och streamingvarianterna. 10 GB med 24 mån bindning (249 kr) finns inte längre i produktdatan och är borttagen.",
+      "kontrollerad": "2026-11-17"
     }
   ]
 }

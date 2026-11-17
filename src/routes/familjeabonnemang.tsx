@@ -15,12 +15,12 @@ const TRAIL = [
 /**
  * Priser för extra familjemedlemmar. De står inte som egna abonnemang i datan
  * utan i operatörernas villkor och i notis-fälten (operatorer-data.ts),
- * kontrollerade 2026-10-29. Huvudabonnemangens priser hämtas ur ABONNEMANG.
+ * kontrollerade 2026-10-29 (Telias kampanj 2026-11-17). Huvudabonnemangens priser hämtas ur ABONNEMANG.
  */
 const MEDLEM = {
   comviq: 149, // Comviq Familj: 149 kr/mån per medlem, 20 GB var, ingen bindning
   telia: 239, // Telia: extra användare på Obegränsad Plus, upp till 9 st
-  teliaKampanj: 175, // Telia "Familjeveckor": 175 kr/mån i 12 mån, därefter 239 kr
+  teliaKampanj: 120, // Telia Black Week 16–30 nov 2026: 120 kr/mån i 6 mån med 24 mån bindning, därefter 239 kr
   treBunden: 149, // Tre: extra användare med 24 mån bindning
   treObunden: 169, // Tre: extra användare utan bindning
   katshingTva: 595, // katshing: familjeabonnemang med obegränsad surf för två personer
@@ -191,7 +191,7 @@ function Sida() {
       ]}
       ctaRubrik="Räkna på familjens mobilräkning"
       ctaBild="familj-hostpromenad"
-      uppdaterad="2026-10-29"
+      uppdaterad="2026-11-17"
     >
       <h2>Hur fungerar ett familjeabonnemang?</h2>
       <p>
@@ -222,9 +222,9 @@ function Sida() {
         {TELIA && (
           <li>
             <strong>Telia:</strong> upp till 9 extra användare för {MEDLEM.telia} kr i månaden på{" "}
-            {TELIA.namn} ({kr(TELIA.pris)}). Just nu har Telia en kampanj där extra användare kostar{" "}
-            {MEDLEM.teliaKampanj} kr i 12 månader. Extra användare går inte att lägga till på
-            vanliga Obegränsad, 20 GB eller 10 GB.
+            {TELIA.namn} ({kr(TELIA.pris)}). Under Black Week, 16 till 30 november 2026, kostar
+            extra användare {MEDLEM.teliaKampanj} kr i sex månader med 24 månaders bindningstid.
+            Extra användare går inte att lägga till på vanliga Obegränsad, 20 GB eller 10 GB.
           </li>
         )}
         {TELE2 && (
@@ -262,8 +262,9 @@ function Sida() {
       {TELIA && (
         <p>
           Med Telias kampanjpris för extra användare blir Telia-exemplet{" "}
-          {kr(TELIA.pris + EXTRA * MEDLEM.teliaKampanj)} i månaden de första 12 månaderna. Kampanjer
-          på själva huvudabonnemanget har vi inte räknat in, eftersom längden inte alltid framgår.
+          {kr(TELIA.pris + EXTRA * MEDLEM.teliaKampanj)} i månaden de första sex månaderna.
+          Kampanjer på själva huvudabonnemanget har vi inte räknat in, eftersom längden inte alltid
+          framgår.
         </p>
       )}
 

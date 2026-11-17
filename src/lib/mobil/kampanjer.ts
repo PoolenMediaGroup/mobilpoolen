@@ -4,10 +4,19 @@ import { arVillkorat, snittForstaAret, totalKostnad } from "./berakna";
 
 /**
  * Slutdatum som operatören själv anger. Bara kampanjer där datumet står på
- * operatörens sida, kontrollerat 11 november 2026 (ingen aktiv kampanj har ett angivet slutdatum just nu). Efter datumet visas
+ * operatörens sida, kontrollerat 17 november 2026. Efter datumet visas
  * kampanjen som "kontrollera hos operatören" tills datan är uppdaterad.
  */
-export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {};
+export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
+  telia: {
+    datum: "2026-11-30",
+    text: "Telia skriver att Black Week pågår 16 till 30 november 2026. Det gäller halva priset i sex månader på Obegränsad och Obegränsad Plus med 24 månaders bindningstid.",
+  },
+  tele2: {
+    datum: "2026-11-30",
+    text: "Tele2 skriver att erbjudandena under Black Cheap Weeks gäller till och med 30 november 2026.",
+  },
+};
 
 export type Kampanj = {
   a: Abonnemang;

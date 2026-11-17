@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-16.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-17.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-16";
+export const BREDBAND_KONTROLLERAD = "2026-11-17";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -53,8 +53,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1 000 Mbit/s",
     pris: 529,
-    kampanjpris: 349,
-    kampanjManader: 24,
+    kampanjpris: 264.5,
+    kampanjManader: 6,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -62,7 +62,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.telia.se/bredband/mobilt-bredband/mobilt-bredband-obegraensad",
     notis:
-      "Kampanjpriset gäller både utan bindning och med 24 mån bindning, routern ingår bara med bindning. Fungerar endast i Sverige.",
+      "Black Week: 264,50 kr/mån (Telia visar 265 kr) i 6 mån utan bindning, därefter 529 kr/mån. Med 24 mån bindning gäller samma pris i 12 mån och routern ingår. Fungerar endast i Sverige.",
   },
   {
     id: "telia-bb-mobilt-bredband-70-gb",
@@ -73,8 +73,8 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: 70,
     hastighet: "upp till 600 Mbit/s i tätorter med 5G",
     pris: 289,
-    kampanjpris: 269,
-    kampanjManader: 24,
+    kampanjpris: null,
+    kampanjManader: null,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -82,7 +82,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.telia.se/bredband/mobilt-bredband/telia-mobilt-bredband-70-gb",
     notis:
-      "Kampanjpriset gäller både utan bindning och med 24 mån bindning, routern ingår bara med bindning. Extra surf kan köpas när surfen tar slut.",
+      "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-17), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut.",
   },
   {
     id: "telia-bb-mobilt-bredband-40-gb",
@@ -570,7 +570,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "full hastighet (Full Fart)",
     pris: 449,
-    kampanjpris: 349,
+    kampanjpris: 249,
     kampanjManader: 2,
     bindning: 0,
     uppsagning: 1,
@@ -580,7 +580,7 @@ export const BREDBAND_DATA: Bredband[] = [
     kalla:
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
     notis:
-      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Finns även med Viaplay (524 kr) och som årsabonnemang.",
+      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-17. Finns även med Viaplay (524 kr) och som årsabonnemang.",
   },
   {
     id: "chilimobil-bb-fri-surf-bredband-100-mbit-s",
