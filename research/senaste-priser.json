@@ -9,16 +9,6 @@
   "namn": "Mobil 10 GB",
   "kundtyp": "privat"
  },
- "telia|Mobil 10 GB (24 mån bindning)|privat": {
-  "pris": 299,
-  "kampanjpris": 249,
-  "kampanjManader": 12,
-  "startavgift": null,
-  "kalla": "https://www.telia.se/mobilabonnemang",
-  "operator": "telia",
-  "namn": "Mobil 10 GB (24 mån bindning)",
-  "kundtyp": "privat"
- },
  "telia|Mobil 20 GB|privat": {
   "pris": 399,
   "kampanjpris": null,
@@ -41,8 +31,8 @@
  },
  "telia|Mobil Obegränsad (24 mån bindning)|privat": {
   "pris": 499,
-  "kampanjpris": 449,
-  "kampanjManader": 12,
+  "kampanjpris": 249.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang/mobil-obegraensad",
   "operator": "telia",
@@ -61,8 +51,8 @@
  },
  "telia|Mobil Obegränsad Plus (24 mån bindning)|privat": {
   "pris": 569,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 284.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -71,8 +61,8 @@
  },
  "telia|Obegränsad Plus Netflix (24 mån bindning)|privat": {
   "pris": 629,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 314.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -81,8 +71,8 @@
  },
  "telia|Obegränsad Plus HBO Max (24 mån bindning)|privat": {
   "pris": 609,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 304.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -91,8 +81,8 @@
  },
  "telia|Obegränsad Plus Disney+ (24 mån bindning)|privat": {
   "pris": 599,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 299.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -101,8 +91,8 @@
  },
  "telia|Obegränsad Plus Amazon Prime (24 mån bindning)|privat": {
   "pris": 599,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 299.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -111,8 +101,8 @@
  },
  "telia|Obegränsad Plus TV4 Play (24 mån bindning)|privat": {
   "pris": 599,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 299.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -121,8 +111,8 @@
  },
  "telia|Obegränsad Plus Viaplay (24 mån bindning)|privat": {
   "pris": 599,
-  "kampanjpris": 469,
-  "kampanjManader": 12,
+  "kampanjpris": 299.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -131,8 +121,8 @@
  },
  "telia|Obegränsad Plus Netflix, HBO Max, Disney+ (24 mån bindning)|privat": {
   "pris": 699,
-  "kampanjpris": 599,
-  "kampanjManader": 12,
+  "kampanjpris": 349.5,
+  "kampanjManader": 6,
   "startavgift": null,
   "kalla": "https://www.telia.se/mobilabonnemang",
   "operator": "telia",
@@ -981,7 +971,7 @@
  },
  "chilimobil|Fri Surf Full Fart|privat": {
   "pris": 399,
-  "kampanjpris": 299,
+  "kampanjpris": 199,
   "kampanjManader": 2,
   "startavgift": null,
   "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
