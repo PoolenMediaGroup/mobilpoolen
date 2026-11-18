@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-17.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-18.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-17";
+export const BREDBAND_KONTROLLERAD = "2026-11-18";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -82,7 +82,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.telia.se/bredband/mobilt-bredband/telia-mobilt-bredband-70-gb",
     notis:
-      "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-17), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut.",
+      "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-18), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut.",
   },
   {
     id: "telia-bb-mobilt-bredband-40-gb",
@@ -580,7 +580,7 @@ export const BREDBAND_DATA: Bredband[] = [
     kalla:
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
     notis:
-      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-17. Finns även med Viaplay (524 kr) och som årsabonnemang.",
+      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-18. Finns även med Viaplay (524 kr) och som årsabonnemang.",
   },
   {
     id: "chilimobil-bb-fri-surf-bredband-100-mbit-s",

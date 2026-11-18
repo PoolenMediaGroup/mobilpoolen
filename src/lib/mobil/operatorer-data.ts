@@ -1,4 +1,4 @@
-// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-17.
+// GENERERAD av scripts/bygg_data.py ur operatörernas egna webbplatser, senast kontrollerade 2026-11-18.
 // Ändra priser här eller i underlaget och kör skriptet igen. Varje rad har en källa (kalla).
 
 import type { Abonnemang, Operator } from "./typer";
@@ -37,7 +37,7 @@ export const OPERATORER_DATA: Operator[] = [
       uppsagningstid: "1 månad",
       startavgift: "299 kr, ingen vid köp online",
       ovrigt:
-        "Bindningstidens längd för abonnemang utan telefon framgår inte. Telefon köps med 24 mån abonnemang. Har man 90 dagar eller mindre kvar av bindningstiden går det att sänka surfmängden. Prisändringsklausul hittades inte i villkoren. Avgift för nytt SIM/eSIM anges inte. E-sim till klocka kostar 69 kr/mån. Pappersfaktura 59 kr. Öppning efter spärr 195 kr. EU/EES: 'som hemma', max 50 GB/mån enligt prislistan, därefter 31 kr/GB. Alla abonnemangen går att köpa utan bindningstid till ordinarie pris. Obegränsad, Obegränsad Plus och streamingvarianterna har även 24 mån bindning; 10 GB och 20 GB bara utan bindning (kontrollerat 2026-11-17). 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 kr/mån 10 GB: ingen rabatt, bara utan bindning. 20 GB: dubbel surf (40 GB) i 12 mån, utan bindning. Fortsätter automatiskt som obundet abonnemang 50 kr/mån rabatt på 20 GB, Obegränsad, Obegränsad Plus och Plus med streaming 100 kr/mån med Telia-bredband på Obegränsad-abonnemangen Motstridigt: produkttexten för Obegränsad och Obegränsad Plus säger 'Inom EU/EES har du en surfpott på 100 GB', FAQ på samma sida säger 'maxgräns på surf på 50 GB/mån' för obegränsad surf. 10/20 GB: surfmängden gäller inom hela EU/EES. Black Week 16–30 november 2026 enligt telia.se: halva priset i 6 mån med 24 mån bindningstid på Obegränsad (249,50), Obegränsad Plus (284,50) och streamingvarianterna (299,50–349,50), därefter ordinarie pris. Telia visar priserna avrundade uppåt till hela kronor.",
+        "Bindningstidens längd för abonnemang utan telefon framgår inte. Telefon köps med 24 mån abonnemang. Har man 90 dagar eller mindre kvar av bindningstiden går det att sänka surfmängden. Prisändringsklausul hittades inte i villkoren. Avgift för nytt SIM/eSIM anges inte. E-sim till klocka kostar 69 kr/mån. Pappersfaktura 59 kr. Öppning efter spärr 195 kr. EU/EES: 'som hemma', max 50 GB/mån enligt prislistan, därefter 31 kr/GB. Alla abonnemangen går att köpa utan bindningstid till ordinarie pris. Obegränsad, Obegränsad Plus och streamingvarianterna har även 24 mån bindning; 10 GB och 20 GB bara utan bindning (kontrollerat 2026-11-18). 10 GB 299, 20 GB 399, Obegränsad 499, Obegränsad Plus 569 kr/mån 10 GB: ingen rabatt, bara utan bindning. 20 GB: dubbel surf (40 GB) i 12 mån, utan bindning. Fortsätter automatiskt som obundet abonnemang 50 kr/mån rabatt på 20 GB, Obegränsad, Obegränsad Plus och Plus med streaming 100 kr/mån med Telia-bredband på Obegränsad-abonnemangen Motstridigt: produkttexten för Obegränsad och Obegränsad Plus säger 'Inom EU/EES har du en surfpott på 100 GB', FAQ på samma sida säger 'maxgräns på surf på 50 GB/mån' för obegränsad surf. 10/20 GB: surfmängden gäller inom hela EU/EES. Black Week 16–30 november 2026 enligt telia.se: halva priset i 6 mån med 24 mån bindningstid på Obegränsad (249,50), Obegränsad Plus (284,50) och streamingvarianterna (299,50–349,50), därefter ordinarie pris. Telia visar priserna avrundade uppåt till hela kronor.",
     },
     kallor: [
       "https://www.telia.se/mobilabonnemang",
@@ -48,7 +48,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.telia.se/privat/telefoni/wifi-samtal",
       "https://www.telia.se/mobilabonnemang/mobil-10-gb",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
       "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -112,7 +112,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.tele2.se/support/mobilt/wifi-samtal",
       "https://www.tele2.se/support/information/prislistor",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
       "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
@@ -169,7 +169,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://mediearkivet.telenor.se/Data/mw/Pdf/TY32141.pdf",
       "https://www.telenor.se/support/mobiltelefoni/abonnemang/bindningstid-uppsagningstid/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "HELA abonnemangslistan saknas: telenor.se renderas med JavaScript och WebFetch fick bara metadata. Kontrollera manuellt i webbläsare eller via prislistan Tn32141.pdf (rubriken nämner 'Obegränsat Plus Familj' och 'Obegränsat Familj')",
       "eSIM, wifi-samtal, startavgift, uppsägningstid och kundtjänstnummer har inte verifierats",
@@ -231,7 +231,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
       "https://www.tre.se/om-tre/kontakt",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
       "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -348,7 +348,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.comviq.se/hjalp/kontakta-oss",
       "https://www.comviq.se/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Startavgift och avgift för SIM/eSIM är inte verifierade",
       "Slutdatum för Black Weeks-kampanjen (75 % rabatt i 6 mån) framgår inte",
@@ -484,7 +484,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
       "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
       "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",
@@ -546,7 +546,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://api.fello.se/fello-product-service/v5/products",
       "https://www.fello.se/utland/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Aktuella GB-nivåer och ordinarie priser saknas. fello.se/prislista renderas dynamiskt och kunde inte läsas. Kontrollera manuellt i webbläsare.",
       "Det finns supportartiklar om eSIM, men eSIM-villkoren (kostnad m.m.) är inte lästa",
@@ -611,7 +611,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
       "https://chilimobil.se/fetch-nya.php (getPackages, Chilimobils eget orderflöde)",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Månadspris för 3 och 10 Mbit/s samt Student finns bara i bilden prislista-privat-260101.png [KONTROLLERA]",
       "Om 249 kr för 100 Mbit/s är kampanj eller ordinarie pris",
@@ -672,7 +672,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://www.lycamobile.se/sv/bundle/lyca-fast-pris-30gb-longterm/",
       "https://www.lycamobile.se/sv/bundle/surf-xl/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Nät (Telenor) är inte bekräftat på lycamobile.se",
       "Pris för 120 GB-paketet: 340 eller 99 kr",
@@ -724,7 +724,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://mybeat.se/om-oss/",
       "https://mybeat.se/erbjudanden/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Ingen datering på prissidan",
       "eSIM, uppsägningstid och startavgift ej verifierade",
@@ -778,7 +778,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://tellusmobil.se/handla/",
       "https://tellusmobil.se/allmannavillkor/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Prislistan är daterad 2025-03-24, men kampanjer kan ha tillkommit",
       "Startsidan säger 'från 49 kr/mån', prislistan börjar på 69 kr",
@@ -824,7 +824,7 @@ export const OPERATORER_DATA: Operator[] = [
       ovrigt: "Surfpotten förnyas den 1:a varje månad. Fria samtal, sms och mms i EU/EES.",
     },
     kallor: ["https://www.fibio.se/mobilabonnemang/"],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Brödtexten nämner 6/20/40 GB och obegränsat, prisfältet 2/5/20 GB och obegränsat",
       "Bindningstid, EU-surf, 5G och eSIM ej verifierade",
@@ -870,7 +870,7 @@ export const OPERATORER_DATA: Operator[] = [
         "Vinterskydd-rabatt anges i kr/år per abonnemang (t.ex. 240 kr/år för 5 GB, 600 kr/år för obegränsat).",
     },
     kallor: ["https://www.katshing.com/", "https://www.katshing.com/priser"],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Bolag och ägare",
       "eSIM, startavgift, uppsägningstid och EU-surf i GB",
@@ -929,7 +929,7 @@ export const OPERATORER_DATA: Operator[] = [
       "https://lingon.se/support-faktura/",
       "https://lingon.se/om-oss/",
     ],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: [
       "Abonnemang och priser kunde inte läsas (laddas i popup). Hela abonnemangslistan måste kontrolleras manuellt.",
       "5G och eSIM ej bekräftade",
@@ -974,7 +974,7 @@ export const OPERATORER_DATA: Operator[] = [
     ],
     villkor: {},
     kallor: ["https://telavox.se/priser"],
-    kontrollerad: "2026-11-17",
+    kontrollerad: "2026-11-18",
     osakert: ["Vilket mobilnät Telavox använder", "Bindningstid"],
     partner: false,
     aktiv: true,
@@ -1002,7 +1002,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Utan bindningstid 299 kr/mån. Telias produktdata visar bara pris utan bindningstid (kontrollerad 2026-11-17); varianten med 24 mån bindning (249 kr i 12 mån) finns inte längre. Surfpott.",
+      "Utan bindningstid 299 kr/mån. Telias produktdata visar bara pris utan bindningstid (kontrollerad 2026-11-18); varianten med 24 mån bindning (249 kr i 12 mån) finns inte längre. Surfpott.",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1060,7 +1060,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     friaSamtal: true,
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
-    notis: "Rabatt vid nyteckning med bindningstid (kontrollerad 2026-11-17).",
+    notis: "Rabatt vid nyteckning med bindningstid (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang/mobil-obegraensad",
   },
   {
@@ -1099,7 +1099,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Under 28 år: 259,50 kr/mån (Telia visar 260 kr) i 6 mån, därefter 519. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Under 28 år: 259,50 kr/mån (Telia visar 260 kr) i 6 mån, därefter 519. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1119,7 +1119,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1139,7 +1139,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1159,7 +1159,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1179,7 +1179,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1199,7 +1199,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1219,7 +1219,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -1239,7 +1239,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     femg: true,
     hastighet: "upp till 1000 Mbit/s",
     notis:
-      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-17).",
+      "Streamingvariant. Under 28 år: 50 kr/mån lägre. Rabatt vid nyteckning med 24 mån bindning (kontrollerad 2026-11-18).",
     kalla: "https://www.telia.se/mobilabonnemang",
   },
   {
@@ -2934,7 +2934,7 @@ export const ABONNEMANG_DATA: Abonnemang[] = [
     pris: 399,
     kampanjpris: 199,
     kampanjManader: 2,
-    kampanjText: "199 kr/mån i 2 mån, därefter 399 kr/mån (kontrollerad 2026-11-17).",
+    kampanjText: "199 kr/mån i 2 mån, därefter 399 kr/mån (kontrollerad 2026-11-18).",
     bindning: 0,
     euGb: 25,
     friaSamtal: true,
