@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-20",
+  "kontrollerad": "2026-11-21",
   "erbjudanden": [
     {
       "operator": "telia",
@@ -71,7 +71,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.telia.se/bredband/mobilt-bredband/telia-mobilt-bredband-70-gb",
-      "notis": "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-20), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut."
+      "notis": "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-21), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut."
     },
     {
       "operator": "telia",
@@ -98,7 +98,7 @@
       "gb": null,
       "hastighet": "upp till 1000 Mbit/s",
       "pris": 499,
-      "kampanjpris": 219,
+      "kampanjpris": 189,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -107,7 +107,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.tele2.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 219 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte."
+      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån med 24 mån bindning, enligt tele2.se (”Bara t.o.m. måndag”, dvs. 23 november 2026; kontrollerad 2026-11-21). Tidigare 219 kr."
     },
     {
       "operator": "tele2",
@@ -477,7 +477,7 @@
       "hastighet": "upp till 300 Mbit/s",
       "pris": 250,
       "kampanjpris": 125,
-      "kampanjManader": 4,
+      "kampanjManader": 2,
       "bindning": 0,
       "uppsagning": null,
       "startavgift": null,
@@ -485,7 +485,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.fello.se/mobilt-bredband/",
-      "notis": "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån. Spara upp till 100 GB. Priset läses ur Fellos eget produkt-API (api.fello.se). Ingen bindningstid (kontrollerad 2026-11-09)."
+      "notis": "Halva priset i 2 månader vid nybeställning plus trippel surf (375 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21). Spara upp till 100 GB. Priset läses ur Fellos eget produkt-API (api.fello.se). Ingen bindningstid."
     },
     {
       "operator": "fello",
@@ -495,7 +495,7 @@
       "hastighet": "upp till 300 Mbit/s",
       "pris": 150,
       "kampanjpris": 75,
-      "kampanjManader": 4,
+      "kampanjManader": 2,
       "bindning": 0,
       "uppsagning": null,
       "startavgift": null,
@@ -503,7 +503,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.fello.se/mobilt-bredband/",
-      "notis": "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån."
+      "notis": "Halva priset i 2 månader vid nybeställning plus dubbel surf (50 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21)."
     },
     {
       "operator": "fello",
@@ -513,7 +513,7 @@
       "hastighet": "upp till 300 Mbit/s",
       "pris": 90,
       "kampanjpris": 45,
-      "kampanjManader": 4,
+      "kampanjManader": 2,
       "bindning": 0,
       "uppsagning": null,
       "startavgift": null,
@@ -521,7 +521,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.fello.se/mobilt-bredband/",
-      "notis": "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån."
+      "notis": "Halva priset i 2 månader vid nybeställning plus dubbel surf (10 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21)."
     },
     {
       "operator": "chilimobil",
@@ -539,7 +539,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
-      "notis": "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-20. Finns även med Viaplay (524 kr) och som årsabonnemang."
+      "notis": "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-21. Finns även med Viaplay (524 kr) och som årsabonnemang."
     },
     {
       "operator": "chilimobil",

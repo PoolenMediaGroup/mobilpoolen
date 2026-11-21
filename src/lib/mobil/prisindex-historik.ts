@@ -83,7 +83,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
   },
   {
     manad: "2026-11",
-    kontrollerad: "2026-11-20",
+    kontrollerad: "2026-11-21",
     perNiva: [
       {
         niva: "1 GB",
@@ -126,7 +126,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
         regel: "50–150 GB",
         antal: 11,
         min: 219,
-        med: 283,
+        med: 285,
         max: 399,
         kampanjAndel: 63.6,
       },
@@ -135,7 +135,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
         regel: "100–300 GB",
         antal: 9,
         min: 224,
-        med: 283,
+        med: 285,
         max: 398,
         kampanjAndel: 66.7,
       },
@@ -153,7 +153,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
       antal: 89,
       operatorer: 15,
       kampanjAndel: 56.2,
-      snittHojning: 5.3,
+      snittHojning: 4.9,
       medianHojningKr: 185,
       utanBindningAndel: 65.2,
       medianPerGb: 14,

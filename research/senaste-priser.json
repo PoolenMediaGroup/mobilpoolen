@@ -741,7 +741,7 @@
  },
  "fello|5 GB|privat": {
   "pris": 120,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -751,7 +751,7 @@
  },
  "fello|10 GB|privat": {
   "pris": 180,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -761,7 +761,7 @@
  },
  "fello|20 GB|privat": {
   "pris": 230,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -771,7 +771,7 @@
  },
  "fello|40 GB|privat": {
   "pris": 290,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -781,7 +781,7 @@
  },
  "fello|100 GB|privat": {
   "pris": 370,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -791,7 +791,7 @@
  },
  "fello|Student 10 GB|privat": {
   "pris": 120,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -801,7 +801,7 @@
  },
  "fello|Student 20 GB|privat": {
   "pris": 160,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -811,7 +811,7 @@
  },
  "fello|Student 30 GB|privat": {
   "pris": 200,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -821,7 +821,7 @@
  },
  "fello|Student 50 GB|privat": {
   "pris": 250,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -831,7 +831,7 @@
  },
  "fello|Student 100 GB|privat": {
   "pris": 320,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -841,7 +841,7 @@
  },
  "fello|55+ 4 GB|privat": {
   "pris": 110,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -851,7 +851,7 @@
  },
  "fello|55+ 10 GB|privat": {
   "pris": 150,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -861,7 +861,7 @@
  },
  "fello|55+ 20 GB|privat": {
   "pris": 200,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -871,7 +871,7 @@
  },
  "fello|55+ 30 GB|privat": {
   "pris": 240,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -881,7 +881,7 @@
  },
  "fello|55+ 50 GB|privat": {
   "pris": 280,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -891,7 +891,7 @@
  },
  "fello|Under 18 4 GB|privat": {
   "pris": 110,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -901,7 +901,7 @@
  },
  "fello|Under 18 10 GB|privat": {
   "pris": 140,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -911,7 +911,7 @@
  },
  "fello|Under 18 20 GB|privat": {
   "pris": 190,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -921,7 +921,7 @@
  },
  "fello|Under 18 30 GB|privat": {
   "pris": 230,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
@@ -931,7 +931,7 @@
  },
  "fello|Under 18 50 GB|privat": {
   "pris": 280,
-  "kampanjpris": 20,
+  "kampanjpris": 30,
   "kampanjManader": 3,
   "startavgift": null,
   "kalla": "https://api.fello.se/fello-product-service/v5/products",
