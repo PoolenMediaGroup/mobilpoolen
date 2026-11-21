@@ -4,7 +4,7 @@ import { arVillkorat, snittForstaAret, totalKostnad } from "./berakna";
 
 /**
  * Slutdatum som operatören själv anger. Bara kampanjer där datumet står på
- * operatörens sida, kontrollerat 17 november 2026. Efter datumet visas
+ * operatörens sida, kontrollerat 21 november 2026. Efter datumet visas
  * kampanjen som "kontrollera hos operatören" tills datan är uppdaterad.
  */
 export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
@@ -15,6 +15,10 @@ export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
   tele2: {
     datum: "2026-11-30",
     text: "Tele2 skriver att erbjudandena under Black Cheap Weeks gäller till och med 30 november 2026.",
+  },
+  fello: {
+    datum: "2026-11-30",
+    text: "Fello skriver att Black Week har sista dagen 30 november 2026. Det gäller 30 kr i månaden i tre månader vid nybeställning och dubbel eller trippel surf i 24 månader.",
   },
 };
 

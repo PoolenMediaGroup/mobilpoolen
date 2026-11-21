@@ -219,9 +219,9 @@ export const GUIDES: GuideMeta[] = [
     category: "Surf och nät",
     readingTime: "5 min",
     published: LANSERING,
-    updated: "4 november 2026",
+    updated: "21 november 2026",
     publishedIso: LANSERING_ISO,
-    updatedIso: "2026-11-04",
+    updatedIso: "2026-11-21",
   },
   {
     slug: "nar-surfen-tar-slut",

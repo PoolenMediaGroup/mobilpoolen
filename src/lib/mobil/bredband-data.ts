@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-20.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-21.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-20";
+export const BREDBAND_KONTROLLERAD = "2026-11-21";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -82,7 +82,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.telia.se/bredband/mobilt-bredband/telia-mobilt-bredband-70-gb",
     notis:
-      "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-20), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut.",
+      "Ingen kampanj i Telias produktdata (kontrollerad 2026-11-21), 289 kr/mån utan bindning. Routern ingår vid 24 mån bindning. Extra surf kan köpas när surfen tar slut.",
   },
   {
     id: "telia-bb-mobilt-bredband-40-gb",
@@ -112,7 +112,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1000 Mbit/s",
     pris: 499,
-    kampanjpris: 219,
+    kampanjpris: 189,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -122,7 +122,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.tele2.se/bredband/mobilt-bredband",
     notis:
-      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 219 kr/mån i 24 mån (11 nov 2026), slutdatum framgår inte.",
+      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån med 24 mån bindning, enligt tele2.se (”Bara t.o.m. måndag”, dvs. 23 november 2026; kontrollerad 2026-11-21). Tidigare 219 kr.",
   },
   {
     id: "tele2-bb-mobilt-bredband-5g-max-utan-bindning",
@@ -513,7 +513,7 @@ export const BREDBAND_DATA: Bredband[] = [
     hastighet: "upp till 300 Mbit/s",
     pris: 250,
     kampanjpris: 125,
-    kampanjManader: 4,
+    kampanjManader: 2,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
@@ -521,7 +521,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.fello.se/mobilt-bredband/",
     notis:
-      "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån. Spara upp till 100 GB. Ingen bindningstid (kontrollerad 2026-11-09).",
+      "Halva priset i 2 månader vid nybeställning plus trippel surf (375 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21). Spara upp till 100 GB. Ingen bindningstid.",
   },
   {
     id: "fello-bb-fello-mobilt-bredband-25-gb",
@@ -533,14 +533,15 @@ export const BREDBAND_DATA: Bredband[] = [
     hastighet: "upp till 300 Mbit/s",
     pris: 150,
     kampanjpris: 75,
-    kampanjManader: 4,
+    kampanjManader: 2,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
     router: null,
     femg: true,
     kalla: "https://www.fello.se/mobilt-bredband/",
-    notis: "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån.",
+    notis:
+      "Halva priset i 2 månader vid nybeställning plus dubbel surf (50 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21).",
   },
   {
     id: "fello-bb-fello-mobilt-bredband-5-gb",
@@ -552,14 +553,15 @@ export const BREDBAND_DATA: Bredband[] = [
     hastighet: "upp till 300 Mbit/s",
     pris: 90,
     kampanjpris: 45,
-    kampanjManader: 4,
+    kampanjManader: 2,
     bindning: 0,
     uppsagning: null,
     startavgift: null,
     router: null,
     femg: true,
     kalla: "https://www.fello.se/mobilt-bredband/",
-    notis: "Halva priset i 4 månader plus 100 GB extra surf giltig i 12 mån.",
+    notis:
+      "Halva priset i 2 månader vid nybeställning plus dubbel surf (10 GB) i 24 mån enligt fello.se/mobilt-bredband (kontrollerad 2026-11-21).",
   },
   {
     id: "chilimobil-bb-fri-surf-bredband-full-fart",
@@ -580,7 +582,7 @@ export const BREDBAND_DATA: Bredband[] = [
     kalla:
       "https://chilimobil.se/wp-content/uploads/2026/02/Prislista-privat-hastighet-med-5G-260101.pdf",
     notis:
-      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-20. Finns även med Viaplay (524 kr) och som årsabonnemang.",
+      "Fri surf i Sverige, men efter 50 GB per dygn sänks hastigheten till 1 Mbit/s (5 GB åt gången kan beställas gratis). Kampanjen 200 kr rabatt i 2 mån (249 kr, därefter 449) enligt chilimobil.se/bredband, kontrollerad 2026-11-21. Finns även med Viaplay (524 kr) och som årsabonnemang.",
   },
   {
     id: "chilimobil-bb-fri-surf-bredband-100-mbit-s",

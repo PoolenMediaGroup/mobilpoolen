@@ -234,11 +234,11 @@ function Page() {
       </p>
       <H3>Andra kampanjer med extra surf</H3>
       <P>
-        Vimla anger dubbel surf i 24 månader för nya kunder. Fello ger i stället 100 GB extra surf
-        som gäller i 12 månader. Hallon ger under Black Weeks en extra surfpott på 60 till 100 GB i
-        stället för dubbel surf. Läs alltid kampanjvillkoren hos operatören. Vad som händer med
-        priset efteråt beskrivs i guiden om{" "}
-        <A href="/guider/kampanjpris-efter-kampanjen">kampanjpris efter kampanjen</A>.
+        Vimla anger dubbel surf i 24 månader för nya kunder. Fello ger under Black Week dubbel surf
+        på det minsta abonnemanget och trippel surf på de andra, också i 24 månader, till och med 30
+        november 2026. Hallon ger under Black Weeks en extra surfpott på 200 GB i stället för dubbel
+        surf. Läs alltid kampanjvillkoren hos operatören. Vad som händer med priset efteråt beskrivs
+        i guiden om <A href="/guider/kampanjpris-efter-kampanjen">kampanjpris efter kampanjen</A>.
       </P>
 
       <H2 id="lonar-sig">Sparar sparad surf och dubbel surf pengar?</H2>
