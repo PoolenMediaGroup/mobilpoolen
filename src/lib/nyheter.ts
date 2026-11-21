@@ -158,7 +158,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     titel: "Black Week 2026: så mycket betalar du när kampanjmånaderna är slut",
     seoTitel: "Black Week 2026: mobilabonnemang",
     ingress:
-      "Hallons Black Weeks pågår till 2 december. 5 GB kostar 9 kr/mån i fyra månader och sedan 109 kr. Första året blir snittet 76 kr i månaden.",
+      "Telia, Tele2, Comviq och Fello avslutar Black Week 30 november, Hallon 2 december. Hallon 5 GB kostar 9 kr/mån i fyra månader, sedan 109 kr.",
     avsandare: "Mobilpoolen",
     kategori: "Tips och råd",
     typ: "tips",
@@ -166,7 +166,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-16",
+    uppdateradIso: "2026-11-21",
     innehall: [
       {
         typ: "p",
@@ -176,8 +176,8 @@ const NYHETER_OSORTERADE: Nyhet[] = [
       {
         typ: "ul",
         punkter: [
-          "Hallon 5 GB: 9 kr/mån i fyra månader, sedan 109 kr/mån. 60 GB extra surfpott.",
-          "Hallon 100 GB: 49 kr/mån i fyra månader, sedan 359 kr/mån. 100 GB extra surfpott.",
+          "Hallon 5 GB: 9 kr/mån i fyra månader, sedan 109 kr/mån. 200 GB extra surfpott (tidigare 60 GB).",
+          "Hallon 100 GB: 49 kr/mån i fyra månader, sedan 359 kr/mån. 200 GB extra surfpott (tidigare 100 GB).",
           "Bredvid varje Black Weeks-pris visar Hallon ett tidigare lägsta pris som är 10 kr högre per månad, till exempel 19 kr i stället för 9 kr för 5 GB. Under fyra månader blir skillnaden 40 kr.",
         ],
       },
@@ -206,10 +206,20 @@ const NYHETER_OSORTERADE: Nyhet[] = [
           "Tele2 skriver nu att erbjudandena under Black Cheap Weeks gäller till och med 30 november 2026.",
         ],
       },
+      { typ: "h2", text: "Nytt 21 november: Fello och Vimla, och Comviq har ett slutdatum" },
+      {
+        typ: "ul",
+        punkter: [
+          "Fello har Black Week från 20 till 30 november 2026. Alla abonnemang kostar 30 kr/mån i tre månader vid nybeställning, inte vid byte av abonnemang. 5 GB får dubbel surf och kostar sedan 120 kr/mån. 100 GB får trippel surf (300 GB) och kostar sedan 370 kr/mån. Extra surfen gäller i 24 månader och det finns ingen bindningstid.",
+          "Fello visar 20 kr/mån som tidigare lägsta pris. Före Black Week kostade de första tre månaderna alltså 10 kr mindre i månaden.",
+          "Vimla kallar sin kampanj Black Month. Nya kunder betalar 20 kr/mån i tre månader och får dubbel surf i 24 månader, utan bindningstid. 5 GB kostar sedan 120 kr/mån och 100 GB 370 kr/mån. Slutdatum framgår inte.",
+          "Comviq skriver nu att Black Week-priserna gäller till och med 30 november 2026.",
+        ],
+      },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB, 95 kr för Vimlas och 98 kr för Fellos. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
       },
       {
         typ: "p",
@@ -227,7 +237,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         utgivare: "Hallon",
         titel: "Black Friday och Black Week 2026",
         url: "https://www.hallon.se/black-friday",
-        datum: "kontrollerad 12 november 2026",
+        datum: "kontrollerad 21 november 2026",
       },
       {
         utgivare: "Telenor",
@@ -239,13 +249,25 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         utgivare: "Comviq",
         titel: "Black Weeks",
         url: "https://www.comviq.se/erbjudanden/black-friday",
-        datum: "kontrollerad 12 november 2026",
+        datum: "kontrollerad 21 november 2026",
       },
       {
         utgivare: "Comviq",
         titel: "Mobilabonnemang",
         url: "https://www.comviq.se/mobilabonnemang",
         datum: "kontrollerad 12 november 2026",
+      },
+      {
+        utgivare: "Fello",
+        titel: "Black Week hos Fello",
+        url: "https://www.fello.se/",
+        datum: "kontrollerad 21 november 2026",
+      },
+      {
+        utgivare: "Vimla",
+        titel: "Black Month hos Vimla",
+        url: "https://vimla.se/",
+        datum: "kontrollerad 21 november 2026",
       },
       {
         utgivare: "Telia",
