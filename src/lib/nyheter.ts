@@ -166,7 +166,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-21",
+    uppdateradIso: "2026-11-23",
     innehall: [
       {
         typ: "p",
@@ -216,10 +216,17 @@ const NYHETER_OSORTERADE: Nyhet[] = [
           "Comviq skriver nu att Black Week-priserna gäller till och med 30 november 2026.",
         ],
       },
+      { typ: "h2", text: "Nytt 23 november: Vimla förlänger kampanjpriset till fyra månader" },
+      {
+        typ: "ul",
+        punkter: [
+          "Vimla kallar nu kampanjen Black Week. Alla surfnivåer kostar 20 kr/mån i fyra månader i stället för tre, och dubbel surf gäller fortfarande i 24 månader. 5 GB kostar sedan 120 kr/mån och 100 GB 370 kr/mån. Längre ned på Vimlas startsida står fortfarande tre månader, så kontrollera antalet månader i beställningen. Slutdatum framgår inte.",
+        ],
+      },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB, 95 kr för Vimlas och 98 kr för Fellos. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB, 87 kr för Vimlas och 98 kr för Fellos. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
       },
       {
         typ: "p",
@@ -265,9 +272,9 @@ const NYHETER_OSORTERADE: Nyhet[] = [
       },
       {
         utgivare: "Vimla",
-        titel: "Black Month hos Vimla",
+        titel: "Black Week hos Vimla",
         url: "https://vimla.se/",
-        datum: "kontrollerad 21 november 2026",
+        datum: "kontrollerad 23 november 2026",
       },
       {
         utgivare: "Telia",
