@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-23.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-24.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-23";
+export const BREDBAND_KONTROLLERAD = "2026-11-24";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -112,7 +112,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1000 Mbit/s",
     pris: 499,
-    kampanjpris: 189,
+    kampanjpris: 219,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -122,7 +122,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.tele2.se/bredband/mobilt-bredband",
     notis:
-      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån med 24 mån bindning, enligt tele2.se (”Bara t.o.m. måndag”, dvs. 23 november 2026; kontrollerad 2026-11-21). Tidigare 219 kr.",
+      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. 219 kr/mån i 24 mån med 24 mån bindning enligt tele2.se (kontrollerad 2026-11-24). Black Weeks-priset 189 kr gällde t.o.m. 23 november 2026.",
   },
   {
     id: "tele2-bb-mobilt-bredband-5g-max-utan-bindning",

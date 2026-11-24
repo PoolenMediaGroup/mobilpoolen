@@ -261,8 +261,8 @@
  },
  "tre|Obegränsad surf|privat": {
   "pris": 429,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 299,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   "operator": "tre",
@@ -271,8 +271,8 @@
  },
  "tre|25 GB|privat": {
   "pris": 329,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 249,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   "operator": "tre",
@@ -281,8 +281,8 @@
  },
  "tre|6 GB|privat": {
   "pris": 229,
-  "kampanjpris": null,
-  "kampanjManader": null,
+  "kampanjpris": 199,
+  "kampanjManader": 24,
   "startavgift": null,
   "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A==",
   "operator": "tre",
@@ -412,7 +412,7 @@
  "vimla|5 GB|privat": {
   "pris": 120,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/",
   "operator": "vimla",
@@ -422,7 +422,7 @@
  "vimla|10 GB|privat": {
   "pris": 170,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/",
   "operator": "vimla",
@@ -432,7 +432,7 @@
  "vimla|15 GB|privat": {
   "pris": 210,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/",
   "operator": "vimla",
@@ -442,7 +442,7 @@
  "vimla|25 GB|privat": {
   "pris": 260,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/",
   "operator": "vimla",
@@ -452,7 +452,7 @@
  "vimla|100 GB|privat": {
   "pris": 370,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/",
   "operator": "vimla",
@@ -462,7 +462,7 @@
  "vimla|55+ 0,5 GB|privat": {
   "pris": 100,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/55plus/",
   "operator": "vimla",
@@ -472,7 +472,7 @@
  "vimla|55+ 4 GB|privat": {
   "pris": 110,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/55plus/",
   "operator": "vimla",
@@ -482,7 +482,7 @@
  "vimla|55+ 10 GB|privat": {
   "pris": 140,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/55plus/",
   "operator": "vimla",
@@ -492,7 +492,7 @@
  "vimla|55+ 15 GB|privat": {
   "pris": 180,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/55plus/",
   "operator": "vimla",
@@ -502,7 +502,7 @@
  "vimla|55+ 40 GB|privat": {
   "pris": 250,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/55plus/",
   "operator": "vimla",
@@ -512,7 +512,7 @@
  "vimla|Student 10 GB|privat": {
   "pris": 120,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/student/",
   "operator": "vimla",
@@ -522,7 +522,7 @@
  "vimla|Student 15 GB|privat": {
   "pris": 160,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/student/",
   "operator": "vimla",
@@ -532,7 +532,7 @@
  "vimla|Student 25 GB|privat": {
   "pris": 200,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/student/",
   "operator": "vimla",
@@ -542,7 +542,7 @@
  "vimla|Student 40 GB|privat": {
   "pris": 240,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/student/",
   "operator": "vimla",
@@ -552,7 +552,7 @@
  "vimla|Student 80 GB|privat": {
   "pris": 320,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/student/",
   "operator": "vimla",
@@ -562,7 +562,7 @@
  "vimla|Under 18 1 GB|privat": {
   "pris": 100,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/under18/",
   "operator": "vimla",
@@ -572,7 +572,7 @@
  "vimla|Under 18 10 GB|privat": {
   "pris": 120,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/under18/",
   "operator": "vimla",
@@ -582,7 +582,7 @@
  "vimla|Under 18 15 GB|privat": {
   "pris": 160,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/under18/",
   "operator": "vimla",
@@ -592,7 +592,7 @@
  "vimla|Under 18 25 GB|privat": {
   "pris": 210,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/under18/",
   "operator": "vimla",
@@ -602,7 +602,7 @@
  "vimla|Under 18 40 GB|privat": {
   "pris": 250,
   "kampanjpris": 20,
-  "kampanjManader": 3,
+  "kampanjManader": 4,
   "startavgift": null,
   "kalla": "https://vimla.se/bestall/under18/",
   "operator": "vimla",

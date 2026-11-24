@@ -1,5 +1,5 @@
 {
-  "kontrollerad": "2026-11-23",
+  "kontrollerad": "2026-11-24",
   "erbjudanden": [
     {
       "operator": "telia",
@@ -98,7 +98,7 @@
       "gb": null,
       "hastighet": "upp till 1000 Mbit/s",
       "pris": 499,
-      "kampanjpris": 189,
+      "kampanjpris": 219,
       "kampanjManader": 24,
       "bindning": 24,
       "uppsagning": null,
@@ -107,7 +107,7 @@
       "femg": true,
       "krav": false,
       "kalla": "https://www.tele2.se/bredband/mobilt-bredband",
-      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Weeks-pris 189 kr/mån i 24 mån med 24 mån bindning, enligt tele2.se (”Bara t.o.m. måndag”, dvs. 23 november 2026; kontrollerad 2026-11-21). Tidigare 219 kr."
+      "notis": "Obegränsad surf i Sverige, upp till 1000 Mbit/s. 219 kr/mån i 24 mån med 24 mån bindning enligt tele2.se (kontrollerad 2026-11-24). Black Weeks-priset 189 kr gällde t.o.m. 23 november 2026."
     },
     {
       "operator": "tele2",
