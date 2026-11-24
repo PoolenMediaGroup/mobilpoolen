@@ -16,6 +16,10 @@ export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
     datum: "2026-11-30",
     text: "Tele2 skriver att erbjudandena under Black Cheap Weeks gäller till och med 30 november 2026.",
   },
+  tre: {
+    datum: "2026-11-30",
+    text: "Tre skriver att dubbel surf på 25 GB, totalt 50 GB i 24 månader, gäller till och med 30 november 2026. Hur länge Black Week-priserna med 24 månaders bindning går att teckna framgår inte.",
+  },
   fello: {
     datum: "2026-11-30",
     text: "Fello skriver att Black Week har sista dagen 30 november 2026. Det gäller 30 kr i månaden i tre månader vid nybeställning och dubbel eller trippel surf i 24 månader.",
