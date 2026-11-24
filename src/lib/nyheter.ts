@@ -158,7 +158,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     titel: "Black Week 2026: så mycket betalar du när kampanjmånaderna är slut",
     seoTitel: "Black Week 2026: mobilabonnemang",
     ingress:
-      "Telia, Tele2, Comviq och Fello avslutar Black Week 30 november, Hallon 2 december. Hallon 5 GB kostar 9 kr/mån i fyra månader, sedan 109 kr.",
+      "Telia, Tele2, Tre, Comviq och Fello avslutar Black Week 30 november, Hallon 2 december. Hallon 5 GB kostar 9 kr/mån i fyra månader, sedan 109 kr.",
     avsandare: "Mobilpoolen",
     kategori: "Tips och råd",
     typ: "tips",
@@ -166,7 +166,7 @@ const NYHETER_OSORTERADE: Nyhet[] = [
     nyckeltal: { varde: "109 kr", text: "per månad efter fyra månader för 9 kr (Hallon 5 GB)" },
     handelseIso: "2026-11-10",
     publiceradIso: "2026-11-10",
-    uppdateradIso: "2026-11-23",
+    uppdateradIso: "2026-11-24",
     innehall: [
       {
         typ: "p",
@@ -223,10 +223,19 @@ const NYHETER_OSORTERADE: Nyhet[] = [
           "Vimla kallar nu kampanjen Black Week. Alla surfnivåer kostar 20 kr/mån i fyra månader i stället för tre, och dubbel surf gäller fortfarande i 24 månader. 5 GB kostar sedan 120 kr/mån och 100 GB 370 kr/mån. Längre ned på Vimlas startsida står fortfarande tre månader, så kontrollera antalet månader i beställningen. Slutdatum framgår inte.",
         ],
       },
+      { typ: "h2", text: "Nytt 24 november: Tre har startat" },
+      {
+        typ: "ul",
+        punkter: [
+          "Tre har Black Week till och med 30 november 2026. Priserna kräver 24 månaders bindningstid. Obegränsat kostar 299 kr/mån (tidigare 429 kr), 25 GB 249 kr/mån med dubbel surf (tidigare 329 kr) och 6 GB 199 kr/mån (tidigare 229 kr).",
+          "En extra användare kostar från 119 kr/mån (tidigare 149 kr). Tres exempel: obegränsad surf för tre personer kostar 537 kr/mån, mot 727 kr tidigare.",
+          "Tre anger minsta totalkostnad 7 176 kr för Obegränsat, alltså 299 kr i 24 månader. Vad priset blir efter 24 månader framgår inte.",
+        ],
+      },
       { typ: "h2", text: "Vad det betyder för dig" },
       {
         typ: "p",
-        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB, 87 kr för Vimlas och 98 kr för Fellos. Hos Tele2 och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
+        text: "Räkna på hela året, inte på första fakturan. Efter fyra månader stiger Hallons pris med mellan 100 och 310 kr i månaden, beroende på surfmängd. För 100 GB blir snittet första året 256 kr i månaden. Hallon har ingen bindningstid, så du kan byta igen när kampanjen är slut. Comviqs 5 GB utan bindningstid ger 79 kr i månaden i snitt första året, mot 76 kr för Hallons 5 GB, 87 kr för Vimlas och 98 kr för Fellos. Hos Tele2, Tre och Telenor är du i stället bunden i 24 månader. Med obegränsad surf skiljer det 50 kr i månaden under bindningstiden: 299 kr hos Tele2 och Tre och 349 kr hos Telenor. Hos Telia gäller halva priset bara de första sex av 24 bundna månader, så snittet under bindningstiden blir 437 kr i månaden för Obegränsad.",
       },
       {
         typ: "p",
@@ -287,6 +296,12 @@ const NYHETER_OSORTERADE: Nyhet[] = [
         titel: "Välj mobilabonnemang",
         url: "https://www.telia.se/mobilabonnemang",
         datum: "kontrollerad 16 november 2026",
+      },
+      {
+        utgivare: "Tre",
+        titel: "Mobilabonnemang: Black Week",
+        url: "https://www.tre.se/handla/mobilabonnemang",
+        datum: "kontrollerad 24 november 2026",
       },
       {
         utgivare: "Tele2",
