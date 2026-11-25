@@ -15,7 +15,7 @@ const TRAIL = [
 /**
  * Priser för extra familjemedlemmar. De står inte som egna abonnemang i datan
  * utan i operatörernas villkor och i notis-fälten (operatorer-data.ts),
- * kontrollerade 2026-10-29 (Telias kampanj 2026-11-17). Huvudabonnemangens priser hämtas ur ABONNEMANG.
+ * kontrollerade 2026-10-29 (Telias kampanj 2026-11-17, Tres kampanj 2026-11-25). Huvudabonnemangens priser hämtas ur ABONNEMANG.
  */
 const MEDLEM = {
   comviq: 149, // Comviq Familj: 149 kr/mån per medlem, 20 GB var, ingen bindning
@@ -23,6 +23,7 @@ const MEDLEM = {
   teliaKampanj: 120, // Telia Black Week 16–30 nov 2026: 120 kr/mån i 6 mån med 24 mån bindning, därefter 239 kr
   treBunden: 149, // Tre: extra användare med 24 mån bindning
   treObunden: 169, // Tre: extra användare utan bindning
+  treKampanj: 119, // Tre Black Week t.o.m. 30 nov 2026: 119 kr/mån med 24 mån bindning (ord. 149 kr)
   katshingTva: 595, // katshing: familjeabonnemang med obegränsad surf för två personer
 } as const;
 
@@ -216,7 +217,9 @@ function Sida() {
             <strong>Tre:</strong> upp till 9 extra användare för {MEDLEM.treBunden} kr i månaden med
             24 månaders bindning eller {MEDLEM.treObunden} kr utan. På {TRE.namn} ({kr(TRE.pris)})
             får alla obegränsad surf.
-            {TRE25 && ` På ${TRE25.namn} delar ni på ${gbText(TRE25.gb)}.`}
+            {TRE25 && ` På ${TRE25.namn} delar ni på ${gbText(TRE25.gb)}.`} Under Black Week, till
+            och med 30 november 2026, kostar extra användare {MEDLEM.treKampanj} kr i månaden med 24
+            månaders bindningstid.
           </li>
         )}
         {TELIA && (

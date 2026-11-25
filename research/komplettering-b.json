@@ -304,7 +304,7 @@
         "Åldersgränser för Student, 55+ och Under 18 (krav/verifiering) framgick inte."
       ],
       "noteringar": "Black Week (kontrollerad 21 nov 2026 på fello.se och i api.fello.se): 30 kr/mån i 3 mån vid nybeställning (ej abonnemangsbyte) + dubbel surf på det minsta abonnemanget i varje grupp och trippel surf på övriga, giltig i 24 mån. Sista dagen 30 november 2026. Ersätter 20 kr i 3 mån + 100 GB extra surf i 12 mån.",
-      "kontrollerad": "2026-11-24"
+      "kontrollerad": "2026-11-25"
     },
     {
       "slug": "chilimobil",
@@ -617,7 +617,7 @@
         "Prislistan anger 'Priserna gäller från den 1 april 2024', senast ändrad 2026-01-01."
       ],
       "noteringar": "Ordinarie priser bekräftade mot PDF-prislistan: 3 Mbit 179, 10 Mbit 299, 100 Mbit 349, Full Fart 399, med Viaplay 424/474. Årspriset för 10 Mbit motsvarar 249,17 kr/mån och 100 Mbit 290,83 kr/mån. Student: 159/279/329/379 (halva priset 2 mån). Full Fart 199 kr i 2 mån från 17 nov 2026 (var 299). Senior: 159/279/329/379 (rabatt bara på 100 Mbit -50 och Full Fart -100 i 2 mån).",
-      "kontrollerad": "2026-11-24"
+      "kontrollerad": "2026-11-25"
     },
     {
       "slug": "comviq",
@@ -768,7 +768,7 @@
         "Slutdatum för Black Weeks-kampanjen (75 % i 6 mån) framgår inte."
       ],
       "noteringar": "11 nov 2026: 45 kr i 3 mån och dubbel surf t.o.m. 10 nov har ersatts av Black Weeks: 75 % rabatt i 6 mån (29/49/89 kr, student 29/49/69 kr) med eller utan bindning; med 12 mån bindning även dubbel surf i 12 mån. Ordinarie priser 129/229/359 (student 129/209/309) oförändrade.",
-      "kontrollerad": "2026-11-24"
+      "kontrollerad": "2026-11-25"
     },
     {
       "slug": "telia",
@@ -977,7 +977,7 @@
         "Produktsidan för Obegränsad skriver fortfarande \"50 kronor rabatt/mån i 12 månader\" och 10 GB-sidan \"rabatt i 12 månader vid nyteckning med bindningstid\", men produktdatan och prisrutan visar Black Week-priset respektive bara pris utan bindning."
       ],
       "noteringar": "17 nov 2026: Black Week (16–30 nov) ersätter 449/469-rabatterna i 12 mån. Halva priset i 6 mån med 24 mån bindning på Obegränsad, Obegränsad Plus och streamingvarianterna. 10 GB med 24 mån bindning (249 kr) finns inte längre i produktdatan och är borttagen.",
-      "kontrollerad": "2026-11-24"
+      "kontrollerad": "2026-11-25"
     }
   ]
 }

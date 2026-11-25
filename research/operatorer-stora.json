@@ -57,7 +57,7 @@
         "https://www.telia.se/mobilabonnemang/pensionar",
         "https://www.telia.se/privat/telefoni/wifi-samtal"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "Bindningstid för abonnemang utan telefon framgår inte. Troligen 0 mån, men det är inte verifierat [KONTROLLERA]",
         "EU-surf: webbsidans tabell anger 100 GB för obegränsade abonnemang, prislistan (2026-01-07) 'som mest 50 GB/månad'",
@@ -115,7 +115,7 @@
         "https://www.tele2.se/support/mobilt/wifi-samtal",
         "https://www.tele2.se/support/information/prislistor"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "Pris för familjemedlem: 169 kr/mån (familjesidan) eller 149 kr/mån (erbjudandesidan)",
         "Startavgift och avgift för nytt SIM har inte verifierats. Den officiella prislistan (PDF på ctfassets.net) kunde inte hämtas",
@@ -155,7 +155,7 @@
         "https://www.telenor.se/support/priser-villkor-och-blanketter/prislistor/",
         "https://mediearkivet.telenor.se/Data/mw/Pdf/Tn32141.pdf"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "HELA abonnemangslistan saknas: telenor.se renderas med JavaScript och WebFetch fick bara metadata. Kontrollera manuellt i webbläsare eller via prislistan Tn32141.pdf (rubriken nämner 'Obegränsat Plus Familj' och 'Obegränsat Familj')",
         "eSIM, wifi-samtal, startavgift, uppsägningstid och kundtjänstnummer har inte verifierats",
@@ -195,7 +195,7 @@
         {"namn": "Obegränsad surf", "gb": null, "obegransad": true, "pris": 429, "kampanjpris": 299, "kampanjMan": 24, "kampanjText": "KAMPANJ: Black Week-pris 299 kr/mån med 24 mån bindning, tidigare pris 429 kr/mån enligt tre.se (kontrollerat 2026-11-24). Priset efter 24 månader och sista dag att teckna framgår inte [KONTROLLERA]. Utan bindning 449 kr/mån.", "bindning": 24, "euGb": 60, "samtalSms": "obegränsat", "hastighet": "3Snabbare (ingen Mbit/s anges)", "ovrigt": "Extra användare 149 kr/mån (24 mån) / 169 kr/mån (utan bindning) och får obegränsad surf. Variant med Apple One finns i prislistan (549 kr) [KONTROLLERA]", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="},
         {"namn": "25 GB", "gb": 25, "obegransad": false, "pris": 329, "kampanjpris": 249, "kampanjMan": 24, "kampanjText": "KAMPANJ: Black Week-pris 249 kr/mån med 24 mån bindning, tidigare pris 329 kr/mån enligt tre.se (kontrollerat 2026-11-24). Dubbel surf (50 GB) i 24 mån, gäller t.o.m. 30 november 2026. Priset efter 24 månader och sista dag att teckna framgår inte [KONTROLLERA]. Utan bindning 349 kr/mån.", "bindning": 24, "euGb": null, "samtalSms": "obegränsat", "hastighet": "3Snabbare", "ovrigt": "Extra användare delar surfen ('först till kvarn'). EU-surf: samma pott [KONTROLLERA]", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="},
         {"namn": "6 GB", "gb": 6, "obegransad": false, "pris": 229, "kampanjpris": 199, "kampanjMan": 24, "kampanjText": "KAMPANJ: Black Week-pris 199 kr/mån med 24 mån bindning, tidigare pris 229 kr/mån enligt tre.se (kontrollerat 2026-11-24). Priset efter 24 månader och sista dag att teckna framgår inte [KONTROLLERA]. Utan bindning 249 kr/mån.", "bindning": 24, "euGb": null, "samtalSms": "obegränsat", "hastighet": "3Snabbare", "ovrigt": "Passar den som mest använder wifi", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="},
-        {"namn": "3Extra Användare (familj)", "gb": null, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "149 kr/mån med 24 mån bindning, 169 kr/mån utan bindning", "bindning": 24, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Delar surf med huvudabonnemanget. Upp till 9 personer", "kalla": "https://www.tre.se/handla/mobilabonnemang/familjeabonnemang"},
+        {"namn": "3Extra Användare (familj)", "gb": null, "obegransad": false, "pris": 149, "kampanjpris": null, "kampanjMan": null, "kampanjText": "149 kr/mån med 24 mån bindning, 169 kr/mån utan bindning. Black Week: 119 kr/mån per person med 24 mån bindning, gäller t.o.m. 30 november 2026 enligt tre.se (kontrollerad 2026-11-25)", "bindning": 24, "euGb": null, "samtalSms": "obegränsat", "hastighet": null, "ovrigt": "Delar surf med huvudabonnemanget. Upp till 9 personer", "kalla": "https://www.tre.se/handla/mobilabonnemang/familjeabonnemang"},
         {"namn": "Obegränsad surf (utan bindning)", "gb": null, "obegransad": true, "pris": 449, "kampanjpris": null, "kampanjMan": null, "kampanjText": null, "bindning": 0, "euGb": 60, "samtalSms": "obegränsat", "ovrigt": "3Flexibel Obg inkl 3Världen utan bindningstid. Med 24 mån bindning 429 kr/mån (Black Week: 299 kr/mån i 24 mån). 60 GB/mån i EU/EES och 3Världen. Ingen startavgift på tre.se (250 kr i butik).", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="},
         {"namn": "25 GB (utan bindning)", "gb": 25, "obegransad": false, "pris": 349, "kampanjpris": null, "kampanjMan": null, "kampanjText": null, "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "ovrigt": "3Flexibel 25GB inkl 3Världen utan bindningstid. Med 24 mån bindning 329 kr/mån (Black Week: 249 kr/mån i 24 mån). Ingen startavgift på tre.se (250 kr i butik).", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="},
         {"namn": "6 GB (utan bindning)", "gb": 6, "obegransad": false, "pris": 249, "kampanjpris": null, "kampanjMan": null, "kampanjText": null, "bindning": 0, "euGb": null, "samtalSms": "obegränsat", "ovrigt": "3Flexibel 6GB inkl 3Världen utan bindningstid. Med 24 mån bindning 229 kr/mån (Black Week: 199 kr/mån i 24 mån). Ingen startavgift på tre.se (250 kr i butik).", "kalla": "https://www.tre.se/handla/mobilabonnemang/abonnemang?pricePlanId=lChDpBc7ENJhFVOKirOr6A=="}
@@ -206,7 +206,7 @@
         "https://assets.tre.se/dokument/privat/abonnemangsprislistor/prislista_master_konsument.pdf",
         "https://www.tre.se/om-tre/kontakt"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "Webbpriserna (229/329/429 kr, 24 mån) stämmer inte med prislistan från 2025-07-16 (3Flexibel 249/349/449, 3Surfa 169/249/349). Prislistan kan vara inaktuell",
         "Om det finns priser utan bindning (eller 12 mån) för huvudabonnemangen framgår inte av webbsidan",
@@ -314,7 +314,7 @@
         "https://www.comviq.se/hjalp/avtal-och-villkor/uppsagning-av-abonnemang",
         "https://www.comviq.se/hjalp/kontakta-oss"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "Startavgift och avgift för SIM/eSIM är inte verifierade",
         "Slutdatum för Black Weeks-kampanjen (75 % rabatt i 6 mån) framgår inte",
@@ -361,7 +361,7 @@
         "https://vimla.se/villkor/",
         "https://faq.vimla.se/hc/sv/articles/360019666597-Vimlas-olika-surfniv%C3%A5er"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "HELA abonnemangslistan saknas: vimla.se kunde inte hämtas. Kontrollera manuellt",
         "Ägare (Telenor) och nät (Telenor) är inte verifierade på Vimlas egen sida",
@@ -424,7 +424,7 @@
         "https://www.hallon.se/cms/media/t1ulcvyp/hallon_prislistavoice_wtags_20250628.pdf",
         "https://www.hallon.se/cms/media/qqqdg1ej/hallon_allmanna_villkor_konsument.pdf"
       ],
-      "kontrollerad": "2026-11-24",
+      "kontrollerad": "2026-11-25",
       "osakert": [
         "Startsidan visade bara 5/10/25 GB med kampanjen, medan /mobilabonnemang visade 5–100 GB. 25 GB-priset (259 kr) stämmer i båda",
         "EU-surf: 'surfmängden i ditt abonnemang gäller', men ett eventuellt fair use-tak är inte kontrollerat",
