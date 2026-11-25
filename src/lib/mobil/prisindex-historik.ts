@@ -83,7 +83,7 @@ export const PRISINDEX_HISTORIK: IndexManad[] = [
   },
   {
     manad: "2026-11",
-    kontrollerad: "2026-11-24",
+    kontrollerad: "2026-11-25",
     perNiva: [
       {
         niva: "1 GB",
