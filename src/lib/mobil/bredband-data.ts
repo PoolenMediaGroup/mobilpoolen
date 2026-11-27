@@ -1,8 +1,8 @@
-// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-26.
+// GENERERAD av scripts/bygg_data.py ur research/mobilt-bredband.json, kontrollerad 2026-11-27.
 
 import type { Bredband } from "./typer";
 
-export const BREDBAND_KONTROLLERAD = "2026-11-26";
+export const BREDBAND_KONTROLLERAD = "2026-11-27";
 
 export const BREDBAND_DATA: Bredband[] = [
   {
@@ -54,15 +54,15 @@ export const BREDBAND_DATA: Bredband[] = [
     hastighet: "upp till 1 000 Mbit/s",
     pris: 529,
     kampanjpris: 264.5,
-    kampanjManader: 6,
-    bindning: 0,
+    kampanjManader: 12,
+    bindning: 24,
     uppsagning: null,
     startavgift: null,
     router: "ingår vid 24 mån bindning",
     femg: true,
     kalla: "https://www.telia.se/bredband/mobilt-bredband/mobilt-bredband-obegraensad",
     notis:
-      "Black Week: 264,50 kr/mån (Telia visar 265 kr) i 6 mån utan bindning, därefter 529 kr/mån. Med 24 mån bindning gäller samma pris i 12 mån och routern ingår. Fungerar endast i Sverige.",
+      "Black Week: 264,50 kr/mån (Telia visar 265 kr) i 12 mån med 24 mån bindning, därefter 529 kr/mån, enligt telia.se (kontrollerad 2026-11-27). Routern ingår vid 24 mån bindning. Fungerar endast i Sverige.",
   },
   {
     id: "telia-bb-mobilt-bredband-70-gb",
@@ -112,7 +112,7 @@ export const BREDBAND_DATA: Bredband[] = [
     gb: null,
     hastighet: "upp till 1000 Mbit/s",
     pris: 499,
-    kampanjpris: 219,
+    kampanjpris: 189,
     kampanjManader: 24,
     bindning: 24,
     uppsagning: null,
@@ -122,7 +122,7 @@ export const BREDBAND_DATA: Bredband[] = [
     femg: true,
     kalla: "https://www.tele2.se/bredband/mobilt-bredband",
     notis:
-      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. 219 kr/mån i 24 mån med 24 mån bindning enligt tele2.se (kontrollerad 2026-11-24). Black Weeks-priset 189 kr gällde t.o.m. 23 november 2026.",
+      "Obegränsad surf i Sverige, upp till 1000 Mbit/s. Black Cheap Weeks: 189 kr/mån i 24 mån med 24 mån bindning enligt tele2.se (kontrollerad 2026-11-27), därefter 499 kr/mån. Tele2 skriver att Black Cheap Weeks gäller t.o.m. 30 november 2026.",
   },
   {
     id: "tele2-bb-mobilt-bredband-5g-max-utan-bindning",
