@@ -18,7 +18,7 @@ export const KAMPANJ_SLUT: Record<string, { datum: string; text: string }> = {
   },
   tre: {
     datum: "2026-11-30",
-    text: "Tre skriver att dubbel surf på 25 GB, totalt 50 GB i 24 månader, gäller till och med 30 november 2026. Hur länge Black Week-priserna med 24 månaders bindning går att teckna framgår inte.",
+    text: "Tre skriver att Black Week-priserna med 24 månaders bindning och dubbel surf på 25 GB, totalt 50 GB i 24 månader, gäller till och med 30 november 2026.",
   },
   fello: {
     datum: "2026-11-30",
